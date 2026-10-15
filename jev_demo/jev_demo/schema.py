@@ -6,6 +6,17 @@ from dataclasses import dataclass
 
 _SUM_TOLERANCE = 1e-6
 
+LLM_PREFIX = "llm|"
+
+
+def parse_llm(option: str) -> tuple[int, str] | None:
+    """`(rank, tactic)` for a `llm|{i}|{tactic}` option, else None."""
+    if option.startswith(LLM_PREFIX):
+        idx, sep, tactic = option[len(LLM_PREFIX):].partition("|")
+        if sep and idx.isdigit():
+            return int(idx), tactic
+    return None
+
 
 @dataclass(frozen=True)
 class ChoiceQuestion:

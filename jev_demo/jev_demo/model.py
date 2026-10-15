@@ -22,6 +22,7 @@ from jev_demo.schema import (
     ChoiceQuestion,
     Question,
     answer_key,
+    parse_llm,
 )
 
 _SPLIT = re.compile(r"[()\[\],:⊢·\s]+")
@@ -54,6 +55,11 @@ def featurize(
     for a, b in zip(goal, goal[1:]):
         add("g2", f"{a} {b}")
     if option is not None:
+        llm = parse_llm(option)
+        if llm is not None:  # Claude's proposal: source + rank features, then the bare tactic
+            add("src", "llm")
+            add("rank", str(llm[0]))
+            option = llm[1]
         toks = tokenize(option)
         head = toks[0] if toks else ""
         add("ofull", option)

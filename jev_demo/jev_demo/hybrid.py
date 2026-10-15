@@ -11,16 +11,15 @@ from typing import Literal
 
 from jev_demo.actions import menu
 from jev_demo.premises import Lemma, Shortlister
+from jev_demo.schema import LLM_PREFIX, parse_llm
 from jev_demo.search import ModelRanker, Ranking, _key
 
-LLM_PREFIX = "llm|"
 
 
 def strip_llm(option: str) -> str:
     """Recover the tactic from `llm|{i}|{tactic}`; other options are returned unchanged."""
-    if not option.startswith(LLM_PREFIX):
-        return option
-    return option[len(LLM_PREFIX):].partition("|")[2]
+    parsed = parse_llm(option)
+    return option if parsed is None else parsed[1]
 
 
 def llm_options(proposals, items, exclude=()) -> dict[str, str]:
