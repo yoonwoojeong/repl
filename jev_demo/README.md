@@ -137,9 +137,7 @@ changes the `kind` softmax and hence the ranking and escalation.
 
 ## Phase 2: Claude as a tactic generator
 
-**Status: results pending.** No Anthropic API key was available when this was built, so the
-phase-2 experiment has not been run. Everything below is implemented and tested offline with a
-fake generator; no phase-2 numbers exist yet, and none are reported here.
+**Status: run once live (2026-10-15).** See [Phase 2 results](#phase-2-results) below.
 
 ### Design
 
@@ -208,3 +206,55 @@ Notes on cost accounting:
 
 Both accept `--claude-model` (default `claude-opus-5-5`), `--effort` (`medium`) and `--max-usd`
 (`10`). Without `claude_labels.json`, `hybrid` is trained on the phase-1 replays alone.
+
+### Phase 2 results
+
+Run once, live, on GitHub Actions (run `38741999437`, workflow `jev-phase2-live.yml`) with
+`claude-opus-5-5` at effort `medium` and a `--max-usd 20` cap, after the prompt's worked examples
+were relabelled as good next steps. Outputs: `data/claude_labels.json`,
+`results_phase2/{results.json,report.md}`, and the raw stderr logs `results_phase2/collect.log`
+and `results_phase2/run-phase2.log`. No refusals; no budget or per-theorem request cap was hit.
+
+| method | proved | easy | hard | mean calls (proved) | Claude requests | billed calls | USD (actual) | USD (notional) | refusals | errors |
+|---|---|---|---|---|---|---|---|---|---|---|
+| claude_whole | 20/20 | 8/8 | 12/12 | 1.00 | 80 | 80 | 0.6792 | 0.6792 | 0 | 0 |
+| claude_search | 20/20 | 8/8 | 12/12 | 2.05 | 27 | 27 | 0.3118 | 0.3118 | 0 | 0 |
+| hybrid | 20/20 | 8/8 | 12/12 | 4.05 | 43 | 19 | 0.2448 | 0.5300 | 0 | 0 |
+| phase1_best (`model`, phase-1 reference) | 16/20 | 8/8 | 8/12 | 14.25 | – | – | – | – | – | – |
+| phase1_fixed_expand_all (phase-1 post-hoc reference) | 18/20 | 8/8 | 10/12 | 15.72 | – | – | – | – | – | – |
+| *supplementary:* hybrid_expand_all (not pre-registered) | 19/20 | 8/8 | 11/12 | 1.90 | 44 | 0 | 0.0000 | 0.5388 | 0 | 0 |
+
+`hybrid_expand_all` is supplementary (ruling P11): `hybrid` with confidence fixed at 0.0, so it
+expands every ranked action. All of its Claude requests were response-cache hits from the earlier
+methods, so its actual USD is 0 and only its notional USD is meaningful. It missed
+`test_rev_eq_reverse`, which `hybrid` proved only after 45 calls.
+
+**Cost.** `run-phase2`: $1.2358 actual, $2.0597 notional (126 billed of 194 requests).
+`collect`: $1.2296 actual (= notional; 105 billed requests, one of which hit `max_tokens`, cost
+$0.3268 and is counted as an error). Total actual spend: **$2.4654**.
+
+**Prompt caching.** Active, but only for byte-identical requests. In `run-phase2`, the second
+billed request read 1352 cached tokens. 60 of 126 billed requests read the cache (1352–1433
+tokens each), all in groups of three, which matches `claude_whole`'s 4 samples of the same
+prompt. The other 66, and every one of `collect`'s 105 requests (cache_write 142,284 tokens,
+cache_read 0), read nothing. So the shared system prompt is not being reused across different
+goals. The likely cause is that the top-level `cache_control` places the breakpoint after the
+user message, so a cache entry is only ever written for the whole prefix. Putting the breakpoint
+on the system block instead would probably fix it; this run did not test that.
+
+**Pre-registered questions**
+
+1. *Does `hybrid` prove more hard theorems than `claude_search`?* **No.** Both prove 12/12. Every
+   Claude method proved every test theorem, so this test set cannot separate them (ceiling effect).
+2. *At equal or lower notional USD?* **No.** `hybrid` cost $0.5300 notional vs $0.3118 for
+   `claude_search`, and used more search calls on average (4.05 vs 2.05). Its lower actual USD
+   ($0.2448) comes from response-cache hits on proposals that `claude_search` had already paid for,
+   not from the method itself.
+3. *Did a Claude method prove the two hard theorems whose gold proof lies outside the phase-1 menu?*
+   **Yes, 2/2.** `test_sq_mod_four` and `test_rev_eq_reverse` were each proved by `claude_whole`,
+   `claude_search` and `hybrid`. No phase-1 method proved either.
+
+**Conclusion.** This experiment does not show that the Jev-style ranking model adds value on top of
+Claude. `hybrid` proved no more theorems than `claude_search` and cost more (notional). Claude on
+its own closes every test theorem, including the two the phase-1 menu cannot reach, mostly in one
+or two calls. A harder test set would be needed to measure any benefit from the ranking.
