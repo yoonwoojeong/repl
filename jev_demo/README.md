@@ -325,3 +325,52 @@ row.
 
 The answers will be reported as computed, including when `hybrid` does not beat
 `claude_search`.
+
+### Phase 2b results
+
+From GitHub Actions run `38747209836` on `data/test_hard.json` (`results_phase2_hard/`, raw log
+`results_phase2_hard/run-phase2.log`). `collect` was skipped and the existing labels were reused.
+There were no errors or refusals, and neither the budget nor the per-theorem request cap was
+hit.
+
+| method | hard proved | mean calls (proved) | Claude requests | billed calls | USD (actual) | USD (notional) |
+|---|---|---|---|---|---|---|
+| claude_whole | 17/20 | 1.41 | 80 | 80 | 2.3547 | 2.3547 |
+| claude_search | 16/20 | 10.62 | 79 | 79 | 1.5316 | 1.5316 |
+| hybrid | 11/20 | 7.64 | 81 | 27 | 0.5314 | 1.6740 |
+| phase1_best (`try_only`, phase-1 reference) | 5/20 | 1.00 | – | – | – | – |
+| phase1_fixed_expand_all (phase-1 post-hoc reference) | 1/20 | 36.00 | – | – | – | – |
+| *supplementary:* hybrid_expand_all (not pre-registered) | 10/20 | 11.20 | 90 | 19 | 0.1968 | 1.5646 |
+
+**Cost.** $4.6144 actual and $7.1249 notional (205 billed of 330 requests). Including the first
+run ($2.4654), total actual spend on Phase 2 is $7.0798. In this run the second billed request
+read 1429 cached tokens. Caching shows the same pattern as before: reads come only from repeated
+identical prompts (86,904 cache-read tokens, 211,987 cache-write tokens).
+
+**Pre-registered questions**
+
+1. *Does `hybrid` prove more hard theorems than `claude_search`?* **No.** `hybrid` proved 11/20 and
+   `claude_search` 16/20. This time the set is hard enough to separate the methods, and `hybrid`
+   is clearly worse. It lost `h2_sum_acc`, `h2_isort_length`, `h2_rev2_append`, `h2_prod_acc` and
+   `h2_fast_fib`, which `claude_search` proved, and it proved nothing that `claude_search` missed.
+   The supplementary `hybrid_expand_all` (10/20) does no better, so the gap is not explained by
+   confidence gating alone. The Jev ranking itself puts Claude's useful proposals too low on this
+   set.
+2. *At equal or lower notional USD?* **No.** `hybrid` cost $1.6740 notional against $1.5316 for
+   `claude_search`. Its lower actual USD ($0.5314) again comes from response-cache hits on
+   proposals that the earlier methods had already paid for.
+3. *How many of the 20 menu-unreachable hard theorems did any Claude method prove?* **19/20.** Only
+   `h2_sq_le_two_pow` (`n² ≤ 2ⁿ` for `n ≥ 4`) was proved by no method. Phase-1 methods proved at
+   most 5 of the 20 (`try_only`).
+
+Not pre-registered, but visible in the table: `claude_whole` was the strongest method (17/20,
+about 1.4 whole-script attempts per proved theorem). It was the only method to prove
+`h2_isort_sorted`, `h2_ack_succ` and `h2_isort_idem`, the three theorems whose gold proofs need two
+or more auxiliary lemmas.
+
+**Conclusion.** On a test set hard enough to separate the methods, adding the Jev-style ranking
+model on top of Claude made the step-by-step search worse (11/20 vs 16/20) and did not make it
+cheaper. This experiment does not show that the Jev-style model adds value on top of Claude.
+Claude's own proposals, and especially its complete proof scripts, do most of the work. Caveats:
+there is one run per method (no repeated samples), the set has only 20 theorems, and the
+theorems were written by a Claude model.
