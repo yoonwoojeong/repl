@@ -37,10 +37,10 @@ def llm_options(proposals, items, exclude=()) -> dict[str, str]:
 
 class HybridRanker:
     def __init__(self, model, shortlister: Shortlister, lib: dict[str, Lemma], generator,
-                 order: Literal["jev", "llm"] = "jev", prelude: str = ""):
+                 order: Literal["jev", "llm"] = "jev", prelude: str = "", banned: tuple[str, ...] = ()):
         """One ranker per theorem: `prelude` is passed to the generator with every goal."""
         self.base = ModelRanker(model, shortlister, lib)
-        self.generator, self.order, self.prelude = generator, order, prelude
+        self.generator, self.order, self.prelude, self.banned = generator, order, prelude, banned
         self._proposals: dict[str, list[str]] = {}  # goal key -> Claude's proposals (memo)
         self._failed: dict[str, list[str]] = {}  # goal key -> tactics tried there that failed
 
@@ -58,7 +58,8 @@ class HybridRanker:
         k = _key(goal)
         if k not in self._proposals:
             failed = self._failed.get(k, [])
-            got = self.generator.propose(goal, prelude=self.prelude, failed=list(failed))
+            kw = {"banned": self.banned} if self.banned else {}
+            got = self.generator.propose(goal, prelude=self.prelude, failed=list(failed), **kw)
             self._proposals[k] = [t for t in got if t.strip() not in failed]
         return self._proposals[k]
 

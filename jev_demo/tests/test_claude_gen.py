@@ -262,3 +262,13 @@ def test_offline_replays_disk_cache_and_never_calls_the_api(tmp_path):
     assert off.propose("⊢ P") == ["intro n", "simp"]
     assert off.propose("⊢ Q") == [] and off.usage.calls == 0 and off.usage.requests == 2
     assert len(c.calls) == 1
+
+
+def test_banned_lemmas_are_named_in_the_request_and_filtered(tmp_path):
+    c = FakeClient(resp(["exact Nat.mul_add_mod", "simp [Nat.mul_add_mod']", "omega"]))
+    g = gen(c, tmp_path)
+    assert g.propose("⊢ P", banned=("Nat.mul_add_mod",)) == ["simp [Nat.mul_add_mod']", "omega"]
+    user = c.calls[0]["messages"][0]["content"]
+    assert "Forbidden lemmas" in user and "`Nat.mul_add_mod`" in user
+    g.propose("⊢ Q")
+    assert "Forbidden" not in c.calls[1]["messages"][0]["content"]  # unchanged without a ban

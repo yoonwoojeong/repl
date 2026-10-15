@@ -453,7 +453,8 @@ def _run_phase2_method(method: str, thm: Theorem, repl, model, shortlister, lib,
     if method == "claude_whole":
         t0 = time.perf_counter()
         calls, proof = 0, None
-        for script in gen.whole_proof(thm.statement, thm.prelude, k=WHOLE_PROOF_K):
+        kw = {"banned": thm.banned} if thm.banned else {}
+        for script in gen.whole_proof(thm.statement, thm.prelude, k=WHOLE_PROOF_K, **kw):
             calls += 1
             if repl.check_proof(thm.statement, list(script), thm.prelude):
                 proof = list(script)
@@ -461,9 +462,11 @@ def _run_phase2_method(method: str, thm: Theorem, repl, model, shortlister, lib,
         return SearchResult(proof is not None, proof or [], calls, 0, time.perf_counter() - t0)
     if method in ("claude_search", "hybrid"):
         order = "llm" if method == "claude_search" else "jev"
-        return prove(thm, repl, HybridRanker(model, shortlister, lib, gen, order=order, prelude=thm.prelude))
+        return prove(thm, repl, HybridRanker(model, shortlister, lib, gen, order=order, prelude=thm.prelude,
+                                             banned=thm.banned))
     if method == "hybrid_expand_all":
-        ranker = HybridRanker(model, shortlister, lib, gen, order="jev", prelude=thm.prelude)
+        ranker = HybridRanker(model, shortlister, lib, gen, order="jev", prelude=thm.prelude,
+                              banned=thm.banned)
         return prove(thm, repl, ExpandAll(ranker, confidence=0.0))
     raise ValueError(method)
 

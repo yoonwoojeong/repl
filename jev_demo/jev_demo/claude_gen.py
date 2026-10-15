@@ -80,6 +80,25 @@ class Usage:
     notional_unknown: int = 0  # cache hits stored without a price (old entries)
 
 
+def _banned_block(banned) -> str:
+    """Tells Claude which lemmas the checker rejects (core benchmark). Empty when none are
+    banned, so requests for the other test sets are byte-identical to before."""
+    if not banned:
+        return ""
+    names = ", ".join(f"`{b}`" for b in banned)
+    return (f"Forbidden lemmas (a proof that uses them, directly or via an alias with the same "
+            f"statement, is rejected): {names}\n\n")
+
+
+def _mentions(tactic: str, banned) -> bool:
+    return any(re.search(rf"(?<![\w.']){re.escape(b)}(?![\w'])", tactic) for b in banned)
+
+
+def _without_banned(tactics: list[str], banned) -> list[str]:
+    """Drop proposals that name a banned lemma: any proof through them would be rejected."""
+    return [t for t in tactics if not _mentions(t, banned)] if banned else tactics
+
+
 def _clean(tactics: list[str], n: int) -> list[str]:
     out: list[str] = []
     for t in tactics:
@@ -108,22 +127,26 @@ class ClaudeGenerator:
 
     # -- public API --------------------------------------------------------------------------
 
-    def propose(self, goal: str, prelude: str = "", failed: list[str] = ()) -> list[str]:
+    def propose(self, goal: str, prelude: str = "", failed: list[str] = (),
+                banned: tuple[str, ...] = ()) -> list[str]:
         failed_block = "\n".join(f"- {t}" for t in failed) if failed else "(none)"
         user = (f"Prelude:\n{prelude or '(none)'}\n\n"
                 f"Goal:\n{goal}\n\n"
                 f"Already failed here (do not repeat):\n{failed_block}\n\n"
-                f"Propose up to {self.n} next tactics, most promising first.")
-        return self._ask(user, sample=0)
+                + _banned_block(banned)
+                + f"Propose up to {self.n} next tactics, most promising first.")
+        return _without_banned(self._ask(user, sample=0), banned)
 
-    def whole_proof(self, statement: str, prelude: str = "", k: int = 4) -> list[list[str]]:
+    def whole_proof(self, statement: str, prelude: str = "", k: int = 4,
+                    banned: tuple[str, ...] = ()) -> list[list[str]]:
         user = (f"Prelude:\n{prelude or '(none)'}\n\n"
                 f"Goal:\n⊢ {statement}\n\n"
                 "Already failed here (do not repeat):\n(none)\n\n"
-                "Give ONE complete tactic script that proves the goal, one tactic step per entry, "
+                + _banned_block(banned)
+                + "Give ONE complete tactic script that proves the goal, one tactic step per entry, "
                 "in order.")
         scripts = [self._ask(user, sample=i, limit=64) for i in range(k)]
-        return [s for s in scripts if s]
+        return [s for s in scripts if s and not any(_mentions(t, banned) for t in s)]
 
     # -- internals ---------------------------------------------------------------------------
 

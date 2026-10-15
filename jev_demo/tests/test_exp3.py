@@ -27,8 +27,8 @@ def test_exp3_end_to_end_with_fake_claude_and_audit(repl, tmp_path):
     from jev_demo import exp3
     p = tmp_path / "core.json"
     p.write_text(json.dumps(CORE), encoding="utf-8")
-    # The banned lemma is proposed first for whole proofs and as a search step: the audit must
-    # reject it; the clean `simp [...]` proof must be accepted.
+    # The banned lemma is proposed first: it must be filtered out (and the audit would reject it);
+    # the clean `simp [...]` proof must be accepted.
     client = FakeClient(resp(["exact Nat.mul_add_mod", "intro m x y",
                               "simp [Nat.add_mod, Nat.mul_mod_right]"]))
     gen = ClaudeGenerator(client=client, cache_dir=str(tmp_path / "cache"), max_usd=1.0, log=lambda m: None)
@@ -37,7 +37,8 @@ def test_exp3_end_to_end_with_fake_claude_and_audit(repl, tmp_path):
                    ["claude_search", "hybrid"], labels_out=str(tmp_path / "labels.json"), log=lambda m: None)
     rows = {r["name"]: r for r in res["claude_search"]["per_theorem"]}
     assert rows["core_Nat_mul_add_mod"]["proved"]
-    assert rows["core_Nat_mul_add_mod"]["audit_rejected"] >= 1
+    # the banned lemma is named in every request and proposals citing it are never tried
+    assert all("Forbidden lemmas" in c["messages"][0]["content"] for c in client.calls)
     assert "Nat.mul_add_mod" not in " ".join(rows["core_Nat_mul_add_mod"]["tactics"])
     assert res["analysis"]["pairs"][0]["a"] == "hybrid"
     labels = json.loads((tmp_path / "labels.json").read_text(encoding="utf-8"))

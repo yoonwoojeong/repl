@@ -44,7 +44,7 @@ def run(repl, train: list[Theorem], test: list[Theorem], out_dir: str, generator
     def run_one(method, thm, counting):
         if method == "claude_search" and labels_out:
             ranker = HybridRanker(model, shortlister, _without_banned(lib, thm), metered, order="llm",
-                                  prelude=thm.prelude)
+                                  prelude=thm.prelude, banned=thm.banned)
             r = prove(thm, counting, ranker)
             traces[thm.name] = (r, dict(ranker._proposals))
             return r
