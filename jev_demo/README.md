@@ -258,3 +258,70 @@ on the system block instead would probably fix it; this run did not test that.
 Claude. `hybrid` proved no more theorems than `claude_search` and cost more (notional). Claude on
 its own closes every test theorem, including the two the phase-1 menu cannot reach, mostly in one
 or two calls. A harder test set would be needed to measure any benefit from the ranking.
+
+### Phase 2b: harder test set (written before the live run)
+
+Every Claude method proved all 20 theorems in `data/test.json`, so the first run could not tell
+the methods apart. Phase 2b reruns `run-phase2` on a new, harder test set,
+`data/test_hard.json`. This section was committed before any Claude request was made on that
+set.
+
+**How the set was built.**
+- 20 theorems, all `hard`, written for this round.
+- Statements and names are disjoint from `train.json` and `test.json`.
+- Each has a gold proof checked in Lean (`test_hard_gold_proofs_check_and_flags_current`).
+- Topics:
+  - accumulator recursions that need a generalised lemma (`sumAcc`, `prodAcc`, `revAcc`, fast
+    `fibAux`);
+  - insertion sort (length, sortedness, idempotence, element counts);
+  - correctness of a stack-machine compiler;
+  - Fibonacci identities (coprimality, the addition formula, `fib n < 2^n`);
+  - Ackermann inequalities;
+  - nonlinear arithmetic (sum of cubes, `6 ∣ n(n+1)(n+2)`, `n² ≤ 2ⁿ` for `n ≥ 4`);
+  - strong induction (`isEven`).
+
+**Screen.** 32 candidates were written. Any candidate closed on its own by a generic one-liner
+was dropped, which removed 12 and left exactly 20. The one-liners tried were `grind`,
+`simp_all`, `omega`, `decide`, `intros; simp_all`, `intros; grind`, and
+`intro …; induction x <;> simp_all [defs] <;> omega` or `… <;> grind [defs]` for every bound
+variable `x`, where `defs` are the definitions in the prelude. No Claude API call was used to
+choose or screen theorems.
+
+The theorems were written by a Claude model in a Claude Code session, and several are textbook
+exercises. Claude may therefore find them easier than unseen problems would be.
+
+**Menu reachability.** All 20 are `menu_reachable = false`. Every gold proof uses structured
+`induction … with` blocks or `have` lemmas, which are not phase-1 menu actions. So question 3
+below covers the whole set. The flag says only that the written gold proof is outside the menu,
+not that no menu path exists.
+
+**Phase-1 reference on this set** (run locally, free; `results_hard/`):
+
+| method | hard proved |
+|---|---|
+| try_only | 5/20 |
+| model | 1/20 |
+| model_no_premise | 1/20 |
+| fixed_expand_all (post hoc) | 1/20 |
+| random_expand_all (post hoc) | 1/20 |
+| fixed, random, grind_only | 0/20 |
+
+`try_only` is the best pre-registered phase-1 method here, so it is the `phase1_best` reference
+row.
+
+**Settings, unchanged from the first run.**
+- `claude-opus-5-5`, effort `medium`, `--max-usd 20`, at most 16 Claude requests per theorem
+  and method.
+- The same prompt, and the same `hybrid` refit on the phase-1 replays plus the
+  `data/claude_labels.json` from run 38741999437. `collect` is not rerun.
+- The run starts on GitHub Actions with
+  `run-phase2 --test jev_demo/data/test_hard.json --phase1 jev_demo/results_hard/results.json
+  --out jev_demo/results_phase2_hard`.
+
+**Questions** (the same three, computed by `phase2_questions`):
+1. Does `hybrid` prove more hard theorems than `claude_search`?
+2. Does it do so at equal or lower notional USD?
+3. How many of the 20 `menu_reachable = false` hard theorems does any Claude method prove?
+
+The answers will be reported as computed, including when `hybrid` does not beat
+`claude_search`.

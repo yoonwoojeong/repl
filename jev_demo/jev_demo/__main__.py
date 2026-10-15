@@ -13,7 +13,7 @@ import os
 from jev_demo.bench import PHASE1_RESULTS_PATH, rerender_report, run_experiment, run_phase2
 from jev_demo.collect import LABELS_PATH, collect
 from jev_demo.repl_client import ReplClient
-from jev_demo.theorems import DATA_DIR, load_theorems
+from jev_demo.theorems import DATA_DIR, load_theorems, reachability_path
 
 
 def _phase2(args) -> None:
@@ -32,15 +32,15 @@ def _phase2(args) -> None:
             print(f"wrote {len(choice)} choice and {len(binary)} binary labels to {args.labels}; "
                   f"{gen.usage}")
             return
-        reach = _load_reachability()
+        reach = _load_reachability(args.test)
         run_phase2(repl, load_theorems(args.train), load_theorems(args.test), args.out, gen,
                    phase1_path=args.phase1, labels_path=args.labels, reachability=reach)
     with open(os.path.join(args.out, "report.md"), encoding="utf-8") as f:
         print(f.read())
 
 
-def _load_reachability():
-    path = os.path.join(DATA_DIR, "test_reachability.json")
+def _load_reachability(test_path: str):
+    path = reachability_path(test_path)
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
             return json.load(f)
@@ -76,7 +76,7 @@ def main(argv: list[str] | None = None) -> None:
     if args.cmd == "report":
         print(rerender_report(args.out, load_theorems(args.test)))
         return
-    reach = _load_reachability()
+    reach = _load_reachability(args.test)
     with ReplClient() as repl:
         run_experiment(repl, load_theorems(args.train), load_theorems(args.test), args.out,
                        reachability=reach)

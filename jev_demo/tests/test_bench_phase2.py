@@ -221,9 +221,10 @@ def test_questions_computed_from_results():
     assert q["unreachable_hard_proved_count"] == 2
 
 
-def test_run_phase2_cli_refuses_without_live_flag(monkeypatch, capsys):
+def test_run_phase2_cli_refuses_without_live_flag(monkeypatch, capsys, tmp_path):
     from jev_demo.__main__ import main
     monkeypatch.delenv("ANTHROPIC_RUN_LIVE", raising=False)
+    monkeypatch.chdir(tmp_path)  # the default --out is relative; committed results live in the repo
     for cmd in ("run-phase2", "collect"):
         with pytest.raises(SystemExit, match="ANTHROPIC_RUN_LIVE"):
             main([cmd])

@@ -4,6 +4,7 @@ name: jev_demo phase 2 (live, spends money)
 # (Settings -> Secrets and variables -> Actions). Never runs on push: start it by adding the
 # `run-phase2-live` label to a pull request (runs on the PR's head branch), or from the Actions tab
 # once this file is on the default branch. Results are committed back to the branch it ran on.
+# `collect` runs only when `jev_demo/data/claude_labels.json` is not committed yet.
 on:
   pull_request:
     types: [labeled]
@@ -12,6 +13,15 @@ on:
       max_usd:
         description: "hard spend cap for run-phase2 (USD)"
         default: "20"
+      test:
+        description: "test set for run-phase2"
+        default: "jev_demo/data/test_hard.json"
+      phase1:
+        description: "phase-1 results.json on the same test set (reference rows)"
+        default: "jev_demo/results_hard/results.json"
+      out:
+        description: "output directory"
+        default: "jev_demo/results_phase2_hard"
 
 permissions:
   contents: write
@@ -28,6 +38,9 @@ jobs:
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       MAX_USD: ${{ github.event.inputs.max_usd || '20' }}
+      TEST_SET: ${{ github.event.inputs.test || 'jev_demo/data/test_hard.json' }}
+      PHASE1: ${{ github.event.inputs.phase1 || 'jev_demo/results_hard/results.json' }}
+      OUT: ${{ github.event.inputs.out || 'jev_demo/results_phase2_hard' }}
       BRANCH: ${{ github.head_ref || github.ref_name }}
 
     steps:
@@ -62,21 +75,25 @@ jobs:
         pip install -e 'jev_demo[dev]'
         python -m pytest jev_demo -q
 
-    - name: collect Claude labels on the train theorems
+    - name: collect Claude labels on the train theorems (skipped if already committed)
       env:
         ANTHROPIC_RUN_LIVE: "1"
       run: |
         set -o pipefail
-        mkdir -p jev_demo/results_phase2
-        python -m jev_demo collect 2>&1 | tee jev_demo/results_phase2/collect.log
+        mkdir -p "$OUT"
+        if [ -f jev_demo/data/claude_labels.json ]; then
+          echo "jev_demo/data/claude_labels.json exists: reusing it, collect skipped" | tee "$OUT/collect.log"
+        else
+          python -m jev_demo collect 2>&1 | tee "$OUT/collect.log"
+        fi
 
     - name: run phase 2 on the test theorems
       env:
         ANTHROPIC_RUN_LIVE: "1"
       run: |
         set -o pipefail
-        python -m jev_demo run-phase2 --out jev_demo/results_phase2 --max-usd "$MAX_USD" 2>&1 \
-          | tee jev_demo/results_phase2/run-phase2.log
+        python -m jev_demo run-phase2 --test "$TEST_SET" --phase1 "$PHASE1" --out "$OUT" \
+          --max-usd "$MAX_USD" 2>&1 | tee "$OUT/run-phase2.log"
 
     - name: upload results and logs
       if: always()
@@ -85,7 +102,7 @@ jobs:
         name: jev-phase2-results
         path: |
           jev_demo/data/claude_labels.json
-          jev_demo/results_phase2/
+          ${{ env.OUT }}/
         if-no-files-found: warn
 
     - name: commit results to the branch
@@ -93,7 +110,7 @@ jobs:
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-        git add -f jev_demo/data/claude_labels.json jev_demo/results_phase2 2>/dev/null || true
+        git add -f jev_demo/data/claude_labels.json "$OUT" 2>/dev/null || true
         if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
         git commit -m "jev_demo: phase 2 live results (run ${{ github.run_id }})"
         git push origin "HEAD:$BRANCH"

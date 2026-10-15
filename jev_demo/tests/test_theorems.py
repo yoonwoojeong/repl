@@ -3,11 +3,13 @@ import os
 
 import pytest
 
-from jev_demo.theorems import DATA_DIR, load_theorems, replay_in_action_space, write_reachability
+from jev_demo.theorems import (DATA_DIR, load_theorems, reachability_path, replay_in_action_space,
+                               write_reachability)
 
 TRAIN = os.path.join(DATA_DIR, "train.json")
 TEST = os.path.join(DATA_DIR, "test.json")
 REACHABILITY = os.path.join(DATA_DIR, "test_reachability.json")
+TEST_HARD = os.path.join(DATA_DIR, "test_hard.json")
 
 
 def test_splits_disjoint_and_sized():
@@ -43,3 +45,24 @@ def test_menu_reachable_flags_written(repl, tmp_path):
     with open(REACHABILITY, encoding="utf-8") as f:
         assert json.load(f) == flags, "committed test_reachability.json is stale: run `python -m jev_demo.theorems --write-reachability`"
     assert out.read_text(encoding="utf-8") == open(REACHABILITY, encoding="utf-8").read()
+
+
+def test_hard_set_is_new_and_hard():
+    """`test_hard.json` (phase-2 harder benchmark): 20 hard theorems, disjoint from train and test."""
+    hard = load_theorems(TEST_HARD)
+    others = load_theorems(TRAIN) + load_theorems(TEST)
+    assert len(hard) == 20 and all(t.difficulty == "hard" for t in hard)
+    assert not {t.statement for t in hard} & {t.statement for t in others}
+    names = [t.name for t in hard + others]
+    assert len(names) == len(set(names))
+    assert reachability_path(TEST) == REACHABILITY
+
+
+@pytest.mark.lean
+def test_hard_gold_proofs_check_and_flags_current(repl, tmp_path):
+    hard = load_theorems(TEST_HARD)
+    assert [t.name for t in hard if not repl.check_proof(t.statement, list(t.gold), t.prelude)] == []
+    flags = write_reachability(repl, TEST_HARD, str(tmp_path / "r.json"))
+    with open(reachability_path(TEST_HARD), encoding="utf-8") as f:
+        assert json.load(f) == flags, ("committed test_hard_reachability.json is stale: run "
+                                       "`python -m jev_demo.theorems --write-reachability jev_demo/data/test_hard.json`")

@@ -156,10 +156,11 @@ def test_whole_proof_k_independent_calls(tmp_path):
 
 def test_prompt_examples_are_train_only():
     train = {t.name for t in load_theorems(os.path.join(DATA_DIR, "train.json"))}
-    test = {t.name for t in load_theorems(os.path.join(DATA_DIR, "test.json"))}
+    tests = [t for f in ("test.json", "test_hard.json") for t in load_theorems(os.path.join(DATA_DIR, f))]
+    test = {t.name for t in tests}
     assert len(EXAMPLE_SOURCES) == 5
     assert set(EXAMPLE_SOURCES) <= train and not set(EXAMPLE_SOURCES) & test
-    for t in load_theorems(os.path.join(DATA_DIR, "test.json")):
+    for t in tests:
         assert t.name not in SYSTEM_PROMPT and t.statement not in SYSTEM_PROMPT
 
 
