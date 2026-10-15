@@ -1,0 +1,2542 @@
+{
+"n": 900,
+"seed": 0,
+"one_liners": [
+"rfl",
+"decide",
+"trivial",
+"omega",
+"simp",
+"simp_all",
+"grind",
+"exact?",
+"intros; simp_all",
+"intros; omega",
+"intros; grind",
+"intro n; induction n <;> simp_all",
+"intro n; induction n <;> grind",
+"intro n; cases n <;> simp_all"
+],
+"rows": [
+{
+"name": "core_List_Cursor_pos_le_length",
+"lemma": "List.Cursor.pos_le_length",
+"statement": "∀ {α : Type u_1} {l : List α} {c : l.Cursor}, c.pos ≤ l.length",
+"screen": "kept"
+},
+{
+"name": "core_List_IsInfix_count_le",
+"lemma": "List.IsInfix.count_le",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {l₁ l₂ : List α} (a : α), l₁ <:+: l₂ → List.count a l₁ ≤ List.count a l₂",
+"screen": "kept"
+},
+{
+"name": "core_List_IsInfix_le_count",
+"lemma": "List.IsInfix.le_count",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {l₁ l₂ : List α}, l₁ <:+: l₂ → ∀ (a : α), List.count a l₂ - (l₂.length - l₁.length) ≤ List.count a l₁",
+"screen": "kept"
+},
+{
+"name": "core_List_IsInfix_map",
+"lemma": "List.IsInfix.map",
+"statement": "∀ {α : Type u_1} {β : Type u_2} (f : α → β) ⦃l₁ l₂ : List α⦄, l₁ <:+: l₂ → List.map f l₁ <:+: List.map f l₂",
+"screen": "easy"
+},
+{
+"name": "core_List_IsInfix_subset",
+"lemma": "List.IsInfix.subset",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, l₁ <:+: l₂ → l₁ ⊆ l₂",
+"screen": "easy"
+},
+{
+"name": "core_List_IsPrefix_trans",
+"lemma": "List.IsPrefix.trans",
+"statement": "∀ {α : Type u_1} {l₁ l₂ l₃ : List α}, l₁ <+: l₂ → l₂ <+: l₃ → l₁ <+: l₃",
+"screen": "easy"
+},
+{
+"name": "core_List_IsSuffix_le_count",
+"lemma": "List.IsSuffix.le_count",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {l₁ l₂ : List α}, l₁ <:+ l₂ → ∀ (a : α), List.count a l₂ - (l₂.length - l₁.length) ≤ List.count a l₁",
+"screen": "kept"
+},
+{
+"name": "core_List_IsSuffix_sublist",
+"lemma": "List.IsSuffix.sublist",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, l₁ <:+ l₂ → l₁.Sublist l₂",
+"screen": "kept"
+},
+{
+"name": "core_List_MergeSort_Internal_splitInTwo_fst_le_splitInTwo_snd",
+"lemma": "List.MergeSort.Internal.splitInTwo_fst_le_splitInTwo_snd",
+"statement": "∀ {α : Type u_1} {n : Nat} {le : α → α → Prop} {l : { l // l.length = n }}, List.Pairwise le l.val → ∀ (a b : α), a ∈ (List.MergeSort.Internal.splitInTwo l).fst.val → b ∈ (List.MergeSort.Internal.splitInTwo l).snd.val → le a b",
+"screen": "kept"
+},
+{
+"name": "core_List_MergeSort_Internal_splitRevAt_eq",
+"lemma": "List.MergeSort.Internal.splitRevAt_eq",
+"statement": "∀ {α : Type u_1} (i : Nat) (l : List α), List.MergeSort.Internal.splitRevAt i l = ((List.take i l).reverse, List.drop i l)",
+"screen": "kept"
+},
+{
+"name": "core_List_MergeSort_Internal_splitRevInTwo_snd",
+"lemma": "List.MergeSort.Internal.splitRevInTwo_snd",
+"statement": "∀ {α : Type u_1} {n : Nat} (l : { l // l.length = n }), (List.MergeSort.Internal.splitRevInTwo l).snd = ⟨(List.MergeSort.Internal.splitInTwo l).snd.val, ⋯⟩",
+"screen": "invalid"
+},
+{
+"name": "core_List_Nodup_getElem_inj",
+"lemma": "List.Nodup.getElem_inj",
+"statement": "∀ {α : Type u_1} {i j : Nat} {xs : List α}, xs.Nodup → ∀ {hi : i < xs.length} {hj : j < xs.length}, xs[i] = xs[j] ↔ i = j",
+"screen": "easy"
+},
+{
+"name": "core_List_Pairwise_and",
+"lemma": "List.Pairwise.and",
+"statement": "∀ {α : Type u_1} {R : α → α → Prop} {l : List α} {S : α → α → Prop}, List.Pairwise R l → List.Pairwise S l → List.Pairwise (fun a b => R a b ∧ S a b) l",
+"screen": "easy"
+},
+{
+"name": "core_List_Pairwise_iff",
+"lemma": "List.Pairwise.iff",
+"statement": "∀ {α : Type u_1} {R S : α → α → Prop}, (∀ (a b : α), R a b ↔ S a b) → ∀ {l : List α}, List.Pairwise R l ↔ List.Pairwise S l",
+"screen": "kept"
+},
+{
+"name": "core_List_Pairwise_imp_mem",
+"lemma": "List.Pairwise.imp_mem",
+"statement": "∀ {α : Type u_1} {R : α → α → Prop} {l : List α}, List.Pairwise R l ↔ List.Pairwise (fun x y => x ∈ l → y ∈ l → R x y) l",
+"screen": "kept"
+},
+{
+"name": "core_List_Pairwise_sublist",
+"lemma": "List.Pairwise.sublist",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α} {R : α → α → Prop}, l₁.Sublist l₂ → List.Pairwise R l₂ → List.Pairwise R l₁",
+"screen": "easy"
+},
+{
+"name": "core_List_Perm_append_right",
+"lemma": "List.Perm.append_right",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α} (t₁ : List α), l₁.Perm l₂ → (l₁ ++ t₁).Perm (l₂ ++ t₁)",
+"screen": "kept"
+},
+{
+"name": "core_List_Perm_subset",
+"lemma": "List.Perm.subset",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, l₁.Perm l₂ → l₁ ⊆ l₂",
+"screen": "easy"
+},
+{
+"name": "core_List_Sublist_append",
+"lemma": "List.Sublist.append",
+"statement": "∀ {α : Type u_1} {l₁ l₂ r₁ r₂ : List α}, l₁.Sublist l₂ → r₁.Sublist r₂ → (l₁ ++ r₁).Sublist (l₂ ++ r₂)",
+"screen": "easy"
+},
+{
+"name": "core_List_Sublist_erase",
+"lemma": "List.Sublist.erase",
+"statement": "∀ {α : Type u_1} [inst : BEq α] (a : α) {l₁ l₂ : List α}, l₁.Sublist l₂ → (l₁.erase a).Sublist (l₂.erase a)",
+"screen": "kept"
+},
+{
+"name": "core_List_Sublist_find?_isSome",
+"lemma": "List.Sublist.find?_isSome",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {l₁ l₂ : List α}, l₁.Sublist l₂ → (List.find? p l₁).isSome = true → (List.find? p l₂).isSome = true",
+"screen": "easy"
+},
+{
+"name": "core_List_Sublist_map",
+"lemma": "List.Sublist.map",
+"statement": "∀ {α : Type u_1} {β : Type u_2} (f : α → β) {l₁ l₂ : List α}, l₁.Sublist l₂ → (List.map f l₁).Sublist (List.map f l₂)",
+"screen": "easy"
+},
+{
+"name": "core_List_Sublist_middle",
+"lemma": "List.Sublist.middle",
+"statement": "∀ {α : Type u_1} {l₁ l₂ l : List α}, l.Sublist (l₁ ++ l₂) → ∀ (a : α), l.Sublist (l₁ ++ a :: l₂)",
+"screen": "easy"
+},
+{
+"name": "core_List_allM_toArray",
+"lemma": "List.allM_toArray",
+"statement": "∀ {m : Type → Type u_1} {α : Type u_2} [inst : Monad m] [LawfulMonad m] {p : α → m Bool} {l : List α}, Array.allM p l.toArray = List.allM p l",
+"screen": "easy"
+},
+{
+"name": "core_List_all_bne'",
+"lemma": "List.all_bne'",
+"statement": "∀ {α : Type u_1} {a : α} [inst : BEq α] [PartialEquivBEq α] {l : List α}, (l.all fun x => x != a) = !l.contains a",
+"screen": "kept"
+},
+{
+"name": "core_List_all_eq",
+"lemma": "List.all_eq",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {l : List α}, l.all p = decide (∀ (x : α), x ∈ l → p x = true)",
+"screen": "easy"
+},
+{
+"name": "core_List_all_map",
+"lemma": "List.all_map",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → β} {l : List α} {p : β → Bool}, (List.map f l).all p = l.all (p ∘ f)",
+"screen": "easy"
+},
+{
+"name": "core_List_all_subtype",
+"lemma": "List.all_subtype",
+"statement": "∀ {α : Type u_1} {p : α → Prop} {l : List { x // p x }} {f : { x // p x } → Bool} {g : α → Bool}, (∀ (x : α) (h : p x), f ⟨x, h⟩ = g x) → l.all f = l.unattach.all g",
+"screen": "kept"
+},
+{
+"name": "core_List_any_append",
+"lemma": "List.any_append",
+"statement": "∀ {α : Type u_1} {f : α → Bool} {xs ys : List α}, (xs ++ ys).any f = (xs.any f || ys.any f)",
+"screen": "easy"
+},
+{
+"name": "core_List_any_beq",
+"lemma": "List.any_beq",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {l : List α} {a : α}, (l.any fun x => a == x) = l.contains a",
+"screen": "easy"
+},
+{
+"name": "core_List_any_toArray'",
+"lemma": "List.any_toArray'",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {l : List α} {stop : Nat}, stop = l.toArray.size → l.toArray.any p 0 stop = l.any p",
+"screen": "easy"
+},
+{
+"name": "core_List_append_concat",
+"lemma": "List.append_concat",
+"statement": "∀ {α : Type u_1} {a : α} {l₁ l₂ : List α}, l₁ ++ l₂.concat a = (l₁ ++ l₂).concat a",
+"screen": "easy"
+},
+{
+"name": "core_List_append_singleton_inj",
+"lemma": "List.append_singleton_inj",
+"statement": "∀ {α : Type u_1} {a b : α} {as bs : List α}, as ++ [a] = bs ++ [b] ↔ as = bs ∧ a = b",
+"screen": "easy"
+},
+{
+"name": "core_List_append_sublist_iff",
+"lemma": "List.append_sublist_iff",
+"statement": "∀ {α : Type u_1} {r l₁ l₂ : List α}, (l₁ ++ l₂).Sublist r ↔ ∃ r₁ r₂, r = r₁ ++ r₂ ∧ l₁.Sublist r₁ ∧ l₂.Sublist r₂",
+"screen": "kept"
+},
+{
+"name": "core_List_append_subset",
+"lemma": "List.append_subset",
+"statement": "∀ {α : Type u_1} {l₁ l₂ l : List α}, l₁ ++ l₂ ⊆ l ↔ l₁ ⊆ l ∧ l₂ ⊆ l",
+"screen": "easy"
+},
+{
+"name": "core_List_apply_maxOn_le_iff",
+"lemma": "List.apply_maxOn_le_iff",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] [Std.IsLinearPreorder β] {xs : List α} {f : α → β} (h : xs ≠ []) {b : β}, f (List.maxOn f xs h) ≤ b ↔ ∀ (x : α), x ∈ xs → f x ≤ b",
+"screen": "kept"
+},
+{
+"name": "core_List_apply_maxOn_lt_apply_getElem_of_lt_maxIdxOn",
+"lemma": "List.apply_maxOn_lt_apply_getElem_of_lt_maxIdxOn",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] [inst_2 : LT β] [Std.IsLinearPreorder β] [Std.LawfulOrderLT β] {f : α → β} {xs : List α} (h : xs ≠ []) {k : Nat} (hk : k < List.maxIdxOn f xs h), f xs[k] < f (List.maxOn f xs h)",
+"screen": "kept"
+},
+{
+"name": "core_List_apply_maxOn_lt_iff",
+"lemma": "List.apply_maxOn_lt_iff",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] [inst_2 : LT β] [Std.IsLinearPreorder β] [Std.LawfulOrderLT β] {xs : List α} {f : α → β} (h : xs ≠ []) {b : β}, f (List.maxOn f xs h) < b ↔ ∀ (x : α), x ∈ xs → f x < b",
+"screen": "kept"
+},
+{
+"name": "core_List_compareLex_nil_cons",
+"lemma": "List.compareLex_nil_cons",
+"statement": "∀ {α : Type u_1} {cmp : α → α → Ordering} {x : α} {xs : List α}, List.compareLex cmp [] (x :: xs) = Ordering.lt",
+"screen": "kept"
+},
+{
+"name": "core_List_compare_cons_nil",
+"lemma": "List.compare_cons_nil",
+"statement": "∀ {α : Type u_1} [inst : Ord α] {x : α} {xs : List α}, compare (x :: xs) [] = Ordering.gt",
+"screen": "easy"
+},
+{
+"name": "core_List_cons_injEq",
+"lemma": "List.cons.injEq",
+"statement": "∀ {α : Type u} (head : α) (tail : List α) (head_1 : α) (tail_1 : List α), (head :: tail = head_1 :: tail_1) = (head = head_1 ∧ tail = tail_1)",
+"screen": "easy"
+},
+{
+"name": "core_List_cons_inj_right",
+"lemma": "List.cons_inj_right",
+"statement": "∀ {α : Type u_1} (a : α) {l l' : List α}, a :: l = a :: l' ↔ l = l'",
+"screen": "easy"
+},
+{
+"name": "core_List_contains_append",
+"lemma": "List.contains_append",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {l₁ l₂ : List α} {x : α}, (l₁ ++ l₂).contains x = (l₁.contains x || l₂.contains x)",
+"screen": "easy"
+},
+{
+"name": "core_List_contains_cons",
+"lemma": "List.contains_cons",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {a b : α} {l : List α}, (a :: l).contains b = (b == a || l.contains b)",
+"screen": "easy"
+},
+{
+"name": "core_List_contains_iff_exists_mem_beq",
+"lemma": "List.contains_iff_exists_mem_beq",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {l : List α} {a : α}, l.contains a = true ↔ ∃ a', a' ∈ l ∧ (a == a') = true",
+"screen": "easy"
+},
+{
+"name": "core_List_contains_insert",
+"lemma": "List.contains_insert",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [PartialEquivBEq α] {l : List α} {a x : α}, (List.insert a l).contains x = (x == a || l.contains x)",
+"screen": "easy"
+},
+{
+"name": "core_List_countP_mono_left",
+"lemma": "List.countP_mono_left",
+"statement": "∀ {α : Type u_1} {p q : α → Bool} {l : List α}, (∀ (x : α), x ∈ l → p x = true → q x = true) → List.countP p l ≤ List.countP q l",
+"screen": "easy"
+},
+{
+"name": "core_List_countP_pos_iff",
+"lemma": "List.countP_pos_iff",
+"statement": "∀ {α : Type u_1} {l : List α} {p : α → Bool}, 0 < List.countP p l ↔ ∃ a, a ∈ l ∧ p a = true",
+"screen": "easy"
+},
+{
+"name": "core_List_count_cons",
+"lemma": "List.count_cons",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {a b : α} {l : List α}, List.count a (b :: l) = List.count a l + if (b == a) = true then 1 else 0",
+"screen": "kept"
+},
+{
+"name": "core_List_count_erase",
+"lemma": "List.count_erase",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {a b : α} {l : List α}, List.count a (l.erase b) = List.count a l - if (b == a) = true then 1 else 0",
+"screen": "kept"
+},
+{
+"name": "core_List_count_le_length",
+"lemma": "List.count_le_length",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {a : α} {l : List α}, List.count a l ≤ l.length",
+"screen": "kept"
+},
+{
+"name": "core_List_count_replicate_self",
+"lemma": "List.count_replicate_self",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {a : α} {n : Nat}, List.count a (List.replicate n a) = n",
+"screen": "kept"
+},
+{
+"name": "core_List_count_toArray",
+"lemma": "List.count_toArray",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {l : List α} {a : α}, Array.count a l.toArray = List.count a l",
+"screen": "easy"
+},
+{
+"name": "core_List_drop_drop",
+"lemma": "List.drop_drop",
+"statement": "∀ {α : Type u_1} {i j : Nat} {l : List α}, List.drop i (List.drop j l) = List.drop (j + i) l",
+"screen": "kept"
+},
+{
+"name": "core_List_drop_modifyHead_of_pos",
+"lemma": "List.drop_modifyHead_of_pos",
+"statement": "∀ {α : Type u_1} {f : α → α} {l : List α} {i : Nat}, 0 < i → List.drop i (List.modifyHead f l) = List.drop i l",
+"screen": "kept"
+},
+{
+"name": "core_List_drop_set_of_lt",
+"lemma": "List.drop_set_of_lt",
+"statement": "∀ {α : Type u_1} {a : α} {i j : Nat} {l : List α}, i < j → List.drop j (l.set i a) = List.drop j l",
+"screen": "kept"
+},
+{
+"name": "core_List_drop_subset_drop_left",
+"lemma": "List.drop_subset_drop_left",
+"statement": "∀ {α : Type u_1} (l : List α) {i j : Nat}, i ≤ j → List.drop j l ⊆ List.drop i l",
+"screen": "easy"
+},
+{
+"name": "core_List_drop_take",
+"lemma": "List.drop_take",
+"statement": "∀ {α : Type u_1} {i j : Nat} {l : List α}, List.drop i (List.take j l) = List.take (j - i) (List.drop i l)",
+"screen": "kept"
+},
+{
+"name": "core_List_elem_cons_self",
+"lemma": "List.elem_cons_self",
+"statement": "∀ {α : Type u_1} {as : List α} [inst : BEq α] [LawfulBEq α] {a : α}, List.elem a (a :: as) = true",
+"screen": "easy"
+},
+{
+"name": "core_List_eraseDupsBy_cons",
+"lemma": "List.eraseDupsBy_cons",
+"statement": "∀ {α : Type u_1} {a : α} {as : List α} {r : α → α → Bool}, List.eraseDupsBy r (a :: as) = a :: List.eraseDupsBy r (List.filter (fun b => decide (r b a = false)) as)",
+"screen": "easy"
+},
+{
+"name": "core_List_eraseIdx_append_of_length_le",
+"lemma": "List.eraseIdx_append_of_length_le",
+"statement": "∀ {α : Type u_1} {l : List α} {k : Nat}, l.length ≤ k → ∀ (l' : List α), (l ++ l').eraseIdx k = l ++ l'.eraseIdx (k - l.length)",
+"screen": "easy"
+},
+{
+"name": "core_List_eraseIdx_append_of_lt_length",
+"lemma": "List.eraseIdx_append_of_lt_length",
+"statement": "∀ {α : Type u_1} {l : List α} {k : Nat}, k < l.length → ∀ (l' : List α), (l ++ l').eraseIdx k = l.eraseIdx k ++ l'",
+"screen": "easy"
+},
+{
+"name": "core_List_eraseIdx_cons_zero",
+"lemma": "List.eraseIdx_cons_zero",
+"statement": "∀ {α : Type u_1} {a : α} {as : List α}, (a :: as).eraseIdx 0 = as",
+"screen": "easy"
+},
+{
+"name": "core_List_eraseP_append_right",
+"lemma": "List.eraseP_append_right",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {l₁ : List α} (l₂ : List α), (∀ (b : α), b ∈ l₁ → ¬p b = true) → List.eraseP p (l₁ ++ l₂) = l₁ ++ List.eraseP p l₂",
+"screen": "easy"
+},
+{
+"name": "core_List_eraseP_toArray",
+"lemma": "List.eraseP_toArray",
+"statement": "∀ {α : Type u_1} {as : List α} {p : α → Bool}, as.toArray.eraseP p = (List.eraseP p as).toArray",
+"screen": "easy"
+},
+{
+"name": "core_List_erase_nil",
+"lemma": "List.erase_nil",
+"statement": "∀ {α : Type u} [inst : BEq α] (a : α), [].erase a = []",
+"screen": "easy"
+},
+{
+"name": "core_List_erase_subset",
+"lemma": "List.erase_subset",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {a : α} {l : List α}, l.erase a ⊆ l",
+"screen": "kept"
+},
+{
+"name": "core_List_exists_of_mem_flatten",
+"lemma": "List.exists_of_mem_flatten",
+"statement": "∀ {α : Type u_1} {L : List (List α)} {a : α}, a ∈ L.flatten → ∃ l, l ∈ L ∧ a ∈ l",
+"screen": "easy"
+},
+{
+"name": "core_List_ext_get",
+"lemma": "List.ext_get",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, l₁.length = l₂.length → (∀ (n : Nat) (h₁ : n < l₁.length) (h₂ : n < l₂.length), l₁.get ⟨n, h₁⟩ = l₂.get ⟨n, h₂⟩) → l₁ = l₂",
+"screen": "easy"
+},
+{
+"name": "core_List_filterMap_some",
+"lemma": "List.filterMap_some",
+"statement": "∀ {α : Type u_1} {l : List α}, List.filterMap some l = l",
+"screen": "easy"
+},
+{
+"name": "core_List_filterTR_loop_eq",
+"lemma": "List.filterTR_loop_eq",
+"statement": "∀ {α : Type u} {p : α → Bool} {as bs : List α}, List.filterTR.loop p as bs = bs.reverse ++ List.filter p as",
+"screen": "kept"
+},
+{
+"name": "core_List_filter_append_perm",
+"lemma": "List.filter_append_perm",
+"statement": "∀ {α : Type u_1} (p : α → Bool) (l : List α), (List.filter p l ++ List.filter (fun x => !p x) l).Perm l",
+"screen": "kept"
+},
+{
+"name": "core_List_filter_filter",
+"lemma": "List.filter_filter",
+"statement": "∀ {α : Type u_1} {p q : α → Bool} {l : List α}, List.filter p (List.filter q l) = List.filter (fun a => p a && q a) l",
+"screen": "easy"
+},
+{
+"name": "core_List_filter_replicate",
+"lemma": "List.filter_replicate",
+"statement": "∀ {n : Nat} {α : Type u_1} {a : α} {p : α → Bool}, List.filter p (List.replicate n a) = if p a = true then List.replicate n a else []",
+"screen": "easy"
+},
+{
+"name": "core_List_finRange_succ",
+"lemma": "List.finRange_succ",
+"statement": "∀ {n : Nat}, List.finRange (n + 1) = 0 :: List.map Fin.succ (List.finRange n)",
+"screen": "kept"
+},
+{
+"name": "core_List_find?_append",
+"lemma": "List.find?_append",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {xs ys : List α}, List.find? p (xs ++ ys) = (List.find? p xs).or (List.find? p ys)",
+"screen": "easy"
+},
+{
+"name": "core_List_find?_cons_of_pos",
+"lemma": "List.find?_cons_of_pos",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {a : α} {l : List α}, p a = true → List.find? p (a :: l) = some a",
+"screen": "easy"
+},
+{
+"name": "core_List_find?_filterMap",
+"lemma": "List.find?_filterMap",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {xs : List α} {f : α → Option β} {p : β → Bool}, List.find? p (List.filterMap f xs) = (List.find? (fun a => Option.any p (f a)) xs).bind f",
+"screen": "easy"
+},
+{
+"name": "core_List_find?_some",
+"lemma": "List.find?_some",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {a : α} {l : List α}, List.find? p l = some a → p a = true",
+"screen": "easy"
+},
+{
+"name": "core_List_findIdx_singleton",
+"lemma": "List.findIdx_singleton",
+"statement": "∀ {α : Type u_1} {a : α} {p : α → Bool}, List.findIdx p [a] = if p a = true then 0 else 1",
+"screen": "kept"
+},
+{
+"name": "core_List_findIdx_subtype",
+"lemma": "List.findIdx_subtype",
+"statement": "∀ {α : Type u_1} {p : α → Prop} {l : List { x // p x }} {f : { x // p x } → Bool} {g : α → Bool}, (∀ (x : α) (h : p x), f ⟨x, h⟩ = g x) → List.findIdx f l = List.findIdx g l.unattach",
+"screen": "kept"
+},
+{
+"name": "core_List_findM?_toArray",
+"lemma": "List.findM?_toArray",
+"statement": "∀ {m : Type → Type u_1} {α : Type} [inst : Monad m] [LawfulMonad m] (f : α → m Bool) (l : List α), Array.findM? f l.toArray = List.findM? f l",
+"screen": "easy"
+},
+{
+"name": "core_List_flatMapM_loop_induct_unfolding",
+"lemma": "List.flatMapM.loop.induct_unfolding",
+"statement": "∀ {m : Type u → Type v} [inst : Monad m] {α : Type w} {β : Type u} (f : α → m (List β)) (motive : List α → List (List β) → m (List β) → Prop), (∀ (bs : List (List β)), motive [] bs (pure bs.reverse.flatten)) → (∀ (a : α) (as : List α) (bs : List (List β)), (∀ (bs' : List β), motive as (bs' :: bs) (List.flatMapM.loop f as (bs' :: bs))) → motive (a :: as) bs do let bs' ← f a List.flatMapM.loop f as (bs' :: bs)) → ∀ (x : List α) (x_1 : List (List β)), motive x x_1 (List.flatMapM.loop f x x_1)",
+"screen": "kept"
+},
+{
+"name": "core_List_flatten_ne_nil_iff",
+"lemma": "List.flatten_ne_nil_iff",
+"statement": "∀ {α : Type u_1} {xss : List (List α)}, xss.flatten ≠ [] ↔ ∃ xs, xs ∈ xss ∧ xs ≠ []",
+"screen": "easy"
+},
+{
+"name": "core_List_flatten_nil",
+"lemma": "List.flatten_nil",
+"statement": "∀ {α : Type u}, [].flatten = []",
+"screen": "kept"
+},
+{
+"name": "core_List_flatten_singleton",
+"lemma": "List.flatten_singleton",
+"statement": "∀ {α : Type u_1} {l : List α}, [l].flatten = l",
+"screen": "easy"
+},
+{
+"name": "core_List_foldlM_attachWith",
+"lemma": "List.foldlM_attachWith",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] {l : List α} {q : α → Prop} (H : ∀ (a : α), a ∈ l → q a) {f : β → { x // q x } → m β} {b : β}, List.foldlM f b (l.attachWith q H) = List.foldlM (fun b x => match x with | ⟨a, h⟩ => f b ⟨a, ⋯⟩) b l.attach",
+"screen": "kept"
+},
+{
+"name": "core_List_foldlM_cons",
+"lemma": "List.foldlM_cons",
+"statement": "∀ {m : Type u_1 → Type u_2} {β : Type u_1} {α : Type u_3} [inst : Monad m] {f : β → α → m β} {b : β} {a : α} {l : List α}, List.foldlM f b (a :: l) = do let init ← f b a List.foldlM f init l",
+"screen": "invalid"
+},
+{
+"name": "core_List_foldlM_map",
+"lemma": "List.foldlM_map",
+"statement": "∀ {m : Type u_1 → Type u_2} {β₁ : Type u_3} {β₂ : Type u_4} {α : Type u_1} [inst : Monad m] {f : β₁ → β₂} {g : α → β₂ → m α} {l : List β₁} {init : α}, List.foldlM g init (List.map f l) = List.foldlM (fun x y => g x (f y)) init l",
+"screen": "kept"
+},
+{
+"name": "core_List_foldrM_attachWith",
+"lemma": "List.foldrM_attachWith",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] [LawfulMonad m] {l : List α} {q : α → Prop} (H : ∀ (a : α), a ∈ l → q a) {f : { x // q x } → β → m β} {b : β}, List.foldrM f b (l.attachWith q H) = List.foldrM (fun a acc => f ⟨a.val, ⋯⟩ acc) b l.attach",
+"screen": "kept"
+},
+{
+"name": "core_List_foldrM_nil",
+"lemma": "List.foldrM_nil",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] {f : α → β → m β} {b : β}, List.foldrM f b [] = pure b",
+"screen": "easy"
+},
+{
+"name": "core_List_foldrM_toArray'",
+"lemma": "List.foldrM_toArray'",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} {start : Nat} [inst : Monad m] (f : α → β → m β) (init : β) (l : List α), start = l.toArray.size → Array.foldrM f init l.toArray start = List.foldrM f init l",
+"screen": "easy"
+},
+{
+"name": "core_List_foldrM_wfParam",
+"lemma": "List.foldrM_wfParam",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] [LawfulMonad m] {xs : List α} {f : α → β → m β} {init : β}, List.foldrM f init (wfParam xs) = List.foldrM f init xs.attach.unattach",
+"screen": "kept"
+},
+{
+"name": "core_List_foldr_add_const",
+"lemma": "List.foldr_add_const",
+"statement": "∀ {α : Type u_1} {l : List α} {a b : Nat}, List.foldr (fun x x_1 => x_1 + a) b l = b + a * l.length",
+"screen": "easy"
+},
+{
+"name": "core_List_foldr_assoc",
+"lemma": "List.foldr_assoc",
+"statement": "∀ {α : Type u_1} {op : α → α → α} [ha : Std.Associative op] {l : List α} {a₁ a₂ : α}, List.foldr op (op a₁ a₂) l = op (List.foldr op a₁ l) a₂",
+"screen": "kept"
+},
+{
+"name": "core_List_foldr_rel",
+"lemma": "List.foldr_rel",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {l : List α} {f : α → β → β} {g : α → γ → γ} {a : β} {b : γ} {r : β → γ → Prop}, r a b → (∀ (a : α), a ∈ l → ∀ (c : β) (c' : γ), r c c' → r (f a c) (g a c')) → r (List.foldr (fun a acc => f a acc) a l) (List.foldr (fun a acc => g a acc) b l)",
+"screen": "easy"
+},
+{
+"name": "core_List_forIn'_cons",
+"lemma": "List.forIn'_cons",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] {a : α} {as : List α} (f : (a' : α) → a' ∈ a :: as → β → m (ForInStep β)) (b : β), forIn' (a :: as) b f = do let x ← f a ⋯ b match x with | ForInStep.done b => pure b | ForInStep.yield b => forIn' as b fun a' m b => f a' ⋯ b",
+"screen": "invalid"
+},
+{
+"name": "core_List_forM_append",
+"lemma": "List.forM_append",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} [inst : Monad m] [LawfulMonad m] {l₁ l₂ : List α} {f : α → m PUnit}, forM (l₁ ++ l₂) f = do forM l₁ f forM l₂ f",
+"screen": "invalid"
+},
+{
+"name": "core_List_forM_cons",
+"lemma": "List.forM_cons",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} [inst : Monad m] {f : α → m PUnit} {a : α} {as : List α}, forM (a :: as) f = do f a forM as f",
+"screen": "invalid"
+},
+{
+"name": "core_List_forM_toArray",
+"lemma": "List.forM_toArray",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} [inst : Monad m] (l : List α) (f : α → m PUnit), forM l.toArray f = l.forM f",
+"screen": "easy"
+},
+{
+"name": "core_List_getElem?_cons_succ",
+"lemma": "List.getElem?_cons_succ",
+"statement": "∀ {α : Type u_1} {a : α} {i : Nat} {l : List α}, (a :: l)[i + 1]? = l[i]?",
+"screen": "easy"
+},
+{
+"name": "core_List_getElem?_cons_zero",
+"lemma": "List.getElem?_cons_zero",
+"statement": "∀ {α : Type u_1} {a : α} {l : List α}, (a :: l)[0]? = some a",
+"screen": "easy"
+},
+{
+"name": "core_List_getElem?_eraseIdx_of_lt",
+"lemma": "List.getElem?_eraseIdx_of_lt",
+"statement": "∀ {α : Type u_1} {l : List α} {i j : Nat}, j < i → (l.eraseIdx i)[j]? = l[j]?",
+"screen": "easy"
+},
+{
+"name": "core_List_getElem?_insert_zero",
+"lemma": "List.getElem?_insert_zero",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [inst_1 : LawfulBEq α] {l : List α} {a : α}, (List.insert a l)[0]? = if a ∈ l then l[0]? else some a",
+"screen": "kept"
+},
+{
+"name": "core_List_getElem?_intersperse",
+"lemma": "List.getElem?_intersperse",
+"statement": "∀ {α : Type u_1} {l : List α} {sep : α} {i : Nat}, (List.intersperse sep l)[i]? = if i % 2 = 0 then l[i / 2]? else if i < 2 * l.length - 1 then some sep else none",
+"screen": "easy"
+},
+{
+"name": "core_List_getElem?_modifyHead_zero",
+"lemma": "List.getElem?_modifyHead_zero",
+"statement": "∀ {α : Type u_1} {l : List α} {f : α → α}, (List.modifyHead f l)[0]? = Option.map f l[0]?",
+"screen": "easy"
+},
+{
+"name": "core_List_getElem?_scanr",
+"lemma": "List.getElem?_scanr",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {b : β} {l : List α} {i : Nat} {f : α → β → β}, (List.scanr f b l)[i]? = if i < l.length + 1 then some (List.foldr f b (List.drop i l)) else none",
+"screen": "easy"
+},
+{
+"name": "core_List_getElem?_zipWith",
+"lemma": "List.getElem?_zipWith",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {as : List α} {bs : List β} {f : α → β → γ} {i : Nat}, (List.zipWith f as bs)[i]? = match as[i]?, bs[i]? with | some a, some b => some (f a b) | x, x_1 => none",
+"screen": "easy"
+},
+{
+"name": "core_List_getElem_append",
+"lemma": "List.getElem_append",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α} {i : Nat} (h : i < (l₁ ++ l₂).length), (l₁ ++ l₂)[i] = if h' : i < l₁.length then l₁[i] else l₂[i - l₁.length]",
+"screen": "kept"
+},
+{
+"name": "core_List_getElem_attach",
+"lemma": "List.getElem_attach",
+"statement": "∀ {α : Type u_1} {xs : List α} {i : Nat} (h : i < xs.attach.length), xs.attach[i] = ⟨xs[i], ⋯⟩",
+"screen": "kept"
+},
+{
+"name": "core_List_getElem_cons_drop",
+"lemma": "List.getElem_cons_drop",
+"statement": "∀ {α : Type u_1} {as : List α} {i : Nat} (h : i < as.length), as[i] :: List.drop (i + 1) as = List.drop i as",
+"screen": "kept"
+},
+{
+"name": "core_List_getElem_eraseIdx_of_ge",
+"lemma": "List.getElem_eraseIdx_of_ge",
+"statement": "∀ {α : Type u_1} {l : List α} {i j : Nat} (h : j < (l.eraseIdx i).length) (h' : i ≤ j), (l.eraseIdx i)[j] = l[j + 1]",
+"screen": "kept"
+},
+{
+"name": "core_List_getElem_get_minIdxOn?",
+"lemma": "List.getElem_get_minIdxOn?",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] [Std.IsLinearPreorder β] {f : α → β} {xs : List α} (h : (List.minIdxOn? f xs).isSome = true), xs[(List.minIdxOn? f xs).get h] = List.minOn f xs ⋯",
+"screen": "kept"
+},
+{
+"name": "core_List_getElem_idxOf",
+"lemma": "List.getElem_idxOf",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {x : α} {xs : List α} (h : List.idxOf x xs < xs.length), xs[List.idxOf x xs] = x",
+"screen": "kept"
+},
+{
+"name": "core_List_getElem_insert",
+"lemma": "List.getElem_insert",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [inst_1 : LawfulBEq α] {l : List α} {a : α} {i : Nat} (h : i < l.length), (List.insert a l)[i] = if a ∈ l then l[i] else if i = 0 then a else l[i - 1]",
+"screen": "kept"
+},
+{
+"name": "core_List_getElem_mapFinIdx",
+"lemma": "List.getElem_mapFinIdx",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {as : List α} {f : (i : Nat) → α → i < as.length → β} {i : Nat} {h : i < (as.mapFinIdx f).length}, (as.mapFinIdx f)[i] = f i as[i] ⋯",
+"screen": "kept"
+},
+{
+"name": "core_List_getElem_replace_of_ne",
+"lemma": "List.getElem_replace_of_ne",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {a b : α} [LawfulBEq α] {l : List α} {i : Nat} {h : i < l.length}, l[i] ≠ a → (l.replace a b)[i] = l[i]",
+"screen": "kept"
+},
+{
+"name": "core_List_getElem_set_self",
+"lemma": "List.getElem_set_self",
+"statement": "∀ {α : Type u_1} {l : List α} {i : Nat} {a : α} (h : i < (l.set i a).length), (l.set i a)[i] = a",
+"screen": "easy"
+},
+{
+"name": "core_List_getElem_zipWith",
+"lemma": "List.getElem_zipWith",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {f : α → β → γ} {l : List α} {l' : List β} {i : Nat} {h : i < (List.zipWith f l l').length}, (List.zipWith f l l')[i] = f l[i] l'[i]",
+"screen": "kept"
+},
+{
+"name": "core_List_getLast?_concat",
+"lemma": "List.getLast?_concat",
+"statement": "∀ {α : Type u_1} {l : List α} {a : α}, (l ++ [a]).getLast? = some a",
+"screen": "easy"
+},
+{
+"name": "core_List_getLast?_cons_of_ne_nil",
+"lemma": "List.getLast?_cons_of_ne_nil",
+"statement": "∀ {α : Type u_1} {x : α} {xs : List α}, xs ≠ [] → (x :: xs).getLast? = xs.getLast?",
+"screen": "easy"
+},
+{
+"name": "core_List_getLast?_filter",
+"lemma": "List.getLast?_filter",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {l : List α}, (List.filter p l).getLast? = List.find? p l.reverse",
+"screen": "easy"
+},
+{
+"name": "core_List_getLast?_flatMap",
+"lemma": "List.getLast?_flatMap",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {l : List α} {f : α → List β}, (List.flatMap f l).getLast? = List.findSome? (fun a => (f a).getLast?) l.reverse",
+"screen": "easy"
+},
+{
+"name": "core_List_getLast?_map",
+"lemma": "List.getLast?_map",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → β} {l : List α}, (List.map f l).getLast? = Option.map f l.getLast?",
+"screen": "easy"
+},
+{
+"name": "core_List_getLast?_nil",
+"lemma": "List.getLast?_nil",
+"statement": "∀ {α : Type u}, [].getLast? = none",
+"screen": "kept"
+},
+{
+"name": "core_List_getLastD_map",
+"lemma": "List.getLastD_map",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → β} {l : List α} {a : α}, (List.map f l).getLastD (f a) = f (l.getLastD a)",
+"screen": "easy"
+},
+{
+"name": "core_List_getLast_filter",
+"lemma": "List.getLast_filter",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {l : List α} (h : List.filter p l ≠ []), (List.filter p l).getLast h = (List.find? p l.reverse).get ⋯",
+"screen": "kept"
+},
+{
+"name": "core_List_getLast_filter_of_pos",
+"lemma": "List.getLast_filter_of_pos",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {l : List α} (w : l ≠ []) (h : p (l.getLast w) = true), (List.filter p l).getLast ⋯ = l.getLast w",
+"screen": "kept"
+},
+{
+"name": "core_List_getLast_mapIdx",
+"lemma": "List.getLast_mapIdx",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {l : List α} {f : Nat → α → β} {h : List.mapIdx f l ≠ []}, (List.mapIdx f l).getLast h = f (l.length - 1) (l.getLast ⋯)",
+"screen": "kept"
+},
+{
+"name": "core_List_get_min?",
+"lemma": "List.get_min?",
+"statement": "∀ {α : Type u_1} [inst : Min α] {l : List α} {h : l.min?.isSome = true}, l.min?.get h = l.min ⋯",
+"screen": "kept"
+},
+{
+"name": "core_List_head?_concat_concat",
+"lemma": "List.head?_concat_concat",
+"statement": "∀ {α : Type u_1} {l : List α} {a b : α}, (l ++ [a, b]).head? = (l ++ [a]).head?",
+"screen": "easy"
+},
+{
+"name": "core_List_head?_range",
+"lemma": "List.head?_range",
+"statement": "∀ {n : Nat}, (List.range n).head? = if n = 0 then none else some 0",
+"screen": "kept"
+},
+{
+"name": "core_List_headD_map",
+"lemma": "List.headD_map",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → β} {l : List α} {a : α}, (List.map f l).headD (f a) = f (l.headD a)",
+"screen": "easy"
+},
+{
+"name": "core_List_head_append_of_ne_nil",
+"lemma": "List.head_append_of_ne_nil",
+"statement": "∀ {α : Type u_1} {l' l : List α} {w₁ : l ++ l' ≠ []} (w₂ : l ≠ []), (l ++ l').head w₁ = l.head w₂",
+"screen": "easy"
+},
+{
+"name": "core_List_head_append_right",
+"lemma": "List.head_append_right",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α} (w : l₁ ++ l₂ ≠ []) (h : l₁ = []), (l₁ ++ l₂).head w = l₂.head ⋯",
+"screen": "kept"
+},
+{
+"name": "core_List_head_cons",
+"lemma": "List.head_cons",
+"statement": "∀ {α : Type u} {a : α} {l : List α} {h : a :: l ≠ []}, (a :: l).head h = a",
+"screen": "easy"
+},
+{
+"name": "core_List_head_ofFn",
+"lemma": "List.head_ofFn",
+"statement": "∀ {α : Type u_1} {n : Nat} {f : Fin n → α} (h : List.ofFn f ≠ []), (List.ofFn f).head h = f ⟨0, ⋯⟩",
+"screen": "kept"
+},
+{
+"name": "core_List_head_replicate",
+"lemma": "List.head_replicate",
+"statement": "∀ {n : Nat} {α : Type u_1} {a : α} (w : List.replicate n a ≠ []), (List.replicate n a).head w = a",
+"screen": "easy"
+},
+{
+"name": "core_List_head_takeWhile",
+"lemma": "List.head_takeWhile",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {l : List α} (w : List.takeWhile p l ≠ []), (List.takeWhile p l).head w = l.head ⋯",
+"screen": "kept"
+},
+{
+"name": "core_List_infix_filter_iff",
+"lemma": "List.infix_filter_iff",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {l₁ l₂ : List α}, l₂ <:+: List.filter p l₁ ↔ ∃ l, l <:+: l₁ ∧ l₂ = List.filter p l",
+"screen": "kept"
+},
+{
+"name": "core_List_insertIdx_toArray",
+"lemma": "List.insertIdx_toArray",
+"statement": "∀ {α : Type u_1} (l : List α) (i : Nat) (a : α) (h : i ≤ l.toArray.size), l.toArray.insertIdx i a h = (l.insertIdx i a).toArray",
+"screen": "easy"
+},
+{
+"name": "core_List_insert_of_not_mem",
+"lemma": "List.insert_of_not_mem",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {a : α} {l : List α}, ¬a ∈ l → List.insert a l = a :: l",
+"screen": "kept"
+},
+{
+"name": "core_List_insert_replicate_ne",
+"lemma": "List.insert_replicate_ne",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {n : Nat} {a b : α}, (!b == a) = true → List.insert b (List.replicate n a) = b :: List.replicate n a",
+"screen": "easy"
+},
+{
+"name": "core_List_instReflOrd",
+"lemma": "List.instReflOrd",
+"statement": "∀ {α : Type u_1} [inst : Ord α] [Std.ReflOrd α], Std.ReflOrd (List α)",
+"screen": "kept"
+},
+{
+"name": "core_List_isEmpty_toArray",
+"lemma": "List.isEmpty_toArray",
+"statement": "∀ {α : Type u_1} (l : List α), l.toArray.isEmpty = l.isEmpty",
+"screen": "easy"
+},
+{
+"name": "core_List_isGE_compare_nil_left",
+"lemma": "List.isGE_compare_nil_left",
+"statement": "∀ {α : Type u_1} [inst : Ord α] {xs : List α}, (compare [] xs).isGE = true ↔ xs = []",
+"screen": "easy"
+},
+{
+"name": "core_List_isPrefixOf_cons_cons",
+"lemma": "List.isPrefixOf_cons_cons",
+"statement": "∀ {α : Type u} {as : List α} {b : α} {bs : List α} [inst : BEq α] {a : α}, (a :: as).isPrefixOf (b :: bs) = (a == b && as.isPrefixOf bs)",
+"screen": "easy"
+},
+{
+"name": "core_List_isPrefixOf_cons_cons_self",
+"lemma": "List.isPrefixOf_cons_cons_self",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {as bs : List α} [LawfulBEq α] {a : α}, (a :: as).isPrefixOf (a :: bs) = as.isPrefixOf bs",
+"screen": "kept"
+},
+{
+"name": "core_List_isSome_minIdxOn?_of_mem",
+"lemma": "List.isSome_minIdxOn?_of_mem",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] {f : α → β} {xs : List α} {x : α}, x ∈ xs → (List.minIdxOn? f xs).isSome = true",
+"screen": "kept"
+},
+{
+"name": "core_List_le_iff_lt_or_eq",
+"lemma": "List.le_iff_lt_or_eq",
+"statement": "∀ {α : Type u_1} [inst : LT α] [Std.Irrefl fun x1 x2 => x1 < x2] [Std.Trichotomous fun x1 x2 => x1 < x2] [Std.Asymm fun x1 x2 => x1 < x2] {l₁ l₂ : List α}, l₁ ≤ l₂ ↔ l₁ < l₂ ∨ l₁ = l₂",
+"screen": "invalid"
+},
+{
+"name": "core_List_le_max?_getD_of_mem",
+"lemma": "List.le_max?_getD_of_mem",
+"statement": "∀ {l : List Nat} {a k : Nat}, a ∈ l → a ≤ l.max?.getD k",
+"screen": "kept"
+},
+{
+"name": "core_List_le_trans",
+"lemma": "List.le_trans",
+"statement": "∀ {α : Type u_1} [inst : LT α] [inst_1 : LE α] [Std.IsLinearOrder α] [Std.LawfulOrderLT α] {l₁ l₂ l₃ : List α}, l₁ ≤ l₂ → l₂ ≤ l₃ → l₁ ≤ l₃",
+"screen": "kept"
+},
+{
+"name": "core_List_length_attach",
+"lemma": "List.length_attach",
+"statement": "∀ {α : Type u_1} {l : List α}, l.attach.length = l.length",
+"screen": "easy"
+},
+{
+"name": "core_List_length_insertIdx_le_succ",
+"lemma": "List.length_insertIdx_le_succ",
+"statement": "∀ {α : Type u} {l : List α} {x : α} {i : Nat}, (l.insertIdx i x).length ≤ l.length + 1",
+"screen": "easy"
+},
+{
+"name": "core_List_length_insertIdx_of_le_length",
+"lemma": "List.length_insertIdx_of_le_length",
+"statement": "∀ {α : Type u} {i : Nat} {as : List α}, i ≤ as.length → ∀ (a : α), (as.insertIdx i a).length = as.length + 1",
+"screen": "easy"
+},
+{
+"name": "core_List_length_insertIdx_of_length_lt",
+"lemma": "List.length_insertIdx_of_length_lt",
+"statement": "∀ {α : Type u} {as : List α} {i : Nat}, as.length < i → ∀ (a : α), (as.insertIdx i a).length = as.length",
+"screen": "easy"
+},
+{
+"name": "core_List_length_le_length_insertIdx",
+"lemma": "List.length_le_length_insertIdx",
+"statement": "∀ {α : Type u} {l : List α} {x : α} {i : Nat}, l.length ≤ (l.insertIdx i x).length",
+"screen": "easy"
+},
+{
+"name": "core_List_length_mapFinIdx",
+"lemma": "List.length_mapFinIdx",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {as : List α} {f : (i : Nat) → α → i < as.length → β}, (as.mapFinIdx f).length = as.length",
+"screen": "easy"
+},
+{
+"name": "core_List_length_modify",
+"lemma": "List.length_modify",
+"statement": "∀ {α : Type u_1} (f : α → α) (l : List α) (i : Nat), (l.modify i f).length = l.length",
+"screen": "easy"
+},
+{
+"name": "core_List_length_pos_of_mem",
+"lemma": "List.length_pos_of_mem",
+"statement": "∀ {α : Type u_1} {a : α} {l : List α}, a ∈ l → 0 < l.length",
+"screen": "easy"
+},
+{
+"name": "core_List_lt_asymm",
+"lemma": "List.lt_asymm",
+"statement": "∀ {α : Type u_1} [inst : LT α] [i : Std.Asymm fun x1 x2 => x1 < x2] {l₁ l₂ : List α}, l₁ < l₂ → ¬l₂ < l₁",
+"screen": "invalid"
+},
+{
+"name": "core_List_lt_length_right_of_zip",
+"lemma": "List.lt_length_right_of_zip",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {i : Nat} {l : List α} {l' : List β}, i < (l.zip l').length → i < l'.length",
+"screen": "easy"
+},
+{
+"name": "core_List_mapFinIdx_append",
+"lemma": "List.mapFinIdx_append",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {xs ys : List α} {f : (i : Nat) → α → i < (xs ++ ys).length → β}, (xs ++ ys).mapFinIdx f = (xs.mapFinIdx fun i a h => f i a ⋯) ++ ys.mapFinIdx fun i a h => f (i + xs.length) a ⋯",
+"screen": "kept"
+},
+{
+"name": "core_List_mapFinIdx_congr",
+"lemma": "List.mapFinIdx_congr",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {xs ys : List α} (w : xs = ys) (f : (i : Nat) → α → i < xs.length → β), xs.mapFinIdx f = ys.mapFinIdx fun i a h => f i a ⋯",
+"screen": "kept"
+},
+{
+"name": "core_List_mapFinIdx_reverse",
+"lemma": "List.mapFinIdx_reverse",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {l : List α} {f : (i : Nat) → α → i < l.reverse.length → β}, l.reverse.mapFinIdx f = (l.mapFinIdx fun i a h => f (l.length - 1 - i) a ⋯).reverse",
+"screen": "kept"
+},
+{
+"name": "core_List_mapM'_nil",
+"lemma": "List.mapM'_nil",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] {f : α → m β}, List.mapM' f [] = pure []",
+"screen": "easy"
+},
+{
+"name": "core_List_mapM_nil",
+"lemma": "List.mapM_nil",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] {f : α → m β}, List.mapM f [] = pure []",
+"screen": "easy"
+},
+{
+"name": "core_List_mapM_pure",
+"lemma": "List.mapM_pure",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] [LawfulMonad m] {l : List α} {f : α → β}, List.mapM (fun x => pure (f x)) l = pure (List.map f l)",
+"screen": "invalid"
+},
+{
+"name": "core_List_map_inj",
+"lemma": "List.map_inj",
+"statement": "∀ {α : Type u_1} {α_1 : Type u_2} {f g : α → α_1}, List.map f = List.map g ↔ f = g",
+"screen": "kept"
+},
+{
+"name": "core_List_map_tail?",
+"lemma": "List.map_tail?",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → β} {l : List α}, Option.map (List.map f) l.tail? = (List.map f l).tail?",
+"screen": "easy"
+},
+{
+"name": "core_List_maxIdxOn_singleton",
+"lemma": "List.maxIdxOn_singleton",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] {x : α} {f : α → β}, List.maxIdxOn f [x] ⋯ = 0",
+"screen": "kept"
+},
+{
+"name": "core_List_maxOn_cons",
+"lemma": "List.maxOn_cons",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] [Std.IsLinearPreorder β] {x : α} {xs : List α} {f : α → β}, List.maxOn f (x :: xs) ⋯ = if h : xs = [] then x else maxOn f x (List.maxOn f xs h)",
+"screen": "kept"
+},
+{
+"name": "core_List_max_congr_simp",
+"lemma": "List.max.congr_simp",
+"statement": "∀ {α : Type u} [inst : Max α] (l l_1 : List α) (e_l : l = l_1) (h : l ≠ []), l.max h = l_1.max ⋯",
+"screen": "kept"
+},
+{
+"name": "core_List_mem_erase_of_ne",
+"lemma": "List.mem_erase_of_ne",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {a b : α} {l : List α}, a ≠ b → (a ∈ l.erase b ↔ a ∈ l)",
+"screen": "easy"
+},
+{
+"name": "core_List_mem_filterMap",
+"lemma": "List.mem_filterMap",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → Option β} {l : List α} {b : β}, b ∈ List.filterMap f l ↔ ∃ a, a ∈ l ∧ f a = some b",
+"screen": "easy"
+},
+{
+"name": "core_List_mem_of_getElem",
+"lemma": "List.mem_of_getElem",
+"statement": "∀ {α : Type u_1} {l : List α} {i : Nat} {h : i < l.length} {a : α}, l[i] = a → a ∈ l",
+"screen": "easy"
+},
+{
+"name": "core_List_mem_of_getElem?",
+"lemma": "List.mem_of_getElem?",
+"statement": "∀ {α : Type u_1} {l : List α} {i : Nat} {a : α}, l[i]? = some a → a ∈ l",
+"screen": "easy"
+},
+{
+"name": "core_List_mergeSort_append",
+"lemma": "List.mergeSort_append",
+"statement": "∀ {α : Type u_1} {le : α → α → Bool} (l₁ l₂ : List α), l₂.length ≤ l₁.length → l₁.length ≤ l₂.length + 1 → (l₁ ++ l₂).mergeSort le = (l₁.mergeSort le).merge (l₂.mergeSort le) le",
+"screen": "kept"
+},
+{
+"name": "core_List_mergeSort_cons",
+"lemma": "List.mergeSort_cons",
+"statement": "∀ {α : Type u_1} {le : α → α → Bool}, (∀ (a b c : α), le a b = true → le b c = true → le a c = true) → (∀ (a b : α), (le a b || le b a) = true) → ∀ (a : α) (l : List α), ∃ l₁ l₂, (a :: l).mergeSort le = l₁ ++ a :: l₂ ∧ l.mergeSort le = l₁ ++ l₂ ∧ ∀ (b : α), b ∈ l₁ → (!le a b) = true",
+"screen": "kept"
+},
+{
+"name": "core_List_mergeSort_fun_cases_unfolding",
+"lemma": "List.mergeSort.fun_cases_unfolding",
+"statement": "∀ {α : Type u_1} (motive : List α → (α → α → Bool) → List α → Prop), (∀ (x : α → α → Bool), motive [] x []) → (∀ (a : α) (x : α → α → Bool), motive [a] x [a]) → (∀ (a b : α) (xs : List α) (le : α → α → Bool), have lr := List.MergeSort.Internal.splitInTwo ⟨a :: b :: xs, ⋯⟩; (List.MergeSort.Internal.splitInTwo ⟨a :: b :: xs, ⋯⟩).snd.val.length = (xs.length + 1 + 1) / 2 → (List.MergeSort.Internal.splitInTwo ⟨a :: b :: xs, ⋯⟩).fst.val.length = (xs.length + 1 + 1 + 1) / 2 → motive (a :: b :: xs) le ((lr.fst.val.mergeSort le).merge (lr.snd.val.mergeSort le) le)) → ∀ (x : List α) (x_1 : α → α → Bool), motive x x_1 (x.mergeSort x_1)",
+"screen": "kept"
+},
+{
+"name": "core_List_min?_singleton",
+"lemma": "List.min?_singleton",
+"statement": "∀ {α : Type u_1} [inst : Min α] {x : α}, [x].min? = some x",
+"screen": "kept"
+},
+{
+"name": "core_List_minIdxOn?_cons",
+"lemma": "List.minIdxOn?_cons",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] [Std.IsLinearPreorder β] {f : α → β} {x : α} {xs : List α}, List.minIdxOn? f (x :: xs) = some (if h : xs = [] then 0 else if f x ≤ f (List.minOn f xs h) then 0 else List.minIdxOn f xs h + 1)",
+"screen": "kept"
+},
+{
+"name": "core_List_minOn?_append",
+"lemma": "List.minOn?_append",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] [Std.IsLinearPreorder β] (xs ys : List α) (f : α → β), List.minOn? f (xs ++ ys) = Option.merge (minOn f) (List.minOn? f xs) (List.minOn? f ys)",
+"screen": "kept"
+},
+{
+"name": "core_List_minOn?_singleton",
+"lemma": "List.minOn?_singleton",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] {x : α} {f : α → β}, List.minOn? f [x] = some x",
+"screen": "kept"
+},
+{
+"name": "core_List_minOn_cons",
+"lemma": "List.minOn_cons",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] [Std.IsLinearPreorder β] {x : α} {xs : List α} {f : α → β}, List.minOn f (x :: xs) ⋯ = if h : xs = [] then x else minOn f x (List.minOn f xs h)",
+"screen": "kept"
+},
+{
+"name": "core_List_minOn_replicate",
+"lemma": "List.minOn_replicate",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] [Std.IsLinearPreorder β] {n : Nat} {a : α} {f : α → β} (h : List.replicate n a ≠ []), List.minOn f (List.replicate n a) h = a",
+"screen": "kept"
+},
+{
+"name": "core_List_min_le_of_mem",
+"lemma": "List.min_le_of_mem",
+"statement": "∀ {α : Type u_1} [inst : Min α] [inst_1 : LE α] [Std.IsLinearOrder α] [Std.LawfulOrderMin α] {l : List α} {a : α} (ha : a ∈ l), l.min ⋯ ≤ a",
+"screen": "kept"
+},
+{
+"name": "core_List_ne_nil_of_take_ne_nil",
+"lemma": "List.ne_nil_of_take_ne_nil",
+"statement": "∀ {α : Type u_1} {as : List α} {i : Nat}, List.take i as ≠ [] → as ≠ []",
+"screen": "easy"
+},
+{
+"name": "core_List_nil_subset",
+"lemma": "List.nil_subset",
+"statement": "∀ {α : Type u_1} (l : List α), [] ⊆ l",
+"screen": "easy"
+},
+{
+"name": "core_List_nil_suffix",
+"lemma": "List.nil_suffix",
+"statement": "∀ {α : Type u_1} {l : List α}, [] <:+ l",
+"screen": "easy"
+},
+{
+"name": "core_List_nodup_iff_count",
+"lemma": "List.nodup_iff_count",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {l : List α}, l.Nodup ↔ ∀ (a : α), List.count a l ≤ 1",
+"screen": "kept"
+},
+{
+"name": "core_List_nodup_nil",
+"lemma": "List.nodup_nil",
+"statement": "∀ {α : Type u_1}, [].Nodup",
+"screen": "kept"
+},
+{
+"name": "core_List_not_of_lt_findIdx",
+"lemma": "List.not_of_lt_findIdx",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {xs : List α} {i : Nat} (h : i < List.findIdx p xs), p xs[i] = false",
+"screen": "kept"
+},
+{
+"name": "core_List_not_perm_nil_cons",
+"lemma": "List.not_perm_nil_cons",
+"statement": "∀ {α : Type u_1} (x : α) (l : List α), ¬[].Perm (x :: l)",
+"screen": "easy"
+},
+{
+"name": "core_List_or_all_distrib_right",
+"lemma": "List.or_all_distrib_right",
+"statement": "∀ {α : Type u_1} {l : List α} {p : α → Bool} {q : Bool}, (l.all p || q) = l.all fun a => p a || q",
+"screen": "easy"
+},
+{
+"name": "core_List_pairwise_append_comm",
+"lemma": "List.pairwise_append_comm",
+"statement": "∀ {α : Type u_1} {R : α → α → Prop}, (∀ {x y : α}, R x y → R y x) → ∀ {l₁ l₂ : List α}, List.Pairwise R (l₁ ++ l₂) ↔ List.Pairwise R (l₂ ++ l₁)",
+"screen": "kept"
+},
+{
+"name": "core_List_pairwise_iff_getElem",
+"lemma": "List.pairwise_iff_getElem",
+"statement": "∀ {α : Type u_1} {R : α → α → Prop} {l : List α}, List.Pairwise R l ↔ ∀ (i j : Nat) (_hi : i < l.length) (_hj : j < l.length), i < j → R l[i] l[j]",
+"screen": "kept"
+},
+{
+"name": "core_List_pairwise_lt_finRange",
+"lemma": "List.pairwise_lt_finRange",
+"statement": "∀ (n : Nat), List.Pairwise (fun x1 x2 => x1 < x2) (List.finRange n)",
+"screen": "kept"
+},
+{
+"name": "core_List_pairwise_mergeSort",
+"lemma": "List.pairwise_mergeSort",
+"statement": "∀ {α : Type u_1} {le : α → α → Bool}, (∀ (a b c : α), le a b = true → le b c = true → le a c = true) → (∀ (a b : α), (le a b || le b a) = true) → ∀ (l : List α), List.Pairwise (fun a b => le a b = true) (l.mergeSort le)",
+"screen": "kept"
+},
+{
+"name": "core_List_perm_ext_iff_of_nodup",
+"lemma": "List.perm_ext_iff_of_nodup",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, l₁.Nodup → l₂.Nodup → (l₁.Perm l₂ ↔ ∀ (a : α), a ∈ l₁ ↔ a ∈ l₂)",
+"screen": "kept"
+},
+{
+"name": "core_List_perm_iff_toArray_perm",
+"lemma": "List.perm_iff_toArray_perm",
+"statement": "∀ {α : Type u_1} {as bs : List α}, as.Perm bs ↔ as.toArray.Perm bs.toArray",
+"screen": "kept"
+},
+{
+"name": "core_List_perm_insertIdx",
+"lemma": "List.perm_insertIdx",
+"statement": "∀ {α : Type u_1} (x : α) (l : List α) {i : Nat}, i ≤ l.length → (l.insertIdx i x).Perm (x :: l)",
+"screen": "kept"
+},
+{
+"name": "core_List_prefix_append_of_prefix",
+"lemma": "List.prefix_append_of_prefix",
+"statement": "∀ {α : Type u_1} {l₁ l₂ l₃ : List α}, l₁ <+: l₂ → l₁ <+: l₂ ++ l₃",
+"screen": "easy"
+},
+{
+"name": "core_List_prefix_iff_exists_append_eq",
+"lemma": "List.prefix_iff_exists_append_eq",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, l₁ <+: l₂ ↔ ∃ l₃, l₁ ++ l₃ = l₂",
+"screen": "easy"
+},
+{
+"name": "core_List_prefix_rfl",
+"lemma": "List.prefix_rfl",
+"statement": "∀ {α : Type u_1} {l : List α}, l <+: l",
+"screen": "easy"
+},
+{
+"name": "core_List_prod_cons",
+"lemma": "List.prod_cons",
+"statement": "∀ {α : Type u} [inst : Mul α] [inst_1 : One α] {a : α} {l : List α}, (a :: l).prod = a * l.prod",
+"screen": "easy"
+},
+{
+"name": "core_List_prod_replicate_int",
+"lemma": "List.prod_replicate_int",
+"statement": "∀ {n : Nat} {a : Int}, (List.replicate n a).prod = a ^ n",
+"screen": "easy"
+},
+{
+"name": "core_List_range'_concat",
+"lemma": "List.range'_concat",
+"statement": "∀ {step s n : Nat}, List.range' s (n + 1) step = List.range' s n step ++ [s + step * n]",
+"screen": "kept"
+},
+{
+"name": "core_List_range'_ne_nil_iff",
+"lemma": "List.range'_ne_nil_iff",
+"statement": "∀ (s : Nat) {n step : Nat}, List.range' s n step ≠ [] ↔ n ≠ 0",
+"screen": "easy"
+},
+{
+"name": "core_List_range'_one",
+"lemma": "List.range'_one",
+"statement": "∀ {s step : Nat}, List.range' s 1 step = [s]",
+"screen": "easy"
+},
+{
+"name": "core_List_range'_subset_right",
+"lemma": "List.range'_subset_right",
+"statement": "∀ {step s m n : Nat}, 0 < step → (List.range' s m step ⊆ List.range' s n step ↔ m ≤ n)",
+"screen": "kept"
+},
+{
+"name": "core_List_range'_succ_left",
+"lemma": "List.range'_succ_left",
+"statement": "∀ {s n step : Nat}, List.range' (s + 1) n step = List.map (fun x => x + 1) (List.range' s n step)",
+"screen": "kept"
+},
+{
+"name": "core_List_range_succ",
+"lemma": "List.range_succ",
+"statement": "∀ {n : Nat}, List.range n.succ = List.range n ++ [n]",
+"screen": "kept"
+},
+{
+"name": "core_List_replace_cons_self",
+"lemma": "List.replace_cons_self",
+"statement": "∀ {α : Type u_1} [inst : BEq α] {as : List α} {b : α} [LawfulBEq α] {a : α}, (a :: as).replace a b = b :: as",
+"screen": "kept"
+},
+{
+"name": "core_List_replace_toArray",
+"lemma": "List.replace_toArray",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] (l : List α) (a b : α), l.toArray.replace a b = (l.replace a b).toArray",
+"screen": "easy"
+},
+{
+"name": "core_List_replicate_one",
+"lemma": "List.replicate_one",
+"statement": "∀ {α : Type u_1} {a : α}, List.replicate 1 a = [a]",
+"screen": "easy"
+},
+{
+"name": "core_List_replicate_succ_ne_nil",
+"lemma": "List.replicate_succ_ne_nil",
+"statement": "∀ {α : Type u_1} {n : Nat} {a : α}, List.replicate (n + 1) a ≠ []",
+"screen": "easy"
+},
+{
+"name": "core_List_reverseAux_nil",
+"lemma": "List.reverseAux_nil",
+"statement": "∀ {α : Type u_1} {r : List α}, [].reverseAux r = r",
+"screen": "easy"
+},
+{
+"name": "core_List_reverse_sublist",
+"lemma": "List.reverse_sublist",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, l₁.reverse.Sublist l₂.reverse ↔ l₁.Sublist l₂",
+"screen": "easy"
+},
+{
+"name": "core_List_scanl_reverse",
+"lemma": "List.scanl_reverse",
+"statement": "∀ {β : Type u_1} {α : Type u_2} {init : β} {f : β → α → β} {as : List α}, List.scanl f init as.reverse = (List.scanr (flip f) init as).reverse",
+"screen": "easy"
+},
+{
+"name": "core_List_scanrM_map",
+"lemma": "List.scanrM_map",
+"statement": "∀ {m : Type u_1 → Type u_2} {α₁ : Type u_3} {α₂ : Type u_4} {β : Type u_1} {init : β} [inst : Monad m] [LawfulMonad m] {f : α₁ → α₂} {g : α₂ → β → m β} {as : List α₁}, List.scanrM g init (List.map f as) = List.scanrM (fun a b => g (f a) b) init as",
+"screen": "easy"
+},
+{
+"name": "core_List_scanrM_reverse",
+"lemma": "List.scanrM_reverse",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} {init : β} {as : List α} [inst : Monad m] [LawfulMonad m] {f : α → β → m β}, List.scanrM f init as.reverse = List.reverse <$> List.scanlM (flip f) init as",
+"screen": "easy"
+},
+{
+"name": "core_List_scanr_reverse",
+"lemma": "List.scanr_reverse",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {init : β} {f : α → β → β} {as : List α}, List.scanr f init as.reverse = (List.scanl (flip f) init as).reverse",
+"screen": "easy"
+},
+{
+"name": "core_List_scanr_singleton",
+"lemma": "List.scanr_singleton",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {b : β} {a : α} {f : α → β → β}, List.scanr f b [a] = [f a b, b]",
+"screen": "easy"
+},
+{
+"name": "core_List_set_cons_succ",
+"lemma": "List.set_cons_succ",
+"statement": "∀ {α : Type u_1} {x : α} {xs : List α} {i : Nat} {a : α}, (x :: xs).set (i + 1) a = x :: xs.set i a",
+"screen": "easy"
+},
+{
+"name": "core_List_set_getElem_self",
+"lemma": "List.set_getElem_self",
+"statement": "∀ {α : Type u_1} {as : List α} {i : Nat} (h : i < as.length), as.set i as[i] = as",
+"screen": "kept"
+},
+{
+"name": "core_List_set_getElem_succ_eraseIdx_succ",
+"lemma": "List.set_getElem_succ_eraseIdx_succ",
+"statement": "∀ {α : Type u_1} {l : List α} {i : Nat} (h : i + 1 < l.length), (l.eraseIdx (i + 1)).set i l[i + 1] = l.eraseIdx i",
+"screen": "kept"
+},
+{
+"name": "core_List_set_set",
+"lemma": "List.set_set",
+"statement": "∀ {α : Type u_1} (a : α) {b : α} {l : List α} {i : Nat}, (l.set i a).set i b = l.set i b",
+"screen": "kept"
+},
+{
+"name": "core_List_singleton_perm",
+"lemma": "List.singleton_perm",
+"statement": "∀ {α : Type u_1} {a : α} {l : List α}, [a].Perm l ↔ [a] = l",
+"screen": "easy"
+},
+{
+"name": "core_List_size_mkSlice_rci",
+"lemma": "List.size_mkSlice_rci",
+"statement": "∀ {α : Type u_1} {xs : List α} {lo : Nat}, Std.Slice.size (Std.Rci.Sliceable.mkSlice xs (lo...*)) = xs.length - lo",
+"screen": "easy"
+},
+{
+"name": "core_List_size_mkSlice_rco",
+"lemma": "List.size_mkSlice_rco",
+"statement": "∀ {α : Type u_1} {xs : List α} {lo hi : Nat}, Std.Slice.size (Std.Rco.Sliceable.mkSlice xs (lo...hi)) = min hi xs.length - lo",
+"screen": "easy"
+},
+{
+"name": "core_List_size_mkSlice_roo",
+"lemma": "List.size_mkSlice_roo",
+"statement": "∀ {α : Type u_1} {xs : List α} {lo hi : Nat}, Std.Slice.size (Std.Roo.Sliceable.mkSlice xs (lo<...hi)) = min hi xs.length - (lo + 1)",
+"screen": "easy"
+},
+{
+"name": "core_List_size_toByteArray",
+"lemma": "List.size_toByteArray",
+"statement": "∀ {l : List UInt8}, l.toByteArray.size = l.length",
+"screen": "kept"
+},
+{
+"name": "core_List_splitAt_eq",
+"lemma": "List.splitAt_eq",
+"statement": "∀ {α : Type u_1} {i : Nat} {l : List α}, List.splitAt i l = (List.take i l, List.drop i l)",
+"screen": "easy"
+},
+{
+"name": "core_List_step_iterM",
+"lemma": "List.step_iterM",
+"statement": "∀ {m : Type w → Type w'} [inst : Monad m] {β : Type w} {l : List β}, (l.iterM m).step = match l with | [] => pure (Std.Shrink.deflate ⟨Std.IterStep.done, ⋯⟩) | x :: xs => pure (Std.Shrink.deflate ⟨Std.IterStep.yield (xs.iterM m) x, ⋯⟩)",
+"screen": "kept"
+},
+{
+"name": "core_List_sublist_append_of_sublist_left",
+"lemma": "List.sublist_append_of_sublist_left",
+"statement": "∀ {α : Type u_1} {l l₁ l₂ : List α}, l.Sublist l₁ → l.Sublist (l₁ ++ l₂)",
+"screen": "easy"
+},
+{
+"name": "core_List_sublist_cons_iff",
+"lemma": "List.sublist_cons_iff",
+"statement": "∀ {α : Type u_1} {a : α} {l l' : List α}, l.Sublist (a :: l') ↔ l.Sublist l' ∨ ∃ r, l = a :: r ∧ r.Sublist l'",
+"screen": "easy"
+},
+{
+"name": "core_List_sublist_filter_iff",
+"lemma": "List.sublist_filter_iff",
+"statement": "∀ {α : Type u_1} {l₂ l₁ : List α} {p : α → Bool}, l₁.Sublist (List.filter p l₂) ↔ ∃ l', l'.Sublist l₂ ∧ l₁ = List.filter p l'",
+"screen": "easy"
+},
+{
+"name": "core_List_subset_append_left",
+"lemma": "List.subset_append_left",
+"statement": "∀ {α : Type u_1} (l₁ l₂ : List α), l₁ ⊆ l₁ ++ l₂",
+"screen": "easy"
+},
+{
+"name": "core_List_suffix_append_self_iff",
+"lemma": "List.suffix_append_self_iff",
+"statement": "∀ {α : Type u_1} {l₁ l₂ l₃ : List α}, l₁ ++ l₃ <:+ l₂ ++ l₃ ↔ l₁ <:+ l₂",
+"screen": "kept"
+},
+{
+"name": "core_List_suffix_iff_exists_append_eq",
+"lemma": "List.suffix_iff_exists_append_eq",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, l₁ <:+ l₂ ↔ ∃ l₃, l₃ ++ l₁ = l₂",
+"screen": "easy"
+},
+{
+"name": "core_List_sum_le_max_mul_length_int",
+"lemma": "List.sum_le_max_mul_length_int",
+"statement": "∀ {xs : List Int} (h : xs ≠ []), xs.sum ≤ xs.max h * ↑xs.length",
+"screen": "kept"
+},
+{
+"name": "core_List_sum_pos_iff_exists_pos_nat",
+"lemma": "List.sum_pos_iff_exists_pos_nat",
+"statement": "∀ {l : List Nat}, 0 < l.sum ↔ ∃ x, x ∈ l ∧ 0 < x",
+"screen": "kept"
+},
+{
+"name": "core_List_sum_reverse",
+"lemma": "List.sum_reverse",
+"statement": "∀ {α : Type u_1} [inst : Zero α] [inst_1 : Add α] [Std.Associative fun x1 x2 => x1 + x2] [Std.Commutative fun x1 x2 => x1 + x2] [Std.LawfulLeftIdentity (fun x1 x2 => x1 + x2) 0] (xs : List α), xs.reverse.sum = xs.sum",
+"screen": "invalid"
+},
+{
+"name": "core_List_tail?_nil",
+"lemma": "List.tail?_nil",
+"statement": "∀ {α : Type u}, [].tail? = none",
+"screen": "kept"
+},
+{
+"name": "core_List_tail_cons",
+"lemma": "List.tail_cons",
+"statement": "∀ {α : Type u} {a : α} {as : List α}, (a :: as).tail = as",
+"screen": "easy"
+},
+{
+"name": "core_List_tail_reverse",
+"lemma": "List.tail_reverse",
+"statement": "∀ {α : Type u_1} {l : List α}, l.reverse.tail = l.dropLast.reverse",
+"screen": "easy"
+},
+{
+"name": "core_List_tail_scanl",
+"lemma": "List.tail_scanl",
+"statement": "∀ {β : Type u_1} {α : Type u_2} {b : β} {l : List α} {f : β → α → β} (h : 0 < l.length), (List.scanl f b l).tail = List.scanl f (f b (l.head ⋯)) l.tail",
+"screen": "kept"
+},
+{
+"name": "core_List_tail_zip",
+"lemma": "List.tail_zip",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {l₁ : List α} {l₂ : List β}, (l₁.zip l₂).tail = l₁.tail.zip l₂.tail",
+"screen": "easy"
+},
+{
+"name": "core_List_takeWhile_append_of_pos",
+"lemma": "List.takeWhile_append_of_pos",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {l₁ l₂ : List α}, (∀ (a : α), a ∈ l₁ → p a = true) → List.takeWhile p (l₁ ++ l₂) = l₁ ++ List.takeWhile p l₂",
+"screen": "kept"
+},
+{
+"name": "core_List_takeWhile_sublist",
+"lemma": "List.takeWhile_sublist",
+"statement": "∀ {α : Type u_1} {l : List α} (p : α → Bool), (List.takeWhile p l).Sublist l",
+"screen": "easy"
+},
+{
+"name": "core_List_take_append_getLast",
+"lemma": "List.take_append_getLast",
+"statement": "∀ {α : Type u_1} (l : List α) (h : l ≠ []), List.take (l.length - 1) l ++ [l.getLast h] = l",
+"screen": "kept"
+},
+{
+"name": "core_List_take_append_length",
+"lemma": "List.take_append_length",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, List.take l₁.length (l₁ ++ l₂) = l₁",
+"screen": "easy"
+},
+{
+"name": "core_List_take_cons",
+"lemma": "List.take_cons",
+"statement": "∀ {α : Type u_1} {i : Nat} {a : α} {l : List α}, 0 < i → List.take i (a :: l) = a :: List.take (i - 1) l",
+"screen": "easy"
+},
+{
+"name": "core_List_take_left'",
+"lemma": "List.take_left'",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α} {i : Nat}, l₁.length = i → List.take i (l₁ ++ l₂) = l₁",
+"screen": "easy"
+},
+{
+"name": "core_List_take_modifyHead",
+"lemma": "List.take_modifyHead",
+"statement": "∀ {α : Type u_1} {f : α → α} {l : List α} {i : Nat}, List.take i (List.modifyHead f l) = List.modifyHead f (List.take i l)",
+"screen": "easy"
+},
+{
+"name": "core_List_take_one",
+"lemma": "List.take_one",
+"statement": "∀ {α : Type u_1} {l : List α}, List.take 1 l = l.head?.toList",
+"screen": "easy"
+},
+{
+"name": "core_List_take_range'_of_length_le",
+"lemma": "List.take_range'_of_length_le",
+"statement": "∀ {n k start step : Nat}, n ≤ k → List.take k (List.range' start n step) = List.range' start n step",
+"screen": "easy"
+},
+{
+"name": "core_List_take_reverse",
+"lemma": "List.take_reverse",
+"statement": "∀ {α : Type u_1} {xs : List α} {i : Nat}, List.take i xs.reverse = (List.drop (xs.length - i) xs).reverse",
+"screen": "kept"
+},
+{
+"name": "core_List_take_subset_take_left",
+"lemma": "List.take_subset_take_left",
+"statement": "∀ {α : Type u_1} (l : List α) {i j : Nat}, i ≤ j → List.take i l ⊆ List.take j l",
+"screen": "easy"
+},
+{
+"name": "core_List_take_takeWhile",
+"lemma": "List.take_takeWhile",
+"statement": "∀ {α : Type u_1} {i : Nat} {l : List α} {p : α → Bool}, List.take i (List.takeWhile p l) = List.takeWhile p (List.take i l)",
+"screen": "kept"
+},
+{
+"name": "core_List_toArray_cons",
+"lemma": "List.toArray_cons",
+"statement": "∀ {α : Type u_1} (a : α) (l : List α), (a :: l).toArray = #[a] ++ l.toArray",
+"screen": "easy"
+},
+{
+"name": "core_List_toListRev_toArray",
+"lemma": "List.toListRev_toArray",
+"statement": "∀ {α : Type u_1} {l : List α}, l.toArray.toListRev = l.reverse",
+"screen": "easy"
+},
+{
+"name": "core_List_unattach_cons",
+"lemma": "List.unattach_cons",
+"statement": "∀ {α : Type u_1} {p : α → Prop} {a : { x // p x }} {l : List { x // p x }}, (a :: l).unattach = a.val :: l.unattach",
+"screen": "easy"
+},
+{
+"name": "core_List_unattach_nil",
+"lemma": "List.unattach_nil",
+"statement": "∀ {α : Type u_1} {p : α → Prop}, [].unattach = []",
+"screen": "kept"
+},
+{
+"name": "core_List_unzip_nil",
+"lemma": "List.unzip_nil",
+"statement": "∀ {α : Type u} {β : Type v}, [].unzip = ([], [])",
+"screen": "kept"
+},
+{
+"name": "core_List_unzip_zip",
+"lemma": "List.unzip_zip",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {l₁ : List α} {l₂ : List β}, l₁.length = l₂.length → (l₁.zip l₂).unzip = (l₁, l₂)",
+"screen": "kept"
+},
+{
+"name": "core_List_utf8Decode?_utf8Encode",
+"lemma": "List.utf8Decode?_utf8Encode",
+"statement": "∀ {l : List Char}, l.utf8Encode.utf8Decode? = some l.toArray",
+"screen": "kept"
+},
+{
+"name": "core_List_zipWithM'_cons_cons",
+"lemma": "List.zipWithM'_cons_cons",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_4} {γ : Type u_1} {a : α} {as : List α} {b : β} {bs : List β} [inst : Monad m] {f : α → β → m γ}, List.zipWithM' f (a :: as) (b :: bs) = do let __do_lift ← f a b let __do_lift_1 ← List.zipWithM' f as bs pure (__do_lift :: __do_lift_1)",
+"screen": "invalid"
+},
+{
+"name": "core_List_zipWithMAux_toArray_succ'",
+"lemma": "List.zipWithMAux_toArray_succ'",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u} {m : Type u → Type v} [inst : Monad m] (as : List α) (bs : List β) (f : α → β → m γ) (i : Nat) (xs : Array γ), as.toArray.zipWithMAux bs.toArray f (i + 1) xs = (List.drop (i + 1) as).toArray.zipWithMAux (List.drop (i + 1) bs).toArray f 0 xs",
+"screen": "kept"
+},
+{
+"name": "core_List_zipWith_comm_of_comm",
+"lemma": "List.zipWith_comm_of_comm",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → α → β}, (∀ (x y : α), f x y = f y x) → ∀ {l l' : List α}, List.zipWith f l l' = List.zipWith f l' l",
+"screen": "kept"
+},
+{
+"name": "core_Nat_Coprime_gcd_mul",
+"lemma": "Nat.Coprime.gcd_mul",
+"statement": "∀ {m n : Nat} (k : Nat), m.Coprime n → k.gcd (m * n) = k.gcd m * k.gcd n",
+"screen": "kept"
+},
+{
+"name": "core_Nat_Coprime_mul_dvd_of_dvd_of_dvd",
+"lemma": "Nat.Coprime.mul_dvd_of_dvd_of_dvd",
+"statement": "∀ {m n a : Nat}, m.Coprime n → m ∣ a → n ∣ a → m * n ∣ a",
+"screen": "kept"
+},
+{
+"name": "core_Nat_Coprime_mul_right",
+"lemma": "Nat.Coprime.mul_right",
+"statement": "∀ {k m n : Nat}, k.Coprime m → k.Coprime n → k.Coprime (m * n)",
+"screen": "kept"
+},
+{
+"name": "core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq",
+"lemma": "Nat.Internal.Linear.ExprCnstr.toPoly_norm_eq",
+"statement": "∀ (c : Nat.Internal.Linear.ExprCnstr), c.toPoly.norm = c.toNormPoly",
+"screen": "kept"
+},
+{
+"name": "core_Nat_Internal_Linear_Expr_mulL_injEq",
+"lemma": "Nat.Internal.Linear.Expr.mulL.injEq",
+"statement": "∀ (k : Nat) (a : Nat.Internal.Linear.Expr) (k_1 : Nat) (a_1 : Nat.Internal.Linear.Expr), (Nat.Internal.Linear.Expr.mulL k a = Nat.Internal.Linear.Expr.mulL k_1 a_1) = (k = k_1 ∧ a = a_1)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_Internal_Linear_Expr_mulL_sizeOf_spec",
+"lemma": "Nat.Internal.Linear.Expr.mulL.sizeOf_spec",
+"statement": "∀ (k : Nat) (a : Nat.Internal.Linear.Expr), sizeOf (Nat.Internal.Linear.Expr.mulL k a) = 1 + sizeOf k + sizeOf a",
+"screen": "easy"
+},
+{
+"name": "core_Nat_Internal_SOM_Expr_add_sizeOf_spec",
+"lemma": "Nat.Internal.SOM.Expr.add.sizeOf_spec",
+"statement": "∀ (a b : Nat.Internal.SOM.Expr), sizeOf (a.add b) = 1 + sizeOf a + sizeOf b",
+"screen": "easy"
+},
+{
+"name": "core_Nat_Internal_SOM_Expr_var_sizeOf_spec",
+"lemma": "Nat.Internal.SOM.Expr.var.sizeOf_spec",
+"statement": "∀ (v : Nat.Internal.Linear.Var), sizeOf (Nat.Internal.SOM.Expr.var v) = 1 + sizeOf v",
+"screen": "easy"
+},
+{
+"name": "core_Nat_Simproc_add_le_add_ge",
+"lemma": "Nat.Simproc.add_le_add_ge",
+"statement": "∀ (a c : Nat) {b d : Nat}, b ≥ d → (a + b ≤ c + d) = (a + (b - d) ≤ c)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_Simproc_bneEqOfEqEq",
+"lemma": "Nat.Simproc.bneEqOfEqEq",
+"statement": "∀ {a b c d : Nat}, (a = b) = (c = d) → (a != b) = (c != d)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_ToInt_add_congr",
+"lemma": "Nat.ToInt.add_congr",
+"statement": "∀ {a b : Nat} {a' b' : Int}, ↑a = a' → ↑b = b' → ↑(a + b) = a' + b'",
+"screen": "easy"
+},
+{
+"name": "core_Nat_ToInt_of_le",
+"lemma": "Nat.ToInt.of_le",
+"statement": "∀ {a b : Nat} {a' b' : Int}, ↑a = a' → ↑b = b' → a ≤ b → a' ≤ b'",
+"screen": "easy"
+},
+{
+"name": "core_Nat_ToInt_of_not_le",
+"lemma": "Nat.ToInt.of_not_le",
+"statement": "∀ {a b : Nat} {a' b' : Int}, ↑a = a' → ↑b = b' → ¬a ≤ b → b' + 1 ≤ a'",
+"screen": "easy"
+},
+{
+"name": "core_Nat_add_div_of_dvd_add_add_one",
+"lemma": "Nat.add_div_of_dvd_add_add_one",
+"statement": "∀ {c a b : Nat}, c ∣ a + b + 1 → (a + b) / c = a / c + b / c",
+"screen": "kept"
+},
+{
+"name": "core_Nat_add_left_max_self",
+"lemma": "Nat.add_left_max_self",
+"statement": "∀ {a b : Nat}, max (b + a) a = b + a",
+"screen": "easy"
+},
+{
+"name": "core_Nat_add_lt_add",
+"lemma": "Nat.add_lt_add",
+"statement": "∀ {a b c d : Nat}, a < b → c < d → a + c < b + d",
+"screen": "easy"
+},
+{
+"name": "core_Nat_add_mod_left",
+"lemma": "Nat.add_mod_left",
+"statement": "∀ (x z : Nat), (x + z) % x = z % x",
+"screen": "kept"
+},
+{
+"name": "core_Nat_and_div_two_pow",
+"lemma": "Nat.and_div_two_pow",
+"statement": "∀ {a b n : Nat}, (a &&& b) / 2 ^ n = a / 2 ^ n &&& b / 2 ^ n",
+"screen": "kept"
+},
+{
+"name": "core_Nat_and_one_is_mod",
+"lemma": "Nat.and_one_is_mod",
+"statement": "∀ (x : Nat), x &&& 1 = x % 2",
+"screen": "easy"
+},
+{
+"name": "core_Nat_and_xor_distrib_right",
+"lemma": "Nat.and_xor_distrib_right",
+"statement": "∀ {a b c : Nat}, (a ^^^ b) &&& c = a &&& c ^^^ b &&& c",
+"screen": "easy"
+},
+{
+"name": "core_Nat_div_dvd_iff_dvd_mul",
+"lemma": "Nat.div_dvd_iff_dvd_mul",
+"statement": "∀ {a b c : Nat}, b ∣ a → 0 < b → (a / b ∣ c ↔ a ∣ b * c)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_div_gcd_pos_of_pos_left",
+"lemma": "Nat.div_gcd_pos_of_pos_left",
+"statement": "∀ {a : Nat} (b : Nat), 0 < a → 0 < a / a.gcd b",
+"screen": "kept"
+},
+{
+"name": "core_Nat_div_le_iff_le_mul_add_pred",
+"lemma": "Nat.div_le_iff_le_mul_add_pred",
+"statement": "∀ {b a c : Nat}, 0 < b → (a / b ≤ c ↔ a ≤ b * c + (b - 1))",
+"screen": "kept"
+},
+{
+"name": "core_Nat_div_lt_of_lt",
+"lemma": "Nat.div_lt_of_lt",
+"statement": "∀ {a b c : Nat}, a < c → a / b < c",
+"screen": "kept"
+},
+{
+"name": "core_Nat_div_two_le_of_sub_le_div_two",
+"lemma": "Nat.div_two_le_of_sub_le_div_two",
+"statement": "∀ {a b : Nat}, a - b ≤ a / 2 → a / 2 ≤ b",
+"screen": "easy"
+},
+{
+"name": "core_Nat_dvd_div_of_mul_dvd",
+"lemma": "Nat.dvd_div_of_mul_dvd",
+"statement": "∀ {a b c : Nat}, a * b ∣ c → b ∣ c / a",
+"screen": "kept"
+},
+{
+"name": "core_Nat_dvd_gcd_mul_iff_dvd_mul",
+"lemma": "Nat.dvd_gcd_mul_iff_dvd_mul",
+"statement": "∀ {k n m : Nat}, k ∣ k.gcd n * m ↔ k ∣ n * m",
+"screen": "kept"
+},
+{
+"name": "core_Nat_dvd_lcm_left",
+"lemma": "Nat.dvd_lcm_left",
+"statement": "∀ (m n : Nat), m ∣ m.lcm n",
+"screen": "kept"
+},
+{
+"name": "core_Nat_gcd_add_self_right",
+"lemma": "Nat.gcd_add_self_right",
+"statement": "∀ (m n : Nat), m.gcd (n + m) = m.gcd n",
+"screen": "kept"
+},
+{
+"name": "core_Nat_gcd_div_gcd_div_gcd_of_pos_left",
+"lemma": "Nat.gcd_div_gcd_div_gcd_of_pos_left",
+"statement": "∀ {n m : Nat}, 0 < n → (n / n.gcd m).gcd (m / n.gcd m) = 1",
+"screen": "kept"
+},
+{
+"name": "core_Nat_gcd_div_gcd_div_gcd_of_pos_right",
+"lemma": "Nat.gcd_div_gcd_div_gcd_of_pos_right",
+"statement": "∀ {n m : Nat}, 0 < m → (n / n.gcd m).gcd (m / n.gcd m) = 1",
+"screen": "kept"
+},
+{
+"name": "core_Nat_gcd_gcd_self_left_right",
+"lemma": "Nat.gcd_gcd_self_left_right",
+"statement": "∀ (m n : Nat), (n.gcd m).gcd m = n.gcd m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_gcd_gcd_self_right_right",
+"lemma": "Nat.gcd_gcd_self_right_right",
+"statement": "∀ (m n : Nat), m.gcd (n.gcd m) = n.gcd m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_gcd_le_right",
+"lemma": "Nat.gcd_le_right",
+"statement": "∀ {n : Nat} (m : Nat), 0 < n → m.gcd n ≤ n",
+"screen": "kept"
+},
+{
+"name": "core_Nat_gcd_mul_lcm",
+"lemma": "Nat.gcd_mul_lcm",
+"statement": "∀ (m n : Nat), m.gcd n * m.lcm n = m * n",
+"screen": "kept"
+},
+{
+"name": "core_Nat_gcd_mul_left_add_left",
+"lemma": "Nat.gcd_mul_left_add_left",
+"statement": "∀ (m n k : Nat), (m * k + n).gcd m = n.gcd m",
+"screen": "kept"
+},
+{
+"name": "core_Nat_gcd_self_add_left",
+"lemma": "Nat.gcd_self_add_left",
+"statement": "∀ (m n : Nat), (m + n).gcd m = n.gcd m",
+"screen": "kept"
+},
+{
+"name": "core_Nat_gcd_sub_left_left_of_dvd",
+"lemma": "Nat.gcd_sub_left_left_of_dvd",
+"statement": "∀ {n k : Nat} (m : Nat), n ≤ k → m ∣ k → (k - n).gcd m = n.gcd m",
+"screen": "kept"
+},
+{
+"name": "core_Nat_gcd_sub_mul_right_left",
+"lemma": "Nat.gcd_sub_mul_right_left",
+"statement": "∀ {m n k : Nat}, k * m ≤ n → (n - k * m).gcd m = n.gcd m",
+"screen": "kept"
+},
+{
+"name": "core_Nat_ge_of_not_lt",
+"lemma": "Nat.ge_of_not_lt",
+"statement": "∀ {n m : Nat}, ¬n < m → n ≥ m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_getD_toArray_rcc",
+"lemma": "Nat.getD_toArray_rcc",
+"statement": "∀ {m n i fallback : Nat}, (m...=n).toArray.getD i fallback = if i < n + 1 - m then m + i else fallback",
+"screen": "kept"
+},
+{
+"name": "core_Nat_getElem!_toList_roc",
+"lemma": "Nat.getElem!_toList_roc",
+"statement": "∀ {m n i : Nat}, (m<...=n).toList[i]! = if i < n - m then m + 1 + i else 0",
+"screen": "kept"
+},
+{
+"name": "core_Nat_getElem?_toArray_roc",
+"lemma": "Nat.getElem?_toArray_roc",
+"statement": "∀ {m n i : Nat}, (m<...=n).toArray[i]? = if i < n - m then some (m + 1 + i) else none",
+"screen": "kept"
+},
+{
+"name": "core_Nat_getElem_toArray_rco",
+"lemma": "Nat.getElem_toArray_rco",
+"statement": "∀ {m n i : Nat} (_h : i < (m...n).toArray.size), (m...n).toArray[i] = m + i",
+"screen": "kept"
+},
+{
+"name": "core_Nat_getElem_toArray_rio",
+"lemma": "Nat.getElem_toArray_rio",
+"statement": "∀ {n i : Nat} (_h : i < (*...n).toArray.size), (*...n).toArray[i] = i",
+"screen": "kept"
+},
+{
+"name": "core_Nat_getElem_toList_ric",
+"lemma": "Nat.getElem_toList_ric",
+"statement": "∀ {n i : Nat} (_h : i < (*...=n).toList.length), (*...=n).toList[i] = i",
+"screen": "kept"
+},
+{
+"name": "core_Nat_induct_roo_left",
+"lemma": "Nat.induct_roo_left",
+"statement": "∀ (motive : Nat → Nat → Prop), (∀ (a b : Nat), b ≤ a + 1 → motive a b) → (∀ (a b : Nat), a + 1 < b → motive (a + 1) b → motive a b) → ∀ (a b : Nat), motive a b",
+"screen": "kept"
+},
+{
+"name": "core_Nat_instCommutativeHAdd",
+"lemma": "Nat.instCommutativeHAdd",
+"statement": "Std.Commutative fun x1 x2 => x1 + x2",
+"screen": "invalid"
+},
+{
+"name": "core_Nat_instCommutativeMax",
+"lemma": "Nat.instCommutativeMax",
+"statement": "Std.Commutative max",
+"screen": "invalid"
+},
+{
+"name": "core_Nat_instNeZeroHPow",
+"lemma": "Nat.instNeZeroHPow",
+"statement": "∀ {n m : Nat} [NeZero n], NeZero (n ^ m)",
+"screen": "kept"
+},
+{
+"name": "core_Nat_isNone_getElem?_toArray_roc_eq",
+"lemma": "Nat.isNone_getElem?_toArray_roc_eq",
+"statement": "∀ {m n i : Nat}, ((m<...=n).toArray[i]?.isNone = true) = (n ≤ i + m)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_isSome_getElem?_toArray_rco_eq",
+"lemma": "Nat.isSome_getElem?_toArray_rco_eq",
+"statement": "∀ {m n i : Nat}, ((m...n).toArray[i]?.isSome = true) = (i < n - m)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_lcm_lcm_self_left_left",
+"lemma": "Nat.lcm_lcm_self_left_left",
+"statement": "∀ (m n : Nat), (m.lcm n).lcm m = n.lcm m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_lcm_zero_left",
+"lemma": "Nat.lcm_zero_left",
+"statement": "∀ (m : Nat), Nat.lcm 0 m = 0",
+"screen": "kept"
+},
+{
+"name": "core_Nat_le_add_left",
+"lemma": "Nat.le_add_left",
+"statement": "∀ (n m : Nat), n ≤ m + n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_le_max_left",
+"lemma": "Nat.le_max_left",
+"statement": "∀ (a b : Nat), a ≤ max a b",
+"screen": "easy"
+},
+{
+"name": "core_Nat_le_mul_of_pos_left",
+"lemma": "Nat.le_mul_of_pos_left",
+"statement": "∀ {n : Nat} (m : Nat), 0 < n → m ≤ n * m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_le_of_mul_le_mul_left",
+"lemma": "Nat.le_of_mul_le_mul_left",
+"statement": "∀ {a b c : Nat}, c * a ≤ c * b → 0 < c → a ≤ b",
+"screen": "easy"
+},
+{
+"name": "core_Nat_le_of_not_lt",
+"lemma": "Nat.le_of_not_lt",
+"statement": "∀ {a b : Nat}, ¬a < b → b ≤ a",
+"screen": "easy"
+},
+{
+"name": "core_Nat_le_of_sub_le_sub_right",
+"lemma": "Nat.le_of_sub_le_sub_right",
+"statement": "∀ {n m k : Nat}, k ≤ m → n - k ≤ m - k → n ≤ m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_le_of_succ_le",
+"lemma": "Nat.le_of_succ_le",
+"statement": "∀ {n m : Nat}, n.succ ≤ m → n ≤ m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_le_of_testBit",
+"lemma": "Nat.le_of_testBit",
+"statement": "∀ {n m : Nat}, (∀ (i : Nat), n.testBit i = true → m.testBit i = true) → n ≤ m",
+"screen": "kept"
+},
+{
+"name": "core_Nat_le_sub_of_add_le'",
+"lemma": "Nat.le_sub_of_add_le'",
+"statement": "∀ {n k m : Nat}, m + n ≤ k → n ≤ k - m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_le_trans",
+"lemma": "Nat.le_trans",
+"statement": "∀ {n m k : Nat}, n ≤ m → m ≤ k → n ≤ k",
+"screen": "easy"
+},
+{
+"name": "core_Nat_log2_zero",
+"lemma": "Nat.log2_zero",
+"statement": "Nat.log2 0 = 0",
+"screen": "easy"
+},
+{
+"name": "core_Nat_lt_add_left",
+"lemma": "Nat.lt_add_left",
+"statement": "∀ {a b : Nat} (c : Nat), a < b → a < c + b",
+"screen": "easy"
+},
+{
+"name": "core_Nat_lt_iff_le_pred",
+"lemma": "Nat.lt_iff_le_pred",
+"statement": "∀ {m n : Nat}, 0 < n → (m < n ↔ m ≤ n - 1)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_lt_log2_self",
+"lemma": "Nat.lt_log2_self",
+"statement": "∀ {n : Nat}, n < 2 ^ (n.log2 + 1)",
+"screen": "kept"
+},
+{
+"name": "core_Nat_lt_of_add_left_lt",
+"lemma": "Nat.lt_of_add_left_lt",
+"statement": "∀ {n m k : Nat}, k + n < m → n < m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_lt_of_lt_of_eq",
+"lemma": "Nat.lt_of_lt_of_eq",
+"statement": "∀ {n m k : Nat}, n < m → m = k → n < k",
+"screen": "easy"
+},
+{
+"name": "core_Nat_lt_of_not_ge",
+"lemma": "Nat.lt_of_not_ge",
+"statement": "∀ {a b : Nat}, ¬b ≥ a → b < a",
+"screen": "easy"
+},
+{
+"name": "core_Nat_lt_one_iff",
+"lemma": "Nat.lt_one_iff",
+"statement": "∀ {n : Nat}, n < 1 ↔ n = 0",
+"screen": "easy"
+},
+{
+"name": "core_Nat_lt_sub_iff_add_lt'",
+"lemma": "Nat.lt_sub_iff_add_lt'",
+"statement": "∀ {a b c : Nat}, a < c - b ↔ b + a < c",
+"screen": "easy"
+},
+{
+"name": "core_Nat_lt_trichotomy",
+"lemma": "Nat.lt_trichotomy",
+"statement": "∀ (a b : Nat), a < b ∨ a = b ∨ b < a",
+"screen": "easy"
+},
+{
+"name": "core_Nat_map_add_toArray_rco'",
+"lemma": "Nat.map_add_toArray_rco'",
+"statement": "∀ {m n k : Nat}, Array.map (fun x => k + x) (m...n).toArray = (k + m...k + n).toArray",
+"screen": "kept"
+},
+{
+"name": "core_Nat_map_add_toArray_rio",
+"lemma": "Nat.map_add_toArray_rio",
+"statement": "∀ {n k : Nat}, Array.map (fun x => x + k) (*...n).toArray = (k...n + k).toArray",
+"screen": "kept"
+},
+{
+"name": "core_Nat_map_add_toList_rio'",
+"lemma": "Nat.map_add_toList_rio'",
+"statement": "∀ {n k : Nat}, List.map (fun x => k + x) (*...n).toList = (k...k + n).toList",
+"screen": "kept"
+},
+{
+"name": "core_Nat_max_min_distrib_right",
+"lemma": "Nat.max_min_distrib_right",
+"statement": "∀ (a b c : Nat), max (min a b) c = min (max a c) (max b c)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_max_right_comm",
+"lemma": "Nat.max_right_comm",
+"statement": "∀ (a b c : Nat), max (max a b) c = max (max a c) b",
+"screen": "easy"
+},
+{
+"name": "core_Nat_max_self",
+"lemma": "Nat.max_self",
+"statement": "∀ (a : Nat), max a a = a",
+"screen": "easy"
+},
+{
+"name": "core_Nat_max_zero",
+"lemma": "Nat.max_zero",
+"statement": "∀ (a : Nat), max a 0 = a",
+"screen": "easy"
+},
+{
+"name": "core_Nat_min_assoc",
+"lemma": "Nat.min_assoc",
+"statement": "∀ (a b c : Nat), min (min a b) c = min a (min b c)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_min_right_comm",
+"lemma": "Nat.min_right_comm",
+"statement": "∀ (a b c : Nat), min (min a b) c = min (min a c) b",
+"screen": "easy"
+},
+{
+"name": "core_Nat_mod_two_bne_one",
+"lemma": "Nat.mod_two_bne_one",
+"statement": "∀ {a : Nat}, (a % 2 != 1) = (a % 2 == 0)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_mod_zero",
+"lemma": "Nat.mod_zero",
+"statement": "∀ (a : Nat), a % 0 = a",
+"screen": "easy"
+},
+{
+"name": "core_Nat_mul_add_mod",
+"lemma": "Nat.mul_add_mod",
+"statement": "∀ (m x y : Nat), (m * x + y) % m = y % m",
+"screen": "kept"
+},
+{
+"name": "core_Nat_mul_div_le",
+"lemma": "Nat.mul_div_le",
+"statement": "∀ (m n : Nat), n * (m / n) ≤ m",
+"screen": "kept"
+},
+{
+"name": "core_Nat_mul_dvd_mul_right",
+"lemma": "Nat.mul_dvd_mul_right",
+"statement": "∀ {a b : Nat}, a ∣ b → ∀ (c : Nat), a * c ∣ b * c",
+"screen": "kept"
+},
+{
+"name": "core_Nat_mul_le_mul_right",
+"lemma": "Nat.mul_le_mul_right",
+"statement": "∀ {n m : Nat} (k : Nat), n ≤ m → n * k ≤ m * k",
+"screen": "easy"
+},
+{
+"name": "core_Nat_mul_left_comm",
+"lemma": "Nat.mul_left_comm",
+"statement": "∀ (n m k : Nat), n * (m * k) = m * (n * k)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_mul_lt_mul_of_le_of_lt'",
+"lemma": "Nat.mul_lt_mul_of_le_of_lt'",
+"statement": "∀ {a c b d : Nat}, a ≤ c → b < d → 0 < a → a * b < c * d",
+"screen": "kept"
+},
+{
+"name": "core_Nat_mul_lt_mul_of_pos_left",
+"lemma": "Nat.mul_lt_mul_of_pos_left",
+"statement": "∀ {n m k : Nat}, n < m → k > 0 → k * n < k * m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_mul_min_mul_right",
+"lemma": "Nat.mul_min_mul_right",
+"statement": "∀ (a b c : Nat), min (a * c) (b * c) = min a b * c",
+"screen": "easy"
+},
+{
+"name": "core_Nat_mul_mod",
+"lemma": "Nat.mul_mod",
+"statement": "∀ (a b n : Nat), a * b % n = a % n * (b % n) % n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_mul_zero",
+"lemma": "Nat.mul_zero",
+"statement": "∀ (n : Nat), n * 0 = 0",
+"screen": "easy"
+},
+{
+"name": "core_Nat_not_le_eq",
+"lemma": "Nat.not_le_eq",
+"statement": "∀ (a b : Nat), (¬a ≤ b) = (b + 1 ≤ a)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_or_and_distrib_right",
+"lemma": "Nat.or_and_distrib_right",
+"statement": "∀ (x y z : Nat), x &&& y ||| z = (x ||| z) &&& (y ||| z)",
+"screen": "kept"
+},
+{
+"name": "core_Nat_or_comm",
+"lemma": "Nat.or_comm",
+"statement": "∀ (x y : Nat), x ||| y = y ||| x",
+"screen": "easy"
+},
+{
+"name": "core_Nat_or_self",
+"lemma": "Nat.or_self",
+"statement": "∀ (x : Nat), x ||| x = x",
+"screen": "easy"
+},
+{
+"name": "core_Nat_pos_of_lt_mul_left",
+"lemma": "Nat.pos_of_lt_mul_left",
+"statement": "∀ {a b c : Nat}, a < b * c → 0 < c",
+"screen": "easy"
+},
+{
+"name": "core_Nat_pos_of_ne_zero",
+"lemma": "Nat.pos_of_ne_zero",
+"statement": "∀ {n : Nat}, n ≠ 0 → 0 < n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_powMod_induct_unfolding",
+"lemma": "Nat.powMod.induct_unfolding",
+"statement": "∀ (m : Nat) (motive : Nat → Nat → Nat → Prop), (∀ (b : Nat), motive b 0 (1 % m)) → (∀ (b e : Nat), ¬e = 0 → have r := (b * b % m).powMod (e / 2) m; e % 2 = 1 → motive (b * b % m) (e / 2) ((b * b % m).powMod (e / 2) m) → motive b e (r * b % m)) → (∀ (b e : Nat), ¬e = 0 → have r := (b * b % m).powMod (e / 2) m; ¬e % 2 = 1 → motive (b * b % m) (e / 2) ((b * b % m).powMod (e / 2) m) → motive b e r) → ∀ (b e : Nat), motive b e (b.powMod e m)",
+"screen": "kept"
+},
+{
+"name": "core_Nat_pow_add",
+"lemma": "Nat.pow_add",
+"statement": "∀ (a m n : Nat), a ^ (m + n) = a ^ m * a ^ n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_pow_add'",
+"lemma": "Nat.pow_add'",
+"statement": "∀ (a m n : Nat), a ^ (m + n) = a ^ n * a ^ m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_pow_lcm_pow",
+"lemma": "Nat.pow_lcm_pow",
+"statement": "∀ {k n m : Nat}, (n ^ k).lcm (m ^ k) = n.lcm m ^ k",
+"screen": "kept"
+},
+{
+"name": "core_Nat_pow_lt_pow_right",
+"lemma": "Nat.pow_lt_pow_right",
+"statement": "∀ {a m n : Nat}, 1 < a → m < n → a ^ m < a ^ n",
+"screen": "kept"
+},
+{
+"name": "core_Nat_pow_sub_mul_pow",
+"lemma": "Nat.pow_sub_mul_pow",
+"statement": "∀ (a : Nat) {m n : Nat}, m ≤ n → a ^ (n - m) * a ^ m = a ^ n",
+"screen": "kept"
+},
+{
+"name": "core_Nat_pow_succ'",
+"lemma": "Nat.pow_succ'",
+"statement": "∀ {m n : Nat}, m ^ n.succ = m * m ^ n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_pred_le",
+"lemma": "Nat.pred_le",
+"statement": "∀ (n : Nat), n.pred ≤ n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_pred_lt_pred",
+"lemma": "Nat.pred_lt_pred",
+"statement": "∀ {n m : Nat}, n ≠ 0 → n < m → n.pred < m.pred",
+"screen": "kept"
+},
+{
+"name": "core_Nat_shiftLeft_shiftRight",
+"lemma": "Nat.shiftLeft_shiftRight",
+"statement": "∀ (x n : Nat), x <<< n >>> n = x",
+"screen": "kept"
+},
+{
+"name": "core_Nat_shiftLeft_succ_inside",
+"lemma": "Nat.shiftLeft_succ_inside",
+"statement": "∀ (m n : Nat), m <<< (n + 1) = (2 * m) <<< n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_shiftRight_or_distrib",
+"lemma": "Nat.shiftRight_or_distrib",
+"statement": "∀ {i a b : Nat}, (a ||| b) >>> i = a >>> i ||| b >>> i",
+"screen": "easy"
+},
+{
+"name": "core_Nat_shiftRight_succ_inside",
+"lemma": "Nat.shiftRight_succ_inside",
+"statement": "∀ (m n : Nat), m >>> (n + 1) = (m / 2) >>> n",
+"screen": "kept"
+},
+{
+"name": "core_Nat_shiftRight_zero",
+"lemma": "Nat.shiftRight_zero",
+"statement": "∀ {n : Nat}, n >>> 0 = n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_sub_add_eq",
+"lemma": "Nat.sub_add_eq",
+"statement": "∀ (a b c : Nat), a - (b + c) = a - b - c",
+"screen": "easy"
+},
+{
+"name": "core_Nat_sub_add_lt_sub",
+"lemma": "Nat.sub_add_lt_sub",
+"statement": "∀ {m k n : Nat}, m + k ≤ n → 0 < k → n - (m + k) < n - m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_sub_le_iff_le_add",
+"lemma": "Nat.sub_le_iff_le_add",
+"statement": "∀ {a b c : Nat}, a - b ≤ c ↔ a ≤ c + b",
+"screen": "easy"
+},
+{
+"name": "core_Nat_sub_le_sub_iff_right",
+"lemma": "Nat.sub_le_sub_iff_right",
+"statement": "∀ {k m n : Nat}, k ≤ m → (n - k ≤ m - k ↔ n ≤ m)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_sub_lt_iff_lt_add'",
+"lemma": "Nat.sub_lt_iff_lt_add'",
+"statement": "∀ {a b c : Nat}, b ≤ a → (a - b < c ↔ a < b + c)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_sub_one_lt_of_le",
+"lemma": "Nat.sub_one_lt_of_le",
+"statement": "∀ {a b : Nat}, 0 < a → a ≤ b → a - 1 < b",
+"screen": "easy"
+},
+{
+"name": "core_Nat_sub_one_sub_lt_of_lt",
+"lemma": "Nat.sub_one_sub_lt_of_lt",
+"statement": "∀ {a b : Nat}, a < b → b - 1 - a < b",
+"screen": "easy"
+},
+{
+"name": "core_Nat_sub_pos_iff_lt",
+"lemma": "Nat.sub_pos_iff_lt",
+"statement": "∀ {n m : Nat}, 0 < n - m ↔ m < n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_sub_self_add",
+"lemma": "Nat.sub_self_add",
+"statement": "∀ (n m : Nat), n - (n + m) = 0",
+"screen": "easy"
+},
+{
+"name": "core_Nat_succ_lt_of_lt_pred",
+"lemma": "Nat.succ_lt_of_lt_pred",
+"statement": "∀ {n : Nat} {m : Nat}, n < m.pred → n.succ < m",
+"screen": "easy"
+},
+{
+"name": "core_Nat_succ_sub",
+"lemma": "Nat.succ_sub",
+"statement": "∀ {m n : Nat}, n ≤ m → m.succ - n = (m - n).succ",
+"screen": "easy"
+},
+{
+"name": "core_Nat_testBit_and",
+"lemma": "Nat.testBit_and",
+"statement": "∀ (x y i : Nat), (x &&& y).testBit i = (x.testBit i && y.testBit i)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_testBit_or",
+"lemma": "Nat.testBit_or",
+"statement": "∀ (x y i : Nat), (x ||| y).testBit i = (x.testBit i || y.testBit i)",
+"screen": "easy"
+},
+{
+"name": "core_Nat_testBit_two_pow_mul_add",
+"lemma": "Nat.testBit_two_pow_mul_add",
+"statement": "∀ (a : Nat) {b i : Nat}, b < 2 ^ i → ∀ (j : Nat), (2 ^ i * a + b).testBit j = if j < i then b.testBit j else a.testBit (j - i)",
+"screen": "kept"
+},
+{
+"name": "core_Nat_toArray_rcc_ne_empty_iff",
+"lemma": "Nat.toArray_rcc_ne_empty_iff",
+"statement": "∀ {m n : Nat}, (m...=n).toArray ≠ #[] ↔ m ≤ n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_toArray_ric_ne_nil",
+"lemma": "Nat.toArray_ric_ne_nil",
+"statement": "∀ {n : Nat}, (*...=n).toArray ≠ #[]",
+"screen": "easy"
+},
+{
+"name": "core_Nat_toArray_roc_ne_nil_iff",
+"lemma": "Nat.toArray_roc_ne_nil_iff",
+"statement": "∀ {m n : Nat}, (m<...=n).toArray ≠ #[] ↔ m < n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_toArray_roc_succ_succ",
+"lemma": "Nat.toArray_roc_succ_succ",
+"statement": "∀ {m n : Nat}, (m + 1<...=n + 1).toArray = Array.map (fun x => x + 1) (m<...=n).toArray",
+"screen": "kept"
+},
+{
+"name": "core_Nat_toArray_roo_succ_succ",
+"lemma": "Nat.toArray_roo_succ_succ",
+"statement": "∀ {m n : Nat}, (m + 1<...n + 1).toArray = Array.map (fun x => x + 1) (m<...n).toArray",
+"screen": "kept"
+},
+{
+"name": "core_Nat_toArray_toList_rco",
+"lemma": "Nat.toArray_toList_rco",
+"statement": "∀ {m n : Nat}, (m...n).toList.toArray = (m...n).toArray",
+"screen": "easy"
+},
+{
+"name": "core_Nat_toArray_toList_rio",
+"lemma": "Nat.toArray_toList_rio",
+"statement": "∀ {n : Nat}, (*...n).toList.toArray = (*...n).toArray",
+"screen": "easy"
+},
+{
+"name": "core_Nat_toList_rcc_ne_nil_iff",
+"lemma": "Nat.toList_rcc_ne_nil_iff",
+"statement": "∀ {m n : Nat}, (m...=n).toList ≠ [] ↔ m ≤ n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_toList_rco_succ_succ",
+"lemma": "Nat.toList_rco_succ_succ",
+"statement": "∀ {m n : Nat}, (m + 1...n + 1).toList = List.map (fun x => x + 1) (m...n).toList",
+"screen": "kept"
+},
+{
+"name": "core_Nat_toList_ric_ne_nil",
+"lemma": "Nat.toList_ric_ne_nil",
+"statement": "∀ {n : Nat}, (*...=n).toList ≠ []",
+"screen": "easy"
+},
+{
+"name": "core_Nat_toList_ric_succ",
+"lemma": "Nat.toList_ric_succ",
+"statement": "∀ {n : Nat}, (*...=n + 1).toList = (*...=n).toList ++ [n + 1]",
+"screen": "kept"
+},
+{
+"name": "core_Nat_toList_rio_ne_nil_iff",
+"lemma": "Nat.toList_rio_ne_nil_iff",
+"statement": "∀ {n : Nat}, (*...n).toList ≠ [] ↔ 0 < n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_toList_roc_append_toList_roc",
+"lemma": "Nat.toList_roc_append_toList_roc",
+"statement": "∀ {l m n : Nat}, l ≤ m → m ≤ n → (l<...=m).toList ++ (m<...=n).toList = (l<...=n).toList",
+"screen": "kept"
+},
+{
+"name": "core_Nat_toList_toArray_rco",
+"lemma": "Nat.toList_toArray_rco",
+"statement": "∀ {m n : Nat}, (m...n).toArray.toList = (m...n).toList",
+"screen": "easy"
+},
+{
+"name": "core_Nat_toNat?_repr",
+"lemma": "Nat.toNat?_repr",
+"statement": "∀ (n : Nat), n.repr.toNat? = some n",
+"screen": "kept"
+},
+{
+"name": "core_Nat_toUInt16_eq",
+"lemma": "Nat.toUInt16_eq",
+"statement": "∀ {n : Nat}, n.toUInt16 = UInt16.ofNat n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_two_mul",
+"lemma": "Nat.two_mul",
+"statement": "∀ (n : Nat), 2 * n = n + n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_two_pow_pos",
+"lemma": "Nat.two_pow_pos",
+"statement": "∀ (w : Nat), 0 < 2 ^ w",
+"screen": "easy"
+},
+{
+"name": "core_Nat_underscore_not_in_toDigits",
+"lemma": "Nat.underscore_not_in_toDigits",
+"statement": "∀ {n : Nat}, ¬'_' ∈ Nat.toDigits 10 n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_zero_lt_getElem!_toList_ric_iff",
+"lemma": "Nat.zero_lt_getElem!_toList_ric_iff",
+"statement": "∀ {n i : Nat}, 0 < (*...=n).toList[i]! ↔ i ≤ n ∧ 0 < i",
+"screen": "kept"
+}
+]
+}
