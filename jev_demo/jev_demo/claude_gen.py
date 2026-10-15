@@ -60,6 +60,9 @@ class Usage:
     usd: float = 0.0
     refusals: int = 0
     errors: int = 0
+    requests: int = 0  # every `_ask`, cached or billed (the per-theorem cap counts these)
+    notional_usd: float = 0.0  # cost of every request at its original price, cached or not
+    notional_unknown: int = 0  # cache hits stored without a price (old entries)
 
 
 def _clean(tactics: list[str], n: int) -> list[str]:
@@ -112,13 +115,27 @@ class ClaudeGenerator:
     def _ask(self, user: str, sample: int, limit: int | None = None) -> list[str]:
         limit = limit or self.n
         path = self._path(user, sample)
+        self.usage.requests += 1
         try:
             with open(path, encoding="utf-8") as f:
-                return list(json.load(f)["tactics"])
+                entry = json.load(f)
+            tactics = list(entry["tactics"])
+            if isinstance(entry.get("usd"), (int, float)):
+                self.usage.notional_usd += entry["usd"]
+            else:
+                self.usage.notional_unknown += 1
+            return tactics
         except (OSError, ValueError, KeyError):
             pass
         if self.usage.usd >= self.max_usd:
             return []
+        before = self.usage.usd
+        try:
+            return self._request(user, sample, limit, path, before)
+        finally:  # failed billed requests count toward notional cost too
+            self.usage.notional_usd += self.usage.usd - before
+
+    def _request(self, user: str, sample: int, limit: int, path: str, before: float) -> list[str]:
         self.usage.calls += 1
         try:
             resp = self.client.beta.messages.create(
@@ -152,7 +169,7 @@ class ClaudeGenerator:
         os.makedirs(self.cache_dir, exist_ok=True)
         tmp = path + ".tmp"
         with open(tmp, "w", encoding="utf-8") as f:
-            json.dump({"tactics": tactics}, f, ensure_ascii=False)
+            json.dump({"tactics": tactics, "usd": self.usage.usd - before}, f, ensure_ascii=False)
         os.replace(tmp, path)
         return tactics
 

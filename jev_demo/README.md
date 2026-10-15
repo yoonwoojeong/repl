@@ -158,15 +158,17 @@ and whether Jev adds anything on top of it. Each method is run on the 20 test th
 
 `report.md` computes the three pre-registered questions from the results: (1) `hybrid` vs
 `claude_search` on hard theorems, (2) their USD, (3) how many `menu_reachable = false` hard
-theorems any Claude method proved. Rows carry `claude_calls`, `usd`, `refusals`, `errors` and
-`budget_capped`.
+theorems any Claude method proved. Rows carry `claude_requests`, `claude_calls`, `usd`, `notional_usd`, `refusals`, `errors`,
+`budget_capped` and `call_capped`.
 
 Cost controls: `--max-usd` (default 10) is a hard cap, after which the generator returns no
 proposals and the affected rows are flagged `budget_capped`; responses are cached on disk
 (`jev_demo/cache/claude/`, git-ignored), so reruns are free; proposals are generated once per
 goal and memoised per theorem; `run-phase2` and `collect` refuse to run unless
-`ANTHROPIC_RUN_LIVE=1`. Since the cache is shared, a method that runs after another can reuse
-its proposals for free, so USD comparisons count billed requests only.
+`ANTHROPIC_RUN_LIVE=1`. At most 16 Claude requests (cached or not) are made per theorem and method; rows that hit
+this are flagged `call_capped`. Since the cache is shared, a later method can reuse proposals
+for free, so the report shows both actual USD (billed) and notional USD (every request at its
+original price, cached or not); the `hybrid` vs `claude_search` cost question uses notional USD.
 
 ### How to run
 

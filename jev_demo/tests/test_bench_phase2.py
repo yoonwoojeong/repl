@@ -4,7 +4,8 @@ import os
 import pytest
 
 import jev_demo.model as model_mod
-from jev_demo.bench import (PHASE2_METHODS, format_report_phase2, phase2_questions, run_phase2)
+from jev_demo.bench import (CALL_CAP, PHASE2_METHODS, _MeteredGen, format_report_phase2,
+                            phase2_questions, run_phase2)
 from jev_demo.claude_gen import Usage
 from jev_demo.collect import save_labels
 from jev_demo.model import BinaryExample, ChoiceExample
@@ -32,11 +33,16 @@ class FakeGen:
         self.by_stmt = {t.statement: list(t.gold) for t in TEST if t.name in self.solves}
 
     def _bill(self, key):
-        if self.usage.usd >= self.max_usd or key in self._seen:
+        self.usage.requests += 1
+        if key in self._seen:  # cached: free, but still priced notionally
+            self.usage.notional_usd += self.price
+            return False
+        if self.usage.usd >= self.max_usd:
             return False
         self._seen.add(key)
         self.usage.calls += 1
         self.usage.usd += self.price
+        self.usage.notional_usd += self.price
         return True
 
     def propose(self, goal, prelude="", failed=()):
@@ -75,7 +81,7 @@ def test_phase2_report_rows_and_cost_columns(tmp_path):
     for m in PHASE2_METHODS:
         r = res[m]
         assert {"proved", "proved_easy", "proved_hard", "mean_calls", "claude_calls", "usd",
-                "refusals", "errors", "budget_capped", "per_theorem"} <= set(r)
+                "refusals", "errors", "budget_capped", "notional_usd", "call_capped", "per_theorem"} <= set(r)
         assert len(r["per_theorem"]) == 3
     assert res["claude_search"]["proved_hard"] == 1 and res["hybrid"]["claude_requests"] > 0
     assert res["claude_search"]["claude_calls"] > 0 and res["claude_search"]["usd"] > 0
@@ -85,7 +91,7 @@ def test_phase2_report_rows_and_cost_columns(tmp_path):
     assert "partial" not in on_disk and "questions" in on_disk
     text = (out / "report.md").read_text()
     header = next(l for l in text.splitlines() if l.startswith("|") and "method" in l)
-    assert "Claude calls" in header and "USD" in header and "hard" in header
+    assert "Claude requests" in header and "USD (actual)" in header and "USD (notional)" in header and "hard" in header
     for name in PHASE2_METHODS + ("phase1_best", "phase1_fixed_expand_all"):
         assert len([l for l in text.splitlines() if l.startswith(f"| {name}")]) >= 1
     assert "phase-1 reference" in text
@@ -131,9 +137,78 @@ def test_retrained_model_includes_claude_labels(tmp_path, monkeypatch):
     assert "claude-label-state" not in seen
 
 
+class BogusGen(FakeGen):
+    """Never solves anything and proposes a fresh bogus tactic for every goal and failure list."""
+
+    def propose(self, goal, prelude="", failed=()):
+        self._bill(("p", goal, tuple(failed)))
+        return [f"bogus{len(failed)}"]
+
+
+class EndlessRepl(GoldRepl):
+    """Every tactic succeeds and opens a brand-new goal, so the search keeps asking for proposals."""
+
+    n = 0
+
+    def tactic(self, tac, proof_state, timeout_s=None):
+        from jev_demo.repl_client import TacticResult
+        self.n += 1
+        return TacticResult(self.n + 1000, [f"⊢ goal {self.n}"], True, False, None, [])
+
+
+def test_call_cap_per_theorem_counts_requests_and_flags_row(tmp_path):
+    out = tmp_path / "out"
+    tmp_path.mkdir(exist_ok=True)
+    res = run_phase2(EndlessRepl(TRAIN + TEST), TRAIN, TEST, str(out), BogusGen(solves=()),
+                     phase1_path=phase1_file(tmp_path), labels_path=str(tmp_path / "none.json"),
+                     library=LIB, log=lambda m: None)
+    for m in ("claude_search", "hybrid"):
+        for r in res[m]["per_theorem"]:
+            assert r["claude_requests"] <= CALL_CAP
+    assert res["claude_search"]["call_capped"] is True and res["call_capped"] is True
+    assert any(r["call_capped"] and r["claude_requests"] == CALL_CAP
+               for r in res["claude_search"]["per_theorem"])
+
+
+def test_call_cap_counts_whole_proof_requests_and_resets_per_theorem():
+    gen = FakeGen()
+    mg = _MeteredGen(gen, cap=5)
+    mg.begin()
+    mg.whole_proof("test0")  # one FakeGen request
+    for i in range(10):
+        mg.propose(f"g{i}")
+    assert gen.usage.requests == 5 and mg.call_capped
+    mg.begin()
+    assert not mg.call_capped and mg.propose("again") and gen.usage.requests == 6
+
+
+def test_cached_run_keeps_notional_usd_while_actual_is_zero(tmp_path):
+    from test_claude_gen import FakeClient, gen as mkgen, resp
+    c = FakeClient(resp(["omega"], inp=1_000_000))
+    g = mkgen(c, tmp_path)
+    g.propose("⊢ a")
+    first = g.usage.usd
+    assert first > 0 and g.usage.notional_usd == pytest.approx(first)
+    c2 = FakeClient()
+    g2 = mkgen(c2, tmp_path)
+    assert g2.propose("⊢ a") == ["omega"]
+    assert g2.usage.usd == 0.0 and g2.usage.requests == 1
+    assert g2.usage.notional_usd == pytest.approx(first) and g2.usage.notional_unknown == 0
+    # an old cache entry without a price is counted as unknown
+    import glob
+    for f in glob.glob(str(tmp_path / "c" / "*.json")):
+        with open(f) as fh:
+            d = json.load(fh)
+        d.pop("usd")
+        with open(f, "w") as fh:
+            json.dump(d, fh)
+    g3 = mkgen(FakeClient(), tmp_path)
+    assert g3.propose("⊢ a") == ["omega"] and g3.usage.notional_unknown == 1
+
+
 def test_questions_computed_from_results():
     def m(hard, usd, proved):
-        return {"proved_hard": hard, "usd": usd, "per_theorem": [
+        return {"proved_hard": hard, "notional_usd": usd, "per_theorem": [
             {"name": n, "difficulty": "hard", "proved": n in proved} for n in "abcd"]}
     res = {"claude_whole": m(1, 1.0, "a"), "claude_search": m(2, 3.0, "ab"),
            "hybrid": m(3, 2.0, "abc"), "n_hard": 4,

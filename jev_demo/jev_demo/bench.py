@@ -164,6 +164,9 @@ def _summary(rows: list[dict], claude: bool = False) -> dict:
             "claude_requests": sum(r["claude_requests"] for r in rows),
             "claude_calls": sum(r["claude_calls"] for r in rows),
             "usd": round(sum(r["usd"] for r in rows), 6),
+            "notional_usd": round(sum(r["notional_usd"] for r in rows), 6),
+            "notional_unknown": sum(r["notional_unknown"] for r in rows),
+            "call_capped": any(r["call_capped"] for r in rows),
             "refusals": sum(r["refusals"] for r in rows),
             "errors": sum(r["errors"] for r in rows),
             "budget_capped": any(r["budget_capped"] for r in rows),
@@ -172,28 +175,48 @@ def _summary(rows: list[dict], claude: bool = False) -> dict:
     return out
 
 
-class _MeteredGen:
-    """Wraps a Claude generator: counts requests (cached or billed) and reads usage deltas."""
+CALL_CAP = 16  # Claude requests (cached or billed) per theorem and method
 
-    def __init__(self, gen):
-        self.gen, self.requests = gen, 0
+
+class _MeteredGen:
+    """Wraps a Claude generator: enforces the per-theorem request cap and reads usage deltas.
+    Requests are counted inside the generator (`usage.requests`), so `whole_proof`'s k requests
+    count k and cached requests count like billed ones (behaviour does not depend on run order)."""
+
+    def __init__(self, gen, cap: int = CALL_CAP):
+        self.gen, self.cap = gen, cap
+        self.call_capped = False
+        self._start = 0
+
+    def begin(self) -> None:
+        """Start a theorem: reset the per-theorem counter."""
+        self._start, self.call_capped = self.gen.usage.requests, False
+
+    def _used(self) -> int:
+        return self.gen.usage.requests - self._start
 
     def propose(self, *a, **k):
-        self.requests += 1
+        if self._used() >= self.cap:
+            self.call_capped = True
+            return []
         return self.gen.propose(*a, **k)
 
     def whole_proof(self, *a, **k):
-        self.requests += 1
+        if self._used() >= self.cap:
+            self.call_capped = True
+            return []
         return self.gen.whole_proof(*a, **k)
 
     def snapshot(self) -> tuple:
         u = self.gen.usage
-        return (self.requests, u.calls, u.usd, u.refusals, u.errors)
+        return (u.requests, u.calls, u.usd, u.notional_usd, u.notional_unknown, u.refusals, u.errors)
 
     def delta(self, before: tuple) -> dict:
-        r, c, usd, ref, err = (a - b for a, b in zip(self.snapshot(), before))
-        return {"claude_requests": r, "claude_calls": c, "usd": round(usd, 6), "refusals": ref,
-                "errors": err, "budget_capped": self.gen.usage.usd >= self.gen.max_usd}
+        r, c, usd, nu, unk, ref, err = (a - b for a, b in zip(self.snapshot(), before))
+        return {"claude_requests": r, "claude_calls": c, "usd": round(usd, 6),
+                "notional_usd": round(nu, 6), "notional_unknown": unk, "refusals": ref,
+                "errors": err, "budget_capped": self.gen.usage.usd >= self.gen.max_usd,
+                "call_capped": self.call_capped}
 
 
 def _run_methods(methods, test: list[Theorem], run_one, repl, log, results: dict, out_dir: str,
@@ -205,6 +228,8 @@ def _run_methods(methods, test: list[Theorem], run_one, repl, log, results: dict
         rows = []
         for thm in test:
             counting = _CountingRepl(repl)
+            if metered:
+                metered.begin()
             before = metered.snapshot() if metered else None
             t0 = time.perf_counter()
             try:
@@ -428,8 +453,8 @@ def phase2_questions(results: dict) -> dict:
     return {
         "hybrid_hard": hyb["proved_hard"], "claude_search_hard": cs["proved_hard"],
         "hybrid_beats_claude_search": hyb["proved_hard"] > cs["proved_hard"],
-        "hybrid_usd": hyb["usd"], "claude_search_usd": cs["usd"],
-        "hybrid_usd_not_higher": hyb["usd"] <= cs["usd"],
+        "hybrid_usd": hyb["notional_usd"], "claude_search_usd": cs["notional_usd"],
+        "hybrid_usd_not_higher": hyb["notional_usd"] <= cs["notional_usd"],
         "unreachable_hard": unreachable,
         "unreachable_hard_proved": proved_by,
         "unreachable_hard_proved_count": len(proved_by),
@@ -469,6 +494,7 @@ def run_phase2(repl, train: list[Theorem], test: list[Theorem], out_dir: str, ge
         "max_usd": generator.max_usd,
         "total_usd": round(generator.usage.usd, 6),
         "claude_usage": dict(vars(generator.usage)),
+        "call_capped": any(results[m]["call_capped"] for m in PHASE2_METHODS),
         "budget_capped": any(results[m]["budget_capped"] for m in PHASE2_METHODS),
     })
     if reachability is not None:
@@ -483,12 +509,13 @@ def run_phase2(repl, train: list[Theorem], test: list[Theorem], out_dir: str, ge
 def format_report_phase2(results: dict, test: list[Theorem] | None = None) -> str:
     ne, nh = results["n_easy"], results["n_hard"]
     n1e, n1h = results.get("phase1_n_easy") or ne, results.get("phase1_n_hard") or nh
-    head = ["| method | proved | easy | hard | mean calls (proved) | Claude calls | USD | refusals | errors |",
-            "|---|---|---|---|---|---|---|---|---|"]
+    head = ["| method | proved | easy | hard | mean calls (proved) | Claude requests | billed calls | USD (actual) | USD (notional) | refusals | errors |",
+            "|---|---|---|---|---|---|---|---|---|---|"]
 
     def row(label, r, e, h, claude):
-        c = (f"{r['claude_calls']} | {r['usd']:.4f} | {r['refusals']} | {r['errors']}"
-             if claude else "– | – | – | –")
+        c = (f"{r['claude_requests']} | {r['claude_calls']} | {r['usd']:.4f} | "
+             f"{r['notional_usd']:.4f}{'+?' if r['notional_unknown'] else ''} | {r['refusals']} | {r['errors']}"
+             if claude else "– | – | – | – | – | –")
         return (f"| {label} | {r['proved']}/{e + h} | {r['proved_easy']}/{e} | {r['proved_hard']}/{h} "
                 f"| {_fmt(r['mean_calls'])} | {c} |")
 
@@ -498,7 +525,8 @@ def format_report_phase2(results: dict, test: list[Theorem] | None = None) -> st
                 "refused locally and returned no proposals, so the affected rows are not comparable.", ""]
     out += head
     for m in PHASE2_METHODS:
-        out.append(row(m, results[m], ne, nh, True) + (" budget capped" if results[m]["budget_capped"] else ""))
+        out.append(row(m, results[m], ne, nh, True) + (" budget capped" if results[m]["budget_capped"] else "")
+                   + (f" call cap ({CALL_CAP}/theorem) hit" if results[m]["call_capped"] else ""))
     b = results["phase1_best"]
     out.append(row(f"phase1_best (`{b['method']}`, phase-1 reference)", b, n1e, n1h, False))
     out += ["", "Reference, post hoc in phase 1 (the strongest phase-1 method, not pre-registered):", "",
@@ -508,15 +536,16 @@ def format_report_phase2(results: dict, test: list[Theorem] | None = None) -> st
             f"{WHOLE_PROOF_K} complete scripts and counts a theorem as proved if any passes `check_proof`; "
             "`claude_search` expands Claude's proposals first, then the fixed menu; `hybrid` ranks "
             "Claude's proposals together with the menu using the model refit on phase-1 replays plus "
-            "Claude labels. USD counts billed requests only; proposals cached by an earlier method are "
-            "free to a later one, so compare `hybrid` and `claude_search` costs with that in mind.", ""]
+            "Claude labels. USD (actual) is what was billed; USD (notional) prices every request at its original "
+            f"cost, cached or not (`+?`: some cache entries carry no price), and is what question 2 "
+            f"compares. At most {CALL_CAP} Claude requests are made per theorem and method.", ""]
     q = results.get("questions") or phase2_questions(results)
     out += ["## Pre-registered questions", "",
             f"1. Does `hybrid` prove more hard theorems than `claude_search` (did Jev add value on top "
             f"of Claude)? **{_fmt(q['hybrid_beats_claude_search'])}**: {q['hybrid_hard']}/{nh} vs "
             f"{q['claude_search_hard']}/{nh}.",
             f"2. At equal or lower USD? **{_fmt(q['hybrid_usd_not_higher'])}**: `hybrid` "
-            f"${q['hybrid_usd']:.4f} vs `claude_search` ${q['claude_search_usd']:.4f}.",
+            f"notional ${q['hybrid_usd']:.4f} vs `claude_search` ${q['claude_search_usd']:.4f}.",
             f"3. Hard theorems with no gold proof inside the phase-1 menu (`menu_reachable = false`) "
             f"that any Claude method proved: **{q['unreachable_hard_proved_count']}/"
             f"{len(q['unreachable_hard'])}**"
