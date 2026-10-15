@@ -1,0 +1,22 @@
+{
+  "test_add_comm": true,
+  "test_append_length": true,
+  "test_reverse_reverse": true,
+  "test_mod_two_cases": true,
+  "test_or_comm": true,
+  "test_add_eq_zero_left": true,
+  "test_double": false,
+  "test_sum_to": false,
+  "test_sum_odd": false,
+  "test_sum_sq": false,
+  "test_succ_le_two_pow": false,
+  "test_sq_mod_four": false,
+  "test_gcd_succ": true,
+  "test_dvd_mul_right": true,
+  "test_map_double_sum": true,
+  "test_rev_eq_reverse": false,
+  "test_two_dvd_mul_succ": true,
+  "test_fib_mono": false,
+  "test_map_map": true,
+  "test_mul_self_le": true
+}
