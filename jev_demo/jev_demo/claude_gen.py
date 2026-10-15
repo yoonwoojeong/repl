@@ -1,11 +1,15 @@
 """Claude as an open-ended Lean tactic generator (Phase 2).
 
 SDK path (verified against the installed anthropic 1.14.0 with `inspect.signature`):
-`client.beta.messages.parse(...)` exists and accepts `output_format`, `output_config`, `betas`,
-`fallbacks` (typed `Iterable[BetaFallbackParam] | Literal["default"]`) and top-level
-`cache_control`.  So the `parse` path is used: `output_format=Proposals` is merged by the SDK into
-`output_config` next to our `{"effort": ...}`, and the reply is read from `.parsed_output`.
-The `create` + `json_schema` + `model_validate_json` fallback was NOT needed.
+`client.beta.messages.create(...)` accepts `output_config`, `betas`, `fallbacks` (typed
+`Iterable[BetaFallbackParam] | Literal["default"]`) and top-level `cache_control`.  `beta.messages.parse`
+also accepts them, but it runs `TypeAdapter.validate_json` while building the response, so truncated
+or non-JSON output raises `pydantic.ValidationError` from inside the call after the request was
+billed (usage never metered; a refusal with text would look like an error).  So the documented
+fallback path is used: `create` with `output_config={"effort": ..., "format": {"type": "json_schema",
+"schema": Proposals.model_json_schema()}}` (schema has `required` and `additionalProperties: false`),
+then, in order: meter usage, check `stop_reason == "refusal"`, check `"max_tokens"`, and only then
+`Proposals.model_validate_json(text)`.
 
 Model rules for claude-opus-5-5: `thinking` is omitted (adaptive by default), effort is set via
 `output_config`, and no `temperature`, `budget_tokens`, prefill or forced `tool_choice` is sent.
@@ -27,7 +31,7 @@ import pydantic
 from jev_demo.prompts import SYSTEM_PROMPT
 
 BETA_FALLBACK = "server-side-fallback-2026-07-01"
-MAX_TOKENS = 4000
+MAX_TOKENS = 16000  # adaptive thinking counts against max_tokens
 
 # USD per million tokens, claude-opus-5-5.  Cache write is the 5-minute-TTL rate (1.25x input).
 PRICE_INPUT = 4.0
@@ -40,6 +44,8 @@ _FORBIDDEN = re.compile(r"(?<![\w'])(sorry|admit)(?![\w'])")
 
 class Proposals(pydantic.BaseModel):
     """Structured output: 1-8 tactics, most promising first."""
+
+    model_config = pydantic.ConfigDict(extra="forbid")  # schema gets additionalProperties: false
 
     tactics: list[str]
 
@@ -115,35 +121,31 @@ class ClaudeGenerator:
             return []
         self.usage.calls += 1
         try:
-            resp = self.client.beta.messages.parse(
+            resp = self.client.beta.messages.create(
                 model=self.model,
                 max_tokens=MAX_TOKENS,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": user}],
-                output_format=Proposals,
-                output_config={"effort": self.effort},
+                output_config={"effort": self.effort,
+                               "format": {"type": "json_schema", "schema": Proposals.model_json_schema()}},
                 cache_control={"type": "ephemeral"},
                 fallbacks="default",
                 betas=[BETA_FALLBACK],
             )
-        except anthropic.RateLimitError:
-            self.usage.errors += 1
-            return []
-        except anthropic.APIStatusError:
-            self.usage.errors += 1
-            return []
-        except anthropic.APIConnectionError:
-            self.usage.errors += 1
-            return []
-        except pydantic.ValidationError:
+        except (anthropic.RateLimitError, anthropic.APIStatusError, anthropic.APIConnectionError):
             self.usage.errors += 1
             return []
         self._meter(getattr(resp, "usage", None))
         if resp.stop_reason == "refusal":
             self.usage.refusals += 1
             return []
-        parsed = getattr(resp, "parsed_output", None)
-        if parsed is None:
+        if resp.stop_reason == "max_tokens":
+            self.usage.errors += 1
+            return []
+        text = next((b.text for b in resp.content if getattr(b, "type", None) == "text"), "")
+        try:
+            parsed = Proposals.model_validate_json(text)
+        except pydantic.ValidationError:
             self.usage.errors += 1
             return []
         tactics = _clean(parsed.tactics, limit)

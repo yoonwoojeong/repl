@@ -10,9 +10,10 @@ from jev_demo.prompts import EXAMPLE_SOURCES, SYSTEM_PROMPT
 from jev_demo.theorems import DATA_DIR, load_theorems
 
 
-def resp(tactics, stop="end_turn", inp=100, out=50, read=0, write=0):
+def resp(tactics, stop="end_turn", inp=100, out=50, read=0, write=0, text=None):
     return SimpleNamespace(
-        parsed_output=Proposals(tactics=tactics) if tactics is not None else None,
+        content=[SimpleNamespace(type="text", text=text if text is not None else
+                                 Proposals(tactics=tactics or []).model_dump_json())],
         stop_reason=stop,
         usage=SimpleNamespace(input_tokens=inp, output_tokens=out,
                               cache_read_input_tokens=read, cache_creation_input_tokens=write),
@@ -23,7 +24,7 @@ class FakeClient:
     def __init__(self, *responses):
         self.responses = list(responses)
         self.calls = []
-        self.beta = SimpleNamespace(messages=SimpleNamespace(parse=self._parse))
+        self.beta = SimpleNamespace(messages=SimpleNamespace(create=self._parse))
 
     def _parse(self, **kw):
         self.calls.append(kw)
@@ -53,8 +54,10 @@ def test_request_shape(tmp_path):
     assert kw["fallbacks"] == "default"
     assert "server-side-fallback-2026-07-01" in kw["betas"]
     assert kw["system"] == SYSTEM_PROMPT
-    assert kw["output_format"] is Proposals
-    assert kw["max_tokens"] == 4000
+    assert kw["max_tokens"] == 16000
+    fmt = kw["output_config"]["format"]
+    assert fmt["type"] == "json_schema"
+    assert fmt["schema"]["additionalProperties"] is False and fmt["schema"]["required"] == ["tactics"]
     for bad in ("thinking", "temperature", "tool_choice"):
         assert bad not in kw
 
@@ -66,9 +69,34 @@ def test_drops_sorry_and_admit(tmp_path):
 
 
 def test_refusal_yields_empty_and_counts(tmp_path):
-    g = gen(FakeClient(resp(None, stop="refusal")), tmp_path)
+    g = gen(FakeClient(resp(None, stop="refusal", text="I cannot help with that.")), tmp_path)
     assert g.propose("⊢ g") == []
     assert g.usage.refusals == 1 and g.usage.errors == 0
+    assert g.usage.usd > 0 and g.usage.input_tokens == 100
+    assert not os.path.exists(tmp_path / "c")
+
+
+def test_invalid_json_counts_error_and_is_metered(tmp_path):
+    g = gen(FakeClient(resp(None, text='{"tactics": ["simp"', inp=1_000_000, out=0)), tmp_path)
+    assert g.propose("⊢ g") == []
+    assert g.usage.errors == 1 and g.usage.refusals == 0
+    assert g.usage.usd == pytest.approx(4.0)
+    assert not os.path.exists(tmp_path / "c")
+
+
+def test_max_tokens_counts_error_and_is_metered(tmp_path):
+    g = gen(FakeClient(resp(None, stop="max_tokens", text='{"tactics": ["si', inp=0, out=1_000_000)), tmp_path)
+    assert g.propose("⊢ g") == []
+    assert g.usage.errors == 1 and g.usage.usd == pytest.approx(20.0)
+    assert not os.path.exists(tmp_path / "c")
+
+
+def test_billed_failures_count_toward_cap(tmp_path):
+    c = FakeClient(resp(None, text="oops", inp=1_000_000, out=0))
+    g = gen(c, tmp_path, max_usd=4.0)
+    assert g.propose("⊢ a") == []
+    assert g.propose("⊢ b") == []
+    assert len(c.calls) == 1
 
 
 def test_api_error_yields_empty_and_counts(tmp_path):
