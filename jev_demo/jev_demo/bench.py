@@ -18,6 +18,11 @@ from jev_demo.theorems import Theorem
 
 METHODS = ("model", "model_no_premise", "fixed", "random", "grind_only", "try_only")
 BASELINES_FOR_SUCCESS = ("fixed", "grind_only", "try_only")
+# Added after the first run (post hoc, not part of the success criterion): the planned
+# fixed/random rankers report confidence 1.0, so the search only ever tries their first
+# top_k = 3 actions per state. These variants report their top score (1/n) instead, so the
+# search escalates and expands every menu item in that order.
+SUPPLEMENTARY = ("fixed_expand_all", "random_expand_all")
 HOLDOUT_FRACTION = 0.2
 SEED = 0
 GRIND_TIMEOUT_S = 10
@@ -42,6 +47,17 @@ class _CountingRepl:
 
     def __getattr__(self, name):
         return getattr(self._repl, name)
+
+
+class ExpandAll:
+    """Wraps a ranker; confidence becomes the top action's score, as for ModelRanker."""
+
+    def __init__(self, ranker):
+        self.ranker = ranker
+
+    def rank(self, goal: str):
+        actions, _, value = self.ranker.rank(goal)
+        return actions, actions[0][1], value
 
 
 def _split(items: list, rng: np.random.Generator) -> tuple[list, list]:
@@ -82,6 +98,10 @@ def _run_method(method: str, thm: Theorem, repl, model, shortlister, lib) -> Sea
         return prove(thm, repl, FixedOrderRanker())
     if method == "random":
         return prove(thm, repl, RandomRanker(seed=SEED))  # fresh per theorem (ruling R10)
+    if method == "fixed_expand_all":
+        return prove(thm, repl, ExpandAll(FixedOrderRanker()))
+    if method == "random_expand_all":
+        return prove(thm, repl, ExpandAll(RandomRanker(seed=SEED)))
     if method == "grind_only":
         return single_shot(thm, repl, "grind", GRIND_TIMEOUT_S)
     if method == "try_only":
@@ -117,7 +137,7 @@ def run_experiment(repl, train: list[Theorem], test: list[Theorem], out_dir: str
     model, train_stats = train_model(train, repl, shortlister, lib)
 
     results: dict = {}
-    for method in METHODS:
+    for method in METHODS + SUPPLEMENTARY:
         rows = []
         for thm in test:
             counting = _CountingRepl(repl)
@@ -185,6 +205,19 @@ def format_report(results: dict, test: list[Theorem] | None = None) -> str:
     out += ["", f"Success criterion (hard set: `model` proves strictly more than the best of "
             f"{', '.join(BASELINES_FOR_SUCCESS)}): **{'met' if met else 'not met'}** — "
             f"model {results['model']['proved_hard']}/{nh} vs {best} {results[best]['proved_hard']}/{nh}.", ""]
+    supp = [m for m in SUPPLEMENTARY if m in results]
+    if supp:
+        out += ["Supplementary, added after the first run and not part of the success criterion: "
+                "the planned `fixed`/`random` rankers report confidence 1.0, so the search only tries "
+                "their first 3 actions per state. With confidence = top score (1/n) the search escalates "
+                "and expands the whole menu:", "",
+                "| method | proved | easy | hard | mean calls (proved) | mean seconds (proved) |",
+                "|---|---|---|---|---|---|"]
+        for m in supp:
+            r = results[m]
+            out.append(f"| {m} | {r['proved']}/{ne + nh} | {r['proved_easy']}/{ne} | {r['proved_hard']}/{nh} "
+                       f"| {_fmt(r['mean_calls'])} | {_fmt(r['mean_seconds'])} |")
+        out.append("")
     temps = ", ".join(f"`{k}` = {v}" for k, v in sorted(results["temperatures"].items())) or "none"
     out += [f"- ECE (10 bins) of `kind` on test gold steps: {_fmt(results['ece'])}"
             + (f" ({results['ece_examples']} steps)" if "ece_examples" in results else ""),
@@ -199,17 +232,18 @@ def format_report(results: dict, test: list[Theorem] | None = None) -> str:
             out.append(f"- {label}: {st.get('steps', 0)} gold steps, {st.get('kind_skipped', 0)} outside the "
                        f"`kind` options, {st.get('premise_hits', 0)}/{st.get('premise_steps', 0)} premise "
                        f"steps shortlisted")
-    rows = {m: {r["name"]: r for r in results[m]["per_theorem"]} for m in METHODS}
+    shown = METHODS + tuple(supp)
+    rows = {m: {r["name"]: r for r in results[m]["per_theorem"]} for m in shown}
     names = [t.name for t in test] if test else list(rows[METHODS[0]])
     if names:
         reach = results.get("reachability") or {}
         out += ["", "## Per theorem", "",
-                "| theorem | difficulty | menu-reachable | " + " | ".join(METHODS) + " |",
-                "|---|---|---|" + "---|" * len(METHODS)]
+                "| theorem | difficulty | menu-reachable | " + " | ".join(shown) + " |",
+                "|---|---|---|" + "---|" * len(shown)]
         for n in names:
             diff = rows[METHODS[0]][n]["difficulty"]
             cells = []
-            for m in METHODS:
+            for m in shown:
                 r = rows[m][n]
                 cells.append(f"yes ({r['calls']})" if r["proved"] else "–")
             out.append(f"| {n} | {diff} | {_fmt(reach.get(n))} | " + " | ".join(cells) + " |")

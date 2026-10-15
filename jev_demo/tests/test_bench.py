@@ -88,3 +88,11 @@ def test_end_to_end_runs(repl, tmp_path):
     assert set(METHODS) <= set(on_disk) and "ece" in on_disk
     report = (tmp_path / "report.md").read_text()
     assert all(f"| {m} |" in report for m in METHODS)
+
+
+def test_expand_all_ranker_uses_top_score_as_confidence():
+    from jev_demo.bench import ExpandAll
+    from jev_demo.search import FixedOrderRanker
+    acts, conf, value = ExpandAll(FixedOrderRanker()).rank("⊢ a")
+    assert conf == acts[0][1] < 0.5 and value == 0.5
+    assert [a for a, _ in acts] == [a for a, _ in FixedOrderRanker().rank("⊢ a")[0]]
