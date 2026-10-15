@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "jev_demo"
 version = "0.1.0"
 requires-python = ">=3.10"
-dependencies = ["numpy"]
+dependencies = ["numpy", "anthropic", "pydantic"]
 
 [project.optional-dependencies]
 dev = ["pytest"]
@@ -15,4 +15,7 @@ dev = ["pytest"]
 packages = ["jev_demo"]
 
 [tool.pytest.ini_options]
-markers = ["lean: tests that run the Lean REPL binary"]
+markers = [
+    "lean: tests that run the Lean REPL binary",
+    "claude: tests that call the live Claude API (need ANTHROPIC_RUN_LIVE=1)",
+]
