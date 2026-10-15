@@ -57,6 +57,16 @@ def test_operators_map_to_name_words():
     assert {"Nat", "mul", "add"} <= make_lemma("Nat.mul_add", "x").tokens
 
 
+def test_short_exact_lemma_outranks_long_one():
+    common = [f"c{i}" for i in range(30)]
+    lib = [
+        make_lemma("Nat.short", "foo bar"),
+        make_lemma("Nat.long", "foo bar " + " ".join(common)),
+    ] + [make_lemma(f"Nat.f{i}", " ".join(common[i:] + ["x"])) for i in range(10)]
+    assert Shortlister(lib).shortlist("⊢ foo bar", k=2)[0] == "Nat.short"
+    assert Shortlister(lib).shortlist("⊢ foo bar " + " ".join(common), k=1) == ("Nat.long",)
+
+
 def test_shortlist_recall_basic():
     sl = Shortlister(_lib())
     ex = [("⊢ gcd n (n+1) = 1", "gcd_succ"), ("⊢ a", "missing")]

@@ -89,13 +89,17 @@ class Shortlister:
                 df[t] = df.get(t, 0) + 1
         self.idf = {t: math.log((n + 1) / (c + 0.5)) for t, c in df.items()}
         self._order = sorted(self.library, key=lambda l: (len(l.name), l.name))
+        self._norm = {l.name: math.sqrt(sum(self.idf[t] ** 2 for t in l.tokens)) for l in self.library}
 
     def shortlist(self, goal: str, k: int = 16) -> tuple[str, ...]:
-        gtoks = text_tokens(goal)
+        """Top-k lemma names by TF-IDF cosine over token sets (ruling R9)."""
         idf = self.idf
+        gtoks = text_tokens(goal) & idf.keys()  # tokens unseen in the library have no idf
+        gnorm = math.sqrt(sum(idf[t] ** 2 for t in gtoks)) or 1.0
         scored = []
-        for lem in self._order:  # already in (len(name), name) order; sort is stable
-            s = sum(idf[t] for t in lem.tokens & gtoks)
+        for lem in self._order:
+            dot = sum(idf[t] ** 2 for t in lem.tokens & gtoks)
+            s = dot / (gnorm * self._norm[lem.name]) if dot else 0.0
             scored.append((-s, len(lem.name), lem.name))
         scored.sort()
         return tuple(name for _, _, name in scored[:k])
