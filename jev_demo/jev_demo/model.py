@@ -21,6 +21,7 @@ from jev_demo.schema import (
     ChoiceAnswer,
     ChoiceQuestion,
     Question,
+    answer_key,
 )
 
 _SPLIT = re.compile(r"[()\[\],:⊢·\s]+")
@@ -176,7 +177,7 @@ class SystemOneModel:
                 out[q.name] = ChoiceAnswer({o: float(pi) for o, pi in zip(q.options, p)})
             elif isinstance(q, BinaryQuestion):
                 s = self._score(featurize(state, q.option, self.dim, q.name))
-                out[q.name] = BinaryAnswer(float(1.0 / (1.0 + np.exp(-np.clip(s, -30, 30)))))
+                out[answer_key(q)] = BinaryAnswer(float(1.0 / (1.0 + np.exp(-np.clip(s, -30, 30)))))
             else:
                 raise ValueError(f"unknown question type: {type(q).__name__}")
         return out

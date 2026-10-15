@@ -51,6 +51,14 @@ Question = ChoiceQuestion | BinaryQuestion
 Answer = ChoiceAnswer | BinaryAnswer
 
 
+def answer_key(question: Question) -> str:
+    """Key of a question's answer in `evaluate` output: the name, plus the option for a binary
+    question about an option (so several of those can share a name)."""
+    if isinstance(question, BinaryQuestion) and question.option is not None:
+        return f"{question.name}|{question.option}"
+    return question.name
+
+
 def _check_prob(p: float) -> None:
     if not 0.0 <= p <= 1.0:
         raise ValueError(f"probability out of range [0, 1]: {p!r}")

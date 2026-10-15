@@ -13,7 +13,7 @@ from typing import Protocol
 from jev_demo.actions import TEMPLATES, fill, menu
 from jev_demo.premises import Lemma, Shortlister, option_text
 from jev_demo.repl_client import ReplClient
-from jev_demo.schema import BinaryQuestion, ChoiceQuestion
+from jev_demo.schema import BinaryQuestion, ChoiceQuestion, answer_key
 from jev_demo.theorems import Theorem
 
 TOP_PREMISES = 4
@@ -33,6 +33,15 @@ class ModelRanker:
         self.premises, self.automation = premises, automation
 
     def rank(self, goal: str) -> Ranking:
+        return self.rank_with(goal)
+
+    def rank_with(self, goal: str, extras: dict[str, str] | None = None) -> Ranking:
+        """Rank `goal`; `extras` maps extra `kind` options (e.g. `llm|0|simp`) to the tactic they run.
+
+        Each extra option joins the `kind` question and gets a `BinaryQuestion("useful", option)`
+        in the same `evaluate` call; its score is `p_kind * p_useful`. With no extras this is
+        exactly the phase-1 ranking."""
+        extras = extras or {}
         items = menu(goal, self.automation)
         # option_text -> lemma name (ruling R2); dict.fromkeys keeps options unique.
         opt_to_name: dict[str, str] = {}
@@ -41,13 +50,16 @@ class ModelRanker:
                 if n in self.lib:
                     opt_to_name.setdefault(option_text(self.lib[n]), n)
         use_templates = bool(opt_to_name)
-        kinds = items + (TEMPLATES if use_templates else ())
+        kinds = items + (TEMPLATES if use_templates else ()) + tuple(extras)
         questions = [ChoiceQuestion("kind", kinds), BinaryQuestion("near_done")]
+        questions += [BinaryQuestion("useful", option=o) for o in extras]
         if use_templates:
             questions.append(ChoiceQuestion("premise", tuple(opt_to_name)))
         ans = self.model.evaluate(goal, questions)
         pk = ans["kind"].probs
         scores: dict[str, float] = {a: pk[a] for a in items}
+        for o, tactic in extras.items():
+            scores[tactic] = pk[o] * ans[answer_key(BinaryQuestion("useful", option=o))].p_true
         if use_templates:
             pp = ans["premise"].probs
             for opt in sorted(pp, key=pp.__getitem__, reverse=True)[:TOP_PREMISES]:
