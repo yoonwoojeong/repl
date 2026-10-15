@@ -15,11 +15,11 @@ case "$stage" in
     run --test $D/core_train.json --methods claude_search --labels-out $D/claude_labels_core.json \
         --labels $D/claude_labels.json --out $R/train --max-usd 15 2>&1 | tee $R/train.log
     run --test $D/core_dev.json --methods claude_whole,claude_search,hybrid \
-        --labels $D/claude_labels.json,$D/claude_labels_core.json --out $R/dev_v1 --max-usd 15 \
+        --labels $D/claude_labels.json,$D/claude_labels_core.json --out $R/dev_v1 --max-usd 20 \
         2>&1 | tee $R/dev_v1.log ;;
   final)  # the pre-registered test run, once
     run --test $D/core_test.json --methods claude_whole,claude_search,hybrid \
-        --labels $D/claude_labels.json,$D/claude_labels_core.json --out $R/test --max-usd 40 \
+        --labels $D/claude_labels.json,$D/claude_labels_core.json --out $R/test --max-usd 45 \
         2>&1 | tee $R/test.log ;;
   *) echo "unknown stage $stage" >&2; exit 2 ;;
 esac
