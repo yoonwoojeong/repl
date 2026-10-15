@@ -307,6 +307,12 @@
 "screen": "easy"
 },
 {
+"name": "core_List_count_concat_self",
+"lemma": "List.count_concat_self",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {a : α} {l : List α}, List.count a (l.concat a) = List.count a l + 1",
+"screen": "easy"
+},
+{
 "name": "core_List_count_cons",
 "lemma": "List.count_cons",
 "statement": "∀ {α : Type u_1} [inst : BEq α] {a b : α} {l : List α}, List.count a (b :: l) = List.count a l + if (b == a) = true then 1 else 0",
@@ -853,6 +859,12 @@
 "screen": "kept"
 },
 {
+"name": "core_List_infix_filterMap_iff",
+"lemma": "List.infix_filterMap_iff",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → Option β} {l₁ : List α} {l₂ : List β}, l₂ <:+: List.filterMap f l₁ ↔ ∃ l, l <:+: l₁ ∧ l₂ = List.filterMap f l",
+"screen": "kept"
+},
+{
 "name": "core_List_infix_filter_iff",
 "lemma": "List.infix_filter_iff",
 "statement": "∀ {α : Type u_1} {p : α → Bool} {l₁ l₂ : List α}, l₂ <:+: List.filter p l₁ ↔ ∃ l, l <:+: l₁ ∧ l₂ = List.filter p l",
@@ -925,6 +937,12 @@
 "screen": "kept"
 },
 {
+"name": "core_List_le_min_iff",
+"lemma": "List.le_min_iff",
+"statement": "∀ {α : Type u_1} [inst : Min α] [inst_1 : LE α] [Std.LawfulOrderInf α] {l : List α} (hl : l ≠ []) {x : α}, x ≤ l.min hl ↔ ∀ (b : α), b ∈ l → x ≤ b",
+"screen": "kept"
+},
+{
 "name": "core_List_le_trans",
 "lemma": "List.le_trans",
 "statement": "∀ {α : Type u_1} [inst : LT α] [inst_1 : LE α] [Std.IsLinearOrder α] [Std.LawfulOrderLT α] {l₁ l₂ l₃ : List α}, l₁ ≤ l₂ → l₂ ≤ l₃ → l₁ ≤ l₃",
@@ -979,9 +997,21 @@
 "screen": "easy"
 },
 {
+"name": "core_List_lookup_nil",
+"lemma": "List.lookup_nil",
+"statement": "∀ {α : Type u} {β : Type v} {a : α} [inst : BEq α], List.lookup a [] = none",
+"screen": "kept"
+},
+{
 "name": "core_List_lt_asymm",
 "lemma": "List.lt_asymm",
 "statement": "∀ {α : Type u_1} [inst : LT α] [i : Std.Asymm fun x1 x2 => x1 < x2] {l₁ l₂ : List α}, l₁ < l₂ → ¬l₂ < l₁",
+"screen": "invalid"
+},
+{
+"name": "core_List_lt_irrefl",
+"lemma": "List.lt_irrefl",
+"statement": "∀ {α : Type u_1} [inst : LT α] [Std.Irrefl fun x1 x2 => x1 < x2] (l : List α), ¬l < l",
 "screen": "invalid"
 },
 {
@@ -1000,6 +1030,12 @@
 "name": "core_List_mapFinIdx_congr",
 "lemma": "List.mapFinIdx_congr",
 "statement": "∀ {α : Type u_1} {β : Type u_2} {xs ys : List α} (w : xs = ys) (f : (i : Nat) → α → i < xs.length → β), xs.mapFinIdx f = ys.mapFinIdx fun i a h => f i a ⋯",
+"screen": "kept"
+},
+{
+"name": "core_List_mapFinIdx_mapFinIdx",
+"lemma": "List.mapFinIdx_mapFinIdx",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {l : List α} {f : (i : Nat) → α → i < l.length → β} {g : (i : Nat) → β → i < (l.mapFinIdx f).length → γ}, (l.mapFinIdx f).mapFinIdx g = l.mapFinIdx fun i a h => g i (f i a h) ⋯",
 "screen": "kept"
 },
 {
@@ -1037,6 +1073,12 @@
 "lemma": "List.map_tail?",
 "statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → β} {l : List α}, Option.map (List.map f) l.tail? = (List.map f l).tail?",
 "screen": "easy"
+},
+{
+"name": "core_List_map_unattach",
+"lemma": "List.map_unattach",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {P : α → Prop} {xs : List (Subtype P)} {f : α → β}, List.map f xs.unattach = List.map (fun x => match x with | ⟨x, h⟩ => binderNameHint x f (binderNameHint h () (f (wfParam x)))) xs",
+"screen": "kept"
 },
 {
 "name": "core_List_maxIdxOn_singleton",
@@ -1108,6 +1150,12 @@
 "name": "core_List_minIdxOn?_cons",
 "lemma": "List.minIdxOn?_cons",
 "statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] [Std.IsLinearPreorder β] {f : α → β} {x : α} {xs : List α}, List.minIdxOn? f (x :: xs) = some (if h : xs = [] then 0 else if f x ≤ f (List.minOn f xs h) then 0 else List.minIdxOn f xs h + 1)",
+"screen": "kept"
+},
+{
+"name": "core_List_minIdxOn?_nil",
+"lemma": "List.minIdxOn?_nil",
+"statement": "∀ {β : Type u_1} {α : Type u_2} [inst : LE β] [inst_1 : DecidableLE β] {f : α → β}, List.minIdxOn? f [] = none",
 "screen": "kept"
 },
 {
@@ -1237,6 +1285,12 @@
 "screen": "easy"
 },
 {
+"name": "core_List_prefix_append_right_inj",
+"lemma": "List.prefix_append_right_inj",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α} (l : List α), l ++ l₁ <+: l ++ l₂ ↔ l₁ <+: l₂",
+"screen": "easy"
+},
+{
 "name": "core_List_prefix_iff_exists_append_eq",
 "lemma": "List.prefix_iff_exists_append_eq",
 "statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, l₁ <+: l₂ ↔ ∃ l₃, l₁ ++ l₃ = l₂",
@@ -1324,6 +1378,12 @@
 "name": "core_List_reverseAux_nil",
 "lemma": "List.reverseAux_nil",
 "statement": "∀ {α : Type u_1} {r : List α}, [].reverseAux r = r",
+"screen": "easy"
+},
+{
+"name": "core_List_reverse_inj",
+"lemma": "List.reverse_inj",
+"statement": "∀ {α : Type u_1} {xs ys : List α}, xs.reverse = ys.reverse ↔ xs = ys",
 "screen": "easy"
 },
 {
@@ -1450,6 +1510,12 @@
 "name": "core_List_subset_append_left",
 "lemma": "List.subset_append_left",
 "statement": "∀ {α : Type u_1} (l₁ l₂ : List α), l₁ ⊆ l₁ ++ l₂",
+"screen": "easy"
+},
+{
+"name": "core_List_subset_def",
+"lemma": "List.subset_def",
+"statement": "∀ {α : Type u_1} {l₁ l₂ : List α}, l₁ ⊆ l₂ ↔ ∀ {a : α}, a ∈ l₁ → a ∈ l₂",
 "screen": "easy"
 },
 {
@@ -1651,6 +1717,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Nat_Coprime_gcd_mul_left_cancel",
+"lemma": "Nat.Coprime.gcd_mul_left_cancel",
+"statement": "∀ {k n : Nat} (m : Nat), k.Coprime n → (k * m).gcd n = m.gcd n",
+"screen": "easy"
+},
+{
 "name": "core_Nat_Coprime_mul_dvd_of_dvd_of_dvd",
 "lemma": "Nat.Coprime.mul_dvd_of_dvd_of_dvd",
 "statement": "∀ {m n a : Nat}, m.Coprime n → m ∣ a → n ∣ a → m * n ∣ a",
@@ -1661,6 +1733,12 @@
 "lemma": "Nat.Coprime.mul_right",
 "statement": "∀ {k m n : Nat}, k.Coprime m → k.Coprime n → k.Coprime (m * n)",
 "screen": "kept"
+},
+{
+"name": "core_Nat_Coprime_pow_right",
+"lemma": "Nat.Coprime.pow_right",
+"statement": "∀ {k m : Nat} (n : Nat), k.Coprime m → k.Coprime (m ^ n)",
+"screen": "easy"
 },
 {
 "name": "core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq",
@@ -1813,10 +1891,22 @@
 "screen": "kept"
 },
 {
+"name": "core_Nat_fold_add",
+"lemma": "Nat.fold_add",
+"statement": "∀ {α : Type u_1} {n m : Nat} (f : (i : Nat) → i < n + m → α → α) (init : α), (n + m).fold f init = m.fold (fun i h => f (n + i) ⋯) (n.fold (fun i h => f i ⋯) init)",
+"screen": "kept"
+},
+{
 "name": "core_Nat_gcd_add_self_right",
 "lemma": "Nat.gcd_add_self_right",
 "statement": "∀ (m n : Nat), m.gcd (n + m) = m.gcd n",
 "screen": "kept"
+},
+{
+"name": "core_Nat_gcd_assoc",
+"lemma": "Nat.gcd_assoc",
+"statement": "∀ (m n k : Nat), (m.gcd n).gcd k = m.gcd (n.gcd k)",
+"screen": "easy"
 },
 {
 "name": "core_Nat_gcd_div_gcd_div_gcd_of_pos_left",
@@ -1864,6 +1954,12 @@
 "name": "core_Nat_gcd_self_add_left",
 "lemma": "Nat.gcd_self_add_left",
 "statement": "∀ (m n : Nat), (m + n).gcd m = n.gcd m",
+"screen": "kept"
+},
+{
+"name": "core_Nat_gcd_self_add_right",
+"lemma": "Nat.gcd_self_add_right",
+"statement": "∀ (m n : Nat), m.gcd (m + n) = m.gcd n",
 "screen": "kept"
 },
 {
@@ -1972,6 +2068,12 @@
 "name": "core_Nat_le_add_left",
 "lemma": "Nat.le_add_left",
 "statement": "∀ (n m : Nat), n ≤ m + n",
+"screen": "easy"
+},
+{
+"name": "core_Nat_le_add_one_iff",
+"lemma": "Nat.le_add_one_iff",
+"statement": "∀ {m n : Nat}, m ≤ n + 1 ↔ m ≤ n ∨ m = n + 1",
 "screen": "easy"
 },
 {
@@ -2141,6 +2243,12 @@
 "lemma": "Nat.min_right_comm",
 "statement": "∀ (a b c : Nat), min (min a b) c = min (min a c) b",
 "screen": "easy"
+},
+{
+"name": "core_Nat_mod_mul",
+"lemma": "Nat.mod_mul",
+"statement": "∀ {a b x : Nat}, x % (a * b) = x % a + a * (x / a % b)",
+"screen": "kept"
 },
 {
 "name": "core_Nat_mod_two_bne_one",
@@ -2395,6 +2503,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Nat_succ_lt_succ",
+"lemma": "Nat.succ_lt_succ",
+"statement": "∀ {n m : Nat}, n < m → n.succ < m.succ",
+"screen": "easy"
+},
+{
 "name": "core_Nat_succ_sub",
 "lemma": "Nat.succ_sub",
 "statement": "∀ {m n : Nat}, n ≤ m → m.succ - n = (m - n).succ",
@@ -2537,6 +2651,12 @@
 "lemma": "Nat.zero_lt_getElem!_toList_ric_iff",
 "statement": "∀ {n i : Nat}, 0 < (*...=n).toList[i]! ↔ i ≤ n ∧ 0 < i",
 "screen": "kept"
+},
+{
+"name": "core_Nat_zero_mod",
+"lemma": "Nat.zero_mod",
+"statement": "∀ (b : Nat), 0 % b = 0",
+"screen": "easy"
 }
 ]
 }
