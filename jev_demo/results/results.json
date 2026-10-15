@@ -2573,7 +2573,7 @@
  },
  "n_easy": 8,
  "n_hard": 12,
- "success": true,
+ "criterion_met": true,
  "reachability": {
   "test_add_comm": true,
   "test_append_length": true,
@@ -2595,5 +2595,6 @@
   "test_fib_mono": true,
   "test_map_map": true,
   "test_mul_self_le": true
- }
+ },
+ "beats_exhaustive_search": false
 }

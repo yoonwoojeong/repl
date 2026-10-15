@@ -68,7 +68,14 @@ def test_test_set_not_used_for_training(tmp_path, monkeypatch):
         seen.extend(e.state for e in binary)
         return real_fit(self, choice, binary, *a, **k)
 
+    real_cal = model_mod.SystemOneModel.calibrate
+
+    def spy_cal(self, examples, *a, **k):
+        seen.extend(e.state for e in examples)
+        return real_cal(self, examples, *a, **k)
+
     monkeypatch.setattr(model_mod.SystemOneModel, "fit", spy)
+    monkeypatch.setattr(model_mod.SystemOneModel, "calibrate", spy_cal)
     lib = [make_lemma("Nat.add_comm", "∀ (n m : Nat), n + m = m + n")]
     res = run_experiment(GoldRepl(train + test), train, test, str(tmp_path), library=lib)
     assert seen and all("train" in s for s in seen)
@@ -123,3 +130,81 @@ def test_rerender_report_from_results_json(tmp_path):
     (tmp_path / "results.json").write_text(json.dumps(_results(8, 10)))
     text = rerender_report(str(tmp_path))
     assert (tmp_path / "report.md").read_text() == text and "met nominally" in text
+
+
+class ExplodingRepl(GoldRepl):
+    """start_theorem raises for one test theorem while `explode` is set (during the method runs)."""
+
+    explode = False
+
+    def start_theorem(self, statement, prelude=""):
+        if self.explode and statement == "test1":
+            raise RuntimeError("could not start theorem 'test1'")
+        return super().start_theorem(statement, prelude)
+
+
+def test_exception_in_one_theorem_is_recorded_and_run_completes(tmp_path, monkeypatch):
+    import jev_demo.bench as bench
+    train = [Theorem(f"tr{i}", f"train{i}", "", ("intro n", "omega"), "easy") for i in range(5)]
+    test = [Theorem("te0", "test0", "", ("simp",), "easy"),
+            Theorem("te1", "test1", "", ("intro h", "rfl"), "hard")]
+    repl = ExplodingRepl(train + test)
+    real_run = bench._run_method
+
+    def run(method, thm, r, *a):
+        repl.explode = True
+        return real_run(method, thm, r, *a)
+
+    writes = []
+    real_write = bench._write_results
+    monkeypatch.setattr(bench, "_run_method", run)
+    monkeypatch.setattr(bench, "_write_results",
+                        lambda results, out_dir: (writes.append(set(results)), real_write(results, out_dir))[1])
+    lib = [make_lemma("Nat.add_comm", "∀ (n m : Nat), n + m = m + n")]
+    res = run_experiment(repl, train, test, str(tmp_path), library=lib)
+    for m in METHODS:
+        rows = {r["name"]: r for r in res[m]["per_theorem"]}
+        assert set(rows) == {"te0", "te1"}
+    rows = {r["name"]: r for r in res["fixed"]["per_theorem"]}
+    assert rows["te1"]["proved"] is False and "could not start" in rows["te1"]["error"]
+    assert rows["te1"]["difficulty"] == "hard" and "calls" in rows["te1"]
+    assert len(writes) > len(METHODS)  # results.json written after each method
+    assert (tmp_path / "results.json").exists() and (tmp_path / "report.md").exists()
+
+
+def test_flags_criterion_met_and_beats_exhaustive():
+    from jev_demo.bench import add_flags
+    res = _results(8, 10)
+    add_flags(res)
+    assert res["criterion_met"] is True and res["beats_exhaustive_search"] is False
+    assert "success" not in res
+    res = _results(8, 8)
+    add_flags(res)
+    assert res["criterion_met"] is True and res["beats_exhaustive_search"] is False
+    res = _results(8, 6)
+    add_flags(res)
+    assert res["beats_exhaustive_search"] is True
+
+
+def test_report_renders_reachability_as_yes_no():
+    res = _results(8, 8)
+    for m in list(METHODS) + ["fixed_expand_all", "random_expand_all"]:
+        res[m]["per_theorem"] = [{"name": "a", "difficulty": "easy", "proved": False, "calls": 1}]
+    res["reachability"] = {"a": True, "b": False}
+    text = format_report(res, [Theorem("a", "s", "", ("simp",), "easy")])
+    line = next(l for l in text.splitlines() if l.startswith("| a |"))
+    assert "| yes |" in line and "True" not in text and "False" not in text
+    res["reachability"] = {"a": False}
+    text = format_report(res, [Theorem("a", "s", "", ("simp",), "easy")])
+    assert "| no |" in next(l for l in text.splitlines() if l.startswith("| a |"))
+
+
+def test_rerender_rewrites_success_flag(tmp_path):
+    from jev_demo.bench import rerender_report
+    res = _results(8, 10)
+    res["success"] = True
+    (tmp_path / "results.json").write_text(json.dumps(res))
+    rerender_report(str(tmp_path))
+    out = json.loads((tmp_path / "results.json").read_text())
+    assert "success" not in out and out["criterion_met"] is True
+    assert out["beats_exhaustive_search"] is False

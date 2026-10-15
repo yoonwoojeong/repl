@@ -37,6 +37,30 @@ pip install -e 'jev_demo[dev]'         # numpy, pytest
 python -m pytest jev_demo -v           # Lean-marked tests skip if the REPL is not built
 ```
 
+Requires Python >= 3.10.
+
+Toolchain fallback: in the dev container elan's release download returned 403, so `lake build`
+could not fetch the toolchain. If that happens, download `lean-4.35.0-linux.tar.zst` from the
+`leanprover/lean4` GitHub release (v4.35.0), unpack it into `~/.elan/toolchains/` (for example
+`~/.elan/toolchains/lean-4.35.0-linux`), and register it with
+`~/.elan/bin/elan toolchain link leanprover/lean4:v4.35.0 ~/.elan/toolchains/lean-4.35.0-linux`
+(adjust the name to match `lean-toolchain`); then re-run `lake build`. The demo's own
+toolchain was installed manually this way.
+
+## Deviations from the design
+
+- Test preludes carry `@[simp]` (ruling R4).
+- Test gold proofs were rewritten to menu-only steps where one exists (R7, Task 4 I1); gold
+  proofs are never seen by any method.
+- "Hard" is qualified: 10 of the 12 hard theorems have a menu proof of at most 3 steps, and
+  some close in a single `simp`.
+- The calibration hold-out is 20% of the train *examples*, so states from one proof can sit on
+  both sides of the split.
+- The plan-mandated `eq_` substring filter in `dump_library.lean` also drops legitimate
+  lemmas (e.g. `Nat.mul_eq_zero`) while auto-generated `.inj` / `.injEq` / `sizeOf_spec`
+  names survive; this is part of the premise-recall limitation.
+- The Lean toolchain was installed manually (see Setup).
+
 ## How to run
 
 ```sh

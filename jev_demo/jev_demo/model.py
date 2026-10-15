@@ -64,7 +64,7 @@ def featurize(
         for p in parts:
             add("opart", p)
         for o in otoks:
-            for t in set(goal):
+            for t in sorted(set(goal)):
                 add("x", f"{o}\x1e{t}")
     return feats
 

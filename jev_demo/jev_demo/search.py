@@ -98,6 +98,11 @@ def _key(goal: str) -> str:
     return " ".join(goal.split())
 
 
+def _is_stale(error: str | None) -> bool:
+    e = (error or "").lower()
+    return "invalid proof state" in e or "unknown proof state" in e
+
+
 def prove(thm: Theorem, repl: ReplClient, ranker: Ranker, budget: int = 64, max_depth: int = 8,
           top_k: int = 3, tau: float = 0.5) -> SearchResult:
     t0 = time.perf_counter()
@@ -118,6 +123,21 @@ def prove(thm: Theorem, repl: ReplClient, ranker: Ranker, budget: int = 64, max_
     def done(proved: bool, tactics: list[str]) -> SearchResult:
         return SearchResult(proved, tactics, calls, escalations, time.perf_counter() - t0, trace)
 
+    def rederive(tactics: list[str]) -> int | None:
+        """Fresh proof state for `tactics` after a REPL restart; each REPL call spends budget."""
+        nonlocal calls
+        calls += 1
+        new_ps, _ = repl.start_theorem(thm.statement, thm.prelude)
+        for t in tactics:
+            if calls >= budget:
+                return None
+            calls += 1
+            res = repl.tactic(t, new_ps)
+            if not res.ok or res.proof_state is None:
+                return None
+            new_ps = res.proof_state
+        return new_ps
+
     push(0.0, ps, goal, [])
     while frontier and calls < budget:
         _, _, cum_logp, ps, goal, tactics, (actions, confidence, _) = heapq.heappop(frontier)
@@ -133,6 +153,12 @@ def prove(thm: Theorem, repl: ReplClient, ranker: Ranker, budget: int = 64, max_
                 break
             calls += 1
             res = repl.tactic(action, ps)
+            if _is_stale(res.error):  # the REPL restarted (e.g. after a timeout): replay this node
+                fresh = rederive(tactics)
+                if fresh is not None and calls < budget:
+                    ps = fresh
+                    calls += 1
+                    res = repl.tactic(action, ps)
             outcome = "error"
             if res.ok and res.completed:
                 if repl.check_proof(thm.statement, tactics + [action], thm.prelude):

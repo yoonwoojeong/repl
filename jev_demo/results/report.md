@@ -30,25 +30,25 @@ Supplementary, added after the first run and not part of the success criterion: 
 
 | theorem | difficulty | menu-reachable | model | model_no_premise | fixed | random | grind_only | try_only | fixed_expand_all | random_expand_all |
 |---|---|---|---|---|---|---|---|---|---|---|
-| test_add_comm | easy | True | yes (2) | yes (2) | – | yes (2) | yes (1) | yes (1) | yes (4) | yes (2) |
-| test_append_length | easy | True | yes (2) | yes (2) | yes (2) | yes (1) | yes (1) | yes (1) | yes (2) | yes (1) |
-| test_reverse_reverse | easy | True | yes (2) | yes (2) | yes (2) | yes (1) | yes (1) | yes (1) | yes (2) | yes (1) |
-| test_mod_two_cases | easy | True | yes (6) | yes (6) | – | yes (2) | yes (1) | yes (1) | yes (4) | yes (2) |
-| test_or_comm | easy | True | yes (14) | yes (14) | – | yes (2) | yes (1) | yes (1) | yes (10) | yes (2) |
-| test_add_eq_zero_left | easy | True | yes (2) | yes (2) | yes (2) | yes (1) | yes (1) | yes (1) | yes (2) | yes (1) |
-| test_double | easy | True | yes (38) | yes (18) | – | – | – | yes (1) | yes (27) | yes (40) |
-| test_sum_to | easy | True | yes (39) | yes (19) | – | – | – | yes (1) | yes (36) | yes (44) |
-| test_sum_odd | hard | True | yes (39) | yes (19) | – | – | – | yes (1) | yes (36) | yes (44) |
-| test_sum_sq | hard | True | yes (39) | yes (19) | – | – | – | yes (1) | yes (36) | yes (44) |
-| test_succ_le_two_pow | hard | True | – | – | – | – | – | – | yes (25) | yes (23) |
-| test_sq_mod_four | hard | False | – | – | – | – | – | – | – | – |
-| test_gcd_succ | hard | True | yes (3) | yes (3) | yes (2) | yes (1) | – | yes (1) | yes (2) | yes (1) |
-| test_dvd_mul_right | hard | True | yes (11) | yes (11) | – | yes (2) | yes (1) | yes (1) | yes (10) | yes (2) |
-| test_map_double_sum | hard | True | yes (6) | yes (6) | – | – | – | – | yes (25) | yes (23) |
-| test_rev_eq_reverse | hard | False | – | – | – | – | – | – | – | – |
-| test_two_dvd_mul_succ | hard | True | – | – | – | – | – | – | yes (25) | yes (23) |
-| test_fib_mono | hard | True | yes (5) | yes (5) | – | – | – | yes (1) | yes (24) | yes (21) |
-| test_map_map | hard | True | yes (2) | yes (2) | yes (2) | yes (1) | yes (1) | yes (1) | yes (2) | yes (1) |
-| test_mul_self_le | hard | True | yes (18) | – | – | – | – | yes (1) | yes (11) | yes (5) |
+| test_add_comm | easy | yes | yes (2) | yes (2) | – | yes (2) | yes (1) | yes (1) | yes (4) | yes (2) |
+| test_append_length | easy | yes | yes (2) | yes (2) | yes (2) | yes (1) | yes (1) | yes (1) | yes (2) | yes (1) |
+| test_reverse_reverse | easy | yes | yes (2) | yes (2) | yes (2) | yes (1) | yes (1) | yes (1) | yes (2) | yes (1) |
+| test_mod_two_cases | easy | yes | yes (6) | yes (6) | – | yes (2) | yes (1) | yes (1) | yes (4) | yes (2) |
+| test_or_comm | easy | yes | yes (14) | yes (14) | – | yes (2) | yes (1) | yes (1) | yes (10) | yes (2) |
+| test_add_eq_zero_left | easy | yes | yes (2) | yes (2) | yes (2) | yes (1) | yes (1) | yes (1) | yes (2) | yes (1) |
+| test_double | easy | yes | yes (38) | yes (18) | – | – | – | yes (1) | yes (27) | yes (40) |
+| test_sum_to | easy | yes | yes (39) | yes (19) | – | – | – | yes (1) | yes (36) | yes (44) |
+| test_sum_odd | hard | yes | yes (39) | yes (19) | – | – | – | yes (1) | yes (36) | yes (44) |
+| test_sum_sq | hard | yes | yes (39) | yes (19) | – | – | – | yes (1) | yes (36) | yes (44) |
+| test_succ_le_two_pow | hard | yes | – | – | – | – | – | – | yes (25) | yes (23) |
+| test_sq_mod_four | hard | no | – | – | – | – | – | – | – | – |
+| test_gcd_succ | hard | yes | yes (3) | yes (3) | yes (2) | yes (1) | – | yes (1) | yes (2) | yes (1) |
+| test_dvd_mul_right | hard | yes | yes (11) | yes (11) | – | yes (2) | yes (1) | yes (1) | yes (10) | yes (2) |
+| test_map_double_sum | hard | yes | yes (6) | yes (6) | – | – | – | – | yes (25) | yes (23) |
+| test_rev_eq_reverse | hard | no | – | – | – | – | – | – | – | – |
+| test_two_dvd_mul_succ | hard | yes | – | – | – | – | – | – | yes (25) | yes (23) |
+| test_fib_mono | hard | yes | yes (5) | yes (5) | – | – | – | yes (1) | yes (24) | yes (21) |
+| test_map_map | hard | yes | yes (2) | yes (2) | yes (2) | yes (1) | yes (1) | yes (1) | yes (2) | yes (1) |
+| test_mul_self_le | hard | yes | yes (18) | – | – | – | – | yes (1) | yes (11) | yes (5) |
 
 Cells: `yes (calls)` when proved, `–` otherwise.

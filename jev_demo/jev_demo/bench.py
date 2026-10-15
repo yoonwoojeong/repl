@@ -60,6 +60,35 @@ class ExpandAll:
         return actions, actions[0][1], value
 
 
+def _write_results(results: dict, out_dir: str) -> None:
+    os.makedirs(out_dir, exist_ok=True)
+    with open(os.path.join(out_dir, "results.json"), "w", encoding="utf-8") as f:
+        json.dump(results, f, indent=1, ensure_ascii=False)
+        f.write("\n")
+
+
+def add_flags(results: dict) -> dict:
+    """Set `criterion_met` (pre-registered, R11: model hard-proved > best of the planned baselines)
+    and `beats_exhaustive_search` (model hard-proved > best supplementary method). Replaces the
+    old `success` key in place."""
+    model_hard = results["model"]["proved_hard"]
+    met = model_hard > max(results[m]["proved_hard"] for m in BASELINES_FOR_SUCCESS)
+    supp = [results[m]["proved_hard"] for m in SUPPLEMENTARY if m in results]
+    beats = bool(supp) and model_hard > max(supp)
+    items = []
+    for k, v in results.items():
+        if k == "success":
+            items.append(("criterion_met", met))
+        elif k not in ("criterion_met", "beats_exhaustive_search"):
+            items.append((k, v))
+    out = dict(items)
+    out.setdefault("criterion_met", met)
+    out["beats_exhaustive_search"] = beats
+    results.clear()
+    results.update(out)
+    return results
+
+
 def _split(items: list, rng: np.random.Generator) -> tuple[list, list]:
     """(fit, hold-out) with a HOLDOUT_FRACTION hold-out."""
     perm = rng.permutation(len(items))
@@ -141,7 +170,17 @@ def run_experiment(repl, train: list[Theorem], test: list[Theorem], out_dir: str
         rows = []
         for thm in test:
             counting = _CountingRepl(repl)
-            r = _run_method(method, thm, counting, model, shortlister, lib)
+            t0 = time.perf_counter()
+            try:
+                r = _run_method(method, thm, counting, model, shortlister, lib)
+            except Exception as e:  # keep the run going; record the failure as an unproved row
+                row = {"name": thm.name, "difficulty": thm.difficulty, "proved": False, "calls": 0,
+                       "escalations": 0, "seconds": round(time.perf_counter() - t0, 3), "tactics": [],
+                       "timeouts": counting.timeouts, "dead_state_calls": counting.dead,
+                       "error": f"{type(e).__name__}: {e}"}
+                rows.append(row)
+                log(f"{method:17s} {thm.name:28s} ERROR {row['error']}")
+                continue
             row = {"name": thm.name, "difficulty": thm.difficulty, "proved": r.proved,
                    "calls": r.calls, "escalations": r.escalations, "seconds": round(r.seconds, 3),
                    "tactics": r.tactics, "timeouts": counting.timeouts, "dead_state_calls": counting.dead}
@@ -151,18 +190,22 @@ def run_experiment(repl, train: list[Theorem], test: list[Theorem], out_dir: str
             log(f"{method:17s} {thm.name:28s} {'PROVED' if r.proved else 'failed'} "
                 f"calls={r.calls} {r.seconds:.1f}s timeouts={counting.timeouts}")
         results[method] = _summary(rows)
+        _write_results({**results, "partial": True}, out_dir)  # keep progress if a later step dies
 
     # Measurement only: test replays never reach fit or calibrate.
     test_stats: dict = {}
     kind_test = []
     for thm in test:
-        c, _ = replay(thm, repl, shortlister, lib, stats=test_stats)
+        try:
+            c, _ = replay(thm, repl, shortlister, lib, stats=test_stats)
+        except Exception as e:  # measurement only: skip a theorem that cannot be replayed
+            log(f"test replay of {thm.name} failed, skipped: {type(e).__name__}: {e}")
+            continue
         kind_test += [e for e in c if e.question == "kind"]
 
     def recall(st):
         return st["premise_hits"] / st["premise_steps"] if st.get("premise_steps") else 0.0
 
-    hard_best = max(results[m]["proved_hard"] for m in BASELINES_FOR_SUCCESS)
     results.update({
         "ece": round(expected_calibration_error(model, kind_test), 4),
         "ece_examples": len(kind_test),
@@ -173,21 +216,20 @@ def run_experiment(repl, train: list[Theorem], test: list[Theorem], out_dir: str
         "test_stats": test_stats,
         "n_easy": sum(t.difficulty == "easy" for t in test),
         "n_hard": sum(t.difficulty == "hard" for t in test),
-        "success": results["model"]["proved_hard"] > hard_best,
     })
+    add_flags(results)
     if reachability is not None:
         results["reachability"] = {t.name: reachability.get(t.name) for t in test}
 
-    os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "results.json"), "w", encoding="utf-8") as f:
-        json.dump(results, f, indent=1, ensure_ascii=False)
-        f.write("\n")
+    _write_results(results, out_dir)
     with open(os.path.join(out_dir, "report.md"), "w", encoding="utf-8") as f:
         f.write(format_report(results, test))
     return results
 
 
 def _fmt(x) -> str:
+    if isinstance(x, bool):
+        return "yes" if x else "no"
     return "–" if x is None else f"{x:.2f}" if isinstance(x, float) else str(x)
 
 
@@ -267,6 +309,8 @@ def rerender_report(out_dir: str, test: list[Theorem] | None = None) -> str:
     """Rewrite `report.md` from an existing `results.json` without re-running anything."""
     with open(os.path.join(out_dir, "results.json"), encoding="utf-8") as f:
         results = json.load(f)
+    add_flags(results)
+    _write_results(results, out_dir)
     text = format_report(results, test)
     with open(os.path.join(out_dir, "report.md"), "w", encoding="utf-8") as f:
         f.write(text)

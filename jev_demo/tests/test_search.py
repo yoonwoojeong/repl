@@ -131,3 +131,52 @@ def test_fixed_order_proves_trivial_real_theorem(repl):
     r = prove(thm, repl, FixedOrderRanker(), budget=64)
     assert r.proved and r.calls <= 64
     assert repl.check_proof(thm.statement, r.tactics)
+
+
+class RestartingRepl:
+    """Proof states are (epoch, path) handles; a 'timeout' action bumps the epoch, which makes
+    every earlier handle stale, as a REPL restart does."""
+
+    def __init__(self, timeout_path_action, goal_actions, win):
+        self.epoch, self.states, self.calls = 0, {}, []
+        self.timeout_at, self.goal_actions, self.win = timeout_path_action, goal_actions, win
+
+    def _new(self, path):
+        ps = len(self.states)
+        self.states[ps] = (self.epoch, path)
+        return ps
+
+    def start_theorem(self, statement, prelude=""):
+        self.calls.append("start")
+        return self._new(()), G0
+
+    def tactic(self, tac, proof_state, timeout_s=None):
+        self.calls.append(tac)
+        epoch, path = self.states[proof_state]
+        if epoch != self.epoch:
+            return TacticResult(None, [], False, False, "invalid proof state (REPL was restarted)", [])
+        if (path, tac) == self.timeout_at:
+            self.epoch += 1
+            return TacticResult(None, [], False, False, "timeout", [])
+        if (path, tac) in self.goal_actions:
+            return TacticResult(self._new(path + (tac,)), [self.goal_actions[(path, tac)]],
+                                True, False, None, [])
+        if (path, tac) == self.win:
+            return TacticResult(self._new(path + (tac,)), [], True, True, None, [])
+        return TacticResult(None, [], False, False, "no", [])
+
+    def check_proof(self, statement, tactics, prelude=""):
+        return True
+
+
+def test_stale_state_after_timeout_is_rederived():
+    acts = menu(G0)
+    third = acts[2]
+    repl = RestartingRepl(timeout_path_action=((), SECOND),
+                          goal_actions={((), FIRST): "⊢ b"},
+                          win=((FIRST,), FIRST))
+    # FIRST -> "⊢ b"; SECOND times out and restarts; node "⊢ b" is now stale.
+    r = prove(THM, repl, FixedOrderRanker(), budget=30, top_k=len(acts))
+    assert r.proved and r.tactics == [FIRST, FIRST]
+    assert "start" in repl.calls  # the stale node was re-derived
+    assert third in repl.calls
