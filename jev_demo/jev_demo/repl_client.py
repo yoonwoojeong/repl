@@ -120,8 +120,11 @@ class ReplClient:
             return None
         return json.loads(block)
 
-    def command(self, cmd: str, env: int | None = None, timeout_s: float | None = None) -> dict:
-        payload = {"cmd": cmd, "env": self._base_env if env is None else env}
+    def command(
+        self, cmd: str, env: int | None = None, timeout_s: float | None = None, fresh: bool = False
+    ) -> dict:
+        """Run `cmd`. `fresh=True` sends no env, so the command may start with `import ...`."""
+        payload = {"cmd": cmd} if fresh else {"cmd": cmd, "env": self._base_env if env is None else env}
         reply = self._request(payload, self.timeout_s if timeout_s is None else timeout_s)
         if reply is None:
             return {"message": "timeout"}
