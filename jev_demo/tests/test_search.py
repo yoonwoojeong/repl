@@ -81,8 +81,29 @@ def test_escalation_expands_all_when_low_confidence():
 
 def test_high_confidence_expands_top_k_only():
     repl = FakeRepl({})
-    r = prove(THM, repl, StubRanker(confidence=0.9, n=5), budget=100, top_k=2)
+    r = prove(THM, repl, StubRanker(confidence=0.9, n=5), budget=100, top_k=2, revisit=False)
     assert r.calls == 2 and r.escalations == 0
+
+
+def test_high_confidence_revisits_untried_actions_in_batches():
+    repl = FakeRepl({})
+    r = prove(THM, repl, StubRanker(confidence=0.9, n=5), budget=100, top_k=2)
+    assert r.calls == 5 and r.escalations == 0
+    assert [t for _, t in repl.calls] == ["t0", "t1", "t2", "t3", "t4"]
+
+
+class PeakedRanker:
+    def rank(self, goal):
+        return [("t0", 0.9), ("t1", 0.05), ("t2", 0.05)], 0.9, 0.5
+
+
+def test_revisit_prefers_a_fresh_child_over_much_lower_ranked_siblings():
+    """After the root's top action opens a child, the child's best action is tried before the
+    root's far lower-ranked actions; those are still tried once the child is exhausted."""
+    repl = FakeRepl({(0, "t0"): R(["⊢ b"], ps=1)})
+    r = prove(THM, repl, PeakedRanker(), budget=100, top_k=1)
+    assert repl.calls[:2] == [(0, "t0"), (1, "t0")]
+    assert (0, "t1") in repl.calls and (0, "t2") in repl.calls and r.calls == 6
 
 
 def test_final_proof_rechecked():

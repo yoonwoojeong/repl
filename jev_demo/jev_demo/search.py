@@ -136,7 +136,13 @@ def replay_state(repl, thm: Theorem, tactics: list[str], spend=lambda: True) -> 
 
 
 def prove(thm: Theorem, repl: ReplClient, ranker: Ranker, budget: int = 64, max_depth: int = 8,
-          top_k: int = 3, tau: float = 0.5) -> SearchResult:
+          top_k: int = 3, tau: float = 0.5, revisit: bool = True) -> SearchResult:
+    """Best-first search. A confident node (confidence >= `tau`) expands only its next `top_k`
+    actions; with `revisit` it then goes back into the frontier with its untried actions, its
+    priority lowered by log(score of the next untried action / score of its best action), so
+    budget left over after the top
+    branches die is spent on lower-ranked actions instead of ending the search early. With
+    `revisit=False` (the phase-1 and first phase-2 behaviour) untried actions are dropped."""
     t0 = time.perf_counter()
     calls = escalations = 0
     trace: list[dict] = []
@@ -146,10 +152,12 @@ def prove(thm: Theorem, repl: ReplClient, ranker: Ranker, budget: int = 64, max_
     counter = 0
 
     def push(cum_logp: float, ps: int, goal: str, tactics: list[str]) -> None:
-        nonlocal counter
         ranking = ranker.rank(goal)
-        prio = cum_logp + math.log(ranking[2] + 1e-3)
-        heapq.heappush(frontier, (-prio, counter, cum_logp, ps, goal, tactics, ranking))
+        requeue(cum_logp + math.log(ranking[2] + 1e-3), cum_logp, ps, goal, tactics, ranking, 0)
+
+    def requeue(prio, cum_logp, ps, goal, tactics, ranking, offset) -> None:
+        nonlocal counter
+        heapq.heappush(frontier, (-prio, counter, cum_logp, ps, goal, tactics, ranking, offset))
         counter += 1
 
     def done(proved: bool, tactics: list[str]) -> SearchResult:
@@ -171,14 +179,21 @@ def prove(thm: Theorem, repl: ReplClient, ranker: Ranker, budget: int = 64, max_
 
     push(0.0, ps, goal, [])
     while frontier and calls < budget:
-        _, _, cum_logp, ps, goal, tactics, (actions, confidence, _) = heapq.heappop(frontier)
+        neg_prio, _, cum_logp, ps, goal, tactics, ranking, offset = heapq.heappop(frontier)
+        actions, confidence, _ = ranking
         if len(tactics) >= max_depth:
             continue
         if confidence < tau:
             escalations += 1
-            chosen = actions
+            chosen = actions[offset:]
         else:
-            chosen = actions[:top_k]
+            chosen = actions[offset:offset + top_k]
+            rest = actions[offset + top_k:]
+            if revisit and rest:
+                # lowered by how much worse the next untried action scores than the node's best
+                ratio = rest[0][1] / max(actions[0][1], 1e-12)
+                requeue(-neg_prio + math.log(max(ratio, 1e-12)), cum_logp, ps, goal, tactics,
+                        ranking, offset + top_k)
         for action, score in chosen:
             if calls >= budget:
                 break
@@ -206,7 +221,8 @@ def prove(thm: Theorem, repl: ReplClient, ranker: Ranker, budget: int = 64, max_
                     push(cum_logp + math.log(max(score, 1e-12)), res.proof_state, res.goals[0],
                          tactics + [action])
             trace.append({"goal": goal, "n_actions": len(actions), "chosen": action,
-                          "score": score, "confidence": confidence, "outcome": outcome})
+                          "score": score, "confidence": confidence, "outcome": outcome,
+                          "next_goal": res.goals[0] if res.ok and res.goals else None})
             if outcome == "proved":
                 return done(True, tactics + [action])
     return done(False, [])

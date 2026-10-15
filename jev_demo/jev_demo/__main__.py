@@ -39,6 +39,29 @@ def _phase2(args) -> None:
         print(f.read())
 
 
+def _exp3(args) -> None:
+    from jev_demo import exp3
+    from jev_demo.claude_gen import ClaudeGenerator
+
+    if not args.offline and os.environ.get("ANTHROPIC_RUN_LIVE") != "1":
+        raise SystemExit("`exp3` calls the Anthropic API and spends money: set ANTHROPIC_API_KEY and "
+                         "ANTHROPIC_RUN_LIVE=1 to confirm, or pass --offline to replay the disk cache.")
+    gen = ClaudeGenerator(model=args.claude_model, effort=args.effort, max_usd=args.max_usd,
+                          offline=args.offline)
+    methods = [m for m in args.methods.split(",") if m]
+    unknown = set(methods) - set(exp3.METHODS)
+    if unknown:
+        raise SystemExit(f"unknown methods {sorted(unknown)}; choose from {list(exp3.METHODS)}")
+    labels = [p for p in args.labels.split(",") if p]
+    with ReplClient() as repl:
+        test = load_theorems(args.test)
+        test = test[:args.limit] if args.limit else test
+        exp3.run(repl, load_theorems(args.train), test, args.out, gen, methods,
+                 label_paths=labels, labels_out=args.labels_out)
+    with open(os.path.join(args.out, "report.md"), encoding="utf-8") as f:
+        print(f.read())
+
+
 def _load_reachability(test_path: str):
     path = reachability_path(test_path)
     if os.path.exists(path):
@@ -69,7 +92,23 @@ def main(argv: list[str] | None = None) -> None:
             sp.add_argument("--out", default=os.path.join("jev_demo", "results_phase2"))
             sp.add_argument("--test", default=os.path.join(DATA_DIR, "test.json"))
             sp.add_argument("--phase1", default=PHASE1_RESULTS_PATH)
+    e3 = sub.add_parser("exp3", help="Claude methods on a core-benchmark split, with paired stats "
+                                     "(costs money unless --offline)")
+    e3.add_argument("--test", required=True, help="e.g. jev_demo/data/core_dev.json")
+    e3.add_argument("--out", required=True)
+    e3.add_argument("--methods", default="claude_whole,claude_search,hybrid")
+    e3.add_argument("--labels", default="", help="comma-separated label files for the hybrid model")
+    e3.add_argument("--labels-out", default=None, help="write trace labels from claude_search here")
+    e3.add_argument("--train", default=os.path.join(DATA_DIR, "train.json"))
+    e3.add_argument("--claude-model", default="claude-opus-5-5")
+    e3.add_argument("--effort", default="medium")
+    e3.add_argument("--max-usd", type=float, default=10.0)
+    e3.add_argument("--offline", action="store_true", help="replay the disk cache; never call the API")
+    e3.add_argument("--limit", type=int, default=0, help="only the first N theorems (a cheap pilot)")
     args = ap.parse_args(argv)
+    if args.cmd == "exp3":
+        _exp3(args)
+        return
     if args.cmd in ("collect", "run-phase2"):
         _phase2(args)
         return

@@ -12,6 +12,7 @@ import numpy as np
 from jev_demo.baselines import single_shot
 from jev_demo.claude_gen import FatalRequestError
 from jev_demo.collect import LABELS_PATH, load_labels
+from jev_demo.corebench import AuditedRepl, Auditor
 from jev_demo.dataset import replay
 from jev_demo.hybrid import HybridRanker
 from jev_demo.model import SystemOneModel, expected_calibration_error
@@ -129,6 +130,7 @@ def train_model(train: list[Theorem], repl, shortlister: Shortlister, lib: dict[
 
 
 def _run_method(method: str, thm: Theorem, repl, model, shortlister, lib) -> SearchResult:
+    lib = _without_banned(lib, thm)
     if method == "model":
         return prove(thm, repl, ModelRanker(model, shortlister, lib, premises=True))
     if method == "model_no_premise":
@@ -225,17 +227,40 @@ def _run_methods(methods, test: list[Theorem], run_one, repl, log, results: dict
                  metered: _MeteredGen | None = None, trace_methods=()) -> None:
     """Run each method on every test theorem into `results[method]` (shared by both phases).
     `run_one(method, thm, counting_repl)` returns a SearchResult. An exception becomes an unproved
-    row; results.json is rewritten (marked partial) after each method."""
+    row; results.json is rewritten (marked partial) after each method. Theorems with `banned`
+    constants (core benchmark) are checked through an `Auditor` REPL: a proof that uses a banned
+    constant does not count."""
+    auditor_repl = None
+    if any(t.banned for t in test):
+        from jev_demo.repl_client import ReplClient
+        auditor_repl = ReplClient(timeout_s=60)
+        auditor = Auditor(auditor_repl)
+    try:
+        _run_methods_inner(methods, test, run_one, repl, log, results, out_dir, metered,
+                           trace_methods, auditor if auditor_repl else None)
+    finally:
+        if auditor_repl is not None:
+            auditor_repl.close()
+
+
+def _without_banned(lib: dict, thm: Theorem) -> dict:
+    """The premise library minus the theorem's banned lemmas, so they are never suggested."""
+    return {k: v for k, v in lib.items() if k not in thm.banned} if thm.banned else lib
+
+
+def _run_methods_inner(methods, test, run_one, repl, log, results, out_dir, metered,
+                       trace_methods, auditor) -> None:
     for method in methods:
         rows = []
         for thm in test:
             counting = _CountingRepl(repl)
+            checked = AuditedRepl(counting, auditor, thm.banned) if thm.banned else counting
             if metered:
                 metered.begin()
             before = metered.snapshot() if metered else None
             t0 = time.perf_counter()
             try:
-                r = run_one(method, thm, counting)
+                r = run_one(method, thm, checked)
             except FatalRequestError:  # misconfigured Claude access: stop instead of recording
                 raise
             except Exception as e:  # keep the run going; record the failure as an unproved row
@@ -251,6 +276,8 @@ def _run_methods(methods, test: list[Theorem], run_one, repl, log, results: dict
             row = {"name": thm.name, "difficulty": thm.difficulty, "proved": r.proved,
                    "calls": r.calls, "escalations": r.escalations, "seconds": round(r.seconds, 3),
                    "tactics": r.tactics, "timeouts": counting.timeouts, "dead_state_calls": counting.dead}
+            if thm.banned:
+                row["audit_rejected"] = checked.rejected
             if metered:
                 row.update(metered.delta(before))
             if method in trace_methods:
@@ -422,6 +449,7 @@ PHASE1_RESULTS_PATH = os.path.join(os.path.dirname(DATA_DIR), "results", "result
 
 
 def _run_phase2_method(method: str, thm: Theorem, repl, model, shortlister, lib, gen) -> SearchResult:
+    lib = _without_banned(lib, thm)
     if method == "claude_whole":
         t0 = time.perf_counter()
         calls, proof = 0, None

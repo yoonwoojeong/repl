@@ -50,10 +50,10 @@ def test_request_shape(tmp_path):
     kw = c.calls[0]
     assert kw["model"] == "claude-opus-5-5"
     assert kw["output_config"]["effort"] == "medium"
-    assert kw["cache_control"] == {"type": "ephemeral"}
+    assert "cache_control" not in kw  # no automatic breakpoint after the per-goal user message
     assert kw["fallbacks"] == "default"
     assert "server-side-fallback-2026-07-01" in kw["betas"]
-    assert kw["system"] == SYSTEM_PROMPT
+    assert kw["system"] == [{"type": "text", "text": SYSTEM_PROMPT, "cache_control": {"type": "ephemeral"}}]
     assert kw["max_tokens"] == 16000
     fmt = kw["output_config"]["format"]
     assert fmt["type"] == "json_schema"
@@ -253,3 +253,12 @@ def test_prompt_example_steps_are_accepted(repl):
             assert res.completed or [g.split() for g in res.goals] != [goal.split()], (n, tac, res.goals)
             closing += res.completed
         assert closing >= 1, n
+
+
+def test_offline_replays_disk_cache_and_never_calls_the_api(tmp_path):
+    c = FakeClient(resp(["intro n", "simp"]))
+    gen(c, tmp_path).propose("⊢ P")  # fills the disk cache
+    off = ClaudeGenerator(client=None, cache_dir=str(tmp_path / "c"), offline=True, log=lambda m: None)
+    assert off.propose("⊢ P") == ["intro n", "simp"]
+    assert off.propose("⊢ Q") == [] and off.usage.calls == 0 and off.usage.requests == 2
+    assert len(c.calls) == 1

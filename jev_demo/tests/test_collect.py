@@ -165,3 +165,28 @@ def test_proposal_equal_to_gold_is_the_kind_gold(tmp_path):
     # the template example `rw [·]` is replaced: it would train against the correct proposal
     assert [c.gold for c in kinds] == ["llm|1|rw  [Nat.add_comm]"]
     assert "rw [·]" in kinds[0].options
+
+
+def test_trace_labels_from_a_search_run():
+    from jev_demo.collect import trace_labels
+    from jev_demo.search import SearchResult
+    g0, g1 = "n : Nat\n⊢ P n", "n : Nat\n⊢ Q n"
+    trace = [
+        {"goal": g0, "chosen": "bad_tac", "outcome": "error", "next_goal": None},
+        {"goal": g0, "chosen": "induction n", "outcome": "ok", "next_goal": g1},
+        {"goal": g1, "chosen": "omega", "outcome": "proved", "next_goal": None},
+    ]
+    r = SearchResult(True, ["induction n", "omega"], 3, 0, 0.1, trace)
+    choice, binary = trace_labels(r, {"n : Nat ⊢ P n": ["bad_tac", "induction n"]})
+    assert [(b.option, b.label) for b in binary] == [("llm|0|bad_tac", False), ("llm|1|induction n", True)]
+    assert [c.gold for c in choice] == ["llm|1|induction n", "omega"]
+    assert all(c.gold in c.options for c in choice)
+
+
+def test_trace_labels_unproved_gives_only_useful_examples():
+    from jev_demo.collect import trace_labels
+    from jev_demo.search import SearchResult
+    g0 = "⊢ P"
+    r = SearchResult(False, [], 1, 0, 0.1, [{"goal": g0, "chosen": "x", "outcome": "error", "next_goal": None}])
+    choice, binary = trace_labels(r, {"⊢ P": ["x"]})
+    assert choice == [] and [b.label for b in binary] == [False]

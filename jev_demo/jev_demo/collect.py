@@ -117,3 +117,43 @@ def collect(train: list[Theorem], repl, generator, shortlister: Shortlister, lib
         if out_path is not None:
             save_labels(out_path, choice, binary)
     return choice, binary
+
+
+def trace_labels(result, proposals: dict[str, list[str]]) -> tuple[list[ChoiceExample], list[BinaryExample]]:
+    """Labels from one `claude_search` run (no gold proof needed, so this works on the core
+    benchmark's training split).
+
+    `result` is the SearchResult and `proposals` maps goal key -> Claude's proposals at that goal
+    (`HybridRanker._proposals`). Every Claude proposal the search tried gives a `useful` example:
+    True iff Lean accepted it and it closed or changed the goal (outcome ok, proved or
+    duplicate). If the theorem was proved, each state on the final proof path gives a `kind`
+    example whose gold is the step taken there (as an `llm|i|...` option when it came from
+    Claude, else its menu/template kind)."""
+    choice: list[ChoiceExample] = []
+    binary: list[BinaryExample] = []
+
+    def options(goal: str) -> tuple[tuple[str, ...], dict[str, str]]:
+        items = menu(goal, True)
+        extras = llm_options(proposals.get(_key(goal), []), items)
+        return items + TEMPLATES + tuple(extras), {t: o for o, t in extras.items()}
+
+    for e in result.trace:
+        _, by_tactic = options(e["goal"])
+        opt = by_tactic.get(e["chosen"].strip())
+        if opt is not None and e["outcome"] in ("ok", "proved", "duplicate", "error", "rejected"):
+            binary.append(BinaryExample("useful", e["goal"], opt, e["outcome"] in ("ok", "proved", "duplicate")))
+    if result.proved and result.trace:
+        goal = result.trace[0]["goal"]
+        for step in result.tactics:
+            hit = next((e for e in result.trace if _key(e["goal"]) == _key(goal)
+                        and e["chosen"] == step and e["outcome"] in ("ok", "proved")), None)
+            if hit is None:
+                break
+            kinds, by_tactic = options(goal)
+            gold = by_tactic.get(step.strip()) or parse_action(step)[0]
+            if gold in kinds:
+                choice.append(ChoiceExample("kind", goal, kinds, gold))
+            if hit["outcome"] == "proved" or hit["next_goal"] is None:
+                break
+            goal = hit["next_goal"]
+    return choice, binary

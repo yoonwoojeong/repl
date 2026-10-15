@@ -2,7 +2,7 @@
 
 SDK path (verified against the installed anthropic 1.14.0 with `inspect.signature`):
 `client.beta.messages.create(...)` accepts `output_config`, `betas`, `fallbacks` (typed
-`Iterable[BetaFallbackParam] | Literal["default"]`) and top-level `cache_control`.  `beta.messages.parse`
+`Iterable[BetaFallbackParam] | Literal["default"]`).  `beta.messages.parse`
 also accepts them, but it runs `TypeAdapter.validate_json` while building the response, so truncated
 or non-JSON output raises `pydantic.ValidationError` from inside the call after the request was
 billed (usage never metered; a refusal with text would look like an error).  So the documented
@@ -92,8 +92,12 @@ def _clean(tactics: list[str], n: int) -> list[str]:
 
 class ClaudeGenerator:
     def __init__(self, client=None, model: str = "claude-opus-5-5", effort: str = "medium", n: int = 8,
-                 cache_dir: str = "jev_demo/cache/claude", max_usd: float = 10.0, log=_log_stderr):
-        self.client = client if client is not None else anthropic.Anthropic()
+                 cache_dir: str = "jev_demo/cache/claude", max_usd: float = 10.0, log=_log_stderr,
+                 offline: bool = False):
+        """`offline=True` never calls the API: a request missing from the disk cache returns no
+        proposals (free replay of an earlier run's responses, for iterating on the ranker)."""
+        self.offline = offline
+        self.client = client if client is not None or offline else anthropic.Anthropic()
         self.model = model
         self.effort = effort
         self.n = n
@@ -145,6 +149,9 @@ class ClaudeGenerator:
             return tactics
         except (OSError, ValueError, KeyError):
             pass
+        if self.offline:
+            self.log("claude: offline cache miss (no proposals)")
+            return []
         if self.usage.usd >= self.max_usd:
             return []
         before = self.usage.usd
@@ -159,11 +166,13 @@ class ClaudeGenerator:
             resp = self.client.beta.messages.create(
                 model=self.model,
                 max_tokens=MAX_TOKENS,
-                system=SYSTEM_PROMPT,
+                # Explicit breakpoint at the end of the frozen system prompt: every request reads
+                # it from cache. (Top-level automatic caching put the breakpoint after the
+                # per-goal user message, so each request paid a cache write that was never read.)
+                system=[{"type": "text", "text": SYSTEM_PROMPT, "cache_control": {"type": "ephemeral"}}],
                 messages=[{"role": "user", "content": user}],
                 output_config={"effort": self.effort,
                                "format": {"type": "json_schema", "schema": Proposals.model_json_schema()}},
-                cache_control={"type": "ephemeral"},
                 fallbacks="default",
                 betas=[BETA_FALLBACK],
             )

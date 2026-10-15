@@ -20,13 +20,17 @@ class Theorem:
     prelude: str
     gold: tuple[str, ...]
     difficulty: Literal["easy", "hard"]
+    banned: tuple[str, ...] = ()  # constants a proof may not use directly (core benchmark)
 
 
 def load_theorems(path: str) -> list[Theorem]:
     with open(path, encoding="utf-8") as f:
         rows = json.load(f)
+    # Core-benchmark rows (`corebench`) have no gold proof and name the lemma they restate,
+    # which a proof may not use.
     return [
-        Theorem(r["name"], r["statement"], r.get("prelude", ""), tuple(r["gold"]), r["difficulty"])
+        Theorem(r["name"], r["statement"], r.get("prelude", ""), tuple(r.get("gold", ())),
+                r.get("difficulty", "hard"), tuple(r.get("banned", [r["lemma"]] if "lemma" in r else [])))
         for r in rows
     ]
 
