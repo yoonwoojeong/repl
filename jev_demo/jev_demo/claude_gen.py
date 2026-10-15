@@ -23,6 +23,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 from dataclasses import dataclass
 
 import anthropic
@@ -38,6 +39,20 @@ PRICE_INPUT = 4.0
 PRICE_OUTPUT = 20.0
 PRICE_CACHE_READ = 0.20
 PRICE_CACHE_WRITE = 5.0
+
+# 400/401/403/404 mean the run is misconfigured (bad request, key, permission or model): every
+# later request would fail the same way, so they stop the run instead of counting as errors.
+_FATAL = (anthropic.BadRequestError, anthropic.AuthenticationError, anthropic.PermissionDeniedError,
+          anthropic.NotFoundError)
+
+
+class FatalRequestError(RuntimeError):
+    """A non-retryable Claude API error (HTTP 400/401/403/404): the run should stop."""
+
+
+def _log_stderr(msg: str) -> None:
+    print(msg, file=sys.stderr, flush=True)
+
 
 _FORBIDDEN = re.compile(r"(?<![\w'])(sorry|admit)(?![\w'])")
 
@@ -77,7 +92,7 @@ def _clean(tactics: list[str], n: int) -> list[str]:
 
 class ClaudeGenerator:
     def __init__(self, client=None, model: str = "claude-opus-5-5", effort: str = "medium", n: int = 8,
-                 cache_dir: str = "jev_demo/cache/claude", max_usd: float = 10.0):
+                 cache_dir: str = "jev_demo/cache/claude", max_usd: float = 10.0, log=_log_stderr):
         self.client = client if client is not None else anthropic.Anthropic()
         self.model = model
         self.effort = effort
@@ -85,6 +100,7 @@ class ClaudeGenerator:
         self.cache_dir = cache_dir
         self.max_usd = max_usd
         self.usage = Usage()
+        self.log = log  # one line per Claude request (cached or billed)
 
     # -- public API --------------------------------------------------------------------------
 
@@ -122,8 +138,10 @@ class ClaudeGenerator:
             tactics = list(entry["tactics"])
             if isinstance(entry.get("usd"), (int, float)):
                 self.usage.notional_usd += entry["usd"]
+                self.log(f"claude: cached usd={entry['usd']:.4f} (notional, not billed)")
             else:
                 self.usage.notional_unknown += 1
+                self.log("claude: cached usd=? (notional, entry has no price)")
             return tactics
         except (OSError, ValueError, KeyError):
             pass
@@ -149,10 +167,21 @@ class ClaudeGenerator:
                 fallbacks="default",
                 betas=[BETA_FALLBACK],
             )
-        except (anthropic.RateLimitError, anthropic.APIStatusError, anthropic.APIConnectionError):
+        except _FATAL as e:
+            self.log(f"claude: error HTTP {e.status_code} {type(e).__name__} (fatal, stopping)")
+            raise FatalRequestError(f"Claude request failed with non-retryable HTTP {e.status_code} "
+                                    f"({type(e).__name__}): {e}") from e
+        except (anthropic.RateLimitError, anthropic.APIStatusError, anthropic.APIConnectionError) as e:
             self.usage.errors += 1
+            self.log(f"claude: error {type(e).__name__} (counted, no proposals)")
             return []
         self._meter(getattr(resp, "usage", None))
+        details = getattr(resp, "stop_details", None)
+        category = getattr(details, "category", None) if details is not None else None
+        read = getattr(getattr(resp, "usage", None), "cache_read_input_tokens", 0) or 0
+        self.log(f"claude: billed usd={self.usage.usd - before:.4f} stop_reason={resp.stop_reason} "
+                 f"cache_read={read}"
+                 + (f" refusal_category={category}" if category else ""))
         if resp.stop_reason == "refusal":
             self.usage.refusals += 1
             return []
@@ -174,6 +203,9 @@ class ClaudeGenerator:
         return tactics
 
     def _meter(self, u) -> None:
+        # TODO: with `fallbacks="default"`, a request served by the fallback model is still priced
+        # here at claude-opus-5-5 rates from the top-level usage; `usage.iterations` (per-attempt
+        # usage and model) is ignored.
         if u is None:
             return
         inp = getattr(u, "input_tokens", 0) or 0

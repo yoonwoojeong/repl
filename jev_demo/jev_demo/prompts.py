@@ -3,7 +3,8 @@
 Module-level constant with no timestamps or other varying text, so the request prefix is
 byte-identical across calls and prompt caching works.  The five worked examples are derived from
 *train* theorems only (names in `EXAMPLE_SOURCES`; `tests/test_claude_gen.py` checks they exist in
-`data/train.json` and not in `data/test.json`).
+`data/train.json` and not in `data/test.json`), and every listed "good tactic" closes its goal in
+the Lean REPL (`test_prompt_example_tactics_close_their_goals`, marked `lean`).
 """
 
 from __future__ import annotations
@@ -38,19 +39,19 @@ this goal, do not repeat them.
 Input format: an optional Lean prelude (definitions in scope), then the current goal (hypotheses, \
 then `⊢` and the target), then a list of tactics that already failed here.
 
-Worked examples (goal -> good tactics)
+Worked examples (goal -> good tactics; each tactic listed here closes its goal on its own)
 
 Example 1
 Goal:
-⊢ ∀ n : Nat, n + 0 = n
-Good tactics: ["intro n", "simp", "omega"]
+⊢ ∀ (n : Nat), n + 0 = n
+Good tactics: ["simp", "omega", "intro n <;> rfl"]
 
 Example 2
 Goal:
 p : Prop
 h : p ∨ False
 ⊢ p
-Good tactics: ["cases h", "simp_all", "omega"]
+Good tactics: ["rcases h with h | h <;> simp_all", "exact h.resolve_right id", "simp_all"]
 
 Example 3
 Prelude:
@@ -58,7 +59,7 @@ Prelude:
 Goal:
 n : Nat
 ⊢ triple n = 3 * n
-Good tactics: ["induction n <;> simp_all", "induction n", "simp"]
+Good tactics: ["induction n <;> simp_all <;> omega", "induction n <;> simp [*] <;> omega"]
 
 Example 4
 Goal:
@@ -71,5 +72,5 @@ Goal:
 a b c : Nat
 h : a ≤ b
 ⊢ a + c ≤ b + c
-Good tactics: ["omega", "apply Nat.add_le_add_right", "exact Nat.add_le_add_right h c"]
+Good tactics: ["omega", "exact Nat.add_le_add_right h c", "apply Nat.add_le_add_right h"]
 """

@@ -1,3 +1,5 @@
+import pytest
+
 from jev_demo.actions import TEMPLATES, menu
 from jev_demo.collect import collect, load_labels
 from jev_demo.premises import Shortlister
@@ -79,3 +81,87 @@ def test_collect_saves_and_reloads_labels(tmp_path):
     assert c2 == choice and b2 == binary
     assert all(isinstance(c.options, tuple) for c in c2)
     assert load_labels(str(tmp_path / "missing.json")) == ([], [])
+
+
+# -- I1: a proposal that times out restarts the REPL ------------------------------------------
+
+G2 = "⊢ c"
+STEP2 = "exact foo"
+THM2 = Theorem("t2", "stmt2", "", (GOLD, STEP2), "easy")
+BAD = Theorem("bad", "stmt-bad", "", ("nope",), "easy")
+
+
+class RestartingRepl:
+    """States are (epoch, statement, path). `slow` times out and bumps the epoch, so every
+    earlier proof state becomes invalid, as in the real ReplClient after a restart."""
+
+    STEPS = {
+        (): {GOLD: ([G1], False), "good": ([G1], False), "done": ([], True)},
+        (GOLD,): {STEP2: ([], True), "good": ([G2], False), "same": ([G1], False)},
+    }
+
+    def __init__(self):
+        self.epoch, self.states, self.calls, self.starts = 0, {}, [], 0
+
+    def _new(self, stmt, path):
+        self.states[len(self.states)] = (self.epoch, stmt, path)
+        return len(self.states) - 1
+
+    def start_theorem(self, statement, prelude=""):
+        self.starts += 1
+        return self._new(statement, ()), G0
+
+    def tactic(self, tac, proof_state, timeout_s=None):
+        self.calls.append((proof_state, tac))
+        epoch, stmt, path = self.states[proof_state]
+        if epoch != self.epoch:
+            return TacticResult(None, [], False, False, "invalid proof state (REPL was restarted)", [])
+        if tac == "slow":
+            self.epoch += 1
+            return TacticResult(None, [], False, False, "timeout", [])
+        hit = self.STEPS.get(path, {}).get(tac)
+        if hit is None:
+            return R(ok=False)
+        goals, completed = hit
+        return TacticResult(self._new(stmt, path + (tac,)), goals, True, completed, None, [])
+
+
+def test_timed_out_proposal_is_false_and_later_proposals_use_a_fresh_state(tmp_path):
+    repl, gen = RestartingRepl(), FakeGen(["slow", "good", "done", "same"])
+    path = tmp_path / "labels.json"
+    choice, binary = collect([THM2], repl, gen, Shortlister([]), {}, out_path=str(path))
+    by_state = {}
+    for b in binary:
+        by_state.setdefault(b.state, {})[b.option] = b.label
+    assert by_state[G0] == {"llm|0|slow": False, "llm|1|good": True, "llm|2|done": True,
+                            "llm|3|same": False}
+    # at G1 the state is re-derived by replaying the gold prefix, so `good` is labelled correctly
+    assert by_state[G1] == {"llm|0|slow": False, "llm|1|good": True, "llm|2|done": False,
+                            "llm|3|same": False}
+    assert repl.starts == 3  # initial + one re-derivation per timeout
+    assert path.exists() and load_labels(str(path)) == (choice, binary)
+
+
+def test_labels_saved_after_each_theorem_survive_a_later_exception(tmp_path):
+    path = tmp_path / "labels.json"
+    with pytest.raises(AssertionError, match="gold step"):
+        collect([THM2, BAD], RestartingRepl(), FakeGen(["good"]), Shortlister([]), {}, out_path=str(path))
+    choice, binary = load_labels(str(path))
+    assert binary and all(b.state in (G0, G1) for b in binary)
+    assert any(c.gold == GOLD for c in choice)
+
+
+# -- I2: a proposal identical to the gold step ---------------------------------------------------
+
+RW = "rw [Nat.add_comm]"
+THM_RW = Theorem("trw", "stmt", "", (RW,), "easy")
+
+
+def test_proposal_equal_to_gold_is_the_kind_gold(tmp_path):
+    script = {(0, RW): R(completed=True), (0, "rw  [Nat.add_comm]"): R(completed=True)}
+    repl, gen = FakeRepl(script), FakeGen(["simp_all [foo]", "rw  [Nat.add_comm]"])
+    choice, _ = collect([THM_RW], repl, gen, Shortlister([]), {}, out_path=str(tmp_path / "l.json"))
+    kinds = [c for c in choice if c.question == "kind"]
+    # the template example `rw [·]` is replaced: it would train against the correct proposal
+    assert [c.gold for c in kinds] == ["llm|1|rw  [Nat.add_comm]"]
+    assert "rw [·]" in kinds[0].options

@@ -10,6 +10,7 @@ import time
 import numpy as np
 
 from jev_demo.baselines import single_shot
+from jev_demo.claude_gen import FatalRequestError
 from jev_demo.collect import LABELS_PATH, load_labels
 from jev_demo.dataset import replay
 from jev_demo.hybrid import HybridRanker
@@ -52,14 +53,15 @@ class _CountingRepl:
 
 
 class ExpandAll:
-    """Wraps a ranker; confidence becomes the top action's score, as for ModelRanker."""
+    """Wraps a ranker; confidence becomes the top action's score, as for ModelRanker, or the
+    fixed `confidence` if given (0.0: the search always escalates and expands every action)."""
 
-    def __init__(self, ranker):
-        self.ranker = ranker
+    def __init__(self, ranker, confidence: float | None = None):
+        self.ranker, self.confidence = ranker, confidence
 
     def rank(self, goal: str):
         actions, _, value = self.ranker.rank(goal)
-        return actions, actions[0][1], value
+        return actions, actions[0][1] if self.confidence is None else self.confidence, value
 
 
 def _write_results(results: dict, out_dir: str) -> None:
@@ -234,6 +236,8 @@ def _run_methods(methods, test: list[Theorem], run_one, repl, log, results: dict
             t0 = time.perf_counter()
             try:
                 r = run_one(method, thm, counting)
+            except FatalRequestError:  # misconfigured Claude access: stop instead of recording
+                raise
             except Exception as e:  # keep the run going; record the failure as an unproved row
                 row = {"name": thm.name, "difficulty": thm.difficulty, "proved": False, "calls": 0,
                        "escalations": 0, "seconds": round(time.perf_counter() - t0, 3), "tactics": [],
@@ -316,11 +320,17 @@ def _fmt(x) -> str:
     return "–" if x is None else f"{x:.2f}" if isinstance(x, float) else str(x)
 
 
+def _table_head(cols: list[str]) -> list[str]:
+    """A GFM table header and its delimiter row, which must have the same number of cells."""
+    return ["| " + " | ".join(cols) + " |", "|" + "---|" * len(cols)]
+
+
+PHASE1_COLS = ["method", "proved", "easy", "hard", "mean calls (proved)", "mean seconds (proved)"]
+
+
 def format_report(results: dict, test: list[Theorem] | None = None) -> str:
     ne, nh = results["n_easy"], results["n_hard"]
-    out = ["# Jev proof demo — phase 1 results", "",
-           "| method | proved | easy | hard | mean calls (proved) | mean seconds (proved) |",
-           "|---|---|---|---|---|---|"]
+    out = ["# Jev proof demo — phase 1 results", "", *_table_head(PHASE1_COLS)]
     for m in METHODS:
         r = results[m]
         out.append(f"| {m} | {r['proved']}/{ne + nh} | {r['proved_easy']}/{ne} | {r['proved_hard']}/{nh} "
@@ -347,9 +357,7 @@ def format_report(results: dict, test: list[Theorem] | None = None) -> str:
         out += ["Supplementary, added after the first run and not part of the success criterion: "
                 "the planned `fixed`/`random` rankers report confidence 1.0, so the search only tries "
                 "their first 3 actions per state. With confidence = top score (1/n) the search escalates "
-                "and expands the whole menu:", "",
-                "| method | proved | easy | hard | mean calls (proved) | mean seconds (proved) |",
-                "|---|---|---|---|---|---|"]
+                "and expands the whole menu:", "", *_table_head(PHASE1_COLS)]
         for m in supp:
             r = results[m]
             out.append(f"| {m} | {r['proved']}/{ne + nh} | {r['proved_easy']}/{ne} | {r['proved_hard']}/{nh} "
@@ -375,8 +383,7 @@ def format_report(results: dict, test: list[Theorem] | None = None) -> str:
     if names:
         reach = results.get("reachability") or {}
         out += ["", "## Per theorem", "",
-                "| theorem | difficulty | menu-reachable | " + " | ".join(shown) + " |",
-                "|---|---|---|" + "---|" * len(shown)]
+                *_table_head(["theorem", "difficulty", "menu-reachable", *shown])]
         for n in names:
             diff = rows[METHODS[0]][n]["difficulty"]
             cells = []
@@ -406,6 +413,10 @@ def rerender_report(out_dir: str, test: list[Theorem] | None = None) -> str:
 
 PHASE2_METHODS = ("claude_whole", "claude_search", "hybrid")
 CLAUDE_METHODS = PHASE2_METHODS
+# Supplementary (ruling P11, not part of the pre-registered questions): `hybrid` with confidence
+# fixed at 0.0, so the search expands every ranked action. It separates Jev's ranking from
+# confidence gating (in phase 1 the gating hurt). Its Claude requests are mostly cache hits.
+PHASE2_SUPPLEMENTARY = ("hybrid_expand_all",)
 WHOLE_PROOF_K = 4
 PHASE1_RESULTS_PATH = os.path.join(os.path.dirname(DATA_DIR), "results", "results.json")
 
@@ -423,6 +434,9 @@ def _run_phase2_method(method: str, thm: Theorem, repl, model, shortlister, lib,
     if method in ("claude_search", "hybrid"):
         order = "llm" if method == "claude_search" else "jev"
         return prove(thm, repl, HybridRanker(model, shortlister, lib, gen, order=order, prelude=thm.prelude))
+    if method == "hybrid_expand_all":
+        ranker = HybridRanker(model, shortlister, lib, gen, order="jev", prelude=thm.prelude)
+        return prove(thm, repl, ExpandAll(ranker, confidence=0.0))
     raise ValueError(method)
 
 
@@ -479,7 +493,7 @@ def run_phase2(repl, train: list[Theorem], test: list[Theorem], out_dir: str, ge
 
     metered = _MeteredGen(generator)
     results: dict = {}
-    _run_methods(PHASE2_METHODS, test,
+    _run_methods(PHASE2_METHODS + PHASE2_SUPPLEMENTARY, test,
                  lambda method, thm, counting: _run_phase2_method(method, thm, counting, model,
                                                                   shortlister, lib, metered),
                  repl, log, results, out_dir, metered=metered)
@@ -494,8 +508,8 @@ def run_phase2(repl, train: list[Theorem], test: list[Theorem], out_dir: str, ge
         "max_usd": generator.max_usd,
         "total_usd": round(generator.usage.usd, 6),
         "claude_usage": dict(vars(generator.usage)),
-        "call_capped": any(results[m]["call_capped"] for m in PHASE2_METHODS),
-        "budget_capped": any(results[m]["budget_capped"] for m in PHASE2_METHODS),
+        "call_capped": any(results[m]["call_capped"] for m in PHASE2_METHODS + PHASE2_SUPPLEMENTARY),
+        "budget_capped": any(results[m]["budget_capped"] for m in PHASE2_METHODS + PHASE2_SUPPLEMENTARY),
     })
     if reachability is not None:
         results["reachability"] = {t.name: reachability.get(t.name) for t in test}
@@ -509,8 +523,8 @@ def run_phase2(repl, train: list[Theorem], test: list[Theorem], out_dir: str, ge
 def format_report_phase2(results: dict, test: list[Theorem] | None = None) -> str:
     ne, nh = results["n_easy"], results["n_hard"]
     n1e, n1h = results.get("phase1_n_easy") or ne, results.get("phase1_n_hard") or nh
-    head = ["| method | proved | easy | hard | mean calls (proved) | Claude requests | billed calls | USD (actual) | USD (notional) | refusals | errors |",
-            "|---|---|---|---|---|---|---|---|---|---|"]
+    head = _table_head(["method", "proved", "easy", "hard", "mean calls (proved)", "Claude requests",
+                        "billed calls", "USD (actual)", "USD (notional)", "refusals", "errors"])
 
     def row(label, r, e, h, claude):
         c = (f"{r['claude_requests']} | {r['claude_calls']} | {r['usd']:.4f} | "
@@ -523,10 +537,15 @@ def format_report_phase2(results: dict, test: list[Theorem] | None = None) -> st
     if results.get("budget_capped"):
         out += [f"**Budget cap reached** (`--max-usd` {results['max_usd']}): some Claude requests were "
                 "refused locally and returned no proposals, so the affected rows are not comparable.", ""]
+    def label(m):  # caps are flagged inside the method cell, so the row keeps the header's cells
+        r = results[m]
+        flags = (["budget capped"] if r["budget_capped"] else []) + \
+                ([f"call cap ({CALL_CAP}/theorem) hit"] if r["call_capped"] else [])
+        return m + (f" ({'; '.join(flags)})" if flags else "")
+
     out += head
     for m in PHASE2_METHODS:
-        out.append(row(m, results[m], ne, nh, True) + (" budget capped" if results[m]["budget_capped"] else "")
-                   + (f" call cap ({CALL_CAP}/theorem) hit" if results[m]["call_capped"] else ""))
+        out.append(row(label(m), results[m], ne, nh, True))
     b = results["phase1_best"]
     out.append(row(f"phase1_best (`{b['method']}`, phase-1 reference)", b, n1e, n1h, False))
     out += ["", "Reference, post hoc in phase 1 (the strongest phase-1 method, not pre-registered):", "",
@@ -539,6 +558,15 @@ def format_report_phase2(results: dict, test: list[Theorem] | None = None) -> st
             "Claude labels. USD (actual) is what was billed; USD (notional) prices every request at its original "
             f"cost, cached or not (`+?`: some cache entries carry no price), and is what question 2 "
             f"compares. At most {CALL_CAP} Claude requests are made per theorem and method.", ""]
+    supp = [m for m in PHASE2_SUPPLEMENTARY if m in results]
+    if supp:
+        out += ["Supplementary (ruling P11, not part of the pre-registered questions): `hybrid_expand_all` "
+                "is `hybrid` with confidence fixed at 0.0, so the search expands every ranked action "
+                "instead of the top 3 when confident. It separates Jev's ranking from confidence gating. "
+                "Its Claude requests are mostly cache hits (USD actual near zero); USD (notional) counts "
+                "them at their original price.", "", *head]
+        out += [row(label(m), results[m], ne, nh, True) for m in supp]
+        out.append("")
     q = results.get("questions") or phase2_questions(results)
     out += ["## Pre-registered questions", "",
             f"1. Does `hybrid` prove more hard theorems than `claude_search` (did Jev add value on top "
@@ -553,12 +581,11 @@ def format_report_phase2(results: dict, test: list[Theorem] | None = None) -> st
                if q["unreachable_hard_proved"] else "") + ".",
             "", f"Total Claude spend: ${results.get('total_usd', 0.0):.4f} of ${results.get('max_usd')} "
             f"(`{results.get('claude_model')}`, effort `{results.get('effort')}`).", ""]
-    shown = PHASE2_METHODS + ("phase1_best", "phase1_fixed_expand_all")
+    shown = PHASE2_METHODS + tuple(supp) + ("phase1_best", "phase1_fixed_expand_all")
     rows = {m: {r["name"]: r for r in results[m]["per_theorem"]} for m in shown}
     names = [t.name for t in test] if test else [r["name"] for r in results[PHASE2_METHODS[0]]["per_theorem"]]
     reach = results.get("reachability") or {}
-    out += ["## Per theorem", "", "| theorem | difficulty | menu-reachable | " + " | ".join(shown) + " |",
-            "|---|---|---|" + "---|" * len(shown)]
+    out += ["## Per theorem", "", *_table_head(["theorem", "difficulty", "menu-reachable", *shown])]
     for n in names:
         diff = rows[PHASE2_METHODS[0]][n]["difficulty"]
         cells = []

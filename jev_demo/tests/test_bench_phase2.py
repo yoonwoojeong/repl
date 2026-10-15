@@ -228,3 +228,84 @@ def test_run_phase2_cli_refuses_without_live_flag(monkeypatch, capsys):
         with pytest.raises(SystemExit, match="ANTHROPIC_RUN_LIVE"):
             main([cmd])
     assert not os.path.exists(os.path.join("jev_demo", "results_phase2"))
+
+
+# -- I4: every table row has the header's cell count -------------------------------------------
+
+def _tables(text):
+    blocks, cur = [], []
+    for line in text.splitlines() + [""]:
+        if line.startswith("|"):
+            cur.append(line)
+        elif cur:
+            blocks.append(cur)
+            cur = []
+    return blocks
+
+
+def _cells(line):
+    return len(line.strip().strip("|").split("|"))
+
+
+def assert_tables_well_formed(text):
+    tables = _tables(text)
+    assert tables
+    for t in tables:
+        n = _cells(t[0])
+        assert set(t[1].strip("|").split("|")) == {"---"}, t[1]
+        assert all(_cells(l) == n for l in t), (n, [(l, _cells(l)) for l in t if _cells(l) != n])
+
+
+def test_phase1_report_tables_have_header_cell_count():
+    from jev_demo.bench import METHODS, SUPPLEMENTARY, format_report
+    from test_bench import _results
+    res = _results(8, 10)
+    for m in METHODS + SUPPLEMENTARY:
+        res[m]["per_theorem"] = [{"name": "x", "difficulty": "hard", "proved": True, "calls": 2}]
+    assert_tables_well_formed(format_report(res))
+
+
+def test_phase2_report_tables_have_header_cell_count(tmp_path):
+    res, _ = run(tmp_path, FakeGen(price=1.0, max_usd=1.0), reach={"te0": True, "te1": True, "te2": False})
+    res["claude_search"]["call_capped"] = True
+    assert res["budget_capped"]
+    text = format_report_phase2(res, TEST)
+    assert_tables_well_formed(text)
+    assert "call cap" in text and "budget capped" in text
+
+
+# -- P11: hybrid_expand_all (supplementary) ------------------------------------------------------
+
+def test_hybrid_expand_all_runs_and_is_reported_as_supplementary(tmp_path):
+    from jev_demo.bench import PHASE2_SUPPLEMENTARY
+    assert PHASE2_SUPPLEMENTARY == ("hybrid_expand_all",)
+    res, out = run(tmp_path, FakeGen())
+    assert len(res["hybrid_expand_all"]["per_theorem"]) == 3
+    assert "hybrid_expand_all" not in json.dumps(res["questions"])
+    text = (out / "report.md").read_text()
+    supp = text.index("Supplementary")
+    assert text.index("| hybrid_expand_all") > supp > text.index("| hybrid |")
+    assert text.index("| hybrid_expand_all") < text.index("## Pre-registered questions")
+
+
+def test_hybrid_expand_all_ranker_always_expands_everything():
+    from jev_demo.bench import ExpandAll
+
+    class Confident:
+        def rank(self, goal):
+            return [("a", 0.9), ("b", 0.1)], 0.9, 0.3
+
+    acts, conf, value = ExpandAll(Confident(), confidence=0.0).rank("⊢ g")
+    assert conf == 0.0 and value == 0.3 and acts == [("a", 0.9), ("b", 0.1)]
+    assert ExpandAll(Confident()).rank("⊢ g")[1] == 0.9  # phase-1 behaviour unchanged
+
+
+def test_fatal_claude_error_stops_the_run(tmp_path):
+    from jev_demo.claude_gen import FatalRequestError
+
+    class Broken(FakeGen):
+        def whole_proof(self, statement, prelude="", k=4):
+            raise FatalRequestError("Claude request failed with HTTP 401")
+
+    with pytest.raises(FatalRequestError):
+        run(tmp_path, Broken())

@@ -115,6 +115,26 @@ def _is_stale(error: str | None) -> bool:
     return "invalid proof state" in e or "unknown proof state" in e
 
 
+def _is_timeout(error: str | None) -> bool:
+    """A timed-out tactic: the REPL was restarted, so every earlier proof state is now stale."""
+    return error == "timeout"
+
+
+def replay_state(repl, thm: Theorem, tactics: list[str], spend=lambda: True) -> int | None:
+    """Fresh proof state for `tactics` (e.g. after a REPL restart): start `thm` and replay them.
+    `spend()` is called before each tactic and stops the replay when it returns False. Returns
+    None if the replay was stopped or a tactic failed."""
+    ps, _ = repl.start_theorem(thm.statement, thm.prelude)
+    for t in tactics:
+        if not spend():
+            return None
+        res = repl.tactic(t, ps)
+        if not res.ok or res.proof_state is None:
+            return None
+        ps = res.proof_state
+    return ps
+
+
 def prove(thm: Theorem, repl: ReplClient, ranker: Ranker, budget: int = 64, max_depth: int = 8,
           top_k: int = 3, tau: float = 0.5) -> SearchResult:
     t0 = time.perf_counter()
@@ -139,16 +159,15 @@ def prove(thm: Theorem, repl: ReplClient, ranker: Ranker, budget: int = 64, max_
         """Fresh proof state for `tactics` after a REPL restart; each REPL call spends budget."""
         nonlocal calls
         calls += 1
-        new_ps, _ = repl.start_theorem(thm.statement, thm.prelude)
-        for t in tactics:
+
+        def spend() -> bool:
+            nonlocal calls
             if calls >= budget:
-                return None
+                return False
             calls += 1
-            res = repl.tactic(t, new_ps)
-            if not res.ok or res.proof_state is None:
-                return None
-            new_ps = res.proof_state
-        return new_ps
+            return True
+
+        return replay_state(repl, thm, tactics, spend)
 
     push(0.0, ps, goal, [])
     while frontier and calls < budget:

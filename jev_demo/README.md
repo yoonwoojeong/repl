@@ -153,6 +153,7 @@ and whether Jev adds anything on top of it. Each method is run on the 20 test th
 | `claude_whole` | Claude writes 4 complete tactic scripts per theorem; proved if any passes `check_proof` | How far does Claude get with no search at all? |
 | `claude_search` | the phase-1 best-first search, with `HybridRanker(order="llm")`: Claude's proposals first, then the fixed menu; confidence 0 so every action is expanded | What does the search add to Claude, and does Claude reach `menu_reachable = false` theorems? |
 | `hybrid` | the same search with `HybridRanker(order="jev")`: Claude's proposals ranked together with the menu by the model, refit on the phase-1 gold replays plus `data/claude_labels.json` | Does Jev's ranking add value on top of Claude (more hard theorems than `claude_search`, at equal or lower USD)? |
+| `hybrid_expand_all` | supplementary (ruling P11, not pre-registered): `hybrid` with confidence fixed at 0.0, so every ranked action is expanded (phase-1's expand-all wrapper); its Claude requests are mostly cache hits | Is a `hybrid` result due to Jev's ranking or to confidence gating (which hurt in phase 1)? |
 | `phase1_best` | copied from the phase-1 `results/results.json` (best pre-registered method on hard) | Phase-1 reference |
 | `phase1_fixed_expand_all` | copied from phase 1; post-hoc, the strongest phase-1 method (10/12 hard) | Phase-1 reference |
 
@@ -169,8 +170,16 @@ goal and memoised per theorem; `run-phase2` and `collect` refuse to run unless
 this are flagged `call_capped`. Since the cache is shared, a later method can reuse proposals
 for free, so the report shows both actual USD (billed) and notional USD (every request at its
 original price, cached or not); the `hybrid` vs `claude_search` cost question uses notional USD.
+An HTTP 400/401/403/404 from the API (bad request, key, permission or model) stops the run at the
+first request; 429, 5xx and connection errors are counted as `errors` and yield no proposals.
+Every Claude request logs one line to stderr (`cached` or `billed`, USD, `stop_reason`, and the
+refusal category from `stop_details` when present). `collect` saves labels after every theorem,
+and a proposal that times out is labelled not useful and the gold state re-derived.
 
 ### How to run
+
+Run `collect` first (otherwise `hybrid` has no Claude labels), and give `run-phase2` a
+`--max-usd 20` budget so the cap is not hit before every method has run:
 
 ```sh
 export ANTHROPIC_API_KEY=...
@@ -178,8 +187,17 @@ export ANTHROPIC_RUN_LIVE=1
 # 1. label Claude's proposals on the training gold states -> jev_demo/data/claude_labels.json
 python -m jev_demo collect
 # 2. run the Claude methods on the test set -> jev_demo/results_phase2/{results.json,report.md}
-python -m jev_demo run-phase2 --out jev_demo/results_phase2
+python -m jev_demo run-phase2 --out jev_demo/results_phase2 --max-usd 20
 ```
+
+Notes on cost accounting:
+
+- Requests are sent with `fallbacks="default"`; a request served by the fallback model is still
+  priced at `claude-opus-5-5` rates, because `usage.iterations` is not read yet (TODO in
+  `claude_gen.py`), so USD may be slightly off for those requests.
+- The system prompt is close to the 512-token minimum for prompt caching. Check the second
+  billed request's log line / `cache_read_tokens` in `claude_usage`: non-zero cache-read tokens
+  confirm caching is active.
 
 Both accept `--claude-model` (default `claude-opus-5-5`), `--effort` (`medium`) and `--max-usd`
 (`10`). Without `claude_labels.json`, `hybrid` is trained on the phase-1 replays alone.

@@ -169,3 +169,81 @@ def test_live_proposes_for_simple_goal(tmp_path):
     g = ClaudeGenerator(cache_dir=str(tmp_path / "live"))
     assert len(g.propose("n : Nat\n⊢ n + 0 = n")) >= 1
     assert g.usage.calls == 1
+
+
+# -- I3: non-retryable 4xx stops the run; one log line per request -----------------------------
+
+def _status_error(cls, code):
+    req = httpx.Request("POST", "https://api.anthropic.com/v1/messages")
+    return cls("nope", response=httpx.Response(code, request=req), body=None)
+
+
+@pytest.mark.parametrize("cls,code", [(anthropic.BadRequestError, 400), (anthropic.AuthenticationError, 401),
+                                      (anthropic.PermissionDeniedError, 403), (anthropic.NotFoundError, 404)])
+def test_non_retryable_4xx_propagates(tmp_path, cls, code):
+    from jev_demo.claude_gen import FatalRequestError
+    g = gen(FakeClient(_status_error(cls, code)), tmp_path)
+    with pytest.raises(FatalRequestError, match=str(code)):
+        g.propose("⊢ g")
+
+
+@pytest.mark.parametrize("err", [
+    _status_error(anthropic.RateLimitError, 429),
+    _status_error(anthropic.InternalServerError, 500),
+    anthropic.APIConnectionError(request=httpx.Request("POST", "https://api.anthropic.com/v1/messages")),
+])
+def test_retryable_errors_are_counted_not_raised(tmp_path, err):
+    g = gen(FakeClient(err), tmp_path)
+    assert g.propose("⊢ g") == []
+    assert g.usage.errors == 1
+
+
+def test_logs_one_line_per_request(tmp_path, capsys):
+    refusal = resp(None, stop="refusal", text="")
+    refusal.stop_details = SimpleNamespace(category="cyber", explanation="x")
+    c = FakeClient(resp(["simp"], inp=1_000_000, out=0), refusal)
+    g = gen(c, tmp_path)
+    g.propose("⊢ a")
+    g.propose("⊢ a")  # cache hit
+    g.propose("⊢ b")  # refusal
+    lines = [l for l in capsys.readouterr().err.splitlines() if l.startswith("claude:")]
+    assert len(lines) == 3
+    assert "billed" in lines[0] and "usd=4.0000" in lines[0] and "stop_reason=end_turn" in lines[0] and "cache_read=0" in lines[0]
+    assert "cached" in lines[1] and "usd=4.0000" in lines[1]
+    assert "billed" in lines[2] and "stop_reason=refusal" in lines[2] and "refusal_category=cyber" in lines[2]
+
+
+# -- I5: every "good tactic" in the prompt's examples closes its goal -----------------------------
+
+def _prompt_examples():
+    import json
+    import re
+    pat = re.compile(r"Example (\d+)\n(?:Prelude:\n(.*?)\n)?Goal:\n(.*?)\nGood tactics: (\[.*?\])\n", re.S)
+    return [(int(n), pre or "", goal, json.loads(tacs)) for n, pre, goal, tacs in pat.findall(SYSTEM_PROMPT)]
+
+
+def test_prompt_examples_parse():
+    ex = _prompt_examples()
+    assert [n for n, *_ in ex] == [1, 2, 3, 4, 5] and all(t for *_, t in ex)
+
+
+@pytest.mark.lean
+def test_prompt_example_tactics_close_their_goals(repl):
+    """Each example's goal is reached by a gold prefix of its train source theorem, and every
+    listed tactic, run alone at that goal, is accepted and closes it."""
+    train = {t.name: t for t in load_theorems(os.path.join(DATA_DIR, "train.json"))}
+    for (n, prelude, goal, tactics), src in zip(_prompt_examples(), EXAMPLE_SOURCES):
+        thm = train[src]
+        assert prelude == thm.prelude, n
+        ps, cur = repl.start_theorem(thm.statement, thm.prelude)
+        for step in thm.gold:
+            if cur.split() == goal.split():
+                break
+            res = repl.tactic(step, ps)
+            if not res.goals:
+                break
+            ps, cur = res.proof_state, res.goals[0]
+        assert cur.split() == goal.split(), (n, cur)
+        for tac in tactics:
+            res = repl.tactic(tac, ps)
+            assert res.ok and res.completed, (n, tac, res.error, res.goals)
