@@ -10,11 +10,13 @@ import time
 import numpy as np
 
 from jev_demo.baselines import single_shot
+from jev_demo.collect import LABELS_PATH, load_labels
 from jev_demo.dataset import replay
+from jev_demo.hybrid import HybridRanker
 from jev_demo.model import SystemOneModel, expected_calibration_error
 from jev_demo.premises import Lemma, Shortlister, dump_library
 from jev_demo.search import FixedOrderRanker, ModelRanker, RandomRanker, SearchResult, prove
-from jev_demo.theorems import Theorem
+from jev_demo.theorems import DATA_DIR, Theorem
 
 METHODS = ("model", "model_no_premise", "fixed", "random", "grind_only", "try_only")
 BASELINES_FOR_SUCCESS = ("fixed", "grind_only", "try_only")
@@ -97,14 +99,20 @@ def _split(items: list, rng: np.random.Generator) -> tuple[list, list]:
     return ([x for i, x in enumerate(items) if i not in hold], [x for i, x in enumerate(items) if i in hold])
 
 
-def train_model(train: list[Theorem], repl, shortlister: Shortlister, lib: dict[str, Lemma]):
-    """Replay, fit on 80%, calibrate on the 20% hold-out, refit on all keeping the temperatures."""
+def train_model(train: list[Theorem], repl, shortlister: Shortlister, lib: dict[str, Lemma],
+                extra: tuple[list, list] | None = None):
+    """Replay, fit on 80%, calibrate on the 20% hold-out, refit on all keeping the temperatures.
+    `extra = (choice, binary)` examples (phase 2: Claude labels) are added to the replay ones."""
     stats: dict = {}
     choice, binary = [], []
     for thm in train:
         c, b = replay(thm, repl, shortlister, lib, stats=stats)
         choice += c
         binary += b
+    if extra is not None:
+        choice += list(extra[0])
+        binary += list(extra[1])
+        stats.update(n_claude_choice=len(extra[0]), n_claude_binary=len(extra[1]))
     rng = np.random.default_rng(SEED)
     c_fit, c_hold = _split(choice, rng)
     b_fit, _ = _split(binary, rng)
@@ -138,20 +146,92 @@ def _run_method(method: str, thm: Theorem, repl, model, shortlister, lib) -> Sea
     raise ValueError(method)
 
 
-def _summary(rows: list[dict]) -> dict:
+def _summary(rows: list[dict], claude: bool = False) -> dict:
     proved = [r for r in rows if r["proved"]]
 
     def mean(key):
         return round(float(np.mean([r[key] for r in proved])), 3) if proved else None
 
-    return {
+    out = {
         "proved": len(proved),
         "proved_easy": sum(r["difficulty"] == "easy" for r in proved),
         "proved_hard": sum(r["difficulty"] == "hard" for r in proved),
         "mean_calls": mean("calls"),
         "mean_seconds": mean("seconds"),
-        "per_theorem": rows,
     }
+    if claude:  # phase 2: cost columns, summed over the per-theorem deltas
+        out.update({
+            "claude_requests": sum(r["claude_requests"] for r in rows),
+            "claude_calls": sum(r["claude_calls"] for r in rows),
+            "usd": round(sum(r["usd"] for r in rows), 6),
+            "refusals": sum(r["refusals"] for r in rows),
+            "errors": sum(r["errors"] for r in rows),
+            "budget_capped": any(r["budget_capped"] for r in rows),
+        })
+    out["per_theorem"] = rows
+    return out
+
+
+class _MeteredGen:
+    """Wraps a Claude generator: counts requests (cached or billed) and reads usage deltas."""
+
+    def __init__(self, gen):
+        self.gen, self.requests = gen, 0
+
+    def propose(self, *a, **k):
+        self.requests += 1
+        return self.gen.propose(*a, **k)
+
+    def whole_proof(self, *a, **k):
+        self.requests += 1
+        return self.gen.whole_proof(*a, **k)
+
+    def snapshot(self) -> tuple:
+        u = self.gen.usage
+        return (self.requests, u.calls, u.usd, u.refusals, u.errors)
+
+    def delta(self, before: tuple) -> dict:
+        r, c, usd, ref, err = (a - b for a, b in zip(self.snapshot(), before))
+        return {"claude_requests": r, "claude_calls": c, "usd": round(usd, 6), "refusals": ref,
+                "errors": err, "budget_capped": self.gen.usage.usd >= self.gen.max_usd}
+
+
+def _run_methods(methods, test: list[Theorem], run_one, repl, log, results: dict, out_dir: str,
+                 metered: _MeteredGen | None = None, trace_methods=()) -> None:
+    """Run each method on every test theorem into `results[method]` (shared by both phases).
+    `run_one(method, thm, counting_repl)` returns a SearchResult. An exception becomes an unproved
+    row; results.json is rewritten (marked partial) after each method."""
+    for method in methods:
+        rows = []
+        for thm in test:
+            counting = _CountingRepl(repl)
+            before = metered.snapshot() if metered else None
+            t0 = time.perf_counter()
+            try:
+                r = run_one(method, thm, counting)
+            except Exception as e:  # keep the run going; record the failure as an unproved row
+                row = {"name": thm.name, "difficulty": thm.difficulty, "proved": False, "calls": 0,
+                       "escalations": 0, "seconds": round(time.perf_counter() - t0, 3), "tactics": [],
+                       "timeouts": counting.timeouts, "dead_state_calls": counting.dead,
+                       "error": f"{type(e).__name__}: {e}"}
+                if metered:
+                    row.update(metered.delta(before))
+                rows.append(row)
+                log(f"{method:17s} {thm.name:28s} ERROR {row['error']}")
+                continue
+            row = {"name": thm.name, "difficulty": thm.difficulty, "proved": r.proved,
+                   "calls": r.calls, "escalations": r.escalations, "seconds": round(r.seconds, 3),
+                   "tactics": r.tactics, "timeouts": counting.timeouts, "dead_state_calls": counting.dead}
+            if metered:
+                row.update(metered.delta(before))
+            if method in trace_methods:
+                row["trace"] = r.trace
+            rows.append(row)
+            cost = f" claude={row['claude_calls']} usd={row['usd']:.3f}" if metered else ""
+            log(f"{method:17s} {thm.name:28s} {'PROVED' if r.proved else 'failed'} "
+                f"calls={r.calls} {r.seconds:.1f}s timeouts={counting.timeouts}{cost}")
+        results[method] = _summary(rows, claude=metered is not None)
+        _write_results({**results, "partial": True}, out_dir)  # keep progress if a later step dies
 
 
 def run_experiment(repl, train: list[Theorem], test: list[Theorem], out_dir: str,
@@ -166,31 +246,9 @@ def run_experiment(repl, train: list[Theorem], test: list[Theorem], out_dir: str
     model, train_stats = train_model(train, repl, shortlister, lib)
 
     results: dict = {}
-    for method in METHODS + SUPPLEMENTARY:
-        rows = []
-        for thm in test:
-            counting = _CountingRepl(repl)
-            t0 = time.perf_counter()
-            try:
-                r = _run_method(method, thm, counting, model, shortlister, lib)
-            except Exception as e:  # keep the run going; record the failure as an unproved row
-                row = {"name": thm.name, "difficulty": thm.difficulty, "proved": False, "calls": 0,
-                       "escalations": 0, "seconds": round(time.perf_counter() - t0, 3), "tactics": [],
-                       "timeouts": counting.timeouts, "dead_state_calls": counting.dead,
-                       "error": f"{type(e).__name__}: {e}"}
-                rows.append(row)
-                log(f"{method:17s} {thm.name:28s} ERROR {row['error']}")
-                continue
-            row = {"name": thm.name, "difficulty": thm.difficulty, "proved": r.proved,
-                   "calls": r.calls, "escalations": r.escalations, "seconds": round(r.seconds, 3),
-                   "tactics": r.tactics, "timeouts": counting.timeouts, "dead_state_calls": counting.dead}
-            if method in ("grind_only", "try_only"):
-                row["trace"] = r.trace
-            rows.append(row)
-            log(f"{method:17s} {thm.name:28s} {'PROVED' if r.proved else 'failed'} "
-                f"calls={r.calls} {r.seconds:.1f}s timeouts={counting.timeouts}")
-        results[method] = _summary(rows)
-        _write_results({**results, "partial": True}, out_dir)  # keep progress if a later step dies
+    _run_methods(METHODS + SUPPLEMENTARY, test,
+                 lambda method, thm, counting: _run_method(method, thm, counting, model, shortlister, lib),
+                 repl, log, results, out_dir, trace_methods=("grind_only", "try_only"))
 
     # Measurement only: test replays never reach fit or calibrate.
     test_stats: dict = {}
@@ -315,3 +373,169 @@ def rerender_report(out_dir: str, test: list[Theorem] | None = None) -> str:
     with open(os.path.join(out_dir, "report.md"), "w", encoding="utf-8") as f:
         f.write(text)
     return text
+
+
+# ---------------------------------------------------------------------------------------------
+# Phase 2: Claude as a tactic generator
+# ---------------------------------------------------------------------------------------------
+
+PHASE2_METHODS = ("claude_whole", "claude_search", "hybrid")
+CLAUDE_METHODS = PHASE2_METHODS
+WHOLE_PROOF_K = 4
+PHASE1_RESULTS_PATH = os.path.join(os.path.dirname(DATA_DIR), "results", "results.json")
+
+
+def _run_phase2_method(method: str, thm: Theorem, repl, model, shortlister, lib, gen) -> SearchResult:
+    if method == "claude_whole":
+        t0 = time.perf_counter()
+        calls, proof = 0, None
+        for script in gen.whole_proof(thm.statement, thm.prelude, k=WHOLE_PROOF_K):
+            calls += 1
+            if repl.check_proof(thm.statement, list(script), thm.prelude):
+                proof = list(script)
+                break
+        return SearchResult(proof is not None, proof or [], calls, 0, time.perf_counter() - t0)
+    if method in ("claude_search", "hybrid"):
+        order = "llm" if method == "claude_search" else "jev"
+        return prove(thm, repl, HybridRanker(model, shortlister, lib, gen, order=order, prelude=thm.prelude))
+    raise ValueError(method)
+
+
+def phase1_references(path: str) -> dict:
+    """From a phase-1 `results.json`: `phase1_best` (the best pre-registered method on hard, ties
+    broken by METHODS order) and `phase1_fixed_expand_all` (strongest phase-1 method, post hoc)."""
+    with open(path, encoding="utf-8") as f:
+        p1 = json.load(f)
+    best = max(METHODS, key=lambda m: (p1[m]["proved_hard"], -METHODS.index(m)))
+    return {"phase1_best": {"method": best, **p1[best]},
+            "phase1_fixed_expand_all": {"method": "fixed_expand_all", **p1["fixed_expand_all"]},
+            "phase1_n_easy": p1.get("n_easy"), "phase1_n_hard": p1.get("n_hard")}
+
+
+def phase2_questions(results: dict) -> dict:
+    """The pre-registered phase-2 questions, computed from `results` (never typed in by hand)."""
+    hyb, cs = results["hybrid"], results["claude_search"]
+    reach = results.get("reachability") or {}
+    hard = {r["name"] for m in CLAUDE_METHODS for r in results[m]["per_theorem"]
+            if r["difficulty"] == "hard"}
+    unreachable = [n for n in reach if reach[n] is False and n in hard]
+    proved_by = {}
+    for n in unreachable:
+        who = [m for m in CLAUDE_METHODS
+               if any(r["name"] == n and r["proved"] for r in results[m]["per_theorem"])]
+        if who:
+            proved_by[n] = who
+    return {
+        "hybrid_hard": hyb["proved_hard"], "claude_search_hard": cs["proved_hard"],
+        "hybrid_beats_claude_search": hyb["proved_hard"] > cs["proved_hard"],
+        "hybrid_usd": hyb["usd"], "claude_search_usd": cs["usd"],
+        "hybrid_usd_not_higher": hyb["usd"] <= cs["usd"],
+        "unreachable_hard": unreachable,
+        "unreachable_hard_proved": proved_by,
+        "unreachable_hard_proved_count": len(proved_by),
+    }
+
+
+def run_phase2(repl, train: list[Theorem], test: list[Theorem], out_dir: str, generator,
+               phase1_path: str = PHASE1_RESULTS_PATH, labels_path: str = LABELS_PATH,
+               library: list[Lemma] | None = None, reachability: dict[str, bool] | None = None,
+               log=None) -> dict:
+    """claude_whole, claude_search and hybrid on the test set, next to the phase-1 references.
+    `hybrid` uses the model refit on the replay examples plus the saved Claude labels."""
+    log = log or (lambda msg: print(msg, file=sys.stderr, flush=True))
+    refs = phase1_references(phase1_path)  # fail before any spend if phase 1 is missing
+    lemmas = library if library is not None else dump_library(repl)
+    lib = {l.name: l for l in lemmas}
+    shortlister = Shortlister(lemmas)
+    labels = load_labels(labels_path)
+    log(f"replaying {len(train)} train theorems, fitting with {len(labels[0])} + {len(labels[1])} "
+        f"Claude label examples")
+    model, train_stats = train_model(train, repl, shortlister, lib, extra=labels)
+
+    metered = _MeteredGen(generator)
+    results: dict = {}
+    _run_methods(PHASE2_METHODS, test,
+                 lambda method, thm, counting: _run_phase2_method(method, thm, counting, model,
+                                                                  shortlister, lib, metered),
+                 repl, log, results, out_dir, metered=metered)
+    results.update(refs)
+    results.update({
+        "temperatures": dict(model.temps),
+        "train_stats": train_stats,
+        "n_easy": sum(t.difficulty == "easy" for t in test),
+        "n_hard": sum(t.difficulty == "hard" for t in test),
+        "claude_model": getattr(generator, "model", None),
+        "effort": getattr(generator, "effort", None),
+        "max_usd": generator.max_usd,
+        "total_usd": round(generator.usage.usd, 6),
+        "claude_usage": dict(vars(generator.usage)),
+        "budget_capped": any(results[m]["budget_capped"] for m in PHASE2_METHODS),
+    })
+    if reachability is not None:
+        results["reachability"] = {t.name: reachability.get(t.name) for t in test}
+    results["questions"] = phase2_questions(results)
+    _write_results(results, out_dir)
+    with open(os.path.join(out_dir, "report.md"), "w", encoding="utf-8") as f:
+        f.write(format_report_phase2(results, test))
+    return results
+
+
+def format_report_phase2(results: dict, test: list[Theorem] | None = None) -> str:
+    ne, nh = results["n_easy"], results["n_hard"]
+    n1e, n1h = results.get("phase1_n_easy") or ne, results.get("phase1_n_hard") or nh
+    head = ["| method | proved | easy | hard | mean calls (proved) | Claude calls | USD | refusals | errors |",
+            "|---|---|---|---|---|---|---|---|---|"]
+
+    def row(label, r, e, h, claude):
+        c = (f"{r['claude_calls']} | {r['usd']:.4f} | {r['refusals']} | {r['errors']}"
+             if claude else "– | – | – | –")
+        return (f"| {label} | {r['proved']}/{e + h} | {r['proved_easy']}/{e} | {r['proved_hard']}/{h} "
+                f"| {_fmt(r['mean_calls'])} | {c} |")
+
+    out = ["# Jev proof demo — phase 2 results", ""]
+    if results.get("budget_capped"):
+        out += [f"**Budget cap reached** (`--max-usd` {results['max_usd']}): some Claude requests were "
+                "refused locally and returned no proposals, so the affected rows are not comparable.", ""]
+    out += head
+    for m in PHASE2_METHODS:
+        out.append(row(m, results[m], ne, nh, True) + (" budget capped" if results[m]["budget_capped"] else ""))
+    b = results["phase1_best"]
+    out.append(row(f"phase1_best (`{b['method']}`, phase-1 reference)", b, n1e, n1h, False))
+    out += ["", "Reference, post hoc in phase 1 (the strongest phase-1 method, not pre-registered):", "",
+            *head,
+            row("phase1_fixed_expand_all (phase-1 reference)", results["phase1_fixed_expand_all"], n1e, n1h, False),
+            "", "`phase1_*` rows are copied from the phase-1 `results.json`. `claude_whole` asks for "
+            f"{WHOLE_PROOF_K} complete scripts and counts a theorem as proved if any passes `check_proof`; "
+            "`claude_search` expands Claude's proposals first, then the fixed menu; `hybrid` ranks "
+            "Claude's proposals together with the menu using the model refit on phase-1 replays plus "
+            "Claude labels. USD counts billed requests only; proposals cached by an earlier method are "
+            "free to a later one, so compare `hybrid` and `claude_search` costs with that in mind.", ""]
+    q = results.get("questions") or phase2_questions(results)
+    out += ["## Pre-registered questions", "",
+            f"1. Does `hybrid` prove more hard theorems than `claude_search` (did Jev add value on top "
+            f"of Claude)? **{_fmt(q['hybrid_beats_claude_search'])}**: {q['hybrid_hard']}/{nh} vs "
+            f"{q['claude_search_hard']}/{nh}.",
+            f"2. At equal or lower USD? **{_fmt(q['hybrid_usd_not_higher'])}**: `hybrid` "
+            f"${q['hybrid_usd']:.4f} vs `claude_search` ${q['claude_search_usd']:.4f}.",
+            f"3. Hard theorems with no gold proof inside the phase-1 menu (`menu_reachable = false`) "
+            f"that any Claude method proved: **{q['unreachable_hard_proved_count']}/"
+            f"{len(q['unreachable_hard'])}**"
+            + (" (" + "; ".join(f"`{n}` by {', '.join(ms)}" for n, ms in q["unreachable_hard_proved"].items()) + ")"
+               if q["unreachable_hard_proved"] else "") + ".",
+            "", f"Total Claude spend: ${results.get('total_usd', 0.0):.4f} of ${results.get('max_usd')} "
+            f"(`{results.get('claude_model')}`, effort `{results.get('effort')}`).", ""]
+    shown = PHASE2_METHODS + ("phase1_best", "phase1_fixed_expand_all")
+    rows = {m: {r["name"]: r for r in results[m]["per_theorem"]} for m in shown}
+    names = [t.name for t in test] if test else [r["name"] for r in results[PHASE2_METHODS[0]]["per_theorem"]]
+    reach = results.get("reachability") or {}
+    out += ["## Per theorem", "", "| theorem | difficulty | menu-reachable | " + " | ".join(shown) + " |",
+            "|---|---|---|" + "---|" * len(shown)]
+    for n in names:
+        diff = rows[PHASE2_METHODS[0]][n]["difficulty"]
+        cells = []
+        for m in shown:
+            r = rows[m].get(n)
+            cells.append(f"yes ({r['calls']})" if r and r["proved"] else "–")
+        out.append(f"| {n} | {diff} | {_fmt(reach.get(n))} | " + " | ".join(cells) + " |")
+    out += ["", "Cells: `yes (calls)` when proved, `–` otherwise."]
+    return "\n".join(out) + "\n"

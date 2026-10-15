@@ -134,3 +134,50 @@ suggestion, so the "follow `Try this` once" path of `single_shot` was not exerci
 run. No REPL call timed out. `model` and `model_no_premise` differ on `test_mul_self_le`
 even though the `model` proof (`exact?`) uses no premise: adding the template options
 changes the `kind` softmax and hence the ranking and escalation.
+
+## Phase 2: Claude as a tactic generator
+
+**Status: results pending.** No Anthropic API key was available when this was built, so the
+phase-2 experiment has not been run. Everything below is implemented and tested offline with a
+fake generator; no phase-2 numbers exist yet, and none are reported here.
+
+### Design
+
+Phase 1 found that a learned ordering of a fixed tactic menu does not beat exhaustive search over
+that menu, and that two hard theorems (`menu_reachable = false` in `data/test_reachability.json`)
+lie outside the menu. Phase 2 asks whether an LLM that proposes open-ended tactics changes that,
+and whether Jev adds anything on top of it. Each method is run on the 20 test theorems:
+
+| method | what it is | question it answers |
+|---|---|---|
+| `claude_whole` | Claude writes 4 complete tactic scripts per theorem; proved if any passes `check_proof` | How far does Claude get with no search at all? |
+| `claude_search` | the phase-1 best-first search, with `HybridRanker(order="llm")`: Claude's proposals first, then the fixed menu; confidence 0 so every action is expanded | What does the search add to Claude, and does Claude reach `menu_reachable = false` theorems? |
+| `hybrid` | the same search with `HybridRanker(order="jev")`: Claude's proposals ranked together with the menu by the model, refit on the phase-1 gold replays plus `data/claude_labels.json` | Does Jev's ranking add value on top of Claude (more hard theorems than `claude_search`, at equal or lower USD)? |
+| `phase1_best` | copied from the phase-1 `results/results.json` (best pre-registered method on hard) | Phase-1 reference |
+| `phase1_fixed_expand_all` | copied from phase 1; post-hoc, the strongest phase-1 method (10/12 hard) | Phase-1 reference |
+
+`report.md` computes the three pre-registered questions from the results: (1) `hybrid` vs
+`claude_search` on hard theorems, (2) their USD, (3) how many `menu_reachable = false` hard
+theorems any Claude method proved. Rows carry `claude_calls`, `usd`, `refusals`, `errors` and
+`budget_capped`.
+
+Cost controls: `--max-usd` (default 10) is a hard cap, after which the generator returns no
+proposals and the affected rows are flagged `budget_capped`; responses are cached on disk
+(`jev_demo/cache/claude/`, git-ignored), so reruns are free; proposals are generated once per
+goal and memoised per theorem; `run-phase2` and `collect` refuse to run unless
+`ANTHROPIC_RUN_LIVE=1`. Since the cache is shared, a method that runs after another can reuse
+its proposals for free, so USD comparisons count billed requests only.
+
+### How to run
+
+```sh
+export ANTHROPIC_API_KEY=...
+export ANTHROPIC_RUN_LIVE=1
+# 1. label Claude's proposals on the training gold states -> jev_demo/data/claude_labels.json
+python -m jev_demo collect
+# 2. run the Claude methods on the test set -> jev_demo/results_phase2/{results.json,report.md}
+python -m jev_demo run-phase2 --out jev_demo/results_phase2
+```
+
+Both accept `--claude-model` (default `claude-opus-5-5`), `--effort` (`medium`) and `--max-usd`
+(`10`). Without `claude_labels.json`, `hybrid` is trained on the phase-1 replays alone.
