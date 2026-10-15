@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import math
 import os
+import re
 from dataclasses import dataclass
 
 from jev_demo.model import tokenize
@@ -21,19 +22,30 @@ class Lemma:
     tokens: frozenset[str]
 
 
+# Operator symbol -> word tokens (ruling R8), so goals written with symbols match lemma names.
+OPERATOR_WORDS = {
+    "+": ("add",), "*": ("mul",), "-": ("sub",), "/": ("div",), "%": ("mod",), "∣": ("dvd",),
+    "≤": ("le",), "<": ("lt",), "≥": ("le", "ge"), ">": ("lt", "gt"), "++": ("append",),
+    "::": ("cons",), "∘": ("comp",), "^": ("pow",), "¬": ("not",), "∧": ("and",), "∨": ("or",),
+    "↔": ("iff",), "≠": ("ne",), "=": ("eq",),
+}
+
+
 def text_tokens(text: str) -> frozenset[str]:
     """Shared tokenizer for lemma types and goals; dotted tokens also yield their components,
     so `l.reverse` contributes `reverse`."""
     toks: set[str] = set()
     for t in tokenize(text):
         toks.add(t)
+        toks.update(OPERATOR_WORDS.get(t, ()))
         if "." in t:
             toks.update(p for p in t.split(".") if p)
     return frozenset(toks)
 
 
 def make_lemma(name: str, type_: str) -> Lemma:
-    return Lemma(name, type_, text_tokens(type_) | frozenset(p for p in name.split(".") if p) | {name})
+    return Lemma(name, type_, text_tokens(type_) | frozenset(p for p in re.split(r"[._]", name) if p)
+        | frozenset(p for p in name.split(".") if p) | {name})
 
 
 def option_text(lemma: Lemma) -> str:

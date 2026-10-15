@@ -46,6 +46,17 @@ def test_option_text_and_dot_notation():
     assert sl.shortlist("l : List Nat ⊢ l.reverse = l", k=1) == ("List.reverse_reverse",)
 
 
+def test_operators_map_to_name_words():
+    lib = [
+        make_lemma("List.length_append", "(a ++ b).length = a.length + b.length"),
+        make_lemma("Nat.mul_add", "∀ (n m k : Nat), n * (m + k) = n * m + n * k"),
+        make_lemma("Nat.zero_lt_succ", "0 < succ n"),
+    ]
+    sl = Shortlister(lib)
+    assert sl.shortlist("a b c : Nat ⊢ a * (b + c) = a * b + a * c")[0] == "Nat.mul_add"
+    assert {"Nat", "mul", "add"} <= make_lemma("Nat.mul_add", "x").tokens
+
+
 def test_shortlist_recall_basic():
     sl = Shortlister(_lib())
     ex = [("⊢ gcd n (n+1) = 1", "gcd_succ"), ("⊢ a", "missing")]
