@@ -96,3 +96,30 @@ def test_expand_all_ranker_uses_top_score_as_confidence():
     acts, conf, value = ExpandAll(FixedOrderRanker()).rank("⊢ a")
     assert conf == acts[0][1] < 0.5 and value == 0.5
     assert [a for a, _ in acts] == [a for a, _ in FixedOrderRanker().rank("⊢ a")[0]]
+
+
+def _results(model_hard, supp_hard):
+    from jev_demo.bench import SUPPLEMENTARY
+    res = {m: _row(3, 2, 1) for m in METHODS}
+    res["model"] = _row(model_hard, 0, model_hard)
+    res["try_only"] = _row(model_hard - 1, 0, model_hard - 1)
+    res.update({m: _row(supp_hard, 0, supp_hard) for m in SUPPLEMENTARY})
+    res.update({"ece": 0.1, "temperatures": {"kind": 1.5}, "shortlist_recall": 0.25,
+                "n_easy": 8, "n_hard": 12})
+    return res
+
+
+def test_report_qualifies_success_when_supplementary_beats_model():
+    text = format_report(_results(8, 10))
+    assert "met nominally (8 vs 7)" in text
+    assert "does not beat exhaustive" in text and "does not show that the model helps" in text
+    assert "**met**" not in text
+    plain = format_report(_results(8, 8))
+    assert "**met**" in plain and "does not show that the model helps" not in plain
+
+
+def test_rerender_report_from_results_json(tmp_path):
+    from jev_demo.bench import rerender_report
+    (tmp_path / "results.json").write_text(json.dumps(_results(8, 10)))
+    text = rerender_report(str(tmp_path))
+    assert (tmp_path / "report.md").read_text() == text and "met nominally" in text

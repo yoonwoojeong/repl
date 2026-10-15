@@ -201,11 +201,23 @@ def format_report(results: dict, test: list[Theorem] | None = None) -> str:
         out.append(f"| {m} | {r['proved']}/{ne + nh} | {r['proved_easy']}/{ne} | {r['proved_hard']}/{nh} "
                    f"| {_fmt(r['mean_calls'])} | {_fmt(r['mean_seconds'])} |")
     best = max(BASELINES_FOR_SUCCESS, key=lambda m: results[m]["proved_hard"])
-    met = results["model"]["proved_hard"] > results[best]["proved_hard"]
-    out += ["", f"Success criterion (hard set: `model` proves strictly more than the best of "
-            f"{', '.join(BASELINES_FOR_SUCCESS)}): **{'met' if met else 'not met'}** — "
-            f"model {results['model']['proved_hard']}/{nh} vs {best} {results[best]['proved_hard']}/{nh}.", ""]
+    model_hard, best_hard = results["model"]["proved_hard"], results[best]["proved_hard"]
+    met = model_hard > best_hard
     supp = [m for m in SUPPLEMENTARY if m in results]
+    beaten_by = [m for m in supp if results[m]["proved_hard"] > model_hard]
+    if met and beaten_by:
+        verdict = f"met nominally ({model_hard} vs {best_hard})"
+    else:
+        verdict = f"**{'met' if met else 'not met'}**"
+    out += ["", f"Success criterion (hard set: `model` proves strictly more than the best of "
+            f"{', '.join(BASELINES_FOR_SUCCESS)}): {verdict} — "
+            f"model {model_hard}/{nh} vs {best} {best_hard}/{nh}."]
+    if beaten_by:
+        top = max(beaten_by, key=lambda m: results[m]["proved_hard"])
+        out.append(f"However, the model does not beat exhaustive search over the same menu "
+                   f"({model_hard} vs {results[top]['proved_hard']} hard for post-hoc `{top}`), "
+                   f"so this experiment does not show that the model helps.")
+    out.append("")
     if supp:
         out += ["Supplementary, added after the first run and not part of the success criterion: "
                 "the planned `fixed`/`random` rankers report confidence 1.0, so the search only tries "
@@ -249,3 +261,13 @@ def format_report(results: dict, test: list[Theorem] | None = None) -> str:
             out.append(f"| {n} | {diff} | {_fmt(reach.get(n))} | " + " | ".join(cells) + " |")
         out += ["", "Cells: `yes (calls)` when proved, `–` otherwise."]
     return "\n".join(out) + "\n"
+
+
+def rerender_report(out_dir: str, test: list[Theorem] | None = None) -> str:
+    """Rewrite `report.md` from an existing `results.json` without re-running anything."""
+    with open(os.path.join(out_dir, "results.json"), encoding="utf-8") as f:
+        results = json.load(f)
+    text = format_report(results, test)
+    with open(os.path.join(out_dir, "report.md"), "w", encoding="utf-8") as f:
+        f.write(text)
+    return text

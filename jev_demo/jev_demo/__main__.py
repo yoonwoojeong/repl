@@ -6,7 +6,7 @@ import argparse
 import json
 import os
 
-from jev_demo.bench import run_experiment
+from jev_demo.bench import rerender_report, run_experiment
 from jev_demo.repl_client import ReplClient
 from jev_demo.theorems import DATA_DIR, load_theorems
 
@@ -18,7 +18,13 @@ def main(argv: list[str] | None = None) -> None:
     run.add_argument("--out", default=os.path.join("jev_demo", "results"))
     run.add_argument("--train", default=os.path.join(DATA_DIR, "train.json"))
     run.add_argument("--test", default=os.path.join(DATA_DIR, "test.json"))
+    rep = sub.add_parser("report", help="re-render report.md from an existing results.json")
+    rep.add_argument("--out", default=os.path.join("jev_demo", "results"))
+    rep.add_argument("--test", default=os.path.join(DATA_DIR, "test.json"))
     args = ap.parse_args(argv)
+    if args.cmd == "report":
+        print(rerender_report(args.out, load_theorems(args.test)))
+        return
     reach_path = os.path.join(DATA_DIR, "test_reachability.json")
     reach = None
     if os.path.exists(reach_path):

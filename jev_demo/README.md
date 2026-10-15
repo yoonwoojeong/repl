@@ -75,10 +75,10 @@ Test set: 8 easy and 12 hard theorems. Budget 64 REPL calls, depth 8, top-k 3, Ï
   (1/4). Retrieval was frozen before this run (known limitation). No proof found by `model`
   uses a premise template.
 
-**Success criterion: met, narrowly.** On the 12 hard theorems `model` proves 8, and the best
-of `fixed` (2), `grind_only` (2) and `try_only` (7) proves 7; 8 > 7.
+Success criterion: met nominally (8 vs 7). On the 12 hard theorems `model` proves 8, and the
+best of `fixed` (2), `grind_only` (2) and `try_only` (7) proves 7.
 
-**But read it with this caveat.** The planned `fixed` and `random` rankers report confidence
+**Caveat.** The planned `fixed` and `random` rankers report confidence
 1.0, so the shared best-first search only ever tries their first three actions per state
 (`rfl`, `simp`, `simp_all` for `fixed`) and stops after 2-6 calls with most of the budget
 unused. After seeing that, we added two supplementary methods (post hoc, not part of the
@@ -99,6 +99,10 @@ over the same menu; its margin over the planned `fixed`/`random` comes largely f
 escalating past three actions per state (its uniform-confidence rivals never do), not from
 better ranking. The model needs fewer calls than
 exhaustive search on some theorems (e.g. `test_map_double_sum` 6 vs 25) and more on others.
+
+**Bottom line:** the criterion was met only nominally. The model does not beat exhaustive
+fixed-order search over the same menu (8 vs 10 hard), so this experiment does not show that
+the model helps.
 
 Other observations: `try?` in Lean v4.35.0 either closes the goal itself (reporting
 `Try these:` suggestions as info) or fails with an error; it never left a goal open with a
