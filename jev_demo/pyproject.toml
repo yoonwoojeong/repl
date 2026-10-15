@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jev_demo"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["numpy"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools]
+packages = ["jev_demo"]
+
+[tool.pytest.ini_options]
+markers = ["lean: tests that run the Lean REPL binary"]
