@@ -4,8 +4,11 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from dataclasses import dataclass
 from typing import Literal
+
+from jev_demo.actions import in_action_space
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 
@@ -26,3 +29,42 @@ def load_theorems(path: str) -> list[Theorem]:
         Theorem(r["name"], r["statement"], r.get("prelude", ""), tuple(r["gold"]), r["difficulty"])
         for r in rows
     ]
+
+
+def replay_in_action_space(repl, thm: Theorem) -> bool:
+    """Replay the gold proof step by step; True iff every step is in the action space at its goal.
+
+    Raises AssertionError if a gold step fails or the proof does not complete.
+    """
+    ps, goal = repl.start_theorem(thm.statement, thm.prelude)
+    reachable, result = True, None
+    for step in thm.gold:
+        reachable &= in_action_space(step, goal)
+        result = repl.tactic(step, ps)
+        if not result.ok:
+            raise AssertionError(f"{thm.name}: gold step {step!r} failed: {result.error}")
+        ps, goal = result.proof_state, (result.goals[0] if result.goals else "")
+    if result is None or not result.completed:
+        raise AssertionError(f"{thm.name}: gold proof does not complete")
+    return reachable
+
+
+def write_reachability(repl, test_path: str, out_path: str) -> dict[str, bool]:
+    """Write `{name: menu_reachable}` for the theorems in `test_path` to `out_path`."""
+    flags = {t.name: replay_in_action_space(repl, t) for t in load_theorems(test_path)}
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(flags, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+    return flags
+
+
+if __name__ == "__main__":
+    if sys.argv[1:] != ["--write-reachability"]:
+        sys.exit("usage: python -m jev_demo.theorems --write-reachability")
+    from jev_demo.repl_client import ReplClient
+
+    with ReplClient() as client:
+        flags = write_reachability(
+            client, os.path.join(DATA_DIR, "test.json"), os.path.join(DATA_DIR, "test_reachability.json")
+        )
+    print(f"{sum(flags.values())}/{len(flags)} test theorems menu-reachable")

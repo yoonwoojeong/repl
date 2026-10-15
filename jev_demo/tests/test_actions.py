@@ -1,4 +1,4 @@
-from jev_demo.actions import AUTOMATION, BASE_MENU, TEMPLATES, fill, menu, parse_action
+from jev_demo.actions import AUTOMATION, BASE_MENU, TEMPLATES, fill, in_action_space, menu, parse_action
 
 
 def test_menu_always_has_base_and_automation():
@@ -54,3 +54,15 @@ def test_parse_action_roundtrip():
 
 def test_intro_skips_binder_notation():
     assert not any(a.startswith("intro") for a in menu("l : List Nat\n⊢ ∀ x ∈ l, x ≥ 0"))
+
+
+def test_template_step_counts_only_with_bare_identifier_premise():
+    goal = "m n k : Nat\nh : m ∣ n\n⊢ m ∣ n * k"
+    assert in_action_space("apply Nat.dvd_mul_right_of_dvd", goal)
+    assert in_action_space("simp [List.map_map]", goal)
+    assert in_action_space("exact h₁", goal)
+    assert not in_action_space("exact Nat.dvd_mul_right_of_dvd h k", goal)
+    assert not in_action_space("simp [rev, h]", goal)
+    assert not in_action_space("rw [← Nat.mul_comm]", goal)
+    assert in_action_space("omega", goal) and in_action_space("intro h", "⊢ p → p")
+    assert not in_action_space("induction n with", goal)

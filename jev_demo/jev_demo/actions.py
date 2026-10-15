@@ -115,3 +115,18 @@ def parse_action(tac: str) -> tuple[str, str | None]:
         if tac.startswith(prefix) and tac.endswith(suffix) and len(tac) > len(prefix) + len(suffix):
             return t, tac[len(prefix):len(tac) - len(suffix)].strip()
     return tac, None
+
+
+_BARE_PREMISE = re.compile(r"[^\W\d][\w'!?]*(?:\.[^\W\d][\w'!?]*)*")
+
+
+def in_action_space(step: str, goal: str, automation: bool = True) -> bool:
+    """True iff `step` is a menu item at `goal`, or a template filled with a bare lemma name.
+
+    The ranker fills templates with a single (possibly dotted) identifier, so a premise
+    that is a term with arguments, a list, or `← lemma` is not producible.
+    """
+    kind, premise = parse_action(step)
+    if kind in TEMPLATES:
+        return premise is not None and _BARE_PREMISE.fullmatch(premise) is not None
+    return kind in menu(goal, automation)

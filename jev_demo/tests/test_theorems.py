@@ -3,26 +3,11 @@ import os
 
 import pytest
 
-from jev_demo.actions import TEMPLATES, menu, parse_action
-from jev_demo.theorems import DATA_DIR, Theorem, load_theorems
+from jev_demo.theorems import DATA_DIR, load_theorems, replay_in_action_space, write_reachability
 
 TRAIN = os.path.join(DATA_DIR, "train.json")
 TEST = os.path.join(DATA_DIR, "test.json")
-
-
-def _replay_in_action_space(repl, thm: Theorem) -> bool:
-    """Replay the gold proof step by step; True iff every step is in menu(goal) ∪ TEMPLATES."""
-    ps, goal = repl.start_theorem(thm.statement, thm.prelude)
-    reachable = True
-    for step in thm.gold:
-        kind = parse_action(step)[0]
-        if kind not in set(menu(goal)) | set(TEMPLATES):
-            reachable = False
-        r = repl.tactic(step, ps)
-        assert r.ok, (thm.name, step, r.error)
-        ps, goal = r.proof_state, (r.goals[0] if r.goals else "")
-    assert r.completed, thm.name
-    return reachable
+REACHABILITY = os.path.join(DATA_DIR, "test_reachability.json")
 
 
 def test_splits_disjoint_and_sized():
@@ -46,14 +31,15 @@ def test_every_gold_proof_checks(repl):
 
 @pytest.mark.lean
 def test_every_train_gold_step_is_in_action_space(repl):
-    outside = [t.name for t in load_theorems(TRAIN) if not _replay_in_action_space(repl, t)]
+    outside = [t.name for t in load_theorems(TRAIN) if not replay_in_action_space(repl, t)]
     assert outside == []
 
 
 @pytest.mark.lean
-def test_menu_reachable_flags_written(repl):
-    flags = {t.name: _replay_in_action_space(repl, t) for t in load_theorems(TEST)}
-    with open(os.path.join(DATA_DIR, "test_reachability.json"), "w") as f:
-        json.dump(flags, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+def test_menu_reachable_flags_written(repl, tmp_path):
+    out = tmp_path / "test_reachability.json"
+    flags = write_reachability(repl, TEST, str(out))
     assert len(flags) == 20
+    with open(REACHABILITY, encoding="utf-8") as f:
+        assert json.load(f) == flags, "committed test_reachability.json is stale: run `python -m jev_demo.theorems --write-reachability`"
+    assert out.read_text(encoding="utf-8") == open(REACHABILITY, encoding="utf-8").read()
