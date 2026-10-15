@@ -69,6 +69,7 @@ jobs:
         path: |
           jev_demo/results_exp3/
           jev_demo/data/claude_labels_core.json
+          jev_demo/cache/claude/
         if-no-files-found: warn
 
     - name: commit results to the branch
@@ -80,4 +81,6 @@ jobs:
         git add -f jev_demo/data/claude_labels_core.json 2>/dev/null || true
         if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
         git commit -m "jev_demo: experiment 3 ${STAGE} results (run ${{ github.run_id }})"
+        # the branch may have moved while the stage ran: replay this commit on top of it
+        git pull --rebase origin "$BRANCH"
         git push origin "HEAD:$BRANCH"
