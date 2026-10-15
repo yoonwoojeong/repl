@@ -365,8 +365,7 @@ identical prompts (86,904 cache-read tokens, 211,987 cache-write tokens).
 
 Not pre-registered, but visible in the table: `claude_whole` was the strongest method (17/20,
 about 1.4 whole-script attempts per proved theorem). It was the only method to prove
-`h2_isort_sorted`, `h2_ack_succ` and `h2_isort_idem`, the three theorems whose gold proofs need two
-or more auxiliary lemmas.
+`h2_isort_sorted`, `h2_ack_succ` and `h2_isort_idem`.
 
 **Conclusion.** On a test set hard enough to separate the methods, adding the Jev-style ranking
 model on top of Claude made the step-by-step search worse (11/20 vs 16/20) and did not make it
