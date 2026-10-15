@@ -40,3 +40,11 @@ def test_timeout_restarts_and_reports_failure():
 def test_check_proof_rechecks_whole_script(repl):
     assert repl.check_proof("∀ n : Nat, 0 + n = n", ["intro n", "simp"])
     assert not repl.check_proof("∀ n : Nat, 0 + n = n", ["intro n"])
+
+
+@pytest.mark.lean
+def test_prelude_definitions_are_visible_in_tactic_mode(repl):
+    prelude = "def double : Nat → Nat | 0 => 0 | n+1 => double n + 2"
+    ps, goal = repl.start_theorem("∀ n : Nat, double n = 2 * n", prelude)
+    r = repl.tactic("intro n; induction n <;> grind [double]", ps)
+    assert r.ok and r.completed, r.error

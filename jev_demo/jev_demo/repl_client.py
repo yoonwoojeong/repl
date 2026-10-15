@@ -130,7 +130,15 @@ class ReplClient:
     # -- high-level API -------------------------------------------------------
 
     def start_theorem(self, statement: str, prelude: str = "") -> tuple[int, str]:
-        reply = self.command(f"{prelude}\ntheorem t : {statement} := by sorry")
+        # Elaborate the prelude as its own command: a proof state taken from the same
+        # command as the definitions cannot see them in tactic mode ("Unknown constant").
+        env = None
+        if prelude.strip():
+            pre = self.command(prelude)
+            if "env" not in pre or any(m.get("severity") == "error" for m in pre.get("messages", [])):
+                raise RuntimeError(f"could not elaborate prelude {prelude!r}: {pre}")
+            env = pre["env"]
+        reply = self.command(f"theorem t : {statement} := by sorry", env=env)
         sorries = reply.get("sorries")
         if not sorries:
             raise RuntimeError(f"could not start theorem {statement!r}: {reply}")
