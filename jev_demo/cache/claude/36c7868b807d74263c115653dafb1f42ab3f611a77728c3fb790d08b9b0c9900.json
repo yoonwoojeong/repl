@@ -1,0 +1,1 @@
+{"tactics": ["intros <;> rfl", "exact fun _ _ => rfl", "intro α n l h", "intros", "simp", "exact fun l h => Eq.refl _"], "usd": 0.005545000000000022}

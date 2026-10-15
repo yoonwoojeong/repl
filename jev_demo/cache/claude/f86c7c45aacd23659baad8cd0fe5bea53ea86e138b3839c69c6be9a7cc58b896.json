@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ l₁ l₂ a h", "intro α inst l₁ l₂ a h; exact h.count_le a", "intros α inst l₁ l₂ a h", "exact fun a h => h.count_le a", "exact fun a h => List.IsInfix.count_le a h", "intro α inst l₁ l₂ a h", "exact fun a h => h.sublist.count_le a"], "usd": 0.0035250000000000004}

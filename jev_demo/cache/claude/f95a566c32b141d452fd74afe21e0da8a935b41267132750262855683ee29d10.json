@@ -1,0 +1,1 @@
+{"tactics": ["exact apply_minOn_le_right", "exact minOn_le_right", "grind [minOn]", "unfold minOn <;> split <;> grind", "simp only [minOn] <;> split <;> simp_all [Std.le_refl]", "rw [minOn]"], "usd": 0.01344500000000004}

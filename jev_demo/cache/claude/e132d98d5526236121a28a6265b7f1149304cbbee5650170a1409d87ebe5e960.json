@@ -1,0 +1,1 @@
+{"tactics": ["exact Std.le_refl _", "simp", "apply Std.IsPreorder.le_refl", "simp only [List.nil_append] <;> exact Std.le_refl _", "exact Std.IsPreorder.le_refl _", "grind"], "usd": 0.007641000000000009}

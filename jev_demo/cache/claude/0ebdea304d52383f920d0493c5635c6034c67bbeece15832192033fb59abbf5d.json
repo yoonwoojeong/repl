@@ -1,0 +1,1 @@
+{"tactics": ["exact h.getLast hx", "obtain ⟨t, rfl⟩ := h", "rcases h with ⟨t, rfl⟩ <;> simp [List.getLast_append_of_ne_nil hx]", "rcases h with ⟨t, rfl⟩ <;> simp [List.getLast_append, hx]", "grind", "simp [List.IsSuffix.getLast h hx]"], "usd": 0.008769000000000027}

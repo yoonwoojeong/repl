@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.sub_eq_zero_of_le, List.count_le_length]", "exact Nat.sub_eq_zero_of_le List.count_le_length", "exact Nat.sub_eq_zero_of_le (List.count_le_length)", "have h := @List.count_le_length α inst a l₂ <;> omega", "grind [List.count_le_length]", "simp"], "usd": 0.0033729999999999594}

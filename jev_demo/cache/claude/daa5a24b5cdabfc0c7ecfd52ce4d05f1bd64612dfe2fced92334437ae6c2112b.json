@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ _ xs ys f h", "intros", "intro β α inst inst_1 inst_2 xs ys f h <;> simp [List.minOn_append]", "intro β α inst inst_1 inst_2 xs ys f h <;> grind", "intro β α inst inst_1 inst_2 xs ys f h <;> apply List.minOn_le_of_mem <;> simp [List.minOn_mem]"], "usd": 0.004048999999999969}

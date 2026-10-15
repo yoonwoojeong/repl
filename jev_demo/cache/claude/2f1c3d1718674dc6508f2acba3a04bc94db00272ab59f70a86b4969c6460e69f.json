@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ h hx", "obtain ⟨t, rfl⟩ := h", "simp [List.getLast_append, hx]"], "usd": 0.011089000000000002}

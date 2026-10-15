@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => by simpa using List.Perm.flatten h", "intro h", "exact fun h => (List.Perm.flatten h)", "exact fun h => by simpa [List.flatten_cons] using h.flatten", "grind [List.Perm.flatten]"], "usd": 0.007525000000000004}

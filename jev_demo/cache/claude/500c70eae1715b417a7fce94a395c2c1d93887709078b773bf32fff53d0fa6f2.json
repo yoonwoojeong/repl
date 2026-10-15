@@ -1,0 +1,1 @@
+{"tactics": ["exact h.sublist.count_le a", "exact List.Sublist.count_le a h.sublist", "exact List.Sublist.count_le h.sublist a", "exact h.count_le a", "exact List.IsInfix.count_le a h", "apply List.Sublist.count_le", "simp [h.sublist.count_le]", "grind [List.Sublist.count_le, List.IsInfix.sublist]"], "usd": 0.009116999999999986}

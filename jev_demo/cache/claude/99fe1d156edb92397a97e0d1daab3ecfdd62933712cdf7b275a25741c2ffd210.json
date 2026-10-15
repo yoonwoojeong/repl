@@ -1,0 +1,1 @@
+{"tactics": ["grind", "apply List.apply_minOn_le_of_mem <;> simp [List.minOn_mem]", "exact List.apply_minOn_le_of_mem (by simp [List.minOn_mem])", "simp only [List.minOn_cons] <;> grind", "rw [List.minOn_cons] <;> grind", "simp_all [List.minOn_cons]"], "usd": 0.00858099999999995}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ l₁ l₂ h a", "obtain ⟨t, rfl⟩ := h", "rw [List.count_append, List.length_append]", "have := List.count_le_length (a := a) (l := t)", "omega"], "usd": 0.008868999999999988}

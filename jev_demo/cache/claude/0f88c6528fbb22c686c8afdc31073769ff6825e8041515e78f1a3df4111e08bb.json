@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ h hx", "rintro α l₁ l₂ ⟨t, rfl⟩ hx", "exact fun h hx => List.IsSuffix.getLast h hx", "rintro α l₁ l₂ ⟨t, rfl⟩ hx <;> simp [List.getLast_append_of_ne_nil hx]", "rintro α l₁ l₂ ⟨t, rfl⟩ hx <;> grind", "rintro α l₁ l₂ ⟨t, rfl⟩ hx <;> simp [List.getLast_append, hx]"], "usd": 0.010241}

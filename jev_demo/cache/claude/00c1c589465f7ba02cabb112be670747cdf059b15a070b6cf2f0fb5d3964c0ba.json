@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ h", "induction h with | nil => exact List.Perm.refl _ | cons x _ ih => (simp only [List.flatten_cons]; exact ih.append_left x) | swap x y l => (simp only [List.flatten_cons, ← List.append_assoc]; exact List.perm_append_comm.append_right _) | trans _ _ ih1 ih2 => exact ih1.trans ih2"], "usd": 0.024204999999999977}

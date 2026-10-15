@@ -1,0 +1,1 @@
+{"tactics": ["intro α n le l h a b ma mb", "rw [List.MergeSort.Internal.splitInTwo_fst] at ma", "rw [List.MergeSort.Internal.splitInTwo_snd] at mb", "rw [← List.take_append_drop ((n+1)/2) l.val] at h", "exact (List.pairwise_append.mp h).2.2 a ma b mb"], "usd": 0.018773000000000012}

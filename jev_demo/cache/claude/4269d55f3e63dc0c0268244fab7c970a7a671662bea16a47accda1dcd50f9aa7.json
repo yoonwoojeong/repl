@@ -1,0 +1,1 @@
+{"tactics": ["exact List.Perm.flatten h", "exact h.flatten", "apply List.Perm.flatten h", "exact List.Perm.refl _", "rfl", "exact List.Perm.rfl"], "usd": 0.0021769999999999845}

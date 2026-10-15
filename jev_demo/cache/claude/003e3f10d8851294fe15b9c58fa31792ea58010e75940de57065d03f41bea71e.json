@@ -1,0 +1,1 @@
+{"tactics": ["exact absurd (List.suffix_nil.mp h) hx", "simp_all [List.suffix_nil]", "exact (hx (List.suffix_nil.mp h)).elim", "have := List.suffix_nil.mp h; contradiction", "cases h with | intro t ht => simp_all", "obtain ⟨t, ht⟩ := h; simp_all", "simp_all"], "usd": 0.0068929999999999825}
