@@ -1,0 +1,333 @@
+replaying 40 train theorems, fitting with 203 + 423 Claude label examples
+claude: billed usd=0.0072 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0007 stop_reason=end_turn cache_read=1352
+claude: billed usd=0.0007 stop_reason=end_turn cache_read=1352
+claude: billed usd=0.0007 stop_reason=end_turn cache_read=1352
+claude_whole      test_add_comm                PROVED calls=1 7.4s timeouts=0 claude=4 usd=0.009
+claude: billed usd=0.0075 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0009 stop_reason=end_turn cache_read=1377
+claude: billed usd=0.0009 stop_reason=end_turn cache_read=1377
+claude: billed usd=0.0009 stop_reason=end_turn cache_read=1377
+claude_whole      test_append_length           PROVED calls=1 6.7s timeouts=0 claude=4 usd=0.010
+claude: billed usd=0.0072 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0006 stop_reason=end_turn cache_read=1356
+claude: billed usd=0.0006 stop_reason=end_turn cache_read=1356
+claude: billed usd=0.0006 stop_reason=end_turn cache_read=1356
+claude_whole      test_reverse_reverse         PROVED calls=1 5.6s timeouts=0 claude=4 usd=0.009
+claude: billed usd=0.0072 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0006 stop_reason=end_turn cache_read=1365
+claude: billed usd=0.0006 stop_reason=end_turn cache_read=1365
+claude: billed usd=0.0006 stop_reason=end_turn cache_read=1365
+claude_whole      test_mod_two_cases           PROVED calls=1 6.8s timeouts=0 claude=4 usd=0.009
+claude: billed usd=0.0078 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0012 stop_reason=end_turn cache_read=1358
+claude: billed usd=0.0012 stop_reason=end_turn cache_read=1358
+claude: billed usd=0.0012 stop_reason=end_turn cache_read=1358
+claude_whole      test_or_comm                 PROVED calls=1 7.1s timeouts=0 claude=4 usd=0.011
+claude: billed usd=0.0072 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0007 stop_reason=end_turn cache_read=1357
+claude: billed usd=0.0007 stop_reason=end_turn cache_read=1357
+claude: billed usd=0.0007 stop_reason=end_turn cache_read=1357
+claude_whole      test_add_eq_zero_left        PROVED calls=1 7.5s timeouts=0 claude=4 usd=0.009
+claude: billed usd=0.0079 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0013 stop_reason=end_turn cache_read=1383
+claude: billed usd=0.0013 stop_reason=end_turn cache_read=1383
+claude: billed usd=0.0009 stop_reason=end_turn cache_read=1383
+claude_whole      test_double                  PROVED calls=1 9.2s timeouts=0 claude=4 usd=0.011
+claude: billed usd=0.0176 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0131 stop_reason=end_turn cache_read=1402
+claude: billed usd=0.0136 stop_reason=end_turn cache_read=1402
+claude: billed usd=0.0205 stop_reason=end_turn cache_read=1402
+claude_whole      test_sum_to                  PROVED calls=1 32.3s timeouts=0 claude=4 usd=0.065
+claude: billed usd=0.0219 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0161 stop_reason=end_turn cache_read=1398
+claude: billed usd=0.0168 stop_reason=end_turn cache_read=1398
+claude: billed usd=0.0158 stop_reason=end_turn cache_read=1398
+claude_whole      test_sum_odd                 PROVED calls=1 36.2s timeouts=0 claude=4 usd=0.071
+claude: billed usd=0.0246 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0148 stop_reason=end_turn cache_read=1418
+claude: billed usd=0.0117 stop_reason=end_turn cache_read=1418
+claude: billed usd=0.0142 stop_reason=end_turn cache_read=1418
+claude_whole      test_sum_sq                  PROVED calls=1 33.7s timeouts=0 claude=4 usd=0.065
+claude: billed usd=0.0151 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0135 stop_reason=end_turn cache_read=1360
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1360
+claude: billed usd=0.0093 stop_reason=end_turn cache_read=1360
+claude_whole      test_succ_le_two_pow         PROVED calls=1 24.9s timeouts=0 claude=4 usd=0.050
+claude: billed usd=0.0204 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1369
+claude: billed usd=0.0119 stop_reason=end_turn cache_read=1369
+claude: billed usd=0.0138 stop_reason=end_turn cache_read=1369
+claude_whole      test_sq_mod_four             PROVED calls=1 29.6s timeouts=0 claude=4 usd=0.057
+claude: billed usd=0.0155 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1361
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=1361
+claude: billed usd=0.0074 stop_reason=end_turn cache_read=1361
+claude_whole      test_gcd_succ                PROVED calls=1 23.3s timeouts=0 claude=4 usd=0.041
+claude: billed usd=0.0078 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0012 stop_reason=end_turn cache_read=1361
+claude: billed usd=0.0012 stop_reason=end_turn cache_read=1361
+claude: billed usd=0.0013 stop_reason=end_turn cache_read=1361
+claude_whole      test_dvd_mul_right           PROVED calls=1 7.2s timeouts=0 claude=4 usd=0.012
+claude: billed usd=0.0126 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0085 stop_reason=end_turn cache_read=1370
+claude: billed usd=0.0062 stop_reason=end_turn cache_read=1370
+claude: billed usd=0.0071 stop_reason=end_turn cache_read=1370
+claude_whole      test_map_double_sum          PROVED calls=1 20.2s timeouts=0 claude=4 usd=0.034
+claude: billed usd=0.0156 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0104 stop_reason=end_turn cache_read=1433
+claude: billed usd=0.0095 stop_reason=end_turn cache_read=1433
+claude: billed usd=0.0087 stop_reason=end_turn cache_read=1433
+claude_whole      test_rev_eq_reverse          PROVED calls=1 24.1s timeouts=0 claude=4 usd=0.044
+claude: billed usd=0.0262 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0185 stop_reason=end_turn cache_read=1359
+claude: billed usd=0.0297 stop_reason=end_turn cache_read=1359
+claude: billed usd=0.0196 stop_reason=end_turn cache_read=1359
+claude_whole      test_two_dvd_mul_succ        PROVED calls=1 41.6s timeouts=0 claude=4 usd=0.094
+claude: billed usd=0.0171 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=1405
+claude: billed usd=0.0111 stop_reason=end_turn cache_read=1405
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1405
+claude_whole      test_fib_mono                PROVED calls=1 25.2s timeouts=0 claude=4 usd=0.048
+claude: billed usd=0.0079 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0008 stop_reason=end_turn cache_read=1378
+claude: billed usd=0.0060 stop_reason=end_turn cache_read=1378
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1378
+claude_whole      test_map_map                 PROVED calls=1 12.4s timeouts=0 claude=4 usd=0.018
+claude: billed usd=0.0075 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0010 stop_reason=end_turn cache_read=1362
+claude: billed usd=0.0009 stop_reason=end_turn cache_read=1362
+claude: billed usd=0.0010 stop_reason=end_turn cache_read=1362
+claude_whole      test_mul_self_le             PROVED calls=1 8.0s timeouts=0 claude=4 usd=0.010
+claude: billed usd=0.0082 stop_reason=end_turn cache_read=0
+claude_search     test_add_comm                PROVED calls=1 2.3s timeouts=0 claude=1 usd=0.008
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=0
+claude_search     test_append_length           PROVED calls=1 2.8s timeouts=0 claude=1 usd=0.009
+claude: billed usd=0.0080 stop_reason=end_turn cache_read=0
+claude_search     test_reverse_reverse         PROVED calls=1 2.6s timeouts=0 claude=1 usd=0.008
+claude: billed usd=0.0085 stop_reason=end_turn cache_read=0
+claude_search     test_mod_two_cases           PROVED calls=1 2.5s timeouts=0 claude=1 usd=0.008
+claude: billed usd=0.0087 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=0
+claude_search     test_or_comm                 PROVED calls=2 4.7s timeouts=0 claude=2 usd=0.018
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=0
+claude_search     test_add_eq_zero_left        PROVED calls=2 4.2s timeouts=0 claude=2 usd=0.017
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=0
+claude_search     test_double                  PROVED calls=1 2.5s timeouts=0 claude=1 usd=0.009
+claude: billed usd=0.0159 stop_reason=end_turn cache_read=0
+claude_search     test_sum_to                  PROVED calls=2 5.4s timeouts=0 claude=1 usd=0.016
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=0
+claude_search     test_sum_odd                 PROVED calls=1 3.0s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=0
+claude_search     test_sum_sq                  PROVED calls=1 5.8s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0130 stop_reason=end_turn cache_read=0
+claude_search     test_succ_le_two_pow         PROVED calls=1 4.2s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0241 stop_reason=end_turn cache_read=0
+claude_search     test_sq_mod_four             PROVED calls=1 10.2s timeouts=0 claude=1 usd=0.024
+claude: billed usd=0.0095 stop_reason=end_turn cache_read=0
+claude_search     test_gcd_succ                PROVED calls=1 2.7s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0113 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=0
+claude_search     test_dvd_mul_right           PROVED calls=2 5.9s timeouts=0 claude=2 usd=0.021
+claude: billed usd=0.0095 stop_reason=end_turn cache_read=0
+claude_search     test_map_double_sum          PROVED calls=1 2.6s timeouts=0 claude=1 usd=0.009
+claude: billed usd=0.0179 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0191 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0147 stop_reason=end_turn cache_read=0
+claude_search     test_rev_eq_reverse          PROVED calls=17 23.1s timeouts=0 claude=4 usd=0.060
+claude: billed usd=0.0214 stop_reason=end_turn cache_read=0
+claude_search     test_two_dvd_mul_succ        PROVED calls=1 8.5s timeouts=0 claude=1 usd=0.021
+claude: billed usd=0.0130 stop_reason=end_turn cache_read=0
+claude_search     test_fib_mono                PROVED calls=1 4.3s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0082 stop_reason=end_turn cache_read=0
+claude_search     test_map_map                 PROVED calls=1 2.3s timeouts=0 claude=1 usd=0.008
+claude: billed usd=0.0093 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=0
+claude_search     test_mul_self_le             PROVED calls=2 5.9s timeouts=0 claude=2 usd=0.018
+claude: cached usd=0.0082 (notional, not billed)
+claude: billed usd=0.0080 stop_reason=end_turn cache_read=0
+hybrid            test_add_comm                PROVED calls=2 2.3s timeouts=0 claude=1 usd=0.008
+claude: cached usd=0.0091 (notional, not billed)
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=0
+hybrid            test_append_length           PROVED calls=2 2.4s timeouts=0 claude=1 usd=0.008
+claude: cached usd=0.0080 (notional, not billed)
+hybrid            test_reverse_reverse         PROVED calls=1 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0085 (notional, not billed)
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=0
+hybrid            test_mod_two_cases           PROVED calls=2 3.0s timeouts=0 claude=1 usd=0.009
+claude: cached usd=0.0087 (notional, not billed)
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=0
+hybrid            test_or_comm                 PROVED calls=2 2.5s timeouts=0 claude=1 usd=0.009
+claude: cached usd=0.0084 (notional, not billed)
+claude: billed usd=0.0082 stop_reason=end_turn cache_read=0
+claude: cached usd=0.0084 (notional, not billed)
+hybrid            test_add_eq_zero_left        PROVED calls=3 2.5s timeouts=0 claude=1 usd=0.008
+claude: cached usd=0.0091 (notional, not billed)
+claude: billed usd=0.0087 stop_reason=end_turn cache_read=0
+hybrid            test_double                  PROVED calls=2 2.5s timeouts=0 claude=1 usd=0.009
+claude: cached usd=0.0159 (notional, not billed)
+claude: billed usd=0.0165 stop_reason=end_turn cache_read=0
+hybrid            test_sum_to                  PROVED calls=3 6.0s timeouts=0 claude=1 usd=0.016
+claude: cached usd=0.0103 (notional, not billed)
+claude: billed usd=0.0155 stop_reason=end_turn cache_read=0
+hybrid            test_sum_odd                 PROVED calls=2 5.4s timeouts=0 claude=1 usd=0.015
+claude: cached usd=0.0102 (notional, not billed)
+claude: billed usd=0.0117 stop_reason=end_turn cache_read=0
+hybrid            test_sum_sq                  PROVED calls=2 3.7s timeouts=0 claude=1 usd=0.012
+claude: cached usd=0.0130 (notional, not billed)
+claude: billed usd=0.0178 stop_reason=end_turn cache_read=0
+hybrid            test_succ_le_two_pow         PROVED calls=2 6.4s timeouts=0 claude=1 usd=0.018
+claude: cached usd=0.0241 (notional, not billed)
+claude: billed usd=0.0201 stop_reason=end_turn cache_read=0
+hybrid            test_sq_mod_four             PROVED calls=2 8.5s timeouts=0 claude=1 usd=0.020
+claude: cached usd=0.0095 (notional, not billed)
+claude: billed usd=0.0172 stop_reason=end_turn cache_read=0
+hybrid            test_gcd_succ                PROVED calls=2 6.1s timeouts=0 claude=1 usd=0.017
+claude: cached usd=0.0113 (notional, not billed)
+claude: cached usd=0.0096 (notional, not billed)
+hybrid            test_dvd_mul_right           PROVED calls=2 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0095 (notional, not billed)
+hybrid            test_map_double_sum          PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0179 (notional, not billed)
+claude: cached usd=0.0147 (notional, not billed)
+claude: cached usd=0.0191 (notional, not billed)
+claude: billed usd=0.0181 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0194 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=0
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=0
+hybrid            test_rev_eq_reverse          PROVED calls=45 20.9s timeouts=0 claude=5 usd=0.064
+claude: cached usd=0.0214 (notional, not billed)
+claude: billed usd=0.0173 stop_reason=end_turn cache_read=0
+hybrid            test_two_dvd_mul_succ        PROVED calls=2 6.8s timeouts=0 claude=1 usd=0.017
+claude: cached usd=0.0130 (notional, not billed)
+claude: billed usd=0.0139 stop_reason=end_turn cache_read=0
+hybrid            test_fib_mono                PROVED calls=2 4.9s timeouts=0 claude=1 usd=0.014
+claude: cached usd=0.0082 (notional, not billed)
+hybrid            test_map_map                 PROVED calls=1 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0093 (notional, not billed)
+hybrid            test_mul_self_le             PROVED calls=1 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0082 (notional, not billed)
+claude: cached usd=0.0080 (notional, not billed)
+hybrid_expand_all test_add_comm                PROVED calls=2 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0084 (notional, not billed)
+hybrid_expand_all test_append_length           PROVED calls=2 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0080 (notional, not billed)
+hybrid_expand_all test_reverse_reverse         PROVED calls=1 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0085 (notional, not billed)
+claude: cached usd=0.0090 (notional, not billed)
+hybrid_expand_all test_mod_two_cases           PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0087 (notional, not billed)
+claude: cached usd=0.0088 (notional, not billed)
+hybrid_expand_all test_or_comm                 PROVED calls=2 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0084 (notional, not billed)
+claude: cached usd=0.0082 (notional, not billed)
+claude: cached usd=0.0084 (notional, not billed)
+hybrid_expand_all test_add_eq_zero_left        PROVED calls=3 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0087 (notional, not billed)
+hybrid_expand_all test_double                  PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0159 (notional, not billed)
+claude: cached usd=0.0165 (notional, not billed)
+hybrid_expand_all test_sum_to                  PROVED calls=3 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0103 (notional, not billed)
+claude: cached usd=0.0155 (notional, not billed)
+hybrid_expand_all test_sum_odd                 PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0102 (notional, not billed)
+claude: cached usd=0.0117 (notional, not billed)
+hybrid_expand_all test_sum_sq                  PROVED calls=2 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0130 (notional, not billed)
+claude: cached usd=0.0178 (notional, not billed)
+hybrid_expand_all test_succ_le_two_pow         PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0241 (notional, not billed)
+claude: cached usd=0.0201 (notional, not billed)
+hybrid_expand_all test_sq_mod_four             PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0095 (notional, not billed)
+claude: cached usd=0.0172 (notional, not billed)
+hybrid_expand_all test_gcd_succ                PROVED calls=2 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0113 (notional, not billed)
+claude: cached usd=0.0096 (notional, not billed)
+hybrid_expand_all test_dvd_mul_right           PROVED calls=2 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0095 (notional, not billed)
+hybrid_expand_all test_map_double_sum          PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0179 (notional, not billed)
+claude: cached usd=0.0147 (notional, not billed)
+claude: cached usd=0.0191 (notional, not billed)
+claude: cached usd=0.0088 (notional, not billed)
+claude: cached usd=0.0181 (notional, not billed)
+claude: cached usd=0.0090 (notional, not billed)
+claude: cached usd=0.0194 (notional, not billed)
+claude: cached usd=0.0090 (notional, not billed)
+claude: cached usd=0.0083 (notional, not billed)
+hybrid_expand_all test_rev_eq_reverse          failed calls=64 0.9s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0214 (notional, not billed)
+claude: cached usd=0.0173 (notional, not billed)
+hybrid_expand_all test_two_dvd_mul_succ        PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0130 (notional, not billed)
+claude: cached usd=0.0139 (notional, not billed)
+hybrid_expand_all test_fib_mono                PROVED calls=2 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0082 (notional, not billed)
+hybrid_expand_all test_map_map                 PROVED calls=1 0.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0093 (notional, not billed)
+hybrid_expand_all test_mul_self_le             PROVED calls=1 0.1s timeouts=0 claude=0 usd=0.000
+# Jev proof demo — phase 2 results
+
+| method | proved | easy | hard | mean calls (proved) | Claude requests | billed calls | USD (actual) | USD (notional) | refusals | errors |
+|---|---|---|---|---|---|---|---|---|---|---|
+| claude_whole | 20/20 | 8/8 | 12/12 | 1.00 | 80 | 80 | 0.6792 | 0.6792 | 0 | 0 |
+| claude_search | 20/20 | 8/8 | 12/12 | 2.05 | 27 | 27 | 0.3118 | 0.3118 | 0 | 0 |
+| hybrid | 20/20 | 8/8 | 12/12 | 4.05 | 43 | 19 | 0.2448 | 0.5300 | 0 | 0 |
+| phase1_best (`model`, phase-1 reference) | 16/20 | 8/8 | 8/12 | 14.25 | – | – | – | – | – | – |
+
+Reference, post hoc in phase 1 (the strongest phase-1 method, not pre-registered):
+
+| method | proved | easy | hard | mean calls (proved) | Claude requests | billed calls | USD (actual) | USD (notional) | refusals | errors |
+|---|---|---|---|---|---|---|---|---|---|---|
+| phase1_fixed_expand_all (phase-1 reference) | 18/20 | 8/8 | 10/12 | 15.72 | – | – | – | – | – | – |
+
+`phase1_*` rows are copied from the phase-1 `results.json`. `claude_whole` asks for 4 complete scripts and counts a theorem as proved if any passes `check_proof`; `claude_search` expands Claude's proposals first, then the fixed menu; `hybrid` ranks Claude's proposals together with the menu using the model refit on phase-1 replays plus Claude labels. USD (actual) is what was billed; USD (notional) prices every request at its original cost, cached or not (`+?`: some cache entries carry no price), and is what question 2 compares. At most 16 Claude requests are made per theorem and method.
+
+Supplementary (ruling P11, not part of the pre-registered questions): `hybrid_expand_all` is `hybrid` with confidence fixed at 0.0, so the search expands every ranked action instead of the top 3 when confident. It separates Jev's ranking from confidence gating. Its Claude requests are mostly cache hits (USD actual near zero); USD (notional) counts them at their original price.
+
+| method | proved | easy | hard | mean calls (proved) | Claude requests | billed calls | USD (actual) | USD (notional) | refusals | errors |
+|---|---|---|---|---|---|---|---|---|---|---|
+| hybrid_expand_all | 19/20 | 8/8 | 11/12 | 1.90 | 44 | 0 | 0.0000 | 0.5388 | 0 | 0 |
+
+## Pre-registered questions
+
+1. Does `hybrid` prove more hard theorems than `claude_search` (did Jev add value on top of Claude)? **no**: 12/12 vs 12/12.
+2. At equal or lower USD? **no**: `hybrid` notional $0.5300 vs `claude_search` $0.3118.
+3. Hard theorems with no gold proof inside the phase-1 menu (`menu_reachable = false`) that any Claude method proved: **2/2** (`test_sq_mod_four` by claude_whole, claude_search, hybrid; `test_rev_eq_reverse` by claude_whole, claude_search, hybrid).
+
+Total Claude spend: $1.2358 of $20.0 (`claude-opus-5-5`, effort `medium`).
+
+## Per theorem
+
+| theorem | difficulty | menu-reachable | claude_whole | claude_search | hybrid | hybrid_expand_all | phase1_best | phase1_fixed_expand_all |
+|---|---|---|---|---|---|---|---|---|
+| test_add_comm | easy | yes | yes (1) | yes (1) | yes (2) | yes (2) | yes (2) | yes (4) |
+| test_append_length | easy | yes | yes (1) | yes (1) | yes (2) | yes (2) | yes (2) | yes (2) |
+| test_reverse_reverse | easy | yes | yes (1) | yes (1) | yes (1) | yes (1) | yes (2) | yes (2) |
+| test_mod_two_cases | easy | yes | yes (1) | yes (1) | yes (2) | yes (2) | yes (6) | yes (4) |
+| test_or_comm | easy | yes | yes (1) | yes (2) | yes (2) | yes (2) | yes (14) | yes (10) |
+| test_add_eq_zero_left | easy | yes | yes (1) | yes (2) | yes (3) | yes (3) | yes (2) | yes (2) |
+| test_double | easy | yes | yes (1) | yes (1) | yes (2) | yes (2) | yes (38) | yes (27) |
+| test_sum_to | easy | yes | yes (1) | yes (2) | yes (3) | yes (3) | yes (39) | yes (36) |
+| test_sum_odd | hard | yes | yes (1) | yes (1) | yes (2) | yes (2) | yes (39) | yes (36) |
+| test_sum_sq | hard | yes | yes (1) | yes (1) | yes (2) | yes (2) | yes (39) | yes (36) |
+| test_succ_le_two_pow | hard | yes | yes (1) | yes (1) | yes (2) | yes (2) | – | yes (25) |
+| test_sq_mod_four | hard | no | yes (1) | yes (1) | yes (2) | yes (2) | – | – |
+| test_gcd_succ | hard | yes | yes (1) | yes (1) | yes (2) | yes (2) | yes (3) | yes (2) |
+| test_dvd_mul_right | hard | yes | yes (1) | yes (2) | yes (2) | yes (2) | yes (11) | yes (10) |
+| test_map_double_sum | hard | yes | yes (1) | yes (1) | yes (1) | yes (1) | yes (6) | yes (25) |
+| test_rev_eq_reverse | hard | no | yes (1) | yes (17) | yes (45) | – | – | – |
+| test_two_dvd_mul_succ | hard | yes | yes (1) | yes (1) | yes (2) | yes (2) | – | yes (25) |
+| test_fib_mono | hard | yes | yes (1) | yes (1) | yes (2) | yes (2) | yes (5) | yes (24) |
+| test_map_map | hard | yes | yes (1) | yes (1) | yes (1) | yes (1) | yes (2) | yes (2) |
+| test_mul_self_le | hard | yes | yes (1) | yes (2) | yes (1) | yes (1) | yes (18) | yes (11) |
+
+Cells: `yes (calls)` when proved, `–` otherwise.
+

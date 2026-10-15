@@ -1,0 +1,2513 @@
+{
+ "claude_whole": {
+  "proved": 20,
+  "proved_easy": 8,
+  "proved_hard": 12,
+  "mean_calls": 1.0,
+  "mean_seconds": 18.453,
+  "claude_requests": 80,
+  "claude_calls": 80,
+  "usd": 0.679235,
+  "notional_usd": 0.679235,
+  "notional_unknown": 0,
+  "call_capped": false,
+  "refusals": 0,
+  "errors": 0,
+  "budget_capped": false,
+  "per_theorem": [
+   {
+    "name": "test_add_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 7.436,
+    "tactics": [
+     "intro n m",
+     "omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.009155,
+    "notional_usd": 0.009155,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_append_length",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 6.712,
+    "tactics": [
+     "intro l₁ l₂",
+     "simp [List.length_append]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.010255,
+    "notional_usd": 0.010255,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_reverse_reverse",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 5.579,
+    "tactics": [
+     "intro l",
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.009098,
+    "notional_usd": 0.009098,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_mod_two_cases",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 6.812,
+    "tactics": [
+     "intro n",
+     "omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.009148,
+    "notional_usd": 0.009148,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_or_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 7.1,
+    "tactics": [
+     "intro p q h",
+     "rcases h with hp | hq",
+     "exact Or.inr hp",
+     "exact Or.inl hq"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.011349,
+    "notional_usd": 0.011349,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_add_eq_zero_left",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 7.514,
+    "tactics": [
+     "intro a b h",
+     "omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.009303,
+    "notional_usd": 0.009303,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_double",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 9.208,
+    "tactics": [
+     "intro n",
+     "induction n with\n  | zero => simp\n  | succ k ih => simp [ih]; omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.011309,
+    "notional_usd": 0.011309,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_to",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 32.334,
+    "tactics": [
+     "intro n",
+     "induction n",
+     "rfl",
+     "simp only [sumTo]",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.064855,
+    "notional_usd": 0.064855,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_odd",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 36.222,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all [Nat.add_mul, Nat.mul_add] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.070573,
+    "notional_usd": 0.070573,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_sq",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 33.672,
+    "tactics": [
+     "intro n",
+     "induction n with\n  | zero => rfl\n  | succ k ih => simp only [sumSq]; grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.065425,
+    "notional_usd": 0.065425,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_succ_le_two_pow",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 24.87,
+    "tactics": [
+     "intro n",
+     "induction n",
+     "simp",
+     "rw [Nat.pow_succ]",
+     "omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.04956,
+    "notional_usd": 0.04956,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sq_mod_four",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 29.552,
+    "tactics": [
+     "intro n",
+     "have h4 : n % 4 = 0 ∨ n % 4 = 1 ∨ n % 4 = 2 ∨ n % 4 = 3 := by omega",
+     "rcases h4 with h | h | h | h <;> rw [Nat.mul_mod, h] <;> decide"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.05729,
+    "notional_usd": 0.05729,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_gcd_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 23.345,
+    "tactics": [
+     "intro n",
+     "simp [Nat.gcd_self_add_right, Nat.gcd_one_right]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.041266,
+    "notional_usd": 0.041266,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_dvd_mul_right",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 7.22,
+    "tactics": [
+     "intro m n k h",
+     "exact Nat.dvd_trans h (Nat.dvd_mul_right n k)"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.011566,
+    "notional_usd": 0.011566,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_map_double_sum",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 20.195,
+    "tactics": [
+     "intro xs",
+     "induction xs <;> simp_all [List.sum_cons, List.map] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.034476,
+    "notional_usd": 0.034476,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_rev_eq_reverse",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 24.124,
+    "tactics": [
+     "have h : ∀ l acc : List Nat, revAux l acc = l.reverse ++ acc := by intro l; induction l with | nil => simp | cons x xs ih => intro acc; simp [ih]",
+     "intro l",
+     "simp [h]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.044249,
+    "notional_usd": 0.044249,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_two_dvd_mul_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 41.563,
+    "tactics": [
+     "intro n",
+     "rcases Nat.mod_two_eq_zero_or_one n with h | h",
+     "exact Nat.dvd_trans (Nat.dvd_of_mod_eq_zero h) (Nat.dvd_mul_right n (n+1))",
+     "have h2 : (n + 1) % 2 = 0 := by omega",
+     "exact Nat.dvd_trans (Nat.dvd_of_mod_eq_zero h2) (Nat.dvd_mul_left (n+1) n)"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.093954,
+    "notional_usd": 0.093954,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_fib_mono",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 25.179,
+    "tactics": [
+     "intro n",
+     "cases n",
+     "decide",
+     "show fib (_ + 1) ≤ fib _ + fib (_ + 1)",
+     "omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.047592,
+    "notional_usd": 0.047592,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_map_map",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 12.426,
+    "tactics": [
+     "intro l f g",
+     "induction l with\n  | nil => rfl\n  | cons x xs ih => simp [ih]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.018401,
+    "notional_usd": 0.018401,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_mul_self_le",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 7.988,
+    "tactics": [
+     "intro a b h",
+     "exact Nat.mul_le_mul h h"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.010411,
+    "notional_usd": 0.010411,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   }
+  ]
+ },
+ "claude_search": {
+  "proved": 20,
+  "proved_easy": 8,
+  "proved_hard": 12,
+  "mean_calls": 2.05,
+  "mean_seconds": 5.28,
+  "claude_requests": 27,
+  "claude_calls": 27,
+  "usd": 0.311772,
+  "notional_usd": 0.311772,
+  "notional_unknown": 0,
+  "call_capped": false,
+  "refusals": 0,
+  "errors": 0,
+  "budget_capped": false,
+  "per_theorem": [
+   {
+    "name": "test_add_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 2.329,
+    "tactics": [
+     "exact Nat.add_comm"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.008241,
+    "notional_usd": 0.008241,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_append_length",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 2.776,
+    "tactics": [
+     "exact fun l₁ l₂ => List.length_append"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.009066,
+    "notional_usd": 0.009066,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_reverse_reverse",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 2.649,
+    "tactics": [
+     "intro l <;> simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.007961,
+    "notional_usd": 0.007961,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_mod_two_cases",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 2.466,
+    "tactics": [
+     "exact fun n => Nat.mod_two_eq_zero_or_one n"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.008466,
+    "notional_usd": 0.008466,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_or_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 4.68,
+    "tactics": [
+     "exact fun p q h => h.symm"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 2,
+    "usd": 0.017667,
+    "notional_usd": 0.017667,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_add_eq_zero_left",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 4.218,
+    "tactics": [
+     "intro a b h <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 2,
+    "usd": 0.016732,
+    "notional_usd": 0.016732,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_double",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 2.538,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.009116,
+    "notional_usd": 0.009116,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_to",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 5.39,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all [Nat.mul_add, Nat.add_mul, Nat.mul_comm] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.015911,
+    "notional_usd": 0.015911,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_odd",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 2.989,
+    "tactics": [
+     "intro n; induction n with | zero => rfl | succ k ih => simp [ih, Nat.succ_mul, Nat.mul_succ]; omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.010271,
+    "notional_usd": 0.010271,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_sq",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 5.772,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all [Nat.add_mul, Nat.mul_add] <;> grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.010171,
+    "notional_usd": 0.010171,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_succ_le_two_pow",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 4.223,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all [Nat.pow_succ] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.013021,
+    "notional_usd": 0.013021,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sq_mod_four",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 10.178,
+    "tactics": [
+     "intro n <;> rw [Nat.mul_mod] <;> have h : n % 4 < 4 := Nat.mod_lt _ (by decide) <;> generalize n % 4 = m at * <;> revert m <;> decide"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.024146,
+    "notional_usd": 0.024146,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_gcd_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 2.726,
+    "tactics": [
+     "intro n <;> simp [Nat.gcd_succ]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.009511,
+    "notional_usd": 0.009511,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_dvd_mul_right",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 5.886,
+    "tactics": [
+     "exact fun m n k h => Nat.dvd_trans h (Nat.dvd_mul_right n k)"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 2,
+    "usd": 0.020857,
+    "notional_usd": 0.020857,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_map_double_sum",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 2.615,
+    "tactics": [
+     "intro xs; induction xs <;> simp_all <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.009496,
+    "notional_usd": 0.009496,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_rev_eq_reverse",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 17,
+    "escalations": 2,
+    "seconds": 23.088,
+    "tactics": [
+     "have h : ∀ (l acc : List Nat), revAux l acc = l.reverse ++ acc := by intro l acc; induction l generalizing acc <;> simp_all",
+     "intro l <;> simp [h]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 4,
+    "claude_calls": 4,
+    "usd": 0.060464,
+    "notional_usd": 0.060464,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_two_dvd_mul_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 8.512,
+    "tactics": [
+     "intro n <;> rcases Nat.mod_two_eq_zero_or_one n with h | h <;> simp [Nat.dvd_iff_mod_eq_zero, Nat.mul_mod, Nat.add_mod, h]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.021356,
+    "notional_usd": 0.021356,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_fib_mono",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 4.314,
+    "tactics": [
+     "intro n <;> cases n <;> simp [fib] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.012966,
+    "notional_usd": 0.012966,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_map_map",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 2.331,
+    "tactics": [
+     "intro l f g <;> simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 1,
+    "usd": 0.008246,
+    "notional_usd": 0.008246,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_mul_self_le",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 5.924,
+    "tactics": [
+     "exact fun a b h => Nat.mul_le_mul h h"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 2,
+    "usd": 0.018107,
+    "notional_usd": 0.018107,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   }
+  ]
+ },
+ "hybrid": {
+  "proved": 20,
+  "proved_easy": 8,
+  "proved_hard": 12,
+  "mean_calls": 4.05,
+  "mean_seconds": 4.224,
+  "claude_requests": 43,
+  "claude_calls": 19,
+  "usd": 0.244824,
+  "notional_usd": 0.529968,
+  "notional_unknown": 0,
+  "call_capped": false,
+  "refusals": 0,
+  "errors": 0,
+  "budget_capped": false,
+  "per_theorem": [
+   {
+    "name": "test_add_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 0,
+    "seconds": 2.347,
+    "tactics": [
+     "intro n m <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.008036,
+    "notional_usd": 0.016277,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_append_length",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 0,
+    "seconds": 2.393,
+    "tactics": [
+     "intro l₁ l₂ <;> simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.008401,
+    "notional_usd": 0.017467,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_reverse_reverse",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 0.119,
+    "tactics": [
+     "intro l <;> simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.007961,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_mod_two_cases",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 0,
+    "seconds": 3.038,
+    "tactics": [
+     "intro n <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.009001,
+    "notional_usd": 0.017467,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_or_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 2.456,
+    "tactics": [
+     "exact fun p q h => h.symm"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.008766,
+    "notional_usd": 0.017417,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_add_eq_zero_left",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 2.459,
+    "tactics": [
+     "exact fun a b h => Nat.eq_zero_of_add_eq_zero_right h"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 3,
+    "claude_calls": 1,
+    "usd": 0.008221,
+    "notional_usd": 0.024953,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_double",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 2.531,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.008671,
+    "notional_usd": 0.017787,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_to",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 3,
+    "escalations": 1,
+    "seconds": 6.02,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all [Nat.mul_add, Nat.add_mul, Nat.mul_comm] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.016466,
+    "notional_usd": 0.032377,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_odd",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 5.378,
+    "tactics": [
+     "intro n; induction n with | zero => rfl | succ k ih => simp [ih, Nat.succ_mul, Nat.mul_succ]; omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.015466,
+    "notional_usd": 0.025737,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_sq",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 3.669,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all [Nat.add_mul, Nat.mul_add] <;> grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.011686,
+    "notional_usd": 0.021857,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_succ_le_two_pow",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 6.357,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all [Nat.pow_succ] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.017836,
+    "notional_usd": 0.030857,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sq_mod_four",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 8.477,
+    "tactics": [
+     "intro n <;> rw [Nat.mul_mod] <;> have h : n % 4 < 4 := Nat.mod_lt _ (by decide) <;> generalize n % 4 = m at * <;> revert m <;> decide"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.020061,
+    "notional_usd": 0.044207,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_gcd_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 6.134,
+    "tactics": [
+     "intro n <;> simp [Nat.gcd_succ]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.017206,
+    "notional_usd": 0.026717,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_dvd_mul_right",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.128,
+    "tactics": [
+     "exact fun m n k h => Nat.dvd_trans h (Nat.dvd_mul_right n k)"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.020857,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_map_double_sum",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.19,
+    "tactics": [
+     "intro xs; induction xs <;> simp_all <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.009496,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_rev_eq_reverse",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 45,
+    "escalations": 1,
+    "seconds": 20.882,
+    "tactics": [
+     "intro l",
+     "have h : ∀ acc, revAux l acc = l.reverse ++ acc := by induction l <;> simp_all",
+     "simp [rev, h]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 8,
+    "claude_calls": 5,
+    "usd": 0.063875,
+    "notional_usd": 0.115543,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_two_dvd_mul_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 6.794,
+    "tactics": [
+     "intro n <;> rcases Nat.mod_two_eq_zero_or_one n with h | h <;> simp [Nat.dvd_iff_mod_eq_zero, Nat.mul_mod, Nat.add_mod, h]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.017251,
+    "notional_usd": 0.038607,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_fib_mono",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 4.872,
+    "tactics": [
+     "intro n <;> cases n <;> simp [fib] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 1,
+    "usd": 0.013881,
+    "notional_usd": 0.026847,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_map_map",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.119,
+    "tactics": [
+     "intro l f g <;> simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.008246,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_mul_self_le",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 0.116,
+    "tactics": [
+     "exact fun a b h => Nat.mul_le_mul h h"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.009291,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   }
+  ]
+ },
+ "hybrid_expand_all": {
+  "proved": 19,
+  "proved_easy": 8,
+  "proved_hard": 11,
+  "mean_calls": 1.895,
+  "mean_seconds": 0.181,
+  "claude_requests": 44,
+  "claude_calls": 0,
+  "usd": 0.0,
+  "notional_usd": 0.538764,
+  "notional_unknown": 0,
+  "call_capped": false,
+  "refusals": 0,
+  "errors": 0,
+  "budget_capped": false,
+  "per_theorem": [
+   {
+    "name": "test_add_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.137,
+    "tactics": [
+     "intro n m <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.016277,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_append_length",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.147,
+    "tactics": [
+     "intro l₁ l₂ <;> simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.017467,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_reverse_reverse",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 0.12,
+    "tactics": [
+     "intro l <;> simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.007961,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_mod_two_cases",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.168,
+    "tactics": [
+     "intro n <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.017467,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_or_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.122,
+    "tactics": [
+     "exact fun p q h => h.symm"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.017417,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_add_eq_zero_left",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 3,
+    "escalations": 1,
+    "seconds": 0.139,
+    "tactics": [
+     "exact fun a b h => Nat.eq_zero_of_add_eq_zero_right h"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 3,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.024953,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_double",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.249,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.017787,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_to",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 3,
+    "escalations": 1,
+    "seconds": 0.307,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all [Nat.mul_add, Nat.add_mul, Nat.mul_comm] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.032377,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_odd",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.248,
+    "tactics": [
+     "intro n; induction n with | zero => rfl | succ k ih => simp [ih, Nat.succ_mul, Nat.mul_succ]; omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.025737,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sum_sq",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.341,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all [Nat.add_mul, Nat.mul_add] <;> grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.021857,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_succ_le_two_pow",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.175,
+    "tactics": [
+     "intro n <;> induction n <;> simp_all [Nat.pow_succ] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.030857,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_sq_mod_four",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.162,
+    "tactics": [
+     "intro n <;> rw [Nat.mul_mod] <;> have h : n % 4 < 4 := Nat.mod_lt _ (by decide) <;> generalize n % 4 = m at * <;> revert m <;> decide"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.044207,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_gcd_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.13,
+    "tactics": [
+     "intro n <;> simp [Nat.gcd_succ]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.026717,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_dvd_mul_right",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.128,
+    "tactics": [
+     "exact fun m n k h => Nat.dvd_trans h (Nat.dvd_mul_right n k)"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.020857,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_map_double_sum",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 0.189,
+    "tactics": [
+     "intro xs; induction xs <;> simp_all <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.009496,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_rev_eq_reverse",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 0.85,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 9,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.124339,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_two_dvd_mul_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.162,
+    "tactics": [
+     "intro n <;> rcases Nat.mod_two_eq_zero_or_one n with h | h <;> simp [Nat.dvd_iff_mod_eq_zero, Nat.mul_mod, Nat.add_mod, h]"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.038607,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_fib_mono",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.271,
+    "tactics": [
+     "intro n <;> cases n <;> simp [fib] <;> omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 2,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.026847,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_map_map",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 0.127,
+    "tactics": [
+     "intro l f g <;> simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.008246,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   },
+   {
+    "name": "test_mul_self_le",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 1,
+    "seconds": 0.122,
+    "tactics": [
+     "exact fun a b h => Nat.mul_le_mul h h"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "claude_requests": 1,
+    "claude_calls": 0,
+    "usd": 0.0,
+    "notional_usd": 0.009291,
+    "notional_unknown": 0,
+    "refusals": 0,
+    "errors": 0,
+    "budget_capped": false,
+    "call_capped": false
+   }
+  ]
+ },
+ "phase1_best": {
+  "method": "model",
+  "proved": 16,
+  "proved_easy": 8,
+  "proved_hard": 8,
+  "mean_calls": 14.25,
+  "mean_seconds": 0.494,
+  "per_theorem": [
+   {
+    "name": "test_add_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 0,
+    "seconds": 0.186,
+    "tactics": [
+     "omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_append_length",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 0,
+    "seconds": 0.168,
+    "tactics": [
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_reverse_reverse",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 0,
+    "seconds": 0.147,
+    "tactics": [
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_mod_two_cases",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.231,
+    "tactics": [
+     "intro n",
+     "omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_or_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 14,
+    "escalations": 1,
+    "seconds": 0.975,
+    "tactics": [
+     "intro p q",
+     "intro h",
+     "exact?"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_add_eq_zero_left",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 0,
+    "seconds": 0.206,
+    "tactics": [
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_double",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 38,
+    "escalations": 2,
+    "seconds": 0.807,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_sum_to",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 39,
+    "escalations": 2,
+    "seconds": 1.145,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_sum_odd",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 39,
+    "escalations": 2,
+    "seconds": 0.805,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_sum_sq",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 39,
+    "escalations": 2,
+    "seconds": 1.392,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_succ_le_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.113,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_sq_mod_four",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.111,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_gcd_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.172,
+    "tactics": [
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_dvd_mul_right",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 11,
+    "escalations": 1,
+    "seconds": 0.305,
+    "tactics": [
+     "intro m n k",
+     "intro h",
+     "induction m <;> grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_map_double_sum",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 6,
+    "escalations": 1,
+    "seconds": 0.289,
+    "tactics": [
+     "intro xs",
+     "induction xs <;> grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_rev_eq_reverse",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 0.992,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_two_dvd_mul_succ",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.177,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_fib_mono",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 5,
+    "escalations": 0,
+    "seconds": 0.392,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_map_map",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 0,
+    "seconds": 0.188,
+    "tactics": [
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_mul_self_le",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 18,
+    "escalations": 1,
+    "seconds": 0.493,
+    "tactics": [
+     "intro a b",
+     "intro h",
+     "exact?"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   }
+  ]
+ },
+ "phase1_fixed_expand_all": {
+  "method": "fixed_expand_all",
+  "proved": 18,
+  "proved_easy": 8,
+  "proved_hard": 10,
+  "mean_calls": 15.722,
+  "mean_seconds": 0.542,
+  "per_theorem": [
+   {
+    "name": "test_add_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 4,
+    "escalations": 1,
+    "seconds": 0.166,
+    "tactics": [
+     "omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_append_length",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.173,
+    "tactics": [
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_reverse_reverse",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.135,
+    "tactics": [
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_mod_two_cases",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 4,
+    "escalations": 1,
+    "seconds": 0.21,
+    "tactics": [
+     "omega"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_or_comm",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 10,
+    "escalations": 1,
+    "seconds": 0.147,
+    "tactics": [
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_add_eq_zero_left",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.138,
+    "tactics": [
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_double",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 27,
+    "escalations": 3,
+    "seconds": 0.912,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "rfl"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_sum_to",
+    "difficulty": "easy",
+    "proved": true,
+    "calls": 36,
+    "escalations": 3,
+    "seconds": 1.185,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_sum_odd",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 36,
+    "escalations": 3,
+    "seconds": 1.032,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_sum_sq",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 36,
+    "escalations": 3,
+    "seconds": 1.78,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_succ_le_two_pow",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 25,
+    "escalations": 2,
+    "seconds": 0.871,
+    "tactics": [
+     "intro n",
+     "induction n <;> grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_sq_mod_four",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 6,
+    "seconds": 1.917,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_gcd_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.186,
+    "tactics": [
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_dvd_mul_right",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 10,
+    "escalations": 1,
+    "seconds": 0.155,
+    "tactics": [
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_map_double_sum",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 25,
+    "escalations": 2,
+    "seconds": 0.843,
+    "tactics": [
+     "intro xs",
+     "induction xs <;> grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_rev_eq_reverse",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 6,
+    "seconds": 1.554,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_two_dvd_mul_succ",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 25,
+    "escalations": 2,
+    "seconds": 0.478,
+    "tactics": [
+     "intro n",
+     "induction n <;> grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_fib_mono",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 24,
+    "escalations": 2,
+    "seconds": 0.795,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_map_map",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 2,
+    "escalations": 1,
+    "seconds": 0.19,
+    "tactics": [
+     "simp"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "test_mul_self_le",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 11,
+    "escalations": 1,
+    "seconds": 0.364,
+    "tactics": [
+     "exact?"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   }
+  ]
+ },
+ "phase1_n_easy": 8,
+ "phase1_n_hard": 12,
+ "temperatures": {
+  "kind": 1.95,
+  "premise": 4.0
+ },
+ "train_stats": {
+  "steps": 105,
+  "kind_skipped": 0,
+  "premise_steps": 8,
+  "premise_hits": 2,
+  "n_claude_choice": 203,
+  "n_claude_binary": 423,
+  "n_choice": 310,
+  "n_binary": 528,
+  "n_holdout_choice": 62
+ },
+ "n_easy": 8,
+ "n_hard": 12,
+ "claude_model": "claude-opus-5-5",
+ "effort": "medium",
+ "max_usd": 20.0,
+ "total_usd": 1.23583,
+ "claude_usage": {
+  "calls": 126,
+  "input_tokens": 504,
+  "output_tokens": 38176,
+  "cache_read_tokens": 82572,
+  "cache_write_tokens": 90756,
+  "usd": 1.2358304000000007,
+  "refusals": 0,
+  "errors": 0,
+  "requests": 194,
+  "notional_usd": 2.0597384000000023,
+  "notional_unknown": 0
+ },
+ "call_capped": false,
+ "budget_capped": false,
+ "reachability": {
+  "test_add_comm": true,
+  "test_append_length": true,
+  "test_reverse_reverse": true,
+  "test_mod_two_cases": true,
+  "test_or_comm": true,
+  "test_add_eq_zero_left": true,
+  "test_double": true,
+  "test_sum_to": true,
+  "test_sum_odd": true,
+  "test_sum_sq": true,
+  "test_succ_le_two_pow": true,
+  "test_sq_mod_four": false,
+  "test_gcd_succ": true,
+  "test_dvd_mul_right": true,
+  "test_map_double_sum": true,
+  "test_rev_eq_reverse": false,
+  "test_two_dvd_mul_succ": true,
+  "test_fib_mono": true,
+  "test_map_map": true,
+  "test_mul_self_le": true
+ },
+ "questions": {
+  "hybrid_hard": 12,
+  "claude_search_hard": 12,
+  "hybrid_beats_claude_search": false,
+  "hybrid_usd": 0.529968,
+  "claude_search_usd": 0.311772,
+  "hybrid_usd_not_higher": false,
+  "unreachable_hard": [
+   "test_sq_mod_four",
+   "test_rev_eq_reverse"
+  ],
+  "unreachable_hard_proved": {
+   "test_sq_mod_four": [
+    "claude_whole",
+    "claude_search",
+    "hybrid"
+   ],
+   "test_rev_eq_reverse": [
+    "claude_whole",
+    "claude_search",
+    "hybrid"
+   ]
+  },
+  "unreachable_hard_proved_count": 2
+ }
+}
