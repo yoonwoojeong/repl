@@ -218,7 +218,7 @@ def test_logs_one_line_per_request(tmp_path, capsys):
 def _prompt_examples():
     import json
     import re
-    pat = re.compile(r"Example (\d+)\n(?:Prelude:\n(.*?)\n)?Goal:\n(.*?)\nGood tactics: (\[.*?\])\n", re.S)
+    pat = re.compile(r"Example (\d+)\n(?:Prelude:\n(.*?)\n)?Goal:\n(.*?)\nGood next steps: (\[.*?\])\n", re.S)
     return [(int(n), pre or "", goal, json.loads(tacs)) for n, pre, goal, tacs in pat.findall(SYSTEM_PROMPT)]
 
 
@@ -228,9 +228,10 @@ def test_prompt_examples_parse():
 
 
 @pytest.mark.lean
-def test_prompt_example_tactics_close_their_goals(repl):
-    """Each example's goal is reached by a gold prefix of its train source theorem, and every
-    listed tactic, run alone at that goal, is accepted and closes it."""
+def test_prompt_example_steps_are_accepted(repl):
+    """Each example's goal is reached by a gold prefix of its train source theorem; every listed
+    step, run alone at that goal, is accepted and either closes it or changes it; and each example
+    lists at least one closing step."""
     train = {t.name: t for t in load_theorems(os.path.join(DATA_DIR, "train.json"))}
     for (n, prelude, goal, tactics), src in zip(_prompt_examples(), EXAMPLE_SOURCES):
         thm = train[src]
@@ -244,6 +245,10 @@ def test_prompt_example_tactics_close_their_goals(repl):
                 break
             ps, cur = res.proof_state, res.goals[0]
         assert cur.split() == goal.split(), (n, cur)
+        closing = 0
         for tac in tactics:
             res = repl.tactic(tac, ps)
-            assert res.ok and res.completed, (n, tac, res.error, res.goals)
+            assert res.ok, (n, tac, res.error)
+            assert res.completed or [g.split() for g in res.goals] != [goal.split()], (n, tac, res.goals)
+            closing += res.completed
+        assert closing >= 1, n

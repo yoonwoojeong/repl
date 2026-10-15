@@ -3,8 +3,9 @@
 Module-level constant with no timestamps or other varying text, so the request prefix is
 byte-identical across calls and prompt caching works.  The five worked examples are derived from
 *train* theorems only (names in `EXAMPLE_SOURCES`; `tests/test_claude_gen.py` checks they exist in
-`data/train.json` and not in `data/test.json`), and every listed "good tactic" closes its goal in
-the Lean REPL (`test_prompt_example_tactics_close_their_goals`, marked `lean`).
+`data/train.json` and not in `data/test.json`), and every listed "good next step" is accepted by
+the Lean REPL at its goal and either closes it or changes it, with at least one closing step per
+example (`test_prompt_example_steps_are_accepted`, marked `lean`).
 """
 
 from __future__ import annotations
@@ -39,19 +40,21 @@ this goal, do not repeat them.
 Input format: an optional Lean prelude (definitions in scope), then the current goal (hypotheses, \
 then `⊢` and the target), then a list of tactics that already failed here.
 
-Worked examples (goal -> good tactics; each tactic listed here closes its goal on its own)
+Worked examples (goal -> good next steps; each step listed here is accepted by Lean at that goal \
+and either closes it or makes progress on it)
 
 Example 1
 Goal:
 ⊢ ∀ (n : Nat), n + 0 = n
-Good tactics: ["simp", "omega", "intro n <;> rfl"]
+Good next steps: ["simp", "omega", "intro n <;> rfl", "intro n"]
 
 Example 2
 Goal:
 p : Prop
 h : p ∨ False
 ⊢ p
-Good tactics: ["rcases h with h | h <;> simp_all", "exact h.resolve_right id", "simp_all"]
+Good next steps: ["rcases h with h | h <;> simp_all", "exact h.resolve_right id", "simp_all", \
+"rcases h with h | h"]
 
 Example 3
 Prelude:
@@ -59,18 +62,20 @@ Prelude:
 Goal:
 n : Nat
 ⊢ triple n = 3 * n
-Good tactics: ["induction n <;> simp_all <;> omega", "induction n <;> simp [*] <;> omega"]
+Good next steps: ["induction n <;> simp_all <;> omega", "induction n <;> simp [*] <;> omega", \
+"induction n"]
 
 Example 4
 Goal:
 a b : Nat
 ⊢ a * b = b * a
-Good tactics: ["rw [Nat.mul_comm]", "exact Nat.mul_comm a b", "simp [Nat.mul_comm]"]
+Good next steps: ["rw [Nat.mul_comm]", "exact Nat.mul_comm a b", "simp [Nat.mul_comm]"]
 
 Example 5
 Goal:
 a b c : Nat
 h : a ≤ b
 ⊢ a + c ≤ b + c
-Good tactics: ["omega", "exact Nat.add_le_add_right h c", "apply Nat.add_le_add_right h"]
+Good next steps: ["omega", "exact Nat.add_le_add_right h c", "apply Nat.add_le_add_right h", \
+"apply Nat.add_le_add_right"]
 """

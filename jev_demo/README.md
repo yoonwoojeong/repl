@@ -190,6 +190,13 @@ python -m jev_demo collect
 python -m jev_demo run-phase2 --out jev_demo/results_phase2 --max-usd 20
 ```
 
+The same two steps can run on GitHub Actions instead (`.github/workflows/jev-phase2-live.yml`),
+reading the key from the `ANTHROPIC_API_KEY` repository secret (Settings → Secrets and
+variables → Actions). It never runs on push: add the `run-phase2-live` label to a pull request to
+run it on that PR's branch, or start it from the Actions tab once the workflow is on the default
+branch. It runs the offline tests first, uploads the logs, labels and results as an artifact, and
+commits `data/claude_labels.json` and `results_phase2/` back to the branch.
+
 Notes on cost accounting:
 
 - Requests are sent with `fallbacks="default"`; a request served by the fallback model is still
