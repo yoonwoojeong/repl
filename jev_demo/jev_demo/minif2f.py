@@ -40,7 +40,8 @@ def load(root: str, split: str) -> tuple[str, list[Theorem]]:
         if not m:
             raise ValueError(f"cannot parse {fn}")
         headers.add(text[:m.start()].strip())
-        thms.append(Theorem(m.group(1), " ".join(m.group(2).split()), "", (), "hard"))
+        body = re.sub(r"--[^\n]*", "", m.group(2))  # line comments would swallow the joined rest
+        thms.append(Theorem(m.group(1), " ".join(body.split()), "", (), "hard"))
     if len(headers) != 1:
         raise ValueError(f"problem headers differ: {headers}")
     header = headers.pop().replace("set_option maxHeartbeats 0", f"set_option maxHeartbeats {HEARTBEATS}")
