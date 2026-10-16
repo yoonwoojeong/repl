@@ -44,3 +44,17 @@ def test_exp3_end_to_end_with_fake_claude_and_audit(repl, tmp_path):
     labels = json.loads((tmp_path / "labels.json").read_text(encoding="utf-8"))
     assert labels["binary"] and labels["choice"]
     assert (tmp_path / "out" / "report.md").read_text(encoding="utf-8").startswith("# Jev proof demo")
+
+
+@pytest.mark.lean
+def test_exp3_claude_cap_and_lean_budget_are_applied(repl, tmp_path):
+    from jev_demo import exp3
+    p = tmp_path / "core.json"
+    p.write_text(json.dumps(CORE[:1]), encoding="utf-8")
+    client = FakeClient(resp(["omega"]))  # never proves it: exhausts a budget
+    gen = ClaudeGenerator(client=client, cache_dir=str(tmp_path / "cache"), max_usd=1.0, log=lambda m: None)
+    res = exp3.run(repl, [], load_theorems(str(p)), str(tmp_path / "out"), gen, ["claude_search"],
+                   log=lambda m: None, lean_budget=5, claude_cap=2)
+    row = res["claude_search"]["per_theorem"][0]
+    assert row["claude_requests"] <= 2 and row["calls"] <= 5
+    assert res["lean_budget"] == 5 and res["claude_cap"] == 2

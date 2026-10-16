@@ -448,7 +448,8 @@ WHOLE_PROOF_K = 4
 PHASE1_RESULTS_PATH = os.path.join(os.path.dirname(DATA_DIR), "results", "results.json")
 
 
-def _run_phase2_method(method: str, thm: Theorem, repl, model, shortlister, lib, gen) -> SearchResult:
+def _run_phase2_method(method: str, thm: Theorem, repl, model, shortlister, lib, gen,
+                       budget: int = 64) -> SearchResult:
     lib = _without_banned(lib, thm)
     if method == "claude_whole":
         t0 = time.perf_counter()
@@ -464,11 +465,11 @@ def _run_phase2_method(method: str, thm: Theorem, repl, model, shortlister, lib,
         order = {"claude_search": "llm", "hybrid": "jev", "hybrid_filter": "filter",
                  "menu_first": "menu_first", "jev_router": "router"}[method]
         return prove(thm, repl, HybridRanker(model, shortlister, lib, gen, order=order, prelude=thm.prelude,
-                                             banned=thm.banned))
+                                             banned=thm.banned), budget=budget)
     if method == "hybrid_expand_all":
         ranker = HybridRanker(model, shortlister, lib, gen, order="jev", prelude=thm.prelude,
                               banned=thm.banned)
-        return prove(thm, repl, ExpandAll(ranker, confidence=0.0))
+        return prove(thm, repl, ExpandAll(ranker, confidence=0.0), budget=budget)
     raise ValueError(method)
 
 

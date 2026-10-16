@@ -34,11 +34,17 @@ from jev_demo.prompts import SYSTEM_PROMPT
 BETA_FALLBACK = "server-side-fallback-2026-07-01"
 MAX_TOKENS = 16000  # adaptive thinking counts against max_tokens
 
-# USD per million tokens, claude-opus-5-5.  Cache write is the 5-minute-TTL rate (1.25x input).
-PRICE_INPUT = 4.0
-PRICE_OUTPUT = 20.0
-PRICE_CACHE_READ = 0.20
-PRICE_CACHE_WRITE = 5.0
+# USD per million tokens: (input, output, cache read, cache write). Cache write is the
+# 5-minute-TTL rate (1.25x input). Haiku 5.5 rates are for prompts up to 100K tokens (ours are far
+# shorter); its cache read is the standard 0.1x input.
+PRICES = {
+    "claude-opus-5-5": (4.0, 20.0, 0.20, 5.0),
+    "claude-sonnet-5-5": (2.0, 10.0, 0.20, 2.5),
+    "claude-haiku-5-5": (0.10, 0.50, 0.01, 0.125),
+}
+PRICE_INPUT, PRICE_OUTPUT, PRICE_CACHE_READ, PRICE_CACHE_WRITE = PRICES["claude-opus-5-5"]
+# Models that accept the server-side `fallbacks="default"` refusal fallback (Haiku 5.5 has none).
+FALLBACK_MODELS = ("claude-opus-5-5", "claude-sonnet-5-5")
 
 # 400/401/403/404 mean the run is misconfigured (bad request, key, permission or model): every
 # later request would fail the same way, so they stop the run instead of counting as errors.
@@ -115,6 +121,8 @@ class ClaudeGenerator:
                  offline: bool = False):
         """`offline=True` never calls the API: a request missing from the disk cache returns no
         proposals (free replay of an earlier run's responses, for iterating on the ranker)."""
+        if model not in PRICES:
+            raise ValueError(f"no price for model {model!r}; known: {sorted(PRICES)}")
         self.offline = offline
         self.client = client if client is not None or offline else anthropic.Anthropic()
         self.model = model
@@ -196,8 +204,8 @@ class ClaudeGenerator:
                 messages=[{"role": "user", "content": user}],
                 output_config={"effort": self.effort,
                                "format": {"type": "json_schema", "schema": Proposals.model_json_schema()}},
-                fallbacks="default",
-                betas=[BETA_FALLBACK],
+                **({"fallbacks": "default", "betas": [BETA_FALLBACK]}
+                   if self.model in FALLBACK_MODELS else {}),
             )
         except _FATAL as e:
             self.log(f"claude: error HTTP {e.status_code} {type(e).__name__} (fatal, stopping)")
@@ -236,8 +244,8 @@ class ClaudeGenerator:
 
     def _meter(self, u) -> None:
         # TODO: with `fallbacks="default"`, a request served by the fallback model is still priced
-        # here at claude-opus-5-5 rates from the top-level usage; `usage.iterations` (per-attempt
-        # usage and model) is ignored.
+        # here at the requested model's rates from the top-level usage; `usage.iterations`
+        # (per-attempt usage and model) is ignored.
         if u is None:
             return
         inp = getattr(u, "input_tokens", 0) or 0
@@ -249,5 +257,5 @@ class ClaudeGenerator:
         s.output_tokens += out
         s.cache_read_tokens += read
         s.cache_write_tokens += write
-        s.usd += (inp * PRICE_INPUT + out * PRICE_OUTPUT + read * PRICE_CACHE_READ
-                  + write * PRICE_CACHE_WRITE) / 1_000_000
+        p_in, p_out, p_read, p_write = PRICES[self.model]
+        s.usd += (inp * p_in + out * p_out + read * p_read + write * p_write) / 1_000_000

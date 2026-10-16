@@ -272,3 +272,25 @@ def test_banned_lemmas_are_named_in_the_request_and_filtered(tmp_path):
     assert "Forbidden lemmas" in user and "`Nat.mul_add_mod`" in user
     g.propose("⊢ Q")
     assert "Forbidden" not in c.calls[1]["messages"][0]["content"]  # unchanged without a ban
+
+
+def test_haiku_has_no_fallback_and_its_own_price(tmp_path):
+    c = FakeClient(resp(["rfl"], inp=1_000_000, out=0))
+    g = gen(c, tmp_path, model="claude-haiku-5-5")
+    g.propose("⊢ 1 = 1")
+    kw = c.calls[0]
+    assert kw["model"] == "claude-haiku-5-5" and "fallbacks" not in kw and "betas" not in kw
+    assert abs(g.usage.usd - 0.10) < 1e-9
+
+
+def test_sonnet_price_and_fallback(tmp_path):
+    c = FakeClient(resp(["rfl"], inp=0, out=1_000_000))
+    g = gen(c, tmp_path, model="claude-sonnet-5-5")
+    g.propose("⊢ 1 = 1")
+    assert c.calls[0]["fallbacks"] == "default"
+    assert abs(g.usage.usd - 10.0) < 1e-9
+
+
+def test_unknown_model_is_refused(tmp_path):
+    with pytest.raises(ValueError):
+        gen(FakeClient(resp(["rfl"])), tmp_path, model="claude-unknown")

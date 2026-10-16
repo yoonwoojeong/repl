@@ -2,7 +2,7 @@
 # Paid stages of experiment 3, run by .github/workflows/jev-exp3-live.yml (one label per stage).
 # Every stage has a hard USD cap (--max-usd per command); the caps are the budget approved for it.
 set -euo pipefail
-stage="${1:?usage: exp3_stage.sh pilot|stage1|dev2|final|replicate}"
+stage="${1:?usage: exp3_stage.sh pilot|stage1|dev2|final|replicate|g-haiku|g-sonnet|g-opus-low|g-tight|g-ext}"
 D=jev_demo/data
 R=jev_demo/results_exp3
 mkdir -p "$R"
@@ -47,5 +47,30 @@ case "$stage" in
       spent=$(python3 -c "import json; print(round($spent + json.load(open('$R/test_rep${rep}_$m/results.json'))['total_usd'], 4))")
     done
     echo "replicate stage spent \$$spent of \$$total" ;;
+  g-haiku|g-sonnet|g-opus-low|g-tight|g-ext)
+    # Generality (README "Experiment 4", pre-registered): one setting changed from the test run,
+    # claude_search then jev_router, each with its own empty response cache (independent samples).
+    # The stage total is the approved cap; claude_search's run is capped so that the router's
+    # reserve is always left.
+    test=$D/core_test.json; extra=""
+    case "$stage" in
+      g-haiku)    total=3;  reserve=1.0; extra="--claude-model claude-haiku-5-5" ;;
+      g-sonnet)   total=9;  reserve=3.5; extra="--claude-model claude-sonnet-5-5" ;;
+      g-opus-low) total=12; reserve=4.5; extra="--effort low" ;;
+      g-tight)    total=10; reserve=3.5; extra="--claude-cap 8 --lean-budget 32" ;;
+      g-ext)      total=14; reserve=5.0; test=$D/ext_test148.json; extra="--library $D/library_ext.json" ;;
+    esac
+    spent=0
+    for m in claude_search jev_router; do
+      if [ "$m" = claude_search ]; then cap=$(python3 -c "print(round($total - $reserve, 4))")
+      else cap=$(python3 -c "print(round($total - $spent, 4))"); fi
+      echo "$stage $m: cap \$$cap (spent so far \$$spent of \$$total)"
+      run --test $test --train none --methods $m $extra \
+          --labels $D/claude_labels_core.json,$D/jev_closes_labels.json \
+          --cache-dir jev_demo/cache/${stage}_$m --out $R/${stage}_$m --max-usd "$cap" \
+          2>&1 | tee $R/${stage}_$m.log
+      spent=$(python3 -c "import json; print(round($spent + json.load(open('$R/${stage}_$m/results.json'))['total_usd'], 4))")
+    done
+    echo "$stage spent \$$spent of \$$total" ;;
   *) echo "unknown stage $stage" >&2; exit 2 ;;
 esac

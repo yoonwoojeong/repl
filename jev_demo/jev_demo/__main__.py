@@ -58,7 +58,8 @@ def _exp3(args) -> None:
         test = test[:args.limit] if args.limit else test
         train = [] if args.train == "none" else load_theorems(args.train)  # "none": labels only
         exp3.run(repl, train, test, args.out, gen, methods,
-                 label_paths=labels, labels_out=args.labels_out)
+                 label_paths=labels, labels_out=args.labels_out, lean_budget=args.lean_budget,
+                 claude_cap=args.claude_cap, library_path=args.library)
     with open(os.path.join(args.out, "report.md"), encoding="utf-8") as f:
         print(f.read())
 
@@ -106,6 +107,9 @@ def main(argv: list[str] | None = None) -> None:
     e3.add_argument("--max-usd", type=float, default=10.0)
     e3.add_argument("--offline", action="store_true", help="replay the disk cache; never call the API")
     e3.add_argument("--limit", type=int, default=0, help="only the first N theorems (a cheap pilot)")
+    e3.add_argument("--lean-budget", type=int, default=64, help="Lean calls per lemma")
+    e3.add_argument("--claude-cap", type=int, default=16, help="Claude requests per lemma and method")
+    e3.add_argument("--library", default=None, help="premise library JSON (default data/library.json)")
     e3.add_argument("--cache-dir", default="jev_demo/cache/claude",
                     help="Claude response cache; an empty directory gives fresh, independent samples")
     args = ap.parse_args(argv)

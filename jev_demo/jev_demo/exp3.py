@@ -12,7 +12,7 @@ import json
 import os
 import sys
 
-from jev_demo.bench import (CLAUDE_METHODS, PHASE2_SUPPLEMENTARY, _MeteredGen, _run_methods,
+from jev_demo.bench import (CALL_CAP, CLAUDE_METHODS, PHASE2_SUPPLEMENTARY, _MeteredGen, _run_methods,
                             _run_phase2_method, _without_banned, _write_results, train_model)
 from jev_demo.collect import load_labels, save_labels, trace_labels
 from jev_demo.hybrid import HybridRanker
@@ -28,9 +28,12 @@ PAIRS = (("jev_router", "claude_search"), ("menu_first", "claude_search"), ("jev
 
 
 def run(repl, train: list[Theorem], test: list[Theorem], out_dir: str, generator, methods,
-        label_paths=(), labels_out: str | None = None, log=None) -> dict:
+        label_paths=(), labels_out: str | None = None, log=None, lean_budget: int = 64,
+        claude_cap: int = CALL_CAP, library_path: str | None = None) -> dict:
+    """`lean_budget` (Lean calls per lemma), `claude_cap` (Claude requests per lemma) and
+    `library_path` (premise library JSON; default the core Nat/List library) vary the setting."""
     log = log or (lambda m: print(m, file=sys.stderr, flush=True))
-    lemmas = dump_library(repl)
+    lemmas = dump_library(repl, library_path)
     lib = {l.name: l for l in lemmas}
     shortlister = Shortlister(lemmas)
     choice, binary = [], []
@@ -40,17 +43,17 @@ def run(repl, train: list[Theorem], test: list[Theorem], out_dir: str, generator
         binary += b
     log(f"fitting on {len(train)} gold-replay theorems + {len(choice)}/{len(binary)} label examples")
     model, train_stats = train_model(train, repl, shortlister, lib, extra=(choice, binary))
-    metered = _MeteredGen(generator)
+    metered = _MeteredGen(generator, cap=claude_cap)
     traces: dict[str, tuple] = {}
 
     def run_one(method, thm, counting):
         if method == "claude_search" and labels_out:
             ranker = HybridRanker(model, shortlister, _without_banned(lib, thm), metered, order="llm",
                                   prelude=thm.prelude, banned=thm.banned)
-            r = prove(thm, counting, ranker)
+            r = prove(thm, counting, ranker, budget=lean_budget)
             traces[thm.name] = (r, dict(ranker._proposals))
             return r
-        return _run_phase2_method(method, thm, counting, model, shortlister, lib, metered)
+        return _run_phase2_method(method, thm, counting, model, shortlister, lib, metered, budget=lean_budget)
 
     results: dict = {}
     _run_methods(list(methods), test, run_one, repl, log, results, out_dir, metered=metered)
@@ -67,6 +70,7 @@ def run(repl, train: list[Theorem], test: list[Theorem], out_dir: str, generator
         "methods": list(methods), "n": len(test), "train_stats": train_stats,
         "claude_model": getattr(generator, "model", None), "effort": getattr(generator, "effort", None),
         "max_usd": generator.max_usd, "offline": getattr(generator, "offline", False),
+        "lean_budget": lean_budget, "claude_cap": claude_cap, "library": library_path or "library.json",
         "total_usd": round(u.usd, 6), "claude_usage": dict(vars(u)),
         "budget_capped": any(results[m]["budget_capped"] for m in methods),
     })

@@ -30,6 +30,12 @@ from jev_demo.theorems import DATA_DIR
 NAMESPACES = ("Nat.", "List.")
 POOL_PATH = os.path.join(DATA_DIR, "core_pool.json")
 SPLIT_PATHS = {s: os.path.join(DATA_DIR, f"core_{s}.json") for s in ("train", "dev", "test")}
+# Second benchmark family (transfer test: the router is never trained on it): Int/Array/Option
+# lemmas, premises from the extended library. Hash split 20% dev (pilot) / 80% test.
+EXT_NAMESPACES = ("Int.", "Array.", "Option.")
+EXT_LIBRARY_PATH = os.path.join(DATA_DIR, "library_ext.json")
+EXT_POOL_PATH = os.path.join(DATA_DIR, "ext_pool.json")
+EXT_SPLIT_PATHS = {s: os.path.join(DATA_DIR, f"ext_{s}.json") for s in ("dev", "test")}
 
 _AUDIT = """theorem {name} : {statement} := by{body}
 
@@ -81,7 +87,7 @@ open Lean Meta in
     if s.endsWith ".rec" || s.endsWith ".recAux" || s.endsWith ".casesOn" || s.endsWith ".casesAuxOn"
         || s.endsWith ".brecOn" || s.endsWith ".recOn" then
       recs := recs + 1
-    else if (s.startsWith "Nat." || s.startsWith "List.") && !banned.contains c then
+    else if ({ns}) && !banned.contains c then
       if let some (.thmInfo _) := env.find? c then
         thms := thms.push c
   let one := if thms.size == 1 && recs == 0 then thms[0]!.toString else ""
@@ -132,12 +138,14 @@ class Auditor:
 
 
 def analyse(auditor: "Auditor", statement: str, tactics: list[str], banned: tuple[str, ...],
-            prelude: str = "") -> dict | None:
+            prelude: str = "", namespaces: tuple[str, ...] = NAMESPACES) -> dict | None:
     """Audit v2 of one proof: `{"banned": [...], "defeq_aliases": [...], "one_lemma": name|None}`,
-    or None if the proof did not re-elaborate in the auditor."""
+    or None if the proof did not re-elaborate in the auditor. A one-lemma proof uses exactly one
+    theorem from `namespaces` (and no recursor)."""
     auditor._n += 1
+    ns = " || ".join(f's.startsWith "{n}"' for n in namespaces)
     cmd = _AUDIT2.format(name=f"audit2_{auditor._n}", statement=statement, body=_body(tactics),
-                         banned=", ".join(f"`{b}" for b in banned))
+                         banned=", ".join(f"`{b}" for b in banned), ns=ns)
     if prelude.strip():
         cmd = prelude + "\n\n" + cmd
     reply = auditor.repl.command(cmd, env=auditor.env, timeout_s=120)
@@ -150,7 +158,7 @@ def analyse(auditor: "Auditor", statement: str, tactics: list[str], banned: tupl
             bad, defeq, one = data[len("AUDIT2:"):].split("|")
             one = one.strip()
             return {"banned": _names(bad), "defeq_aliases": _names(defeq),
-                    "one_lemma": one if one.startswith(NAMESPACES) else None}
+                    "one_lemma": one if one.startswith(tuple(namespaces)) else None}
     return None
 
 
@@ -187,9 +195,9 @@ def one_liners(statement: str) -> list[str]:
     return tacs
 
 
-def candidates(library: list[dict], n: int, seed: int) -> list[dict]:
-    """`n` lemmas from `NAMESPACES`, in a seeded random order, as theorem rows."""
-    rows = [l for l in library if l["name"].startswith(NAMESPACES)]
+def candidates(library: list[dict], n: int, seed: int, namespaces: tuple[str, ...] = NAMESPACES) -> list[dict]:
+    """`n` lemmas from `namespaces`, in a seeded random order, as theorem rows."""
+    rows = [l for l in library if l["name"].startswith(tuple(namespaces))]
     rng = random.Random(seed)
     rng.shuffle(rows)
     return [{"name": "core_" + l["name"].replace(".", "_"), "lemma": l["name"],
@@ -218,21 +226,30 @@ def split_of(name: str) -> str:
     return "train" if h < 4 else "dev" if h < 6 else "test"
 
 
+def ext_split_of(name: str) -> str:
+    """Second family: deterministic 20% dev / 80% test by name hash (no training split)."""
+    return "dev" if int(hashlib.sha256(name.encode()).hexdigest(), 16) % 10 < 2 else "test"
+
+
 def load_core(split: str) -> list[Theorem]:
     from jev_demo.theorems import load_theorems
     return load_theorems(SPLIT_PATHS[split])
 
 
-def build(n: int, seed: int, out_path: str = POOL_PATH) -> None:
+def build(n: int, seed: int, out_path: str = POOL_PATH, family: str = "core") -> None:
     from jev_demo.repl_client import ReplClient
 
-    with open(os.path.join(DATA_DIR, "library.json"), encoding="utf-8") as f:
+    ext = family == "ext"
+    if ext:
+        out_path = EXT_POOL_PATH
+    lib_path = EXT_LIBRARY_PATH if ext else os.path.join(DATA_DIR, "library.json")
+    with open(lib_path, encoding="utf-8") as f:
         library = json.load(f)
     done: dict[str, dict] = {}
     if os.path.exists(out_path):  # resume
         with open(out_path, encoding="utf-8") as f:
             done = {r["name"]: r for r in json.load(f)["rows"]}
-    rows = candidates(library, n, seed)
+    rows = candidates(library, n, seed, EXT_NAMESPACES if ext else NAMESPACES)
     with ReplClient(timeout_s=20) as repl, ReplClient(timeout_s=60) as arepl:
         auditor = Auditor(arepl)
         for i, row in enumerate(rows):
@@ -247,8 +264,9 @@ def build(n: int, seed: int, out_path: str = POOL_PATH) -> None:
                 _write_pool(out_path, n, seed, done)
     _write_pool(out_path, n, seed, done)
     kept = [r for r in done.values() if r["screen"] == "kept"]
-    for split, path in SPLIT_PATHS.items():
-        part = sorted((r for r in kept if split_of(r["name"]) == split), key=lambda r: r["name"])
+    for split, path in (EXT_SPLIT_PATHS if ext else SPLIT_PATHS).items():
+        part = sorted((r for r in kept if (ext_split_of if ext else split_of)(r["name"]) == split),
+                      key=lambda r: r["name"])
         with open(path, "w", encoding="utf-8") as f:
             f.write("[\n" + ",\n".join("  " + json.dumps({k: r[k] for k in ("name", "lemma", "statement")},
                                                         ensure_ascii=False) for r in part) + "\n]\n")
@@ -265,6 +283,6 @@ def _write_pool(path: str, n: int, seed: int, done: dict) -> None:
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    if len(args) != 3 or args[0] != "build":
-        sys.exit("usage: python -m jev_demo.corebench build N SEED")
-    build(int(args[1]), int(args[2]))
+    if len(args) not in (3, 4) or args[0] != "build" or (len(args) == 4 and args[3] not in ("core", "ext")):
+        sys.exit("usage: python -m jev_demo.corebench build N SEED [core|ext]")
+    build(int(args[1]), int(args[2]), family=args[3] if len(args) == 4 else "core")

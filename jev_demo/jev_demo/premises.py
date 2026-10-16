@@ -52,15 +52,25 @@ def option_text(lemma: Lemma) -> str:
     return f"{lemma.name} : {lemma.type}"
 
 
-def dump_library(repl, cache_path: str | None = None) -> list[Lemma]:
-    """Theorems of core Lean (Nat/List/Bool/And/Or/Iff), cached as JSON; delete the cache to rebuild."""
+DEFAULT_ROOTS = ("Nat", "List", "Bool", "And", "Or", "Iff")
+_ROOTS_LINE = 'let roots : List String := ["Nat", "List", "Bool", "And", "Or", "Iff"]'
+
+
+def dump_library(repl, cache_path: str | None = None, roots: tuple[str, ...] = DEFAULT_ROOTS) -> list[Lemma]:
+    """Theorems of core Lean under `roots` (default Nat/List/Bool/And/Or/Iff), cached as JSON;
+    delete the cache to rebuild."""
     cache_path = cache_path or LIBRARY_PATH
     if os.path.exists(cache_path):
         with open(cache_path, encoding="utf-8") as f:
             rows = json.load(f)
     else:
         with open(_LEAN_FILE, encoding="utf-8") as f:
-            reply = repl.command(f.read(), timeout_s=120, fresh=True)  # `import Lean` needs a fresh env
+            src = f.read()
+        if tuple(roots) != DEFAULT_ROOTS:
+            assert _ROOTS_LINE in src
+            src = src.replace(_ROOTS_LINE, "let roots : List String := ["
+                              + ", ".join(f'"{r}"' for r in roots) + "]")
+        reply = repl.command(src, timeout_s=300, fresh=True)  # `import Lean` needs a fresh env
         rows = []
         for m in reply.get("messages", []):
             if m.get("severity") != "info":
