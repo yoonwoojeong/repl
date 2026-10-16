@@ -1,0 +1,1747 @@
+{
+ "method": "single",
+ "tactics": [
+  "norm_num",
+  "linarith",
+  "nlinarith",
+  "positivity",
+  "ring_nf",
+  "field_simp",
+  "aesop",
+  "norm_num [*] at *",
+  "omega",
+  "decide",
+  "rfl",
+  "simp",
+  "simp_all",
+  "constructor",
+  "assumption",
+  "trivial",
+  "simp [*] at *",
+  "grind",
+  "exact?"
+ ],
+ "proved": 94,
+ "n": 244,
+ "per_theorem": [
+  {
+   "name": "aimeII_2001_p3",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aimeII_2020_p6",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aimeI_2000_p7",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1983_p9",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1984_p15",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1984_p5",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1987_p8",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1988_p3",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1988_p4",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1990_p2",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1991_p1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1991_p6",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1994_p4",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1996_p5",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "aime_1997_p11",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_2complexrootspoly_xsqp49eqxp7itxpn7i",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_2rootsintpoly_am10tap11eqasqpam110",
+   "proved": true,
+   "tactics": [
+    "ring_nf",
+    "grind"
+   ]
+  },
+  {
+   "name": "algebra_2rootspoly_apatapbeq2asqp2ab",
+   "proved": true,
+   "tactics": [
+    "ring_nf",
+    "grind"
+   ]
+  },
+  {
+   "name": "algebra_2varlineareq_xpeeq7_2xpeeq3_eeq11_xeqn4",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "algebra_3rootspoly_amdtamctambeqnasqmbpctapcbtdpasqmbpctapcbta",
+   "proved": true,
+   "tactics": [
+    "ring_nf",
+    "grind"
+   ]
+  },
+  {
+   "name": "algebra_amgm_faxinrrp2msqrt2geq2mxm1div2x",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_amgm_prod1toneq1_sum1tongeqn",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_amgm_sqrtxymulxmyeqxpy_xpygeq4",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_amgm_sumasqdivbsqgeqsumbdiva",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_apb4leq8ta4pb4",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_binomnegdiscrineq_10alt28asqp1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_manipexpr_2erprsqpesqeqnrpnesq",
+   "proved": true,
+   "tactics": [
+    "ring_nf",
+    "grind"
+   ]
+  },
+  {
+   "name": "algebra_manipexpr_apbeq2cceqiacpbceqm2",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_sqineq_2at2pclta2c2p41pc",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_sqineq_2unitcircatblt1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_sqineq_36azm9asqle36zsq",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_sqineq_4bap1lt4bsqpap1sq",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "algebra_xmysqpymzsqpzmxsqeqxyz_xpypzp6dvdx3y3z3",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12_2000_p11",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "amc12_2000_p15",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12_2000_p5",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12_2001_p2",
+   "proved": true,
+   "tactics": [
+    "nlinarith"
+   ]
+  },
+  {
+   "name": "amc12_2001_p9",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2002_p1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2002_p12",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2002_p21",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2003_p1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2003_p24",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2003_p25",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2008_p15",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2008_p2",
+   "proved": true,
+   "tactics": [
+    "linarith",
+    "nlinarith",
+    "grind"
+   ]
+  },
+  {
+   "name": "amc12a_2008_p4",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2008_p8",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2009_p15",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2009_p2",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "norm_num [*] at *",
+    "grind"
+   ]
+  },
+  {
+   "name": "amc12a_2009_p25",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2009_p5",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "amc12a_2009_p9",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2010_p10",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2010_p11",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2010_p22",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2011_p18",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2013_p7",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "amc12a_2013_p8",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "amc12a_2015_p10",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2016_p2",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2016_p3",
+   "proved": true,
+   "tactics": [
+    "norm_num [*] at *"
+   ]
+  },
+  {
+   "name": "amc12a_2017_p2",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "amc12a_2017_p7",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2019_p21",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2019_p9",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2020_p13",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2020_p21",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12a_2021_p7",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12b_2002_p11",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12b_2002_p3",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12b_2002_p6",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12b_2003_p17",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12b_2003_p6",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "amc12b_2003_p9",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "amc12b_2004_p3",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12b_2020_p5",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "amc12b_2021_p21",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1961_p1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1962_p4",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1964_p1_1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1964_p1_2",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1965_p1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1966_p4",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1966_p5",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1967_p3",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1973_p3",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1974_p5",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1977_p5",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1978_p5",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1979_p1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1984_p2",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1987_p4",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1987_p6",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1988_p6",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1990_p3",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_1993_p5",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "imo_2006_p3",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "induction_divisibility_3div2tooddnp1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "induction_divisibility_3divnto3m2n",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "induction_divisibility_9div10tonm1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "induction_ineq_nsqlefactn",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "induction_seq_mul2pnp1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "induction_sum2kp1npqsqm1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "induction_sum_1oktkp1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "induction_sum_odd",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_10",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "norm_num [*] at *"
+   ]
+  },
+  {
+   "name": "mathd_algebra_101",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_104",
+   "proved": true,
+   "tactics": [
+    "linarith",
+    "nlinarith",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_109",
+   "proved": true,
+   "tactics": [
+    "linarith",
+    "nlinarith",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_11",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_110",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_116",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_119",
+   "proved": true,
+   "tactics": [
+    "linarith",
+    "nlinarith",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_123",
+   "proved": true,
+   "tactics": [
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_126",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_13",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_131",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_132",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_140",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_144",
+   "proved": true,
+   "tactics": [
+    "linarith",
+    "nlinarith",
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_149",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_15",
+   "proved": true,
+   "tactics": [
+    "aesop",
+    "simp_all",
+    "simp [*] at *",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_151",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_159",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_181",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_182",
+   "proved": true,
+   "tactics": [
+    "ring_nf",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_185",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_190",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "norm_num [*] at *",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_192",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_206",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_214",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_22",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_224",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_234",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_245",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_247",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_251",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_267",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_28",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_282",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_31",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_323",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_327",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_35",
+   "proved": true,
+   "tactics": [
+    "norm_num [*] at *"
+   ]
+  },
+  {
+   "name": "mathd_algebra_37",
+   "proved": true,
+   "tactics": [
+    "nlinarith",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_393",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_405",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_410",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_421",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_422",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_43",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_433",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_437",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_451",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_455",
+   "proved": true,
+   "tactics": [
+    "linarith",
+    "nlinarith",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_462",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "norm_num [*] at *",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_48",
+   "proved": true,
+   "tactics": [
+    "norm_num [*] at *",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_480",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_482",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_493",
+   "proved": true,
+   "tactics": [
+    "norm_num [*] at *"
+   ]
+  },
+  {
+   "name": "mathd_algebra_509",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_51",
+   "proved": true,
+   "tactics": [
+    "linarith",
+    "nlinarith",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_510",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_536",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "norm_num [*] at *"
+   ]
+  },
+  {
+   "name": "mathd_algebra_547",
+   "proved": true,
+   "tactics": [
+    "norm_num [*] at *"
+   ]
+  },
+  {
+   "name": "mathd_algebra_55",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_568",
+   "proved": true,
+   "tactics": [
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_59",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_616",
+   "proved": true,
+   "tactics": [
+    "aesop",
+    "norm_num [*] at *",
+    "simp_all",
+    "simp [*] at *",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_67",
+   "proved": true,
+   "tactics": [
+    "norm_num [*] at *",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_69",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_73",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_77",
+   "proved": true,
+   "tactics": [
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_algebra_89",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_algebra_96",
+   "proved": true,
+   "tactics": [
+    "linarith",
+    "nlinarith",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_101",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "field_simp",
+    "aesop",
+    "norm_num [*] at *",
+    "omega",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_102",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "omega",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_109",
+   "proved": true,
+   "tactics": [
+    "aesop"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_110",
+   "proved": true,
+   "tactics": [
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_126",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_13",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_132",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "field_simp",
+    "aesop",
+    "norm_num [*] at *",
+    "omega",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_136",
+   "proved": true,
+   "tactics": [
+    "linarith",
+    "nlinarith",
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_149",
+   "proved": true,
+   "tactics": [
+    "aesop",
+    "decide",
+    "rfl",
+    "constructor",
+    "trivial",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_155",
+   "proved": true,
+   "tactics": [
+    "aesop",
+    "decide",
+    "rfl",
+    "constructor",
+    "trivial",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_156",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_169",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "decide",
+    "rfl",
+    "constructor",
+    "trivial",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_188",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_198",
+   "proved": true,
+   "tactics": [
+    "omega"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_200",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "field_simp",
+    "aesop",
+    "norm_num [*] at *",
+    "omega",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_202",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "omega",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_211",
+   "proved": true,
+   "tactics": [
+    "aesop",
+    "decide",
+    "rfl",
+    "constructor",
+    "trivial",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_22",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_221",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_232",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_236",
+   "proved": true,
+   "tactics": [
+    "omega"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_24",
+   "proved": true,
+   "tactics": [
+    "aesop",
+    "decide",
+    "rfl",
+    "constructor",
+    "trivial",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_252",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "decide",
+    "rfl",
+    "constructor",
+    "trivial",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_257",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_269",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "omega",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_284",
+   "proved": true,
+   "tactics": [
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_30",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "omega",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_301",
+   "proved": true,
+   "tactics": [
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_303",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_32",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_326",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_33",
+   "proved": true,
+   "tactics": [
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_335",
+   "proved": true,
+   "tactics": [
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_35",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_37",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "decide",
+    "rfl",
+    "constructor",
+    "trivial",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_370",
+   "proved": true,
+   "tactics": [
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_403",
+   "proved": true,
+   "tactics": [
+    "aesop",
+    "decide",
+    "rfl",
+    "constructor",
+    "trivial",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_405",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_412",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_42",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_43",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_45",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_458",
+   "proved": true,
+   "tactics": [
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_461",
+   "proved": true,
+   "tactics": [
+    "aesop"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_466",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "decide",
+    "rfl",
+    "constructor",
+    "trivial",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_48",
+   "proved": true,
+   "tactics": [
+    "nlinarith"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_530",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_543",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_629",
+   "proved": true,
+   "tactics": [
+    "decide",
+    "trivial"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_64",
+   "proved": true,
+   "tactics": [
+    "decide",
+    "trivial"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_640",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "field_simp",
+    "aesop",
+    "norm_num [*] at *",
+    "omega",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_668",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_690",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_709",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_739",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "aesop",
+    "norm_num [*] at *",
+    "decide",
+    "rfl",
+    "constructor",
+    "trivial",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_780",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "mathd_numbertheory_81",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "field_simp",
+    "aesop",
+    "norm_num [*] at *",
+    "omega",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_84",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "ring_nf",
+    "norm_num [*] at *"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_92",
+   "proved": true,
+   "tactics": [
+    "omega",
+    "grind"
+   ]
+  },
+  {
+   "name": "mathd_numbertheory_961",
+   "proved": true,
+   "tactics": [
+    "norm_num",
+    "linarith",
+    "nlinarith",
+    "ring_nf",
+    "field_simp",
+    "aesop",
+    "norm_num [*] at *",
+    "omega",
+    "decide",
+    "rfl",
+    "simp",
+    "simp_all",
+    "constructor",
+    "trivial",
+    "simp [*] at *",
+    "grind",
+    "exact?"
+   ]
+  },
+  {
+   "name": "numbertheory_2dvd4expn",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "numbertheory_aneqprodakp4_anmsqrtanp1eq2",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "numbertheory_nckeqnm1ckpnm1ckm1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "numbertheory_prmdvsneqnsqmodpeq0",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "numbertheory_sqmod3in01d",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "numbertheory_sqmod4in01d",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "numbertheory_sumkmulnckeqnmul2pownm1",
+   "proved": false,
+   "tactics": []
+  },
+  {
+   "name": "numbertheory_xsqpysqintdenomeq",
+   "proved": false,
+   "tactics": []
+  }
+ ],
+ "split": "valid",
+ "header": "import Mathlib\n\nset_option maxHeartbeats 200000\n\nopen BigOperators Real Nat Topology Rat"
+}
