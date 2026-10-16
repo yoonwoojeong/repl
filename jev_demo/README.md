@@ -466,3 +466,43 @@ trained exactly as on dev (`--train none`, labels `claude_labels_core.json` +
    `menu_first`, and costs more per proved lemma than it by at most 50%.
 
 The hypotheses hold only if both primaries pass. Results are reported as computed either way.
+
+### Test results (pre-registered run, 148 held-out lemmas)
+
+GitHub Actions run `38843870153` (`results_exp3/test`, log `results_exp3/test.log`). No errors,
+refusals or cache misses, and the budget cap was not hit. Actual spend $7.5365.
+
+| method | proved | Claude requests | requests per proved | notional USD | USD per proved |
+|---|---|---|---|---|---|
+| claude_search | 96/148 (65%) | 779 | 8.12 | 7.53 | 0.078 |
+| menu_first (no learning) | 88/148 (59%) | 312 | 3.54 | 3.24 | 0.037 |
+| **jev_router** | **96/148 (65%)** | **411** | **4.28** | **4.07** | **0.042** |
+
+Hypotheses, scored as written above:
+
+1. **Efficiency: passed.** `jev_router` made 47.2% fewer Claude requests than `claude_search`
+   (95% paired bootstrap CI 43.2–50.8%), and its notional cost was 45.9% lower (41.0–50.1%). It
+   used fewer requests on 93 lemmas and more on none.
+2. **No meaningful loss: passed.** It proved exactly the same 96 lemmas as `claude_search`
+   (0 vs 0 discordant; difference 0.000, CI 0.000–0.000, above −0.05).
+3. **Jev vs the fixed rule: passed.** `jev_router` proved 8 lemmas that `menu_first` missed and
+   lost none (McNemar p = 0.0078). Its cost per proved lemma was 1.15× `menu_first`'s, within
+   the 1.5× allowed.
+
+**Conclusion.** As a ranker, the Jev-style model does not add value on top of Claude. As a
+**router** that decides when Claude is needed, post-trained on free Lean-generated labels, it
+halves Claude usage on held-out lemmas with no loss of proofs. It also keeps proofs that the
+equivalent fixed rule loses.
+
+Caveats:
+- The router reused `claude_search`'s cached Claude responses wherever it asked at the same
+  state; that is what makes the comparison paired. Its notional USD prices those responses as
+  if billed, so it is the router's standalone cost, but a standalone run would draw fresh
+  samples. Between two dev runs, `claude_search` itself flipped 4 of 82 lemmas.
+- There was one run per method, with one model (`claude-opus-5-5`, effort `medium`) and one
+  budget (64 Lean calls, 16 Claude requests per lemma).
+- The benchmark is core `Nat`/`List` lemmas re-proved without the lemma itself. The audit
+  catches the lemma and exact aliases, not every equivalent restatement.
+
+Total API spend for experiment 3: $30.34 (pilot $0.82, train $7.70, dev 1 $10.26, dev 2 $4.01,
+test $7.54).
