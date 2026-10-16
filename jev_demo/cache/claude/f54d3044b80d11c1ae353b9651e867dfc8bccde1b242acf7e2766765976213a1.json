@@ -1,0 +1,1 @@
+{"tactics": ["intro α β γ f l l' i h", "intros", "intro α β γ f l", "intro α β γ f l l' i h <;> induction l generalizing l' i <;> cases l' <;> cases i <;> simp_all [-List.getElem_zipWith, List.zipWith]"], "usd": 0.010784999999999823}

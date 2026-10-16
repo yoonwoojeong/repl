@@ -1,0 +1,1 @@
+{"tactics": ["intro h j", "intro h j <;> split <;> rename_i hj", "intro h j <;> rw [Nat.testBit, Nat.testBit]", "induction i generalizing b with\n  | zero => intro h j; simp_all\n  | succ i ih => intro h j; grind", "intro h j <;> grind [Nat.testBit_to_div_mod]"], "usd": 0.008853000000000222}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [if_neg]", "have h2 : c ∣ a % c + b % c + 1 := (Nat.dvd_add_left (Nat.dvd_mul_right c (a / c + b / c))).mp ⟨k, by rw [Nat.mul_add]; have := Nat.div_add_mod a c; have := Nat.div_add_mod b c; omega⟩", "have ha := Nat.mod_lt a hc", "grind", "simp only [Nat.add_eq_left, ite_eq_right_iff]", "split", "have h1 := Nat.div_add_mod a c"], "usd": 0.03368899999999986}

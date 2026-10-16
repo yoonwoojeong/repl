@@ -1,0 +1,1 @@
+{"tactics": ["intro inst l₁ l₂", "intro inst l₁ l₂ <;> induction l₁ generalizing l₂ <;> cases l₂ <;> simp_all", "intro inst l₁ l₂ <;> rw [List.lt_iff_lex_lt]", "intro inst l₁ l₂ <;> grind", "intros", "intro inst l₁ l₂ <;> simp [List.lt_iff_lex_lt, List.lex_lt_iff_exists]"], "usd": 0.004688999999999943}

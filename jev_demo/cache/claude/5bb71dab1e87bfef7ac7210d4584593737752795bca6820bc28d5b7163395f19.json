@@ -1,0 +1,1 @@
+{"tactics": ["grind [List.minIdxOn_append, List.minIdxOn_lt_length]", "simp [List.minIdxOn_append]", "cases ys with | nil => simp | cons y ys => simp [List.minIdxOn_append]; split <;> grind [List.minIdxOn_lt_length]", "rcases ys with _ | ⟨y, ys⟩", "rw [List.minIdxOn_append]", "grind"], "usd": 0.011184999999999778}

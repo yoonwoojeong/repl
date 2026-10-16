@@ -1,0 +1,1 @@
+{"tactics": ["exact fun {α} {as bs} => Iff.rfl", "intro α as bs", "intro α as bs <;> simp [Array.perm_iff_toList_perm]", "intro α as bs <;> rfl", "intro α as bs <;> exact Iff.rfl", "intro α as bs <;> simp [Array.Perm]", "intro α as bs <;> constructor <;> intro h <;> exact h"], "usd": 0.0108410000000001}

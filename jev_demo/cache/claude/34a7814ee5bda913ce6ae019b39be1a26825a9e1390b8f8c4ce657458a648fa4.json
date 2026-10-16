@@ -1,0 +1,1 @@
+{"tactics": ["exact h.right_id x", "show x + 0 = x", "simp only [List.foldr]", "exact Std.LawfulRightIdentity.right_id (op := fun x1 x2 : α => x1 + x2) x", "simp [List.foldr, h.right_id]", "have := h.right_id x"], "usd": 0.007464999999999833}

@@ -1,0 +1,1 @@
+{"tactics": ["simp", "intro ⟨i, h, _⟩", ": rintro ⟨i, h, _⟩", "rintro ⟨i, h, _⟩", "intro h", "simp_all", "grind", "rintro ⟨i, h, -⟩ <;> simp at h"], "usd": 0.0029050000000001575}

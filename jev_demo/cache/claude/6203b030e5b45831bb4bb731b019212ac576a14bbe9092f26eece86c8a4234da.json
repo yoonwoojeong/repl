@@ -1,0 +1,1 @@
+{"tactics": ["exact List.getLast_cons (by simpa using h)", "rw [List.getLast_cons (by simpa using h)]", "simp [List.getLast_cons]", "grind [List.getLast_cons]", "rename_i a t; cases t with | nil => simp at h | cons b t => simp [List.getLast_cons_cons]", "simp_all"], "usd": 0.009616999999999987}

@@ -1,0 +1,1 @@
+{"tactics": ["fun_induction List.mergeSort", "rename_i α le", "induction l using List.mergeSort.induct", "fun_induction List.mergeSort <;> simp_all [List.mergeSort]", "fun_induction List.mergeSort <;> grind [List.sorted_merge, List.mergeSort]"], "usd": 0.017725000000000435}

@@ -1,0 +1,1 @@
+{"tactics": ["dsimp only", "simp only [List.foldl_cons]", "simp", "grind", "simp [List.foldl_cons, minOn, maxOn]", "induction tail✝ generalizing head✝ x <;> simp_all [minOn, maxOn]", "rfl"], "usd": 0.007960999999999885}

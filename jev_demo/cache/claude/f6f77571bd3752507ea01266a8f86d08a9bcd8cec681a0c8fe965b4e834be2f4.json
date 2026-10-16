@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "simp_all", "exact absurd h (by simp)", "exact (Nat.not_lt_zero j (by simpa using h)).elim", "grind", "rw [List.drop_nil] at h <;> simp at h"], "usd": 0.006088999999999789}

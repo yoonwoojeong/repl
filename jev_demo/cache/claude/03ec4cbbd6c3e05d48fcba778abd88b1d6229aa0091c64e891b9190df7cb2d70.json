@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [List.foldl]", "grind", "rename_i hd tl", "induction tail✝ generalizing x <;> simp_all", "simp [minOn, maxOn]", "unfold minOn maxOn <;> split <;> simp_all"], "usd": 0.00758100000000006}

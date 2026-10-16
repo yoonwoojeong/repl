@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.fold_zero]", "rfl", "simp", "rw [Nat.fold_zero, Nat.fold_zero]", "simp only [Nat.fold]", "grind"], "usd": 0.0024170000000003355}

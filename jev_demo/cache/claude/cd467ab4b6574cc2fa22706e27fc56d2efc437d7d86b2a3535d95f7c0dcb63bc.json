@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.Nodup.mem_erase_iff h]", "rw [List.Nodup.mem_erase_iff h]", "simp [List.Nodup.erase_eq_filter h]", "rw [List.Nodup.erase_eq_filter h]", "induction l <;> simp_all [List.erase_cons, List.nodup_cons]", "grind [List.Nodup.mem_erase_iff]"], "usd": 0.010456999999999994}

@@ -1,0 +1,1 @@
+{"tactics": ["by_cases hys : ys = []", "rcases ys with _ | ⟨y, ys⟩", "simp [List.minIdxOn_append]", "rw [List.minIdxOn_append]", "grind [List.minIdxOn_append]", "split <;> omega", "cases ys <;> simp_all [List.minIdxOn_append] <;> split <;> omega", "grind"], "usd": 0.010248999999999953}

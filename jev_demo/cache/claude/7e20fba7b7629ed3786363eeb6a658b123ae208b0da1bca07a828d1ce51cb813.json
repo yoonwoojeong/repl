@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨i, h, hx⟩", "intro ⟨i, h, hx⟩", "rintro ⟨i, h, rfl⟩", "intro hex", "grind"], "usd": 0.008916999999999842}

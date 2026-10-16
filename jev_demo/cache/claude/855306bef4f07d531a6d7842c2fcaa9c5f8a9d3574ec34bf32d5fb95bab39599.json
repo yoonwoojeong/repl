@@ -1,0 +1,1 @@
+{"tactics": ["intro trans total a l", "intro trans total a l <;> induction l generalizing a", "intros", "intro trans total", "intro trans total a l <;> grind [List.mergeSort_perm, List.sorted_mergeSort]"], "usd": 0.007545000000000357}

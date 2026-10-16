@@ -1,0 +1,1 @@
+{"tactics": ["intro h₁ h₂", "intro h₁ h₂ <;> rcases l₁ with _ | ⟨a, _ | ⟨b, l₁⟩⟩ <;> rcases l₂ with _ | ⟨c, l₂⟩ <;> simp_all", "rcases l₁ with _ | ⟨a, _ | ⟨b, l₁⟩⟩", "cases l₁", "intro h₁ h₂ <;> cases l₁ <;> cases l₂ <;> simp_all", "intro h₁ h₂ <;> grind [List.mergeSort, List.splitInTwo]"], "usd": 0.01599700000000004}

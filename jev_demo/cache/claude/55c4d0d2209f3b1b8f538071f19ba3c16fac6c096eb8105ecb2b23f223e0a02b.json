@@ -1,0 +1,1 @@
+{"tactics": ["have h2 := congrArg String.toNat? h; simp at h2; omega", "have h2 := congrArg String.toNat? h; simp_all", "cases n with | zero => rfl | succ m => simp [Nat.repr] at h", "simp_all", "grind", "rcases n with _ | m", "have h2 := congrArg String.length h; simp [Nat.repr] at h2", "simp [Nat.repr, Nat.toDigits] at h"], "usd": 0.013237000000000165}

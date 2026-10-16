@@ -1,0 +1,1 @@
+{"tactics": ["exact h a ha", "apply h a ha", "apply h", "simp_all", "grind"], "usd": 0.0019729999999995584}

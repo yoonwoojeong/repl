@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α f i j l h", "apply List.ext_getElem?", "grind [List.getElem?_eraseIdx, List.getElem?_modify]", "simp_all [List.eraseIdx_eq_take_drop_succ, List.modify_eq_take_drop]", "apply List.ext_getElem? <;> intro n <;> simp only [List.getElem?_eraseIdx, List.getElem?_modify] <;> split <;> split <;> grind"], "usd": 0.01338499999999998}

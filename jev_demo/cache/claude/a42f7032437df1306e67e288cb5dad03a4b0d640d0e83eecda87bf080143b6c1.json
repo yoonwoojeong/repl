@@ -1,0 +1,1 @@
+{"tactics": ["intro α p <;> rfl", "intros <;> rfl", "exact fun {α p} => rfl", "intro α p", "intros <;> simp only [List.unattach, List.map_nil]", "intros <;> unfold List.unattach <;> rfl"], "usd": 0.007525000000000226}

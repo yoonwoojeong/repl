@@ -1,0 +1,1 @@
+{"tactics": ["intro α β P f xs H <;> cases xs <;> simp [List.pmap]", "intro α β P f xs H <;> cases xs <;> rfl", "intro α β P f xs H", "intros α β P f xs H <;> cases xs <;> simp", "intro α β P f xs H <;> cases xs <;> simp_all [List.pmap]"], "usd": 0.0036290000000001044}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.mul_comm y z, Nat.add_mul_div_left x y hz]", "rw [Nat.add_comm x (y * z), Nat.mul_comm y z, Nat.mul_add_div hz, Nat.add_comm]", "simp [Nat.mul_comm y z, Nat.add_mul_div_left, hz]", "grind", "simp [Nat.add_comm x, Nat.mul_comm y z, Nat.mul_add_div hz, Nat.add_comm]"], "usd": 0.012969000000000008}

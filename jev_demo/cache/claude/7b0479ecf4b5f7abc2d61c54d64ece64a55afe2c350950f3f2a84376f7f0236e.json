@@ -1,0 +1,1 @@
+{"tactics": ["exact ⟨[], r, rfl⟩", "exact ⟨r, [], (List.append_nil r).symm⟩", "refine ⟨[], r, ?_⟩ <;> rfl", "exists [], r", "simp", "exact ⟨[], r, by simp⟩"], "usd": 0.0029289999999999594}

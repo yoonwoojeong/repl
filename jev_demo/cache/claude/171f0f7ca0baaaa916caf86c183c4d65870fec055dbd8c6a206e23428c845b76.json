@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _", "intros", "intro α inst h", "exact fun {α} _ _ => inferInstanceAs (Std.TransCmp (List.compareLex compare))", "intro α _ _ <;> constructor", "intro α _ _ <;> exact Std.TransCmp.mk (fun h => by simp_all)"], "usd": 0.009104999999999919}

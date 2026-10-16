@@ -1,0 +1,1 @@
+{"tactics": ["grind", "simp_all [List.maxIdxOn]", "unfold List.maxIdxOn", "simp [List.maxIdxOn, List.maxOn] at *", "grind [List.maxIdxOn, List.maxOn]", "induction xs with\n | nil => contradiction\n | cons x xs ih => grind"], "usd": 0.006761000000000017}

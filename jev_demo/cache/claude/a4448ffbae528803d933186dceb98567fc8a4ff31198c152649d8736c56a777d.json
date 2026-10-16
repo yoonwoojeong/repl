@@ -1,0 +1,1 @@
+{"tactics": ["rename_i ih", "congr 1", "refine congrArg (fun g => _ >>= g) ?_", "simp only [map_bind]", "apply bind_congr", "congr 1 <;> funext a <;> cases a <;> simp_all"], "usd": 0.01454500000000003}

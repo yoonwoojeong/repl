@@ -1,0 +1,1 @@
+{"tactics": ["simp_all", "have h2 : n✝ < tail✝.length := by simp at h; omega", "simp at h ⊢ <;> simp [show n✝ < tail✝.length by omega]", "grind", "simp only [List.append_nil] at h ⊢ <;> simp_all"], "usd": 0.011489000000000082}

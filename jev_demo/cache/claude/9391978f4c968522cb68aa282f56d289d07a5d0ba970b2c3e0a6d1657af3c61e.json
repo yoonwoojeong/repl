@@ -1,0 +1,1 @@
+{"tactics": ["split at hx", "by_cases hik : i < k", "refine if hik : i < k then ⟨i, by split at h <;> omega, by omega, by simpa [hik] using hx⟩ else ⟨i+1, by split at h <;> omega, by omega, by simpa [hik] using hx⟩", "grind", "split at h <;> split at hx"], "usd": 0.00958900000000007}

@@ -1,0 +1,1 @@
+{"tactics": ["simp", "grind", "by_cases h : i < n <;> simp_all <;> omega", "simp [Std.Rco.getElem?_toList_eq] <;> omega", "rcases Nat.lt_or_ge i n with h | h <;> simp [h] <;> omega", "simp [Option.getD] <;> split <;> simp_all <;> omega", "constructor"], "usd": 0.013041000000000302}

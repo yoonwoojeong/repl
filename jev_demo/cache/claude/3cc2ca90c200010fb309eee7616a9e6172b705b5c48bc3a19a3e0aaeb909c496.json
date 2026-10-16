@@ -1,0 +1,1 @@
+{"tactics": ["exact List.mem_iff_getElem.mp", "exact fun h => List.getElem_of_mem h", "intro h", "simp [List.mem_iff_getElem]", "grind [List.mem_iff_getElem]"], "usd": 0.006016999999999939}

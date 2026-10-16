@@ -1,0 +1,1 @@
+{"tactics": ["intro α p l f g hf\n  induction l with\n  | nil => simp\n  | cons a l ih => cases a; simp_all", "intro α p l f g hf", ": induction l <;> simp_all", "intros", "intro α p l f g hf <;> induction l <;> simp_all", "intro α p l f g hf <;> induction l <;> grind"], "usd": 0.0036490000000002354}

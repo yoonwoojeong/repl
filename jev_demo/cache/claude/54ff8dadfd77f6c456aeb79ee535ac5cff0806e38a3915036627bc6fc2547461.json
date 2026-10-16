@@ -1,0 +1,1 @@
+{"tactics": ["cases t with\n  | nil => simp [List.min]\n  | cons b t => simp_all [List.min_cons, Std.le_min_iff]", "cases t <;> simp_all [List.min, Std.le_min_iff]", "rcases t with _ | ⟨b, t⟩", "by_cases ht : t = []", "simp only [List.min, List.mem_cons]", "grind [List.min]", "unfold List.min"], "usd": 0.010253000000000068}

@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.dvd_trans h (Nat.mul_dvd_mul (Nat.gcd_dvd_right k n) (Nat.gcd_dvd_right k m))", "exact Nat.dvd_trans h (Nat.mul_dvd_mul (Nat.gcd_dvd_right _ _) (Nat.gcd_dvd_right _ _))", "apply Nat.dvd_trans h", "exact h.trans (Nat.mul_dvd_mul (Nat.gcd_dvd_right k n) (Nat.gcd_dvd_right k m))"], "usd": 0.007488999999999635}

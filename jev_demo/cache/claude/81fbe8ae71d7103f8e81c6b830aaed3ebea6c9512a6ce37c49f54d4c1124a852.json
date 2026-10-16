@@ -1,0 +1,1 @@
+{"tactics": ["induction xs with\n  | nil => rfl\n  | cons x xs ih => simp_all", "simp", "apply List.ext_getElem <;> simp", "simp [List.attachWith, List.pmap_reverse]", "induction xs <;> simp_all", "grind"], "usd": 0.009013000000000382}

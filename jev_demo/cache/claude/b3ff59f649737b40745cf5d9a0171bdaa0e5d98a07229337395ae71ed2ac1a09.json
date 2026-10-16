@@ -1,0 +1,1 @@
+{"tactics": ["apply Array.toList_inj.mp", "simp [← Array.toList_inj, Nat.toList_rio_eq_toList_rco]", "apply Array.ext <;> simp <;> omega", "simp [Nat.toArray_rio_eq_toArray_rco, Nat.toArray_rco_eq_if_roo]", "induction n <;> simp_all [Nat.toArray_rio_succ_right_eq_push, Nat.toArray_rco_succ_right_eq_push]", "grind", "simp"], "usd": 0.011585000000000178}

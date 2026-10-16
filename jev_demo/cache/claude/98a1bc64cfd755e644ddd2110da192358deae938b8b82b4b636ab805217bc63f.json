@@ -1,0 +1,1 @@
+{"tactics": ["intro α op ha l a₁ a₂", "intro α op ha l a₁ a₂ <;> induction l <;> simp_all [ha.assoc]", "intros", "intro α op ha l <;> induction l <;> intros <;> simp_all [Std.Associative.assoc]"], "usd": 0.0031250000000000444}

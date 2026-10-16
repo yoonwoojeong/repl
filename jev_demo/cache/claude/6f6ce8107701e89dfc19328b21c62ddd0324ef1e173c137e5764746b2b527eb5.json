@@ -1,0 +1,1 @@
+{"tactics": ["show List.drop ((l✝.length + 2 + 1) / 2) ((a✝ :: b✝ :: l✝).zipIdx i✝) = (List.drop ((l✝.length + 2 + 1) / 2) (a✝ :: b✝ :: l✝)).zipIdx (i✝ + (l✝.length + 3) / 2)", "simp [List.drop_zipIdx]", "rw [List.drop_zipIdx]", "simp [List.zipIdx_drop]", "simp", "grind [List.drop_zipIdx]"], "usd": 0.017208999999999974}

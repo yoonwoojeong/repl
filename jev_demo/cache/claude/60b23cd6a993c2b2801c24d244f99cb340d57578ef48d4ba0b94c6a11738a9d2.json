@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.gcd_zero_left]", "simp", "rw [Nat.gcd_zero_left, Nat.gcd_zero_left, Nat.gcd_zero_left]", "simp only [Nat.gcd_zero_left]", "grind"], "usd": 0.0028529999999999944}

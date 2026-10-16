@@ -1,0 +1,1 @@
+{"tactics": ["induction l <;> simp_all [ha.assoc]", "induction l with | nil => rfl | cons x xs ih => simp only [List.foldr_cons, ih, ha.assoc]", "induction l with | nil => rfl | cons x xs ih => rw [List.foldr_cons, List.foldr_cons, ih, ha.assoc]", "induction l <;> simp_all [Std.Associative.assoc]", "induction l"], "usd": 0.012680999999999942}

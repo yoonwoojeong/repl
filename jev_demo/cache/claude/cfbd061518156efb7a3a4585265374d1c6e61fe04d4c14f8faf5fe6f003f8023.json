@@ -1,0 +1,1 @@
+{"tactics": ["rename_i ih <;> exact ih (by simp at h; omega)", "apply_assumption", "next ih => exact ih (by simp at h; omega)", "simp_all", "rename_i ih", "simp at h"], "usd": 0.012097000000000024}

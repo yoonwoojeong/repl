@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rfl", "simp only [Nat.mul_zero]", "rw [Nat.mul_zero]", "congr 1", "grind"], "usd": 0.0020609999999998685}

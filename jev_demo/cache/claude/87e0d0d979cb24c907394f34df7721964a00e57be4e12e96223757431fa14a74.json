@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [Nat.Coprime]", "have hm : m = 1 := by simpa [Nat.Coprime] using h", "simp [Nat.Coprime] at h", "rw [Nat.Coprime, Nat.gcd_zero_right] at h", "simp_all [Nat.coprime_zero_right]", "grind [Nat.Coprime]"], "usd": 0.008625000000000327}

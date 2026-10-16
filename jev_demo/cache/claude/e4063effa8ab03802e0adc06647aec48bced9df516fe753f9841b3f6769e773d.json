@@ -1,0 +1,1 @@
+{"tactics": ["exact absurd (by simpa using h) h'", "simp at h <;> omega", "simp_all", "exfalso", "grind", "rw [List.append_nil] at h <;> exact absurd h h'"], "usd": 0.006972999999999896}

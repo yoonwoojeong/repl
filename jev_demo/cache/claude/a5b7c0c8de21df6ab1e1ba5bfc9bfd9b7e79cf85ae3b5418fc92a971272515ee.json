@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l x y h", "induction ‹List _› <;> simp_all [List.contains_cons, BEq.congr_left ‹_›]", "induction ‹List _› with\n  | nil => rfl\n  | cons a t ih => simp [List.contains_cons, ih, BEq.congr_left ‹_›]", "simp only [List.contains_eq_any_beq, BEq.congr_left ‹_›]", "induction ‹List _› <;> simp_all [List.contains_cons]"], "usd": 0.011165000000000092}

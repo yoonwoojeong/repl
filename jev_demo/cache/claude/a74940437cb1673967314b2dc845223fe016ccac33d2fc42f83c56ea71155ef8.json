@@ -1,0 +1,1 @@
+{"tactics": ["intro n a h", "exact fun h => Nat.lt_of_lt_of_le Nat.lt_two_pow_self (Nat.pow_le_pow_left h _)", "intro n a h <;> induction n <;> simp_all [Nat.pow_succ] <;> grind", "intro n a h <;> exact Nat.lt_of_lt_of_le (Nat.lt_two_pow_self) (Nat.pow_le_pow_left h n)", "intro n <;> induction n <;> intro a h <;> simp_all [Nat.pow_succ] <;> grind"], "usd": 0.018841000000000108}

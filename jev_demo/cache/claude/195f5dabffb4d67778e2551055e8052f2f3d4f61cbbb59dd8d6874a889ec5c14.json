@@ -1,0 +1,1 @@
+{"tactics": ["cases xs with\n  | nil => exact absurd rfl h\n  | cons a t => cases t with\n    | nil => exact absurd rfl h\n    | cons b t => rfl", "rcases xs with _ | ⟨a, _ | ⟨b, t⟩⟩ <;> first | exact absurd rfl h | rfl", "cases xs", "match xs, h with\n  | a :: b :: t, _ => rfl"], "usd": 0.011957000000000217}

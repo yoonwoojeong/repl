@@ -1,0 +1,1 @@
+{"tactics": ["rw [dif_neg (by omega)]", "simp only [dif_neg (show ¬ i < tail✝.length + 1 by omega)]", "split <;> first | omega | rfl", "have hn : ¬ i < tail✝.length + 1 := by omega", "split", "simp [show ¬ i < tail✝.length + 1 by omega]"], "usd": 0.004305000000000003}

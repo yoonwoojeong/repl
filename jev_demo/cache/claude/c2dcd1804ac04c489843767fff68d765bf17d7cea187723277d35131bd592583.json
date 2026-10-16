@@ -1,0 +1,1 @@
+{"tactics": ["intro a b", "intro a b <;> induction a generalizing b <;> cases b <;> simp_all [Std.OrientedCmp.eq_swap (cmp := (compare : α✝ → α✝ → Ordering))]", "intro a b <;> induction a generalizing b <;> cases b <;> simp_all [compare, List.compareLex, Std.OrientedOrd.eq_swap]", "intro a <;> induction a <;> intro b <;> cases b <;> grind", "grind"], "usd": 0.011273000000000089}

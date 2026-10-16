@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => Nat.dvd_trans (Nat.dvd_gcd (Nat.dvd_refl k) h) (Nat.gcd_mul_dvd_mul_gcd k n m)", "intro h", "exact fun h => (Nat.gcd_eq_left h) ▸ Nat.gcd_mul_dvd_mul_gcd k n m", "intro h <;> exact Nat.dvd_trans (Nat.dvd_gcd (Nat.dvd_refl k) h) (Nat.gcd_mul_dvd_mul_gcd k n m)"], "usd": 0.014764999999999695}

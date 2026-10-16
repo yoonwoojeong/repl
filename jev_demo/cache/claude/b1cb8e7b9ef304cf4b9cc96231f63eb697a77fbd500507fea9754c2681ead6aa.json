@@ -1,0 +1,1 @@
+{"tactics": ["intro i h₁ h₂", "intro i h₁ h₂ <;> simp [List.getElem_reverse]", "intro i h₁ h₂ <;> apply Subtype.ext <;> simp [List.getElem_reverse]", "simp [List.getElem_reverse, List.getElem_attachWith]", "intros <;> simp_all [List.getElem_reverse]", "intro i h₁ h₂ <;> grind"], "usd": 0.009361000000000175}

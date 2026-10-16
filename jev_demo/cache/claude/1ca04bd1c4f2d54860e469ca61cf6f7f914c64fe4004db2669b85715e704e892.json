@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp_all", "rename_i x xs f", "simp only []", "split", "simp", "grind"], "usd": 0.00928899999999988}

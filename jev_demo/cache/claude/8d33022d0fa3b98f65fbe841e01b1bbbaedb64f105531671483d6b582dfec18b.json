@@ -1,0 +1,1 @@
+{"tactics": ["rintro α l₁ l₂ ⟨t, rfl⟩ <;> exact List.sublist_append_right _ _", "rintro α l₁ l₂ ⟨t, rfl⟩ <;> simp", "rintro α l₁ l₂ ⟨t, rfl⟩", "intro α l₁ l₂ h", "rintro α l₁ l₂ ⟨t, rfl⟩ <;> exact (List.Sublist.refl l₁).append_left' t"], "usd": 0.012784999999999998}

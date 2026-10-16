@@ -1,0 +1,1 @@
+{"tactics": ["intro h1 h2", "grind", "simp", "cases l₁ <;> simp_all", "intro h1 h2 h3 <;> simp_all", "rintro h1 h2 h3"], "usd": 0.011261000000000188}

@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.toArray_rio_eq_range]", "simp [← Array.getElem_toList, Nat.toList_rio_eq_range]", "rw [Nat.toArray_rio_eq_range] at _h ⊢ <;> simp", "simp only [← Array.getElem_toList, Std.Rio.toList_toArray, Nat.toList_rio_eq_range, List.getElem_range]", "grind [Nat.toArray_rio_eq_range]", "simp"], "usd": 0.01115300000000019}

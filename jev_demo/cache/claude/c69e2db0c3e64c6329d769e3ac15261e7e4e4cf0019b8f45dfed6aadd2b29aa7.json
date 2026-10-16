@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ i h", "intros; split <;> simp_all [List.getElem_append_left, List.getElem_append_right]", "intro α l₁ l₂ i h; split <;> rename_i h' <;> simp [List.getElem_append_left h', List.getElem_append_right (Nat.le_of_not_lt h')]", "intros; grind", "intros; split <;> grind", "intro α l₁ l₂ i h <;> split"], "usd": 0.004377000000000075}

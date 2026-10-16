@@ -1,0 +1,1 @@
+{"tactics": ["exact hnil x_1", "simpa [List.flatMapM.loop] using hnil x_1", "rw [List.flatMapM.loop]", "unfold List.flatMapM.loop", "simp only [List.flatMapM.loop]", "show motive [] x_1 (pure x_1.reverse.flatten)"], "usd": 0.008836999999999984}

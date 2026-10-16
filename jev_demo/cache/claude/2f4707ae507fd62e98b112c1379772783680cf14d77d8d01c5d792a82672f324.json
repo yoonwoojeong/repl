@@ -1,0 +1,1 @@
+{"tactics": ["intro α inst a l", "intros <;> exact List.countP_le_length", "intro α inst a l <;> exact List.countP_le_length (p := (· == a))", "intro α inst a l <;> induction l with | nil => rfl | cons x xs ih => (rw [List.count_cons]; split <;> simp <;> omega)", "intro α inst a l <;> unfold List.count <;> exact List.countP_le_length"], "usd": 0.008965000000000112}

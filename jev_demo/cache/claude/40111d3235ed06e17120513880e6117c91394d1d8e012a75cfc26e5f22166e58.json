@@ -1,0 +1,1 @@
+{"tactics": ["rename_i a b h", "rename_i a b h <;> rcases Nat.eq_zero_or_pos a with rfl | ha <;> simp_all [Nat.zero_le]", "rename_i a b h <;> rcases Nat.eq_zero_or_pos a with rfl | ha <;> [exact Nat.zero_le _; simpa using Nat.pow_le_pow_right ha h]", "rename_i a b h <;> induction b <;> simp_all [Nat.pow_succ]", "intros", "grind"], "usd": 0.01146500000000028}

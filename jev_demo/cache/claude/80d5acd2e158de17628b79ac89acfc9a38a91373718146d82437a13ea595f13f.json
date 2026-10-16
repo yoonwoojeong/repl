@@ -1,0 +1,1 @@
+{"tactics": ["apply_assumption", "solve_by_elim", "rename_i a t n hlt ih", "exact (by assumption : ∀ {i : Nat} (h : i < _), _) h", "simp_all", "grind"], "usd": 0.010189000000000004}

@@ -1,0 +1,1 @@
+{"tactics": ["cases l <;> simp_all [List.replace_cons]", "rcases l with _ | ⟨x, xs⟩ <;> simp_all [List.replace_cons]", "cases l with\n  | nil => simp at h\n  | cons x xs => simp_all [List.replace_cons]", "grind [List.replace_cons]", "cases l <;> simp_all [List.replace]", "cases l"], "usd": 0.010120999999999825}

@@ -1,0 +1,1 @@
+{"tactics": ["cases l with\n  | nil => exact absurd rfl hl\n  | cons a as => ?_", "rcases l with _ | ⟨a, as⟩", "cases l", "obtain ⟨a, as, rfl⟩ : ∃ a as, l = a :: as := by cases l <;> simp_all", "cases l with\n  | nil => exact absurd rfl hl\n  | cons a as =>\n    induction as generalizing a <;> simp_all [Std.le_min_iff]"], "usd": 0.01106499999999988}

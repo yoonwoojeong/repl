@@ -1,0 +1,1 @@
+{"tactics": ["exact fun bs => hnil bs", "exact hnil", "intro bs", "simp only [List.flatMapM.loop]", "simp [List.flatMapM.loop, hnil]", "intro x_1 <;> unfold List.flatMapM.loop <;> exact hnil x_1"], "usd": 0.008361000000000063}

@@ -1,0 +1,1 @@
+{"tactics": ["exact fun e => h e.symm", "intro e", "exact Ne.symm h", "simp_all", "grind", "exact fun hab => h hab.symm", "intro hab <;> exact h hab.symm", "exact (Ne.symm h)"], "usd": 0.0027129999999999654}

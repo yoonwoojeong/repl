@@ -1,0 +1,1 @@
+{"tactics": ["intros; exact List.minIdxOn_append _ _", "intros; simp [List.minIdxOn_append]", "intro β α _ _ _ xs ys f hxs hys", "intros; rw [List.minIdxOn_append]", "intros; simp only [List.minIdxOn, List.maxOn] at *", "intros; grind [List.minIdxOn_append]"], "usd": 0.011544999999999916}

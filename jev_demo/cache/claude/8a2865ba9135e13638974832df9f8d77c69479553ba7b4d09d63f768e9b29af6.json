@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Nat.gcd_zero_left]", "intro h", "simp only [Nat.gcd_zero_left]", "intro h <;> simpa using h", "grind"], "usd": 0.0023450000000000415}

@@ -1,0 +1,1 @@
+{"tactics": ["rcases l with _ | ⟨a, _ | ⟨b, xs⟩⟩", "match l, h with | [], _ => simp | [a], _ => simp | a :: b :: xs, h => ?_", "cases l", "unfold List.mergeSort", "rw [List.mergeSort.eq_def]", "split"], "usd": 0.012560999999999822}

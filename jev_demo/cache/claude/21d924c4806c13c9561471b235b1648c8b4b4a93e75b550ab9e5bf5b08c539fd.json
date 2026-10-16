@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "intro h <;> cases m <;> simp_all", "intro h <;> simp [Nat.repr] at h <;> omega", "grind", "simp [Nat.repr]", "intro h <;> cases m with | zero => rfl | succ k => simp [Nat.repr, Nat.toDigits] at h"], "usd": 0.00898500000000002}

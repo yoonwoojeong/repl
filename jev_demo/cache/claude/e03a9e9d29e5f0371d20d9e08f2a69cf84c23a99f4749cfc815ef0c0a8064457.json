@@ -1,0 +1,1 @@
+{"tactics": ["obtain rfl : i = 0 := by omega", "cases Nat.le_zero.mp hij", "have hi : i = 0 := by omega", "cases Nat.le_zero.mp hij <;> cases l <;> simp_all", "simp [Nat.le_zero.mp hij, List.eraseIdx_zero]", "grind"], "usd": 0.010425000000000129}

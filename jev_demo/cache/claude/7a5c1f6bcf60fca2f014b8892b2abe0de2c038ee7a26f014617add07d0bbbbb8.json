@@ -1,0 +1,1 @@
+{"tactics": ["intro a ha", "grind", "intro a ha <;> rcases ha with rfl | ha <;> grind", "simp_all [List.min_le_iff]", "intro a ha <;> simp only [List.min_le_iff] <;> exact ⟨a, by simp [ha], Std.le_refl a⟩", "intro a ha <;> rcases ha with rfl | ha <;> simp_all [List.min]"], "usd": 0.01003699999999963}

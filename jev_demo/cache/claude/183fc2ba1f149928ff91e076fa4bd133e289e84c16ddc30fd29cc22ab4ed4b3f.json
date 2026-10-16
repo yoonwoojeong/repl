@@ -1,0 +1,1 @@
+{"tactics": ["refine ⟨l₁, l₂, h, ?_, ?_⟩", "have hp := List.mergeSort_perm (a :: l) le", "have hs := List.sorted_mergeSort trans total (a :: l)", "have hp2 := List.mergeSort_perm l le", "rw [← List.mergeSort_zipIdx]", "grind"], "usd": 0.014048999999999978}

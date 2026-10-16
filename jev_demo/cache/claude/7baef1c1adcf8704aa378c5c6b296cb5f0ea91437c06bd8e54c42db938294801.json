@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.toArray_rio_eq_toArray_rco, Nat.getElem_toArray_rco]", "simp only [← Array.getElem_toList, Nat.toList_rio_eq_toList_rco, Nat.getElem_toList_rco] <;> omega", "simp [← Array.getElem_toList, Nat.toList_rio_eq_toList_rco]", "rw [← Array.getElem_toList]", "simp [Std.Rio.toArray, Std.Rio.toList]", "grind"], "usd": 0.009189000000000114}

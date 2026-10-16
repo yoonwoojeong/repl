@@ -1,0 +1,1 @@
+{"tactics": ["induction xs generalizing i with\n  | nil => simp at h\n  | cons x xs ih => cases i <;> simp_all [List.getElem_cons_succ]", "simp [← List.head_drop]", "grind", "simp", "rw [List.getElem_zero, List.head_drop]", "induction xs generalizing i"], "usd": 0.0175329999999998}

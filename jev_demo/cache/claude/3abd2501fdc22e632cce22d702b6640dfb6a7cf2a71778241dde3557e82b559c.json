@@ -1,0 +1,1 @@
+{"tactics": ["have h1 : (a + b + 1) % c = 0 := by rw [hk, Nat.mul_mod_right]", "have ha := Nat.mod_lt a hc", "have h2 : (a % c + b % c + 1) % c = 0 := by rw [← hk.symm ▸ Nat.mul_mod_right c k]; simp [Nat.add_mod]", "by_contra hcon", "grind", "have hdvd : c ∣ a + b + 1 := ⟨k, hk⟩"], "usd": 0.026893000000000278}

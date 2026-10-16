@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.mul_add_lt_is_or h, Nat.testBit_or]", "by_cases hj : j < i", "split", "simp [Nat.mul_add_lt_is_or h, Nat.testBit_or, Nat.mul_comm, Nat.testBit_mul_two_pow]", "rw [Nat.testBit_to_div_mod, Nat.testBit_to_div_mod]", "grind"], "usd": 0.02092100000000041}

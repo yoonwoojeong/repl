@@ -1,0 +1,1 @@
+{"tactics": ["induction t generalizing a with\n  | nil => simp [List.min]\n  | cons b t ih => simp_all [List.min, List.foldl, Std.le_min_iff, and_assoc]", "simp only [List.min]", "unfold List.min", "induction t generalizing a", "induction t generalizing a <;> simp_all [List.min, List.foldl, Std.le_min_iff]", "grind [List.min, Std.le_min_iff]"], "usd": 0.012592999999999854}

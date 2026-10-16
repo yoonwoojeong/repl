@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α le l₁ l₂ h₁ h₂", "unfold List.mergeSort", "rw [List.mergeSort.eq_def]", "simp only [List.mergeSort]", "grind [List.mergeSort]", "simp_all [List.mergeSort]"], "usd": 0.010304999999999787}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [← List.map_snd_add_zipIdx_eq_zipIdx]", "simp [← List.map_snd_add_zipIdx_eq_zipIdx]", "ext1 <;> simp [List.zipIdx_eq_zip_range']", "simp [List.zipIdx_eq_zip_range', List.zip_map_right]", "induction l <;> simp_all [List.zipIdx_cons]", "grind [List.map_snd_add_zipIdx_eq_zipIdx]"], "usd": 0.012336999999999598}

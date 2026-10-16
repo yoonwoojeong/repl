@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.merge]", "split <;> simp [List.merge]", "cases le a c <;> simp [List.merge]", "split <;> rfl", "rfl", "simp", "grind [List.merge]"], "usd": 0.0025170000000001025}

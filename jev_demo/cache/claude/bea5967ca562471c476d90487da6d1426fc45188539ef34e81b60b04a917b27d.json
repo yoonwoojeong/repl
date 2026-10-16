@@ -1,0 +1,1 @@
+{"tactics": ["intro i j h", "rintro (_ | i) j h", "intro i j h <;> cases i <;> simp only [List.drop_zero, List.drop_succ_cons, Nat.zero_add, Nat.succ_add, List.getElem_cons_succ] <;> simp_all only", "intro i j h <;> cases i <;> simp_all only [List.drop_zero, List.drop_succ_cons, Nat.zero_add, Nat.succ_add, List.getElem_cons_succ]", "grind"], "usd": 0.01321299999999992}

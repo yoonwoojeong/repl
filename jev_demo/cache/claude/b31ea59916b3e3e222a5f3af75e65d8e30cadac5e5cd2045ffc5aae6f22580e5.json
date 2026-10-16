@@ -1,0 +1,1 @@
+{"tactics": ["induction r generalizing l₁", "intro h", "generalize hl : l₁ ++ l₂ = l", "induction r generalizing l₁ l₂"], "usd": 0.00838899999999998}

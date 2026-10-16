@@ -1,0 +1,1 @@
+{"tactics": ["cases l with\n| nil => simp at h\n| cons a t => cases t with\n  | nil => simp at h\n  | cons b u => simp [List.getLast_cons]", "match l, h with\n| a :: b :: t, _ => simp [List.getLast_cons]", "rcases l with _ | ⟨a, _ | ⟨b, t⟩⟩ <;> simp_all [List.getLast_cons]", "cases l <;> simp_all", "rcases l with _ | ⟨a, t⟩", "grind"], "usd": 0.004541000000000128}

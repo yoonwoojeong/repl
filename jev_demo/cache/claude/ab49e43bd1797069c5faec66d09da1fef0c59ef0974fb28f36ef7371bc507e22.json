@@ -1,0 +1,1 @@
+{"tactics": ["exact Std.lt_of_le_of_lt (List.le_apply_maxOn_of_mem hx) hlt", "grind [List.le_apply_maxOn_of_mem]", "have hle := List.le_apply_maxOn_of_mem (f := f) hx", "grind [List.apply_le_apply_maxOn_of_mem]", "exact Std.lt_of_le_of_lt (List.apply_le_apply_maxOn_of_mem hx) hlt", "grind"], "usd": 0.011553000000000035}

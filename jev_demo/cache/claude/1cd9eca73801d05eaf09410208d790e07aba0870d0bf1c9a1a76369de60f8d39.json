@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.minOn_cons]", "simp [List.minOn_cons, h]", "simp [List.minOn, h]", "unfold List.minOn", "grind [List.minOn_cons]", "cases xs with | nil => contradiction | cons y ys => rfl", "simp_all [List.minOn]"], "usd": 0.007441000000000031}

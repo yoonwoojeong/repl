@@ -1,0 +1,2120 @@
+fitting on 0 gold-replay theorems + 142/5930 label examples
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+claude_search     core_List_IsPrefix_le_countP PROVED calls=3 21.6s timeouts=0 claude=3 usd=0.036
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+claude_search     core_List_IsSuffix_sublist   PROVED calls=1 6.5s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0190 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0226 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0300 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0030 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0118 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0071 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0065 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0061 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0302 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0031 stop_reason=end_turn cache_read=1265
+claude_search     core_List_Mem_brecOn         failed calls=64 100.9s timeouts=0 claude=11 usd=0.142
+claude: billed usd=0.0195 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0233 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0165 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0172 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0198 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0243 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0164 stop_reason=end_turn cache_read=1265
+claude_search     core_List_MergeSort_Internal_splitInTwo_cons_cons_zipIdx_snd failed calls=64 74.9s timeouts=0 claude=8 usd=0.150
+claude: billed usd=0.0122 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0105 stop_reason=end_turn cache_read=1265
+claude_search     core_List_Nodup_not_mem_erase PROVED calls=2 12.0s timeouts=0 claude=2 usd=0.023
+claude: billed usd=0.0045 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0059 stop_reason=end_turn cache_read=1265
+claude_search     core_List_Pairwise_iff       PROVED calls=2 6.9s timeouts=0 claude=2 usd=0.010
+claude: billed usd=0.0121 stop_reason=end_turn cache_read=1265
+claude_search     core_List_Pairwise_imp_mem   PROVED calls=1 5.9s timeouts=0 claude=1 usd=0.012
+claude: billed usd=0.0137 stop_reason=end_turn cache_read=1265
+claude_search     core_List_Perm_append_right  PROVED calls=1 7.1s timeouts=0 claude=1 usd=0.014
+claude: billed usd=0.0121 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0288 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0300 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0174 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0133 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0260 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0122 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0390 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0184 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0207 stop_reason=end_turn cache_read=1265
+claude_search     core_List_Sublist_brecOn     failed calls=64 137.6s timeouts=0 claude=13 usd=0.248
+claude: billed usd=0.0079 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0131 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0067 stop_reason=end_turn cache_read=1265
+claude_search     core_List_all_bne'           PROVED calls=5 16.7s timeouts=0 claude=3 usd=0.028
+claude: billed usd=0.0046 stop_reason=end_turn cache_read=1265
+claude_search     core_List_all_takeWhile      PROVED calls=4 4.0s timeouts=0 claude=1 usd=0.005
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0153 stop_reason=end_turn cache_read=1265
+claude_search     core_List_append_of_mem      PROVED calls=2 14.7s timeouts=0 claude=2 usd=0.025
+claude: billed usd=0.0080 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0132 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0067 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0127 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0178 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0104 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0124 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0044 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0040 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0122 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0178 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0046 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0029 stop_reason=end_turn cache_read=1265
+claude_search     core_List_append_sublist_iff failed calls=64 88.8s timeouts=0 claude=16 usd=0.147
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0118 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0110 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0043 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0024 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0106 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0109 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0071 stop_reason=end_turn cache_read=1265
+claude_search     core_List_apply_maxOn_lt_iff failed calls=64 65.1s timeouts=0 claude=14 usd=0.110
+claude: billed usd=0.0093 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0138 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=1265
+claude_search     core_List_contains_congr     PROVED calls=18 32.1s timeouts=0 claude=5 usd=0.055
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude_search     core_List_count_cons         PROVED calls=1 5.8s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0057 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0109 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0158 stop_reason=end_turn cache_read=1265
+claude_search     core_List_count_filter       PROVED calls=4 17.7s timeouts=0 claude=3 usd=0.032
+claude: billed usd=0.0131 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0149 stop_reason=end_turn cache_read=1265
+claude_search     core_List_count_filterMap    PROVED calls=2 15.5s timeouts=0 claude=2 usd=0.028
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude_search     core_List_count_le_length    PROVED calls=2 12.1s timeouts=0 claude=2 usd=0.019
+claude: billed usd=0.0031 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude_search     core_List_decide_mem_cons    PROVED calls=36 13.9s timeouts=0 claude=4 usd=0.014
+claude: billed usd=0.0136 stop_reason=end_turn cache_read=1265
+claude_search     core_List_dropWhile_suffix   PROVED calls=1 7.1s timeouts=0 claude=1 usd=0.014
+claude: billed usd=0.0212 stop_reason=end_turn cache_read=1265
+claude_search     core_List_drop_drop          PROVED calls=1 10.2s timeouts=0 claude=1 usd=0.021
+claude: billed usd=0.0122 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0125 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0288 stop_reason=end_turn cache_read=1265
+claude_search     core_List_drop_take          PROVED calls=3 27.7s timeouts=0 claude=3 usd=0.053
+claude: billed usd=0.0056 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0134 stop_reason=end_turn cache_read=1265
+claude_search     core_List_eraseIdx_modify_of_gt PROVED calls=3 17.9s timeouts=0 claude=3 usd=0.028
+claude: billed usd=0.0046 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0124 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+claude_search     core_List_erase_replicate_ne PROVED calls=4 11.8s timeouts=0 claude=3 usd=0.020
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0145 stop_reason=end_turn cache_read=1265
+claude_search     core_List_filterMapM_loop_eq PROVED calls=3 19.3s timeouts=0 claude=3 usd=0.036
+claude: billed usd=0.0120 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0017 stop_reason=end_turn cache_read=1265
+claude_search     core_List_finRange_succ      PROVED calls=2 8.1s timeouts=0 claude=2 usd=0.014
+claude: billed usd=0.0130 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0147 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0123 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0122 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0049 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0165 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0133 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0146 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=1265
+claude_search     core_List_flatMapM_loop_induct_unfolding failed calls=64 89.2s timeouts=0 claude=16 usd=0.166
+claude: billed usd=0.0063 stop_reason=end_turn cache_read=1265
+claude_search     core_List_flatMapM_wfParam   PROVED calls=1 4.1s timeouts=0 claude=1 usd=0.006
+claude: billed usd=0.0110 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0149 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0149 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0117 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0118 stop_reason=end_turn cache_read=1265
+claude_search     core_List_foldrM_filterMap   failed calls=64 49.0s timeouts=0 claude=7 usd=0.079
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0031 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0104 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0105 stop_reason=end_turn cache_read=1265
+claude_search     core_List_foldrRecOn_cons    failed calls=64 32.5s timeouts=0 claude=8 usd=0.051
+claude: billed usd=0.0031 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0127 stop_reason=end_turn cache_read=1265
+claude_search     core_List_foldr_assoc        PROVED calls=2 9.3s timeouts=0 claude=2 usd=0.016
+claude: billed usd=0.0071 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0039 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0074 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem?_insert_zero PROVED calls=16 19.8s timeouts=0 claude=5 usd=0.030
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0093 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0121 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0044 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0142 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0134 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0024 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0104 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0070 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0100 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0089 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem_append     failed calls=64 83.5s timeouts=0 claude=16 usd=0.142
+claude: billed usd=0.0099 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0105 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0040 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0051 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0049 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0155 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0066 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0069 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0069 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0030 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0043 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0030 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem_append_right failed calls=64 55.2s timeouts=0 claude=13 usd=0.083
+claude: billed usd=0.0043 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0127 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0024 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0024 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0065 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0060 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem_append_right' failed calls=64 34.7s timeouts=0 claude=11 usd=0.048
+claude: billed usd=0.0279 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem_cons_drop  PROVED calls=1 14.8s timeouts=0 claude=1 usd=0.028
+claude: billed usd=0.0135 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0117 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0202 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0065 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0129 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0061 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0018 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0175 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0132 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0018 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem_drop       failed calls=64 66.4s timeouts=0 claude=12 usd=0.112
+claude: billed usd=0.0122 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0133 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0129 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0031 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0104 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0099 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem_eraseIdx_of_ge failed calls=64 46.9s timeouts=0 claude=10 usd=0.077
+claude: billed usd=0.0089 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0113 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0144 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0059 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0048 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0077 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0119 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0136 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0059 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem_insert     failed calls=64 70.8s timeouts=0 claude=12 usd=0.115
+claude: billed usd=0.0081 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0073 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0079 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0093 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0111 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0030 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0074 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0131 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0016 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem_replace_of_ne failed calls=64 68.6s timeouts=0 claude=15 usd=0.112
+claude: billed usd=0.0150 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0176 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0062 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0043 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0077 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0169 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem_zipIdx     failed calls=64 53.8s timeouts=0 claude=11 usd=0.086
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0174 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0176 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0070 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0057 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0050 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getElem_zipWith    failed calls=64 56.4s timeouts=0 claude=9 usd=0.098
+claude: billed usd=0.0076 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0071 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0052 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0100 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0048 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getLast_mapIdx     failed calls=64 34.0s timeouts=0 claude=9 usd=0.054
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0045 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0076 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0020 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+claude_search     core_List_getLast_tail       failed calls=64 32.3s timeouts=0 claude=8 usd=0.049
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+claude_search     core_List_head?_range        PROVED calls=1 3.0s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0081 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0020 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0052 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0059 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0050 stop_reason=end_turn cache_read=1265
+claude_search     core_List_head_append_right  failed calls=64 26.8s timeouts=0 claude=9 usd=0.036
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0038 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0120 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0062 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0125 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0024 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0100 stop_reason=end_turn cache_read=1265
+claude_search     core_List_head_dropLast      failed calls=64 46.6s timeouts=0 claude=10 usd=0.077
+claude: billed usd=0.0099 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude_search     core_List_idxOf_le_length    PROVED calls=3 11.4s timeouts=0 claude=2 usd=0.022
+claude: billed usd=0.0038 stop_reason=end_turn cache_read=1265
+claude_search     core_List_insert_of_not_mem  PROVED calls=1 3.2s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0126 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0079 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0076 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0037 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0113 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0085 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0054 stop_reason=end_turn cache_read=1265
+claude_search     core_List_instTransOrd       PROVED calls=53 67.5s timeouts=0 claude=12 usd=0.102
+claude: billed usd=0.0138 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0057 stop_reason=end_turn cache_read=1265
+claude_search     core_List_isPrefixOf_replicate PROVED calls=5 14.5s timeouts=0 claude=3 usd=0.024
+claude: billed usd=0.0109 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude_search     core_List_isSome_minOn?_of_mem PROVED calls=2 10.7s timeouts=0 claude=2 usd=0.020
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0110 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0024 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0073 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0072 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0126 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0113 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0111 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0089 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0118 stop_reason=end_turn cache_read=1265
+claude_search     core_List_le_min_iff         failed calls=64 83.7s timeouts=0 claude=16 usd=0.135
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0094 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0111 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0064 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0031 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude_search     core_List_left_le_minIdxOn_append failed calls=64 64.0s timeouts=0 claude=15 usd=0.109
+claude: billed usd=0.0076 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0175 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0203 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0136 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0070 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0070 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0094 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0047 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0120 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0114 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0126 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0089 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0113 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0063 stop_reason=end_turn cache_read=1265
+claude_search     core_List_lt_iff_exists      failed calls=64 118.9s timeouts=0 claude=16 usd=0.167
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude_search     core_List_map_id''           PROVED calls=3 5.6s timeouts=0 claude=2 usd=0.007
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0020 stop_reason=end_turn cache_read=1265
+claude_search     core_List_map_id_fun         failed calls=64 12.3s timeouts=0 claude=5 usd=0.011
+claude: billed usd=0.0140 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0146 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0133 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+claude_search     core_List_map_unattach       failed calls=64 38.8s timeouts=0 claude=6 usd=0.059
+claude: billed usd=0.0037 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0081 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0131 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0070 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0038 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0117 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0082 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0068 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude_search     core_List_maxIdxOn_append    failed calls=64 69.7s timeouts=0 claude=16 usd=0.116
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0029 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0013 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0080 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0030 stop_reason=end_turn cache_read=1265
+claude_search     core_List_maxIdxOn_singleton failed calls=64 20.7s timeouts=0 claude=7 usd=0.024
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0072 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0094 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0074 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0074 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0085 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0085 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0072 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0070 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0080 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0076 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0093 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0068 stop_reason=end_turn cache_read=1265
+claude_search     core_List_maxOn_cons         failed calls=64 75.4s timeouts=0 claude=16 usd=0.124
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0015 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0016 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0039 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0052 stop_reason=end_turn cache_read=1265
+claude_search     core_List_max_congr_simp     failed calls=64 29.0s timeouts=0 claude=11 usd=0.031
+claude: billed usd=0.0062 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0065 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0052 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0050 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0052 stop_reason=end_turn cache_read=1265
+claude_search     core_List_max_cons_cons      failed calls=64 23.7s timeouts=0 claude=7 usd=0.033
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0037 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0063 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0121 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0095 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0044 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0029 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0105 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0060 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0089 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0113 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0070 stop_reason=end_turn cache_read=1265
+claude_search     core_List_mem_eraseIdx_iff_getElem failed calls=64 70.0s timeouts=0 claude=15 usd=0.117
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0186 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0160 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0063 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0162 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0095 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0154 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0054 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0146 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0111 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0283 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+claude_search     core_List_mergeSort_append   failed calls=64 90.8s timeouts=0 claude=14 usd=0.171
+claude: billed usd=0.0049 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0185 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0201 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0038 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0065 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0075 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0219 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0166 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0140 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0205 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0171 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0194 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0139 stop_reason=end_turn cache_read=1265
+claude_search     core_List_mergeSort_cons     failed calls=64 113.2s timeouts=0 claude=16 usd=0.220
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0095 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0098 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0047 stop_reason=end_turn cache_read=1265
+claude_search     core_List_minIdxOn?_cons     PROVED calls=19 20.6s timeouts=0 claude=5 usd=0.037
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+claude_search     core_List_minIdxOn?_nil      PROVED calls=1 2.8s timeouts=0 claude=1 usd=0.003
+claude: billed usd=0.0113 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0134 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0121 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0098 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0136 stop_reason=end_turn cache_read=1265
+claude_search     core_List_minOn_replicate    PROVED calls=20 35.1s timeouts=0 claude=5 usd=0.060
+claude: billed usd=0.0104 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0134 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0099 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0020 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0100 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0147 stop_reason=end_turn cache_read=1265
+claude_search     core_List_min_le_of_mem      failed calls=64 37.1s timeouts=0 claude=7 usd=0.063
+claude: billed usd=0.0123 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0201 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0175 stop_reason=end_turn cache_read=1265
+claude_search     core_List_modifyTailIdx_modifyTailIdx PROVED calls=17 29.4s timeouts=0 claude=4 usd=0.054
+claude: billed usd=0.0121 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0163 stop_reason=end_turn cache_read=1265
+claude_search     core_List_pair_sublist_mergeSort PROVED calls=4 20.6s timeouts=0 claude=3 usd=0.040
+claude: billed usd=0.0166 stop_reason=end_turn cache_read=1265
+claude_search     core_List_pairwise_append_comm PROVED calls=1 7.2s timeouts=0 claude=1 usd=0.017
+claude: billed usd=0.0142 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0268 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0175 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0200 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0078 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0126 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0221 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0151 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0177 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0171 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0198 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0179 stop_reason=end_turn cache_read=1265
+claude_search     core_List_pairwise_mergeSort failed calls=64 122.8s timeouts=0 claude=16 usd=0.236
+claude: billed usd=0.0086 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0072 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0099 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0086 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude_search     core_List_perm_iff_count     PROVED calls=5 23.5s timeouts=0 claude=5 usd=0.038
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude_search     core_List_perm_iff_toArray_perm PROVED calls=2 6.0s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0117 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude_search     core_List_pmap_reverse       failed calls=64 22.9s timeouts=0 claude=5 usd=0.038
+claude: billed usd=0.0126 stop_reason=end_turn cache_read=1265
+claude_search     core_List_range'_concat      PROVED calls=2 6.5s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0038 stop_reason=end_turn cache_read=1265
+claude_search     core_List_range'_succ_left   PROVED calls=1 3.0s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+claude_search     core_List_range_succ         PROVED calls=1 6.0s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0149 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude_search     core_List_removeAll_cons     PROVED calls=5 20.3s timeouts=0 claude=3 usd=0.037
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+claude_search     core_List_replace_cons_self  PROVED calls=1 3.2s timeouts=0 claude=1 usd=0.003
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0172 stop_reason=end_turn cache_read=1265
+claude_search     core_List_replace_take       PROVED calls=2 14.3s timeouts=0 claude=2 usd=0.026
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0127 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0094 stop_reason=end_turn cache_read=1265
+claude_search     core_List_reverse_attachWith failed calls=64 60.1s timeouts=0 claude=6 usd=0.048
+claude: billed usd=0.0173 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0138 stop_reason=end_turn cache_read=1265
+claude_search     core_List_set_getElem_self   PROVED calls=2 25.5s timeouts=0 claude=2 usd=0.031
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0114 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0144 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0118 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0044 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude_search     core_List_set_getElem_succ_eraseIdx_succ failed calls=64 47.3s timeouts=0 claude=10 usd=0.066
+claude: billed usd=0.0106 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0080 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0099 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0153 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0075 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+claude_search     core_List_sum_singleton      failed calls=64 48.6s timeouts=0 claude=10 usd=0.082
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude_search     core_List_tail?_nil          failed calls=31 5.3s timeouts=0 claude=2 usd=0.006
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude_search     core_List_tail_drop          PROVED calls=1 6.4s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude_search     core_List_tail_pmap          failed calls=61 9.7s timeouts=0 claude=4 usd=0.011
+claude: billed usd=0.0152 stop_reason=end_turn cache_read=1265
+claude_search     core_List_take_append_drop   PROVED calls=1 8.1s timeouts=0 claude=1 usd=0.015
+claude: billed usd=0.0100 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0018 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0099 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0162 stop_reason=end_turn cache_read=1265
+claude_search     core_List_take_append_getLast PROVED calls=37 21.5s timeouts=0 claude=4 usd=0.038
+claude: billed usd=0.0048 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0131 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude_search     core_List_take_set           PROVED calls=18 15.7s timeouts=0 claude=3 usd=0.022
+claude: billed usd=0.0068 stop_reason=end_turn cache_read=1265
+claude_search     core_List_unattach_append    PROVED calls=1 4.3s timeouts=0 claude=1 usd=0.007
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0143 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0106 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0110 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0180 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0187 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0109 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0207 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0177 stop_reason=end_turn cache_read=1265
+claude_search     core_List_unattach_filter    failed calls=64 77.0s timeouts=0 claude=11 usd=0.138
+claude: billed usd=0.0075 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0045 stop_reason=end_turn cache_read=1265
+claude_search     core_List_unattach_nil       failed calls=31 8.6s timeouts=0 claude=2 usd=0.012
+claude: billed usd=0.0131 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0154 stop_reason=end_turn cache_read=1265
+claude_search     core_List_unzip_zip          PROVED calls=2 13.9s timeouts=0 claude=2 usd=0.029
+claude: billed usd=0.0089 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0098 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0123 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0047 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude_search     core_List_zipIdx_succ        failed calls=64 38.1s timeouts=0 claude=6 usd=0.040
+claude: billed usd=0.0044 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude_search     core_List_zipWith_comm_of_comm PROVED calls=2 9.5s timeouts=0 claude=2 usd=0.009
+claude: billed usd=0.0075 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0109 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_Coprime_gcd_left    PROVED calls=2 16.6s timeouts=0 claude=2 usd=0.018
+claude: billed usd=0.0203 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0295 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0183 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0106 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0185 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0292 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0086 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0029 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_Coprime_gcd_mul     failed calls=64 78.3s timeouts=0 claude=10 usd=0.157
+claude: billed usd=0.0137 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq PROVED calls=1 6.3s timeouts=0 claude=1 usd=0.014
+claude: billed usd=0.0274 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_Internal_Linear_Expr_toPoly_go_induct PROVED calls=1 11.4s timeouts=0 claude=1 usd=0.027
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0189 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0125 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0135 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0105 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0061 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0166 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0156 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_Internal_Linear_Poly_of_isNonZero PROVED calls=33 62.8s timeouts=0 claude=9 usd=0.120
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0149 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0238 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0172 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0136 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0122 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0210 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0029 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0337 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0251 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0166 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0237 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0269 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_add_div_of_dvd_add_add_one failed calls=64 139.5s timeouts=0 claude=16 usd=0.250
+claude: billed usd=0.0126 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0130 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_add_mul_div_right   PROVED calls=2 14.0s timeouts=0 claude=2 usd=0.026
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0039 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0059 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0040 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0056 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0024 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0076 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0016 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_all_congr           failed calls=64 32.3s timeouts=0 claude=11 usd=0.043
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_div_add_mod'        PROVED calls=1 6.3s timeouts=0 claude=1 usd=0.009
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_div_dvd_of_dvd      PROVED calls=1 5.6s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0126 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0192 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_div_le_iff_le_mul_add_pred PROVED calls=2 18.7s timeouts=0 claude=2 usd=0.032
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0140 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_div_le_self         PROVED calls=18 15.0s timeouts=0 claude=2 usd=0.028
+claude: billed usd=0.0037 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0043 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_div_lt_of_lt        PROVED calls=2 5.8s timeouts=0 claude=2 usd=0.008
+claude: billed usd=0.0202 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0203 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0172 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0148 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0075 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0031 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_dvd_gcd_mul_gcd_iff_dvd_mul PROVED calls=40 49.2s timeouts=0 claude=9 usd=0.098
+claude: billed usd=0.0186 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_dvd_gcd_mul_iff_dvd_mul PROVED calls=1 8.9s timeouts=0 claude=1 usd=0.019
+claude: billed usd=0.0129 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_dvd_lcm_left        PROVED calls=1 6.4s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0121 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0054 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0046 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0150 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0024 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0051 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0085 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0125 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_fold_add            failed calls=64 66.3s timeouts=1 claude=11 usd=0.089
+claude: billed usd=0.0134 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_gcd_add_right_right_of_dvd PROVED calls=1 7.4s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0164 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_gcd_add_self_right  PROVED calls=1 8.3s timeouts=0 claude=1 usd=0.016
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0048 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_gcd_le_right        PROVED calls=2 7.7s timeouts=0 claude=2 usd=0.008
+claude: billed usd=0.0160 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_gcd_mul_left_add_left PROVED calls=3 8.1s timeouts=0 claude=1 usd=0.016
+claude: billed usd=0.0129 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_ge_two_pow_of_testBit PROVED calls=1 6.5s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0105 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_getD_toArray_rcc    PROVED calls=3 12.1s timeouts=0 claude=2 usd=0.014
+claude: billed usd=0.0082 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_getD_toList_ric     PROVED calls=3 5.1s timeouts=0 claude=1 usd=0.008
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_getElem?_toArray_roc PROVED calls=1 5.8s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0061 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0124 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_getElem_toArray_rio PROVED calls=19 32.4s timeouts=0 claude=4 usd=0.039
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0031 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_isSome_getElem?_toArray_ric_eq PROVED calls=17 13.2s timeouts=0 claude=3 usd=0.018
+claude: billed usd=0.0087 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_lcm_zero_left       PROVED calls=1 4.8s timeouts=0 claude=1 usd=0.009
+claude: billed usd=0.0110 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0134 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0127 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0138 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_le_of_dvd           PROVED calls=4 26.1s timeouts=0 claude=4 usd=0.051
+claude: billed usd=0.0167 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0185 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0156 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_le_pow              PROVED calls=18 36.9s timeouts=0 claude=4 usd=0.062
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0155 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_lt_mul_div_succ     PROVED calls=2 14.6s timeouts=0 claude=2 usd=0.026
+claude: billed usd=0.0188 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0206 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_lt_pow_self         PROVED calls=2 19.0s timeouts=0 claude=2 usd=0.039
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_map_add_toArray_rco PROVED calls=1 5.7s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0100 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0024 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0087 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0075 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_map_add_toArray_rio PROVED calls=17 26.0s timeouts=0 claude=5 usd=0.040
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0283 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0133 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0305 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0119 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_mul_add_mul_div_of_dvd PROVED calls=17 54.5s timeouts=0 claude=7 usd=0.114
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_one_le_div_iff      PROVED calls=1 6.6s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_or_exists_add_one   PROVED calls=2 5.7s timeouts=0 claude=2 usd=0.008
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0208 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_pow_lt_pow_right    PROVED calls=3 18.7s timeouts=0 claude=2 usd=0.034
+claude: billed usd=0.0144 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_pow_right_comm      PROVED calls=1 6.9s timeouts=0 claude=1 usd=0.014
+claude: billed usd=0.0038 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_pow_sub_mul_pow     PROVED calls=2 5.6s timeouts=0 claude=2 usd=0.008
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_pred_lt_pred        PROVED calls=2 5.6s timeouts=0 claude=2 usd=0.007
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0080 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0132 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0082 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_repr_injective      failed calls=64 48.6s timeouts=0 claude=8 usd=0.078
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_self_add_pred       PROVED calls=1 2.3s timeouts=0 claude=1 usd=0.003
+claude: billed usd=0.0175 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_shiftLeft_shiftRight PROVED calls=1 8.5s timeouts=0 claude=1 usd=0.018
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0209 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0114 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0153 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0089 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0218 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0132 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0170 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0172 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0243 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0344 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0216 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0242 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_testBit_two_pow_mul_add failed calls=64 147.6s timeouts=0 claude=15 usd=0.253
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_toArray_roc_succ_succ PROVED calls=1 5.0s timeouts=0 claude=1 usd=0.009
+claude: billed usd=0.0110 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0110 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0078 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0074 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0093 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0067 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0058 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_toList_rco_succ_succ failed calls=64 43.5s timeouts=0 claude=8 usd=0.069
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0130 stop_reason=end_turn cache_read=1265
+claude_search     core_Nat_zero_lt_getElem!_toList_rio_iff PROVED calls=2 13.2s timeouts=0 claude=2 usd=0.023
+claude: cached usd=0.0112 (notional, not billed)
+menu_first        core_List_IsPrefix_le_countP PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0128 (notional, not billed)
+menu_first        core_List_IsSuffix_sublist   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0190 (notional, not billed)
+claude: cached usd=0.0226 (notional, not billed)
+claude: cached usd=0.0300 (notional, not billed)
+menu_first        core_List_Mem_brecOn         failed calls=64 4.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0195 (notional, not billed)
+claude: cached usd=0.0233 (notional, not billed)
+claude: cached usd=0.0165 (notional, not billed)
+claude: cached usd=0.0128 (notional, not billed)
+menu_first        core_List_MergeSort_Internal_splitInTwo_cons_cons_zipIdx_snd failed calls=64 1.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0122 (notional, not billed)
+menu_first        core_List_Nodup_not_mem_erase PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0045 (notional, not billed)
+menu_first        core_List_Pairwise_iff       PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0121 (notional, not billed)
+menu_first        core_List_Pairwise_imp_mem   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0137 (notional, not billed)
+menu_first        core_List_Perm_append_right  PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0121 (notional, not billed)
+claude: cached usd=0.0288 (notional, not billed)
+claude: cached usd=0.0300 (notional, not billed)
+claude: cached usd=0.0174 (notional, not billed)
+menu_first        core_List_Sublist_brecOn     failed calls=64 5.0s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0079 (notional, not billed)
+menu_first        core_List_all_bne'           PROVED calls=5 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0046 (notional, not billed)
+menu_first        core_List_all_takeWhile      PROVED calls=4 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0102 (notional, not billed)
+menu_first        core_List_append_of_mem      PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0080 (notional, not billed)
+claude: cached usd=0.0084 (notional, not billed)
+claude: cached usd=0.0132 (notional, not billed)
+menu_first        core_List_append_sublist_iff failed calls=64 4.9s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0042 (notional, not billed)
+claude: cached usd=0.0118 (notional, not billed)
+claude: cached usd=0.0110 (notional, not billed)
+claude: cached usd=0.0102 (notional, not billed)
+menu_first        core_List_apply_maxOn_lt_iff failed calls=64 1.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0093 (notional, not billed)
+claude: cached usd=0.0138 (notional, not billed)
+claude: cached usd=0.0115 (notional, not billed)
+claude: cached usd=0.0112 (notional, not billed)
+menu_first        core_List_contains_congr     failed calls=64 1.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0108 (notional, not billed)
+menu_first        core_List_count_cons         PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0057 (notional, not billed)
+menu_first        core_List_count_filter       PROVED calls=4 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0131 (notional, not billed)
+menu_first        core_List_count_filterMap    PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0090 (notional, not billed)
+menu_first        core_List_count_le_length    PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0031 (notional, not billed)
+claude: cached usd=0.0036 (notional, not billed)
+menu_first        core_List_decide_mem_cons    PROVED calls=42 3.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0136 (notional, not billed)
+menu_first        core_List_dropWhile_suffix   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0212 (notional, not billed)
+menu_first        core_List_drop_drop          PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0122 (notional, not billed)
+menu_first        core_List_drop_take          PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0056 (notional, not billed)
+menu_first        core_List_eraseIdx_modify_of_gt PROVED calls=3 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0046 (notional, not billed)
+menu_first        core_List_erase_replicate_ne PROVED calls=4 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0108 (notional, not billed)
+menu_first        core_List_filterMapM_loop_eq PROVED calls=3 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0120 (notional, not billed)
+menu_first        core_List_finRange_succ      PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0130 (notional, not billed)
+claude: cached usd=0.0112 (notional, not billed)
+claude: cached usd=0.0147 (notional, not billed)
+menu_first        core_List_flatMapM_loop_induct_unfolding failed calls=64 3.9s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0063 (notional, not billed)
+menu_first        core_List_flatMapM_wfParam   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0110 (notional, not billed)
+claude: cached usd=0.0149 (notional, not billed)
+claude: cached usd=0.0149 (notional, not billed)
+claude: cached usd=0.0117 (notional, not billed)
+menu_first        core_List_foldrM_filterMap   failed calls=64 5.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0041 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0031 (notional, not billed)
+menu_first        core_List_foldrRecOn_cons    failed calls=64 2.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0031 (notional, not billed)
+menu_first        core_List_foldr_assoc        PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0071 (notional, not billed)
+menu_first        core_List_getElem?_insert_zero PROVED calls=28 1.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0112 (notional, not billed)
+claude: cached usd=0.0093 (notional, not billed)
+claude: cached usd=0.0121 (notional, not billed)
+claude: cached usd=0.0044 (notional, not billed)
+menu_first        core_List_getElem_append     failed calls=64 1.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0099 (notional, not billed)
+claude: cached usd=0.0105 (notional, not billed)
+claude: cached usd=0.0040 (notional, not billed)
+menu_first        core_List_getElem_append_right failed calls=64 1.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0043 (notional, not billed)
+claude: cached usd=0.0027 (notional, not billed)
+claude: cached usd=0.0127 (notional, not billed)
+menu_first        core_List_getElem_append_right' failed calls=64 1.9s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0279 (notional, not billed)
+menu_first        core_List_getElem_cons_drop  PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0135 (notional, not billed)
+claude: cached usd=0.0117 (notional, not billed)
+claude: cached usd=0.0202 (notional, not billed)
+menu_first        core_List_getElem_drop       failed calls=64 1.0s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0122 (notional, not billed)
+claude: cached usd=0.0133 (notional, not billed)
+claude: cached usd=0.0129 (notional, not billed)
+menu_first        core_List_getElem_eraseIdx_of_ge failed calls=64 1.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0089 (notional, not billed)
+claude: cached usd=0.0108 (notional, not billed)
+claude: cached usd=0.0113 (notional, not billed)
+claude: cached usd=0.0144 (notional, not billed)
+menu_first        core_List_getElem_insert     failed calls=64 1.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0081 (notional, not billed)
+claude: cached usd=0.0107 (notional, not billed)
+claude: cached usd=0.0084 (notional, not billed)
+claude: cached usd=0.0073 (notional, not billed)
+menu_first        core_List_getElem_replace_of_ne failed calls=64 1.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0150 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+claude: cached usd=0.0176 (notional, not billed)
+menu_first        core_List_getElem_zipIdx     failed calls=64 0.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0108 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0112 (notional, not billed)
+claude: cached usd=0.0174 (notional, not billed)
+menu_first        core_List_getElem_zipWith    failed calls=64 1.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0076 (notional, not billed)
+claude: cached usd=0.0115 (notional, not billed)
+claude: cached usd=0.0022 (notional, not billed)
+claude: cached usd=0.0027 (notional, not billed)
+menu_first        core_List_getLast_mapIdx     failed calls=64 0.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0042 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0045 (notional, not billed)
+menu_first        core_List_getLast_tail       failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0035 (notional, not billed)
+menu_first        core_List_head?_range        PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0036 (notional, not billed)
+claude: cached usd=0.0081 (notional, not billed)
+claude: cached usd=0.0020 (notional, not billed)
+menu_first        core_List_head_append_right  failed calls=64 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0021 (notional, not billed)
+claude: cached usd=0.0084 (notional, not billed)
+claude: cached usd=0.0038 (notional, not billed)
+menu_first        core_List_head_dropLast      failed calls=64 0.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0099 (notional, not billed)
+menu_first        core_List_idxOf_le_length    PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0038 (notional, not billed)
+menu_first        core_List_insert_of_not_mem  PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0102 (notional, not billed)
+claude: cached usd=0.0107 (notional, not billed)
+claude: cached usd=0.0126 (notional, not billed)
+claude: cached usd=0.0079 (notional, not billed)
+menu_first        core_List_instTransOrd       failed calls=64 1.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0138 (notional, not billed)
+menu_first        core_List_isPrefixOf_replicate PROVED calls=5 0.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0109 (notional, not billed)
+menu_first        core_List_isSome_minOn?_of_mem PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0090 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0110 (notional, not billed)
+menu_first        core_List_le_min_iff         failed calls=64 1.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0094 (notional, not billed)
+claude: cached usd=0.0111 (notional, not billed)
+claude: cached usd=0.0112 (notional, not billed)
+menu_first        core_List_left_le_minIdxOn_append failed calls=64 0.9s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0076 (notional, not billed)
+claude: cached usd=0.0175 (notional, not billed)
+claude: cached usd=0.0203 (notional, not billed)
+claude: cached usd=0.0136 (notional, not billed)
+menu_first        core_List_lt_iff_exists      failed calls=64 2.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0041 (notional, not billed)
+menu_first        core_List_map_id''           PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0025 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+claude: cached usd=0.0021 (notional, not billed)
+menu_first        core_List_map_id_fun         failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0140 (notional, not billed)
+claude: cached usd=0.0146 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+claude: cached usd=0.0133 (notional, not billed)
+menu_first        core_List_map_unattach       failed calls=64 3.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0037 (notional, not billed)
+claude: cached usd=0.0081 (notional, not billed)
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0131 (notional, not billed)
+menu_first        core_List_maxIdxOn_append    failed calls=64 1.0s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0032 (notional, not billed)
+claude: cached usd=0.0029 (notional, not billed)
+claude: cached usd=0.0022 (notional, not billed)
+claude: cached usd=0.0013 (notional, not billed)
+menu_first        core_List_maxIdxOn_singleton failed calls=64 0.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0072 (notional, not billed)
+claude: cached usd=0.0094 (notional, not billed)
+menu_first        core_List_maxOn_cons         failed calls=64 3.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0032 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+claude: cached usd=0.0028 (notional, not billed)
+claude: cached usd=0.0032 (notional, not billed)
+menu_first        core_List_max_congr_simp     failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0062 (notional, not billed)
+claude: cached usd=0.0065 (notional, not billed)
+claude: cached usd=0.0052 (notional, not billed)
+claude: cached usd=0.0050 (notional, not billed)
+menu_first        core_List_max_cons_cons      failed calls=64 1.0s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0101 (notional, not billed)
+claude: cached usd=0.0042 (notional, not billed)
+claude: cached usd=0.0037 (notional, not billed)
+claude: cached usd=0.0063 (notional, not billed)
+menu_first        core_List_mem_eraseIdx_iff_getElem failed calls=64 1.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0128 (notional, not billed)
+claude: cached usd=0.0186 (notional, not billed)
+claude: cached usd=0.0103 (notional, not billed)
+claude: cached usd=0.0034 (notional, not billed)
+menu_first        core_List_mergeSort_append   failed calls=64 1.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0049 (notional, not billed)
+claude: cached usd=0.0185 (notional, not billed)
+claude: cached usd=0.0116 (notional, not billed)
+claude: cached usd=0.0201 (notional, not billed)
+menu_first        core_List_mergeSort_cons     failed calls=64 1.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0041 (notional, not billed)
+claude: cached usd=0.0095 (notional, not billed)
+claude: cached usd=0.0098 (notional, not billed)
+menu_first        core_List_minIdxOn?_cons     PROVED calls=54 1.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0034 (notional, not billed)
+menu_first        core_List_minIdxOn?_nil      PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0113 (notional, not billed)
+claude: cached usd=0.0134 (notional, not billed)
+claude: cached usd=0.0121 (notional, not billed)
+claude: cached usd=0.0098 (notional, not billed)
+menu_first        core_List_minOn_replicate    failed calls=64 2.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0104 (notional, not billed)
+claude: cached usd=0.0134 (notional, not billed)
+claude: cached usd=0.0099 (notional, not billed)
+menu_first        core_List_min_le_of_mem      failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0123 (notional, not billed)
+claude: cached usd=0.0201 (notional, not billed)
+claude: cached usd=0.0041 (notional, not billed)
+menu_first        core_List_modifyTailIdx_modifyTailIdx failed calls=64 0.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0121 (notional, not billed)
+menu_first        core_List_pair_sublist_mergeSort PROVED calls=4 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0166 (notional, not billed)
+menu_first        core_List_pairwise_append_comm PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0142 (notional, not billed)
+claude: cached usd=0.0268 (notional, not billed)
+claude: cached usd=0.0175 (notional, not billed)
+claude: cached usd=0.0200 (notional, not billed)
+menu_first        core_List_pairwise_mergeSort failed calls=64 1.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0086 (notional, not billed)
+menu_first        core_List_perm_iff_count     PROVED calls=5 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0108 (notional, not billed)
+menu_first        core_List_perm_iff_toArray_perm PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0108 (notional, not billed)
+claude: cached usd=0.0117 (notional, not billed)
+claude: cached usd=0.0022 (notional, not billed)
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+menu_first        core_List_pmap_reverse       failed calls=64 16.1s timeouts=0 claude=1 usd=0.011
+claude: cached usd=0.0126 (notional, not billed)
+menu_first        core_List_range'_concat      PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0038 (notional, not billed)
+menu_first        core_List_range'_succ_left   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0101 (notional, not billed)
+menu_first        core_List_range_succ         PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0149 (notional, not billed)
+menu_first        core_List_removeAll_cons     PROVED calls=5 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0034 (notional, not billed)
+menu_first        core_List_replace_cons_self  PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0090 (notional, not billed)
+menu_first        core_List_replace_take       PROVED calls=2 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0112 (notional, not billed)
+claude: cached usd=0.0090 (notional, not billed)
+claude: cached usd=0.0022 (notional, not billed)
+claude: cached usd=0.0127 (notional, not billed)
+menu_first        core_List_reverse_attachWith failed calls=64 0.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0173 (notional, not billed)
+menu_first        core_List_set_getElem_self   PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0034 (notional, not billed)
+claude: cached usd=0.0114 (notional, not billed)
+claude: cached usd=0.0144 (notional, not billed)
+claude: cached usd=0.0042 (notional, not billed)
+menu_first        core_List_set_getElem_succ_eraseIdx_succ failed calls=64 3.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0106 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0080 (notional, not billed)
+claude: cached usd=0.0116 (notional, not billed)
+claude: cached usd=0.0099 (notional, not billed)
+menu_first        core_List_sum_singleton      failed calls=64 0.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0019 (notional, not billed)
+claude: cached usd=0.0042 (notional, not billed)
+menu_first        core_List_tail?_nil          failed calls=31 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0112 (notional, not billed)
+menu_first        core_List_tail_drop          PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0036 (notional, not billed)
+claude: cached usd=0.0028 (notional, not billed)
+claude: cached usd=0.0019 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+menu_first        core_List_tail_pmap          failed calls=61 0.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0152 (notional, not billed)
+menu_first        core_List_take_append_drop   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0100 (notional, not billed)
+claude: cached usd=0.0018 (notional, not billed)
+claude: cached usd=0.0099 (notional, not billed)
+menu_first        core_List_take_append_getLast PROVED calls=51 1.9s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0048 (notional, not billed)
+claude: cached usd=0.0131 (notional, not billed)
+claude: cached usd=0.0041 (notional, not billed)
+menu_first        core_List_take_set           PROVED calls=53 1.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0068 (notional, not billed)
+menu_first        core_List_unattach_append    PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0036 (notional, not billed)
+claude: cached usd=0.0102 (notional, not billed)
+claude: cached usd=0.0143 (notional, not billed)
+claude: cached usd=0.0106 (notional, not billed)
+menu_first        core_List_unattach_filter    failed calls=64 2.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0075 (notional, not billed)
+claude: cached usd=0.0045 (notional, not billed)
+menu_first        core_List_unattach_nil       failed calls=31 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0131 (notional, not billed)
+menu_first        core_List_unzip_zip          PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0089 (notional, not billed)
+claude: cached usd=0.0098 (notional, not billed)
+claude: cached usd=0.0021 (notional, not billed)
+menu_first        core_List_zipIdx_succ        failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0044 (notional, not billed)
+menu_first        core_List_zipWith_comm_of_comm PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0075 (notional, not billed)
+menu_first        core_Nat_Coprime_gcd_left    PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0203 (notional, not billed)
+claude: cached usd=0.0295 (notional, not billed)
+claude: cached usd=0.0183 (notional, not billed)
+menu_first        core_Nat_Coprime_gcd_mul     failed calls=64 1.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0137 (notional, not billed)
+menu_first        core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0274 (notional, not billed)
+menu_first        core_Nat_Internal_Linear_Expr_toPoly_go_induct PROVED calls=1 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0141 (notional, not billed)
+claude: cached usd=0.0189 (notional, not billed)
+claude: cached usd=0.0125 (notional, not billed)
+claude: cached usd=0.0135 (notional, not billed)
+claude: cached usd=0.0105 (notional, not billed)
+menu_first        core_Nat_Internal_Linear_Poly_of_isNonZero failed calls=64 1.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0116 (notional, not billed)
+claude: cached usd=0.0149 (notional, not billed)
+claude: cached usd=0.0238 (notional, not billed)
+menu_first        core_Nat_add_div_of_dvd_add_add_one failed calls=64 1.0s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0126 (notional, not billed)
+menu_first        core_Nat_add_mul_div_right   PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0036 (notional, not billed)
+claude: cached usd=0.0039 (notional, not billed)
+claude: cached usd=0.0059 (notional, not billed)
+menu_first        core_Nat_all_congr           failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0090 (notional, not billed)
+menu_first        core_Nat_div_add_mod'        PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0103 (notional, not billed)
+menu_first        core_Nat_div_dvd_of_dvd      PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0126 (notional, not billed)
+menu_first        core_Nat_div_le_iff_le_mul_add_pred PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0141 (notional, not billed)
+claude: cached usd=0.0140 (notional, not billed)
+menu_first        core_Nat_div_le_self         PROVED calls=35 0.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0037 (notional, not billed)
+menu_first        core_Nat_div_lt_of_lt        PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0202 (notional, not billed)
+claude: cached usd=0.0101 (notional, not billed)
+claude: cached usd=0.0203 (notional, not billed)
+menu_first        core_Nat_dvd_gcd_mul_gcd_iff_dvd_mul failed calls=64 0.9s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0186 (notional, not billed)
+menu_first        core_Nat_dvd_gcd_mul_iff_dvd_mul PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0129 (notional, not billed)
+menu_first        core_Nat_dvd_lcm_left        PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0121 (notional, not billed)
+claude: cached usd=0.0054 (notional, not billed)
+claude: cached usd=0.0128 (notional, not billed)
+menu_first        core_Nat_fold_add            failed calls=64 12.3s timeouts=1 claude=0 usd=0.000
+claude: cached usd=0.0134 (notional, not billed)
+menu_first        core_Nat_gcd_add_right_right_of_dvd PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0164 (notional, not billed)
+menu_first        core_Nat_gcd_add_self_right  PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0035 (notional, not billed)
+menu_first        core_Nat_gcd_le_right        PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0160 (notional, not billed)
+menu_first        core_Nat_gcd_mul_left_add_left PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0129 (notional, not billed)
+menu_first        core_Nat_ge_two_pow_of_testBit PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0105 (notional, not billed)
+menu_first        core_Nat_getD_toArray_rcc    PROVED calls=3 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0082 (notional, not billed)
+menu_first        core_Nat_getD_toList_ric     PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0103 (notional, not billed)
+menu_first        core_Nat_getElem?_toArray_roc PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0061 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0124 (notional, not billed)
+menu_first        core_Nat_getElem_toArray_rio failed calls=64 3.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0107 (notional, not billed)
+menu_first        core_Nat_isSome_getElem?_toArray_ric_eq PROVED calls=20 0.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0087 (notional, not billed)
+menu_first        core_Nat_lcm_zero_left       PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0110 (notional, not billed)
+menu_first        core_Nat_le_of_dvd           PROVED calls=4 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0167 (notional, not billed)
+claude: cached usd=0.0185 (notional, not billed)
+claude: cached usd=0.0115 (notional, not billed)
+claude: cached usd=0.0156 (notional, not billed)
+menu_first        core_Nat_le_pow              PROVED calls=64 1.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0107 (notional, not billed)
+menu_first        core_Nat_lt_mul_div_succ     PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0188 (notional, not billed)
+menu_first        core_Nat_lt_pow_self         PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0102 (notional, not billed)
+menu_first        core_Nat_map_add_toArray_rco PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0100 (notional, not billed)
+menu_first        core_Nat_map_add_toArray_rio PROVED calls=20 0.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0088 (notional, not billed)
+claude: cached usd=0.0283 (notional, not billed)
+claude: cached usd=0.0133 (notional, not billed)
+menu_first        core_Nat_mul_add_mul_div_of_dvd failed calls=64 1.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0096 (notional, not billed)
+menu_first        core_Nat_one_le_div_iff      PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0042 (notional, not billed)
+menu_first        core_Nat_or_exists_add_one   PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0128 (notional, not billed)
+menu_first        core_Nat_pow_lt_pow_right    PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0144 (notional, not billed)
+menu_first        core_Nat_pow_right_comm      PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0038 (notional, not billed)
+menu_first        core_Nat_pow_sub_mul_pow     PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0034 (notional, not billed)
+menu_first        core_Nat_pred_lt_pred        PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0083 (notional, not billed)
+claude: cached usd=0.0090 (notional, not billed)
+claude: cached usd=0.0080 (notional, not billed)
+menu_first        core_Nat_repr_injective      failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0028 (notional, not billed)
+menu_first        core_Nat_self_add_pred       PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0175 (notional, not billed)
+menu_first        core_Nat_shiftLeft_shiftRight PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0096 (notional, not billed)
+claude: cached usd=0.0209 (notional, not billed)
+menu_first        core_Nat_testBit_two_pow_mul_add failed calls=64 1.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0092 (notional, not billed)
+menu_first        core_Nat_toArray_roc_succ_succ PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0110 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0078 (notional, not billed)
+menu_first        core_Nat_toList_rco_succ_succ failed calls=64 0.9s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0101 (notional, not billed)
+menu_first        core_Nat_zero_lt_getElem!_toList_rio_iff PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0112 (notional, not billed)
+jev_router        core_List_IsPrefix_le_countP PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0128 (notional, not billed)
+jev_router        core_List_IsSuffix_sublist   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0190 (notional, not billed)
+claude: cached usd=0.0226 (notional, not billed)
+claude: cached usd=0.0300 (notional, not billed)
+claude: cached usd=0.0030 (notional, not billed)
+claude: cached usd=0.0118 (notional, not billed)
+claude: cached usd=0.0071 (notional, not billed)
+claude: cached usd=0.0065 (notional, not billed)
+claude: cached usd=0.0061 (notional, not billed)
+jev_router        core_List_Mem_brecOn         failed calls=64 7.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0195 (notional, not billed)
+claude: cached usd=0.0233 (notional, not billed)
+claude: cached usd=0.0165 (notional, not billed)
+claude: cached usd=0.0128 (notional, not billed)
+jev_router        core_List_MergeSort_Internal_splitInTwo_cons_cons_zipIdx_snd failed calls=64 1.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0122 (notional, not billed)
+jev_router        core_List_Nodup_not_mem_erase PROVED calls=3 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0045 (notional, not billed)
+jev_router        core_List_Pairwise_iff       PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0121 (notional, not billed)
+jev_router        core_List_Pairwise_imp_mem   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0137 (notional, not billed)
+jev_router        core_List_Perm_append_right  PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0121 (notional, not billed)
+claude: cached usd=0.0288 (notional, not billed)
+claude: cached usd=0.0300 (notional, not billed)
+claude: cached usd=0.0174 (notional, not billed)
+claude: cached usd=0.0107 (notional, not billed)
+jev_router        core_List_Sublist_brecOn     failed calls=64 7.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0079 (notional, not billed)
+jev_router        core_List_all_bne'           PROVED calls=5 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0046 (notional, not billed)
+jev_router        core_List_all_takeWhile      PROVED calls=4 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0102 (notional, not billed)
+jev_router        core_List_append_of_mem      PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0080 (notional, not billed)
+claude: cached usd=0.0084 (notional, not billed)
+claude: cached usd=0.0132 (notional, not billed)
+claude: cached usd=0.0067 (notional, not billed)
+claude: cached usd=0.0088 (notional, not billed)
+jev_router        core_List_append_sublist_iff failed calls=64 5.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0042 (notional, not billed)
+claude: cached usd=0.0118 (notional, not billed)
+claude: cached usd=0.0110 (notional, not billed)
+claude: cached usd=0.0102 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0043 (notional, not billed)
+claude: cached usd=0.0032 (notional, not billed)
+jev_router        core_List_apply_maxOn_lt_iff failed calls=64 2.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0093 (notional, not billed)
+claude: cached usd=0.0138 (notional, not billed)
+claude: cached usd=0.0115 (notional, not billed)
+claude: cached usd=0.0112 (notional, not billed)
+claude: cached usd=0.0091 (notional, not billed)
+jev_router        core_List_contains_congr     PROVED calls=23 1.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0108 (notional, not billed)
+jev_router        core_List_count_cons         PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0057 (notional, not billed)
+jev_router        core_List_count_filter       PROVED calls=4 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0131 (notional, not billed)
+jev_router        core_List_count_filterMap    PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0090 (notional, not billed)
+jev_router        core_List_count_le_length    PROVED calls=3 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0031 (notional, not billed)
+claude: cached usd=0.0036 (notional, not billed)
+claude: cached usd=0.0036 (notional, not billed)
+claude: cached usd=0.0041 (notional, not billed)
+jev_router        core_List_decide_mem_cons    PROVED calls=40 3.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0136 (notional, not billed)
+jev_router        core_List_dropWhile_suffix   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0212 (notional, not billed)
+jev_router        core_List_drop_drop          PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0122 (notional, not billed)
+jev_router        core_List_drop_take          PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0056 (notional, not billed)
+jev_router        core_List_eraseIdx_modify_of_gt PROVED calls=3 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0046 (notional, not billed)
+jev_router        core_List_erase_replicate_ne PROVED calls=4 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0108 (notional, not billed)
+jev_router        core_List_filterMapM_loop_eq PROVED calls=3 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0120 (notional, not billed)
+jev_router        core_List_finRange_succ      PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0130 (notional, not billed)
+claude: cached usd=0.0112 (notional, not billed)
+claude: cached usd=0.0147 (notional, not billed)
+claude: cached usd=0.0123 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0122 (notional, not billed)
+claude: cached usd=0.0096 (notional, not billed)
+jev_router        core_List_flatMapM_loop_induct_unfolding failed calls=64 6.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0063 (notional, not billed)
+jev_router        core_List_flatMapM_wfParam   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0110 (notional, not billed)
+claude: cached usd=0.0149 (notional, not billed)
+claude: cached usd=0.0149 (notional, not billed)
+claude: cached usd=0.0117 (notional, not billed)
+jev_router        core_List_foldrM_filterMap   failed calls=64 5.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0041 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0031 (notional, not billed)
+claude: cached usd=0.0026 (notional, not billed)
+claude: cached usd=0.0104 (notional, not billed)
+jev_router        core_List_foldrRecOn_cons    failed calls=64 2.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0031 (notional, not billed)
+jev_router        core_List_foldr_assoc        PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0071 (notional, not billed)
+claude: cached usd=0.0039 (notional, not billed)
+claude: cached usd=0.0035 (notional, not billed)
+claude: cached usd=0.0084 (notional, not billed)
+claude: cached usd=0.0074 (notional, not billed)
+jev_router        core_List_getElem?_insert_zero PROVED calls=24 2.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0112 (notional, not billed)
+claude: cached usd=0.0093 (notional, not billed)
+claude: cached usd=0.0121 (notional, not billed)
+claude: cached usd=0.0044 (notional, not billed)
+claude: cached usd=0.0142 (notional, not billed)
+jev_router        core_List_getElem_append     failed calls=64 1.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0099 (notional, not billed)
+claude: cached usd=0.0105 (notional, not billed)
+claude: cached usd=0.0040 (notional, not billed)
+claude: cached usd=0.0051 (notional, not billed)
+claude: cached usd=0.0049 (notional, not billed)
+jev_router        core_List_getElem_append_right failed calls=64 1.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0043 (notional, not billed)
+claude: cached usd=0.0027 (notional, not billed)
+claude: cached usd=0.0127 (notional, not billed)
+claude: cached usd=0.0024 (notional, not billed)
+claude: cached usd=0.0024 (notional, not billed)
+claude: cached usd=0.0028 (notional, not billed)
+claude: cached usd=0.0025 (notional, not billed)
+jev_router        core_List_getElem_append_right' failed calls=64 1.9s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0279 (notional, not billed)
+jev_router        core_List_getElem_cons_drop  PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0135 (notional, not billed)
+claude: cached usd=0.0117 (notional, not billed)
+claude: cached usd=0.0202 (notional, not billed)
+claude: cached usd=0.0065 (notional, not billed)
+jev_router        core_List_getElem_drop       failed calls=64 1.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0122 (notional, not billed)
+claude: cached usd=0.0133 (notional, not billed)
+claude: cached usd=0.0129 (notional, not billed)
+jev_router        core_List_getElem_eraseIdx_of_ge failed calls=64 1.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0089 (notional, not billed)
+claude: cached usd=0.0108 (notional, not billed)
+claude: cached usd=0.0113 (notional, not billed)
+claude: cached usd=0.0144 (notional, not billed)
+jev_router        core_List_getElem_insert     failed calls=64 1.0s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0081 (notional, not billed)
+claude: cached usd=0.0107 (notional, not billed)
+claude: cached usd=0.0084 (notional, not billed)
+claude: cached usd=0.0073 (notional, not billed)
+claude: cached usd=0.0027 (notional, not billed)
+jev_router        core_List_getElem_replace_of_ne failed calls=64 1.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0150 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+claude: cached usd=0.0176 (notional, not billed)
+claude: cached usd=0.0021 (notional, not billed)
+jev_router        core_List_getElem_zipIdx     failed calls=64 1.0s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0108 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0112 (notional, not billed)
+claude: cached usd=0.0174 (notional, not billed)
+jev_router        core_List_getElem_zipWith    failed calls=64 1.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0076 (notional, not billed)
+claude: cached usd=0.0115 (notional, not billed)
+claude: cached usd=0.0071 (notional, not billed)
+claude: cached usd=0.0052 (notional, not billed)
+claude: cached usd=0.0100 (notional, not billed)
+claude: cached usd=0.0022 (notional, not billed)
+claude: cached usd=0.0027 (notional, not billed)
+jev_router        core_List_getLast_mapIdx     failed calls=64 2.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0042 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0045 (notional, not billed)
+claude: cached usd=0.0076 (notional, not billed)
+claude: cached usd=0.0101 (notional, not billed)
+claude: cached usd=0.0096 (notional, not billed)
+jev_router        core_List_getLast_tail       failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0035 (notional, not billed)
+jev_router        core_List_head?_range        PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0036 (notional, not billed)
+claude: cached usd=0.0081 (notional, not billed)
+claude: cached usd=0.0020 (notional, not billed)
+claude: cached usd=0.0019 (notional, not billed)
+claude: cached usd=0.0052 (notional, not billed)
+jev_router        core_List_head_append_right  failed calls=64 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0021 (notional, not billed)
+claude: cached usd=0.0084 (notional, not billed)
+claude: cached usd=0.0038 (notional, not billed)
+claude: cached usd=0.0120 (notional, not billed)
+jev_router        core_List_head_dropLast      failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0099 (notional, not billed)
+jev_router        core_List_idxOf_le_length    PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0038 (notional, not billed)
+jev_router        core_List_insert_of_not_mem  PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0102 (notional, not billed)
+claude: cached usd=0.0107 (notional, not billed)
+claude: cached usd=0.0126 (notional, not billed)
+claude: cached usd=0.0079 (notional, not billed)
+claude: cached usd=0.0076 (notional, not billed)
+jev_router        core_List_instTransOrd       PROVED calls=59 2.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0138 (notional, not billed)
+jev_router        core_List_isPrefixOf_replicate PROVED calls=5 0.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0109 (notional, not billed)
+jev_router        core_List_isSome_minOn?_of_mem PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0090 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0110 (notional, not billed)
+claude: cached usd=0.0024 (notional, not billed)
+claude: cached usd=0.0083 (notional, not billed)
+claude: cached usd=0.0073 (notional, not billed)
+claude: cached usd=0.0072 (notional, not billed)
+jev_router        core_List_le_min_iff         failed calls=64 1.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0094 (notional, not billed)
+claude: cached usd=0.0111 (notional, not billed)
+claude: cached usd=0.0112 (notional, not billed)
+claude: cached usd=0.0022 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0083 (notional, not billed)
+jev_router        core_List_left_le_minIdxOn_append failed calls=64 1.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0076 (notional, not billed)
+claude: cached usd=0.0175 (notional, not billed)
+claude: cached usd=0.0203 (notional, not billed)
+claude: cached usd=0.0136 (notional, not billed)
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0070 (notional, not billed)
+claude: cached usd=0.0070 (notional, not billed)
+claude: cached usd=0.0094 (notional, not billed)
+claude: cached usd=0.0047 (notional, not billed)
+jev_router        core_List_lt_iff_exists      failed calls=64 2.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0041 (notional, not billed)
+jev_router        core_List_map_id''           PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0025 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+claude: cached usd=0.0021 (notional, not billed)
+claude: cached usd=0.0025 (notional, not billed)
+claude: cached usd=0.0020 (notional, not billed)
+jev_router        core_List_map_id_fun         failed calls=64 0.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0140 (notional, not billed)
+claude: cached usd=0.0146 (notional, not billed)
+claude: cached usd=0.0133 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+jev_router        core_List_map_unattach       failed calls=64 3.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0037 (notional, not billed)
+claude: cached usd=0.0081 (notional, not billed)
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0131 (notional, not billed)
+claude: cached usd=0.0070 (notional, not billed)
+claude: cached usd=0.0115 (notional, not billed)
+claude: cached usd=0.0107 (notional, not billed)
+claude: cached usd=0.0038 (notional, not billed)
+jev_router        core_List_maxIdxOn_append    failed calls=64 1.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0032 (notional, not billed)
+claude: cached usd=0.0029 (notional, not billed)
+claude: cached usd=0.0022 (notional, not billed)
+claude: cached usd=0.0013 (notional, not billed)
+claude: cached usd=0.0032 (notional, not billed)
+jev_router        core_List_maxIdxOn_singleton failed calls=64 0.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0091 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0072 (notional, not billed)
+claude: cached usd=0.0094 (notional, not billed)
+claude: cached usd=0.0074 (notional, not billed)
+jev_router        core_List_maxOn_cons         failed calls=64 3.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0032 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+claude: cached usd=0.0028 (notional, not billed)
+claude: cached usd=0.0032 (notional, not billed)
+jev_router        core_List_max_congr_simp     failed calls=64 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0062 (notional, not billed)
+claude: cached usd=0.0065 (notional, not billed)
+claude: cached usd=0.0052 (notional, not billed)
+claude: cached usd=0.0050 (notional, not billed)
+jev_router        core_List_max_cons_cons      failed calls=64 1.0s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0101 (notional, not billed)
+claude: cached usd=0.0042 (notional, not billed)
+claude: cached usd=0.0037 (notional, not billed)
+claude: cached usd=0.0063 (notional, not billed)
+claude: cached usd=0.0121 (notional, not billed)
+claude: cached usd=0.0095 (notional, not billed)
+claude: cached usd=0.0108 (notional, not billed)
+jev_router        core_List_mem_eraseIdx_iff_getElem failed calls=64 1.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0128 (notional, not billed)
+claude: cached usd=0.0186 (notional, not billed)
+claude: cached usd=0.0103 (notional, not billed)
+claude: cached usd=0.0034 (notional, not billed)
+claude: cached usd=0.0160 (notional, not billed)
+jev_router        core_List_mergeSort_append   failed calls=64 1.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0049 (notional, not billed)
+claude: cached usd=0.0185 (notional, not billed)
+claude: cached usd=0.0116 (notional, not billed)
+claude: cached usd=0.0201 (notional, not billed)
+claude: cached usd=0.0038 (notional, not billed)
+claude: cached usd=0.0065 (notional, not billed)
+claude: cached usd=0.0075 (notional, not billed)
+jev_router        core_List_mergeSort_cons     failed calls=64 1.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0041 (notional, not billed)
+claude: cached usd=0.0095 (notional, not billed)
+claude: cached usd=0.0098 (notional, not billed)
+jev_router        core_List_minIdxOn?_cons     PROVED calls=21 1.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0034 (notional, not billed)
+jev_router        core_List_minIdxOn?_nil      PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0113 (notional, not billed)
+claude: cached usd=0.0134 (notional, not billed)
+claude: cached usd=0.0121 (notional, not billed)
+claude: cached usd=0.0098 (notional, not billed)
+claude: cached usd=0.0136 (notional, not billed)
+jev_router        core_List_minOn_replicate    PROVED calls=25 1.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0104 (notional, not billed)
+claude: cached usd=0.0134 (notional, not billed)
+claude: cached usd=0.0099 (notional, not billed)
+claude: cached usd=0.0100 (notional, not billed)
+jev_router        core_List_min_le_of_mem      failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0123 (notional, not billed)
+claude: cached usd=0.0201 (notional, not billed)
+claude: cached usd=0.0041 (notional, not billed)
+claude: cached usd=0.0175 (notional, not billed)
+jev_router        core_List_modifyTailIdx_modifyTailIdx PROVED calls=20 1.1s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0121 (notional, not billed)
+jev_router        core_List_pair_sublist_mergeSort PROVED calls=4 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0166 (notional, not billed)
+jev_router        core_List_pairwise_append_comm PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0142 (notional, not billed)
+claude: cached usd=0.0268 (notional, not billed)
+claude: cached usd=0.0175 (notional, not billed)
+claude: cached usd=0.0200 (notional, not billed)
+claude: cached usd=0.0090 (notional, not billed)
+jev_router        core_List_pairwise_mergeSort failed calls=64 1.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0086 (notional, not billed)
+jev_router        core_List_perm_iff_count     PROVED calls=5 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0108 (notional, not billed)
+jev_router        core_List_perm_iff_toArray_perm PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0108 (notional, not billed)
+claude: cached usd=0.0117 (notional, not billed)
+claude: cached usd=0.0022 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+jev_router        core_List_pmap_reverse       failed calls=64 1.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0126 (notional, not billed)
+jev_router        core_List_range'_concat      PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0038 (notional, not billed)
+jev_router        core_List_range'_succ_left   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0101 (notional, not billed)
+jev_router        core_List_range_succ         PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0149 (notional, not billed)
+jev_router        core_List_removeAll_cons     PROVED calls=5 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0034 (notional, not billed)
+jev_router        core_List_replace_cons_self  PROVED calls=2 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0090 (notional, not billed)
+jev_router        core_List_replace_take       PROVED calls=2 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0112 (notional, not billed)
+claude: cached usd=0.0090 (notional, not billed)
+claude: cached usd=0.0022 (notional, not billed)
+claude: cached usd=0.0127 (notional, not billed)
+jev_router        core_List_reverse_attachWith failed calls=64 0.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0173 (notional, not billed)
+jev_router        core_List_set_getElem_self   PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0034 (notional, not billed)
+claude: cached usd=0.0114 (notional, not billed)
+claude: cached usd=0.0144 (notional, not billed)
+claude: cached usd=0.0042 (notional, not billed)
+jev_router        core_List_set_getElem_succ_eraseIdx_succ failed calls=64 3.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0106 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0080 (notional, not billed)
+claude: cached usd=0.0116 (notional, not billed)
+claude: cached usd=0.0099 (notional, not billed)
+claude: cached usd=0.0153 (notional, not billed)
+jev_router        core_List_sum_singleton      failed calls=64 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0019 (notional, not billed)
+claude: cached usd=0.0042 (notional, not billed)
+jev_router        core_List_tail?_nil          failed calls=31 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0112 (notional, not billed)
+jev_router        core_List_tail_drop          PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0036 (notional, not billed)
+claude: cached usd=0.0028 (notional, not billed)
+claude: cached usd=0.0019 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+jev_router        core_List_tail_pmap          failed calls=61 0.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0152 (notional, not billed)
+jev_router        core_List_take_append_drop   PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0100 (notional, not billed)
+claude: cached usd=0.0018 (notional, not billed)
+claude: cached usd=0.0099 (notional, not billed)
+jev_router        core_List_take_append_getLast PROVED calls=39 1.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0048 (notional, not billed)
+claude: cached usd=0.0131 (notional, not billed)
+claude: cached usd=0.0041 (notional, not billed)
+jev_router        core_List_take_set           PROVED calls=21 0.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0068 (notional, not billed)
+jev_router        core_List_unattach_append    PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0036 (notional, not billed)
+claude: cached usd=0.0102 (notional, not billed)
+claude: cached usd=0.0143 (notional, not billed)
+claude: cached usd=0.0106 (notional, not billed)
+claude: cached usd=0.0110 (notional, not billed)
+claude: cached usd=0.0180 (notional, not billed)
+jev_router        core_List_unattach_filter    failed calls=64 2.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0075 (notional, not billed)
+claude: cached usd=0.0045 (notional, not billed)
+jev_router        core_List_unattach_nil       failed calls=31 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0131 (notional, not billed)
+jev_router        core_List_unzip_zip          PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0089 (notional, not billed)
+claude: cached usd=0.0098 (notional, not billed)
+claude: cached usd=0.0021 (notional, not billed)
+claude: cached usd=0.0123 (notional, not billed)
+jev_router        core_List_zipIdx_succ        failed calls=64 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0044 (notional, not billed)
+jev_router        core_List_zipWith_comm_of_comm PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0075 (notional, not billed)
+jev_router        core_Nat_Coprime_gcd_left    PROVED calls=3 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0203 (notional, not billed)
+claude: cached usd=0.0295 (notional, not billed)
+claude: cached usd=0.0183 (notional, not billed)
+claude: cached usd=0.0106 (notional, not billed)
+claude: cached usd=0.0185 (notional, not billed)
+jev_router        core_Nat_Coprime_gcd_mul     failed calls=64 1.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0137 (notional, not billed)
+jev_router        core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0274 (notional, not billed)
+jev_router        core_Nat_Internal_Linear_Expr_toPoly_go_induct PROVED calls=1 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0141 (notional, not billed)
+claude: cached usd=0.0189 (notional, not billed)
+claude: cached usd=0.0125 (notional, not billed)
+claude: cached usd=0.0135 (notional, not billed)
+claude: cached usd=0.0105 (notional, not billed)
+jev_router        core_Nat_Internal_Linear_Poly_of_isNonZero PROVED calls=34 1.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0116 (notional, not billed)
+claude: cached usd=0.0149 (notional, not billed)
+claude: cached usd=0.0238 (notional, not billed)
+claude: cached usd=0.0172 (notional, not billed)
+claude: cached usd=0.0136 (notional, not billed)
+claude: cached usd=0.0122 (notional, not billed)
+jev_router        core_Nat_add_div_of_dvd_add_add_one failed calls=64 1.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0126 (notional, not billed)
+jev_router        core_Nat_add_mul_div_right   PROVED calls=3 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0036 (notional, not billed)
+claude: cached usd=0.0039 (notional, not billed)
+claude: cached usd=0.0059 (notional, not billed)
+claude: cached usd=0.0040 (notional, not billed)
+claude: cached usd=0.0023 (notional, not billed)
+jev_router        core_Nat_all_congr           failed calls=64 0.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0090 (notional, not billed)
+jev_router        core_Nat_div_add_mod'        PROVED calls=2 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0103 (notional, not billed)
+jev_router        core_Nat_div_dvd_of_dvd      PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0126 (notional, not billed)
+jev_router        core_Nat_div_le_iff_le_mul_add_pred PROVED calls=3 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0141 (notional, not billed)
+claude: cached usd=0.0140 (notional, not billed)
+jev_router        core_Nat_div_le_self         PROVED calls=19 0.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0037 (notional, not billed)
+jev_router        core_Nat_div_lt_of_lt        PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0202 (notional, not billed)
+claude: cached usd=0.0101 (notional, not billed)
+claude: cached usd=0.0203 (notional, not billed)
+claude: cached usd=0.0172 (notional, not billed)
+jev_router        core_Nat_dvd_gcd_mul_gcd_iff_dvd_mul PROVED calls=42 1.0s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0186 (notional, not billed)
+jev_router        core_Nat_dvd_gcd_mul_iff_dvd_mul PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0129 (notional, not billed)
+jev_router        core_Nat_dvd_lcm_left        PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0121 (notional, not billed)
+claude: cached usd=0.0054 (notional, not billed)
+claude: cached usd=0.0128 (notional, not billed)
+jev_router        core_Nat_fold_add            failed calls=64 12.9s timeouts=1 claude=0 usd=0.000
+claude: cached usd=0.0134 (notional, not billed)
+jev_router        core_Nat_gcd_add_right_right_of_dvd PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0164 (notional, not billed)
+jev_router        core_Nat_gcd_add_self_right  PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0035 (notional, not billed)
+jev_router        core_Nat_gcd_le_right        PROVED calls=3 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0160 (notional, not billed)
+jev_router        core_Nat_gcd_mul_left_add_left PROVED calls=4 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0129 (notional, not billed)
+jev_router        core_Nat_ge_two_pow_of_testBit PROVED calls=2 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0105 (notional, not billed)
+jev_router        core_Nat_getD_toArray_rcc    PROVED calls=3 0.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0082 (notional, not billed)
+jev_router        core_Nat_getD_toList_ric     PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0103 (notional, not billed)
+jev_router        core_Nat_getElem?_toArray_roc PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0061 (notional, not billed)
+claude: cached usd=0.0092 (notional, not billed)
+claude: cached usd=0.0124 (notional, not billed)
+claude: cached usd=0.0112 (notional, not billed)
+jev_router        core_Nat_getElem_toArray_rio PROVED calls=26 2.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0107 (notional, not billed)
+claude: cached usd=0.0031 (notional, not billed)
+claude: cached usd=0.0042 (notional, not billed)
+jev_router        core_Nat_isSome_getElem?_toArray_ric_eq PROVED calls=18 0.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0087 (notional, not billed)
+jev_router        core_Nat_lcm_zero_left       PROVED calls=4 0.7s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0110 (notional, not billed)
+jev_router        core_Nat_le_of_dvd           PROVED calls=4 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0167 (notional, not billed)
+claude: cached usd=0.0185 (notional, not billed)
+claude: cached usd=0.0115 (notional, not billed)
+claude: cached usd=0.0156 (notional, not billed)
+jev_router        core_Nat_le_pow              PROVED calls=23 1.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0107 (notional, not billed)
+jev_router        core_Nat_lt_mul_div_succ     PROVED calls=3 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0188 (notional, not billed)
+jev_router        core_Nat_lt_pow_self         PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0102 (notional, not billed)
+jev_router        core_Nat_map_add_toArray_rco PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0100 (notional, not billed)
+jev_router        core_Nat_map_add_toArray_rio PROVED calls=18 0.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0088 (notional, not billed)
+claude: cached usd=0.0283 (notional, not billed)
+claude: cached usd=0.0133 (notional, not billed)
+claude: cached usd=0.0305 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0116 (notional, not billed)
+claude: cached usd=0.0119 (notional, not billed)
+jev_router        core_Nat_mul_add_mul_div_of_dvd PROVED calls=22 1.8s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0096 (notional, not billed)
+jev_router        core_Nat_one_le_div_iff      PROVED calls=2 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0042 (notional, not billed)
+jev_router        core_Nat_or_exists_add_one   PROVED calls=3 0.4s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0128 (notional, not billed)
+jev_router        core_Nat_pow_lt_pow_right    PROVED calls=3 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0144 (notional, not billed)
+jev_router        core_Nat_pow_right_comm      PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0038 (notional, not billed)
+jev_router        core_Nat_pow_sub_mul_pow     PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0034 (notional, not billed)
+jev_router        core_Nat_pred_lt_pred        PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0083 (notional, not billed)
+claude: cached usd=0.0090 (notional, not billed)
+claude: cached usd=0.0080 (notional, not billed)
+jev_router        core_Nat_repr_injective      failed calls=64 0.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0028 (notional, not billed)
+jev_router        core_Nat_self_add_pred       PROVED calls=2 0.5s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0175 (notional, not billed)
+jev_router        core_Nat_shiftLeft_shiftRight PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0096 (notional, not billed)
+claude: cached usd=0.0209 (notional, not billed)
+claude: cached usd=0.0114 (notional, not billed)
+claude: cached usd=0.0153 (notional, not billed)
+claude: cached usd=0.0089 (notional, not billed)
+jev_router        core_Nat_testBit_two_pow_mul_add failed calls=64 1.6s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0092 (notional, not billed)
+jev_router        core_Nat_toArray_roc_succ_succ PROVED calls=1 0.2s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0110 (notional, not billed)
+claude: cached usd=0.0097 (notional, not billed)
+claude: cached usd=0.0110 (notional, not billed)
+claude: cached usd=0.0078 (notional, not billed)
+claude: cached usd=0.0074 (notional, not billed)
+jev_router        core_Nat_toList_rco_succ_succ failed calls=64 1.3s timeouts=0 claude=0 usd=0.000
+claude: cached usd=0.0101 (notional, not billed)
+jev_router        core_Nat_zero_lt_getElem!_toList_rio_iff PROVED calls=2 0.2s timeouts=0 claude=0 usd=0.000
+# Jev proof demo — experiment 3 (core-library benchmark)
+
+148 theorems; `claude-opus-5-5`, effort `medium`.
+
+| method | proved | rate | 95% CI | notional USD | USD per proved | Claude requests | requests per proved | Lean calls | audit-rejected proofs |
+|---|---|---|---|---|---|---|---|---|---|
+| claude_search | 96/148 | 0.65 | 0.57–0.72 | 7.5258 | 0.0784 | 779 | 8.12 | 3827 | 102 |
+| menu_first | 88/148 | 0.59 | 0.51–0.67 | 3.2429 | 0.0369 | 312 | 3.54 | 4293 | 150 |
+| jev_router | 96/148 | 0.65 | 0.57–0.72 | 4.0735 | 0.0424 | 411 | 4.28 | 3908 | 181 |
+
+Paired comparisons (same theorems): difference in success rate a − b with a 95% bootstrap CI, discordant pairs, and the exact McNemar p-value.
+
+| a | b | a only | b only | a − b | 95% CI | McNemar p |
+|---|---|---|---|---|---|---|
+| jev_router | claude_search | 0 | 0 | +0.000 | +0.000–+0.000 | 1.0000 |
+| menu_first | claude_search | 0 | 8 | -0.054 | -0.095–-0.020 | 0.0078 |
+| jev_router | menu_first | 8 | 0 | +0.054 | +0.020–+0.095 | 0.0078 |
+
+Total Claude spend (actual): $7.5365 of $15.0.
+
+## Per theorem
+
+| theorem | claude_search | menu_first | jev_router |
+|---|---|---|---|
+| core_List_IsPrefix_le_countP | yes (3) | yes (3) | yes (3) |
+| core_List_IsSuffix_sublist | yes (1) | yes (1) | yes (1) |
+| core_List_Mem_brecOn | – | – | – |
+| core_List_MergeSort_Internal_splitInTwo_cons_cons_zipIdx_snd | – | – | – |
+| core_List_Nodup_not_mem_erase | yes (2) | yes (2) | yes (3) |
+| core_List_Pairwise_iff | yes (2) | yes (2) | yes (2) |
+| core_List_Pairwise_imp_mem | yes (1) | yes (1) | yes (1) |
+| core_List_Perm_append_right | yes (1) | yes (1) | yes (1) |
+| core_List_Sublist_brecOn | – | – | – |
+| core_List_all_bne' | yes (5) | yes (5) | yes (5) |
+| core_List_all_takeWhile | yes (4) | yes (4) | yes (4) |
+| core_List_append_of_mem | yes (2) | yes (2) | yes (2) |
+| core_List_append_sublist_iff | – | – | – |
+| core_List_apply_maxOn_lt_iff | – | – | – |
+| core_List_contains_congr | yes (18) | – | yes (23) |
+| core_List_count_cons | yes (1) | yes (1) | yes (1) |
+| core_List_count_filter | yes (4) | yes (4) | yes (4) |
+| core_List_count_filterMap | yes (2) | yes (2) | yes (2) |
+| core_List_count_le_length | yes (2) | yes (2) | yes (3) |
+| core_List_decide_mem_cons | yes (36) | yes (42) | yes (40) |
+| core_List_dropWhile_suffix | yes (1) | yes (1) | yes (1) |
+| core_List_drop_drop | yes (1) | yes (1) | yes (1) |
+| core_List_drop_take | yes (3) | yes (3) | yes (3) |
+| core_List_eraseIdx_modify_of_gt | yes (3) | yes (3) | yes (3) |
+| core_List_erase_replicate_ne | yes (4) | yes (4) | yes (4) |
+| core_List_filterMapM_loop_eq | yes (3) | yes (3) | yes (3) |
+| core_List_finRange_succ | yes (2) | yes (2) | yes (2) |
+| core_List_flatMapM_loop_induct_unfolding | – | – | – |
+| core_List_flatMapM_wfParam | yes (1) | yes (1) | yes (1) |
+| core_List_foldrM_filterMap | – | – | – |
+| core_List_foldrRecOn_cons | – | – | – |
+| core_List_foldr_assoc | yes (2) | yes (2) | yes (2) |
+| core_List_getElem?_insert_zero | yes (16) | yes (28) | yes (24) |
+| core_List_getElem_append | – | – | – |
+| core_List_getElem_append_right | – | – | – |
+| core_List_getElem_append_right' | – | – | – |
+| core_List_getElem_cons_drop | yes (1) | yes (1) | yes (1) |
+| core_List_getElem_drop | – | – | – |
+| core_List_getElem_eraseIdx_of_ge | – | – | – |
+| core_List_getElem_insert | – | – | – |
+| core_List_getElem_replace_of_ne | – | – | – |
+| core_List_getElem_zipIdx | – | – | – |
+| core_List_getElem_zipWith | – | – | – |
+| core_List_getLast_mapIdx | – | – | – |
+| core_List_getLast_tail | – | – | – |
+| core_List_head?_range | yes (1) | yes (1) | yes (2) |
+| core_List_head_append_right | – | – | – |
+| core_List_head_dropLast | – | – | – |
+| core_List_idxOf_le_length | yes (3) | yes (3) | yes (3) |
+| core_List_insert_of_not_mem | yes (1) | yes (1) | yes (1) |
+| core_List_instTransOrd | yes (53) | – | yes (59) |
+| core_List_isPrefixOf_replicate | yes (5) | yes (5) | yes (5) |
+| core_List_isSome_minOn?_of_mem | yes (2) | yes (2) | yes (2) |
+| core_List_le_min_iff | – | – | – |
+| core_List_left_le_minIdxOn_append | – | – | – |
+| core_List_lt_iff_exists | – | – | – |
+| core_List_map_id'' | yes (3) | yes (3) | yes (3) |
+| core_List_map_id_fun | – | – | – |
+| core_List_map_unattach | – | – | – |
+| core_List_maxIdxOn_append | – | – | – |
+| core_List_maxIdxOn_singleton | – | – | – |
+| core_List_maxOn_cons | – | – | – |
+| core_List_max_congr_simp | – | – | – |
+| core_List_max_cons_cons | – | – | – |
+| core_List_mem_eraseIdx_iff_getElem | – | – | – |
+| core_List_mergeSort_append | – | – | – |
+| core_List_mergeSort_cons | – | – | – |
+| core_List_minIdxOn?_cons | yes (19) | yes (54) | yes (21) |
+| core_List_minIdxOn?_nil | yes (1) | yes (1) | yes (1) |
+| core_List_minOn_replicate | yes (20) | – | yes (25) |
+| core_List_min_le_of_mem | – | – | – |
+| core_List_modifyTailIdx_modifyTailIdx | yes (17) | – | yes (20) |
+| core_List_pair_sublist_mergeSort | yes (4) | yes (4) | yes (4) |
+| core_List_pairwise_append_comm | yes (1) | yes (1) | yes (1) |
+| core_List_pairwise_mergeSort | – | – | – |
+| core_List_perm_iff_count | yes (5) | yes (5) | yes (5) |
+| core_List_perm_iff_toArray_perm | yes (2) | yes (2) | yes (2) |
+| core_List_pmap_reverse | – | – | – |
+| core_List_range'_concat | yes (2) | yes (2) | yes (2) |
+| core_List_range'_succ_left | yes (1) | yes (1) | yes (1) |
+| core_List_range_succ | yes (1) | yes (1) | yes (1) |
+| core_List_removeAll_cons | yes (5) | yes (5) | yes (5) |
+| core_List_replace_cons_self | yes (1) | yes (1) | yes (2) |
+| core_List_replace_take | yes (2) | yes (2) | yes (2) |
+| core_List_reverse_attachWith | – | – | – |
+| core_List_set_getElem_self | yes (2) | yes (2) | yes (2) |
+| core_List_set_getElem_succ_eraseIdx_succ | – | – | – |
+| core_List_sum_singleton | – | – | – |
+| core_List_tail?_nil | – | – | – |
+| core_List_tail_drop | yes (1) | yes (1) | yes (1) |
+| core_List_tail_pmap | – | – | – |
+| core_List_take_append_drop | yes (1) | yes (1) | yes (1) |
+| core_List_take_append_getLast | yes (37) | yes (51) | yes (39) |
+| core_List_take_set | yes (18) | yes (53) | yes (21) |
+| core_List_unattach_append | yes (1) | yes (1) | yes (1) |
+| core_List_unattach_filter | – | – | – |
+| core_List_unattach_nil | – | – | – |
+| core_List_unzip_zip | yes (2) | yes (2) | yes (2) |
+| core_List_zipIdx_succ | – | – | – |
+| core_List_zipWith_comm_of_comm | yes (2) | yes (2) | yes (2) |
+| core_Nat_Coprime_gcd_left | yes (2) | yes (2) | yes (3) |
+| core_Nat_Coprime_gcd_mul | – | – | – |
+| core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq | yes (1) | yes (1) | yes (3) |
+| core_Nat_Internal_Linear_Expr_toPoly_go_induct | yes (1) | yes (1) | yes (1) |
+| core_Nat_Internal_Linear_Poly_of_isNonZero | yes (33) | – | yes (34) |
+| core_Nat_add_div_of_dvd_add_add_one | – | – | – |
+| core_Nat_add_mul_div_right | yes (2) | yes (2) | yes (3) |
+| core_Nat_all_congr | – | – | – |
+| core_Nat_div_add_mod' | yes (1) | yes (1) | yes (2) |
+| core_Nat_div_dvd_of_dvd | yes (1) | yes (1) | yes (1) |
+| core_Nat_div_le_iff_le_mul_add_pred | yes (2) | yes (2) | yes (3) |
+| core_Nat_div_le_self | yes (18) | yes (35) | yes (19) |
+| core_Nat_div_lt_of_lt | yes (2) | yes (2) | yes (2) |
+| core_Nat_dvd_gcd_mul_gcd_iff_dvd_mul | yes (40) | – | yes (42) |
+| core_Nat_dvd_gcd_mul_iff_dvd_mul | yes (1) | yes (1) | yes (1) |
+| core_Nat_dvd_lcm_left | yes (1) | yes (1) | yes (1) |
+| core_Nat_fold_add | – | – | – |
+| core_Nat_gcd_add_right_right_of_dvd | yes (1) | yes (1) | yes (1) |
+| core_Nat_gcd_add_self_right | yes (1) | yes (1) | yes (1) |
+| core_Nat_gcd_le_right | yes (2) | yes (2) | yes (3) |
+| core_Nat_gcd_mul_left_add_left | yes (3) | yes (3) | yes (4) |
+| core_Nat_ge_two_pow_of_testBit | yes (1) | yes (1) | yes (2) |
+| core_Nat_getD_toArray_rcc | yes (3) | yes (3) | yes (3) |
+| core_Nat_getD_toList_ric | yes (3) | yes (3) | yes (3) |
+| core_Nat_getElem?_toArray_roc | yes (1) | yes (1) | yes (1) |
+| core_Nat_getElem_toArray_rio | yes (19) | – | yes (26) |
+| core_Nat_isSome_getElem?_toArray_ric_eq | yes (17) | yes (20) | yes (18) |
+| core_Nat_lcm_zero_left | yes (1) | yes (1) | yes (4) |
+| core_Nat_le_of_dvd | yes (4) | yes (4) | yes (4) |
+| core_Nat_le_pow | yes (18) | yes (64) | yes (23) |
+| core_Nat_lt_mul_div_succ | yes (2) | yes (2) | yes (3) |
+| core_Nat_lt_pow_self | yes (2) | yes (2) | yes (2) |
+| core_Nat_map_add_toArray_rco | yes (1) | yes (1) | yes (1) |
+| core_Nat_map_add_toArray_rio | yes (17) | yes (20) | yes (18) |
+| core_Nat_mul_add_mul_div_of_dvd | yes (17) | – | yes (22) |
+| core_Nat_one_le_div_iff | yes (1) | yes (1) | yes (2) |
+| core_Nat_or_exists_add_one | yes (2) | yes (2) | yes (3) |
+| core_Nat_pow_lt_pow_right | yes (3) | yes (3) | yes (3) |
+| core_Nat_pow_right_comm | yes (1) | yes (1) | yes (1) |
+| core_Nat_pow_sub_mul_pow | yes (2) | yes (2) | yes (2) |
+| core_Nat_pred_lt_pred | yes (2) | yes (2) | yes (2) |
+| core_Nat_repr_injective | – | – | – |
+| core_Nat_self_add_pred | yes (1) | yes (1) | yes (2) |
+| core_Nat_shiftLeft_shiftRight | yes (1) | yes (1) | yes (1) |
+| core_Nat_testBit_two_pow_mul_add | – | – | – |
+| core_Nat_toArray_roc_succ_succ | yes (1) | yes (1) | yes (1) |
+| core_Nat_toList_rco_succ_succ | – | – | – |
+| core_Nat_zero_lt_getElem!_toList_rio_iff | yes (2) | yes (2) | yes (2) |
+

@@ -1,0 +1,1 @@
+{"tactics": ["cases head✝ == a <;> simp", "rw [← Bool.and_assoc, Bool.and_comm (head✝ == a), Bool.and_assoc]", "simp [Bool.and_left_comm]", "exact Bool.and_left_comm _ _ _", "cases (head✝ == a) <;> cases decide (tail✝.length ≤ n✝) <;> rfl", "grind"], "usd": 0.004077000000000108}

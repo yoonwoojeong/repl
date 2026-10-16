@@ -1,0 +1,1 @@
+{"tactics": ["intro α", ": funext l", "intro α <;> funext l <;> simp", "intro α <;> funext l <;> induction l <;> simp_all", "intro α <;> funext l <;> exact List.map_id l", "simp", "intros"], "usd": 0.0024649999999999395}

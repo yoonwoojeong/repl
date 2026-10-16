@@ -1,0 +1,1 @@
+{"tactics": ["induction l₁ with\n  | nil => intro l₂; cases l₂ <;> simp\n  | cons a l ih => intro l₂; cases l₂ <;> simp_all", "intro l₂", "induction l₁ <;> intro l₂ <;> cases l₂ <;> simp_all", "induction l₁", "intro l₂ <;> constructor", "intro l₂ <;> induction l₂ generalizing l₁ <;> cases l₁ <;> simp_all"], "usd": 0.009081000000000117}

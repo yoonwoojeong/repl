@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.getElem_append_right h']", "simp [List.getElem_append_right h']", "exact List.getElem_append_right h'", "grind", "simp [h']", "rw [List.getElem_append_right]"], "usd": 0.0026010000000000755}

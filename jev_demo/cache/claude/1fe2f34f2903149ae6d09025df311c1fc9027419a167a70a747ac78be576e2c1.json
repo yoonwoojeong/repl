@@ -1,0 +1,1 @@
+{"tactics": ["cases t", "intro _; cases t", "exact absurd t (List.not_mem_nil)", "intro h; exact absurd t List.not_mem_nil", "nomatch t", "simp at t", "intro _; nomatch t"], "usd": 0.0027689999999999937}

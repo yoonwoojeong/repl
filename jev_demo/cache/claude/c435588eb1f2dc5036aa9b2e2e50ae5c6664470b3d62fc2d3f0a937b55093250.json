@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α p f g hf hd tl", "split <;> simp", "split", "by_cases h : g✝ head✝.val = true <;> simp [h]", "simp only [List.unattach_cons]", "grind"], "usd": 0.010557000000000372}

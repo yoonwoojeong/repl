@@ -1,0 +1,1 @@
+{"tactics": ["exact (List.getLast_cons h).symm", "rw [List.getLast_cons h]", "simp [List.getLast_cons h]", "simp [List.getLast_cons, h]", "grind [List.getLast_cons]", "rename_i a l"], "usd": 0.010060999999999876}

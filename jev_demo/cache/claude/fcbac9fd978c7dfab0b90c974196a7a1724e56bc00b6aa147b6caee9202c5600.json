@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "exact ⟨fun h1 h2 => by grind⟩", "infer_instance", "exact Std.TransCmp.mk (fun h1 h2 => by simp_all)", "unfold Std.TransOrd", "show Std.TransCmp (compare : List α → List α → Ordering)"], "usd": 0.010161000000000087}

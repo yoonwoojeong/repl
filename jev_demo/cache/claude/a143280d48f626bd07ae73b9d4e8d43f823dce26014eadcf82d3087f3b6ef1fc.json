@@ -1,0 +1,1 @@
+{"tactics": ["rw [← Nat.lt_succ_iff, Nat.div_lt_iff_lt_mul hb, Nat.succ_mul, Nat.mul_comm c b]; omega", "rw [← Nat.lt_add_one_iff, Nat.div_lt_iff_lt_mul hb, Nat.add_mul, Nat.one_mul, Nat.mul_comm c b]", "have h := Nat.div_lt_iff_lt_mul (x := a) (y := c + 1) hb", "constructor", "grind [Nat.div_lt_iff_lt_mul, Nat.le_div_iff_mul_le]"], "usd": 0.019229000000000163}

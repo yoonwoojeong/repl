@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp [bne]", "cases a == head✝ <;> rfl", "simp only [bne]", "unfold bne; rfl", "grind"], "usd": 0.006720999999999977}

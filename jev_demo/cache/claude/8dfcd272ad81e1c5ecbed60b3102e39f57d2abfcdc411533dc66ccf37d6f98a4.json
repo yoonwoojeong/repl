@@ -1,0 +1,1 @@
+{"tactics": ["by_cases hm : a ∈ l <;> simp [hm, List.getElem_cons]", "by_cases hm : a ∈ l <;> cases i <;> simp_all", "by_cases hm : a ∈ l <;> simp [hm]", "split <;> simp_all [List.getElem_cons]", "by_cases hm : a ∈ l", "cases i <;> by_cases hm : a ∈ l <;> simp_all"], "usd": 0.011181000000000108}

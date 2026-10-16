@@ -1,0 +1,1 @@
+{"tactics": ["intro α l h <;> rw [← List.dropLast_eq_take] <;> exact List.dropLast_append_getLast h", "intro α l h <;> simp [← List.dropLast_eq_take, List.dropLast_append_getLast]", "intro α l h", "intro α l h <;> grind [List.dropLast_eq_take, List.dropLast_append_getLast]", "intro α l h <;> induction l <;> simp_all"], "usd": 0.01004499999999986}

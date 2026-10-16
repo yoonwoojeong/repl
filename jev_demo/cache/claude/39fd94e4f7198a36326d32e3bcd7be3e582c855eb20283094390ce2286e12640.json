@@ -1,0 +1,1 @@
+{"tactics": ["intro i h <;> simp at h", "intro i h", "simp", "intro i h <;> exact absurd h (by simp)", "grind"], "usd": 0.0020769999999998845}

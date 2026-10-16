@@ -1,0 +1,1 @@
+{"tactics": ["exact fun {n m} h => ⟨n, (Nat.div_mul_cancel h).symm⟩", "intro n m h", "exact fun h => Dvd.intro n (Nat.div_mul_cancel h)", "intro n m ⟨k, hk⟩"], "usd": 0.010324999999999918}

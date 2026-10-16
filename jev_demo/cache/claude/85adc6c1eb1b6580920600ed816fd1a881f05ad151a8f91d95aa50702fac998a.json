@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "exact rfl", "congr", "simp only [Nat.add_zero]"], "usd": 0.005080999999999669}

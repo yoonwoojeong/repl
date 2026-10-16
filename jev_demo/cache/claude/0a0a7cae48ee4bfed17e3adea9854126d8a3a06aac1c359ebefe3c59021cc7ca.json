@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "intro h <;> induction h <;> simp_all", "intro h <;> induction h", "intro h <;> cases h", "intro h <;> induction h with\n  | nil => simp\n  | rel h => exact Or.inr ⟨0, by simp, by simp, by simp, h⟩\n  | cons _ ih => simp_all"], "usd": 0.00882499999999986}

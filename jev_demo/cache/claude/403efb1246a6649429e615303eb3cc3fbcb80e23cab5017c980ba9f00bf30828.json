@@ -1,0 +1,1 @@
+{"tactics": ["split at h", "rename_i hd tl ih", "split at h <;> simp_all [Nat.Internal.Linear.Var.denote] <;> omega", "split at h <;> simp_all [Nat.Internal.Linear.Var.denote, Nat.Internal.Linear.fixedVar]", "split at h <;> rename_i hc <;> simp_all <;> omega"], "usd": 0.012781000000000375}

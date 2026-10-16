@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.Internal.Linear.Poly.isNonZero] at h", "simp at h", "contradiction", "cases h", "exact absurd h (by decide)", "simp_all [Nat.Internal.Linear.Poly.isNonZero]", "rw [Nat.Internal.Linear.Poly.isNonZero] at h"], "usd": 0.006072999999999773}

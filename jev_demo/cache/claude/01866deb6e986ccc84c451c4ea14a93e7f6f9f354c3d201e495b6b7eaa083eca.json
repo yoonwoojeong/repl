@@ -1,0 +1,1 @@
+{"tactics": ["split <;> intro h <;> simp_all [Nat.Internal.Linear.Var.denote] <;> omega", "intro h", "split", "split <;> intro h", "split <;> intro h <;> simp_all <;> omega", "split <;> intro h <;> grind [Nat.Internal.Linear.Var.denote]"], "usd": 0.012452999999999825}

@@ -1,0 +1,1 @@
+{"tactics": ["cases t", "exact F _ _ t (by cases t; constructor)", "apply F", "exact F _ _ t (by cases t; exact List.Sublist.below.slnil)", "exact F _ _ t (by cases t; simp [List.Sublist.below])"], "usd": 0.009240999999999944}

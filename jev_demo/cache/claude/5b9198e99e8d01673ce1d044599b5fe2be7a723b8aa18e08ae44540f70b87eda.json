@@ -1,0 +1,1 @@
+{"tactics": ["rename_i trans total a l", "rename_i trans total a l <;> exact List.mergeSort_cons trans total a l", "simp only [List.mergeSort_eq_insertionSort]", "rename_i trans total a l <;> rw [List.mergeSort_eq_insertionSort, List.mergeSort_eq_insertionSort]", "grind"], "usd": 0.01161700000000021}

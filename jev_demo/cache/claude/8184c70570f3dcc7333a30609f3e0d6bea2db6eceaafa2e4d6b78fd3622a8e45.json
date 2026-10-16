@@ -1,0 +1,1 @@
+{"tactics": ["cases as <;> simp_all", "match as, h with | [], _ => simp", "have h0 : as = [] := List.eq_nil_of_length_eq_zero (by omega)", "cases as with | nil => simp | cons a t => simp at h", "rcases as with _ | ⟨a, t⟩ <;> simp at h ⊢", "cases as"], "usd": 0.006917000000000062}

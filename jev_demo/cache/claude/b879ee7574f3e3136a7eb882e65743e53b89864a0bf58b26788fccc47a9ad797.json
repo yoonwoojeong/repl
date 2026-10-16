@@ -1,0 +1,1 @@
+{"tactics": ["exact h.right_id x", "exact Std.LawfulRightIdentity.right_id x", "simp [h.right_id]", "exact @Std.LawfulRightIdentity.right_id α α (fun x1 x2 => x1 + x2) 0 h x", "have := h.right_id x; exact this", "grind"], "usd": 0.0032129999999996883}

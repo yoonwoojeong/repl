@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α le trans total l", "rename_i le trans total l", "rename_i trans total l", "induction l✝ using List.mergeSort.induct with | case1 => simp [List.mergeSort] | case2 => simp [List.mergeSort] | case3 a b xs ih₁ ih₂ => rw [List.mergeSort]; exact List.pairwise_merge (by assumption) (by assumption) ih₁ ih₂"], "usd": 0.01747299999999985}

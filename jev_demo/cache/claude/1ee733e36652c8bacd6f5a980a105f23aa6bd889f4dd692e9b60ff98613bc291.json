@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp_all [List.insert]", "rename_i α _ _ l a i h", "grind [List.insert]", "unfold List.insert", "simp only [List.insert]", "split", "split <;> split <;> simp_all [List.insert]"], "usd": 0.011328999999999922}

@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp_all", "constructor <;> intro h <;> rcases h with ⟨i, h, _⟩ <;> simp at h", "constructor <;> rintro ⟨i, h⟩ <;> simp_all", "grind", "exact ⟨fun ⟨i, h, _⟩ => absurd h (Nat.not_lt_zero _), fun ⟨i, _, h, _⟩ => absurd h (Nat.not_lt_zero _)⟩"], "usd": 0.004417000000000115}

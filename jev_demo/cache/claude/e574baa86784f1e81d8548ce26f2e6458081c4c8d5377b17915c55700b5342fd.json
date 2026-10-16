@@ -1,0 +1,1 @@
+{"tactics": ["cases l₁ <;> simp_all", "cases l₁ with\n  | nil => simp\n  | cons a l => simp at h'", "match l₁ with\n  | [] => simp\n  | _ :: _ => simp at h'", "simp_all", "grind", "cases l₁"], "usd": 0.01002499999999995}

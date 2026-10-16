@@ -1,0 +1,1 @@
+{"tactics": ["intro a", "intro a b c", "intro a b c hab hbc", "intro a <;> induction a with\n  | nil => intro b c _ _; cases c <;> cases b <;> simp_all [compare, List.compareLex]\n  | cons x xs ih => intro b c h1 h2; cases b <;> cases c <;> simp_all [compare, List.compareLex]", "simp only [compare]", "grind"], "usd": 0.008541000000000132}

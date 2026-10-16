@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => (List.mem_replicate.1 (List.minOn_mem h)).2", "intro β α _ _ _ n a f h", "intros", "exact fun h => by have := List.minOn_mem h; simp_all", "intro β α _ _ _ n a f h <;> grind"], "usd": 0.011308999999999791}

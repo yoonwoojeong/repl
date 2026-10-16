@@ -1,0 +1,1 @@
+{"tactics": ["intro a b <;> rw [Nat.mul_comm] <;> exact Nat.div_add_mod a b", "intro a b <;> simp [Nat.mul_comm, Nat.div_add_mod]", "intro a b <;> grind [Nat.div_add_mod]", "intro a b <;> rw [Nat.mul_comm, Nat.div_add_mod]", "intro a b"], "usd": 0.009049000000000085}

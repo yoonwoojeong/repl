@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "refine ⟨fun hlt x hx => Std.lt_of_le_of_lt (List.apply_le_apply_maxOn_of_mem hx) hlt, fun hall => hall _ (List.maxOn_mem h)⟩", "refine ⟨fun hlt x hx => ?_, fun hall => hall _ (List.maxOn_mem h)⟩", "grind [List.maxOn_mem, List.apply_le_apply_maxOn_of_mem]", "simp [List.maxOn_mem]", "induction xs <;> simp_all"], "usd": 0.01058899999999996}

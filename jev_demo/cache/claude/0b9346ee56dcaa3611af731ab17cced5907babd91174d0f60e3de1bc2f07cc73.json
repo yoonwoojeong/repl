@@ -1,0 +1,1 @@
+{"tactics": ["by_cases h : i < n <;> simp [h] <;> omega", "simp", "grind", "simp [Option.map]", "by_cases h : i < n <;> simp_all", "rcases Nat.lt_or_ge i n with h | h <;> simp [h] <;> omega"], "usd": 0.007461000000000162}

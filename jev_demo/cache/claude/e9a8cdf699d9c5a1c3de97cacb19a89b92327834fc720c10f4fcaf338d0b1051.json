@@ -1,0 +1,1 @@
+{"tactics": ["induction r generalizing l₁ with\n| nil => exact ⟨[], [], rfl, by simp_all, by simp_all⟩\n| cons a r ih => ?_", "induction r generalizing l₁", "induction r generalizing l₁ l₂", "cases l₁", "grind", "simp_all [List.sublist_append_iff]"], "usd": 0.012376999999999971}

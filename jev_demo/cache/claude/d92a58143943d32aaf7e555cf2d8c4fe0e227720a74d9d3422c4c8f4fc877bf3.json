@@ -1,0 +1,1 @@
+{"tactics": ["cases xs <;> simp_all [List.dropLast]", "cases xs with\n  | nil => simp at h\n  | cons y ys => rfl", "rcases xs with _ | ⟨y, ys⟩", "cases xs <;> simp_all", "cases xs with\n  | nil => exact absurd rfl h\n  | cons y ys => rfl", "cases xs"], "usd": 0.010193000000000119}

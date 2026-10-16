@@ -1,0 +1,1 @@
+{"tactics": ["rintro hb hd ⟨k, rfl⟩ ⟨m, rfl⟩", "intro hb hd ha hc", "rintro hb hd ⟨k, hk⟩ ⟨m, hm⟩", "intro hb hd ⟨k, hk⟩ ⟨m, hm⟩"], "usd": 0.011944999999999872}

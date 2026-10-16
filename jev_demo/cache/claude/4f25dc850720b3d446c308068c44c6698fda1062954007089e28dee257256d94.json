@@ -1,0 +1,1 @@
+{"tactics": ["intro hx; exact hx _ (List.maxOn_mem ..)", "intro hx", "exact fun hx => hx _ (List.maxOn_mem h)", "exact fun hx => hx _ (List.maxOn_mem (h := h))", "exact fun hx => hx _ List.maxOn_mem", "intro hx <;> apply hx <;> simp [List.maxOn_mem]", "intro hx <;> grind [List.maxOn_mem]"], "usd": 0.007132999999999945}

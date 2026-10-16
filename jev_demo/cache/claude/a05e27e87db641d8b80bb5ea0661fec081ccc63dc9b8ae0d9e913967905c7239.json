@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α le l₁ l₂ h₁ h₂", "split", "split <;> simp_all", "split <;> rename_i heq <;> simp_all [List.MergeSort.Internal.splitInTwo]", "simp only [List.MergeSort.Internal.splitInTwo]", "grind"], "usd": 0.011148999999999631}

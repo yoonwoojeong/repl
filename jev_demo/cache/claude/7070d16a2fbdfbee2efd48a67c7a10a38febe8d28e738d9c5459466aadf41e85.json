@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l₁ l₂", "exact List.lex_iff_exists", "rw [← List.lex_lt]", "simp only [List.lt_iff_lex_lt]", "rename_i l₁ l₂ <;> exact (List.Lex.iff_exists (· < ·))", "grind [List.Lex]"], "usd": 0.013561000000000156}

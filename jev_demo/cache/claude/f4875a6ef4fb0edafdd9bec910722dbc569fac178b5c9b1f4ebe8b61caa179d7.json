@@ -1,0 +1,1 @@
+{"tactics": ["induction xs <;> simp_all [List.unattach] <;> rfl", "simp only [List.unattach, List.map_map]", "induction xs with\n  | nil => rfl\n  | cons x xs ih => cases x; simp_all [List.unattach]", "simp [List.unattach, List.map_map, Function.comp_def]", "induction xs <;> simp_all [List.unattach]", "unfold List.unattach", "congr 1"], "usd": 0.014588999999999963}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i c a b h", "obtain ⟨k, hk⟩ := ‹_ ∣ _›", "rcases ‹_ ∣ _› with ⟨k, hk⟩", "cases ‹_ ∣ _›", "grind"], "usd": 0.013569000000000386}

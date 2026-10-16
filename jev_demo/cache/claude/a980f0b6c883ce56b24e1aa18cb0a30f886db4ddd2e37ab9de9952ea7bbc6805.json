@@ -1,0 +1,1 @@
+{"tactics": ["simp [Std.Rio.toArray] at h ⊢", "grind", "simp_all [← Std.Rio.toArray]", "rw [show (Std.Rio.Internal.iter *...n).toArray = (*...n).toArray from rfl] at *", "simp [Nat.toArray_rio_eq_range] at h ⊢", "induction n <;> simp_all"], "usd": 0.012420999999999793}

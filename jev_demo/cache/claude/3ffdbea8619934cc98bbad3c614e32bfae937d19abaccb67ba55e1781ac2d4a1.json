@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "exact fun h => ⟨[], r, rfl, h⟩", "exact fun h => ⟨[], r, by simp, h⟩", "intro h; exact ⟨[], r, by simp, h⟩", "grind"], "usd": 0.0027289999999999814}

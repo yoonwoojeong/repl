@@ -1,0 +1,1 @@
+{"tactics": ["have h1 := Nat.div_add_mod a b", "have h2 := Nat.mod_lt a hb", "rw [Nat.mul_add, Nat.mul_one]", "grind [Nat.div_add_mod, Nat.mod_lt]", "have h1 := Nat.div_add_mod a b <;> have h2 := Nat.mod_lt a hb <;> rw [Nat.mul_add, Nat.mul_one] <;> omega"], "usd": 0.015501000000000431}

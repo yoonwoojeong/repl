@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨l₁, l₂, h⟩ := List.append_of_mem hm", "have hp := List.mergeSort_perm (a :: l) le", "have hs := List.sorted_mergeSort trans (fun a b => by simpa using total a b) (a :: l)", "induction l generalizing a", "rw [List.mem_iff_append] at hm", "have hp' := List.mergeSort_perm l le"], "usd": 0.016585000000000072}

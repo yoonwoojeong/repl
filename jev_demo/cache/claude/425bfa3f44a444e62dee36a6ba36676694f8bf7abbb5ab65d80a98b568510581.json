@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "simp [List.zipWith] at h", "simp_all", "exact absurd h (by simp)", "cases l' <;> simp at h", "exact (Nat.not_lt_zero _ h).elim"], "usd": 0.005708999999999964}

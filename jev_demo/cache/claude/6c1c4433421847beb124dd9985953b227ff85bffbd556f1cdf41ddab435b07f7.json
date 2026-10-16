@@ -1,0 +1,1 @@
+{"tactics": ["intro a b hb", "intro a b hb <;> rcases Nat.eq_zero_or_pos a with h | h <;> [simp [h]; exact (Nat.pow_one a) ▸ Nat.pow_le_pow_right h hb]", "intro a b hb <;> cases a <;> simp_all <;> exact (Nat.pow_one _) ▸ Nat.pow_le_pow_right (Nat.succ_pos _) hb", "intros", "intro a b hb <;> induction b <;> grind"], "usd": 0.016681000000000168}

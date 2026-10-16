@@ -1,0 +1,1 @@
+{"tactics": ["have h4 : b % c < c := Nat.mod_lt _ hc", "have h1 := Nat.div_add_mod a c", "have key : (a + b + 1) % c = 0 := by rw [hk]; exact Nat.mul_mod_right c k", "grind", "rw [Nat.add_div hc]", "have h2 := Nat.div_add_mod b c"], "usd": 0.02365700000000004}
