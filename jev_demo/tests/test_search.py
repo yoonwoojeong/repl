@@ -201,3 +201,35 @@ def test_stale_state_after_timeout_is_rederived():
     assert r.proved and r.tactics == [FIRST, FIRST]
     assert "start" in repl.calls  # the stale node was re-derived
     assert third in repl.calls
+
+
+def test_ask_claude_placeholder_fetches_proposals_lazily_and_costs_no_lean_call():
+    from jev_demo.search import ASK_CLAUDE
+
+    class Lazy:
+        asked = 0
+        def rank(self, goal):
+            return [("m1", 0.5), (ASK_CLAUDE, 0.5), ("m2", 0.5)], 0.0, 0.5
+        def claude_actions(self, goal):
+            Lazy.asked += 1
+            return ["c1"]
+
+    repl = FakeRepl({(0, "c1"): R(completed=True)})
+    r = prove(THM, repl, Lazy(), budget=10)
+    assert r.proved and r.tactics == ["c1"] and Lazy.asked == 1
+    assert [t for _, t in repl.calls] == ["m1", "c1"] and r.calls == 2  # m2 never needed
+
+
+def test_no_claude_request_when_the_menu_closes_first():
+    from jev_demo.search import ASK_CLAUDE
+
+    class Lazy:
+        asked = 0
+        def rank(self, goal):
+            return [("m1", 0.5), (ASK_CLAUDE, 0.5)], 0.0, 0.5
+        def claude_actions(self, goal):
+            Lazy.asked += 1
+            return []
+
+    r = prove(THM, FakeRepl({(0, "m1"): R(completed=True)}), Lazy(), budget=10)
+    assert r.proved and Lazy.asked == 0

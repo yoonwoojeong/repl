@@ -122,9 +122,51 @@ def test_filter_order_keeps_claude_order_and_defers_low_useful_proposals():
 
     r = HybridRanker.__new__(HybridRanker)
     r.base, r.generator, r.order, r.prelude, r.banned, r.tau = Base(), Gen(), "filter", "", (), 0.3
+    r._root = None
     r._proposals, r._failed = {}, {}
     goal = "⊢ P"
     actions, conf, _ = r.rank(goal)
     names = [a for a, _ in actions]
     assert names[:2] == ["good_a", "good_c"] and names[-1] == "bad_b" and conf == 0.0
     assert names[2:-1] == list(menu(goal, True))
+
+
+def _lazy_ranker(order, p_close=None):
+    from jev_demo.hybrid import HybridRanker
+
+    class Gen:
+        calls = 0
+        def propose(self, goal, prelude="", failed=(), **kw):
+            Gen.calls += 1
+            return ["claude_tac"]
+
+    class Base:
+        automation = True
+        def p_closes(self, goal, tactics):
+            return {t: (p_close or {}).get(t, 0.0) for t in tactics}
+
+    r = HybridRanker.__new__(HybridRanker)
+    r.base, r.generator, r.order, r.prelude, r.banned = Base(), Gen(), order, "", ()
+    r.tau, r.route_tau, r.route_k, r._root = 0.3, 0.5, 3, None
+    r._proposals, r._failed = {}, {}
+    return r, Gen
+
+
+def test_menu_first_asks_claude_first_only_at_the_root():
+    from jev_demo.actions import menu
+    from jev_demo.search import ASK_CLAUDE
+    r, gen = _lazy_ranker("menu_first")
+    root = [a for a, _ in r.rank("⊢ P")[0]]
+    inner = [a for a, _ in r.rank("⊢ Q")[0]]
+    assert root[0] == ASK_CLAUDE and inner[-1] == ASK_CLAUDE and inner[:-1] == list(menu("⊢ Q", True))
+    assert gen.calls == 0  # ranking never calls Claude; only reaching ASK_CLAUDE does
+    assert r.claude_actions("⊢ Q") == ["claude_tac"] and gen.calls == 1
+
+
+def test_router_tries_likely_closers_before_claude_else_claude_first():
+    from jev_demo.search import ASK_CLAUDE
+    r, _ = _lazy_ranker("router", {"simp": 0.9, "omega": 0.7, "decide": 0.2})
+    sure = [a for a, _ in r.rank("⊢ P")[0]]
+    assert sure[:3] == ["simp", "omega", ASK_CLAUDE]
+    r2, _ = _lazy_ranker("router", {})
+    assert [a for a, _ in r2.rank("⊢ P")[0]][0] == ASK_CLAUDE

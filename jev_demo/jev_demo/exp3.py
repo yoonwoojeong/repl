@@ -21,8 +21,9 @@ from jev_demo.search import prove
 from jev_demo.stats import compare, wilson
 from jev_demo.theorems import Theorem
 
-METHODS = CLAUDE_METHODS + PHASE2_SUPPLEMENTARY + ("hybrid_filter",)
-PAIRS = (("hybrid_filter", "claude_search"), ("hybrid", "claude_search"),
+METHODS = CLAUDE_METHODS + PHASE2_SUPPLEMENTARY + ("hybrid_filter", "menu_first", "jev_router")
+PAIRS = (("jev_router", "claude_search"), ("menu_first", "claude_search"), ("jev_router", "menu_first"),
+         ("hybrid_filter", "claude_search"), ("hybrid", "claude_search"),
          ("claude_whole", "claude_search"), ("hybrid", "claude_whole"))
 
 
@@ -89,7 +90,10 @@ def analyse(results: dict) -> dict:
         usd = results[m]["notional_usd"]
         out["rates"][m] = {"proved": k, "n": n, "rate": round(k / n, 4) if n else 0.0,
                            "ci95": [round(lo, 4), round(hi, 4)], "notional_usd": usd,
-                           "usd_per_proved": round(usd / k, 4) if k else None}
+                           "usd_per_proved": round(usd / k, 4) if k else None,
+                           "claude_requests": results[m]["claude_requests"],
+                           "requests_per_proved": round(results[m]["claude_requests"] / k, 3) if k else None,
+                           "lean_calls": sum(r["calls"] for r in results[m]["per_theorem"])}
     for a, b in PAIRS:
         if a in ms and b in ms:
             out["pairs"].append(compare(a, _proved(results, a), b, _proved(results, b)))
@@ -104,13 +108,16 @@ def format_report(results: dict) -> str:
            + ".", ""]
     if results.get("budget_capped"):
         out += ["**Budget cap reached**: some requests were refused locally; rows are not comparable.", ""]
-    out += ["| method | proved | rate | 95% CI | notional USD | USD per proved | audit-rejected proofs |",
-            "|---|---|---|---|---|---|---|"]
+    out += ["| method | proved | rate | 95% CI | notional USD | USD per proved | Claude requests "
+            "| requests per proved | Lean calls | audit-rejected proofs |",
+            "|---|---|---|---|---|---|---|---|---|---|"]
     for m, r in a["rates"].items():
         rej = sum(x.get("audit_rejected", 0) for x in results[m]["per_theorem"])
         per = f"{r['usd_per_proved']:.4f}" if r["usd_per_proved"] is not None else "–"
+        rpp = f"{r['requests_per_proved']:.2f}" if r.get("requests_per_proved") is not None else "–"
         out.append(f"| {m} | {r['proved']}/{r['n']} | {r['rate']:.2f} | {r['ci95'][0]:.2f}–{r['ci95'][1]:.2f} "
-                   f"| {r['notional_usd']:.4f} | {per} | {rej} |")
+                   f"| {r['notional_usd']:.4f} | {per} | {r.get('claude_requests', '–')} | {rpp} "
+                   f"| {r.get('lean_calls', '–')} | {rej} |")
     if a["pairs"]:
         out += ["", "Paired comparisons (same theorems): difference in success rate a − b with a 95% "
                 "bootstrap CI, discordant pairs, and the exact McNemar p-value.", "",

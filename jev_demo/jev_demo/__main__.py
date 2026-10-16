@@ -56,7 +56,8 @@ def _exp3(args) -> None:
     with ReplClient() as repl:
         test = load_theorems(args.test)
         test = test[:args.limit] if args.limit else test
-        exp3.run(repl, load_theorems(args.train), test, args.out, gen, methods,
+        train = [] if args.train == "none" else load_theorems(args.train)  # "none": labels only
+        exp3.run(repl, train, test, args.out, gen, methods,
                  label_paths=labels, labels_out=args.labels_out)
     with open(os.path.join(args.out, "report.md"), encoding="utf-8") as f:
         print(f.read())

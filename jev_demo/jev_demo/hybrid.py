@@ -12,7 +12,7 @@ from typing import Literal
 from jev_demo.actions import menu
 from jev_demo.premises import Lemma, Shortlister
 from jev_demo.schema import LLM_PREFIX, parse_llm
-from jev_demo.search import ModelRanker, Ranking, _key
+from jev_demo.search import ASK_CLAUDE, ModelRanker, Ranking, _key
 
 
 
@@ -37,12 +37,17 @@ def llm_options(proposals, items, exclude=()) -> dict[str, str]:
 
 class HybridRanker:
     def __init__(self, model, shortlister: Shortlister, lib: dict[str, Lemma], generator,
-                 order: Literal["jev", "llm", "filter"] = "jev", prelude: str = "",
-                 banned: tuple[str, ...] = (), tau: float = 0.3):
+                 order: Literal["jev", "llm", "filter", "menu_first", "router"] = "jev", prelude: str = "",
+                 banned: tuple[str, ...] = (), tau: float = 0.3, route_tau: float = 0.5,
+                 route_k: int = 3):
         """One ranker per theorem: `prelude` is passed to the generator with every goal."""
         self.base = ModelRanker(model, shortlister, lib)
         self.generator, self.order, self.prelude, self.banned = generator, order, prelude, banned
         self.tau = tau  # order="filter": proposals with p(useful) below this are tried last
+        # order="router": if some menu tactic has p(closes) >= route_tau, try the route_k most
+        # likely ones before asking Claude at this state
+        self.route_tau, self.route_k = route_tau, route_k
+        self._root: str | None = None  # key of the first goal ranked: the theorem itself
         self._proposals: dict[str, list[str]] = {}  # goal key -> Claude's proposals (memo)
         self._failed: dict[str, list[str]] = {}  # goal key -> tactics tried there that failed
 
@@ -65,7 +70,16 @@ class HybridRanker:
             self._proposals[k] = [t for t in got if t.strip() not in failed]
         return self._proposals[k]
 
+    def claude_actions(self, goal: str) -> list[str]:
+        """Claude's proposals at `goal`, minus menu items (they are already in the ranking)."""
+        items = menu(goal, self.base.automation)
+        return list(llm_options(self._propose(goal), items).values())
+
     def rank(self, goal: str) -> Ranking:
+        if self._root is None:
+            self._root = _key(goal)
+        if self.order in ("menu_first", "router"):
+            return self._rank_lazy(goal)
         proposals = self._propose(goal)
         items = menu(goal, self.base.automation)
         extras = llm_options(proposals, items)
@@ -86,3 +100,22 @@ class HybridRanker:
             actions = keep + list(items) + late
             return [(a, 1.0 / len(actions)) for a in actions], 0.0, 0.5
         return self.base.rank_with(goal, extras)
+
+    def _rank_lazy(self, goal: str) -> Ranking:
+        """Efficiency orders: Claude is asked (lazily, via ASK_CLAUDE) only after cheap menu tactics.
+
+        `menu_first` (no learning): at the theorem itself Claude first, as in `claude_search`; at
+        every later state the whole menu first, then Claude.
+        `router` (Jev): at any state, the menu tactics the model gives p(closes) >= route_tau (at
+        most route_k, most likely first), then Claude, then the rest of the menu; if none
+        qualifies, Claude first, as in `claude_search`."""
+        items = list(menu(goal, self.base.automation))
+        if self.order == "menu_first":
+            first = [] if _key(goal) == self._root else items
+            rest = [] if first else items
+        else:
+            p = self.base.p_closes(goal, items)
+            sure = sorted((t for t in items if p[t] >= self.route_tau), key=lambda t: -p[t])[:self.route_k]
+            first, rest = sure, [t for t in items if t not in sure]
+        actions = first + [ASK_CLAUDE] + rest
+        return [(a, 1.0 / len(actions)) for a in actions], 0.0, 0.5

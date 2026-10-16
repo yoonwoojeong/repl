@@ -17,6 +17,10 @@ from jev_demo.schema import BinaryQuestion, ChoiceQuestion, answer_key
 from jev_demo.theorems import Theorem
 
 TOP_PREMISES = 4
+# A placeholder action: when the search reaches it, it asks the ranker for Claude's proposals at
+# that state (`ranker.claude_actions(goal)`) and tries them next. Lets a ranker try cheap menu
+# tactics first and pay for a Claude request only when they do not finish the state.
+ASK_CLAUDE = "<<ask claude>>"
 
 Ranking = tuple[list[tuple[str, float]], float, float]
 
@@ -34,6 +38,13 @@ class ModelRanker:
 
     def rank(self, goal: str) -> Ranking:
         return self.rank_with(goal)
+
+    def p_closes(self, goal: str, tactics: list[str]) -> dict[str, float]:
+        """`{tactic: p(closes)}`: the model's estimate that the tactic alone closes the first goal
+        (question `closes`, trained by `posttrain`)."""
+        qs = [BinaryQuestion("closes", option=t) for t in tactics]
+        ans = self.model.evaluate(goal, qs)
+        return {t: ans[answer_key(BinaryQuestion("closes", option=t))].p_true for t in tactics}
 
     def p_useful(self, goal: str, extras: dict[str, str]) -> dict[str, float]:
         """`{llm option: p(useful)}`: the model's estimate that Lean accepts the proposal and
@@ -201,8 +212,15 @@ def prove(thm: Theorem, repl: ReplClient, ranker: Ranker, budget: int = 64, max_
                 ratio = rest[0][1] / max(actions[0][1], 1e-12)
                 requeue(-neg_prio + math.log(max(ratio, 1e-12)), cum_logp, ps, goal, tactics,
                         ranking, offset + top_k)
-        for action, score in chosen:
+        for j, (action, score) in enumerate(chosen):
             if calls >= budget:
+                break
+            if action == ASK_CLAUDE:  # costs no Lean call: fetch proposals, retry this node
+                extra = [(t, score) for t in ranker.claude_actions(goal)]
+                rest = [(a, s) for a, s in chosen[j + 1:] if a != ASK_CLAUDE]
+                requeue(-neg_prio, cum_logp, ps, goal, tactics, (extra + rest, confidence, ranking[2]), 0)
+                trace.append({"goal": goal, "n_actions": len(actions), "chosen": action, "score": score,
+                              "confidence": confidence, "outcome": "asked", "next_goal": None})
                 break
             calls += 1
             res = repl.tactic(action, ps)
