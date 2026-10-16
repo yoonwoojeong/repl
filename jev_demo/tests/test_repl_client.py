@@ -48,3 +48,9 @@ def test_prelude_definitions_are_visible_in_tactic_mode(repl):
     ps, goal = repl.start_theorem("∀ n : Nat, double n = 2 * n", prelude)
     r = repl.tactic("intro n; induction n <;> grind [double]", ps)
     assert r.ok and r.completed, r.error
+
+
+def test_decl_handles_propositions_and_binder_statements():
+    from jev_demo.repl_client import decl
+    assert decl("∀ n : Nat, n = n") == "theorem t : ∀ n : Nat, n = n"
+    assert decl("(x : ℕ) (h : x = 1) : x + 1 = 2") == "theorem t (x : ℕ) (h : x = 1) : x + 1 = 2"

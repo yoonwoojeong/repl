@@ -8,6 +8,15 @@ BASE_MENU: tuple[str, ...] = (
     "rfl", "simp", "simp_all", "omega", "decide", "constructor", "assumption", "trivial", "simp [*] at *",
 )
 AUTOMATION: tuple[str, ...] = ("grind", "exact?")
+# Benchmark-specific extra menu items (e.g. Mathlib automation for miniF2F); empty for core Lean.
+EXTRA_MENU: list[str] = []
+MATHLIB_MENU: tuple[str, ...] = ("norm_num", "linarith", "nlinarith", "positivity", "ring_nf", "field_simp",
+                                  "aesop", "norm_num [*] at *", "omega", "decide")
+
+
+def set_extra_menu(tactics) -> None:
+    """Add benchmark-specific tactics to every menu (call once, before searching)."""
+    EXTRA_MENU[:] = list(tactics)
 TEMPLATES: tuple[str, ...] = ("rw [·]", "simp [·]", "grind [·]", "exact ·", "apply ·")
 
 _HOLE = "·"
@@ -82,7 +91,7 @@ def _referable(name: str) -> bool:
 def menu(goal: str, automation: bool = True) -> tuple[str, ...]:
     hyps, target = _split_goal(goal)
     taken = {n for names, _ in hyps for n in names}
-    items = list(BASE_MENU) + (list(AUTOMATION) if automation else [])
+    items = list(BASE_MENU) + EXTRA_MENU + (list(AUTOMATION) if automation else [])
     binders = _binder_names(target)
     if binders:
         items.append("intro " + " ".join(binders))

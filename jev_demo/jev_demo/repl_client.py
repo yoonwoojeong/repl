@@ -27,13 +27,24 @@ def _failure(error: str) -> TacticResult:
     return TacticResult(None, [], False, False, error, [])
 
 
+def decl(statement: str, name: str = "t") -> str:
+    """`theorem t : P` for a proposition, or `theorem t (x : α) ... : P` when the statement
+    starts with binders or a colon (miniF2F-style `(x : ℕ) (h : ...) : goal`)."""
+    s = statement.lstrip()
+    return f"theorem {name} {s}" if s[:1] in ("(", "{", "[", "⦃", ":") else f"theorem {name} : {statement}"
+
+
 class ReplClient:
     def __init__(
         self,
         repl_path: str = ".lake/build/bin/repl",
         cwd: str = REPO_ROOT,
         timeout_s: float = 10.0,
+        header: str | None = None,
     ):
+        """`header` (e.g. `import Mathlib` plus `open ...`) becomes the base environment of every
+        command; by default the base environment is core Lean (Init)."""
+        self.header = header
         self.repl_path = repl_path
         self.cwd = cwd
         self.timeout_s = timeout_s
@@ -69,7 +80,10 @@ class ReplClient:
         self._issued = 0
         # Import Init once and reuse that environment: a command without `env` re-imports
         # Init (~1s). This also keeps the startup cost out of any caller's timeout.
-        reply = self._request({"cmd": "example : True := trivial"}, _STARTUP_TIMEOUT_S, starting=True)
+        cmd = (self.header + "\n\n" if self.header else "") + "example : True := trivial"
+        reply = self._request({"cmd": cmd}, _STARTUP_TIMEOUT_S * (5 if self.header else 1), starting=True)
+        if any(m.get("severity") == "error" for m in reply.get("messages", [])):
+            raise RuntimeError(f"Lean REPL header failed: {reply}")
         self._base_env = reply["env"]
 
     @staticmethod
@@ -141,7 +155,7 @@ class ReplClient:
             if "env" not in pre or any(m.get("severity") == "error" for m in pre.get("messages", [])):
                 raise RuntimeError(f"could not elaborate prelude {prelude!r}: {pre}")
             env = pre["env"]
-        reply = self.command(f"theorem t : {statement} := by sorry", env=env)
+        reply = self.command(f"{decl(statement)} := by sorry", env=env)
         sorries = reply.get("sorries")
         if not sorries:
             raise RuntimeError(f"could not start theorem {statement!r}: {reply}")
@@ -179,7 +193,7 @@ class ReplClient:
 
     def check_proof(self, statement: str, tactics: list[str], prelude: str = "") -> bool:
         body = "".join(f"\n  {t}" for t in tactics)
-        reply = self.command(f"{prelude}\ntheorem t : {statement} := by{body}")
+        reply = self.command(f"{prelude}\n{decl(statement)} := by{body}")
         if "message" in reply:
             return False
         has_error = any(m.get("severity") == "error" for m in reply.get("messages", []))
