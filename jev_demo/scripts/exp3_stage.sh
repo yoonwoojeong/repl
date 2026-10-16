@@ -22,9 +22,9 @@ case "$stage" in
     run --test $D/core_dev.json --methods claude_search,hybrid_filter \
         --labels $D/claude_labels.json,$D/claude_labels_core.json --out $R/dev_v2 --max-usd 8 \
         2>&1 | tee $R/dev_v2.log ;;
-  final)  # the pre-registered test run, once
-    run --test $D/core_test.json --methods claude_whole,claude_search,hybrid \
-        --labels $D/claude_labels.json,$D/claude_labels_core.json --out $R/test --max-usd 45 \
+  final)  # the pre-registered test run (README: "Pre-registered test run"), once
+    run --test $D/core_test.json --train none --methods claude_search,menu_first,jev_router \
+        --labels $D/claude_labels_core.json,$D/jev_closes_labels.json --out $R/test --max-usd 15 \
         2>&1 | tee $R/test.log ;;
   *) echo "unknown stage $stage" >&2; exit 2 ;;
 esac
