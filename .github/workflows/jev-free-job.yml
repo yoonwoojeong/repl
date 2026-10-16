@@ -28,7 +28,9 @@ jobs:
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-        git add -f jev_demo/results_free jev_demo/data/standard 2>/dev/null || true
+        for d in jev_demo/results_free jev_demo/data/standard; do
+          if [ -e "$d" ]; then git add -f "$d"; fi
+        done
         if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
         git commit -m "jev_demo: free job outputs (run ${GITHUB_RUN_ID})"
         git pull --rebase origin "${GITHUB_REF_NAME}"

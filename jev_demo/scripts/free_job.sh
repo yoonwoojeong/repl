@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Job 1: fetch LeanDojo Benchmark 4 (Zenodo 10114185) and record its layout and sample records.
+# Job 1 (re-run after fixing the commit step): fetch LeanDojo Benchmark 4 (Zenodo 10114185) and record its layout and sample records.
 set -euo pipefail
 OUT=jev_demo/results_free/leandojo_inventory
 mkdir -p "$OUT" /tmp/ld
