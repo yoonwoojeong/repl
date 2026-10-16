@@ -373,3 +373,96 @@ cheaper. This experiment does not show that the Jev-style model adds value on to
 Claude's own proposals, and especially its complete proof scripts, do most of the work. Caveats:
 there is one run per method (no repeated samples), the set has only 20 theorems, and the
 theorems were written by a Claude model.
+
+## Experiment 3: core-library benchmark, then efficiency
+
+### Why
+
+Phase 2's test sets were too small (20 theorems), were written by a Claude model, and saturated
+(every Claude method proved almost everything). Experiment 3 replaces them and, after the first
+results, changes the goal from *best success* to *efficiency*.
+
+### What changed (all free, before any paid run)
+
+- **Search fix (`prove(revisit=True)`).** A confident node expanded its top 3 actions and was
+  never revisited, so the search could stop with most of its 64-call budget unused. With the fix,
+  phase 1 on `test.json` goes from `fixed` 5/20, `random` 9/20 and `model` 16/20 to 18/20 each:
+  the earlier phase-1 numbers mostly measured this bug.
+- **Benchmark (`corebench.py`).** 900 `Nat`/`List` lemmas sampled from Lean's core library
+  (written by the Lean developers), each to be proved without the lemma itself. An auditor REPL
+  (`import Lean`) rejects any proof whose term uses the lemma or an alias with the identical
+  statement. 482 lemmas that a generic one-liner proves cleanly and 27 that do not re-elaborate
+  were dropped, leaving 391: 161 train, 82 dev and 148 test (`data/core_{train,dev,test}.json`,
+  split by a hash of the name). Claude is told which lemma is banned, and proposals that cite it
+  are dropped.
+- **Stats (`stats.py`).** Wilson intervals, exact McNemar tests, paired bootstrap intervals.
+- **Prompt caching.** An explicit breakpoint on the system prompt replaces the automatic one,
+  which sat after the per-goal message (every request paid a cache write and none read it).
+- **Offline replay.** `exp3 --offline` replays a run from Claude's committed response cache
+  without API calls. On dev, an offline replay of `claude_search` reproduces the live run exactly
+  (59/82, zero cache misses).
+
+### Results on dev (82 lemmas)
+
+Live runs (`results_exp3/dev_v1`, `dev_v2`). Phase 1 without Claude proves at most 7/82.
+
+| method | proved | Claude requests | notional USD |
+|---|---|---|---|
+| claude_search (run 1 / run 2) | 59 / 59 | – / 410 | 4.33 / 3.87 |
+| claude_whole | 57 | – | 5.23 |
+| hybrid (Jev ranks Claude's proposals) | 52 | – | 3.57 |
+| hybrid_filter (Jev defers likely-rejected proposals) | 59 | 416 | 3.91 |
+
+`hybrid` proves significantly fewer than `claude_search` (1 vs 8 discordant, McNemar p = 0.039);
+`hybrid_filter` proves exactly the same lemmas. Offline, on 142 held-out proof steps of the
+training lemmas, Claude's own order puts the step taken in its top 3 85% of the time and the
+Jev model 64% (`rank_eval.py`). **As a ranker, Jev does not add value on top of Claude.**
+
+### Efficiency: Jev as a router
+
+The Jev model was under-trained (its held-out AUC for "Lean accepts this proposal" rises
+0.67 → 0.74 from 25% to 100% of the core labels, still climbing) and the easy phase-1 replays
+slightly hurt it. Two changes:
+
+- **Post-training (`posttrain.py`, Lean only).** Replay Claude's 115 proofs of training lemmas
+  and try every menu tactic at every state on and near those proofs: 4,698 `closes` labels at 330
+  states (`data/jev_closes_labels.json`). The router is trained on core labels only
+  (`--train none`).
+- **Lazy Claude calls (`ASK_CLAUDE`).** A ranker can try cheap menu tactics at a state and ask
+  Claude only if they do not finish it. Replaying Claude's training proofs showed a menu tactic
+  would close 24 of the 27 states after the first step, while `claude_search` asks Claude at
+  every new state.
+
+Methods: `menu_first` (no learning: menu first at every state after the theorem itself) and
+`jev_router` (the 3 most likely menu tactics with p(closes) ≥ 0.5 first, then Claude; else Claude
+first). Both settings were fixed before running on dev.
+
+Offline replay on dev (`results_exp3/dev_offline_eff`, zero cache misses):
+
+| method | proved | Claude requests | requests per proved | notional USD | USD per proved |
+|---|---|---|---|---|---|
+| claude_search | 59/82 | 407 | 6.90 | 3.84 | 0.065 |
+| menu_first | 55/82 | 169 | 3.07 | 1.69 | 0.031 |
+| **jev_router** | **59/82** | **221** | **3.75** | **2.19** | **0.037** |
+
+`jev_router` proves exactly the lemmas `claude_search` proves, with **46% fewer Claude requests
+(95% bootstrap CI 40–50%) and 43% lower cost (37–48%)**. It used fewer requests on 50 lemmas and
+never more. `menu_first` saves more but loses 4 lemmas the router keeps (4 vs 0, p = 0.125).
+Caveat: this is dev, the set the methods were developed on.
+
+### Pre-registered test run (recorded before it is run)
+
+One run on the 148 held-out test lemmas (`core_test.json`), `claude-opus-5-5`, effort `medium`,
+methods in this order: `claude_search` (fills the response cache), `menu_first`, `jev_router`
+(the later two reuse Claude's responses at shared states, so the comparison is paired). Router
+trained exactly as on dev (`--train none`, labels `claude_labels_core.json` +
+`jev_closes_labels.json`, p(closes) ≥ 0.5, top 3).
+
+1. **Efficiency (primary).** `jev_router` uses fewer Claude requests than `claude_search`: the
+   95% paired bootstrap CI of the relative saving is above 0.
+2. **No meaningful loss (primary).** The lower end of the 95% paired bootstrap CI of
+   (`jev_router` − `claude_search`) success rate is above −0.05.
+3. **Jev vs the fixed rule (secondary).** `jev_router` proves at least as many lemmas as
+   `menu_first`, and costs more per proved lemma than it by at most 50%.
+
+The hypotheses hold only if both primaries pass. Results are reported as computed either way.
