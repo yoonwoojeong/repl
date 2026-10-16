@@ -551,3 +551,52 @@ Hypotheses, on the two replicates pooled (296 lemma pairs, paired by lemma withi
 
 Strict scoring (audit v2) is reported alongside the primary scoring. Approved budget: $26 in
 total, enforced by the stage (each run's cap is what is left minus a reserve for later runs).
+
+### Replication results (scored as pre-registered above)
+
+GitHub Actions run `38852224783` (`results_exp3/test_rep{1,2}_{claude_search,jev_router}`).
+Scored by `python -m jev_demo.replication` (writes `results_exp3/replication.json`); the request
+saving CI is a percentile bootstrap over lemma pairs (the same method gives the test run's
+43.2–50.8%). No refusals and the budget cap was not hit. One request failed with an API error
+(`core_List_max_congr_simp`, replicate 2 `claude_search`); that lemma counts as unproved there.
+
+| replicate | method | proved | Claude requests | actual USD |
+|---|---|---|---|---|
+| 1 | claude_search | 95/148 | 767 | 7.41 |
+| 1 | jev_router | 93/148 | 409 | 4.18 |
+| 2 | claude_search | 94/148 | 798 | 7.77 |
+| 2 | jev_router | 97/148 | 385 | 3.88 |
+
+| | request saving (95% CI) | router more / fewer requests | success diff router − search (95% CI) | discordant (router only / search only) |
+|---|---|---|---|---|
+| replicate 1 | 46.7% (41.2–51.2%) | 7 / 96 lemmas | −0.014 (−0.047 to +0.020) | 2 / 4 |
+| replicate 2 | 51.7% (47.6–55.3%) | 7 / 101 | +0.020 (−0.014 to +0.054) | 5 / 2 |
+| **pooled (296 pairs)** | **49.3% (46.0–52.1%)** | 14 / 197 | **+0.003 (−0.020 to +0.027)** | 7 / 6 (McNemar p = 1.0) |
+
+1. **Efficiency: passed.** Pooled request saving 49.3%, CI 46.0–52.1%, above 0. Each replicate
+   on its own also has a CI above 0.
+2. **No meaningful loss: passed.** Pooled success difference +0.003, CI lower end −0.020, above
+   −0.05.
+3. **Stability (reported).** Router: 93 then 97 proved, 409 then 385 requests. Between
+   replicates, `claude_search` flips 7 lemmas (4 proved only in replicate 1, 3 only in 2) and
+   `jev_router` flips 4 (all proved only in replicate 2). The router-vs-search difference
+   within a replicate (−2, +3 lemmas) is the same size as this run-to-run noise.
+
+**Strict scoring** (audit v2: definitional aliases rejected, single-lemma proofs counted as
+unproved). Audit v2 rejects one proof (replicate 1 `claude_search`, `core_Nat_getElem_toArray_rio`
+via the definitional alias `Nat.getElem_toList_rio`). Strict counts are 76 / 74 (replicate 1) and
+79 / 78 (replicate 2) for `claude_search` / `jev_router`. Pooled: success difference −0.010
+(CI −0.044 to +0.024, still above −0.05), and the request saving is the same 49.3%.
+
+**Conclusion.** With independent Claude samples and no shared cache, the router's result
+replicates. It makes about half the Claude requests (49%, CI 46–52%) at no measurable cost in
+proofs (the success difference CI −2.0 to +2.7 points sits inside the pre-registered −5 point
+margin). The original run's "exactly the same 96 lemmas" came from shared cached responses. With
+fresh samples both methods fluctuate by a few lemmas per run, and the router no longer wins on
+every lemma: it used more requests than `claude_search` on 14 of 296 pairs.
+
+Remaining limits: still one model and effort setting, one Lean/Claude budget per lemma, and one
+benchmark family (core `Nat`/`List` lemmas).
+
+Replication spend $23.25 of the approved $26 (rep 1: $7.41 + $4.18; rep 2: $7.77 + $3.88).
+Experiment 3 total $53.59; total API spend in this project $60.67 (phase 2 $7.08 + experiment 3).
