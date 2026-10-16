@@ -47,7 +47,7 @@ def _exp3(args) -> None:
         raise SystemExit("`exp3` calls the Anthropic API and spends money: set ANTHROPIC_API_KEY and "
                          "ANTHROPIC_RUN_LIVE=1 to confirm, or pass --offline to replay the disk cache.")
     gen = ClaudeGenerator(model=args.claude_model, effort=args.effort, max_usd=args.max_usd,
-                          offline=args.offline)
+                          offline=args.offline, cache_dir=args.cache_dir)
     methods = [m for m in args.methods.split(",") if m]
     unknown = set(methods) - set(exp3.METHODS)
     if unknown:
@@ -106,6 +106,8 @@ def main(argv: list[str] | None = None) -> None:
     e3.add_argument("--max-usd", type=float, default=10.0)
     e3.add_argument("--offline", action="store_true", help="replay the disk cache; never call the API")
     e3.add_argument("--limit", type=int, default=0, help="only the first N theorems (a cheap pilot)")
+    e3.add_argument("--cache-dir", default="jev_demo/cache/claude",
+                    help="Claude response cache; an empty directory gives fresh, independent samples")
     args = ap.parse_args(argv)
     if args.cmd == "exp3":
         _exp3(args)

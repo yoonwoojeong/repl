@@ -530,3 +530,23 @@ counted proof in an `import Lean` REPL:
 lemmas it loses and loses 1 it keeps). On the 131 lemmas with no single-lemma proof the router's
 request saving is 48.2% (95% CI 44.1–51.8%). The efficiency result does not depend on
 near-restatements.
+
+### Overcoming the limits, 2: independent replication (pre-registered, before it is run)
+
+In the test run the router reused `claude_search`'s Claude responses at shared states, and each
+method ran once. The `replicate` stage removes both limits: on the same 148 test lemmas, settings
+unchanged, `claude_search` and `jev_router` each run with their **own empty response cache**
+(fresh, independent samples from Claude). The pair is run **twice** (replicates 1 and 2), giving
+4 independent runs (`results_exp3/test_rep{1,2}_{claude_search,jev_router}`).
+
+Hypotheses, on the two replicates pooled (296 lemma pairs, paired by lemma within each replicate):
+1. **Efficiency.** The 95% paired bootstrap CI of the router's relative Claude-request saving is
+   above 0 (and each replicate's saving is reported separately).
+2. **No meaningful loss.** The lower end of the 95% paired bootstrap CI of (`jev_router` −
+   `claude_search`) success rate is above −0.05, the same margin as before. Independent samples
+   add run-to-run noise (on dev, 4 of 82 lemmas flipped between two `claude_search` runs), which is
+   why two replicates are pooled.
+3. **Stability (reported, not a pass/fail test).** The router's success and request counts in
+   replicates 1 and 2, and how many lemmas flip between replicates for each method.
+
+Strict scoring (audit v2) is reported alongside the primary scoring.

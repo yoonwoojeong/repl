@@ -2,7 +2,7 @@
 # Paid stages of experiment 3, run by .github/workflows/jev-exp3-live.yml (one label per stage).
 # Every stage has a hard USD cap (--max-usd per command); the caps are the budget approved for it.
 set -euo pipefail
-stage="${1:?usage: exp3_stage.sh pilot|stage1|dev2|final}"
+stage="${1:?usage: exp3_stage.sh pilot|stage1|dev2|final|replicate}"
 D=jev_demo/data
 R=jev_demo/results_exp3
 mkdir -p "$R"
@@ -26,5 +26,15 @@ case "$stage" in
     run --test $D/core_test.json --train none --methods claude_search,menu_first,jev_router \
         --labels $D/claude_labels_core.json,$D/jev_closes_labels.json --out $R/test --max-usd 15 \
         2>&1 | tee $R/test.log ;;
+  replicate)  # independent replication of the test run: each method has its own empty response
+              # cache (no shared Claude responses), two replicates; README "Independent replication"
+    for rep in 1 2; do
+      for m in claude_search jev_router; do
+        run --test $D/core_test.json --train none --methods $m \
+            --labels $D/claude_labels_core.json,$D/jev_closes_labels.json \
+            --cache-dir jev_demo/cache/rep${rep}_$m --out $R/test_rep${rep}_$m --max-usd 9 \
+            2>&1 | tee $R/test_rep${rep}_$m.log
+      done
+    done ;;
   *) echo "unknown stage $stage" >&2; exit 2 ;;
 esac
