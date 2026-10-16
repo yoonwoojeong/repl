@@ -127,9 +127,27 @@
 "screen": "kept"
 },
 {
+"name": "core_Array_array_mkSlice_rcc",
+"lemma": "Array.array_mkSlice_rcc",
+"statement": "∀ {α : Type u_1} {xs : Array α} {lo hi : Nat}, (Std.Rcc.Sliceable.mkSlice xs (lo...=hi)).array = xs",
+"screen": "easy"
+},
+{
 "name": "core_Array_array_mkSlice_rci",
 "lemma": "Array.array_mkSlice_rci",
 "statement": "∀ {α : Type u_1} {xs : Array α} {lo : Nat}, (Std.Rci.Sliceable.mkSlice xs (lo...*)).array = xs",
+"screen": "easy"
+},
+{
+"name": "core_Array_array_mkSlice_ric",
+"lemma": "Array.array_mkSlice_ric",
+"statement": "∀ {α : Type u_1} {xs : Array α} {hi : Nat}, (Std.Ric.Sliceable.mkSlice xs *...=hi).array = xs",
+"screen": "easy"
+},
+{
+"name": "core_Array_array_mkSlice_roc",
+"lemma": "Array.array_mkSlice_roc",
+"statement": "∀ {α : Type u_1} {xs : Array α} {lo hi : Nat}, (Std.Roc.Sliceable.mkSlice xs (lo<...=hi)).array = xs",
 "screen": "easy"
 },
 {
@@ -163,6 +181,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_back?_mapIdx",
+"lemma": "Array.back?_mapIdx",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {xs : Array α} {f : Nat → α → β}, (Array.mapIdx f xs).back? = Option.map (f (xs.size - 1)) xs.back?",
+"screen": "easy"
+},
+{
 "name": "core_Array_back_append",
 "lemma": "Array.back_append",
 "statement": "∀ {α : Type u_1} {ys xs : Array α} (h : 0 < (xs ++ ys).size), (xs ++ ys).back h = if h' : ys.isEmpty = true then xs.back ⋯ else ys.back ⋯",
@@ -193,6 +217,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_countP_flatMap",
+"lemma": "Array.countP_flatMap",
+"statement": "∀ {α : Type u_2} {β : Type u_1} {p : β → Bool} {xs : Array α} {f : α → Array β}, Array.countP p (Array.flatMap f xs) = (Array.map (Array.countP p ∘ f) xs).sum",
+"screen": "kept"
+},
+{
 "name": "core_Array_countP_mono_left",
 "lemma": "Array.countP_mono_left",
 "statement": "∀ {α : Type u_1} {p q : α → Bool} {xs : Array α}, (∀ (x : α), x ∈ xs → p x = true → q x = true) → Array.countP p xs ≤ Array.countP q xs",
@@ -215,6 +245,12 @@
 "lemma": "Array.count_push_of_ne",
 "statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {b a : α} {xs : Array α}, b ≠ a → Array.count a (xs.push b) = Array.count a xs",
 "screen": "kept"
+},
+{
+"name": "core_Array_count_range",
+"lemma": "Array.count_range",
+"statement": "∀ {a n : Nat}, Array.count a (Array.range n) = if a < n then 1 else 0",
+"screen": "easy"
 },
 {
 "name": "core_Array_count_replace",
@@ -277,6 +313,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Array_exists_mem_push",
+"lemma": "Array.exists_mem_push",
+"statement": "∀ {α : Type u_1} {p : α → Prop} {a : α} {xs : Array α}, (∃ x x_1, p x) ↔ p a ∨ ∃ x x_1, p x",
+"screen": "kept"
+},
+{
 "name": "core_Array_exists_of_mem_mapFinIdx",
 "lemma": "Array.exists_of_mem_mapFinIdx",
 "statement": "∀ {β : Type u_1} {α : Type u_2} {b : β} {xs : Array α} {f : (i : Nat) → α → i < xs.size → β}, b ∈ xs.mapFinIdx f → ∃ i h, f i xs[i] h = b",
@@ -286,6 +328,12 @@
 "name": "core_Array_extract_append_left",
 "lemma": "Array.extract_append_left",
 "statement": "∀ {α : Type u_1} {as bs : Array α}, (as ++ bs).extract 0 as.size = as.extract",
+"screen": "easy"
+},
+{
+"name": "core_Array_extract_empty_of_size_le_start",
+"lemma": "Array.extract_empty_of_size_le_start",
+"statement": "∀ {α : Type u_1} {xs : Array α} {start stop : Nat}, xs.size ≤ start → xs.extract start stop = #[]",
 "screen": "easy"
 },
 {
@@ -323,6 +371,12 @@
 "lemma": "Array.filterMapM_unattach",
 "statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] [LawfulMonad m] {P : α → Prop} {xs : Array (Subtype P)} {f : α → m (Option β)}, Array.filterMapM f xs.unattach = Array.filterMapM (fun x => match x with | ⟨x, h⟩ => binderNameHint x f (binderNameHint h () (f (wfParam x)))) xs",
 "screen": "kept"
+},
+{
+"name": "core_Array_filterMap_filterMap",
+"lemma": "Array.filterMap_filterMap",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {f : α → Option β} {g : β → Option γ} {xs : Array α}, Array.filterMap g (Array.filterMap f xs) = Array.filterMap (fun x => (f x).bind g) xs",
+"screen": "easy"
 },
 {
 "name": "core_Array_filterMap_replicate_of_isSome",
@@ -397,6 +451,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_find?_replicate_of_neg",
+"lemma": "Array.find?_replicate_of_neg",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {n : Nat} {a : α}, ¬p a = true → Array.find? p (Array.replicate n a) = none",
+"screen": "easy"
+},
+{
 "name": "core_Array_find?_singleton",
 "lemma": "Array.find?_singleton",
 "statement": "∀ {α : Type u_1} {a : α} {p : α → Bool}, Array.find? p #[a] = if p a = true then some a else none",
@@ -418,6 +478,12 @@
 "name": "core_Array_findIdx?_map",
 "lemma": "Array.findIdx?_map",
 "statement": "∀ {β : Type u_1} {α : Type u_2} {f : β → α} {xs : Array β} {p : α → Bool}, Array.findIdx? p (Array.map f xs) = Array.findIdx? (p ∘ f) xs",
+"screen": "easy"
+},
+{
+"name": "core_Array_findIdx?_singleton",
+"lemma": "Array.findIdx?_singleton",
+"statement": "∀ {α : Type u_1} {a : α} {p : α → Bool}, Array.findIdx? p #[a] = if p a = true then some 0 else none",
 "screen": "easy"
 },
 {
@@ -502,6 +568,12 @@
 "name": "core_Array_foldlM_congr",
 "lemma": "Array.foldlM_congr",
 "statement": "∀ {β : Type u_1} {α : Type u_2} {start start' stop stop' : Nat} {m : Type u_1 → Type u_3} [inst : Monad m] {f g : β → α → m β} {b : β} {xs xs' : Array α}, xs = xs' → (∀ (x : β) (y : α), f x y = g x y) → start = start' → stop = stop' → Array.foldlM f b xs start stop = Array.foldlM g b xs' start' stop'",
+"screen": "kept"
+},
+{
+"name": "core_Array_foldlM_map",
+"lemma": "Array.foldlM_map",
+"statement": "∀ {m : Type u_1 → Type u_2} {β₁ : Type u_3} {β₂ : Type u_4} {α : Type u_1} {stop : Nat} [inst : Monad m] {f : β₁ → β₂} {g : α → β₂ → m α} {xs : Array β₁} {init : α} {w : stop = xs.size}, Array.foldlM g init (Array.map f xs) 0 stop = Array.foldlM (fun x y => g x (f y)) init xs 0 stop",
 "screen": "kept"
 },
 {
@@ -595,9 +667,21 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_foldr_toList",
+"lemma": "Array.foldr_toList",
+"statement": "∀ {α : Type u_1} {β : Type u_2} (f : α → β → β) {init : β} {xs : Array α}, List.foldr f init xs.toList = Array.foldr f init xs",
+"screen": "easy"
+},
+{
 "name": "core_Array_foldr_unattach",
 "lemma": "Array.foldr_unattach",
 "statement": "∀ {α : Type u_1} {β : Type u_2} {P : α → Prop} {xs : Array (Subtype P)} {f : α → β → β} {x : β}, Array.foldr f x xs.unattach = Array.foldr (fun x s => match x with | ⟨x, h⟩ => binderNameHint x f (binderNameHint s (f x) (binderNameHint h () (f (wfParam x) s)))) x xs",
+"screen": "kept"
+},
+{
+"name": "core_Array_forIn'_congr",
+"lemma": "Array.forIn'_congr",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] {as bs : Array α} (w : as = bs) {b b' : β}, b = b' → ∀ {f : (a' : α) → a' ∈ as → β → m (ForInStep β)} {g : (a' : α) → a' ∈ bs → β → m (ForInStep β)}, (∀ (a : α) (m_1 : a ∈ bs) (b : β), f a ⋯ b = g a m_1 b) → forIn' as b f = forIn' bs b' g",
 "screen": "kept"
 },
 {
@@ -667,6 +751,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_getElem?_insertIdx_self",
+"lemma": "Array.getElem?_insertIdx_self",
+"statement": "∀ {α : Type u} {xs : Array α} {x : α} {i : Nat} (w : i ≤ xs.size), (xs.insertIdx i x w)[i]? = some x",
+"screen": "easy"
+},
+{
 "name": "core_Array_getElem?_mapIdx",
 "lemma": "Array.getElem?_mapIdx",
 "statement": "∀ {α : Type u_1} {β : Type u_2} {f : Nat → α → β} {xs : Array α} {i : Nat}, (Array.mapIdx f xs)[i]? = Option.map (f i) xs[i]?",
@@ -709,6 +799,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_getElem?_zero_flatten",
+"lemma": "Array.getElem?_zero_flatten",
+"statement": "∀ {α : Type u_1} (xss : Array (Array α)), xss.flatten[0]? = Array.findSome? (fun xs => xs[0]?) xss",
+"screen": "easy"
+},
+{
 "name": "core_Array_getElem?_zipWith",
 "lemma": "Array.getElem?_zipWith",
 "statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {as : Array α} {bs : Array β} {f : α → β → γ} {i : Nat}, (Array.zipWith f as bs)[i]? = match as[i]?, bs[i]? with | some a, some b => some (f a b) | x, x_1 => none",
@@ -725,6 +821,12 @@
 "lemma": "Array.getElem_extract_aux",
 "statement": "∀ {α : Type u_1} {i : Nat} {xs : Array α} {start stop : Nat}, i < (xs.extract start stop).size → start + i < xs.size",
 "screen": "easy"
+},
+{
+"name": "core_Array_getElem_extract_loop_lt",
+"lemma": "Array.getElem_extract_loop_lt",
+"statement": "∀ {α : Type u_1} {i : Nat} {xs ys : Array α} {size start : Nat} (hlt : i < ys.size) (h : optParam (i < (Array.extract.loop xs size start ys).size) ⋯), (Array.extract.loop xs size start ys)[i] = ys[i]",
+"screen": "kept"
 },
 {
 "name": "core_Array_getElem_mapIdx",
@@ -793,6 +895,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_idxOf_lt_size_iff",
+"lemma": "Array.idxOf_lt_size_iff",
+"statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {xs : Array α} {a : α}, Array.idxOf a xs < xs.size ↔ a ∈ xs",
+"screen": "kept"
+},
+{
 "name": "core_Array_instAsymmLt",
 "lemma": "Array.instAsymmLt",
 "statement": "∀ {α : Type u_1} [inst : LT α] [Std.Asymm fun x1 x2 => x1 < x2], Std.Asymm fun x1 x2 => x1 < x2",
@@ -802,6 +910,12 @@
 "name": "core_Array_instDecidableEmpEq_csimp",
 "lemma": "Array.instDecidableEmpEq_csimp",
 "statement": "@Array.instDecidableEmpEq = @Array.instDecidableEmpEqImpl",
+"screen": "easy"
+},
+{
+"name": "core_Array_instDecidableEq_csimp",
+"lemma": "Array.instDecidableEq_csimp",
+"statement": "@Array.instDecidableEq = @Array.instDecidableEqImpl",
 "screen": "easy"
 },
 {
@@ -823,6 +937,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Array_instReflCmpCompareLex",
+"lemma": "Array.instReflCmpCompareLex",
+"statement": "∀ {α : Type u_1} {cmp : α → α → Ordering} [Std.ReflCmp cmp], Std.ReflCmp (Array.compareLex cmp)",
+"screen": "kept"
+},
+{
 "name": "core_Array_instReflLeOfIrreflLt",
 "lemma": "Array.instReflLeOfIrreflLt",
 "statement": "∀ {α : Type u_1} [inst : LT α] [Std.Irrefl fun x1 x2 => x1 < x2], Std.Refl fun x1 x2 => x1 ≤ x2",
@@ -839,6 +959,12 @@
 "lemma": "Array.instTransOrd",
 "statement": "∀ {α : Type u_1} [inst : Ord α] [Std.TransOrd α], Std.TransOrd (Array α)",
 "screen": "kept"
+},
+{
+"name": "core_Array_isEmpty_toList",
+"lemma": "Array.isEmpty_toList",
+"statement": "∀ {α : Type u_1} {xs : Array α}, xs.toList.isEmpty = xs.isEmpty",
+"screen": "easy"
 },
 {
 "name": "core_Array_isEqvAux_congr_simp",
@@ -859,10 +985,28 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_iterFromIdx_equiv_iter_drop_toList",
+"lemma": "Array.iterFromIdx_equiv_iter_drop_toList",
+"statement": "∀ {α : Type w} {array : Array α} {pos : Nat}, (array.iterFromIdx pos).Equiv (List.drop pos array.toList).iter",
+"screen": "kept"
+},
+{
+"name": "core_Array_le_min?_iff",
+"lemma": "Array.le_min?_iff",
+"statement": "∀ {α : Type u_1} {a : α} [inst : Min α] [inst_1 : LE α] [Std.LawfulOrderInf α] {xs : Array α}, xs.min? = some a → ∀ {x : α}, x ≤ a ↔ ∀ (b : α), b ∈ xs → x ≤ b",
+"screen": "kept"
+},
+{
 "name": "core_Array_le_size_erase",
 "lemma": "Array.le_size_erase",
 "statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {a : α} {xs : Array α}, xs.size - 1 ≤ (xs.erase a).size",
 "screen": "kept"
+},
+{
+"name": "core_Array_le_snd_of_mem_zipIdx",
+"lemma": "Array.le_snd_of_mem_zipIdx",
+"statement": "∀ {α : Type u_1} {x : α × Nat} {k : Nat} {xs : Array α}, x ∈ xs.zipIdx k → k ≤ x.snd",
+"screen": "easy"
 },
 {
 "name": "core_Array_length_toList",
@@ -871,9 +1015,21 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_lt_of_le_of_lt",
+"lemma": "Array.lt_of_le_of_lt",
+"statement": "∀ {α : Type u_1} [inst : LE α] [inst_1 : LT α] [Std.LawfulOrderLT α] [Std.IsLinearOrder α] {xs ys zs : Array α}, xs ≤ ys → ys < zs → xs < zs",
+"screen": "kept"
+},
+{
 "name": "core_Array_mapFinIdxM_map_congr_simp",
 "lemma": "Array.mapFinIdxM.map.congr_simp",
 "statement": "∀ {α : Type u} {β : Type v} {m : Type v → Type w} [inst : Monad m] (as : Array α) (f f_1 : (i : Nat) → α → i < as.size → m β), f = f_1 → ∀ (i i_1 : Nat) (e_i : i = i_1) (j j_1 : Nat) (e_j : j = j_1) (inv : i + j = as.size) (bs bs_1 : Array β), bs = bs_1 → Array.mapFinIdxM.map as f i j inv bs = Array.mapFinIdxM.map as f_1 i_1 j_1 ⋯ bs_1",
+"screen": "kept"
+},
+{
+"name": "core_Array_mapFinIdx_mapFinIdx",
+"lemma": "Array.mapFinIdx_mapFinIdx",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {xs : Array α} {f : (i : Nat) → α → i < xs.size → β} {g : (i : Nat) → β → i < (xs.mapFinIdx f).size → γ}, (xs.mapFinIdx f).mapFinIdx g = xs.mapFinIdx fun i a h => g i (f i a h) ⋯",
 "screen": "kept"
 },
 {
@@ -886,6 +1042,12 @@
 "name": "core_Array_mapIdx_mapIdx",
 "lemma": "Array.mapIdx_mapIdx",
 "statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {xs : Array α} {f : Nat → α → β} {g : Nat → β → γ}, Array.mapIdx g (Array.mapIdx f xs) = Array.mapIdx (fun i => g i ∘ f i) xs",
+"screen": "easy"
+},
+{
+"name": "core_Array_mapIdx_reverse",
+"lemma": "Array.mapIdx_reverse",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {xs : Array α} {f : Nat → α → β}, Array.mapIdx f xs.reverse = (Array.mapIdx (fun i => f (xs.size - 1 - i)) xs).reverse",
 "screen": "easy"
 },
 {
@@ -931,6 +1093,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_map_reverse",
+"lemma": "Array.map_reverse",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → β} {xs : Array α}, Array.map f xs.reverse = (Array.map f xs).reverse",
+"screen": "easy"
+},
+{
 "name": "core_Array_map_zipWithAll",
 "lemma": "Array.map_zipWithAll",
 "statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {δ : Type u_4} {f : α → β} {g : Option γ → Option δ → α} {cs : Array γ} {ds : Array δ}, Array.map f (Array.zipWithAll g cs ds) = Array.zipWithAll (fun x y => f (g x y)) cs ds",
@@ -941,6 +1109,12 @@
 "lemma": "Array.markLinear_eq",
 "statement": "∀ {α : Type u} {xs : Array α}, xs.markLinear = xs",
 "screen": "easy"
+},
+{
+"name": "core_Array_max?_replicate",
+"lemma": "Array.max?_replicate",
+"statement": "∀ {α : Type u_1} [inst : Max α] [Std.IdempotentOp max] {n : Nat} {a : α}, (Array.replicate n a).max? = if n = 0 then none else some a",
+"screen": "invalid"
 },
 {
 "name": "core_Array_max_le_iff",
@@ -1027,6 +1201,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Array_mem_zipIdx'",
+"lemma": "Array.mem_zipIdx'",
+"statement": "∀ {α : Type u_1} {x : α} {i : Nat} {xs : Array α} (h : (x, i) ∈ xs.zipIdx), i < xs.size ∧ x = xs[i]",
+"screen": "kept"
+},
+{
 "name": "core_Array_mergeSort_of_pairwise",
 "lemma": "Array.mergeSort_of_pairwise",
 "statement": "∀ {α : Type u_1} {le : α → α → Bool} {xs : Array α}, List.Pairwise (fun x1 x2 => le x1 x2 = true) xs.toList → xs.mergeSort le = xs",
@@ -1051,10 +1231,22 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_not_mem_push_of_ne_of_not_mem",
+"lemma": "Array.not_mem_push_of_ne_of_not_mem",
+"statement": "∀ {α : Type u_1} {a y : α} {xs : Array α}, a ≠ y → ¬a ∈ xs → ¬a ∈ xs.push y",
+"screen": "easy"
+},
+{
 "name": "core_Array_ofFnM_succ'",
 "lemma": "Array.ofFnM_succ'",
 "statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_1} {n : Nat} [inst : Monad m] [LawfulMonad m] {f : Fin (n + 1) → m α}, Array.ofFnM f = do let a ← f 0 let as ← Array.ofFnM fun i => f i.succ pure (#[a] ++ as)",
 "screen": "invalid"
+},
+{
+"name": "core_Array_ofFn_add",
+"lemma": "Array.ofFn_add",
+"statement": "∀ {α : Type u_1} {n m : Nat} {f : Fin (n + m) → α}, Array.ofFn f = (Array.ofFn fun i => f (Fin.castLE ⋯ i)) ++ Array.ofFn fun i => f (Fin.natAdd n i)",
+"screen": "kept"
 },
 {
 "name": "core_Array_ofFn_go_congr_simp",
@@ -1105,6 +1297,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_push_empty",
+"lemma": "Array.push_empty",
+"statement": "∀ {α : Type u_1} {x : α}, #[].push x = #[x]",
+"screen": "easy"
+},
+{
 "name": "core_Array_push_extract_getElem",
 "lemma": "Array.push_extract_getElem",
 "statement": "∀ {α : Type u_1} {as : Array α} {i j : Nat} (h : j < as.size), (as.extract i j).push as[j] = as.extract (min i j) (j + 1)",
@@ -1126,6 +1324,12 @@
 "name": "core_Array_replace_replicate_ne",
 "lemma": "Array.replace_replicate_ne",
 "statement": "∀ {α : Type u_1} [inst : BEq α] [LawfulBEq α] {n : Nat} {a b c : α}, (!b == a) = true → (Array.replicate n a).replace b c = Array.replicate n a",
+"screen": "easy"
+},
+{
+"name": "core_Array_replicate_succ",
+"lemma": "Array.replicate_succ",
+"statement": "∀ {n : Nat} {α : Type u_1} {a : α}, Array.replicate (n + 1) a = (Array.replicate n a).push a",
 "screen": "easy"
 },
 {
@@ -1165,10 +1369,34 @@
 "screen": "easy"
 },
 {
+"name": "core_Array_setIfInBounds_setIfInBounds",
+"lemma": "Array.setIfInBounds_setIfInBounds",
+"statement": "∀ {α : Type u_1} (a : α) {b : α} {xs : Array α} {i : Nat}, (xs.setIfInBounds i a).setIfInBounds i b = xs.setIfInBounds i b",
+"screen": "easy"
+},
+{
+"name": "core_Array_set_append",
+"lemma": "Array.set_append",
+"statement": "∀ {α : Type u_1} {xs ys : Array α} {i : Nat} {x : α} (h : i < (xs ++ ys).size), (xs ++ ys).set i x h = if h' : i < xs.size then xs.set i x h' ++ ys else xs ++ ys.set (i - xs.size) x ⋯",
+"screen": "kept"
+},
+{
 "name": "core_Array_set_append_right",
 "lemma": "Array.set_append_right",
 "statement": "∀ {α : Type u_1} {xs ys : Array α} {i : Nat} {x : α} (h' : i < (xs ++ ys).size) (h : xs.size ≤ i), (xs ++ ys).set i x h' = xs ++ ys.set (i - xs.size) x ⋯",
 "screen": "kept"
+},
+{
+"name": "core_Array_set_push",
+"lemma": "Array.set_push",
+"statement": "∀ {α : Type u_1} {i : Nat} {xs : Array α} {x y : α} {h : i < (xs.push x).size}, (xs.push x).set i y h = if x_1 : i < xs.size then (xs.set i y x_1).push x else xs.push y",
+"screen": "easy"
+},
+{
+"name": "core_Array_sizeOf_getElem",
+"lemma": "Array.sizeOf_getElem",
+"statement": "∀ {α : Type u_1} [inst : SizeOf α] (as : Array α) (i : Nat) (h : i < as.size), sizeOf as[i] < sizeOf as",
+"screen": "easy"
 },
 {
 "name": "core_Array_size_extract_le",
@@ -1213,6 +1441,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Array_size_pos_of_mem",
+"lemma": "Array.size_pos_of_mem",
+"statement": "∀ {α : Type u_1} {a : α} {xs : Array α}, a ∈ xs → 0 < xs.size",
+"screen": "easy"
+},
+{
 "name": "core_Array_size_push",
 "lemma": "Array.size_push",
 "statement": "∀ {α : Type u} {xs : Array α} (v : α), (xs.push v).size = xs.size + 1",
@@ -1228,6 +1462,18 @@
 "name": "core_Array_size_shrink",
 "lemma": "Array.size_shrink",
 "statement": "∀ {α : Type u_1} {xs : Array α} {i : Nat}, (xs.shrink i).size = min i xs.size",
+"screen": "easy"
+},
+{
+"name": "core_Array_size_swapAt",
+"lemma": "Array.size_swapAt",
+"statement": "∀ {α : Type u_1} {xs : Array α} {i : Nat} {v : α} (hi : i < xs.size), (xs.swapAt i v hi).snd.size = xs.size",
+"screen": "easy"
+},
+{
+"name": "core_Array_start_mkSlice_rci",
+"lemma": "Array.start_mkSlice_rci",
+"statement": "∀ {α : Type u_1} {xs : Array α} {lo : Nat}, (Std.Rci.Sliceable.mkSlice xs (lo...*)).start = min lo xs.size",
 "screen": "easy"
 },
 {
@@ -1270,6 +1516,12 @@
 "name": "core_Array_sum_replicate_int",
 "lemma": "Array.sum_replicate_int",
 "statement": "∀ {n : Nat} {a : Int}, (Array.replicate n a).sum = ↑n * a",
+"screen": "easy"
+},
+{
+"name": "core_Array_sum_reverse_int",
+"lemma": "Array.sum_reverse_int",
+"statement": "∀ (xs : Array Int), xs.reverse.sum = xs.sum",
 "screen": "easy"
 },
 {
@@ -1357,6 +1609,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Array_toList_mapM",
+"lemma": "Array.toList_mapM",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Monad m] [LawfulMonad m] {f : α → m β} {xs : Array α}, Array.toList <$> Array.mapM f xs = List.mapM f xs.toList",
+"screen": "kept"
+},
+{
 "name": "core_Array_toList_mkSlice_rci",
 "lemma": "Array.toList_mkSlice_rci",
 "statement": "∀ {α : Type u_1} {xs : Array α} {lo : Nat}, Std.Slice.toList (Std.Rci.Sliceable.mkSlice xs (lo...*)) = List.drop lo xs.toList",
@@ -1403,6 +1661,12 @@
 "lemma": "Array.toList_snd_unzip",
 "statement": "∀ {α : Type u_1} {β : Type u_2} {xs : Array (α × β)}, xs.unzip.snd.toList = xs.toList.unzip.snd",
 "screen": "easy"
+},
+{
+"name": "core_Array_toList_zipWith",
+"lemma": "Array.toList_zipWith",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} {f : α → β → γ} {xs : Array α} {ys : Array β}, (Array.zipWith f xs ys).toList = List.zipWith f xs.toList ys.toList",
+"screen": "kept"
 },
 {
 "name": "core_Array_toVector_inj",
@@ -1495,6 +1759,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_Internal_Linear_Expr_mulR_injEq",
+"lemma": "Int.Internal.Linear.Expr.mulR.injEq",
+"statement": "∀ (a : Int.Internal.Linear.Expr) (k : Int) (a_1 : Int.Internal.Linear.Expr) (k_1 : Int), (a.mulR k = a_1.mulR k_1) = (a = a_1 ∧ k = k_1)",
+"screen": "easy"
+},
+{
 "name": "core_Int_Internal_Linear_Expr_mulR_sizeOf_spec",
 "lemma": "Int.Internal.Linear.Expr.mulR.sizeOf_spec",
 "statement": "∀ (a : Int.Internal.Linear.Expr) (k : Int), sizeOf (a.mulR k) = 1 + sizeOf a + sizeOf k",
@@ -1537,6 +1807,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_Internal_Linear_Poly_beq'_eq",
+"lemma": "Int.Internal.Linear.Poly.beq'_eq",
+"statement": "∀ (p₁ p₂ : Int.Internal.Linear.Poly), (p₁.beq' p₂ = true) = (p₁ = p₂)",
+"screen": "kept"
+},
+{
 "name": "core_Int_Internal_Linear_Poly_denote_append",
 "lemma": "Int.Internal.Linear.Poly.denote_append",
 "statement": "∀ (ctx : Int.Internal.Linear.Context) (p₁ p₂ : Int.Internal.Linear.Poly), Int.Internal.Linear.Poly.denote ctx (p₁.append p₂) = Int.Internal.Linear.Poly.denote ctx p₁ + Int.Internal.Linear.Poly.denote ctx p₂",
@@ -1567,6 +1843,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_Internal_Linear_cmod_gt_of_pos",
+"lemma": "Int.Internal.Linear.cmod_gt_of_pos",
+"statement": "∀ (a : Int) {b : Int}, 0 < b → Int.Internal.Linear.cmod a b > -b",
+"screen": "kept"
+},
+{
 "name": "core_Int_Internal_Linear_cooper_left_split_ineq",
 "lemma": "Int.Internal.Linear.cooper_left_split_ineq",
 "statement": "∀ (ctx : Int.Internal.Linear.Context) (p₁ p₂ : Int.Internal.Linear.Poly) (k : Nat) (b : Int) (p' : Int.Internal.Linear.Poly), Int.Internal.Linear.cooper_left_split ctx p₁ p₂ k → Int.Internal.Linear.cooper_left_split_ineq_cert p₁ p₂ (↑k) b p' = true → Int.Internal.Linear.Poly.denote' ctx p' ≤ 0",
@@ -1577,6 +1859,12 @@
 "lemma": "Int.Internal.Linear.cooper_right_split_dvd",
 "statement": "∀ (ctx : Int.Internal.Linear.Context) (p₁ p₂ : Int.Internal.Linear.Poly) (k : Nat) (b : Int) (p' : Int.Internal.Linear.Poly), Int.Internal.Linear.cooper_right_split ctx p₁ p₂ k → Int.Internal.Linear.cooper_right_split_dvd_cert p₂ p' b ↑k = true → b ∣ Int.Internal.Linear.Poly.denote' ctx p'",
 "screen": "kept"
+},
+{
+"name": "core_Int_Internal_Linear_div_eq'",
+"lemma": "Int.Internal.Linear.div_eq'",
+"statement": "∀ (a b b' k : Int), b = b' → (k == a / b') = true → a / b = k",
+"screen": "easy"
 },
 {
 "name": "core_Int_Internal_Linear_dvd_of_eq",
@@ -1591,6 +1879,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Int_Internal_Linear_le_combine",
+"lemma": "Int.Internal.Linear.le_combine",
+"statement": "∀ (ctx : Int.Internal.Linear.Context) (p₁ p₂ p₃ : Int.Internal.Linear.Poly), Int.Internal.Linear.le_combine_cert p₁ p₂ p₃ = true → Int.Internal.Linear.Poly.denote' ctx p₁ ≤ 0 → Int.Internal.Linear.Poly.denote' ctx p₂ ≤ 0 → Int.Internal.Linear.Poly.denote' ctx p₃ ≤ 0",
+"screen": "kept"
+},
+{
 "name": "core_Int_Internal_Linear_le_combine_coeff",
 "lemma": "Int.Internal.Linear.le_combine_coeff",
 "statement": "∀ (ctx : Int.Internal.Linear.Context) (p₁ p₂ p₃ : Int.Internal.Linear.Poly) (k : Int), Int.Internal.Linear.le_combine_coeff_cert p₁ p₂ p₃ k = true → Int.Internal.Linear.Poly.denote' ctx p₁ ≤ 0 → Int.Internal.Linear.Poly.denote' ctx p₂ ≤ 0 → Int.Internal.Linear.Poly.denote' ctx p₃ ≤ 0",
@@ -1600,6 +1894,12 @@
 "name": "core_Int_Internal_Linear_le_neg",
 "lemma": "Int.Internal.Linear.le_neg",
 "statement": "∀ (ctx : Int.Internal.Linear.Context) (p₁ p₂ : Int.Internal.Linear.Poly), Int.Internal.Linear.le_neg_cert p₁ p₂ = true → ¬Int.Internal.Linear.Poly.denote' ctx p₁ ≤ 0 → Int.Internal.Linear.Poly.denote' ctx p₂ ≤ 0",
+"screen": "kept"
+},
+{
+"name": "core_Int_Internal_Linear_le_norm",
+"lemma": "Int.Internal.Linear.le_norm",
+"statement": "∀ (ctx : Int.Internal.Linear.Context) (p₁ p₂ : Int.Internal.Linear.Poly), p₁.norm.beq' p₂ = true → Int.Internal.Linear.Poly.denote' ctx p₁ ≤ 0 → Int.Internal.Linear.Poly.denote' ctx p₂ ≤ 0",
 "screen": "kept"
 },
 {
@@ -1657,6 +1957,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_add_def",
+"lemma": "Int.add_def",
+"statement": "∀ {a b : Int}, a.add b = a + b",
+"screen": "easy"
+},
+{
 "name": "core_Int_add_ediv_of_dvd_left",
 "lemma": "Int.add_ediv_of_dvd_left",
 "statement": "∀ {a b c : Int}, c ∣ a → (a + b) / c = a / c + b / c",
@@ -1687,6 +1993,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_add_lt_add_left",
+"lemma": "Int.add_lt_add_left",
+"statement": "∀ {a b : Int}, a < b → ∀ (c : Int), c + a < c + b",
+"screen": "easy"
+},
+{
 "name": "core_Int_add_neg",
 "lemma": "Int.add_neg",
 "statement": "∀ {a b : Int}, a < 0 → b < 0 → a + b < 0",
@@ -1705,9 +2017,21 @@
 "screen": "kept"
 },
 {
+"name": "core_Int_add_pos_of_nonneg_of_pos",
+"lemma": "Int.add_pos_of_nonneg_of_pos",
+"statement": "∀ {a b : Int}, 0 ≤ a → 0 < b → 0 < a + b",
+"screen": "easy"
+},
+{
 "name": "core_Int_add_sub_add_right",
 "lemma": "Int.add_sub_add_right",
 "statement": "∀ (n k m : Int), n + k - (m + k) = n - m",
+"screen": "easy"
+},
+{
+"name": "core_Int_add_zero",
+"lemma": "Int.add_zero",
+"statement": "∀ (a : Int), a + 0 = a",
 "screen": "easy"
 },
 {
@@ -1739,6 +2063,12 @@
 "lemma": "Int.bmod_le",
 "statement": "∀ {x : Int} {m : Nat}, 0 < m → x.bmod m ≤ (↑m - 1) / 2",
 "screen": "kept"
+},
+{
+"name": "core_Int_bmod_one",
+"lemma": "Int.bmod_one",
+"statement": "∀ (x : Int), x.bmod 1 = 0",
+"screen": "easy"
 },
 {
 "name": "core_Int_bmod_self",
@@ -1781,6 +2111,18 @@
 "lemma": "Int.dvd_ediv_iff_mul_dvd",
 "statement": "∀ {a b c : Int}, c ∣ b → (a ∣ b / c ↔ c * a ∣ b)",
 "screen": "easy"
+},
+{
+"name": "core_Int_dvd_lcm_right",
+"lemma": "Int.dvd_lcm_right",
+"statement": "∀ (a b : Int), b ∣ ↑(a.lcm b)",
+"screen": "kept"
+},
+{
+"name": "core_Int_dvd_mul_emod_add_of_dvd_mul_add",
+"lemma": "Int.dvd_mul_emod_add_of_dvd_mul_add",
+"statement": "∀ {a b c d x : Int}, a ∣ b * x + c → a / ↑(a.gcd b) ∣ d → a ∣ b * (x % d) + c",
+"screen": "kept"
 },
 {
 "name": "core_Int_dvd_mul_left",
@@ -1885,6 +2227,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_emod_lt",
+"lemma": "Int.emod_lt",
+"statement": "∀ (a : Int) {b : Int}, b ≠ 0 → a % b < ↑b.natAbs",
+"screen": "kept"
+},
+{
 "name": "core_Int_emod_mul_bmod",
 "lemma": "Int.emod_mul_bmod",
 "statement": "∀ {y : Int} (x : Int) (n : Nat), (x % ↑n * y).bmod n = (x * y).bmod n",
@@ -1912,6 +2260,12 @@
 "name": "core_Int_fdiv_fmod_unique",
 "lemma": "Int.fdiv_fmod_unique",
 "statement": "∀ {a b r q : Int}, 0 < b → (a.fdiv b = q ∧ a.fmod b = r ↔ r + b * q = a ∧ 0 ≤ r ∧ r < b)",
+"screen": "kept"
+},
+{
+"name": "core_Int_fdiv_mul_cancel_of_dvd",
+"lemma": "Int.fdiv_mul_cancel_of_dvd",
+"statement": "∀ {a b : Int}, b ∣ a → a.fdiv b * b = a",
 "screen": "kept"
 },
 {
@@ -1975,6 +2329,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Int_gcd_dvd_gcd_of_dvd_left",
+"lemma": "Int.gcd_dvd_gcd_of_dvd_left",
+"statement": "∀ {a b : Int} (c : Int), a ∣ b → a.gcd c ∣ b.gcd c",
+"screen": "kept"
+},
+{
 "name": "core_Int_gcd_dvd_gcd_of_dvd_right",
 "lemma": "Int.gcd_dvd_gcd_of_dvd_right",
 "statement": "∀ {a b : Int} (c : Int), a ∣ b → c.gcd a ∣ c.gcd b",
@@ -1987,9 +2347,21 @@
 "screen": "kept"
 },
 {
+"name": "core_Int_gcd_dvd_natAbs_right",
+"lemma": "Int.gcd_dvd_natAbs_right",
+"statement": "∀ (a b : Int), a.gcd b ∣ b.natAbs",
+"screen": "kept"
+},
+{
 "name": "core_Int_gcd_dvd_right",
 "lemma": "Int.gcd_dvd_right",
 "statement": "∀ (a b : Int), ↑(a.gcd b) ∣ b",
+"screen": "kept"
+},
+{
+"name": "core_Int_gcd_left_comm",
+"lemma": "Int.gcd_left_comm",
+"statement": "∀ (a b c : Int), a.gcd ↑(b.gcd c) = b.gcd ↑(a.gcd c)",
 "screen": "kept"
 },
 {
@@ -2089,6 +2461,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Int_instNeZeroHPowNat",
+"lemma": "Int.instNeZeroHPowNat",
+"statement": "∀ {n : Int} {m : Nat} [NeZero n], NeZero (n ^ m)",
+"screen": "kept"
+},
+{
 "name": "core_Int_isGE_compare",
 "lemma": "Int.isGE_compare",
 "statement": "∀ {a b : Int}, (compare a b).isGE = true ↔ b ≤ a",
@@ -2113,6 +2491,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_lcm_dvd_lcm_mul_left_left",
+"lemma": "Int.lcm_dvd_lcm_mul_left_left",
+"statement": "∀ (a b c : Int), a.lcm b ∣ (c * a).lcm b",
+"screen": "kept"
+},
+{
 "name": "core_Int_lcm_dvd_lcm_mul_right_left",
 "lemma": "Int.lcm_dvd_lcm_mul_right_left",
 "statement": "∀ (a b c : Int), a.lcm b ∣ (a * c).lcm b",
@@ -2122,6 +2506,12 @@
 "name": "core_Int_lcm_dvd_lcm_of_dvd_right",
 "lemma": "Int.lcm_dvd_lcm_of_dvd_right",
 "statement": "∀ {a b : Int} (c : Int), a ∣ b → c.lcm a ∣ c.lcm b",
+"screen": "kept"
+},
+{
+"name": "core_Int_lcm_dvd_mul_self_left_iff_dvd_mul",
+"lemma": "Int.lcm_dvd_mul_self_left_iff_dvd_mul",
+"statement": "∀ {k n m : Nat}, (↑k).lcm ↑n ∣ k * m ↔ n ∣ k * m",
 "screen": "kept"
 },
 {
@@ -2135,6 +2525,12 @@
 "lemma": "Int.lcm_dvd_natAbs_mul",
 "statement": "∀ (m n : Int), m.lcm n ∣ m.natAbs * n.natAbs",
 "screen": "easy"
+},
+{
+"name": "core_Int_lcm_lcm_self_right_right",
+"lemma": "Int.lcm_lcm_self_right_right",
+"statement": "∀ (m n : Int), m.lcm ↑(n.lcm m) = m.lcm n",
+"screen": "kept"
 },
 {
 "name": "core_Int_lcm_mul_left",
@@ -2158,6 +2554,12 @@
 "name": "core_Int_lcm_one_right",
 "lemma": "Int.lcm_one_right",
 "statement": "∀ (a : Int), a.lcm 1 = a.natAbs",
+"screen": "kept"
+},
+{
+"name": "core_Int_lcm_self",
+"lemma": "Int.lcm_self",
+"statement": "∀ {a : Int}, a.lcm a = a.natAbs",
 "screen": "kept"
 },
 {
@@ -2257,6 +2659,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_lt_sub_right_iff_add_lt",
+"lemma": "Int.lt_sub_right_iff_add_lt",
+"statement": "∀ {a b c : Int}, a < c - b ↔ a + b < c",
+"screen": "easy"
+},
+{
 "name": "core_Int_lt_tmod_of_pos",
 "lemma": "Int.lt_tmod_of_pos",
 "statement": "∀ (a : Int) {b : Int}, 0 < b → -b < a.tmod b",
@@ -2353,10 +2761,22 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_mul_def",
+"lemma": "Int.mul_def",
+"statement": "∀ {a b : Int}, a.mul b = a * b",
+"screen": "easy"
+},
+{
 "name": "core_Int_mul_ediv_cancel_of_dvd",
 "lemma": "Int.mul_ediv_cancel_of_dvd",
 "statement": "∀ {a b : Int}, b ∣ a → b * (a / b) = a",
 "screen": "easy"
+},
+{
+"name": "core_Int_mul_ediv_mul_of_pos_left",
+"lemma": "Int.mul_ediv_mul_of_pos_left",
+"statement": "∀ (a : Int) {b : Int} (c : Int), 0 < b → a * b / (c * b) = a / c",
+"screen": "kept"
 },
 {
 "name": "core_Int_mul_ediv_self",
@@ -2383,9 +2803,39 @@
 "screen": "kept"
 },
 {
+"name": "core_Int_mul_le_mul_left",
+"lemma": "Int.mul_le_mul_left",
+"statement": "∀ {a b c : Int}, 0 < a → (a * b ≤ a * c ↔ b ≤ c)",
+"screen": "easy"
+},
+{
+"name": "core_Int_mul_le_mul_left_of_neg",
+"lemma": "Int.mul_le_mul_left_of_neg",
+"statement": "∀ {a b c : Int}, a < 0 → (a * b ≤ a * c ↔ c ≤ b)",
+"screen": "easy"
+},
+{
+"name": "core_Int_mul_le_mul_of_le_of_le_of_nonpos_of_nonneg",
+"lemma": "Int.mul_le_mul_of_le_of_le_of_nonpos_of_nonneg",
+"statement": "∀ {a b c d : Int}, c ≤ a → b ≤ d → b ≤ 0 → 0 ≤ c → a * b ≤ c * d",
+"screen": "kept"
+},
+{
 "name": "core_Int_mul_le_mul_of_natAbs_le",
 "lemma": "Int.mul_le_mul_of_natAbs_le",
 "statement": "∀ {x y : Int} {s t : Nat}, x.natAbs ≤ s → y.natAbs ≤ t → x * y ≤ ↑s * ↑t",
+"screen": "kept"
+},
+{
+"name": "core_Int_mul_lt_mul'",
+"lemma": "Int.mul_lt_mul'",
+"statement": "∀ {a b c d : Int}, a ≤ c → b < d → 0 ≤ b → 0 < c → a * b < c * d",
+"screen": "kept"
+},
+{
+"name": "core_Int_mul_pos_of_neg_of_neg",
+"lemma": "Int.mul_pos_of_neg_of_neg",
+"statement": "∀ {a b : Int}, a < 0 → b < 0 → 0 < a * b",
 "screen": "kept"
 },
 {
@@ -2393,6 +2843,18 @@
 "lemma": "Int.mul_right_comm",
 "statement": "∀ (a b c : Int), a * b * c = a * c * b",
 "screen": "easy"
+},
+{
+"name": "core_Int_mul_self_le_mul_self",
+"lemma": "Int.mul_self_le_mul_self",
+"statement": "∀ {a b : Int}, 0 ≤ a → a ≤ b → a * a ≤ b * b",
+"screen": "kept"
+},
+{
+"name": "core_Int_mul_sub_bmod_self_right",
+"lemma": "Int.mul_sub_bmod_self_right",
+"statement": "∀ (a : Int) (b : Nat) (c : Int), (a * ↑b - c).bmod b = (-c).bmod b",
+"screen": "kept"
 },
 {
 "name": "core_Int_mul_sub_fmod_self_left",
@@ -2515,6 +2977,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Int_negSucc_ediv",
+"lemma": "Int.negSucc_ediv",
+"statement": "∀ (m : Nat) {b : Int}, 0 < b → Int.negSucc m / b = -((↑m).ediv b + 1)",
+"screen": "kept"
+},
+{
 "name": "core_Int_negSucc_ediv_negSucc",
 "lemma": "Int.negSucc_ediv_negSucc",
 "statement": "∀ {a b : Nat}, Int.negSucc a / Int.negSucc b = ↑(a / (b + 1) + 1)",
@@ -2551,16 +3019,40 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_neg_add_lt_of_lt_add",
+"lemma": "Int.neg_add_lt_of_lt_add",
+"statement": "∀ {a b c : Int}, a < b + c → -b + a < c",
+"screen": "easy"
+},
+{
 "name": "core_Int_neg_add_lt_right_of_lt_add",
 "lemma": "Int.neg_add_lt_right_of_lt_add",
 "statement": "∀ {a b c : Int}, a < b + c → -c + a < b",
 "screen": "easy"
 },
 {
+"name": "core_Int_neg_fdiv",
+"lemma": "Int.neg_fdiv",
+"statement": "∀ {a b : Int}, (-a).fdiv b = -a.fdiv b - if b = 0 ∨ b ∣ a then 0 else 1",
+"screen": "kept"
+},
+{
 "name": "core_Int_neg_lcm",
 "lemma": "Int.neg_lcm",
 "statement": "∀ {a b : Int}, (-a).lcm b = a.lcm b",
 "screen": "kept"
+},
+{
+"name": "core_Int_neg_lt_self_iff",
+"lemma": "Int.neg_lt_self_iff",
+"statement": "∀ {n : Int}, -n < n ↔ 0 < n",
+"screen": "easy"
+},
+{
+"name": "core_Int_neg_mul_comm",
+"lemma": "Int.neg_mul_comm",
+"statement": "∀ (a b : Int), -a * b = a * -b",
+"screen": "easy"
 },
 {
 "name": "core_Int_neg_mul_emod_right",
@@ -2581,6 +3073,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_neg_ofNat_le_natCast",
+"lemma": "Int.neg_ofNat_le_natCast",
+"statement": "∀ (n m : Nat), -OfNat.ofNat n ≤ ↑m",
+"screen": "kept"
+},
+{
 "name": "core_Int_neg_ofNat_le_ofNat",
 "lemma": "Int.neg_ofNat_le_ofNat",
 "statement": "∀ (n m : Nat), -OfNat.ofNat n ≤ OfNat.ofNat m",
@@ -2599,6 +3097,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_neg_tdiv_of_dvd",
+"lemma": "Int.neg_tdiv_of_dvd",
+"statement": "∀ {a b : Int}, b ∣ a → (-a).tdiv b = -a.tdiv b",
+"screen": "easy"
+},
+{
 "name": "core_Int_neg_tmod",
 "lemma": "Int.neg_tmod",
 "statement": "∀ (a b : Int), (-a).tmod b = -a.tmod b",
@@ -2614,6 +3118,12 @@
 "name": "core_Int_nonneg_def",
 "lemma": "Int.nonneg_def",
 "statement": "∀ {a : Int}, a.NonNeg ↔ ∃ n, a = ↑n",
+"screen": "kept"
+},
+{
+"name": "core_Int_nonneg_of_mul_nonneg_right",
+"lemma": "Int.nonneg_of_mul_nonneg_right",
+"statement": "∀ {a b : Int}, 0 ≤ a * b → 0 < a → 0 ≤ b",
 "screen": "kept"
 },
 {
@@ -2647,9 +3157,27 @@
 "screen": "easy"
 },
 {
+"name": "core_Int_ofNat_fdiv",
+"lemma": "Int.ofNat_fdiv",
+"statement": "∀ (m n : Nat), ↑(m / n) = (↑m).fdiv ↑n",
+"screen": "kept"
+},
+{
 "name": "core_Int_ofNat_inj",
 "lemma": "Int.ofNat_inj",
 "statement": "∀ {m n : Nat}, ↑m = ↑n ↔ m = n",
+"screen": "easy"
+},
+{
+"name": "core_Int_ofNat_le",
+"lemma": "Int.ofNat_le",
+"statement": "∀ {m n : Nat}, ↑m ≤ ↑n ↔ m ≤ n",
+"screen": "easy"
+},
+{
+"name": "core_Int_ofNat_mul_subNatNat",
+"lemma": "Int.ofNat_mul_subNatNat",
+"statement": "∀ (m n k : Nat), ↑m * Int.subNatNat n k = Int.subNatNat (m * n) (m * k)",
 "screen": "easy"
 },
 {
@@ -2657,6 +3185,12 @@
 "lemma": "Int.ofNat_one",
 "statement": "↑1 = 1",
 "screen": "easy"
+},
+{
+"name": "core_Int_ofNat_sizeOf_spec",
+"lemma": "Int.ofNat.sizeOf_spec",
+"statement": "∀ (a : Nat), sizeOf (Int.ofNat a) = 1 + sizeOf a",
+"screen": "kept"
 },
 {
 "name": "core_Int_ofNat_zero",
@@ -2695,6 +3229,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Int_shiftLeft_shiftRight_eq",
+"lemma": "Int.shiftLeft_shiftRight_eq",
+"statement": "∀ (a : Int) (b c : Nat), a <<< b >>> c = a <<< (b - c) >>> (c - b)",
+"screen": "kept"
+},
+{
 "name": "core_Int_shiftLeft_succ'",
 "lemma": "Int.shiftLeft_succ'",
 "statement": "∀ (m : Int) (n : Nat), m <<< (n + 1) = 2 * m <<< n",
@@ -2705,6 +3245,24 @@
 "lemma": "Int.shiftLeft_zero",
 "statement": "∀ (n : Int), n <<< 0 = n",
 "screen": "easy"
+},
+{
+"name": "core_Int_sign_nonpos_iff",
+"lemma": "Int.sign_nonpos_iff",
+"statement": "∀ {x : Int}, x.sign ≤ 0 ↔ x ≤ 0",
+"screen": "easy"
+},
+{
+"name": "core_Int_sign_sign",
+"lemma": "Int.sign_sign",
+"statement": "∀ {x : Int}, x.sign.sign = x.sign",
+"screen": "easy"
+},
+{
+"name": "core_Int_sign_tdiv",
+"lemma": "Int.sign_tdiv",
+"statement": "∀ (a b : Int), (a.tdiv b).sign = if a.natAbs < b.natAbs then 0 else a.sign * b.sign",
+"screen": "kept"
 },
 {
 "name": "core_Int_sign_tmod",
@@ -2723,6 +3281,12 @@
 "lemma": "Int.size_rco",
 "statement": "∀ {a b : Int}, (a...b).size = (b - a).toNat",
 "screen": "kept"
+},
+{
+"name": "core_Int_size_toArray_roc",
+"lemma": "Int.size_toArray_roc",
+"statement": "∀ {a b : Int}, (a<...=b).toArray.size = (b - a).toNat",
+"screen": "easy"
 },
 {
 "name": "core_Int_subNatNat_add_negSucc",
@@ -2839,9 +3403,21 @@
 "screen": "kept"
 },
 {
+"name": "core_Int_tdiv_left_inj",
+"lemma": "Int.tdiv_left_inj",
+"statement": "∀ {a b d : Int}, d ∣ a → d ∣ b → (a.tdiv d = b.tdiv d ↔ a = b)",
+"screen": "easy"
+},
+{
 "name": "core_Int_tdiv_mul_cancel",
 "lemma": "Int.tdiv_mul_cancel",
 "statement": "∀ {a b : Int}, b ∣ a → a.tdiv b * b = a",
+"screen": "kept"
+},
+{
+"name": "core_Int_tdiv_nonneg",
+"lemma": "Int.tdiv_nonneg",
+"statement": "∀ {a b : Int}, 0 ≤ a → 0 ≤ b → 0 ≤ a.tdiv b",
 "screen": "kept"
 },
 {
@@ -2857,6 +3433,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Int_tmod_lt_of_pos",
+"lemma": "Int.tmod_lt_of_pos",
+"statement": "∀ (a : Int) {b : Int}, 0 < b → a.tmod b < b",
+"screen": "kept"
+},
+{
 "name": "core_Int_tmod_self",
 "lemma": "Int.tmod_self",
 "statement": "∀ {a : Int}, a.tmod a = 0",
@@ -2866,6 +3448,12 @@
 "name": "core_Int_toArray_rcc_succ_succ",
 "lemma": "Int.toArray_rcc_succ_succ",
 "statement": "∀ {m n : Int}, (m + 1...=n + 1).toArray = Array.map (fun x => x + 1) (m...=n).toArray",
+"screen": "kept"
+},
+{
+"name": "core_Int_toArray_roc_succ_succ",
+"lemma": "Int.toArray_roc_succ_succ",
+"statement": "∀ {m n : Int}, (m + 1<...=n + 1).toArray = Array.map (fun x => x + 1) (m<...=n).toArray",
 "screen": "kept"
 },
 {
@@ -2885,6 +3473,18 @@
 "lemma": "Int.toList_roo_succ_succ",
 "statement": "∀ {m n : Int}, (m + 1<...n + 1).toList = List.map (fun x => x + 1) (m<...n).toList",
 "screen": "kept"
+},
+{
+"name": "core_Int_toNat_add_nat",
+"lemma": "Int.toNat_add_nat",
+"statement": "∀ {a : Int}, 0 ≤ a → ∀ (n : Nat), (a + ↑n).toNat = a.toNat + n",
+"screen": "easy"
+},
+{
+"name": "core_Int_toNat_emod",
+"lemma": "Int.toNat_emod",
+"statement": "∀ {x y : Int}, 0 ≤ x → 0 ≤ y → (x % y).toNat = x.toNat % y.toNat",
+"screen": "easy"
 },
 {
 "name": "core_Int_toNat_lt'",
@@ -2965,6 +3565,24 @@
 "screen": "easy"
 },
 {
+"name": "core_Option_any_true",
+"lemma": "Option.any_true",
+"statement": "∀ {α : Type u_1} {o : Option α}, Option.any (fun x => true) o = o.isSome",
+"screen": "easy"
+},
+{
+"name": "core_Option_attachWith_congr_simp",
+"lemma": "Option.attachWith.congr_simp",
+"statement": "∀ {α : Type u_1} (xs xs_1 : Option α) (e_xs : xs = xs_1) (P : α → Prop) (H : ∀ (x : α), xs = some x → P x), xs.attachWith P H = xs_1.attachWith P ⋯",
+"screen": "kept"
+},
+{
+"name": "core_Option_attachWith_guard",
+"lemma": "Option.attachWith_guard",
+"statement": "∀ {α : Type u_1} {q : α → Bool} {x : α} {P : α → Prop} {h : ∀ (a : α), Option.guard q x = some a → P a}, (Option.guard q x).attachWith P h = if h' : q x = true then some ⟨x, ⋯⟩ else none",
+"screen": "kept"
+},
+{
 "name": "core_Option_attachWith_map_val",
 "lemma": "Option.attachWith_map_val",
 "statement": "∀ {α : Type u_1} {β : Type u_2} {p : α → Prop} (f : α → β) (o : Option α) (H : ∀ (a : α), o = some a → p a), Option.map (fun i => f i.val) (o.attachWith p H) = Option.map f o",
@@ -2975,6 +3593,12 @@
 "lemma": "Option.attachWith_none",
 "statement": "∀ {α : Type u_1} {P : α → Prop} {H : ∀ (x : α), none = some x → P x}, none.attachWith P H = none",
 "screen": "easy"
+},
+{
+"name": "core_Option_attach_guard",
+"lemma": "Option.attach_guard",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {x : α}, (Option.guard p x).attach = if h : p x = true then some ⟨x, ⋯⟩ else none",
+"screen": "kept"
 },
 {
 "name": "core_Option_attach_pfilter",
@@ -3025,6 +3649,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Option_filter_le",
+"lemma": "Option.filter_le",
+"statement": "∀ {α : Type u_1} [inst : LE α], (∀ (x : α), x ≤ x) → ∀ {o : Option α} {p : α → Bool}, Option.filter p o ≤ o",
+"screen": "easy"
+},
+{
 "name": "core_Option_filter_none",
 "lemma": "Option.filter_none",
 "statement": "∀ {α : Type u_1} (p : α → Bool), Option.filter p none = none",
@@ -3035,6 +3665,12 @@
 "lemma": "Option.filter_pmap",
 "statement": "∀ {α : Type u_1} {β : Type u_2} {o : Option α} {p : α → Prop} {f : (a : α) → p a → β} {h : ∀ (a : α), o = some a → p a} {q : β → Bool}, Option.filter q (Option.pmap f o h) = Option.pmap f (o.pfilter fun a h' => q (f a ⋯)) ⋯",
 "screen": "kept"
+},
+{
+"name": "core_Option_filter_some_pos",
+"lemma": "Option.filter_some_pos",
+"statement": "∀ {α : Type u_1} {p : α → Bool} {a : α}, p a = true → Option.filter p (some a) = some a",
+"screen": "easy"
 },
 {
 "name": "core_Option_foldlM_toArray",
@@ -3085,6 +3721,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Option_get!_inj",
+"lemma": "Option.get!_inj",
+"statement": "∀ {α : Type u_1} [inst : Inhabited α] {o₁ o₂ : Option α}, o₁.isSome = true → o₂.isSome = true → (o₁.get! = o₂.get! ↔ o₁ = o₂)",
+"screen": "kept"
+},
+{
 "name": "core_Option_getDM_some",
 "lemma": "Option.getDM_some",
 "statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_1} [inst : Pure m] (a : α) (y : m α), (some a).getDM y = pure a",
@@ -3112,6 +3754,12 @@
 "name": "core_Option_getD_of_ne_none",
 "lemma": "Option.getD_of_ne_none",
 "statement": "∀ {α : Type u_1} {x : Option α}, x ≠ none → ∀ (y : α), some (x.getD y) = x",
+"screen": "easy"
+},
+{
+"name": "core_Option_getD_some",
+"lemma": "Option.getD_some",
+"statement": "∀ {α : Type u_1} {a b : α}, (some a).getD b = a",
 "screen": "easy"
 },
 {
@@ -3190,6 +3838,12 @@
 "name": "core_Option_instReflOrd",
 "lemma": "Option.instReflOrd",
 "statement": "∀ {α : Type u_1} [inst : Ord α] [Std.ReflOrd α], Std.ReflOrd (Option α)",
+"screen": "kept"
+},
+{
+"name": "core_Option_instTransOrd",
+"lemma": "Option.instTransOrd",
+"statement": "∀ {α : Type u_1} [inst : Ord α] [Std.TransOrd α], Std.TransOrd (Option α)",
 "screen": "kept"
 },
 {
@@ -3277,6 +3931,12 @@
 "screen": "kept"
 },
 {
+"name": "core_Option_mapM_join",
+"lemma": "Option.mapM_join",
+"statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Applicative m] [LawfulApplicative m] {f : α → m β} {o : Option (Option α)}, Option.mapM f o.join = Option.join <$> Option.mapM (Option.mapM f) o",
+"screen": "kept"
+},
+{
 "name": "core_Option_mapM_some",
 "lemma": "Option.mapM_some",
 "statement": "∀ {m : Type u_1 → Type u_2} {α : Type u_3} {β : Type u_1} [inst : Applicative m] (x : α) (f : α → m β), Option.mapM f (some x) = some <$> f x",
@@ -3299,6 +3959,12 @@
 "lemma": "Option.map_congr",
 "statement": "∀ {α : Type u_1} {α_1 : Type u_2} {f g : α → α_1} {x : Option α}, (∀ (a : α), x = some a → f a = g a) → Option.map f x = Option.map g x",
 "screen": "easy"
+},
+{
+"name": "core_Option_map_inj_right",
+"lemma": "Option.map_inj_right",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {f : α → β} {o o' : Option α}, (∀ (x y : α), f x = f y → x = y) → (Option.map f o = Option.map f o' ↔ o = o')",
+"screen": "kept"
 },
 {
 "name": "core_Option_max_le",
@@ -3337,6 +4003,18 @@
 "screen": "easy"
 },
 {
+"name": "core_Option_merge_le",
+"lemma": "Option.merge_le",
+"statement": "∀ {α : Type u_1} [inst : LE α] {f : α → α → α} {o₁ o₂ o₃ : Option α}, (∀ (a b c : α), a ≤ c → b ≤ c → f a b ≤ c) → o₁ ≤ o₃ → o₂ ≤ o₃ → Option.merge f o₁ o₂ ≤ o₃",
+"screen": "kept"
+},
+{
+"name": "core_Option_merge_lt",
+"lemma": "Option.merge_lt",
+"statement": "∀ {α : Type u_1} [inst : LT α] {f : α → α → α} {o₁ o₂ o₃ : Option α}, (∀ (a b c : α), a < c → b < c → f a b < c) → o₁ < o₃ → o₂ < o₃ → Option.merge f o₁ o₂ < o₃",
+"screen": "kept"
+},
+{
 "name": "core_Option_min_filter_right",
 "lemma": "Option.min_filter_right",
 "statement": "∀ {α : Type u_1} [inst : Min α] [Std.IdempotentOp min] {p : α → Bool} {o : Option α}, min o (Option.filter p o) = Option.filter p o",
@@ -3359,6 +4037,12 @@
 "lemma": "Option.none.sizeOf_spec",
 "statement": "∀ {α : Type u} [inst : SizeOf α], sizeOf none = 1",
 "screen": "invalid"
+},
+{
+"name": "core_Option_not_comp_isNone",
+"lemma": "Option.not_comp_isNone",
+"statement": "∀ {α : Type u_1}, (fun x => !x) ∘ Option.isNone = Option.isSome",
+"screen": "kept"
 },
 {
 "name": "core_Option_not_isNone",
@@ -3385,6 +4069,12 @@
 "screen": "easy"
 },
 {
+"name": "core_Option_or_assoc",
+"lemma": "Option.or_assoc",
+"statement": "∀ {α : Type u_1} {o₁ o₂ o₃ : Option α}, (o₁.or o₂).or o₃ = o₁.or (o₂.or o₃)",
+"screen": "easy"
+},
+{
 "name": "core_Option_pbind_none",
 "lemma": "Option.pbind_none",
 "statement": "∀ {α : Type u_1} {α_1 : Type u_2} {f : (a : α) → none = some a → Option α_1}, none.pbind f = none",
@@ -3403,9 +4093,21 @@
 "screen": "kept"
 },
 {
+"name": "core_Option_pfilter_congr",
+"lemma": "Option.pfilter_congr",
+"statement": "∀ {α : Type u} {o o' : Option α} (ho : o = o') {f : (a : α) → o = some a → Bool} {g : (a : α) → o' = some a → Bool}, (∀ (a : α) (ha : o' = some a), f a ⋯ = g a ha) → o.pfilter f = o'.pfilter g",
+"screen": "kept"
+},
+{
 "name": "core_Option_pfilter_join",
 "lemma": "Option.pfilter_join",
 "statement": "∀ {α : Type u_1} {o : Option (Option α)} {p : (a : α) → o.join = some a → Bool}, o.join.pfilter p = (o.pfilter fun o' h => o'.pelim false fun a ha => p a ⋯).join",
+"screen": "kept"
+},
+{
+"name": "core_Option_pmap_map",
+"lemma": "Option.pmap_map",
+"statement": "∀ {α : Type u_1} {β : Type u_2} {γ : Type u_3} (o : Option α) (f : α → β) {p : β → Prop} (g : (b : β) → p b → γ) (H : ∀ (a : β), Option.map f o = some a → p a), Option.pmap g (Option.map f o) H = Option.pmap (fun a h => g (f a) h) o ⋯",
 "screen": "kept"
 },
 {
@@ -3418,6 +4120,12 @@
 "name": "core_Option_pure_apply",
 "lemma": "Option.pure_apply",
 "statement": "∀ {α : Type u_1} {x : α}, pure x = some x",
+"screen": "easy"
+},
+{
+"name": "core_Option_reflBEq_iff",
+"lemma": "Option.reflBEq_iff",
+"statement": "∀ {α : Type u_1} [inst : BEq α], ReflBEq (Option α) ↔ ReflBEq α",
 "screen": "easy"
 },
 {
@@ -3442,6 +4150,12 @@
 "name": "core_Option_some_inj",
 "lemma": "Option.some_inj",
 "statement": "∀ {α : Type u_1} {a b : α}, some a = some b ↔ a = b",
+"screen": "easy"
+},
+{
+"name": "core_Option_some_or",
+"lemma": "Option.some_or",
+"statement": "∀ {α : Type u_1} {a : α} {o : Option α}, (some a).or o = some a",
 "screen": "easy"
 },
 {
@@ -3484,6 +4198,12 @@
 "name": "core_Option_toList_some",
 "lemma": "Option.toList_some",
 "statement": "∀ {α : Type u_1} (a : α), (some a).toList = [a]",
+"screen": "easy"
+},
+{
+"name": "core_Option_unattach_attach",
+"lemma": "Option.unattach_attach",
+"statement": "∀ {α : Type u_1} (o : Option α), o.attach.unattach = o",
 "screen": "easy"
 },
 {
