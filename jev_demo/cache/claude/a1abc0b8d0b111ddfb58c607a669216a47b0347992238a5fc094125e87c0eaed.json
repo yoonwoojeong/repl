@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [List.filterMap_cons]", "rename_i a l ih", "simp [List.filterMap_cons, List.attach_cons]", "split <;> simp_all", "grind", "rfl"], "usd": 0.008645000000000014}

@@ -1,0 +1,1 @@
+{"tactics": ["intro i", "intro i <;> simp [List.getElem?_attach]", "simp", "grind", "intro i <;> rfl", "intro i <;> simp [List.getElem?_filterMap, List.getElem?_attach]"], "usd": 0.008784999999999987}

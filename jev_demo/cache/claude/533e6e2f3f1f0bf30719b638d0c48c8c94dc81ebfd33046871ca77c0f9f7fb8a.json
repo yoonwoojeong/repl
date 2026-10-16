@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "refine fun h => Nat.le_of_not_lt fun hlt => ?_", "intro h <;> apply Nat.le_of_not_lt <;> intro hlt <;> obtain ⟨j, hj, he⟩ := h ⟨n, hlt, rfl⟩ <;> have := Nat.eq_of_mul_eq_mul_left hstep (Nat.add_left_cancel he) <;> omega", "intro h <;> false_or_by_contra"], "usd": 0.009828999999999866}

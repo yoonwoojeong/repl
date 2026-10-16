@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rfl", "simp only [List.filterMap_nil, List.getElem?_nil]", "exact (List.getElem?_nil).symm", "simp [List.filterMap]", "grind"], "usd": 0.0025169999999999915}

@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "exact absurd h (by simp)", "simp [List.attach] at h", "cases h", "exact (Nat.not_lt_zero _ h).elim", "grind"], "usd": 0.0022210000000000285}

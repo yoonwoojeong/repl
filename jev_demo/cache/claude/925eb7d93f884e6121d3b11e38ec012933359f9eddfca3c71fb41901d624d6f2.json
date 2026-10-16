@@ -1,0 +1,1 @@
+{"tactics": ["intro α β l f", "intros", "intro α β l f <;> induction l <;> simp_all", "intro α β l f <;> apply List.ext_getElem? <;> simp", "simp"], "usd": 0.01072099999999998}

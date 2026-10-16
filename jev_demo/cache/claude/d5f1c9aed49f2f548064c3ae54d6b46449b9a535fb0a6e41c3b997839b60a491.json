@@ -1,0 +1,1 @@
+{"tactics": ["rcases ‹_ <:+ _› with ⟨t, rfl⟩", "obtain ⟨t, rfl⟩ := ‹_ <:+ _›", "rcases ‹_ <:+ _› with ⟨t, rfl⟩ <;> grind [List.count_le_length, List.count_append, List.length_append]", "rename_i h a", "cases ‹_ <:+ _›"], "usd": 0.013084999999999986}

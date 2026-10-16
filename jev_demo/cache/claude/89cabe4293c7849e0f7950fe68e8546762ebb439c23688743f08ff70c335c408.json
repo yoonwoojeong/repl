@@ -1,0 +1,1 @@
+{"tactics": ["intro n m", "intro n m <;> rw [Nat.lor_comm] <;> exact Nat.left_le_or", "intro n m <;> simpa [Nat.lor_comm] using (Nat.left_le_or (n := m) (m := n))", "intro n m <;> grind", "intro n m <;> exact Nat.lor_comm n m ▸ Nat.left_le_or"], "usd": 0.008560999999999819}

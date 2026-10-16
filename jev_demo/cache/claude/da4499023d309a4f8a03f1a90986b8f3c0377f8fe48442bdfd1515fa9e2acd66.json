@@ -1,0 +1,1 @@
+{"tactics": ["intro step s m n hstep", "intro step s m n hstep <;> constructor", "intro step s m n hstep <;> simp only [List.subset_def, List.mem_range'] <;> constructor", "intros <;> constructor"], "usd": 0.008316999999999908}

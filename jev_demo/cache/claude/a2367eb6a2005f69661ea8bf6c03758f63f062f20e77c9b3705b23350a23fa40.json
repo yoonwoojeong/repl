@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "grind [List.filterMap_eq_append_iff, List.filterMap_append]", "simp only [@eq_comm _ _ (List.filterMap _ _), List.filterMap_eq_append_iff]", "refine ⟨fun ⟨s, t, h⟩ => ?_, fun ⟨l, ⟨s, t, h⟩, e⟩ => ?_⟩", "rw [← List.infix_def, ← List.infix_def]", "simp only [← List.infix_def]"], "usd": 0.011181000000000108}

@@ -1,0 +1,1 @@
+{"tactics": ["intro k m n h1 h2", "exact fun h1 h2 => (Nat.Coprime.mul h1.symm h2.symm).symm", "intro k m n h1 h2 <;> exact Nat.coprime_mul_iff_right.mpr ⟨h1, h2⟩", "intro k m n h1 h2 <;> simp_all [Nat.coprime_mul_iff_right]", "intro k m n h1 h2 <;> exact Nat.Coprime.symm (Nat.Coprime.mul (Nat.Coprime.symm h1) (Nat.Coprime.symm h2))"], "usd": 0.010908999999999835}

@@ -1,0 +1,1 @@
+{"tactics": ["exact w.symm", "subst w; rfl", "simp [← w]", "rw [← w]", "exact w ▸ rfl", "cases w; rfl", "simp_all", "grind"], "usd": 0.0022730000000001915}

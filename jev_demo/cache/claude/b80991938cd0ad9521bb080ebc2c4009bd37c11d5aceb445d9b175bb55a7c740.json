@@ -1,0 +1,1 @@
+{"tactics": ["intros; rfl", "intro m inst β x xs; rfl", "intros; simp [List.iterM, Std.Iterators.IterM.step]", "intros; simp [List.iterM, Std.IterM.step, Std.Iterators.Iterator.step]", "intros; unfold List.iterM; rfl", "intros; simp only [List.iterM]; rfl", "intros; constructor", "intros; grind [List.iterM]"], "usd": 0.004125000000000156}

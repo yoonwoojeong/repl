@@ -1,0 +1,1 @@
+{"tactics": ["cases xs <;> first | (simp at h) | rfl", "cases xs with\n  | nil => simp at h\n  | cons a t => rfl", "match xs, h with\n  | a :: t, _ => rfl", "cases xs", "apply Subtype.ext", "rcases xs with _ | ⟨a, t⟩ <;> first | (simp at h) | rfl"], "usd": 0.012753000000000014}

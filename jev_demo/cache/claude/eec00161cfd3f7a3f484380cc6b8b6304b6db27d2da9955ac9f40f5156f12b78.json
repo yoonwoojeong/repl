@@ -1,0 +1,1 @@
+{"tactics": ["cases hm : l.max?", "grind", "rcases l with _ | ⟨b, t⟩ <;> simp_all", "induction l generalizing a <;> simp_all [List.max?_cons]", "simp [Option.getD]", "grind [List.max?_eq_some_iff', List.max?_eq_none_iff]"], "usd": 0.01203299999999996}

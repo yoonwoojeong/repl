@@ -1,0 +1,1 @@
+{"tactics": ["exact h.2 n✝ (Nat.le_refl _)", "obtain ⟨hb, hall⟩ := h\nexact hall n✝ (Nat.le_refl _)", "rcases h with ⟨hb, hall⟩ <;> exact hall _ (Nat.le_refl _)", "simp_all", "grind"], "usd": 0.00950899999999999}

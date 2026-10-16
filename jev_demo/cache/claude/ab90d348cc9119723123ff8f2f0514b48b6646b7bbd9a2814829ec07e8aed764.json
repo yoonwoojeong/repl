@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨u, v, rfl, h1, rfl⟩ := h", "rcases h with ⟨u, v, rfl, h1, rfl⟩", "obtain ⟨u, v, hl, h1, h2⟩ := h", "rcases h with ⟨u, v, rfl, h1, rfl⟩ <;> rcases List.map_eq_append_iff.mp h1 with ⟨a, b, rfl, rfl, rfl⟩ <;> exact ⟨b, ⟨a, v, by simp⟩, rfl⟩"], "usd": 0.01337300000000008}

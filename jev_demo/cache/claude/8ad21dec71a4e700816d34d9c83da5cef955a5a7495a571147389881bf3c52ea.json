@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.range']", "simp", "constructor <;> intro _ <;> simp_all [List.range']", "exact ⟨fun _ => Nat.zero_le _, fun _ => by simp [List.range']⟩", "grind"], "usd": 0.0026290000000002145}

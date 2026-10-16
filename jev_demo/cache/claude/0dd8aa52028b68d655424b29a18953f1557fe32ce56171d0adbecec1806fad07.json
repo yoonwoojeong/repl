@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ l₃", "exact fun {α} {l₁ l₂ l₃} => ⟨fun ⟨t, ht⟩ => ⟨t, List.append_cancel_right (by simpa [List.append_assoc] using ht)⟩, fun ⟨t, ht⟩ => ⟨t, by rw [← List.append_assoc, ht]⟩⟩", "intro α l₁ l₂ l₃ <;> constructor", "intro α l₁ l₂ l₃ <;> simp only [List.IsSuffix] <;> constructor"], "usd": 0.019689000000000068}

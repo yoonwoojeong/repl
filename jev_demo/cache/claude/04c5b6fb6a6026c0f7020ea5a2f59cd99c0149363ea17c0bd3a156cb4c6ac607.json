@@ -1,0 +1,1 @@
+{"tactics": ["intro k m n h", "intro k m n h <;> have h2 : k ∣ n * (m / n) := Nat.dvd_trans h (Nat.dvd_mul_right n (m / n)) <;> constructor <;> intro h3 <;> [rw [← Nat.mod_add_div m n]; exact Nat.dvd_add h3 h2; exact (Nat.dvd_add_right h2).mp (by rw [Nat.add_comm, Nat.mod_add_div]; exact h3)]", "intros", "intro k m n h <;> grind"], "usd": 0.011349000000000053}

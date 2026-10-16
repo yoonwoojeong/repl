@@ -1,0 +1,1 @@
+{"tactics": ["have h1 : a ^ n ≤ b := Nat.le_of_dvd (Nat.pos_of_ne_zero hb) h", "have h3 : 2 ^ n ≤ a ^ n := Nat.pow_le_pow_left ha n", "have h2 : n < 2 ^ n := Nat.lt_two_pow_self", "have h2 : n < 2 ^ n := by induction n with | zero => decide | succ k ih => rw [Nat.pow_succ]; omega", "have h1 := Nat.le_of_dvd (by omega) h"], "usd": 0.011149000000000076}

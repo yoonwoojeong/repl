@@ -1,0 +1,1 @@
+{"tactics": ["intro m n i", "intro m n i <;> simp [← Array.getElem?_toList, Nat.getElem?_toList_rcc]", "intro m n i <;> rw [← Array.getElem?_toList] <;> simp [Nat.getElem?_toList_rcc]", "intro m n i <;> grind", "intros <;> simp", "intro m n i <;> simp [Std.Rcc.toArray, Nat.getElem?_toList_rcc]"], "usd": 0.010304999999999787}

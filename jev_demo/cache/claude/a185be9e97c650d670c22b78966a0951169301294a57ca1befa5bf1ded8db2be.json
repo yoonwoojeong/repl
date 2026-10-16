@@ -1,0 +1,1 @@
+{"tactics": ["intro n", "intro n <;> simp [Nat.repr]", "intro n <;> simp [Nat.repr, List.asString]", "intro n <;> rfl", "intro n <;> unfold Nat.repr <;> simp", "simp [Nat.repr]", "intro n <;> simp [Nat.repr, String.toList_asString]", "intro n <;> grind [Nat.repr]"], "usd": 0.006577000000000055}

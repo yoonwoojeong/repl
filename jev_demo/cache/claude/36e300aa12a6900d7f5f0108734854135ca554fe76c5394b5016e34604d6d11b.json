@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "intro h <;> constructor", "intro h <;> simp [List.subset_def, List.mem_range'] <;> constructor", "intro h <;> grind", "intro h <;> induction m generalizing s n <;> simp_all"], "usd": 0.0026329999999998854}

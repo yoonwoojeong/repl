@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "simp only [List.append_eq_cons_iff, List.cons_eq_append_iff]", "grind", "simp [List.append_eq_cons_iff] at *", "refine ⟨fun ⟨s, t, h⟩ => ?_, fun ⟨l, ⟨s, t, h⟩, hl⟩ => ?_⟩", "simp_all [List.append_eq_cons_iff, List.cons_eq_append_iff]"], "usd": 0.00935700000000006}

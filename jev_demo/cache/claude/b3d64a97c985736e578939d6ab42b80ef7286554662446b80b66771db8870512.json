@@ -1,0 +1,1 @@
+{"tactics": ["exact ⟨fun _ => ⟨[], l₁, rfl⟩, fun _ => ⟨[], List.map f l₁, rfl⟩⟩", "exact ⟨fun _ => ⟨l₁, [], List.append_nil _⟩, fun _ => ⟨List.map f l₁, [], List.append_nil _⟩⟩", "constructor <;> intro _ <;> exact ⟨[], _, rfl⟩", "constructor <;> intro _ <;> exact ⟨_, [], List.append_nil _⟩", "simp", "grind"], "usd": 0.010688999999999949}

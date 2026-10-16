@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "decide", "simp [List.utf8Encode]", "native_decide", "simp", "simp [List.utf8Encode, ByteArray.utf8Decode?]", "grind"], "usd": 0.0021969999999997825}

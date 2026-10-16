@@ -1,0 +1,1 @@
+{"tactics": ["simp", "exact List.Perm.refl _", "rfl", "simp [List.filter]", "exact List.Perm.nil", "decide", "constructor", "simp only [List.filter, List.append_nil]"], "usd": 0.0023689999999998435}

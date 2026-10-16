@@ -1,0 +1,1 @@
+{"tactics": ["exact fun l h => (List.Perm.refl l).append h", "exact fun l h => (List.perm_append_left_iff l).mpr h", "intro α t₁ t₂ l h <;> induction l <;> simp_all", "intro α t₁ t₂ l h <;> simp [h]", "intro α t₁ t₂ l h"], "usd": 0.010669000000000012}

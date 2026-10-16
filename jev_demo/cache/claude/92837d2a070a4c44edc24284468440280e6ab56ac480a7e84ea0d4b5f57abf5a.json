@@ -1,0 +1,1 @@
+{"tactics": ["intro h a hj", "intro h a hj <;> simp [List.getElem_set, h]", "intro h a hj <;> rw [List.getElem_set] <;> simp [h]", "intro h a hj <;> grind [List.getElem_set]", "induction l generalizing i j <;> intro h a hj <;> cases i <;> cases j <;> simp_all", "intro h a hj <;> simp [List.getElem_set, Ne.symm h, h]"], "usd": 0.007017000000000051}

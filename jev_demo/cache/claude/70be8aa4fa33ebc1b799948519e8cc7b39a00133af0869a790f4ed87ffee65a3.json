@@ -1,0 +1,1 @@
+{"tactics": ["intro a b x", "intro a b x <;> rw [← Nat.mod_mul_right_div_self, ← Nat.mod_mul_right_mod x a b] <;> exact (Nat.mod_add_div _ _).symm", "intro a b x <;> grind", "intro a b x <;> simp [Nat.mod_mul_right_div_self, Nat.mod_add_div]"], "usd": 0.012068999999999885}

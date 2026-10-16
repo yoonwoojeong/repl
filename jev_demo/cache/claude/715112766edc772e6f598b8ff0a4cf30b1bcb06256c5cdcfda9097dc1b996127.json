@@ -1,0 +1,1 @@
+{"tactics": ["intro α β γ f g l", "intro α β γ f g l init", "intros; induction ‹List _› generalizing ‹_› <;> simp_all [List.flatMap_cons, List.foldl_append]", "intro α β γ f g l init; induction l generalizing init <;> simp_all [List.foldl_append]"], "usd": 0.0034330000000000194}

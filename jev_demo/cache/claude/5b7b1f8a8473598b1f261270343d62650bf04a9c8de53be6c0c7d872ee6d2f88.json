@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨s, t, h⟩", "intro h", "rintro ⟨s, t, h⟩ <;> simp only [List.append_eq_map_iff] at h", "simp only [List.IsInfix]", "intro h <;> obtain ⟨s, t, h⟩ := h"], "usd": 0.012040999999999968}

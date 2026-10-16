@@ -1,0 +1,1 @@
+{"tactics": ["have := Nat.Internal.Linear.Poly.denote_eq_cancel_eq ctx a.toNormPoly b.toNormPoly", "intro h2", "have := Nat.Internal.Linear.Poly.of_denote_eq_cancel (ctx := ctx) (m₁ := a.toNormPoly) (m₂ := b.toNormPoly)", "simp [Nat.Internal.Linear.Expr.toNormPoly, Nat.Internal.Linear.Poly.norm] at h", "intro h2; grind"], "usd": 0.012792999999999832}

@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp [Std.PRange.instHasSizeNat_1]", "unfold Std.PRange.instHasSizeNat_1 <;> rfl", "simp", "omega", "decide"], "usd": 0.003916999999999948}

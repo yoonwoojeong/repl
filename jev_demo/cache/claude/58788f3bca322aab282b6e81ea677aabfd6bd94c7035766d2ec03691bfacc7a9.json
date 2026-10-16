@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ _ xs ys f h", "intros", "grind [List.apply_minOn_le_of_mem, List.minOn_mem]", "intro _ _ _ xs ys f h <;> exact List.apply_minOn_le_of_mem (List.mem_append_right xs (List.minOn_mem h))", "intro _ _ _ xs ys f h <;> apply List.apply_minOn_le_of_mem <;> simp [List.minOn_mem]", "grind"], "usd": 0.009933000000000025}

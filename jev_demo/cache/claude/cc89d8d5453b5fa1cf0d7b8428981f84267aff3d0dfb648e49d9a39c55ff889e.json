@@ -1,0 +1,1 @@
+{"tactics": ["rintro α l₁ _ ⟨t, rfl⟩ hx <;> simp [List.getLast_append, hx]", "rintro α l₁ _ ⟨t, rfl⟩ hx <;> rw [List.getLast_append_of_ne_nil _ hx]", "rintro α l₁ _ ⟨t, rfl⟩ hx <;> grind", "intro α l₁ l₂ h hx", "rintro α l₁ _ ⟨t, rfl⟩ hx <;> simp [List.getLast_append']", "rintro α l₁ _ ⟨t, rfl⟩ hx"], "usd": 0.011245000000000005}

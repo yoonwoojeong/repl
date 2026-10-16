@@ -1,0 +1,1 @@
+{"tactics": ["simp only [show ∀ y b, f y b = g y.val b from fun y b => hf y.1 y.2 b]", "rename_i hd tl", "congr 1", "simp [show ∀ y b, f y b = g y.val b from fun y b => hf y.1 y.2 b]", "congr 1 <;> funext b <;> exact hf _ _ b"], "usd": 0.014492999999999978}

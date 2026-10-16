@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_set, h]", "rw [List.getElem_set]; simp [h]", "cases l <;> cases i <;> simp_all", "grind", "simp [List.getElem_set]; omega", "simp_all [List.getElem_set]"], "usd": 0.006564999999999932}

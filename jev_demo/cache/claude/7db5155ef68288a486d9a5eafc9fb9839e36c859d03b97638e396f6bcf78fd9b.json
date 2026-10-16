@@ -1,0 +1,1 @@
+{"tactics": ["intro _ as bs f i xs", "intro inst as bs f i xs", "intros", "intro _ as bs f i xs <;> induction i generalizing as bs xs <;> simp_all [List.zipWithMAux_toArray_succ]", "simp [List.zipWithMAux_toArray_succ]"], "usd": 0.007284999999999986}

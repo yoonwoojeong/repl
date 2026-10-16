@@ -1,0 +1,1 @@
+{"tactics": ["rename_i n ih", "simp", "grind", "simp [Nat.repr]", "unfold Nat.repr", "simp_all [Nat.repr, String.toNat?]", "decide"], "usd": 0.006517000000000106}

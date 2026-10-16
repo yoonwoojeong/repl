@@ -1,0 +1,1 @@
+{"tactics": ["cases xs with\n  | nil => rfl\n  | cons y ys => simp", "cases xs", "simp", "split", "induction xs generalizing x", "rcases xs with _ | ⟨y, ys⟩"], "usd": 0.007576999999999945}

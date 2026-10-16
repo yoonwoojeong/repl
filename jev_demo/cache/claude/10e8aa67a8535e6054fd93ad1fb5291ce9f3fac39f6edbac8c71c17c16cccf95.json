@@ -1,0 +1,1 @@
+{"tactics": ["cases ys <;> simp_all [List.minOn?_cons, List.foldl_append, Option.merge]", "simp [List.minOn?_cons, List.foldl_append]", "cases ys <;> simp [List.minOn?, List.foldl_append, Option.merge]", "grind [List.minOn?_cons, List.foldl_append]", "simp only [List.minOn?, List.cons_append]", "unfold List.minOn?", "cases ys"], "usd": 0.008172999999999986}

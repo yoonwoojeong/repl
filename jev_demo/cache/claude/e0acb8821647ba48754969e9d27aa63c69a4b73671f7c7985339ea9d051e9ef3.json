@@ -1,0 +1,1 @@
+{"tactics": ["subst hk", "rcases Nat.eq_zero_or_pos a with h | h", "cases a with\n  | zero => simp\n  | succ n => rw [hk, Nat.mul_assoc, Nat.mul_div_cancel_left _ (Nat.succ_pos n)]; exact Nat.dvd_mul_right b k", "by_cases h : a = 0", "simp [hk, Nat.mul_assoc]"], "usd": 0.01601700000000017}

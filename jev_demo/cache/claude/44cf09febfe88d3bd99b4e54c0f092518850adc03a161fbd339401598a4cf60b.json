@@ -1,0 +1,1 @@
+{"tactics": ["subst_vars <;> simp [List.minOn_singleton]", "subst_vars <;> rfl", "subst_vars <;> simp [List.minOn]", "simp_all [List.minOn]", "subst_vars <;> unfold List.minOn <;> simp", "subst_vars", "simp_all"], "usd": 0.00722899999999993}

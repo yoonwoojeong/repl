@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "refine ⟨fun h => ?_, fun h x hx => ?_⟩", "simp only [List.subset_def, List.mem_range', Nat.zero_add]", "by_cases hmn : m ≤ n", "grind [List.subset_def, List.mem_range']", "simp [List.subset_def, List.mem_range']"], "usd": 0.011328999999999922}

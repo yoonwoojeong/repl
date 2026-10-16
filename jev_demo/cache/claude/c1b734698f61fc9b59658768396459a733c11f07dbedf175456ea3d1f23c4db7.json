@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.count, List.countP_attachWith]", "simp [List.count_cons, List.count, List.countP_attachWith]", "simp [List.count_eq_countP, List.countP_attachWith]", "rw [List.count_cons, List.count_cons]", "simp_all [List.count_cons]", "grind [List.count_cons, List.countP_attachWith]"], "usd": 0.008997000000000033}

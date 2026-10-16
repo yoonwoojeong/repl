@@ -1,0 +1,1 @@
+{"tactics": ["intro n i", "intro n i <;> by_cases h : i ≤ n <;> simp_all [getElem!_pos, getElem!_neg]", "intro n i <;> grind", "intro n i <;> simp [getElem!_def] <;> split <;> simp_all <;> omega", "intro n i <;> split <;> simp_all", "simp"], "usd": 0.006921000000000177}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.foldl_assoc]", "exact List.foldl_assoc", "simp [List.foldl_assoc]", "rename_i a l b t", "grind [minOn_assoc]", "simp [minOn_assoc, List.foldl_assoc]"], "usd": 0.011049000000000087}

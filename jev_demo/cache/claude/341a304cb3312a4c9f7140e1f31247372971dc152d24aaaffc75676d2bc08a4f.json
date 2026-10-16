@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.subset_nil, List.range'_eq_nil]", "cases m <;> simp", "cases m <;> simp [List.range'_succ]", "constructor <;> intro h <;> cases m <;> simp_all [List.range'_succ]"], "usd": 0.006745000000000001}

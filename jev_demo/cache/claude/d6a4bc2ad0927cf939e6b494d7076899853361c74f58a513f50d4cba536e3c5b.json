@@ -1,0 +1,1 @@
+{"tactics": ["intro inst f g l init", "intro inst f g l <;> induction l with | nil => intro init; rfl | cons x xs ih => intro init; simp [List.foldlM, ih]", "intro inst f g l <;> induction l <;> intro init <;> simp_all [List.foldlM]", "intros", "intro inst f g l init <;> induction l generalizing init <;> simp_all [List.foldlM]"], "usd": 0.004125000000000156}

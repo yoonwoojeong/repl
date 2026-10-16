@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [List.getLast_append]", "grind", "simp [List.getLast_append, *]", "rename_i α l' l h", "simp_all [List.getLast_append_of_ne_nil]", "simp_all"], "usd": 0.007009000000000043}

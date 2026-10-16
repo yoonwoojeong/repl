@@ -1,0 +1,1 @@
+{"tactics": ["intro a b h c", "intro a b ⟨k, hk⟩ c", "intro a b h c <;> exact Nat.mul_dvd_mul h (Nat.dvd_refl c)", "intro a b h c <;> obtain ⟨k, rfl⟩ := h <;> exact ⟨k, by rw [Nat.mul_assoc, Nat.mul_assoc, Nat.mul_comm k c]⟩", "intro a b h c <;> exact Nat.mul_dvd_mul h (Nat.dvd_refl _)"], "usd": 0.004757000000000122}

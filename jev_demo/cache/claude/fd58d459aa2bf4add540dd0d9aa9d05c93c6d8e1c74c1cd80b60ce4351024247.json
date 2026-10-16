@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α p xs as sep h", "rename_i h", "induction ‹List _› <;> simp_all [List.splitOnP_cons]", "simp_all [List.splitOnP]", "grind [List.splitOnP_cons, List.splitOnP_nil]"], "usd": 0.015629000000000115}

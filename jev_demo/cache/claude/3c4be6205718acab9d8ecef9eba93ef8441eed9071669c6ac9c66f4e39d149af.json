@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "refine ⟨fun ⟨t, hp, l, hs, ht⟩ => ?_, fun ⟨l, ⟨t, hp, hs⟩, hl⟩ => ?_⟩", "simp only [List.prefix_filterMap_iff]", "grind [List.prefix_filterMap_iff, List.IsPrefix.filterMap]", "constructor <;> rintro ⟨a, b, c⟩"], "usd": 0.012756999999999907}

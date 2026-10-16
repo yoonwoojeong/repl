@@ -1,0 +1,1 @@
+{"tactics": ["by_contra hc", "apply Nat.le_of_not_lt", "refine Nat.le_of_not_lt fun hc => ?_", "rcases Nat.lt_or_ge n m with hc | hc", "grind [List.mem_range', List.subset_def]"], "usd": 0.01321299999999992}

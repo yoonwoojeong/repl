@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨rfl, rfl⟩ := ‹x = _ ∧ xs = _›", "subst_vars", "simp only [List.cons.injEq] at *", "cases xs <;> simp_all", "casesm* _ ∧ _", "rcases ‹x = _ ∧ xs = _› with ⟨h1, h2⟩"], "usd": 0.011260999999999965}

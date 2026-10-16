@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rfl", "simp [List.minOn_singleton]", "rw [dif_pos rfl]", "simp [List.minOn]", "grind [List.minOn_singleton]", "exact (dif_pos rfl).symm ▸ rfl"], "usd": 0.008305000000000007}

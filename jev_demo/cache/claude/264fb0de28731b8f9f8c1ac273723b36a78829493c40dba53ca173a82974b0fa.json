@@ -1,0 +1,1 @@
+{"tactics": ["induction l", "induction l <;> simp_all [List.pairwise_cons, List.count_cons]", "constructor", "grind [List.count_cons, List.pairwise_cons, List.count_eq_zero]", "simp only [List.count_eq_countP]", "induction l <;> simp_all"], "usd": 0.010444999999999816}

@@ -1,0 +1,1 @@
+{"tactics": ["exact ⟨fun _ => ⟨[], ⟨[], l₁, by simp⟩, rfl⟩, fun _ => ⟨[], List.map f l₁, by simp⟩⟩", "constructor", "simp", "exact iff_of_true ⟨[], List.map f l₁, by simp⟩ ⟨[], ⟨[], l₁, by simp⟩, rfl⟩", "refine ⟨fun _ => ?_, fun _ => ?_⟩", "grind"], "usd": 0.010301000000000116}

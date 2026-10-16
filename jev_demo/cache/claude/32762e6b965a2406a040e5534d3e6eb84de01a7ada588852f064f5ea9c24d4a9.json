@@ -1,0 +1,1 @@
+{"tactics": ["have h2 : l'.isEmpty = false := by cases l' <;> simp_all\nsimp [h2]", "rw [dif_neg (by cases l' <;> simp_all)]", "split <;> simp_all", "split", "cases l' <;> simp_all", "simp [List.isEmpty_iff, h]", "grind"], "usd": 0.0032929999999999904}

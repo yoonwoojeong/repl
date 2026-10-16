@@ -1,0 +1,1 @@
+{"tactics": ["simpa [List.modifyTailIdx.go] using hf []", "exact List.eq_nil_of_length_eq_zero (hf [])", "simp [List.modifyTailIdx.go]", "unfold List.modifyTailIdx.go", "have h := hf []", "rw [List.modifyTailIdx.go]"], "usd": 0.00916500000000009}

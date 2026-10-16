@@ -1,0 +1,1 @@
+{"tactics": ["funext b; exact hf head✝.val head✝.property b", "funext b", "obtain ⟨a, ha⟩ := head✝", "cases head✝ with | mk a ha => funext b; exact hf a ha b", "rcases head✝ with ⟨a, ha⟩ <;> funext b <;> simp [hf]", "ext b; simp [hf]"], "usd": 0.003985000000000016}

@@ -1,0 +1,1 @@
+{"tactics": ["cases xs✝", "rcases xs✝ with _ | ⟨y, ys⟩ <;> simp", "split", "induction xs✝ generalizing x✝ <;> simp_all", "cases xs✝ <;> simp [List.foldl_assoc]", "grind"], "usd": 0.011001000000000039}

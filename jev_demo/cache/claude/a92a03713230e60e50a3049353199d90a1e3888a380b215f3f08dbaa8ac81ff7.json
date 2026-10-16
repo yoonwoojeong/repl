@@ -1,0 +1,1 @@
+{"tactics": ["intro _ <;> exact ⟨[], List.nil_infix _, rfl⟩", "intro h", "exact fun _ => ⟨[], List.nil_infix _, rfl⟩", "simp", "intro _ <;> refine ⟨[], ?_, rfl⟩ <;> simp", "grind"], "usd": 0.0032650000000000734}

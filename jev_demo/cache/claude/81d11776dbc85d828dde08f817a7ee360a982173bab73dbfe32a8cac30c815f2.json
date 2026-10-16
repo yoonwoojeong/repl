@@ -1,0 +1,1 @@
+{"tactics": ["split", "by_cases hp : p head✝ = true <;> simp [hp]", "split <;> simp_all", "cases hs : List.splitOnP p tail✝ <;> simp_all", "split <;> grind", "cases hp : p head✝ <;> simp"], "usd": 0.012169000000000096}

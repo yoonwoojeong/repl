@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_pmap]", "rw [List.getElem_pmap]", "simp", "grind", "simp only [List.getElem_pmap]", "exact List.getElem_pmap _ _ _ _"], "usd": 0.0025129999999999875}

@@ -1,0 +1,1 @@
+{"tactics": ["exact List.perm_append_comm", "exact List.Perm.refl _", "apply List.Perm.refl", "exact List.Perm.append_left _ (List.Perm.refl _)", "exact List.Perm.append_right _ (List.Perm.refl _)"], "usd": 0.00927699999999998}

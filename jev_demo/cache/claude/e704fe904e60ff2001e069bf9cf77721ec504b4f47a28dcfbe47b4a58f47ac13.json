@@ -1,0 +1,1 @@
+{"tactics": ["intro m β₁ β₂ α inst f g l", "intro m β₁ β₂ α inst f g l init", "intros", "intro m β₁ β₂ α inst f g l init <;> induction l generalizing init <;> simp only [List.map, List.foldlM, *]"], "usd": 0.011168999999999984}

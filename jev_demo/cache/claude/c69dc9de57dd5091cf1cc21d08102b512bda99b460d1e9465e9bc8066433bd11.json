@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "rw [List.infix_cons_iff]", "simp only [List.infix_cons_iff]", "intro ⟨s, t, h⟩", "grind [List.infix_cons_iff, List.prefix_map_iff, List.IsPrefix.isInfix, List.IsInfix.trans, List.infix_cons]"], "usd": 0.009876999999999914}

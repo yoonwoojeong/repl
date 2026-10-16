@@ -1,0 +1,1 @@
+{"tactics": ["revert w; cases h : p x <;> simp [List.takeWhile, h]", "cases h : p x <;> simp_all [List.takeWhile_cons]", "revert w; simp only [List.takeWhile]; split <;> simp_all", "grind [List.takeWhile_cons]", "simp [List.takeWhile_cons]", "revert w", "simp_all [List.takeWhile]"], "usd": 0.01056900000000005}

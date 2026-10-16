@@ -1,0 +1,1 @@
+{"tactics": ["rw [if_neg h]", "simp [h]", "exact if_neg h", "split <;> simp_all", "simp only [h, ↓reduceIte]", "split"], "usd": 0.004612999999999978}

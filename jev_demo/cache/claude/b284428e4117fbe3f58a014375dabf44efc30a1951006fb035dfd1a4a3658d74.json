@@ -1,0 +1,1 @@
+{"tactics": ["exact List.getElem_minIdxOn h", "exact List.getElem_minIdxOn ..", "simp [List.getElem_minIdxOn]", "rw [List.getElem_minIdxOn]", "grind [List.getElem_minIdxOn]", "simp", "induction xs with\n  | nil => contradiction\n  | cons x xs ih => simp_all [List.minIdxOn, List.minOn]", "grind"], "usd": 0.008093000000000017}

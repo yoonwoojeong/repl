@@ -1,0 +1,1 @@
+{"tactics": ["intro α β xs ys w f", "intro α β xs ys w f <;> subst w <;> rfl", "intros α β xs ys w f <;> cases w <;> rfl", "intro _ _ _ _ w _ <;> subst w <;> rfl", "intro α β xs ys w f <;> subst w <;> simp"], "usd": 0.0034170000000000034}

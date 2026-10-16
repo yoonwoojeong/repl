@@ -1,0 +1,1 @@
+{"tactics": ["intro inst p l H a", "intro inst p l H a <;> induction l <;> simp_all [List.count_cons, List.attachWith_cons]", "intro inst p l H a <;> simp [List.count, List.countP_attachWith]", "intro inst p l H a <;> simp [List.count_eq_countP, List.countP_attachWith]", "intro inst p l H a <;> induction l <;> grind", "intros <;> simp [List.count]"], "usd": 0.010793000000000053}

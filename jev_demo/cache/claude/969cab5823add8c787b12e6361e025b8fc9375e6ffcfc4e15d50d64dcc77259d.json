@@ -1,0 +1,1 @@
+{"tactics": ["induction l with\n| nil => simp [ByteArray.utf8Decode?.go]\n| cons c l ih => simp_all [ByteArray.utf8Decode?.go]", "grind", "simp [ByteArray.utf8Decode?.go]", "unfold ByteArray.utf8Decode?.go", "induction l", "simp_all", "rw [ByteArray.utf8Decode?.go]", "exact?"], "usd": 0.00873299999999988}

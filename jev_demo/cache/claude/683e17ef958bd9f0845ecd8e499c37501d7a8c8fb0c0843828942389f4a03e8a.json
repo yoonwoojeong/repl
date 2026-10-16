@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp_all [List.replace_cons] <;> split <;> simp_all", "simp only [List.replace_cons, List.mem_cons] <;> split <;> simp_all", "rename_i x xs ih", "grind [List.replace_cons]", "by_cases h : a ∈ tail✝ <;> simp_all [List.replace_cons] <;> split <;> simp_all", "simp [List.replace_cons]"], "usd": 0.014740999999999893}

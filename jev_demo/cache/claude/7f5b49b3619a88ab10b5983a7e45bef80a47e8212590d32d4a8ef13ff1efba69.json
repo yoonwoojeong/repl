@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.mul_dvd_mul h (Nat.dvd_refl c)", "obtain ⟨k, rfl⟩ := h", "exact ⟨h.choose, by rw [h.choose_spec, Nat.mul_right_comm]⟩", "rcases h with ⟨k, rfl⟩", "apply Nat.mul_dvd_mul h (Nat.dvd_refl c)"], "usd": 0.009240999999999833}

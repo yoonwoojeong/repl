@@ -1,0 +1,1 @@
+{"tactics": ["intro m n k", "intros; simpa [Nat.add_comm] using Nat.map_add_toArray_rco", "intro m n k; simp only [Nat.add_comm k]; exact Nat.map_add_toArray_rco", "intro m n k; apply Array.toList_inj.mp; simp [Std.Rco.toList_toArray]", "intro m n k; grind", "intros; simp"], "usd": 0.008424999999999905}

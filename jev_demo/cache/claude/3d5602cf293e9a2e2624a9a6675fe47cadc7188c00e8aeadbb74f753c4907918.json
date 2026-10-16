@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨a, b, rfl, ha, hb⟩ := List.filterMap_eq_append_iff.mp h.symm", "rw [List.filterMap_eq_append_iff] at h", "have h' := List.filterMap_eq_append_iff.mp h.symm", "obtain ⟨a, b, h1, ha, hb⟩ := List.filterMap_eq_append.mp h.symm"], "usd": 0.014377000000000084}

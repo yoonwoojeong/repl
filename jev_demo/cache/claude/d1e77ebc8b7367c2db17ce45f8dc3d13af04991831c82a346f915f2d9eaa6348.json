@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.append_eq_map_iff] at h", "obtain ⟨u, w, rfl, h1, rfl⟩ := List.append_eq_map_iff.mp h", "simp only [List.append_eq_map_iff] at h", "rw [List.map_eq_append_iff] at h", "grind [List.append_eq_map_iff]"], "usd": 0.01217299999999999}

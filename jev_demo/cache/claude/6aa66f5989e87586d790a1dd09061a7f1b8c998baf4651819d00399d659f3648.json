@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.Coprime.symm (Nat.Coprime.mul h1.symm h2.symm)", "exact Nat.coprime_mul_iff_right.mpr ⟨h1, h2⟩", "simp [Nat.coprime_mul_iff_right, h1, h2]", "exact (Nat.Coprime.mul h1.symm h2.symm).symm", "rw [Nat.coprime_mul_iff_right]; exact ⟨h1, h2⟩", "grind [Nat.coprime_mul_iff_right]"], "usd": 0.011036999999999964}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i xs ys f", "split <;> split <;> split <;> simp_all", "split", "grind", "simp only [Option.merge] <;> split <;> split <;> simp_all"], "usd": 0.012941000000000091}

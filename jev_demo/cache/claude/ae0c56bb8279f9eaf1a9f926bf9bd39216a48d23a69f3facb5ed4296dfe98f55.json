@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "rw [show (∃ s t, s ++ l₂ ++ t = List.filterMap f l₁) ↔ l₂ <:+: List.filterMap f l₁ from Iff.rfl]", "simp only [eq_comm (b := List.filterMap f l₁), List.filterMap_eq_append_iff]", "refine ⟨fun ⟨s, t, h⟩ => ?_, fun ⟨l, ⟨s, t, h⟩, e⟩ => ?_⟩", "grind [List.filterMap_eq_append_iff, List.filterMap_append]", "apply Iff.intro"], "usd": 0.01263700000000001}

@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.Nodup]", "constructor <;> intro _ <;> simp", "exact ⟨fun _ a => by simp, fun _ => List.nodup_nil⟩", "grind", "simp [List.nodup_nil, List.count_nil]"], "usd": 0.0029170000000000584}

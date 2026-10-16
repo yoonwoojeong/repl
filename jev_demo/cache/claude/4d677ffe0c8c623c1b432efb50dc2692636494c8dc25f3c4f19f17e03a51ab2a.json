@@ -1,0 +1,1 @@
+{"tactics": ["exact absurd rfl h", "simp at h", "contradiction", "exact (h rfl).elim", "cases h rfl", "simp_all"], "usd": 0.0019650000000002166}

@@ -1,0 +1,1 @@
+{"tactics": ["intro h a hj", "intro h a hj <;> rw [List.getElem_set, if_neg h]", "intro h a hj <;> simp only [List.getElem_set, if_neg h]", "intro h a hj <;> simp only [List.getElem_set] <;> split <;> simp_all", "intro h a hj <;> induction l generalizing i j <;> cases i <;> cases j <;> simp_all"], "usd": 0.010277000000000092}

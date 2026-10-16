@@ -1,0 +1,1 @@
+{"tactics": ["intro i hi h", "exact fun {i} hi h => h i (Nat.le_refl i)", "intro i hi h <;> exact h i (Nat.le_refl i)", "intros i hi h <;> simp_all", "intro i hi h <;> apply h <;> omega"], "usd": 0.0030369999999999564}

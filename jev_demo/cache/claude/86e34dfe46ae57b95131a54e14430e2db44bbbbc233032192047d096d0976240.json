@@ -1,0 +1,1 @@
+{"tactics": ["cases h : a == head✝ <;> simp_all <;> split <;> simp_all", "by_cases h : a = head✝ <;> simp_all <;> split <;> simp_all", "cases h : a == head✝ <;> simp_all", "by_cases h : a = head✝ <;> simp_all", "split <;> simp_all <;> split <;> simp_all", "cases h : a == head✝"], "usd": 0.010009000000000157}

@@ -1,0 +1,1 @@
+{"tactics": ["intro h1 h2", "intro h1 h2 <;> apply Nat.dvd_antisymm", "intro h1 h2 <;> obtain ⟨c, rfl⟩ := h2", "intro h1 h2 <;> grind"], "usd": 0.015505000000000102}

@@ -1,0 +1,1 @@
+{"tactics": ["simp only [List.zipIdxLE, Bool.and_eq_true, Bool.or_eq_true, Bool.not_eq_true', decide_eq_true_eq] at *", "unfold List.zipIdxLE at *", "grind [List.zipIdxLE]", "simp_all [List.zipIdxLE]", "obtain ⟨a1, a2⟩ := a", "cases a"], "usd": 0.015404999999999891}

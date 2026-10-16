@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨s, t, h⟩ := h", "rcases h with ⟨s, t, h⟩", "obtain ⟨s, t, h⟩ := h <;> rw [eq_comm, List.filterMap_eq_append_iff] at h", "simp only [List.IsInfix] at h"], "usd": 0.012308999999999903}

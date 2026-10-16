@@ -1,0 +1,1 @@
+{"tactics": ["exact h.2 i (Nat.le_refl i)", "exact h.choose_spec i (Nat.le_refl i)", "simpa using h.2 i (Nat.le_refl i)", "rcases h with ⟨hi, hj⟩ <;> exact hj i (Nat.le_refl i)", "grind"], "usd": 0.008504999999999985}

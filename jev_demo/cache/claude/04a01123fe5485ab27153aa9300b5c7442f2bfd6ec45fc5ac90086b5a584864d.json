@@ -1,0 +1,1 @@
+{"tactics": ["exact fun m n => Nat.le_of_eq_of_le (Nat.mul_comm n (m / n)) (Nat.div_mul_le_self m n)", "intro m n", "exact fun m n => (Nat.mul_comm n (m / n)) ▸ Nat.div_mul_le_self m n", "exact fun m n => by have h := Nat.mod_add_div m n; omega"], "usd": 0.008769000000000027}

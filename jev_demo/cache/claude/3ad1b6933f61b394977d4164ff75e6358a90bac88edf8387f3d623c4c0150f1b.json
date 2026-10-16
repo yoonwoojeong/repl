@@ -1,0 +1,1 @@
+{"tactics": ["cases ys <;> simp [Option.merge, List.foldl_assoc]", "cases ys with\n  | nil => simp [Option.merge]\n  | cons y ys' => simp [Option.merge, List.foldl_assoc]", "cases ys <;> simp [Option.merge]", "cases ys", "cases ys <;> simp_all [Option.merge, List.foldl_cons, List.foldl_assoc]", "cases ys <;> grind [Option.merge, List.foldl_assoc]"], "usd": 0.011560999999999932}

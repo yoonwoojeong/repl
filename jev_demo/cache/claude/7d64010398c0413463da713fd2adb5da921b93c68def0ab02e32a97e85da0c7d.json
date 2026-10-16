@@ -1,0 +1,1 @@
+{"tactics": ["simp [ByteArray.utf8Decode?]", "induction l <;> simp_all [ByteArray.utf8Decode?]", "unfold ByteArray.utf8Decode?", "grind", "simp", "induction l", "rw [ByteArray.utf8Decode?]", "simp [List.utf8Encode, ByteArray.utf8Decode?]"], "usd": 0.008472999999999953}

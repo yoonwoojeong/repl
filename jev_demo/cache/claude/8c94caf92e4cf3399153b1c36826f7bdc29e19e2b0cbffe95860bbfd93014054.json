@@ -1,0 +1,1 @@
+{"tactics": ["unfold Nat.repr", "simp only [Nat.repr, String.toNat?]", "induction n using Nat.strongRecOn with | _ n ih => ?_", "simp [Nat.repr, Nat.toDigits]", "rw [Nat.repr]", "grind [Nat.repr]", "unfold String.toNat?", "cases n"], "usd": 0.007569000000000159}

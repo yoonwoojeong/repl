@@ -1,0 +1,1 @@
+{"tactics": ["rename_i k m n h", "constructor", "grind", "simp_all [Nat.dvd_iff_mod_eq_zero]"], "usd": 0.011988999999999805}

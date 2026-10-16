@@ -1,0 +1,1 @@
+{"tactics": ["rename_i x xs ih", "constructor", "grind [List.count_eq_zero, List.count_pos_iff]", "refine ⟨fun ⟨h1, h2⟩ a => ?_, fun h => ⟨?_, fun a => ?_⟩⟩", "simp only [beq_iff_eq]", "grind"], "usd": 0.009345000000000159}

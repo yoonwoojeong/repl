@@ -1,0 +1,1 @@
+{"tactics": ["intros", ": intro α s a b l r", "intro α s a b l r <;> rw [List.merge]", "intro α s a b l r <;> simp only [List.merge]", "intro α s a b l r <;> unfold List.merge <;> rfl", "intro α s a b l r <;> rfl", "intro α s a b l r <;> simp [List.merge]", "intro α s a b l r <;> cases h : s a b <;> simp [List.merge, h]"], "usd": 0.00997300000000001}

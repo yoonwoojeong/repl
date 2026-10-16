@@ -1,0 +1,1 @@
+{"tactics": ["rintro m k n ⟨c, rfl⟩ <;> simp", "rintro m k n ⟨c, rfl⟩ <;> simp [Nat.add_comm]", "rintro m k n ⟨c, rfl⟩ <;> rw [Nat.gcd_comm, Nat.gcd_comm n] <;> simp [Nat.add_comm]", "intro m k n h <;> obtain ⟨c, rfl⟩ := h <;> grind", "rintro m k n ⟨c, rfl⟩", "intro m k n h"], "usd": 0.014276999999999873}

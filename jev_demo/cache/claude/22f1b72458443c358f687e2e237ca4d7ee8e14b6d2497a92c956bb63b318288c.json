@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "congr", "induction n <;> simp_all [Nat.fold_succ]", "exact rfl"], "usd": 0.0038249999999999673}

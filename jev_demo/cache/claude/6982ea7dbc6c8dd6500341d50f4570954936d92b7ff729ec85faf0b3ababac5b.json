@@ -1,0 +1,1 @@
+{"tactics": ["simp [ByteArray.utf8Decode?.go]", "rw [ByteArray.utf8Decode?.go]", "unfold ByteArray.utf8Decode?.go", "decide", "rfl", "simp [ByteArray.utf8Decode?.go, ByteArray.size]", "grind [ByteArray.utf8Decode?.go]", "native_decide"], "usd": 0.0034890000000000754}

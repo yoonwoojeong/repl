@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ _ x xs f", "intros", "intro _ _ _ x xs f <;> cases xs <;> simp [List.minOn]", "intro _ _ _ x xs f <;> induction xs generalizing x <;> simp_all [List.minOn]", "intro _ _ _ x xs f <;> unfold List.minOn <;> split <;> simp_all", "intro _ _ _ x xs f <;> cases xs <;> grind [List.minOn]"], "usd": 0.008628999999999998}

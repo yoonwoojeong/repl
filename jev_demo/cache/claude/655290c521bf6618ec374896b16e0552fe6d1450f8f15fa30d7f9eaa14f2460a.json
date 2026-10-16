@@ -1,0 +1,1 @@
+{"tactics": ["exact (List.max?_eq_some_iff'.mp hm).2 a h", "exact (List.max?_eq_some_iff.mp hm).2 a h", "grind [List.max?_eq_some_iff']", "simp [List.max?_eq_some_iff'] at hm", "rw [List.max?_eq_some_iff'] at hm", "grind"], "usd": 0.01225300000000007}

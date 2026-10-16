@@ -1,0 +1,1 @@
+{"tactics": ["split", "rename_i x xs f", "simp only []", "cases ‹List _› <;> simp", "split <;> simp_all", "grind"], "usd": 0.010480999999999963}

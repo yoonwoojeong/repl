@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "refine ⟨?_, ?_⟩", "simp", "induction n using Nat.strongRecOn", "grind", "simp [String.Slice.isNat]", "constructor <;> simp"], "usd": 0.004569000000000045}

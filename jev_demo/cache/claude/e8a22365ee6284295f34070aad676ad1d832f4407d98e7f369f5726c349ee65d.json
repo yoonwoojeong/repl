@@ -1,0 +1,1 @@
+{"tactics": ["by_cases h : n✝ < 10", "unfold Nat.toDigits", "simp only [String.Slice.toNat?]", "simp [Nat.toDigits, Nat.toDigitsCore]", "rcases Nat.lt_or_ge n✝ 10 with h | h", "grind", "simp_all [String.Slice.toNat?, String.Slice.isNat]"], "usd": 0.010924999999999851}

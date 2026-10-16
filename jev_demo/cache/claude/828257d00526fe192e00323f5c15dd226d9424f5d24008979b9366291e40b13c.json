@@ -1,0 +1,1 @@
+{"tactics": ["cases h : f a", "simp only [List.filterMap_cons, List.attach_cons]", "simp [List.filterMap_cons, List.attach_cons]", "simp", "grind", "rcases hfa : f a with _ | b"], "usd": 0.008948999999999985}

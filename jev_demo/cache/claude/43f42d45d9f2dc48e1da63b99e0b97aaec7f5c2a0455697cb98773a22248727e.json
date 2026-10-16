@@ -1,0 +1,1 @@
+{"tactics": ["simp [Std.Rxc.HasSize.size] <;> omega", "simp [Nat.size_rcc] <;> omega", "change b + 1 - a - 1 = b - a", "unfold Std.Rxc.HasSize.size <;> simp <;> omega", "grind [Std.Rxc.HasSize.size]", "simp"], "usd": 0.007849000000000217}

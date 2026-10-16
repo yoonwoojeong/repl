@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α p l f g h", "simp only [List.unattach, List.findIdx_map]", "induction ‹List _› with | nil => simp | cons a l ih => cases a; simp_all [List.findIdx_cons]", "simp [List.unattach, List.findIdx_map, Function.comp_def, *]", "grind [List.unattach, List.findIdx_map]"], "usd": 0.01578500000000005}

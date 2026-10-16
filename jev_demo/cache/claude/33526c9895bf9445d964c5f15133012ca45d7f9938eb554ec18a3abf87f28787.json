@@ -1,0 +1,1 @@
+{"tactics": ["show _ = List.filterMap (fun x => (f✝ x.1).pbind (fun b m => some ⟨b, List.mem_filterMap.2 ⟨x.1, x.2, m⟩⟩)) l✝.attach", "show _ = List.filterMap (fun x => match x with | ⟨a, h⟩ => (f✝ a).pbind (fun b m => some ⟨b, List.mem_filterMap.2 ⟨a, h, m⟩⟩)) l✝.attach", "induction l✝ <;> simp_all", "simp"], "usd": 0.020305000000000017}
