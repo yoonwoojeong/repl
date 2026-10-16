@@ -51,6 +51,48 @@ open Lean Meta in
 """
 
 
+# Audit v2: also flags (a) any constant whose statement is *definitionally* equal to the target
+# (catches aliases that differ only in binder kinds or universe names, which the exact-type check
+# misses) and (b) "single-lemma proofs": the proof uses exactly one `Nat.`/`List.` theorem and no
+# induction or case recursor, so it may be a near-restatement (reported, not rejected).
+_AUDIT2 = """theorem {name} : {statement} := by{body}
+
+open Lean Meta in
+#eval show MetaM Unit from do
+  let env ← getEnv
+  let some (.thmInfo v) := env.find? `{name} | IO.println "AUDIT2:nothm"
+  let banned : List Name := [{banned}]
+  let mut bad : Array Name := #[]
+  let mut defeq : Array Name := #[]
+  for c in v.value.getUsedConstants do
+    if banned.contains c then
+      bad := bad.push c
+    else if let some ci := env.find? c then
+      if (← isProp ci.type) then
+        let us ← ci.levelParams.mapM fun _ => mkFreshLevelMVar
+        let t := ci.type.instantiateLevelParams ci.levelParams us
+        if (← withNewMCtxDepth (isDefEq t v.type)) then
+          defeq := defeq.push c
+  -- single-lemma proof: exactly one Nat./List. theorem used, and no induction/case recursor
+  let mut thms : Array Name := #[]
+  let mut recs := 0
+  for c in v.value.getUsedConstants do
+    let s := c.toString
+    if s.endsWith ".rec" || s.endsWith ".recAux" || s.endsWith ".casesOn" || s.endsWith ".casesAuxOn"
+        || s.endsWith ".brecOn" || s.endsWith ".recOn" then
+      recs := recs + 1
+    else if (s.startsWith "Nat." || s.startsWith "List.") && !banned.contains c then
+      if let some (.thmInfo _) := env.find? c then
+        thms := thms.push c
+  let one := if thms.size == 1 && recs == 0 then thms[0]!.toString else ""
+  IO.println s!"AUDIT2:{{bad.toList}}|{{defeq.toList}}|{{one}}"
+"""
+
+
+def _names(s: str) -> list[str]:
+    return [x.strip() for x in s.strip().strip("[]").split(",") if x.strip()]
+
+
 def _body(tactics: list[str]) -> str:
     return "".join(f"\n  {t}" for t in tactics)  # same layout as ReplClient.check_proof
 
@@ -87,6 +129,29 @@ class Auditor:
                     return None
                 return [s.strip() for s in out.strip("[]").split(",") if s.strip()]
         return None
+
+
+def analyse(auditor: "Auditor", statement: str, tactics: list[str], banned: tuple[str, ...],
+            prelude: str = "") -> dict | None:
+    """Audit v2 of one proof: `{"banned": [...], "defeq_aliases": [...], "one_lemma": name|None}`,
+    or None if the proof did not re-elaborate in the auditor."""
+    auditor._n += 1
+    cmd = _AUDIT2.format(name=f"audit2_{auditor._n}", statement=statement, body=_body(tactics),
+                         banned=", ".join(f"`{b}" for b in banned))
+    if prelude.strip():
+        cmd = prelude + "\n\n" + cmd
+    reply = auditor.repl.command(cmd, env=auditor.env, timeout_s=120)
+    msgs = reply.get("messages", [])
+    if any(m.get("severity") == "error" for m in msgs) or reply.get("sorries"):
+        return None
+    for m in msgs:
+        data = m.get("data", "")
+        if data.startswith("AUDIT2:") and data != "AUDIT2:nothm":
+            bad, defeq, one = data[len("AUDIT2:"):].split("|")
+            one = one.strip()
+            return {"banned": _names(bad), "defeq_aliases": _names(defeq),
+                    "one_lemma": one if one.startswith(NAMESPACES) else None}
+    return None
 
 
 class AuditedRepl:

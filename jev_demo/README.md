@@ -506,3 +506,27 @@ Caveats:
 
 Total API spend for experiment 3: $30.34 (pilot $0.82, train $7.70, dev 1 $10.26, dev 2 $4.01,
 test $7.54).
+
+### Overcoming the limits, 1: a stronger audit (free)
+
+Audit v2 (`corebench.analyse`, `reaudit.py`, `results_exp3/reaudit.json`) re-checks every
+counted proof in an `import Lean` REPL:
+- it **rejects** any used constant whose statement is *definitionally* equal to the target, not
+  only the exact type, which catches aliases that differ in binder kinds or universe names;
+- it **flags single-lemma proofs**: the proof uses exactly one `Nat.`/`List.` theorem and no
+  induction or case recursor (possible near-restatements, e.g. `List.count_cons` from
+  `List.countP_cons`).
+
+| run | method | proved | rejected by v2 | single-lemma |
+|---|---|---|---|---|
+| test | claude_search | 96 | 0 | 17 |
+| test | menu_first | 88 | 0 | 15 |
+| test | jev_router | 96 | 0 | 17 |
+| dev 1 | claude_whole / claude_search / hybrid | 57 / 59 / 52 | 1 each | 6 / 7 / 6 |
+| dev 2 | claude_search / hybrid_filter | 59 / 59 | 1 each | 6 / 6 |
+
+**Strict scoring** counts v2 rejections and single-lemma proofs as unproved. On test it gives
+`claude_search` 79, `jev_router` 79 (the same lemmas) and `menu_first` 73 (the router keeps 7
+lemmas it loses and loses 1 it keeps). On the 131 lemmas with no single-lemma proof the router's
+request saving is 48.2% (95% CI 44.1–51.8%). The efficiency result does not depend on
+near-restatements.
