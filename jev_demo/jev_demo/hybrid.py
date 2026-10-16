@@ -37,10 +37,12 @@ def llm_options(proposals, items, exclude=()) -> dict[str, str]:
 
 class HybridRanker:
     def __init__(self, model, shortlister: Shortlister, lib: dict[str, Lemma], generator,
-                 order: Literal["jev", "llm"] = "jev", prelude: str = "", banned: tuple[str, ...] = ()):
+                 order: Literal["jev", "llm", "filter"] = "jev", prelude: str = "",
+                 banned: tuple[str, ...] = (), tau: float = 0.3):
         """One ranker per theorem: `prelude` is passed to the generator with every goal."""
         self.base = ModelRanker(model, shortlister, lib)
         self.generator, self.order, self.prelude, self.banned = generator, order, prelude, banned
+        self.tau = tau  # order="filter": proposals with p(useful) below this are tried last
         self._proposals: dict[str, list[str]] = {}  # goal key -> Claude's proposals (memo)
         self._failed: dict[str, list[str]] = {}  # goal key -> tactics tried there that failed
 
@@ -71,5 +73,16 @@ class HybridRanker:
             # Claude alone: Claude's order, then the fixed menu; confidence 0 makes the search
             # expand every action rather than only the top few.
             actions = list(extras.values()) + list(items)
+            return [(a, 1.0 / len(actions)) for a in actions], 0.0, 0.5
+        if self.order == "filter":
+            # Claude's order, but proposals the model predicts Lean will reject (p(useful) < tau)
+            # move behind the menu. On held-out training labels Claude's order ranks the proof
+            # step better than the model does (top-3 0.85 vs 0.64), while the model predicts
+            # acceptance better than Claude's rank does (AUC 0.73 vs 0.61): so the model only
+            # defers, it never reorders. Confidence 0: every action is tried, as in "llm".
+            useful = self.base.p_useful(goal, extras) if extras else {}
+            keep = [t for o, t in extras.items() if useful[o] >= self.tau]
+            late = [t for o, t in extras.items() if useful[o] < self.tau]
+            actions = keep + list(items) + late
             return [(a, 1.0 / len(actions)) for a in actions], 0.0, 0.5
         return self.base.rank_with(goal, extras)

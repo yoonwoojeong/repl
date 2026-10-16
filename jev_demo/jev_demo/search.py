@@ -35,6 +35,13 @@ class ModelRanker:
     def rank(self, goal: str) -> Ranking:
         return self.rank_with(goal)
 
+    def p_useful(self, goal: str, extras: dict[str, str]) -> dict[str, float]:
+        """`{llm option: p(useful)}`: the model's estimate that Lean accepts the proposal and
+        it closes or changes the goal."""
+        qs = [BinaryQuestion("useful", option=o) for o in extras]
+        ans = self.model.evaluate(goal, qs)
+        return {o: ans[answer_key(BinaryQuestion("useful", option=o))].p_true for o in extras}
+
     def rank_with(self, goal: str, extras: dict[str, str] | None = None) -> Ranking:
         """Rank `goal`; `extras` maps extra `kind` options (e.g. `llm|0|simp`) to the tactic they run.
 

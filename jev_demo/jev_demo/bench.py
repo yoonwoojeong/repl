@@ -460,8 +460,8 @@ def _run_phase2_method(method: str, thm: Theorem, repl, model, shortlister, lib,
                 proof = list(script)
                 break
         return SearchResult(proof is not None, proof or [], calls, 0, time.perf_counter() - t0)
-    if method in ("claude_search", "hybrid"):
-        order = "llm" if method == "claude_search" else "jev"
+    if method in ("claude_search", "hybrid", "hybrid_filter"):
+        order = {"claude_search": "llm", "hybrid": "jev", "hybrid_filter": "filter"}[method]
         return prove(thm, repl, HybridRanker(model, shortlister, lib, gen, order=order, prelude=thm.prelude,
                                              banned=thm.banned))
     if method == "hybrid_expand_all":

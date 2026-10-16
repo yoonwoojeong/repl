@@ -21,8 +21,9 @@ from jev_demo.search import prove
 from jev_demo.stats import compare, wilson
 from jev_demo.theorems import Theorem
 
-METHODS = CLAUDE_METHODS + PHASE2_SUPPLEMENTARY
-PAIRS = (("hybrid", "claude_search"), ("claude_whole", "claude_search"), ("hybrid", "claude_whole"))
+METHODS = CLAUDE_METHODS + PHASE2_SUPPLEMENTARY + ("hybrid_filter",)
+PAIRS = (("hybrid_filter", "claude_search"), ("hybrid", "claude_search"),
+         ("claude_whole", "claude_search"), ("hybrid", "claude_whole"))
 
 
 def run(repl, train: list[Theorem], test: list[Theorem], out_dir: str, generator, methods,

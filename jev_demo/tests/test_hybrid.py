@@ -105,3 +105,26 @@ def test_one_generator_call_per_distinct_goal():
     assert len(gen.calls) == 1
     r.rank(G1)
     assert len(gen.calls) == 2
+
+
+def test_filter_order_keeps_claude_order_and_defers_low_useful_proposals():
+    from jev_demo.actions import menu
+    from jev_demo.hybrid import HybridRanker
+
+    class Gen:
+        def propose(self, goal, prelude="", failed=(), **kw):
+            return ["good_a", "bad_b", "good_c"]
+
+    class Base:
+        automation = True
+        def p_useful(self, goal, extras):
+            return {o: (0.1 if t == "bad_b" else 0.9) for o, t in extras.items()}
+
+    r = HybridRanker.__new__(HybridRanker)
+    r.base, r.generator, r.order, r.prelude, r.banned, r.tau = Base(), Gen(), "filter", "", (), 0.3
+    r._proposals, r._failed = {}, {}
+    goal = "⊢ P"
+    actions, conf, _ = r.rank(goal)
+    names = [a for a, _ in actions]
+    assert names[:2] == ["good_a", "good_c"] and names[-1] == "bad_b" and conf == 0.0
+    assert names[2:-1] == list(menu(goal, True))

@@ -2,7 +2,7 @@
 # Paid stages of experiment 3, run by .github/workflows/jev-exp3-live.yml (one label per stage).
 # Every stage has a hard USD cap (--max-usd per command); the caps are the budget approved for it.
 set -euo pipefail
-stage="${1:?usage: exp3_stage.sh pilot|stage1|final}"
+stage="${1:?usage: exp3_stage.sh pilot|stage1|dev2|final}"
 D=jev_demo/data
 R=jev_demo/results_exp3
 mkdir -p "$R"
@@ -17,6 +17,11 @@ case "$stage" in
     run --test $D/core_dev.json --methods claude_whole,claude_search,hybrid \
         --labels $D/claude_labels.json,$D/claude_labels_core.json --out $R/dev_v1 --max-usd 20 \
         2>&1 | tee $R/dev_v1.log ;;
+  dev2)   # iteration 2 on dev: claude_search first (fills the response cache), then hybrid_filter,
+          # which reuses Claude's responses at shared states, so the two are paired
+    run --test $D/core_dev.json --methods claude_search,hybrid_filter \
+        --labels $D/claude_labels.json,$D/claude_labels_core.json --out $R/dev_v2 --max-usd 8 \
+        2>&1 | tee $R/dev_v2.log ;;
   final)  # the pre-registered test run, once
     run --test $D/core_test.json --methods claude_whole,claude_search,hybrid \
         --labels $D/claude_labels.json,$D/claude_labels_core.json --out $R/test --max-usd 45 \
