@@ -1,0 +1,46 @@
+name: jev_demo experiment 3 (fetch artifact, free)
+
+# Commits a finished exp3 stage's uploaded artifact to the PR branch, for a stage whose own
+# results push failed. No API calls. Start it with the `exp3-fetch` label; the run id is read
+# from jev_demo/scripts/exp3_fetch_run_id.
+on:
+  pull_request:
+    types: [labeled]
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  fetch:
+    if: github.event.label.name == 'exp3-fetch'
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: ${{ github.head_ref }}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
+      with:
+        ref: ${{ env.BRANCH }}
+
+    - name: read the run id
+      run: echo "RUN_ID=$(tr -d '[:space:]' < jev_demo/scripts/exp3_fetch_run_id)" >> $GITHUB_ENV
+
+    - uses: actions/download-artifact@v4
+      with:
+        run-id: ${{ env.RUN_ID }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path: jev_demo
+        merge-multiple: true
+
+    - name: commit to the branch
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+        ls -R jev_demo/results_exp3 | head -20
+        git add -f jev_demo/results_exp3 jev_demo/data/claude_labels_core.json 2>/dev/null || true
+        git add -f jev_demo/cache/claude 2>/dev/null || true
+        if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+        git commit -m "jev_demo: experiment 3 results from the artifact of run ${RUN_ID}"
+        git pull --rebase origin "$BRANCH"
+        git push origin "HEAD:$BRANCH"
