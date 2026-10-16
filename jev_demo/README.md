@@ -549,4 +549,5 @@ Hypotheses, on the two replicates pooled (296 lemma pairs, paired by lemma withi
 3. **Stability (reported, not a pass/fail test).** The router's success and request counts in
    replicates 1 and 2, and how many lemmas flip between replicates for each method.
 
-Strict scoring (audit v2) is reported alongside the primary scoring.
+Strict scoring (audit v2) is reported alongside the primary scoring. Approved budget: $26 in
+total, enforced by the stage (each run's cap is what is left minus a reserve for later runs).

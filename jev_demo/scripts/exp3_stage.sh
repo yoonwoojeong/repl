@@ -27,14 +27,25 @@ case "$stage" in
         --labels $D/claude_labels_core.json,$D/jev_closes_labels.json --out $R/test --max-usd 15 \
         2>&1 | tee $R/test.log ;;
   replicate)  # independent replication of the test run: each method has its own empty response
-              # cache (no shared Claude responses), two replicates; README "Independent replication"
-    for rep in 1 2; do
-      for m in claude_search jev_router; do
-        run --test $D/core_test.json --train none --methods $m \
-            --labels $D/claude_labels_core.json,$D/jev_closes_labels.json \
-            --cache-dir jev_demo/cache/rep${rep}_$m --out $R/test_rep${rep}_$m --max-usd 9 \
-            2>&1 | tee $R/test_rep${rep}_$m.log
-      done
-    done ;;
+              # cache (no shared Claude responses), two replicates; README "Independent replication".
+              # Total budget $26 (approved): each run's cap = what is left minus a reserve for the
+              # runs still to come, so the stage can never spend more than $26 in total.
+    total=26; spent=0
+    order="1:claude_search 1:jev_router 2:claude_search 2:jev_router"
+    reserve() {  # reserve for the runs after position $1 (claude_search 7.0, jev_router 3.8)
+      python3 -c "import sys; r={'claude_search':7.0,'jev_router':3.8}; print(sum(r[x.split(':')[1]] for x in sys.argv[2:][int(sys.argv[1]):]))" "$1" $order
+    }
+    k=0
+    for item in $order; do
+      k=$((k+1)); rep=${item%%:*}; m=${item##*:}
+      cap=$(python3 -c "print(round($total - $spent - $(reserve $k), 4))")
+      echo "replicate $rep $m: cap \$$cap (spent so far \$$spent of \$$total)"
+      run --test $D/core_test.json --train none --methods $m \
+          --labels $D/claude_labels_core.json,$D/jev_closes_labels.json \
+          --cache-dir jev_demo/cache/rep${rep}_$m --out $R/test_rep${rep}_$m --max-usd "$cap" \
+          2>&1 | tee $R/test_rep${rep}_$m.log
+      spent=$(python3 -c "import json; print(round($spent + json.load(open('$R/test_rep${rep}_$m/results.json'))['total_usd'], 4))")
+    done
+    echo "replicate stage spent \$$spent of \$$total" ;;
   *) echo "unknown stage $stage" >&2; exit 2 ;;
 esac
