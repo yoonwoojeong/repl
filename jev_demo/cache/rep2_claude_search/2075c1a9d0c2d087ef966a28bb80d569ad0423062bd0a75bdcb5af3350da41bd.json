@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.Coprime.coprime_dvd_left (Nat.gcd_dvd_right k m) h", "exact h.coprime_dvd_left (Nat.gcd_dvd_right k m)", "apply Nat.Coprime.coprime_dvd_left (Nat.gcd_dvd_right k m) h", "exact Nat.Coprime.of_dvd_left (Nat.gcd_dvd_right k m) h", "unfold Nat.Coprime at *", "simp [Nat.Coprime] at *"], "usd": 0.009212999999999916}

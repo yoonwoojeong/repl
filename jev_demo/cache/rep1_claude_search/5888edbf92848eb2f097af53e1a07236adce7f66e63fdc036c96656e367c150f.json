@@ -1,0 +1,1 @@
+{"tactics": ["cases t <;> simp_all [List.dropLast]", "cases t with\n  | nil => simp at h\n  | cons b t' => rfl", "rcases t with _ | ⟨b, t'⟩", "cases t", "match t, h with\n  | b :: t', _ => rfl", "grind"], "usd": 0.010241000000000167}

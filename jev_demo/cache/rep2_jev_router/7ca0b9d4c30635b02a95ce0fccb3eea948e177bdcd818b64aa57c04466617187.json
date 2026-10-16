@@ -1,0 +1,1 @@
+{"tactics": ["rintro m n h ⟨k, rfl⟩", "intro m n h hd", "rintro m n h ⟨k, rfl⟩ <;> cases k <;> simp_all [Nat.mul_succ] <;> omega", "intro m n h hd <;> rcases hd with ⟨k, rfl⟩ <;> cases k <;> simp_all [Nat.mul_succ]", "intro m n h hd <;> exact Nat.le_of_lt_succ (by rcases hd with ⟨k, rfl⟩; cases k <;> simp_all [Nat.mul_succ] <;> omega)"], "usd": 0.013345000000000162}

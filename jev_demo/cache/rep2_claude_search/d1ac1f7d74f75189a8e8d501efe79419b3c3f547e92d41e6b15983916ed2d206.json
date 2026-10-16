@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getD_eq_getElem?_getD]", "grind", "split <;> simp_all [List.getD_eq_getElem?_getD]", "simp [List.getD_eq_getElem?_getD, Nat.getElem?_toList_ric]", "simp [List.getD_eq_getElem?_getD, Nat.toList_ric_eq_toList_rio, List.getElem?_range]", "by_cases h : i ≤ n <;> simp_all [List.getD_eq_getElem?_getD]"], "usd": 0.00911699999999982}

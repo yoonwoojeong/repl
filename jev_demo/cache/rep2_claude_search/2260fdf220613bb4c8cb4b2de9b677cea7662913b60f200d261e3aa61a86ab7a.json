@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨i, h, hik, rfl⟩", "intro ⟨i, h, hik, hx⟩", "rw [List.mem_eraseIdx_iff_getElem?]", "simp [List.mem_eraseIdx_iff_getElem?]", "grind [List.mem_iff_getElem, List.getElem_eraseIdx]", "intro h"], "usd": 0.009233000000000047}

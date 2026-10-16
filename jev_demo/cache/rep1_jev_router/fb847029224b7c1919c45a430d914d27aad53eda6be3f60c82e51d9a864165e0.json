@@ -1,0 +1,1 @@
+{"tactics": ["intro h₁ h₂", "intro h₁ h₂ <;> rcases l₁ with _ | ⟨a, _ | ⟨b, l₁⟩⟩ <;> simp_all", "intro h₁ h₂ <;> rcases l₁ with _ | ⟨a, _ | ⟨b, l₁⟩⟩", "intro h₁ h₂ <;> cases l₂ <;> simp_all", "intros", "intro h₁ h₂ <;> grind"], "usd": 0.013177000000000216}

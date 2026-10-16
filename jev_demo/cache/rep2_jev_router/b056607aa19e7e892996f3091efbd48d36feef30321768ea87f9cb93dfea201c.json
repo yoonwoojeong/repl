@@ -1,0 +1,1 @@
+{"tactics": ["intro α inst l₁ l₂", "intros", "exact fun {α} [LT α] {l₁ l₂} => by rw [List.lt_iff_lex_lt, List.Lex_iff_exists]; simp", "exact fun {α} [LT α] {l₁ l₂} => by simp only [List.lt_iff_lex_lt, List.lex_iff_exists]", "intro α inst l₁ l₂ <;> induction l₁ generalizing l₂ <;> cases l₂ <;> simp_all", "grind"], "usd": 0.01637299999999997}

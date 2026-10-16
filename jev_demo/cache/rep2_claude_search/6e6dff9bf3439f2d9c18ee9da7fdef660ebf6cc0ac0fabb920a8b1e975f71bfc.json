@@ -1,0 +1,1 @@
+{"tactics": ["have h2 := congrArg String.toList h", "simp [String.ofList_inj] at h", "rcases m with _ | m", "simp at h", "grind", "omega"], "usd": 0.011392999999999986}

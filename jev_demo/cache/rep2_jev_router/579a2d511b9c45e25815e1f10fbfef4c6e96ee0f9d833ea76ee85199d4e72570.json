@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "simp [List.pmap]", "simp_all", "exact rfl", "grind"], "usd": 0.0018889999999998075}

@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp_all [List.filter_filter]", "split <;> simp_all [List.filter_filter, List.filter_cons]", "rename_i hd tl ih b hb", "split", "simp_all [List.filter_filter, List.filter_cons]", "grind [List.filter_filter, List.filter_cons]"], "usd": 0.011492999999999753}

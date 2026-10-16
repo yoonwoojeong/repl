@@ -1,0 +1,1 @@
+{"tactics": ["cases hab : a == head✝ <;> cases i <;> simp_all", "split <;> cases i <;> simp_all", "by_cases hh : a = head✝ <;> cases i <;> simp_all", "cases hab : a == head✝ <;> cases i <;> grind", "split <;> rename_i heq <;> cases i <;> simp_all <;> exact tail_ih✝ hne", "cases i <;> split <;> simp_all"], "usd": 0.011988999999999805}

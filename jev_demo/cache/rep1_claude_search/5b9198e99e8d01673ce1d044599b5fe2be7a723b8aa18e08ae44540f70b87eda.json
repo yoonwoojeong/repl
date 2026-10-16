@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α le trans total a l", "rename_i α le trans total a l <;> induction l generalizing a", "grind [List.sorted_mergeSort, List.mergeSort_perm]", "simp only [List.mergeSort]", "refine ⟨_, _, ?_, ?_, ?_⟩", "unfold List.mergeSort"], "usd": 0.015076999999999785}

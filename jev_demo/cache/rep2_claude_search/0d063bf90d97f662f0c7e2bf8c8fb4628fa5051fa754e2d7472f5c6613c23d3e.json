@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "exact absurd h (Nat.not_lt_zero _)", "exact (Nat.not_lt_zero i h).elim", "simp_all", "cases h", "grind"], "usd": 0.006165000000000198}

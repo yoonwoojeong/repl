@@ -1,0 +1,1 @@
+{"tactics": ["grind", "simp [List.min_le_iff]", "exact (List.min_le_iff _).2 ⟨a, ha, Std.le_refl a⟩", "induction l generalizing a <;> simp_all", "cases l with\n  | nil => simp at ha\n  | cons x xs => grind [List.min_cons]", "simp_all [List.min]"], "usd": 0.009345000000000159}

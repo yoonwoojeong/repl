@@ -1,0 +1,1 @@
+{"tactics": ["exact List.range'_append.symm", "exact (List.range'_append _ _ _ _).symm", "rename_i step s n", "simp [← List.range'_append]", "grind [List.range'_append]", "simp [List.range'_eq_append_iff]"], "usd": 0.017192999999999792}

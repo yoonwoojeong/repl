@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ p a l h", ": intro α _ _ p a l h\ninduction l", "intros", ": intro α inst _ p a l h", ": intro _ _ _ p a l h", ": intro α _ _ p a l h <;> induction l <;> grind", ": intro α _ _ p a l h <;> induction l <;> simp_all [List.filter_cons, List.count_cons] <;> split <;> simp_all"], "usd": 0.003964999999999996}

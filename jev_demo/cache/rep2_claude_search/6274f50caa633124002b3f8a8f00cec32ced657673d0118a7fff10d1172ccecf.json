@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "unfold List.minOn", "simp only [List.minOn]", "grind", "simp [List.minOn]", "rw [List.minOn]", "exact List.lt_apply_minOn_iff (xs := xs✝) (f := f✝) (h := h✝)", "exact List.apply_minOn_lt_iff"], "usd": 0.01645300000000005}

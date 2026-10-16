@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨r₁, r₂, rfl, -, h⟩ <;> simpa using h.trans (List.sublist_append_right r₁ r₂)", "rintro ⟨r₁, r₂, rfl, -, h⟩", "simp only [List.nil_append]", "intro ⟨r₁, r₂, h1, _, h3⟩ <;> subst h1 <;> exact List.Sublist.trans h3 (List.sublist_append_right r₁ r₂)", "grind"], "usd": 0.01304099999999997}

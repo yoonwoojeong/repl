@@ -1,0 +1,1 @@
+{"tactics": ["induction l with\n  | nil => intro i h; simp at h\n  | cons a t ih =>\n    intro i h\n    cases i with\n    | zero => cases t <;> simp_all\n    | succ k => simp_all [List.eraseIdx_cons_succ]", "induction l <;> intro i h <;> cases i <;> simp_all", "intro i h", "induction l", "intro i", "grind"], "usd": 0.012360999999999844}

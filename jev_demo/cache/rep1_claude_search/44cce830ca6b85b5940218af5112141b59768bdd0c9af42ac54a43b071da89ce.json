@@ -1,0 +1,1 @@
+{"tactics": ["have hc : 0 < c := Nat.pos_of_ne_zero (by rintro rfl; simp at h)", "rcases Nat.eq_zero_or_pos c with hc | hc", "obtain ⟨k, hk⟩ := h", "grind", "rcases h with ⟨k, hk⟩", "cases c with\n  | zero => simp at h\n  | succ c => skip"], "usd": 0.01235699999999973}

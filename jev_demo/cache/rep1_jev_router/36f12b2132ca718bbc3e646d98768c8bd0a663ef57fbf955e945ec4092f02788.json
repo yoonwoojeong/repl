@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "exact absurd h (Nat.not_lt_zero _)", "cases h", "rfl", "simp", "omega"], "usd": 0.0018530000000001046}

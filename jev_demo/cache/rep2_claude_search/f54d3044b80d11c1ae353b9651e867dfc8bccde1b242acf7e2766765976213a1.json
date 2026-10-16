@@ -1,0 +1,1 @@
+{"tactics": ["intro α β γ f l", "intro α β γ f l l' i h", "intro α β γ f l <;> induction l with | nil => intro l' i h; simp at h | cons a as ih => intro l' i h; cases l' with | nil => simp at h | cons b bs => cases i with | zero => rfl | succ k => exact ih", "intros", "intro α β γ f l <;> induction l <;> intro l' i h"], "usd": 0.008925000000000072}

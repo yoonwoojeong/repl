@@ -1,0 +1,1 @@
+{"tactics": ["intro m n", "intro m n <;> simp [Std.Rco.toList, List.range'_succ]", "intro m n <;> simp [Nat.toList_rco_eq_range', List.map_add_range']", "intro m n <;> induction n generalizing m <;> simp_all", "intro m n <;> grind", "intro m n <;> simp"], "usd": 0.00882100000000019}

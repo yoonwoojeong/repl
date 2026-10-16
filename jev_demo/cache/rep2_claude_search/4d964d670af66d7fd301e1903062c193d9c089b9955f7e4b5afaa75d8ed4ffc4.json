@@ -1,0 +1,1 @@
+{"tactics": ["simp [wfParam]", "simp only [wfParam, List.unattach_attach]", "rw [wfParam, List.unattach_attach]", "unfold wfParam; simp", "simp [wfParam, List.unattach_attach]", "rfl", "grind [wfParam, List.unattach_attach]"], "usd": 0.0034529999999999283}

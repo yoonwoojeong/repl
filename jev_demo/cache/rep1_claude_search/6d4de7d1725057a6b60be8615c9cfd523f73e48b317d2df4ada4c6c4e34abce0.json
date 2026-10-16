@@ -1,0 +1,1 @@
+{"tactics": ["intro n i h", "intro n i h <;> simp", "intro n i h <;> simp [← Array.getElem_toList]", "intro n i h <;> grind", "simp", "intro n i h <;> simp [Std.Rio.toArray]"], "usd": 0.007056999999999647}

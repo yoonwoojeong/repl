@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "grind", "simp only [List.length_eraseIdx] at *", "refine ⟨fun ⟨i, h, hx⟩ => ?_, fun ⟨i, h, hne, hx⟩ => ?_⟩", "by_cases hk : k < l.length", "simp"], "usd": 0.006313000000000013}

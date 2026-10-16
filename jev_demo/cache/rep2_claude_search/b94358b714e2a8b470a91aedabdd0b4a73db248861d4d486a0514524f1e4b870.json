@@ -1,0 +1,1 @@
+{"tactics": ["cases l with\n  | nil => exact absurd rfl hl\n  | cons a as => ?_", "rcases l with _ | ⟨a, as⟩", "cases l <;> simp_all", "induction l with\n  | nil => exact absurd rfl hl\n  | cons a as ih => ?_"], "usd": 0.01036500000000018}

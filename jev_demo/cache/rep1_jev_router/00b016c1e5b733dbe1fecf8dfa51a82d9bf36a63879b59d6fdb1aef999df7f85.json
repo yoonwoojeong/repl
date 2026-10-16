@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l t F", "apply_assumption", "rename_i t F", "rename_i α a motive l t F"], "usd": 0.015389}

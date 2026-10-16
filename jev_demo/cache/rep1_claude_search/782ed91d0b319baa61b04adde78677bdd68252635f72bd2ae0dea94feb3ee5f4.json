@@ -1,0 +1,1 @@
+{"tactics": ["rcases tail✝¹ with _ | ⟨b, bs⟩", "rw [List.mergeSort]", "unfold List.mergeSort", "simp only [List.mergeSort]", "grind [List.mergeSort, List.splitInTwo_fst, List.splitInTwo_snd]", "simp [List.mergeSort, List.splitInTwo_fst, List.splitInTwo_snd]"], "usd": 0.014148999999999745}

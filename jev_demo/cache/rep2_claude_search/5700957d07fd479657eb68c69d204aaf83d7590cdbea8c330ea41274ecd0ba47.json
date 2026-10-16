@@ -1,0 +1,1 @@
+{"tactics": ["intro a b hb", "exact fun hb => by rw [Nat.le_div_iff_mul_le hb, Nat.one_mul]", "intro a b hb <;> rw [Nat.le_div_iff_mul_le hb, Nat.one_mul]", "intro a b hb <;> simp [Nat.le_div_iff_mul_le hb]", "intro a b hb <;> constructor <;> intro h <;> grind"], "usd": 0.008441000000000365}

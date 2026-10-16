@@ -1,0 +1,1 @@
+{"tactics": ["intro n k", "intro n k <;> induction n <;> simp_all", "intro n k <;> simp", "intro n k <;> apply Array.ext_toList <;> simp", "intro n k <;> induction n <;> simp_all [Nat.toArray_rio_succ, Nat.toArray_rco_succ_right]", "intro n k <;> grind"], "usd": 0.007969000000000115}

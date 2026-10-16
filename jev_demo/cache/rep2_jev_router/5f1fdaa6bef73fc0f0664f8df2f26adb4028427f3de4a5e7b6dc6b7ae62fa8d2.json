@@ -1,0 +1,1 @@
+{"tactics": ["induction l₁ generalizing r", "constructor", "induction r generalizing l₁", "grind", "simp only [List.sublist_iff_exists_fin_orderEmbedding_get_eq]"], "usd": 0.008064999999999989}

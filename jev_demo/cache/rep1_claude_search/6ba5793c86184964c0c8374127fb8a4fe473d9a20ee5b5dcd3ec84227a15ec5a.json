@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ xs y ys; congr 1; funext x; simp [Bool.and_comm]", "intros; congr 1; funext x; rw [Bool.and_comm]", "intros; simp [Bool.and_comm]", "intros; apply List.filter_congr; intro x _; rw [Bool.and_comm]", "intro α inst xs y ys", "intros; grind [Bool.and_comm]"], "usd": 0.003917000000000392}

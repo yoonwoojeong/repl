@@ -1,0 +1,1 @@
+{"tactics": ["cases i with | zero => omega | succ k => simp only [List.getElem_cons_succ, List.getElem_append, show ¬ k < tail✝.length by omega, dite_false]; congr 1; omega", "grind", "cases i <;> simp_all [List.getElem_append]", "simp [List.getElem_cons, List.getElem_append] <;> split <;> simp_all <;> omega", "rw [List.getElem_cons]"], "usd": 0.011449000000000042}

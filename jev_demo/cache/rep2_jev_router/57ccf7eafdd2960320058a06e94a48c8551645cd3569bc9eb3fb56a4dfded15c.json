@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp [List.minIdxOn.go]", "unfold List.minIdxOn.go", "decide", "simp", "grind", "exact rfl", "simp only [List.minIdxOn.go]"], "usd": 0.0026289999999999925}

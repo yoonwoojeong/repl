@@ -1,0 +1,1 @@
+{"tactics": ["intro α l i h", "intro α l <;> induction l with | nil => simp | cons a t ih => intro i h; cases i with | zero => cases t <;> simp_all | succ k => simp_all [List.eraseIdx_cons_succ]", "intro α l i h <;> induction l generalizing i <;> cases i <;> simp_all", "intro α l", "intro α l i h <;> grind", "intros <;> simp [List.ext_getElem_iff]"], "usd": 0.009768999999999917}

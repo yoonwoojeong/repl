@@ -1,0 +1,1 @@
+{"tactics": ["intro α f h l", "intro α f h l; induction l <;> simp_all", "intros α f h l <;> induction l <;> simp_all", "intro α f h l <;> simp [h]", "intro α f h l <;> induction l with | nil => rfl | cons a t ih => simp [h, ih]", "intro α f h l <;> exact List.map_id' l |>.trans rfl"], "usd": 0.0037090000000001844}

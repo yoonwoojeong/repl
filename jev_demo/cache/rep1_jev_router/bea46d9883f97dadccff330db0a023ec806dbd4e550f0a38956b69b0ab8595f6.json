@@ -1,0 +1,1 @@
+{"tactics": ["intro α l i j h hij", "intros", "intro α l i j h hij <;> simp [List.getElem_eraseIdx, Nat.not_lt.mpr hij]", "intro α l i j h hij <;> rw [List.getElem_eraseIdx]", "intro α l <;> induction l <;> intro i j h hij <;> cases i <;> simp_all", "intro α l i j h hij <;> grind"], "usd": 0.003937000000000079}

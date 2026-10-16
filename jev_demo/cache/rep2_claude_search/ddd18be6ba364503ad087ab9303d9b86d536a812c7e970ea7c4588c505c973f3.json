@@ -1,0 +1,1 @@
+{"tactics": ["intro f init", "intro f init <;> rw [Nat.fold_succ, a✝]", "intro f init <;> erw [Nat.fold_succ] <;> rw [a✝]", "intros <;> simp only [Nat.fold_succ, a✝]", "intros <;> simp [Nat.add_succ, Nat.fold_succ, *]", "intros <;> grind [Nat.fold_succ]"], "usd": 0.015245000000000175}

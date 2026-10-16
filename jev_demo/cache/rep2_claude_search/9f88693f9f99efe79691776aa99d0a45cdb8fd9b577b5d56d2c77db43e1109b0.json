@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α le trans total l", "apply List.sorted_mergeSort <;> assumption", "exact List.sorted_mergeSort ‹_› ‹_›", "exact List.sorted_mergeSort (by assumption) (by assumption)", "grind [List.sorted_mergeSort]"], "usd": 0.01500500000000038}

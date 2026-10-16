@@ -1,0 +1,1 @@
+{"tactics": ["intro α P xs H", "intros <;> simp [List.attachWith_reverse]", "intros <;> rw [List.attachWith_reverse]", "intro α P xs H <;> induction xs with | nil => rfl | cons x xs ih => simp [List.attachWith_cons, List.attachWith_append, ih]", "intros <;> apply List.ext_getElem <;> simp", "intros <;> simp"], "usd": 0.011273000000000089}

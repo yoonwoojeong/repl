@@ -1,0 +1,1 @@
+{"tactics": ["apply List.ext_getElem", "grind [List.getElem_set, List.getElem_eraseIdx, List.length_eraseIdx]", "apply List.ext_getElem <;> simp [List.getElem_set, List.getElem_eraseIdx, List.length_eraseIdx] <;> grind", "induction l generalizing i", "rw [List.ext_getElem_iff]", "simp [List.ext_getElem_iff]"], "usd": 0.008697000000000177}

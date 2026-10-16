@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α le trans total a l", "simp only [← List.mergeSort.eq_def]", "rw [← List.mergeSort.eq_def, ← List.mergeSort.eq_def]", "split", "simp only [← List.mergeSort.eq_1, ← List.mergeSort.eq_2, ← List.mergeSort.eq_3]", "rename_i trans total a l"], "usd": 0.012076999999999671}

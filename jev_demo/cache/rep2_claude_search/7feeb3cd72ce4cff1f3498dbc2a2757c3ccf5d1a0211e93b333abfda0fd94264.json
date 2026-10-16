@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.map_add_toList_rio]", "induction n with | zero => simp | succ n ih => simp [Nat.toList_rio_succ_right_eq_append, Nat.toList_rco_succ_right_eq_append, ih, Nat.add_right_comm]", "induction n <;> simp_all [Nat.toList_rio_succ_right_eq_append, Nat.toList_rco_succ_right_eq_append]", "simp", "grind", "induction n"], "usd": 0.012673000000000378}

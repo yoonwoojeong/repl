@@ -1,0 +1,1 @@
+{"tactics": ["unfold List.insert", "rw [List.insert, if_neg (by simpa [List.elem_eq_mem] using h)]", "simp only [List.insert, List.elem_eq_mem, h, decide_false, Bool.false_eq_true, if_false]", "have h2 : l.elem a = false := by simpa [List.elem_eq_mem] using h", "simp [List.insert, List.elem_eq_mem, h]"], "usd": 0.012069000000000107}

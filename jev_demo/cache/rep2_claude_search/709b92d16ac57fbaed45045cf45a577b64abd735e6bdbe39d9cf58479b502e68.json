@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "exact ⟨fun hlt x hx => Std.lt_of_le_of_lt (List.le_apply_maxOn_of_mem hx) hlt, fun hall => hall _ (List.maxOn_mem h)⟩", "grind [List.maxOn_mem, List.le_apply_maxOn_of_mem]", "refine ⟨fun hlt x hx => ?_, fun hall => hall _ (List.maxOn_mem h)⟩", "simp only [Std.lt_iff_le_and_not_ge]", "grind"], "usd": 0.013700999999999963}

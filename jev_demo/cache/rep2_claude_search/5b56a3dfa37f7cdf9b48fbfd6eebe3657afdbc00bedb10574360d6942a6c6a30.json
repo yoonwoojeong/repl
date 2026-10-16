@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp only [List.length_reverse, List.length_attachWith]", "rw [List.length_reverse, List.length_attachWith, List.length_attachWith, List.length_reverse]", "simp [List.length_attachWith]", "grind", "simp_all"], "usd": 0.0030890000000001194}

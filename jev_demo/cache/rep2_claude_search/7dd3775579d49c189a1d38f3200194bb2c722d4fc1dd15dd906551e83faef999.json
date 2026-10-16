@@ -1,0 +1,1 @@
+{"tactics": ["intros", ", rfl", "intros; rfl", "intro β α b x l motive op hb hl", "simp [List.foldrRecOn]", "intros <;> rfl", "intros <;> simp [List.foldrRecOn]", "intros <;> unfold List.foldrRecOn <;> rfl"], "usd": 0.0035890000000000644}

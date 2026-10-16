@@ -1,0 +1,1 @@
+{"tactics": ["induction x", "induction x <;> intro bs", "intro bs", "induction x with\n  | nil => intro bs; unfold List.flatMapM.loop; exact hnil bs\n  | cons a as ih => intro bs; unfold List.flatMapM.loop; exact hcons a as bs (fun bs' => ih (bs' :: bs))", "intro bs\ninduction x generalizing bs"], "usd": 0.015625}

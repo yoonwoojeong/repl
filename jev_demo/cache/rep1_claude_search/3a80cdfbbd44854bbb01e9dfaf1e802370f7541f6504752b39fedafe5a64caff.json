@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ h x", "intros _ _ h x; exact Std.LawfulRightIdentity.right_id x", "intro _ _ h x <;> simp [List.sum_cons, List.sum_nil]", "intro _ _ h x <;> exact h.right_id x", "intro _ _ h x <;> simp [List.sum, h.right_id]", "intro _ _ h x <;> show x + 0 = x <;> exact h.right_id x"], "usd": 0.008801000000000059}

@@ -1,0 +1,1 @@
+{"tactics": ["show List.drop ((l.length + 2 + 1) / 2) _ = (List.drop ((l.length + 2 + 1) / 2) _).zipIdx _", "rw [show (a, i) :: (b, i + 1) :: l.zipIdx (i + 2) = (a :: b :: l).zipIdx i by simp [List.zipIdx_cons]]", "simp [List.zipIdx_cons]", "grind", "simp", "rfl"], "usd": 0.021293000000000006}

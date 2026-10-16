@@ -1,0 +1,1 @@
+{"tactics": ["rintro (h | ⟨n, h⟩)", "intro h", "exact fun h => h.elim (fun h0 => ⟨0, h0⟩) (fun ⟨n, hn⟩ => ⟨n + 1, hn⟩)", "rintro (h | ⟨n, h⟩) <;> exact ⟨_, h⟩", "grind"], "usd": 0.0034689999999999444}

@@ -1,0 +1,1 @@
+{"tactics": ["exact ⟨[], [], rfl, ⟨rfl, rfl⟩, by simp⟩", "refine ⟨[], [], rfl, ⟨rfl, rfl⟩, ?_⟩ <;> simp", "exists [], []", "simp", "refine ⟨[], [], ?_, ?_, ?_⟩ <;> simp", "grind"], "usd": 0.003997000000000028}

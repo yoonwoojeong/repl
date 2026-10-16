@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α f g i j l", "rename_i f g i j l", "induction ‹List _› generalizing ‹Nat› <;> sorry_free_placeholder"], "usd": 0.010488999999999749}

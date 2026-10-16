@@ -1,0 +1,1 @@
+{"tactics": ["cases k with | zero => simp | succ k => exact Nat.div_le_of_le_mul (by rw [Nat.succ_mul]; omega)", "rcases k with _ | k", "have h := Nat.div_mul_le_self n k", "cases k with | zero => simp | succ k => exact Nat.div_le_of_le_mul (Nat.le_mul_of_pos_left n (Nat.succ_pos k))", "grind"], "usd": 0.015429000000000137}

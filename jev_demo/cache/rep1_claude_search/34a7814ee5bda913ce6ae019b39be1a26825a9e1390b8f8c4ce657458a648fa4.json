@@ -1,0 +1,1 @@
+{"tactics": ["exact h.right_id x", "simpa using h.right_id x", "simp only [List.foldr]", "show x + 0 = x", "simp [List.foldr, h.right_id]", "exact Std.LawfulRightIdentity.right_id x"], "usd": 0.007365000000000066}

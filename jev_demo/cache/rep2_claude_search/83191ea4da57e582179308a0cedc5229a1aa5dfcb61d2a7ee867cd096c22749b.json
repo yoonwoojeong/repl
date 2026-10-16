@@ -1,0 +1,1 @@
+{"tactics": ["intro h_1", "intro h_1; omega", "exact fun h_1 => absurd h_1 h'✝", "intro h_1 <;> exact absurd h_1 (by omega)", "omega", "simp_all", "grind"], "usd": 0.0027850000000000374}

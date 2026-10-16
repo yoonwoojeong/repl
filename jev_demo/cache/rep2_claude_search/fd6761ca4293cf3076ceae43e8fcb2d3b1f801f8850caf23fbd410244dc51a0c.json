@@ -1,0 +1,1 @@
+{"tactics": ["rcases l₁ with _ | ⟨a, _ | ⟨b, l₁⟩⟩ <;> simp_all", "cases l₁ <;> simp_all", "unfold List.mergeSort", "rw [List.mergeSort]", "simp only [List.mergeSort]", "grind", "simp_all", "omega"], "usd": 0.014101000000000141}

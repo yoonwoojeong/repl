@@ -1,0 +1,1 @@
+{"tactics": ["intro a b", "exact fun {a b} => Std.OrientedCmp.eq_swap", "intro a b; induction a generalizing b <;> cases b <;> simp_all [compare, List.compareLex]", "intro a b; induction a generalizing b with | nil => cases b <;> rfl | cons x xs ih => cases b <;> simp_all", "intro a b; induction a generalizing b <;> cases b <;> grind"], "usd": 0.01045700000000016}

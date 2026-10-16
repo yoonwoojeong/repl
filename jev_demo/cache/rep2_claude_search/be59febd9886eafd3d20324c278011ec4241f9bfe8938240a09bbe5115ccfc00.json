@@ -1,0 +1,1 @@
+{"tactics": ["rw [BEq.congr_left h]", "simp [BEq.congr_left h]", "grind", "rename_i hd tl ih", "simp only [BEq.congr_left h]", "congr 1"], "usd": 0.00956099999999993}

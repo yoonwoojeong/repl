@@ -1,0 +1,1 @@
+{"tactics": ["rw [← List.map_snd_add_zipIdx_eq_zipIdx]", "simp only [Nat.zero_add, ← List.map_snd_add_zipIdx_eq_zipIdx]", "induction l with | nil => rfl | cons x xs ih => simp [List.zipIdx_cons]", "simp [List.zipIdx_eq_zip_range']", "grind [List.map_snd_add_zipIdx_eq_zipIdx]", "simp", "apply List.ext_getElem <;> simp"], "usd": 0.0145369999999998}

@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp only [not_exists, not_and]", "grind", "constructor <;> intro h <;> simp_all", "exact ⟨fun h x hx hb => h ⟨x, hx, hb⟩, fun h ⟨x, hx, hb⟩ => h x hx hb⟩", "simp_all"], "usd": 0.003932999999999964}

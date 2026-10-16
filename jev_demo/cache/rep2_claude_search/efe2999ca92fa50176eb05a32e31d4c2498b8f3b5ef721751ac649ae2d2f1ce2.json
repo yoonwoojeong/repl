@@ -1,0 +1,1 @@
+{"tactics": ["grind [List.mergeSort_perm, List.sorted_mergeSort]", "simp", "grind", "exact?", "apply?", "simp_all"], "usd": 0.01298099999999991}

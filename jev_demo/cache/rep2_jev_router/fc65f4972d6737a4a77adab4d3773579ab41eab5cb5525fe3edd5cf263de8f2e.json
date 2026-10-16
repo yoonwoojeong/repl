@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ _ _ l a ha", "intros", "intro α inst inst_1 inst_2 inst_3 l a ha", "intro α _ _ _ _ l a ha <;> grind", "intro α _ _ _ _ l a ha <;> induction l <;> simp_all", "intros <;> simp_all [List.min]"], "usd": 0.00773299999999999}

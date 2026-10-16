@@ -1,0 +1,1 @@
+{"tactics": ["intro n i", "intro n i <;> by_cases h : i < n <;> simp_all [getElem!_pos, getElem!_neg]", "intro n i <;> grind", "intro n i <;> simp [Nat.toList_rio_eq_toList_rco]", "intro n i <;> simp", "intro n i <;> by_cases h : i < n <;> simp_all <;> grind"], "usd": 0.009241000000000277}

@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "refine { eq_swap := ?_, isLE_trans := ?_ }", "refine ⟨?_⟩", "unfold Std.TransOrd", "simp only [Std.TransOrd]", "exact List.transCmp_compareLex", "exact Std.TransCmp.compareLex"], "usd": 0.009784999999999933}

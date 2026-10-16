@@ -1,0 +1,1 @@
+{"tactics": ["intro α β l f h", "intros", "intro α β l f h <;> simp [List.getLast_eq_getElem]", "intro α β l f h <;> rw [List.getLast_eq_getElem, List.getLast_eq_getElem] <;> simp", "intro α β l f h <;> grind [List.getLast_eq_getElem, List.getElem_mapIdx]", "intro α β l f h <;> induction l using List.reverseRecOn <;> simp_all [List.mapIdx_append]"], "usd": 0.004576999999999831}

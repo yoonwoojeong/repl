@@ -1,0 +1,1 @@
+{"tactics": ["intro n i", "simp [Nat.toList_rio_eq_range, getElem!_def, List.getElem?_range]", "intro n i <;> by_cases h : i < n <;> simp_all [Nat.toList_rio_eq_range, getElem!_def, List.getElem?_range]", "intro n i <;> simp [Nat.getElem!_toList_rio_eq_ite] <;> split <;> omega", "grind", "intro n i <;> by_cases h : i < n <;> simp_all <;> omega"], "usd": 0.009741}

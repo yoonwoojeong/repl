@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α le trans total l", "grind", "simp_all [List.pairwise_merge]", "exact List.sorted_mergeSort (by assumption) (by assumption) _", "exact List.sorted_mergeSort (fun a b c h₁ h₂ => by simp_all) (fun a b => by simp_all) _", "revert a✝¹ a✝", "generalize h : l✝.length = n"], "usd": 0.017113000000000156}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α P xs H", ";intro α P xs H <;> induction xs <;> simp_all", "intro α P xs H <;> simp [List.attachWith_reverse]", "intro α P xs H <;> rw [List.attachWith_reverse]", "intro α P xs H <;> induction xs <;> simp_all [List.attachWith_append]", "intro α P xs H <;> apply List.ext_getElem <;> simp"], "usd": 0.010772999999999922}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α inst h", "intros", "intro α _ _ <;> constructor", "intro α inst h <;> refine ⟨?_, ?_⟩"], "usd": 0.008405000000000218}

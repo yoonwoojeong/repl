@@ -1,0 +1,1 @@
+{"tactics": ["simp only [List.flatMapM.loop]; exact h1 x_1", "exact h1 x_1", "rw [List.flatMapM.loop]; exact h1 x_1", "unfold List.flatMapM.loop; exact h1 x_1", "simp [List.flatMapM.loop, h1]", "show motive [] x_1 (pure x_1.reverse.flatten); exact h1 x_1"], "usd": 0.004609000000000085}

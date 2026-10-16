@@ -1,0 +1,1 @@
+{"tactics": ["cases as <;> simp_all", "cases as with | nil => simp at h | cons a t => rfl", "match as, h with | a :: t, _ => rfl", "cases as", "rcases as with _ | ⟨a, t⟩ <;> simp_all", "apply List.ext_getElem <;> simp [List.getElem_set] <;> grind"], "usd": 0.0033050000000001134}

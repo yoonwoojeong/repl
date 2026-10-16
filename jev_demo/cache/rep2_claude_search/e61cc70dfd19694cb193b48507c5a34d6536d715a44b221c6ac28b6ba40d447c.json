@@ -1,0 +1,1 @@
+{"tactics": ["by_cases h : a ∈ l <;> simp [List.insert, h]", "unfold List.insert", "simp only [List.insert, List.elem_iff]", "split <;> simp_all [List.insert]", "by_cases h : a ∈ l", "cases l <;> simp [List.insert] <;> split <;> simp_all", "grind [List.insert]"], "usd": 0.0035169999999999924}

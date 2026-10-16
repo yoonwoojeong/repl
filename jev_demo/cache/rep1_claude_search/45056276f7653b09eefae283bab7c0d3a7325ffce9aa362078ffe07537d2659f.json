@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ l a i h", "intro α _ _ l a i h <;> by_cases ha : a ∈ l <;> simp [List.insert, ha] <;> cases i <;> simp", "intros", "intro α _ _ l a i h <;> unfold List.insert <;> split <;> simp_all <;> cases i <;> simp_all", "intro α _ _ l a i h <;> grind [List.insert]"], "usd": 0.008736999999999995}

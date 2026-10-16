@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "rw [List.mem_iff_getElem]", "induction l generalizing k", "simp only [List.mem_iff_getElem, List.getElem_eraseIdx, List.length_eraseIdx]", "grind [List.mem_iff_getElem, List.getElem_eraseIdx, List.length_eraseIdx]", "intro h <;> obtain ⟨j, hj, rfl⟩ := List.mem_iff_getElem.mp h"], "usd": 0.012584999999999624}

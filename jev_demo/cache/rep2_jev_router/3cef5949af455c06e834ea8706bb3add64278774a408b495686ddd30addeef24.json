@@ -1,0 +1,1 @@
+{"tactics": ["intro a b c h", ": exact fun h => Nat.lt_of_le_of_lt (Nat.div_le_self _ _) h", "intro a b c h <;> exact Nat.lt_of_le_of_lt (Nat.div_le_self a b) h", "intro a b c h <;> have := Nat.div_le_self a b <;> omega", "intros <;> grind [Nat.div_le_self]", "intro a b c h <;> simp [Nat.lt_of_le_of_lt (Nat.div_le_self a b) h]"], "usd": 0.004537000000000013}

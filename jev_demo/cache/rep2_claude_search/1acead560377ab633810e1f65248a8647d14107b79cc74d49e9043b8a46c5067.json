@@ -1,0 +1,1 @@
+{"tactics": ["intros <;> rfl", "intro inst a b l <;> rfl", "intros <;> simp [List.max, List.foldl]", "intros", "intro inst a b l <;> simp only [List.max, List.foldl]", "intros <;> unfold List.max <;> rfl"], "usd": 0.007476999999999734}

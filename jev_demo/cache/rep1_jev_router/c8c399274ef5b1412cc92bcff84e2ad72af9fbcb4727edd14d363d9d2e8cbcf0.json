@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rw [dif_neg (by omega)]", "simp [Nat.add_sub_cancel]", "split <;> first | omega | simp", "grind", "have h : ¬ (i + l₁.length < l₁.length) := by omega"], "usd": 0.0028250000000000774}

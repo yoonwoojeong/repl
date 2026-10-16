@@ -1,0 +1,1 @@
+{"tactics": ["intro a b hb", "intro a b hb <;> rcases Nat.eq_zero_or_pos a with h | h <;> simp_all [Nat.pos_pow_of_pos]", "intros a b hb <;> cases a <;> simp_all", "intro a b hb <;> induction b <;> simp_all [Nat.pow_succ] <;> grind", "intro a b hb <;> cases b <;> grind [Nat.pow_succ, Nat.pos_pow_of_pos]"], "usd": 0.010781000000000152}

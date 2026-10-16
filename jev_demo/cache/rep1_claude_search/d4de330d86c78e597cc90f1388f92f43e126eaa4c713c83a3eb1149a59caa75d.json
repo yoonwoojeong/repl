@@ -1,0 +1,1 @@
+{"tactics": ["induction xs", "induction xs <;> simp_all [List.pmap_append]", "induction xs <;> grind [List.pmap_append]", "induction xs <;> simp [List.pmap_append, *]"], "usd": 0.00958900000000007}

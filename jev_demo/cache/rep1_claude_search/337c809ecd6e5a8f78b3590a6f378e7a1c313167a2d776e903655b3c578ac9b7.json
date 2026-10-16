@@ -1,0 +1,1 @@
+{"tactics": ["rename_i trans total l", "induction l✝ using List.mergeSort.induct le✝ <;> simp_all [List.mergeSort, List.pairwise_merge]", "induction l✝ using List.mergeSort.induct le✝", "generalize h : l✝.length = n", "grind [List.pairwise_merge, List.mergeSort]"], "usd": 0.019912999999999847}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α l h", "intro α l h <;> cases l with | nil => simp at h | cons a t => simp [List.getLast_cons, h]", "intro α l h <;> cases l <;> simp_all [List.getLast_cons]", "intro α l h <;> rcases l with _ | ⟨a, _ | ⟨b, t⟩⟩ <;> simp_all [List.getLast_cons]", "intro α l h <;> cases l <;> grind"], "usd": 0.004108999999999918}

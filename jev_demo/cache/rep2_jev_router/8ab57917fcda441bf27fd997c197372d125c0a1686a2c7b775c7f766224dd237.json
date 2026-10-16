@@ -1,0 +1,1 @@
+{"tactics": ["rw [dif_neg (by omega)]", "split <;> first | omega | rfl", "simp only [dif_neg (Nat.not_lt.mpr ‹_›)]", "split", "rename_i α l i j h h' <;> simp [Nat.not_lt.mpr h']", "grind"], "usd": 0.007497000000000087}

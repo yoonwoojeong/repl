@@ -1,0 +1,1 @@
+{"tactics": ["simp [Std.Rio.Internal.iter, Std.Rco.Internal.iter]", "grind", "simp", "induction n✝ <;> simp_all", "apply Array.ext <;> simp", "rw [← Array.toList_inj]", "simp [Std.Rio.Internal.toArray_iter, Std.Rco.Internal.toArray_iter]"], "usd": 0.0036449999999996763}

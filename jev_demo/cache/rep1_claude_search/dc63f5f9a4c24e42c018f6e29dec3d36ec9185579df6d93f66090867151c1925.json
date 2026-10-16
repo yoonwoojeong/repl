@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "grind", "refine ⟨fun h => ?_, fun h => ?_⟩", "simp_all", "rcases n✝ with _ | m <;> simp_all", "apply Iff.intro"], "usd": 0.010193000000000119}

@@ -1,0 +1,1 @@
+{"tactics": ["exact List.dropLast_append_getLast h", "simp [List.dropLast_append_getLast]", "rw [List.dropLast_append_getLast]", "induction l with\n  | nil => contradiction\n  | cons a t ih => cases t <;> simp_all", "grind [List.dropLast_append_getLast]", "simp"], "usd": 0.0063329999999997}

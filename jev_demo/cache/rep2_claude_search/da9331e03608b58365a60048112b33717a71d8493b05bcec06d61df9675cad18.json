@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α le l₁ l₂ h₁ h₂", "split <;> simp_all", "split", "rcases ‹List _› with _ | ⟨x, _ | ⟨y, ys⟩⟩ <;> simp_all", "simp_all [List.MergeSort.Internal.splitInTwo]", "grind"], "usd": 0.01687700000000003}

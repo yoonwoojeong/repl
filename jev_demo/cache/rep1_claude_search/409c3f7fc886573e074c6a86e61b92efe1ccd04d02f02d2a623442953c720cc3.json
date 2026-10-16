@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Std.Roc.Internal.iter]", "grind", "simp [Std.Roc.toArray]", "simp [Array.getElem?_eq_none, Nat.sub_zero]", "simp only [Nat.sub_zero, Nat.zero_add]", "unfold Std.Roc.Internal.iter", "rw [Nat.sub_zero]"], "usd": 0.006884999999999586}

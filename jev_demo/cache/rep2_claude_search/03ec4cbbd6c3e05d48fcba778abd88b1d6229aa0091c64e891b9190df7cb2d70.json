@@ -1,0 +1,1 @@
+{"tactics": ["induction tail✝ generalizing x head✝ <;> simp_all [minOn, maxOn]", "simp [minOn, maxOn]", "grind [minOn, maxOn]", "unfold minOn maxOn", "simp_all", "grind"], "usd": 0.008180999999999994}

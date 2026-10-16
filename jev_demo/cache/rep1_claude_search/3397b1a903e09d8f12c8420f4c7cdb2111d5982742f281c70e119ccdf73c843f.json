@@ -1,0 +1,1 @@
+{"tactics": ["induction l generalizing i with\n  | nil => simp at h\n  | cons a t ih => cases i <;> cases t <;> simp_all", "induction l generalizing i <;> cases i <;> simp_all", "apply List.ext_getElem <;> grind", "apply List.ext_getElem <;> simp [List.getElem_set, List.getElem_eraseIdx] <;> grind", "grind", "induction l generalizing i"], "usd": 0.012317000000000355}

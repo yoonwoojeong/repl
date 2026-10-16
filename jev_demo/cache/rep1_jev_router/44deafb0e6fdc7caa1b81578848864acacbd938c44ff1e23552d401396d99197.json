@@ -1,0 +1,1 @@
+{"tactics": ["intro α motive a a_1 t F", "intros α motive a b t F", "intro α motive a a_1 t F <;> exact (by induction t <;> exact ⟨F _ _ _ (by first | trivial | exact ⟨‹_›.1, ‹_›.2⟩ | simp_all [List.Sublist.below]), by first | trivial | exact ⟨‹_›.1, ‹_›.2⟩ | simp_all [List.Sublist.below]⟩ : motive a a_1 t ∧ List.Sublist.below t).1"], "usd": 0.017996999999999985}

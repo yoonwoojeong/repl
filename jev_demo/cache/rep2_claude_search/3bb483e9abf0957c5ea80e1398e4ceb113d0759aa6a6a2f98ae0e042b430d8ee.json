@@ -1,0 +1,1 @@
+{"tactics": ["rw [← List.drop_one, List.drop_drop]", "induction i generalizing l with | zero => cases l <;> rfl | succ n ih => cases l with | nil => rfl | cons a t => exact ih t", "rw [← List.drop_one, List.drop_drop, Nat.add_comm]", "simp only [← List.drop_one, List.drop_drop]", "induction l generalizing i <;> cases i <;> simp_all"], "usd": 0.014524999999999899}

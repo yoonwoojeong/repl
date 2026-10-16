@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α a motive l", "rename_i α a motive l t'", "apply F", "induction t", "exact F _ t (by induction t <;> constructor <;> assumption)", "cases t"], "usd": 0.022237000000000007}

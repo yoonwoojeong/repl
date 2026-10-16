@@ -1,0 +1,1 @@
+{"tactics": ["induction l <;> simp_all [BEq.comm]", "induction l with | nil => rfl | cons x xs ih => simp [List.all_cons, List.contains_cons, ih, BEq.comm]", "simp [List.all_eq_not_any_not, List.contains_eq_any_beq, BEq.comm]", "rw [← List.all_bne]", "grind [BEq.comm]", "induction l"], "usd": 0.00898500000000002}

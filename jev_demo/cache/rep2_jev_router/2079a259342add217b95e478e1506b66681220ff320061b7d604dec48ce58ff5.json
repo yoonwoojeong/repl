@@ -1,0 +1,1 @@
+{"tactics": ["intro α as bs i h h₂", "intro α as bs i h h₂ <;> rw [List.getElem_append, dif_neg (by omega)]", "intro α as bs i h h₂ <;> simp [List.getElem_append, Nat.not_lt.mpr h]", "intro α as <;> induction as <;> intro bs i h h₂ <;> cases i <;> simp_all", "intro α as bs i h h₂ <;> grind"], "usd": 0.00970099999999996}

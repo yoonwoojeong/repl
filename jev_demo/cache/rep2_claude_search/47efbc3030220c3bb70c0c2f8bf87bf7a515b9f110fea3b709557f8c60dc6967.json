@@ -1,0 +1,1 @@
+{"tactics": ["apply_assumption", "exact ‹∀ {i : Nat} (h : i < _ + _), _› _", "simp_all", "split <;> simp_all [List.getElem_append_left, List.getElem_append_right]", "grind", "rename_i ih _ _"], "usd": 0.012432999999999916}

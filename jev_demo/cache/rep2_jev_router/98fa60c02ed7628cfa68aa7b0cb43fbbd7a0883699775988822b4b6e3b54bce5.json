@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ _ x xs f", "intros", "intro β α _ _ _ x xs f <;> cases xs <;> simp [List.maxOn]", "intro β α _ _ _ x xs f <;> induction xs generalizing x <;> simp_all [List.maxOn]", "intro β α _ _ _ x xs f <;> cases xs <;> grind [List.maxOn]", "intro β α _ _ _ x xs f <;> unfold List.maxOn <;> split <;> simp_all"], "usd": 0.008796999999999944}

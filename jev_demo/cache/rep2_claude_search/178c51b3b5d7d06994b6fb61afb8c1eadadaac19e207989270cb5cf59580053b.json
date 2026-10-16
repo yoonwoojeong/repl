@@ -1,0 +1,1 @@
+{"tactics": ["rw [show f a = g a.val from hf a.1 a.2] <;> split <;> simp [ih]", "have h : f a = g a.val := hf a.1 a.2", "rw [show f a = g a.val from hf a.1 a.2]", "by_cases h : g a.val = true <;> simp [h, show f a = g a.val from hf a.1 a.2, ih]", "obtain ⟨x, hx⟩ := a", "split <;> split <;> simp_all [hf]"], "usd": 0.01376099999999969}

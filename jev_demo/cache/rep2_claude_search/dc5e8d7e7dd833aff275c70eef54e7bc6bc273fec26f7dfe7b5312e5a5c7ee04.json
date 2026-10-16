@@ -1,0 +1,1 @@
+{"tactics": ["rename_i a l ih", "cases i <;> simp_all", "cases i with\n| zero => cases tail✝ <;> simp_all\n| succ k => simp_all", "rcases i with _ | k <;> simp_all <;> grind", "cases i", "grind"], "usd": 0.01222499999999993}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i f motive hnil hcons xs bs", "revert x_1✝ x✝", "induction ‹List _› generalizing ‹List (List _)›", "unfold List.flatMapM.loop", "simp_all [List.flatMapM.loop]", "grind [List.flatMapM.loop]"], "usd": 0.013840999999999992}

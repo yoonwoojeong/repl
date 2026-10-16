@@ -1,0 +1,1 @@
+{"tactics": ["exact fun a b => by rw [Nat.mul_comm]; exact Nat.div_add_mod a b", "intro a b <;> rw [Nat.mul_comm] <;> exact Nat.div_add_mod a b", "intro a b", "intro a b <;> have h := Nat.mod_add_div a b <;> rw [Nat.mul_comm] <;> omega", "intro a b <;> have h := Nat.div_add_mod a b <;> rw [Nat.mul_comm] <;> exact h"], "usd": 0.012648999999999688}

@@ -1,0 +1,1 @@
+{"tactics": ["rcases hc with rfl | hc", "cases hc with\n| inl h => subst h; simp at hk\n| inr h => skip", "rcases hc with h | h", "have hpos : 0 < c := by rcases hc with h | h <;> simp_all", "grind"], "usd": 0.014197000000000237}

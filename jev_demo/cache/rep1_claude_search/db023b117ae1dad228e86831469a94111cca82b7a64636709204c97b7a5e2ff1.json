@@ -1,0 +1,1 @@
+{"tactics": ["simpa using congrArg String.toNat? h", "simpa using congrArg String.toNat! h", "simpa using h", "simp_all [Nat.repr]", "grind", "exact Nat.repr_inj.mp h", "have := congrArg String.toList h; simp_all [Nat.repr]"], "usd": 0.011516999999999555}

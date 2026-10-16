@@ -1,0 +1,1 @@
+{"tactics": ["induction a", "intro b c hab hbc", "induction a <;> intro b c <;> cases b <;> cases c <;> simp_all", "grind", "intro b c hab hbc <;> exact Std.TransCmp.isLE_trans hab hbc"], "usd": 0.007781000000000038}

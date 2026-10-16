@@ -1,0 +1,1 @@
+{"tactics": ["apply List.ext_getElem <;> simp <;> omega", "apply List.ext_getElem <;> simp [List.getElem_zipIdx] <;> omega", "rw [← List.map_snd_add_zipIdx_eq_zipIdx (n := 1) (k := 0)]", "simp [← List.map_snd_add_zipIdx_eq_zipIdx]", "grind", "simp [List.zipIdx_eq_zip_range']"], "usd": 0.01715700000000009}

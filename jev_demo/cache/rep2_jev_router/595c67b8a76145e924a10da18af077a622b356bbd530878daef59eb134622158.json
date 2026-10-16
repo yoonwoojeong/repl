@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ _ _ _ xs f h b", "intros", "intro β α _ _ _ _ _ xs f h b <;> constructor", "intro β α _ _ _ _ _ xs f h b <;> grind", "intro β α _ _ _ _ _ xs f h b <;> induction xs <;> simp_all"], "usd": 0.0037329999999999863}

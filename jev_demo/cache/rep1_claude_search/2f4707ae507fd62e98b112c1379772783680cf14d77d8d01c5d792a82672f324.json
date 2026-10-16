@@ -1,0 +1,1 @@
+{"tactics": ["intro α inst a l <;> exact List.countP_le_length", "intro α inst a l <;> simp [List.count, List.countP_le_length]", "intro α inst a l <;> induction l <;> simp_all [List.count_cons] <;> split <;> omega", "intro α inst a l", "intro α inst a l <;> induction l <;> grind [List.count_cons]", "intros <;> apply List.countP_le_length"], "usd": 0.009384999999999977}

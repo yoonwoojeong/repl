@@ -1,0 +1,1 @@
+{"tactics": ["split <;> rfl", "simp only [dite_eq_ite]", "rfl", "by_cases hi : i = 0 <;> simp [hi]", "split <;> simp_all", "exact dite_eq_ite", "grind"], "usd": 0.0027930000000000454}

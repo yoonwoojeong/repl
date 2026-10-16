@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.reverse_nil, List.nil_append]", "show List.filterMapM.loop f l [] = (fun x => x) <$> List.filterMapM.loop f l []", "rw [List.reverse_nil]", "simp only [List.reverse_nil, List.nil_append, id_map']", "grind"], "usd": 0.0035050000000000914}

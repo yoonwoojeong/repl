@@ -1,0 +1,1 @@
+{"tactics": ["cases ‹List α› <;> simp_all", "rename_i a t", "cases ‹List α› <;> simp at h ⊢", "grind", "simp [List.cons_getElem_zero_tail]"], "usd": 0.008096999999999799}

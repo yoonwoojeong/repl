@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ l x y h", "intro α _ _ l x y h <;> induction l <;> simp_all [BEq.congr_left h]", "intro α _ _ l x y h <;> induction l <;> grind", "intros <;> simp_all [List.contains_iff_exists_mem_beq]"], "usd": 0.010168999999999984}

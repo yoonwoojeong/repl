@@ -1,0 +1,1 @@
+{"tactics": ["rcases l₁ with _ | ⟨c, l₁⟩", "cases l₁ <;> simp_all [List.MergeSort.Internal.splitInTwo, List.splitAt_eq]", "cases l₁", "simp only [List.cons_append]", "split <;> simp_all [List.MergeSort.Internal.splitInTwo]", "cases l₂"], "usd": 0.017516999999999783}

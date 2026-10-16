@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l hl x", "grind", "simp", "constructor", "revert hl✝", "grind [List.min]"], "usd": 0.011017000000000055}

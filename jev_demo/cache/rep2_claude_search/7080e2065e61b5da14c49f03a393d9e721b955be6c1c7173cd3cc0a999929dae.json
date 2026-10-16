@@ -1,0 +1,1 @@
+{"tactics": ["simp [← Std.Rio.Internal.toArray_eq_toArray_iter]", "rw [← Std.Rio.Internal.toArray_eq_toArray_iter]", "simp [← Std.Rio.Internal.toArray_eq_toArray_iter, Nat.toArray_rio_eq_range]", "simp_all", "grind", "simp [← Std.Rio.toArray_eq_toArray_iter]"], "usd": 0.011084999999999567}

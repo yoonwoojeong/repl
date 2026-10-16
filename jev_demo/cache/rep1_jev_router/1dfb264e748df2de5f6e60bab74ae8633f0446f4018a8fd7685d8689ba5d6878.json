@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨a, t, rfl⟩ := List.exists_cons_of_ne_nil hl", "cases l with\n  | nil => contradiction\n  | cons a t => ?_", "induction l with\n  | nil => contradiction\n  | cons a t ih => ?_", "constructor", "grind [Std.le_min_iff, List.min_le_of_mem]", "simp [List.min]"], "usd": 0.010825000000000085}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α xs i j h", "intro α xs i j h <;> induction xs generalizing i j <;> cases i <;> simp_all [Nat.succ_add]", "intro α xs <;> induction xs with | nil => simp | cons x xs ih => intro i j h; cases i <;> simp_all [Nat.succ_add]", "intro α xs i j h <;> simp [List.getElem_drop']", "intros <;> grind", "intros <;> simp"], "usd": 0.009924999999999962}

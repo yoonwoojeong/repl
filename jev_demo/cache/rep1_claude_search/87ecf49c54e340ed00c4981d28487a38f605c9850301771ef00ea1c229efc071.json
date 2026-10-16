@@ -1,0 +1,1 @@
+{"tactics": ["intro m n", "exact fun m n => ⟨n / Nat.gcd m n, by unfold Nat.lcm; exact Nat.mul_div_assoc m (Nat.gcd_dvd_right m n)⟩", "intro m n <;> exact ⟨n / Nat.gcd m n, Nat.mul_div_assoc m (Nat.gcd_dvd_right m n)⟩", "intro m n <;> exact Dvd.intro _ (Nat.mul_div_assoc m (Nat.gcd_dvd_right m n)).symm"], "usd": 0.01113699999999973}

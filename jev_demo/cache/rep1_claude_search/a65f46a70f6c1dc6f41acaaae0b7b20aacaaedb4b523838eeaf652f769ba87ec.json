@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp [List.maxIdxOn]", "unfold List.maxIdxOn", "grind [List.maxIdxOn]", "simp only [List.maxIdxOn]", "delta List.maxIdxOn", "simp", "grind"], "usd": 0.007360999999999951}

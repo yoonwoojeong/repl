@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ l₁ l₂", "intros", "intro α inst _ l₁ l₂", "intro α _ _ l₁ l₂ <;> constructor", "intro α _ _ l₁ l₂ <;> refine ⟨fun h a => h.count_eq a, ?_⟩"], "usd": 0.00805699999999998}

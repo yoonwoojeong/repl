@@ -1,0 +1,1 @@
+{"tactics": ["rename_i f motive hnil hcons as bs", "rename_i motive hnil hcons as bs", "rename_i hnil hcons as bs", "rename_i as bs", "unfold List.flatMapM.loop", "simp_all"], "usd": 0.01198100000000002}

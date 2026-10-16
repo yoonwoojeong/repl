@@ -1,0 +1,1 @@
+{"tactics": ["intro a b c hab hbc", "intro a", "intro a b c", "grind", "simp only [Ordering.isLE_iff_ne_gt]"], "usd": 0.009341000000000044}

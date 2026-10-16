@@ -1,0 +1,1 @@
+{"tactics": ["intro n m h", "intro n m h <;> exact Nat.le_of_dvd h (Nat.gcd_dvd_right m n)", "exact fun m h => Nat.le_of_dvd h (Nat.gcd_dvd_right m _)", "intros", "intro n m h <;> apply Nat.le_of_dvd h <;> exact Nat.gcd_dvd_right m n"], "usd": 0.0036369999999998903}

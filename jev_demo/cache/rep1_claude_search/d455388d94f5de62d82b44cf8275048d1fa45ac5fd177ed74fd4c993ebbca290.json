@@ -1,0 +1,1 @@
+{"tactics": ["intro htrans htotal l", "intro htrans htotal l <;> induction l using List.mergeSort.induct le <;> simp_all", "intro htrans htotal", "intros"], "usd": 0.009168999999999983}

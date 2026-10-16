@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "exact absurd rfl h", "simp [List.dropLast] at h", "exact (h rfl).elim", "contradiction", "simp_all"], "usd": 0.0020609999999998685}

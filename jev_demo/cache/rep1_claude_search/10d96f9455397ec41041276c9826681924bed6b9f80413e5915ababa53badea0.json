@@ -1,0 +1,1 @@
+{"tactics": ["rename_i f l l' i h", "rename_i f l l' i h <;> induction l generalizing l' i with | nil => simp at h | cons a as ih => cases l' with | nil => simp at h | cons b bs => cases i with | zero => rfl | succ i => exact ih bs i (Nat.lt_of_succ_lt_succ h)", "exact List.getElem_zipWith' _ _", "simp [List.zipWith]"], "usd": 0.021844999999999892}

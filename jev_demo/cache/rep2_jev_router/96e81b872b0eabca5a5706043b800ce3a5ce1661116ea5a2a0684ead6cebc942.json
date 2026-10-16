@@ -1,0 +1,1 @@
+{"tactics": ["intro hb", "intro hb <;> cases a with | zero => simp | succ n => simpa using Nat.pow_le_pow_right (Nat.succ_pos n) hb", "rcases Nat.eq_zero_or_pos a with h | h <;> intro hb <;> simp_all", "intro hb <;> rcases Nat.eq_zero_or_pos a with h | h <;> [simp [h]; simpa using Nat.pow_le_pow_right h hb]"], "usd": 0.012256999999999962}

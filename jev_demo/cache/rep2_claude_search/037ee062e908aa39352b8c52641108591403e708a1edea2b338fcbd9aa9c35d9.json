@@ -1,0 +1,1 @@
+{"tactics": ["intro h <;> rw [List.getLast_cons h]", "intro h <;> simp [List.getLast_cons h]", "intro h <;> exact (List.getLast_cons h).symm", "intro h", "simp [List.getLast_cons]", "grind [List.getLast_cons]"], "usd": 0.00766100000000014}

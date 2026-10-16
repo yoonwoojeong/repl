@@ -1,0 +1,1 @@
+{"tactics": ["intro m n k h", "intro m n k h <;> apply Nat.dvd_antisymm", "intro m n k h <;> grind [Nat.Coprime, Nat.gcd_comm]", "intro m n k h <;> simp_all [Nat.Coprime]"], "usd": 0.015176999999999996}

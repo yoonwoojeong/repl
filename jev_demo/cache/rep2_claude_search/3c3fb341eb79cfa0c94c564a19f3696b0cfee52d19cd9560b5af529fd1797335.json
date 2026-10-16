@@ -1,0 +1,1 @@
+{"tactics": ["exact?", "grind", "have h3 := congrArg (fun l => (String.ofList l).toNat?) h2", "simp_all [Nat.toDigits]", "exact Nat.toDigits_injective h2", "have h3 := congrArg List.length h2", "omega"], "usd": 0.012656999999999918}

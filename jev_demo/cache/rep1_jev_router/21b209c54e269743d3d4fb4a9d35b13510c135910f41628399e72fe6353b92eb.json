@@ -1,0 +1,1 @@
+{"tactics": ["intro m n", "intro m n; simp [← Array.toList_inj, Nat.toList_roc_succ_succ]", "intros; simp [← Array.toList_inj, Std.Roc.toList_toArray, Nat.toList_roc_succ_succ]", "intros; simp [Nat.toList_roc_succ_succ, ← Std.Roc.toArray_toList]", "intros; grind [Nat.toList_roc_succ_succ]", "intros; simp"], "usd": 0.009212999999999916}

@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.gcd_add_mul_left_right n m c", "simp", "rw [Nat.gcd_add_mul_left_right]", "rw [Nat.mul_comm, Nat.gcd_add_mul_right_right]", "simp [Nat.gcd_comm]", "grind"], "usd": 0.007037000000000404}

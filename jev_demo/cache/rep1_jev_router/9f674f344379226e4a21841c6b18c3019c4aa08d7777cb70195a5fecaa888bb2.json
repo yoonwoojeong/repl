@@ -1,0 +1,1 @@
+{"tactics": ["intro α p l₁ l₂ <;> simp [List.unattach]", "intro α p l₁ l₂", "intros <;> simp [List.unattach, List.map_append]", "intro α p l₁ l₂ <;> induction l₁ <;> simp_all [List.unattach]", "intro α p l₁ l₂ <;> exact List.map_append", "intros <;> grind [List.unattach]"], "usd": 0.0038369999999998683}

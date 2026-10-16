@@ -1,0 +1,1 @@
+{"tactics": ["grind [List.minIdxOn_append]", "simp only [List.minIdxOn_append]", "rw [List.minIdxOn_append]", "rename_i β α i1 i2 i3 xs ys f h", "simp [List.minIdxOn_append]", "grind"], "usd": 0.01051700000000011}

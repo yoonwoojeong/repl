@@ -1,0 +1,1 @@
+{"tactics": ["exact (List.le_min_iff _).mp (Std.le_refl _) a ha", "exact (List.le_min_iff (List.ne_nil_of_mem ha)).1 (Std.le_refl _) a ha", "have h := (List.le_min_iff (List.ne_nil_of_mem ha)).1 (Std.le_refl (l.min (List.ne_nil_of_mem ha))) a ha", "grind [List.le_min_iff, Std.le_refl]", "simp [List.min_le_iff]", "grind"], "usd": 0.010057000000000205}

@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "refine { eq_swap := ?_, isLE_trans := ?_ }", "rw [Std.TransOrd]", "unfold Std.TransOrd", "exact inferInstance", "simp only [Std.TransOrd]"], "usd": 0.008877000000000024}

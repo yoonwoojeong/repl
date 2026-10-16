@@ -1,0 +1,1 @@
+{"tactics": ["intro n i", "simp", "grind", "intros <;> simp <;> omega", "intros <;> simp [Option.isSome_iff_ne_none] <;> omega", "intros <;> simp [Array.getElem?_eq_some_iff] <;> omega"], "usd": 0.007232999999999823}

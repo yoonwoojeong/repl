@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp only [Nat.add_zero, Array.map_id_fun', id_eq]", "simp only [Nat.add_zero]", "simp [Std.Rio.toArray, Std.Rco.toArray]", "grind", "rfl", "simp only [Nat.add_zero, Array.map_id_fun', id_eq] <;> rfl", "decide"], "usd": 0.007085000000000008}

@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "intro h; exact ⟨_, _, rfl, List.Sublist.refl _, List.Sublist.refl _⟩", "induction r generalizing l₁", "simp only [List.sublist_append_iff]", "grind"], "usd": 0.011008999999999991}

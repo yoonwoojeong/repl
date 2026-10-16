@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Nat.div_zero]", "rw [Nat.div_zero, Nat.div_zero, Nat.div_zero]", "omega", "simp at h", "exact absurd (Nat.eq_zero_of_zero_dvd h) (by omega)"], "usd": 0.0028769999999997964}

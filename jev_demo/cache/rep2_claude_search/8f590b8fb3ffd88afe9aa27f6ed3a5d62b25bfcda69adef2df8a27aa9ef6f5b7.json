@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "rename_i hd tl", "simp [List.zipIdx_eq_zip_range', List.getElem_zip, List.getElem_range']", "cases i <;> simp", "intro h <;> cases i <;> simp [List.zipIdx_eq_zip_range', List.getElem_zip, List.getElem_range'] <;> omega", "grind [List.zipIdx_eq_zip_range', List.getElem_zip, List.getElem_range']"], "usd": 0.014772999999999925}

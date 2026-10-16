@@ -1,0 +1,1 @@
+{"tactics": ["intro α le l₁ l₂ h₁ h₂", "intro α le l₁ l₂", "intros", "intro α le l₁ l₂ h₁ h₂ <;> rcases l₁ with _ | ⟨a, _ | ⟨b, l₁⟩⟩ <;> simp_all", "intro α le l₁ l₂ h₁ h₂ <;> cases l₂ <;> simp_all"], "usd": 0.012693000000000065}

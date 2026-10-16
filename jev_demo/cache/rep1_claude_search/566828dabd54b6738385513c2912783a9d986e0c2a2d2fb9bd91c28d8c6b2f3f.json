@@ -1,0 +1,1 @@
+{"tactics": ["split", "by_cases hj : j < i", "rcases Nat.lt_or_ge j i with hj | hj", "simp only [Nat.testBit, Nat.shiftRight_eq_div_pow]", "split <;> rename_i hj", "by_cases hj : j < i <;> simp only [hj, if_true, if_false]"], "usd": 0.01297299999999968}

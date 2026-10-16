@@ -1,0 +1,1 @@
+{"tactics": ["intro h a", "exact fun h a => h.count_eq a", "exact fun h a => List.Perm.count_eq h a", "intro h a <;> exact h.count_eq a", "intro h a <;> induction h <;> simp_all [List.count_cons] <;> omega"], "usd": 0.0030250000000000554}

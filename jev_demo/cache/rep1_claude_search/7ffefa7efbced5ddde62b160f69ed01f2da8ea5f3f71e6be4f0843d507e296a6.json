@@ -1,0 +1,1 @@
+{"tactics": ["intro l; rfl", "simp [List.modifyTailIdx_zero]", "intro l; simp", "intro l; simp [List.modifyTailIdx, List.modifyTailIdx.go]", "simp", "intro l; cases l <;> rfl"], "usd": 0.010549000000000142}

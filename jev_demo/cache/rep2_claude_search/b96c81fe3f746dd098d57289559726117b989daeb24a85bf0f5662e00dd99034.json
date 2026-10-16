@@ -1,0 +1,1 @@
+{"tactics": ["rename_i f g l init", "rename_i f g l init <;> induction l generalizing init <;> simp_all [List.filterMap_cons] <;> split <;> simp_all", "induction ‹List α› <;> simp_all [List.filterMap_cons] <;> split <;> simp_all", "revert init✝ <;> induction ‹List α› <;> intro init <;> simp_all [List.filterMap_cons] <;> split <;> simp_all"], "usd": 0.014016999999999946}

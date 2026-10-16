@@ -1,0 +1,1 @@
+{"tactics": ["intro h₁ h₂", "intro h₁ h₂ <;> match l₁, l₂ with | [], [] => simp | [a], [] => simp | _, _ => skip", "rcases l₁ with _ | ⟨a, _ | ⟨b, l₁⟩⟩", "cases l₁ <;> cases l₂ <;> simp_all", "intro h₁ h₂ <;> unfold List.mergeSort", "intros"], "usd": 0.012256999999999962}

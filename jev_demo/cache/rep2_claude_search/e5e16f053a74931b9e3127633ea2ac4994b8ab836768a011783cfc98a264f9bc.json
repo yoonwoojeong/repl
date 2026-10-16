@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp only [List.unattach, List.map]", "exact rfl", "unfold List.unattach <;> rfl", "simp [List.unattach]"], "usd": 0.0037370000000001014}

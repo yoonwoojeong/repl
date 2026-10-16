@@ -1,0 +1,1 @@
+{"tactics": ["exact?", "grind [List.mergeSort_perm, List.sorted_mergeSort]", "simp [List.mergeSort]", "refine ⟨_, ?_, ?_, ?_⟩", "constructor", "unfold List.mergeSort"], "usd": 0.01778499999999994}

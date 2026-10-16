@@ -1,0 +1,1 @@
+{"tactics": ["simp", "exact fun h => ⟨[], [], rfl, by simp_all, by simp_all⟩", "intro h", "intro h <;> simp_all", "intro h <;> exact ⟨[], [], rfl, by simp_all [List.sublist_nil], by simp_all [List.sublist_nil]⟩", "simp [List.sublist_nil]"], "usd": 0.012885000000000035}

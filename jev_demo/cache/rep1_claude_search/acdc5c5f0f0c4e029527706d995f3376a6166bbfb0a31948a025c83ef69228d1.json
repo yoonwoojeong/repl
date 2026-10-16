@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [List.pmap_append]", "simp [List.pmap_append, *]", "grind [List.pmap_append]", "rename_i hd tl ih", "simp only [List.reverse_cons, List.pmap_append, List.pmap, ih]", "simp [List.reverse_cons, List.pmap_append]"], "usd": 0.01067299999999971}

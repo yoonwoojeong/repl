@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α β γ f l l' i h", "rename_i α β γ f l l' i h'", "revert h✝", "rename_i f l l' i h"], "usd": 0.008925000000000072}

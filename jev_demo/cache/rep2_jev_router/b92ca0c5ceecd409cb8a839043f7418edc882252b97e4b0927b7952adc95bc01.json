@@ -1,0 +1,1 @@
+{"tactics": ["intro n", "exact fun {n} => by rw [List.range_eq_range', List.range_eq_range', List.range'_concat]; simp", "exact fun {n} => by rw [Nat.succ_eq_add_one, List.range_add]; simp", "intro n <;> simp [List.range_eq_range', List.range'_concat]", "intro n <;> apply List.ext_getElem <;> simp", "intro n <;> grind [List.range_add]"], "usd": 0.010616999999999877}

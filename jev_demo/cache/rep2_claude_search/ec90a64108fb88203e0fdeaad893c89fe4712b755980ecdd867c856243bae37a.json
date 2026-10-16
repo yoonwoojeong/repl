@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp_all", "cases g x <;> simp_all", "by_cases hg : g x = true <;> simp_all", "split <;> simp [List.unattach_cons, ih]", "cases h : g x <;> simp [ih]", "split", "grind"], "usd": 0.0032930000000002124}

@@ -1,0 +1,1 @@
+{"tactics": ["intro m n h", "simp", "exact fun h => Nat.repr_inj.mp h", "intro m n h <;> simpa using h", "intro m n h <;> exact Nat.repr_inj.mp h", "grind"], "usd": 0.00883300000000009}

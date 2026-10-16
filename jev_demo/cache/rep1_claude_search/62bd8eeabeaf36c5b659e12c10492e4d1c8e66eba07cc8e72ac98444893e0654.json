@@ -1,0 +1,1 @@
+{"tactics": ["intro h b hb", "grind [List.min]", "induction l with\n| nil => exact absurd rfl hl\n| cons a t ih => intro h b hb; grind", "cases l with\n| nil => exact absurd rfl hl\n| cons a t => simp only [List.min]; intro h b hb; grind", "simp [List.min]", "intro h"], "usd": 0.009077000000000002}

@@ -1,0 +1,1 @@
+{"tactics": ["intro n <;> cases n <;> simp [List.range_succ_eq_map]", "intro n", "intro n <;> cases n <;> simp [List.range_succ_eq_map, List.head?_map]", "intro n <;> induction n <;> simp_all [List.range_succ]", "intro n <;> cases n <;> simp [List.range_eq_range', List.range'_succ]"], "usd": 0.0035289999999998933}

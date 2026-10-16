@@ -1,0 +1,1 @@
+{"tactics": ["rename_i ih", "apply_assumption", "simp only [List.cons_append, List.length_cons, List.length_append] at h", "apply_assumption <;> simp at h <;> omega", "simp_all"], "usd": 0.01245699999999994}

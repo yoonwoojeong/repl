@@ -1,0 +1,1 @@
+{"tactics": ["exact (List.drop_eq_getElem_cons h).symm", "rw [List.drop_eq_getElem_cons h]", "induction as generalizing i with\n  | nil => simp at h\n  | cons a t ih =>\n    cases i with\n    | zero => rfl\n    | succ k => exact ih k (by simp at h; omega)", "induction as generalizing i", "induction as generalizing i <;> cases i <;> simp_all"], "usd": 0.013860999999999901}

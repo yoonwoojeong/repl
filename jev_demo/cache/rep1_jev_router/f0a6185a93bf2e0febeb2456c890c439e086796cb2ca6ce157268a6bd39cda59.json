@@ -1,0 +1,1 @@
+{"tactics": ["intros", ": intro β α _ _ _ f x xs", "intro β α _ _ _ f x xs", "simp [List.minIdxOn?]", "intros; simp [List.minIdxOn?, List.minIdxOn_cons]", "intros; cases xs <;> simp_all [List.minIdxOn?, List.minIdxOn]", "grind [List.minIdxOn?, List.minIdxOn_cons]"], "usd": 0.004312999999999789}

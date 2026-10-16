@@ -1,0 +1,1 @@
+{"tactics": ["intro a l", "intro a l <;> induction l generalizing a", "intros", "intro a l <;> exists [], l.mergeSort le"], "usd": 0.0048130000000004}

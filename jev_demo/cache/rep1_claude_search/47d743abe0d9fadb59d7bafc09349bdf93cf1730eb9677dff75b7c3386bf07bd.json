@@ -1,0 +1,1 @@
+{"tactics": ["cases i <;> simp_all [List.getElem_append] <;> omega", "rcases i with _ | j", "grind", "simp [List.getElem_cons, List.getElem_append]", "cases i with\n  | zero => omega\n  | succ j => simp [List.getElem_append]; split <;> first | omega | rfl", "obtain ⟨j, rfl⟩ : ∃ j, i = j + 1 := ⟨i - 1, by omega⟩"], "usd": 0.014445000000000041}

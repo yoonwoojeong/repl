@@ -1,0 +1,1 @@
+{"tactics": ["grind", "simp_all [List.min_le_iff]", "exact (List.min_le_iff _).2 ⟨a, ha, Std.le_refl a⟩", "exact List.min?_le_of_mem (List.min?_eq_some_min _) ha", "simp [List.min, List.foldl_min_le_of_mem ha]", "induction l <;> simp_all"], "usd": 0.010284999999999656}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.mul_add_lt_is_or a✝ a, Nat.testBit_or]", "rw [Nat.mul_add_lt_is_or a✝]", "by_cases h : j✝ < i✝", "simp only [Nat.testBit_to_div_mod]", "split", "rw [Nat.mul_comm, ← Nat.shiftLeft_eq]"], "usd": 0.01948500000000042}

@@ -1,0 +1,1 @@
+{"tactics": ["intro m n <;> rw [Nat.add_comm] <;> exact Nat.gcd_self_add_right m n", "intro m n", "intro m n <;> rw [Nat.gcd_comm, Nat.gcd_comm m n] <;> exact Nat.gcd_add_self_left n m", "intro m n <;> have h := Nat.gcd_add_mul_right_right m n 1 <;> rw [Nat.one_mul] at h <;> exact h", "intro m n <;> rw [Nat.add_comm, Nat.gcd_self_add_right]"], "usd": 0.0143810000000002}

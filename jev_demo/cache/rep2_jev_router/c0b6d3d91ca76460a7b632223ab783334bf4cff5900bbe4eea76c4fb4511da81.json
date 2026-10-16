@@ -1,0 +1,1 @@
+{"tactics": ["cases xs <;> rfl", "cases xs <;> simp", "cases xs", "induction xs <;> simp_all", "cases xs <;> simp [List.pmap]", "match xs, H with | [], _ => rfl | _ :: _, _ => rfl"], "usd": 0.0029609999999999914}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α β P f xs H", "intro α β P f xs H; rw [List.reverse_pmap]", "intro α β P f xs; induction xs with | nil => simp | cons x xs ih => intro H; simp [List.pmap_append, ih]", "intro α β P f xs; induction xs <;> simp_all [List.pmap_append]", "intro α β P f xs H; apply List.ext_getElem <;> simp", "intros; simp [List.reverse_pmap]"], "usd": 0.011237000000000386}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α a motive l t F", "rename_i t F", "apply_assumption", "rename_i t F <;> apply F", "rename_i t F <;> induction t <;> apply F <;> constructor <;> simp_all"], "usd": 0.019268999999999994}

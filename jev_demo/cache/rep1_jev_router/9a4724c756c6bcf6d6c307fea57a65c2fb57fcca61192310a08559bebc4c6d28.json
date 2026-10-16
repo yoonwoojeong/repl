@@ -1,0 +1,1 @@
+{"tactics": ["intro x y z h <;> rw [Nat.mul_comm y z, Nat.add_mul_div_left x y h]", "intro x y z h", "intro x y z h <;> simp [Nat.mul_comm y z, Nat.add_mul_div_left x y h]", "intro x y z h <;> rw [Nat.mul_comm y z] <;> exact Nat.add_mul_div_left x y h", "intro x y z h <;> grind"], "usd": 0.0102850000000001}

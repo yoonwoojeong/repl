@@ -1,0 +1,1 @@
+{"tactics": ["intro a m n h <;> rw [← Nat.pow_add, Nat.sub_add_cancel h]", "exact fun a m n h => by rw [← Nat.pow_add, Nat.sub_add_cancel h]", "intro a m n h", "intro a m n h <;> simp [← Nat.pow_add, Nat.sub_add_cancel h]", "intros <;> rw [← Nat.pow_add, Nat.sub_add_cancel ‹_›]"], "usd": 0.010424999999999685}

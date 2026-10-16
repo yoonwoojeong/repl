@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "grind", "refine ⟨fun ⟨i, h, hx⟩ => ?_, fun ⟨i, h, hik, hx⟩ => ?_⟩", "constructor <;> rintro ⟨i, h, hx⟩", "simp only [exists_prop]", "apply Iff.intro"], "usd": 0.007992999999999917}

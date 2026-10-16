@@ -1,0 +1,1 @@
+{"tactics": ["exact @ih n", "exact ih", "rw [← @ih n]; cases List.drop n tail✝ <;> rfl", "have h := @ih n; revert h; cases List.drop n tail✝ <;> simp", "split <;> simp_all", "grind"], "usd": 0.011813000000000073}

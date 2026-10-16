@@ -1,0 +1,1 @@
+{"tactics": ["cases ‹List α› <;> simp_all [List.dropLast]", "rename_i a t", "cases ‹List α› with | nil => simp at h | cons b t => simp [List.dropLast]", "grind", "cases ‹List α› <;> simp_all", "simp_all [List.dropLast]"], "usd": 0.01132500000000003}

@@ -1,0 +1,1 @@
+{"tactics": ["subst h✝", "simp [h✝]", "subst h✝ <;> rfl", "subst h✝ <;> simp [List.maxOn]", "simp [h✝, List.maxOn]", "subst h✝ <;> simp [List.maxOn_singleton]", "grind [List.maxOn]"], "usd": 0.0034890000000000754}

@@ -1,0 +1,1 @@
+{"tactics": ["omega", "exact Nat.le_add_right_of_le (Nat.le_add_left n _)", "simp", "exact Nat.le_trans (Nat.le_add_left n (n✝ * n)) (Nat.le_add_right _ _)", "grind", "simp [Nat.le_add_left, Nat.le_add_right_of_le]"], "usd": 0.0032529999999999504}

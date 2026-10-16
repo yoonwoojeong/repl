@@ -1,0 +1,1 @@
+{"tactics": ["exact (List.le_min_iff _).mp (Std.le_refl _) a ha", "exact List.le_min_iff.mp (Std.le_refl _) a ha", "grind", "simp [List.le_min_iff] at *", "have h := List.le_min_iff (l := l) (a := l.min (List.ne_nil_of_mem ha))", "induction l generalizing a <;> simp_all"], "usd": 0.009644999999999904}

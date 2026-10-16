@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.replace_cons]", "simp [List.replace]", "rw [List.replace_cons]; simp", "unfold List.replace; simp", "simp only [List.replace, beq_self_eq_true]", "grind [List.replace]"], "usd": 0.0026849999999996044}

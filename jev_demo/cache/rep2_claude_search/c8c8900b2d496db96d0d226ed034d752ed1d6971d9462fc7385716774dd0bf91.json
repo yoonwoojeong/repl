@@ -1,0 +1,1 @@
+{"tactics": ["by_cases h : j < i", "split", "rw [if_pos (show True from trivial)] <;> omega", "grind [Nat.testBit_mod_two_pow, Nat.testBit_shiftRight, Nat.shiftRight_eq_div_pow]", "simp only [Nat.testBit, Nat.shiftRight_eq_div_pow]", "induction i generalizing a b j"], "usd": 0.013505000000000322}

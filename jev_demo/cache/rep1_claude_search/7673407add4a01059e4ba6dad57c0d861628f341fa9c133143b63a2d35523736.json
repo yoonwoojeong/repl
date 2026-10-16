@@ -1,0 +1,1 @@
+{"tactics": ["intro m n <;> rw [Nat.gcd_rec m (n + m), Nat.add_mod_right, ← Nat.gcd_rec]", "intro m n <;> simpa using Nat.gcd_add_mul_right_right m n 1", "intro m n <;> rw [Nat.add_comm] <;> exact Nat.gcd_self_add_right m n", "intro m n"], "usd": 0.015761000000000358}

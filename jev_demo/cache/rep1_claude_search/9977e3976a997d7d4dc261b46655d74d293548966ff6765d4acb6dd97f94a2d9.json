@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.mul_comm y z, Nat.add_mul_div_left x y hz]", "rw [Nat.mul_comm y z]", "exact (Nat.mul_comm y z) ▸ Nat.add_mul_div_left x y hz", "induction y with\n  | zero => simp\n  | succ k ih => rw [Nat.succ_mul, ← Nat.add_assoc, Nat.add_div_right _ hz, ih, Nat.add_assoc]", "grind"], "usd": 0.00866900000000026}

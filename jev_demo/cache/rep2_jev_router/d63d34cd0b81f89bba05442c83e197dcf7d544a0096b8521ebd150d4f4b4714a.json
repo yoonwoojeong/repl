@@ -1,0 +1,1 @@
+{"tactics": ["refine ⟨fun h a => h.count_eq a, fun h => ?_⟩", "constructor", "induction l₁ generalizing l₂", "refine ⟨List.Perm.count_eq, fun h => ?_⟩", "exact ⟨fun h a => h.count_eq a, fun h => by induction l₁ generalizing l₂ <;> simp_all⟩"], "usd": 0.008640999999999899}

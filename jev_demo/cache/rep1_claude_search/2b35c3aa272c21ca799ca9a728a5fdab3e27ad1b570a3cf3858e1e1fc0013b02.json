@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.add_right_comm _ 1]", "grind", "rename_i n hd tl", "simp [List.getElem_cons, Nat.add_right_comm]", "simp only [Nat.add_right_comm _ 1 j, List.getElem_cons_succ]", "simp_all [Nat.add_assoc, Nat.add_comm 1]"], "usd": 0.013608999999999982}

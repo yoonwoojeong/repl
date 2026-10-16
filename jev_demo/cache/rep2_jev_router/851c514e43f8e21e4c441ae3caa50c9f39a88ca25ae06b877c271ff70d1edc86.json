@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ _ n a f h", "intro β α _ _ _ n a f h <;> exact List.eq_of_mem_replicate (List.minOn_mem ..)", "intro β α _ _ _ n a f h <;> exact List.eq_of_mem_replicate (List.minOn_mem (f := f) (h := h))", "intros <;> apply List.eq_of_mem_replicate <;> apply List.minOn_mem", "intros <;> grind [List.minOn_mem, List.eq_of_mem_replicate]"], "usd": 0.011229000000000156}

@@ -1,0 +1,1 @@
+{"tactics": ["induction t <;> constructor <;> first | assumption | (apply F <;> assumption)", "induction t with | head => constructor | tail b h ih => constructor <;> first | assumption | exact F _ h ih", "induction t", "induction t <;> simp_all", "induction t <;> constructor <;> (try apply F) <;> assumption"], "usd": 0.013220999999999983}

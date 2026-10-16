@@ -1,0 +1,1 @@
+{"tactics": ["exact Std.LawfulRightIdentity.right_id x✝", "exact Std.RightIdentity.right_id x✝", "simp", "exact inst✝.right_id x✝", "grind", "simp [Std.LawfulRightIdentity.right_id]"], "usd": 0.0029849999999997934}

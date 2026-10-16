@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.map_id]", "rw [List.map_id]", "simp only [List.map_id, id]", "simp [List.getElem?_map]", "rfl"], "usd": 0.0022649999999999615}

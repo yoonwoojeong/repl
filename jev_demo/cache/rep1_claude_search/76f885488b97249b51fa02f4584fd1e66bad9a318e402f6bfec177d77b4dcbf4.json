@@ -1,0 +1,1 @@
+{"tactics": ["intro b i h j", "intro b i h j <;> simp only [Nat.mul_zero, Nat.zero_add, Nat.zero_testBit] <;> split <;> simp_all <;> exact Nat.testBit_lt_two_pow (Nat.lt_of_lt_of_le h (Nat.pow_le_pow_right (by omega) (by omega)))", "simp", "intros", "grind"], "usd": 0.011500999999999983}

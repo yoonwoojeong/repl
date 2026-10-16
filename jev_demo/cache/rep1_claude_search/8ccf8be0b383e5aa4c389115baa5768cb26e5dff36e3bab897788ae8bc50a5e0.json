@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "exact ⟨fun h => ⟨[], r, rfl, List.nil_sublist _, h⟩, fun ⟨r₁, r₂, he, _, h⟩ => he ▸ h.trans (List.sublist_append_right r₁ r₂)⟩", "simp only [List.nil_append]", "refine ⟨fun h => ⟨[], r, rfl, List.nil_sublist _, h⟩, ?_⟩", "simp", "grind"], "usd": 0.014449000000000045}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i n ih", "grind", "clear a✝", "have h1 := Nat.div_add_mod a (_ + 1)", "simp only [Nat.add_div_of_dvd_add_add_one] at *", "omega"], "usd": 0.020633000000000123}

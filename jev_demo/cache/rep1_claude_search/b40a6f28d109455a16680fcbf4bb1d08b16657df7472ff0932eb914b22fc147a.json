@@ -1,0 +1,1 @@
+{"tactics": ["split", "by_cases h : xs = [] <;> simp_all [List.maxOn]", "cases xs <;> simp [List.maxOn]", "unfold List.maxOn", "simp only [List.maxOn]", "grind [List.maxOn]", "cases xs with\n  | nil => rfl\n  | cons y ys => simp [List.maxOn, List.foldl_cons]"], "usd": 0.01045700000000016}

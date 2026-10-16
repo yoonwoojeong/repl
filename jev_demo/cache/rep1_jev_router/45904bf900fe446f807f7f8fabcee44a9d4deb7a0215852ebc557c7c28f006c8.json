@@ -1,0 +1,1 @@
+{"tactics": ["rename_i k n m", "exact ⟨fun h => Nat.dvd_trans h (Nat.mul_dvd_mul (Nat.gcd_dvd_right _ _) (Nat.gcd_dvd_right _ _)), fun h => (Nat.gcd_eq_left h) ▸ Nat.gcd_mul_dvd_mul_gcd _ _ _⟩", "constructor", "refine ⟨fun h => Nat.dvd_trans h (Nat.mul_dvd_mul (Nat.gcd_dvd_right _ _) (Nat.gcd_dvd_right _ _)), fun h => ?_⟩", "apply Iff.intro"], "usd": 0.021037000000000194}

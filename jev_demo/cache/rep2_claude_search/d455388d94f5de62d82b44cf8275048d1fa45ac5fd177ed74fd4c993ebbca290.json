@@ -1,0 +1,1 @@
+{"tactics": ["intro trans total l", "intro trans total", "intros", "intro trans total l <;> grind", "intro trans total l <;> induction l <;> simp_all"], "usd": 0.005849000000000437}

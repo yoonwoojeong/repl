@@ -1,0 +1,1 @@
+{"tactics": ["induction l generalizing k", "constructor", "rw [List.mem_iff_getElem]", "grind [List.mem_iff_getElem, List.getElem_eraseIdx, List.length_eraseIdx]", "cases k", "simp only [List.mem_iff_getElem]"], "usd": 0.00774100000000022}

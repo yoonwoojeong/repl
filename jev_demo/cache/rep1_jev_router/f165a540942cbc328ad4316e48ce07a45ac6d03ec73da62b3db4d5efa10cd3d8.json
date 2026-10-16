@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp only [Nat.add_sub_cancel]", "congr 1 <;> omega", "grind", "have h : i + l₁.length - l₁.length = i := by omega\nsimp [h]", "rw [List.getElem_of_eq rfl]"], "usd": 0.0028410000000000935}

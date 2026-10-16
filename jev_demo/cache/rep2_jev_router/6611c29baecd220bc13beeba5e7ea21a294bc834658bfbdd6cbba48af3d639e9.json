@@ -1,0 +1,1 @@
+{"tactics": ["intro b a c hb", "intros b a c hb", "intro b a c hb <;> rw [← Nat.lt_succ_iff, Nat.div_lt_iff_lt_mul hb, Nat.succ_mul, Nat.mul_comm c b] <;> omega", "intro b a c hb <;> constructor <;> intro h <;> grind", "intro b a c hb <;> grind [Nat.div_lt_iff_lt_mul, Nat.lt_succ_iff]"], "usd": 0.015184999999999782}

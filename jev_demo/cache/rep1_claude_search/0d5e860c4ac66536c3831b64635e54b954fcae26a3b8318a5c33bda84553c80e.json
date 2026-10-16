@@ -1,0 +1,1 @@
+{"tactics": ["rcases h with ⟨c, rfl⟩ <;> simp", "rcases h with ⟨c, rfl⟩ <;> simp [Nat.gcd_add_mul_left_right]", "rcases h with ⟨c, rfl⟩ <;> exact Nat.gcd_add_mul_left_right n m c", "rcases h with ⟨c, rfl⟩ <;> rw [Nat.mul_comm] <;> exact Nat.gcd_add_mul_right_right n m c", "rcases h with ⟨c, rfl⟩ <;> grind", "obtain ⟨c, rfl⟩ := h"], "usd": 0.011425000000000018}

@@ -1,0 +1,1 @@
+{"tactics": ["rcases Nat.eq_zero_or_pos c with rfl | hc", "by_cases hc : c = 0", "have ha := Nat.div_add_mod a c", "grind", "cases c with\n  | zero => simp\n  | succ c => skip", "obtain ⟨q1, r1, hr1, rfl⟩ : ∃ q r, r < c ∨ c = 0 ∧ True ∧ q = q ∧ r = r ∧ a = a := ⟨0, 0, Or.inr ⟨rfl, trivial, rfl, rfl, rfl⟩⟩"], "usd": 0.021144999999999747}

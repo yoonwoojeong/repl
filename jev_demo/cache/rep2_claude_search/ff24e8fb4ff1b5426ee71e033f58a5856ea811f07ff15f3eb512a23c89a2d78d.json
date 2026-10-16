@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rfl", "simp only [List.nil_append]", "congr", "grind", "cases l₂ <;> simp_all", "exact rfl"], "usd": 0.0020370000000000665}

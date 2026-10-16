@@ -1,0 +1,1 @@
+{"tactics": ["simp at h₂ <;> omega", "exact absurd (by simpa using h₂ : i < as.length) (Nat.not_lt.mpr h)", "simp only [List.append_nil] at h₂ <;> omega", "grind", "simp_all", "have h3 : i < as.length := by simpa using h₂"], "usd": 0.00894499999999998}

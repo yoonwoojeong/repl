@@ -1,0 +1,1 @@
+{"tactics": ["intro n", "simp [List.finRange, List.ofFn_succ, List.map_ofFn]", "intro n <;> simp [List.finRange, List.ofFn_succ, List.map_ofFn, Function.comp_def]", "intro n <;> apply List.ext_getElem <;> simp", "intro n <;> rw [List.finRange, List.finRange, List.ofFn_succ, List.map_ofFn] <;> rfl", "intro n <;> simp [List.finRange_eq_pmap_range]"], "usd": 0.009669000000000039}

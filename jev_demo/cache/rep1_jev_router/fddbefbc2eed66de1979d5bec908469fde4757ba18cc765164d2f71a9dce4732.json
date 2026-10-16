@@ -1,0 +1,1 @@
+{"tactics": ["intro k n m", "exact fun {k n m} => ⟨fun h => Nat.dvd_trans h (Nat.mul_dvd_mul_right (Nat.gcd_dvd_right k n) m), fun h => by have := Nat.dvd_gcd (Nat.dvd_mul_right k m) h; rwa [Nat.gcd_mul_right] at this⟩", "intros", "intro k n m <;> constructor"], "usd": 0.017485000000000195}

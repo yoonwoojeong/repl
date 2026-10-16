@@ -1,0 +1,1 @@
+{"tactics": ["intro α inst xs y ys", "intros; simp only [List.removeAll, List.filter_filter, List.elem_cons]; congr 1; funext x; cases h : x == y <;> simp [h]", ","], "usd": 0.006676999999999822}

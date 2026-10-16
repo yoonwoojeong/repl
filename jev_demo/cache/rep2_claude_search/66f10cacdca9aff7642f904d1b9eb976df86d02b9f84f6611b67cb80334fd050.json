@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ l a", "exact fun {α} _ _ {l} {a} => List.findIdx_le_length", "intro α _ _ l a <;> induction l <;> simp_all [List.idxOf_cons] <;> split <;> omega", "intro α _ _ l a <;> induction l <;> grind [List.idxOf_cons]", "intro α _ _ l a <;> simp [List.idxOf, List.findIdx_le_length]", "intro α _ _ l a <;> exact List.findIdx_le_length"], "usd": 0.013309000000000015}

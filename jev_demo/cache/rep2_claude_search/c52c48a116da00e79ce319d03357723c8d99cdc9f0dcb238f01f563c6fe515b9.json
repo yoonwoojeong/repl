@@ -1,0 +1,1 @@
+{"tactics": ["intro a b c hab hbc", "intro a", "intro a b c", "grind", "simp only [compare]", "exact fun hab hbc => Std.TransCmp.isLE_trans hab hbc"], "usd": 0.006428999999999796}

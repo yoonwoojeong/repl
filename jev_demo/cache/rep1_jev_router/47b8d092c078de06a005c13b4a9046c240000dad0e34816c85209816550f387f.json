@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ _ l hl x", "intro α inst inst_1 inst_2 l hl x", "intros", "intro α _ _ _ l", "grind [List.min]"], "usd": 0.008353000000000055}

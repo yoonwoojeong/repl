@@ -1,0 +1,1 @@
+{"tactics": ["rename_i a l ih", "grind [List.minIdxOn]", "simp [List.minIdxOn]", "unfold List.minIdxOn", "simp_all [List.minIdxOn_cons]", "grind"], "usd": 0.00788499999999992}

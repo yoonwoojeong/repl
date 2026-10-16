@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ _ _ _ xs f h b", ".intros", ".grind [List.maxOn]", "intros; constructor", "intro _ _ _ _ _ xs f h b; induction xs <;> grind", "intros; simp [List.lt_apply_maxOn_iff]"], "usd": 0.0034009999999999874}

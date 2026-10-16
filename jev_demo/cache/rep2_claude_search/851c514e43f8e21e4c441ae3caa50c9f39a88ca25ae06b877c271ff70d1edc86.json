@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ _ n a f h", "intros; exact List.eq_of_mem_replicate (List.minOn_mem ..)", "intros; apply List.eq_of_mem_replicate; apply List.minOn_mem", "intros; grind [List.minOn_mem, List.mem_replicate]", "intro β α _ _ _ n a f h; induction n <;> simp_all [List.minOn, List.replicate]"], "usd": 0.009729000000000099}

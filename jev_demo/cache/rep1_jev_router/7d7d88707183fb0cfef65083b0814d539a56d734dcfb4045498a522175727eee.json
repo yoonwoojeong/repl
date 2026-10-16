@@ -1,0 +1,1 @@
+{"tactics": ["intro _ <;> apply List.Pairwise.iff_of_mem <;> intro a b ha hb <;> simp [ha, hb]", "intro h", "intro _ <;> exact List.Pairwise.iff_of_mem (fun ha hb => by simp [ha, hb])", "intro _ <;> constructor <;> intro hp <;> exact hp.imp_of_mem (fun ha hb hr _ _ => by simp_all)", "intro _ <;> simp_all [List.Pairwise.iff_of_mem]"], "usd": 0.015361000000000014}

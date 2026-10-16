@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.getElem_eraseIdx, dif_neg (Nat.not_lt.mpr ‹_ ≤ _›)]", "simp [List.getElem_eraseIdx, Nat.not_lt.mpr ‹_ ≤ _›]", "rename_i α l i j h h'", "grind", "simp only [List.getElem_eraseIdx] <;> split <;> first | rfl | omega", "simp_all [List.getElem_eraseIdx]"], "usd": 0.013508999999999993}

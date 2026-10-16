@@ -1,0 +1,1 @@
+{"tactics": ["intro b i h j", "intro b i", "induction i generalizing a with\n| zero => intro b h j; simp at h; subst h; simp\n| succ i ih => intro b h j; sorry_placeholder", "intros"], "usd": 0.009197000000000344}

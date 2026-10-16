@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.getElem?_toArray_rio, Nat.getElem?_toArray_rco]", "by_cases h : i < n <;> simp_all [Nat.getElem?_toArray_rio, Nat.getElem?_toArray_rco] <;> omega", "simp", "grind", "rw [Array.getElem?_def, Array.getElem?_def]", "simp [Std.Rio.toArray, Std.Rco.toArray]", "by_cases h : i < n <;> simp [h] <;> omega"], "usd": 0.009241000000000277}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i m n k", "apply Nat.dvd_antisymm", "apply Nat.dvd_antisymm <;> rename_i m n k", "refine Nat.dvd_antisymm (Nat.gcd_mul_dvd_mul_gcd _ _ _) ?_"], "usd": 0.015996999999999595}

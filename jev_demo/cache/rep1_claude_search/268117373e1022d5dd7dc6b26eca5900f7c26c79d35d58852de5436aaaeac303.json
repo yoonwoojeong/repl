@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "grind", "rintro ⟨i, h, hx⟩ <;> grind", "constructor <;> intro hx <;> grind", "refine ⟨fun ⟨i, h, hx⟩ => ?_, fun ⟨i, hik, hi, hx⟩ => ?_⟩", "simp only [List.length_eraseIdx] at *"], "usd": 0.01066099999999981}

@@ -1,0 +1,1 @@
+{"tactics": ["simp", "intro h; cases h", "nofun", "exact List.lt_irrefl []", "simp [List.lt_irrefl]", "decide", "grind", "intro h; simp_all"], "usd": 0.006248999999999949}

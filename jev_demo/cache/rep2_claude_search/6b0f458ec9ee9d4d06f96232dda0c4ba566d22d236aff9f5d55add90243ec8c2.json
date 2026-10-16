@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.add_mul, Nat.one_mul]", "grind", "simp only [Nat.add_mul, Nat.one_mul] <;> omega", "exact Nat.le_add_right_of_le (Nat.le_mul_of_pos_left _ (Nat.succ_pos _))", "rw [Nat.succ_mul]", "simp [Nat.succ_mul] <;> omega"], "usd": 0.008325000000000138}

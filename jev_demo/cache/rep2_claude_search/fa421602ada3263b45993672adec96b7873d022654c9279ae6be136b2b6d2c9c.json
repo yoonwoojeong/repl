@@ -1,0 +1,1 @@
+{"tactics": ["induction l₁ generalizing l₂ <;> cases l₂ <;> simp_all", "induction l₁ generalizing l₂", "constructor", "simp only [List.lt_iff_lex_lt]", "grind", "cases l₁ <;> cases l₂ <;> simp_all"], "usd": 0.007376999999999967}

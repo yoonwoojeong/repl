@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "simp [Nat.all]", "decide", "simp [Nat.all_zero]", "grind", "unfold Nat.all <;> rfl", "simp_all"], "usd": 0.0022370000000000445}

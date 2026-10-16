@@ -1,0 +1,1 @@
+{"tactics": ["rcases Nat.eq_zero_or_pos c with rfl | hc", "by_cases hc : c = 0", "cases c", "have h1 := Nat.div_add_mod a c", "have h2 := Nat.mod_lt a (show c > 0 by cases c <;> simp_all)", "grind"], "usd": 0.014085000000000125}

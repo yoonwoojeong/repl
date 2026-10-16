@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.minIdxOn_append]", "simp [List.minIdxOn_append]", "exact List.minIdxOn_append hxs✝ hys✝", "grind [List.minIdxOn_append]", "simp only [List.minIdxOn_append]", "exact List.minIdxOn_append (f := f✝) hxs✝ hys✝", "grind"], "usd": 0.011648999999999798}

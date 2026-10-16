@@ -1,0 +1,1 @@
+{"tactics": ["unfold List.min", "simp only [List.min]", "simp [List.min]", "grind", "induction t generalizing a <;> simp_all [List.min, List.foldl, Std.le_min_iff]", "simp [List.min, Std.le_min_iff]"], "usd": 0.009313000000000127}

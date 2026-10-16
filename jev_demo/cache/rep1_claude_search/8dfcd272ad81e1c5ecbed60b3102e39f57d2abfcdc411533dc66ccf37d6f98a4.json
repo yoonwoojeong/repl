@@ -1,0 +1,1 @@
+{"tactics": ["by_cases hc : a ∈ l <;> simp [hc, List.getElem_cons]", "by_cases hc : a ∈ l <;> simp [hc] <;> cases i <;> simp", "by_cases hc : a ∈ l", "split <;> simp_all [List.getElem_cons]", "by_cases hc : a ∈ l <;> grind", "simp only [List.contains_iff_mem]"], "usd": 0.012380999999999975}

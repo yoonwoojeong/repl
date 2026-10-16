@@ -1,0 +1,1 @@
+{"tactics": ["intros; exact List.countP_cons ..", "intro α _ a b l", "intros; simp only [List.count, List.countP_cons]", "intros; unfold List.count; rw [List.countP_cons]", "intros; rfl"], "usd": 0.009808999999999957}

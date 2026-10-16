@@ -1,0 +1,1 @@
+{"tactics": ["intro m n i fallback", "intros", "simp [Array.getD]", "grind", "simp [Array.getD_eq_getD_getElem?]", "intro m n i fallback <;> simp [Array.getD, Nat.toArray_rcc]"], "usd": 0.0027170000000000805}

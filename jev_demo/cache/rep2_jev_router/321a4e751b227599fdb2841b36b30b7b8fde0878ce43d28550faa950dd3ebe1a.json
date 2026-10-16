@@ -1,0 +1,1 @@
+{"tactics": ["induction ‹List _› <;> simp_all [List.filterMap_cons] <;> split <;> simp_all", "induction ‹List _› <;> simp_all [List.filterMap_cons] <;> split <;> simp_all <;> split <;> simp_all", "rename_i m α β γ _ _ f g l init\ninduction l <;> simp_all", "induction ‹List _› <;> simp_all", "induction ‹List _›", "rename_i l init"], "usd": 0.017313000000000023}

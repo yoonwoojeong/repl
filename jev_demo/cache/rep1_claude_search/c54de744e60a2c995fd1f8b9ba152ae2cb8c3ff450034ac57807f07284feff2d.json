@@ -1,0 +1,1 @@
+{"tactics": ["induction n <;> simp_all", "simp", "induction n with\n| zero => simp\n| succ k ih => simp_all [Nat.toList_rco_succ_right]", "grind", "simp [Std.Rco.Internal.toList_iter]", "induction n", "simp [List.map]", "rfl"], "usd": 0.005316999999999794}

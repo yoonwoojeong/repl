@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp_all", "split", "rename_i α _ _ l a i hi", "by_cases hm : (‹List _›.contains ‹_›) = true <;> simp_all", "simp only [List.contains_iff_mem]", "split <;> split <;> simp_all"], "usd": 0.01351699999999978}

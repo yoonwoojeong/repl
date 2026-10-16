@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l a ha", "grind", "simp_all [List.min_le_iff]", "grind [List.le_min_iff]", "exact (List.le_min_iff _).mp (Std.le_refl _) _ ‹_›", "simp_all [List.le_min_iff]"], "usd": 0.014836999999999989}

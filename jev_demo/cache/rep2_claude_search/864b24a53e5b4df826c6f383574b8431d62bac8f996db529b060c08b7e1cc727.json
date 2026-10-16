@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "exact rfl", "simp", "simp only [id]", "show l = l", "unfold id; rfl", "exact (id_eq l).symm", "grind"], "usd": 0.0021290000000000475}

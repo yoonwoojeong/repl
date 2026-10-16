@@ -1,0 +1,1 @@
+{"tactics": ["exact fun ha => Nat.lt_of_lt_of_le Nat.lt_two_pow_self (Nat.pow_le_pow_left ha n)", "exact fun ha => Nat.lt_of_lt_of_le (Nat.lt_two_pow_self n) (Nat.pow_le_pow_left ha n)", "intro a ha", "induction n with | zero => simp | succ k ih => intro a ha; have := ih ha; rw [Nat.pow_succ]; have := Nat.mul_le_mul_left (a ^ k) ha; omega"], "usd": 0.01966100000000015}

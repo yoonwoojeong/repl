@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.repr_inj.mp h2", "simpa using h2", "have h3 := congrArg String.toNat? h2", "have h3 := congrArg String.toNat! h2", "simp_all [Nat.repr]", "grind"], "usd": 0.01189299999999971}

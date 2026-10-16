@@ -1,0 +1,1 @@
+{"tactics": ["simp only [List.mem_eraseIdx_iff_getElem?, List.getElem?_eq_some_iff]", "simp [List.mem_eraseIdx_iff_getElem?, List.getElem?_eq_some_iff]", "rw [List.mem_eraseIdx_iff_getElem?]", "grind [List.mem_eraseIdx_iff_getElem?, List.getElem?_eq_some_iff]", "cases k <;> simp_all [List.mem_iff_getElem]"], "usd": 0.013589000000000073}

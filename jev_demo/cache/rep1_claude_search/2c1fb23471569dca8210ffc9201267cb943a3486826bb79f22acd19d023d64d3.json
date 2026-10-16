@@ -1,0 +1,1 @@
+{"tactics": ["rcases l₁ with _ | ⟨a, _ | ⟨b, xs⟩⟩", "cases l₁", "split", "simp only [List.cons_append]", "rcases l₂ with _ | ⟨c, _ | ⟨d, ys⟩⟩"], "usd": 0.016909000000000063}

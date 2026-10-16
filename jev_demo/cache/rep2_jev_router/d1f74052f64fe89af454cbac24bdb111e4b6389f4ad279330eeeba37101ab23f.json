@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rw [dif_neg (fun h => h)]", "exact dif_neg id", "simp only [dite_false]", "split <;> simp_all", "rfl"], "usd": 0.0022889999999999855}

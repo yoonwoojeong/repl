@@ -1,0 +1,1 @@
+{"tactics": ["intro n i _h", "simp", "intro n i _h <;> simp [Std.Rio.toArray]", "grind", "intro n i _h <;> simp_all", "intro n i _h <;> simp [Nat.toArray_rio_eq_toArray_rco]", "intro n i _h <;> rw [Nat.toArray_rio_eq_toArray_rco] <;> simp"], "usd": 0.0035769999999999413}

@@ -1,0 +1,1 @@
+{"tactics": ["intro hij", "intro hij <;> simp [List.getElem_eraseIdx, Nat.not_lt.mpr hij]", "intro hij <;> rw [List.getElem_eraseIdx] <;> simp [Nat.not_lt.mpr hij]", "grind [List.getElem_eraseIdx]", "simp [List.getElem_eraseIdx]", "intro hij <;> simp [List.getElem_eraseIdx] <;> omega"], "usd": 0.012665000000000148}

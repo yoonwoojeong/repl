@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "exact fun h => Nat.repr_inj.mp h", "intro h; simpa using congrArg String.toNat? h", "intro h; have := congrArg String.toNat! h; simpa using this", "simp [Nat.repr_inj]", "grind [Nat.repr_inj]"], "usd": 0.008988999999999692}

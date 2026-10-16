@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "grind", "simp only [List.getElem_append, List.length_append, List.length_take, List.length_drop, List.getElem_take, List.getElem_drop]", "rw [← List.eraseIdx_eq_take_drop_succ]", "simp [List.getElem_append]", "refine ⟨fun ⟨i, h, e⟩ => ?_, fun ⟨i, hi, h, e⟩ => ?_⟩"], "usd": 0.009545000000000137}

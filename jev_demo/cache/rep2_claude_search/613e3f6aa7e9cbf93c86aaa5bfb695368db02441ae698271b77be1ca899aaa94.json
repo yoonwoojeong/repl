@@ -1,0 +1,1 @@
+{"tactics": ["intro α l p <;> exact ⟨List.takeWhile p l, by simp⟩", "exact fun p => ⟨_, List.takeWhile_append_dropWhile⟩", "intro α l p <;> exact ⟨List.takeWhile p l, List.takeWhile_append_dropWhile⟩", "intro α l p <;> induction l <;> simp_all [List.dropWhile] <;> split <;> simp_all [List.suffix_cons_iff]", "intro α l p"], "usd": 0.015085000000000015}

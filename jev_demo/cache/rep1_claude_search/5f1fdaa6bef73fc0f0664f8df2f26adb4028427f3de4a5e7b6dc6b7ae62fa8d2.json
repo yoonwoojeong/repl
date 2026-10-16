@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "induction l₁ generalizing r", "induction r generalizing l₁", "refine ⟨fun h => ?_, fun ⟨r₁, r₂, h, h1, h2⟩ => h ▸ h1.append h2⟩", "grind"], "usd": 0.008284999999999987}

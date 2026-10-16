@@ -1,0 +1,1 @@
+{"tactics": ["exact h", "assumption", "inferInstance", "simpa using h", "exact inferInstance", "unfold Std.TransOrd at h <;> exact h"], "usd": 0.0034169999999997813}

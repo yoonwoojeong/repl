@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ _ xs ys f hxs hys", "intros", "grind", "simp [List.maxIdxOn]", "intro β α _ _ _ xs ys f hxs hys <;> unfold List.maxIdxOn <;> simp", "intro β α _ _ _ xs ys f hxs hys <;> induction xs <;> simp_all"], "usd": 0.004096999999999795}

@@ -1,0 +1,1 @@
+{"tactics": ["induction r generalizing l₁", "induction r generalizing l₁ l₂", "generalize hl : l₁ ++ l₂ = l at h", "induction h generalizing l₁", "simp_all [List.sublist_append_iff]"], "usd": 0.01475700000000002}

@@ -1,0 +1,1 @@
+{"tactics": ["exact List.mem_iff_getElem", "simp [List.mem_iff_getElem]", "rw [List.mem_iff_getElem]", "grind [List.mem_iff_getElem]", "exact List.mem_iff_get.trans (by simp [Fin.exists_iff])", "constructor <;> intro h <;> simp_all [List.mem_iff_getElem]"], "usd": 0.003936999999999635}

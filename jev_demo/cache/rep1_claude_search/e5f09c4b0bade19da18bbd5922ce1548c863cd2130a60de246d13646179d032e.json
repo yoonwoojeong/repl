@@ -1,0 +1,1 @@
+{"tactics": ["induction t <;> constructor <;> (try apply F) <;> assumption", "induction t <;> constructor <;> first | assumption | (apply F; assumption)", "induction t <;> simp_all [List.Sublist.below]", "induction t", "induction t <;> constructor <;> grind"], "usd": 0.014745000000000008}

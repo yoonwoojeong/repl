@@ -1,0 +1,1 @@
+{"tactics": ["simp", "grind", "simp [Std.Roc.Internal.iter]", "by_cases h : m < n <;> simp_all", "simp [Std.Roc.toArray, Std.Roc.Internal.toArray_eq_toArray_iter]", "split <;> simp_all", "rw [← Std.Roc.Internal.toArray_eq_toArray_iter]"], "usd": 0.006605000000000416}

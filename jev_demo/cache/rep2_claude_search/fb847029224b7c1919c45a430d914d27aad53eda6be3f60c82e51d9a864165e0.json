@@ -1,0 +1,1 @@
+{"tactics": ["intro h₁ h₂", "intro h₁ h₂ <;> match l₁, l₂ with | [], [] => simp | [a], [] => simp | [], _ :: _ => simp at h₁ | a :: b :: t, [] => simp at h₂ | _ :: _, _ :: _ => skip", "rintro h₁ h₂", "intros", "cases l₁ <;> cases l₂ <;> simp_all", "induction l₁ generalizing l₂"], "usd": 0.012557000000000151}

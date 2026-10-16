@@ -1,0 +1,1 @@
+{"tactics": ["exact List.sorted_mergeSort trans (fun a b => by cases total a b <;> simp_all) _", "exact List.sorted_mergeSort trans (by intro a b; cases total a b <;> simp_all) (head✝ :: tail✝)", "grind [List.sorted_mergeSort]", "simp_all [List.sorted_mergeSort]", "apply List.sorted_mergeSort trans", "grind"], "usd": 0.012012999999999607}

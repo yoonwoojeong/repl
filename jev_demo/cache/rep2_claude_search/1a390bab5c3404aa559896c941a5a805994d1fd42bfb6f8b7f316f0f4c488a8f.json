@@ -1,0 +1,1 @@
+{"tactics": ["intro inst l l_1 e_l h", "intros", ": ∀ [inst : Max α] (l l_1 : List α) (e_l : l = l_1) (h : ¬l = []), l.max h = l_1.max (e_l ▸ h) := by intro inst l l_1 e_l h; subst e_l; rfl", "intro _ l l_1 e_l h <;> subst e_l <;> rfl", "intro _ l l_1 e_l h <;> cases e_l <;> rfl", "intro _ l l_1 e_l h <;> subst e_l <;> simp"], "usd": 0.004960999999999771}

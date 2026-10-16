@@ -1,0 +1,1 @@
+{"tactics": ["cases t", "apply F", "exact F _ _ t (by cases t <;> constructor)", "exact F _ _ t (by cases t <;> trivial)", "cases t <;> exact F _ _ _ (by constructor)", "cases t <;> exact F _ _ _ trivial"], "usd": 0.011001000000000039}

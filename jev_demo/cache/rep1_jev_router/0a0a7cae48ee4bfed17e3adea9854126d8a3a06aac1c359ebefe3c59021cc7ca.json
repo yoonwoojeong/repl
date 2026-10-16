@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "intro h <;> induction h", "intro h <;> induction h <;> simp_all", "induction l₁ generalizing l₂", "intro h <;> cases h"], "usd": 0.009684999999999944}

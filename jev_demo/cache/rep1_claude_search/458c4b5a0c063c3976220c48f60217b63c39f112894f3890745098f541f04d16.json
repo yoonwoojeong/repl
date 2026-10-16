@@ -1,0 +1,1 @@
+{"tactics": ["intro inst inst_1 inst_2 inst_3 l a ha", "intros", "intro _ _ _ _ l a ha; exact (List.le_min_iff _).mp (Std.le_refl _) a ha", "intro _ _ _ _ l a ha <;> grind [List.le_min_iff]", "intro _ _ _ _ l a ha <;> simp_all [List.min_le_iff]"], "usd": 0.009928999999999633}

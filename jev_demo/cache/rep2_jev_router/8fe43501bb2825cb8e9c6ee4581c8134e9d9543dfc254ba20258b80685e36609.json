@@ -1,0 +1,1 @@
+{"tactics": ["intro α β P f xs H", "intro α β P f xs", "intros", "simp [List.pmap_eq_map_attach]", "grind"], "usd": 0.008636999999999784}

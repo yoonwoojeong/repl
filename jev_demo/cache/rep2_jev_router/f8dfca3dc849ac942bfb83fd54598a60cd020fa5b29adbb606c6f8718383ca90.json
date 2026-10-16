@@ -1,0 +1,1 @@
+{"tactics": ["fun_induction List.mergeSort l le", "induction l using List.mergeSort.induct le", "fun_induction List.mergeSort", "exact List.sorted_mergeSort (fun a b c h1 h2 => htrans a b c h1 h2) (fun a b => htotal a b)", "grind [List.mergeSort, List.sorted_merge]"], "usd": 0.0179450000000001}

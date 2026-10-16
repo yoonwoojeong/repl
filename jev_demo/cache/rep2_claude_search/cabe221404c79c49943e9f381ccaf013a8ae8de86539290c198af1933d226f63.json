@@ -1,0 +1,1 @@
+{"tactics": ["intro α β P xs f", "intros <;> simp only [List.unattach, List.map_map] <;> rfl", "intro α β P xs f <;> induction xs <;> simp_all [List.unattach, binderNameHint, wfParam]", "intros <;> simp [List.unattach, List.map_map, binderNameHint, wfParam] <;> rfl", "intros <;> simp [List.unattach, binderNameHint, wfParam]"], "usd": 0.01323300000000005}

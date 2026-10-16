@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp_all", "by_cases hi : i = 0 <;> simp [hi]", "rfl", "simp [dite_eq_ite]", "split <;> rfl", "split <;> split <;> simp_all"], "usd": 0.01035699999999995}

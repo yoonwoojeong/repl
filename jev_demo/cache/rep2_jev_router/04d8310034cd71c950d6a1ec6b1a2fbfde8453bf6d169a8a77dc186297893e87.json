@@ -1,0 +1,1 @@
+{"tactics": ["intros; simp [wfParam]", "intros; rfl", "simp [wfParam, List.unattach_attach]", "intro m α β _ _ xs f; simp only [wfParam, List.unattach_attach]", "intros; unfold wfParam; simp", "intros; simp only [wfParam]; rw [List.unattach_attach]"], "usd": 0.0035490000000000244}

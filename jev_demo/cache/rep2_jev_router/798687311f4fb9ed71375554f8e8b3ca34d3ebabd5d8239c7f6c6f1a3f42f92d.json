@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ a l h", ": intro α _ _ a l h; simp [List.insert, h]", "intros; simp_all [List.insert]", "intro α inst _ a l h <;> simp [List.insert, h]", "intro α inst _ a l h <;> unfold List.insert <;> simp [h]", "intros <;> grind [List.insert]"], "usd": 0.0034769999999999524}

@@ -1,0 +1,1 @@
+{"tactics": ["intro H <;> rfl", "intro H", "simp", "intro H <;> simp", "simp [List.pmap]", "grind"], "usd": 0.0020930000000003446}

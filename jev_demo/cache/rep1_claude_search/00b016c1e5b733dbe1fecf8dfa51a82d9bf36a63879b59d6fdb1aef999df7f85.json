@@ -1,0 +1,1 @@
+{"tactics": ["rename_i t ih", "rename_i ih", "apply_assumption", "rename_i a l t ih", "grind"], "usd": 0.012989}

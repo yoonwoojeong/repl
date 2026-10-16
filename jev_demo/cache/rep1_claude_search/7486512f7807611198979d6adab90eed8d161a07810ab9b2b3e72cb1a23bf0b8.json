@@ -1,0 +1,1 @@
+{"tactics": ["rw [← List.mergeSort_zipIdx]", "have m₁ : a ∈ (a :: l).mergeSort le := List.mem_mergeSort.mpr (List.mem_cons_self)", "have s := List.sorted_mergeSort trans total (a :: l)", "have p := List.mergeSort_perm (a :: l) le", "grind [List.sorted_mergeSort, List.mergeSort_perm, List.mem_mergeSort]", "induction l generalizing a"], "usd": 0.018689000000000178}

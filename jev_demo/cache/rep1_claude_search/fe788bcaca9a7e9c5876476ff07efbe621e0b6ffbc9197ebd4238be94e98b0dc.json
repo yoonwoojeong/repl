@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "exact absurd (List.mapIdx_nil) h", "simp [List.mapIdx] at h", "exact (h rfl).elim", "contradiction", "simp_all", "grind"], "usd": 0.0024289999999997924}

@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.sublist_nil, List.nil_eq_append_iff]", "constructor", "grind", "simp only [List.sublist_nil, List.append_eq_nil_iff]", "refine ⟨fun h => ⟨[], [], rfl, ?_, ?_⟩, fun ⟨r₁, r₂, h, h₁, h₂⟩ => ?_⟩"], "usd": 0.008604999999999974}

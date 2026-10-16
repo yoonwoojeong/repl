@@ -1,0 +1,1 @@
+{"tactics": ["intros; rfl", "intro α p; rfl", "exact fun {_} {_} => rfl", "intros", "intro α p; simp [List.unattach]", "intro α p; unfold List.unattach; rfl"], "usd": 0.0037850000000001494}

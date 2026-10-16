@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ _ _ _ xs f h b", ":= by intros; constructor <;> intro hb <;> grind", "intros", ":= by intros; constructor", ":= by intros; grind [List.maxOn_mem, List.apply_le_apply_maxOn]", ":= by intros; simp_all", ":= by intros; exact ⟨fun hb x hx => by grind, fun hx => hx _ (List.maxOn_mem h)⟩"], "usd": 0.004881000000000024}

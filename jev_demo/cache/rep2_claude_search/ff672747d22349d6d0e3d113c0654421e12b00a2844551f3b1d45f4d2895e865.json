@@ -1,0 +1,1 @@
+{"tactics": ["cases tail✝ with\n  | nil => cases l₂ <;> simp_all [List.mergeSort]\n  | cons b t => simp [List.mergeSort, List.splitInTwo]", "unfold List.mergeSort", "rw [List.mergeSort]", "simp only [List.mergeSort]", "cases l₂ <;> simp_all", "cases tail✝", "grind [List.mergeSort]", "simp [List.mergeSort, List.splitInTwo]"], "usd": 0.01127699999999976}

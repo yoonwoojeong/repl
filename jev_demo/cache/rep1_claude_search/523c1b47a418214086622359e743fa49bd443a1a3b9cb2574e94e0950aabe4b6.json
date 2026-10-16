@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_zip, List.getElem_range']", "simp", "simp [List.getElem_zip, List.getElem_range', Nat.one_mul, Nat.add_comm]", "rw [List.getElem_zip] <;> simp", "grind [List.getElem_zip, List.getElem_range']", "simp_all [List.getElem_zip]"], "usd": 0.009412999999999894}

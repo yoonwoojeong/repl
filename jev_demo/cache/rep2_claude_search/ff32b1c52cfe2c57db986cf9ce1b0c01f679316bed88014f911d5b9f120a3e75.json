@@ -1,0 +1,1 @@
+{"tactics": ["intro α le trans total a l", "intros", "intro α le trans total a l <;> induction l generalizing a", "intro α le trans total"], "usd": 0.00571699999999975}

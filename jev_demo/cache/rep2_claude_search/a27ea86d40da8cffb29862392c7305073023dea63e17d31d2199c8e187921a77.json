@@ -1,0 +1,1 @@
+{"tactics": ["intro inst l₁ l₂", "intro inst l₁ l₂ <;> induction l₁ generalizing l₂ <;> cases l₂ <;> simp_all", "intros", "intro inst l₁ l₂ <;> simp [List.lt_iff_lex_lt]"], "usd": 0.0033889999999998643}

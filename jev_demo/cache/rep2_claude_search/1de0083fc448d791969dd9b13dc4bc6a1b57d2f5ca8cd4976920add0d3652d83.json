@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.toList_roc_eq_toList_rco, Nat.getElem?_toList_rco]", "simp [Std.Roc.toList, List.getElem?_range']", "grind", "simp", "rw [Nat.toList_roc_eq_toList_rco]", "split <;> simp_all"], "usd": 0.0030770000000002184}

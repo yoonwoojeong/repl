@@ -1,0 +1,1 @@
+{"tactics": ["intro m n k h", "exact fun k h => Nat.Coprime.coprime_dvd_left (Nat.gcd_dvd_right k _) h", "exact fun {m n} k h => Nat.Coprime.coprime_dvd_left (Nat.gcd_dvd_right k m) h", "intros m n k h", "intro m n k h <;> exact Nat.Coprime.coprime_dvd_left (Nat.gcd_dvd_right k m) h"], "usd": 0.011489000000000082}

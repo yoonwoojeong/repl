@@ -1,0 +1,1 @@
+{"tactics": ["rename_i n ih", "have h2 := Nat.mul_le_mul_left (a ^ _) h", "grind [Nat.mul_le_mul_left]", "rename_i n ih <;> have h1 := ih h <;> have h2 : a ^ n * 2 ≤ a ^ n * a := Nat.mul_le_mul_left _ h <;> omega"], "usd": 0.016264999999999752}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.mergeSort_eq_insertionSort, List.mergeSort_eq_insertionSort]", "simp only [List.mergeSort_eq_insertionSort]", "grind", "simp", "refine ⟨_, ?_, ?_, ?_⟩", "constructor"], "usd": 0.015540999999999805}

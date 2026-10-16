@@ -1,0 +1,1 @@
+{"tactics": ["intro α n m", "intro α n m <;> induction m <;> simp_all [Nat.fold_succ, ← Nat.add_assoc]", "intro α n m <;> induction m <;> simp_all [Nat.fold_succ, Nat.fold_zero, Nat.add_succ]", "intro α n m f init", "intro α n m <;> induction m <;> intro f init <;> simp [Nat.fold_succ, Nat.add_succ, *]"], "usd": 0.013285000000000213}

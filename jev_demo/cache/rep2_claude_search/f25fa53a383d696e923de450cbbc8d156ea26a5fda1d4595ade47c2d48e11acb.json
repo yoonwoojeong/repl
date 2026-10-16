@@ -1,0 +1,1 @@
+{"tactics": ["intro h h₂", "intro h h₂ <;> simp [List.getElem_append, Nat.not_lt.mpr h]", "intro h h₂ <;> rw [List.getElem_append] <;> simp [Nat.not_lt.mpr h]", "intro h h₂ <;> grind", "induction as generalizing i <;> intro h h₂ <;> cases i <;> simp_all"], "usd": 0.00452499999999989}

@@ -1,0 +1,1 @@
+{"tactics": ["intro hl x", "intro hl x <;> cases l with | nil => contradiction | cons a t => simp only [List.min_cons, List.mem_cons]", "cases l with | nil => simp | cons a t => intro hl x", "induction l with | nil => simp | cons a t ih => intro hl x", "grind"], "usd": 0.008261000000000074}

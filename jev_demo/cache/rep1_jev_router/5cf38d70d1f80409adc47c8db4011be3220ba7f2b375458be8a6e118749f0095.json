@@ -1,0 +1,1 @@
+{"tactics": ["simp [BEq.comm]", "simp [List.any_eq, BEq.comm, bne]", "rw [Bool.eq_iff_iff] <;> simp [BEq.comm]", "induction ‹List _› <;> simp_all [BEq.comm]", "grind [BEq.comm]", "rename_i l", "simp_all [BEq.comm, Bool.eq_iff_iff]"], "usd": 0.012736999999999998}

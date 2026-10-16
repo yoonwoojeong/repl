@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "decide", "simp", "simp [Std.Rco.toList]", "grind", "native_decide", "simp_all", "exact rfl"], "usd": 0.0019650000000002166}

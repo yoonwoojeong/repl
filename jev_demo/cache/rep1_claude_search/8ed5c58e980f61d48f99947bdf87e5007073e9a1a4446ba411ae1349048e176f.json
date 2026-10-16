@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨a, as, rfl⟩ := List.exists_cons_of_ne_nil hl", "rcases l with _ | ⟨a, as⟩", "cases l with\n  | nil => exact absurd rfl hl\n  | cons a as => ?_", "induction l with\n  | nil => exact absurd rfl hl\n  | cons a as ih => ?_", "grind [List.min]"], "usd": 0.013924999999999965}

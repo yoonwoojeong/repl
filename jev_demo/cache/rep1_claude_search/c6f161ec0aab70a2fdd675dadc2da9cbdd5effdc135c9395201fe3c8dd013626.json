@@ -1,0 +1,1 @@
+{"tactics": ["simp only [String.ofList_inj] at h", "have h2 := congrArg String.toList h", "have h2 := congrArg String.toNat! h", "have h2 := congrArg String.toNat? h", "simp at h", "grind"], "usd": 0.010336999999999819}

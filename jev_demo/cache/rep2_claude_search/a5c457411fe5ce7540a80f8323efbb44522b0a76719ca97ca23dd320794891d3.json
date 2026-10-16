@@ -1,0 +1,1 @@
+{"tactics": ["intro m inst α β f motive h1 h2 x y", "intro m inst α β f motive h1 h2 x", "intros", "intro m inst α β f motive h1 h2 x y <;> induction x generalizing y with | nil => simp only [List.flatMapM.loop]; exact h1 y | cons a as ih => simp only [List.flatMapM.loop]; exact h2 a as y (fun bs' => ih (bs' :: y))"], "usd": 0.014145000000000074}

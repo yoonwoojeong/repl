@@ -1,0 +1,1 @@
+{"tactics": ["unfold List.insert", "simp only [List.insert, List.elem_eq_mem, decide_eq_true_eq]", "rename_i α _ _ l a i h", "split <;> simp_all [List.insert, List.getElem_cons]", "grind [List.insert, List.getElem_cons]", "simp [List.insert]", "split"], "usd": 0.018009000000000164}

@@ -1,0 +1,1 @@
+{"tactics": ["intro a b hb", "exact fun hb => Nat.le_self_pow (Nat.pos_iff_ne_zero.mp hb) _", "exact fun hb => Nat.le_self_pow (by omega) _", "intro a b hb <;> cases b <;> simp_all [Nat.pow_succ]", "intro a b hb <;> cases a <;> simp_all", "intro a b hb <;> induction b <;> grind"], "usd": 0.012341000000000157}

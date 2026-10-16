@@ -1,0 +1,1 @@
+{"tactics": ["have key : ∀ l : List { x // p x }, (List.filter f l).unattach = List.filter g l.unattach := by intro l; induction l with | nil => simp | cons a t ih => obtain ⟨x, hx⟩ := a; simp only [List.filter_cons, hf]; split <;> simp_all", "split <;> simp", "by_cases hg : g head✝.val = true <;> simp [hg]", "split", "induction tail✝ <;> simp_all"], "usd": 0.013100999999999807}

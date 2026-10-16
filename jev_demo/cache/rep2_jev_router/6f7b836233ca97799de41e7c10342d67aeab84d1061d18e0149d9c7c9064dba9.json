@@ -1,0 +1,1 @@
+{"tactics": ["by_cases h : xs = []", "cases xs with\n  | nil => simp [List.maxOn]\n  | cons y ys => simp [List.maxOn]", "unfold List.maxOn", "split", "simp [List.maxOn]", "grind [List.maxOn]", "induction xs generalizing x"], "usd": 0.009824999999999973}

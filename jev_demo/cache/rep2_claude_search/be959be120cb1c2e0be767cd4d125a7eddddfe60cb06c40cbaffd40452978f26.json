@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.zipIdx_cons, tail_ih✝]", "simp only [List.zipIdx_cons, List.map_cons, tail_ih✝]", "simp_all [List.zipIdx_cons]", "rw [List.zipIdx_cons, List.zipIdx_cons, List.map_cons, tail_ih✝]", "simp [List.zipIdx]", "simp_all [List.zipIdx]", "grind [List.zipIdx_cons]"], "usd": 0.004849000000000103}

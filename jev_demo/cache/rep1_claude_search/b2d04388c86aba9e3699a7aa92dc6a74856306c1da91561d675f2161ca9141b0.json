@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α xs i j h", "induction xs✝ generalizing i✝ <;> rename_i i h <;> cases i <;> simp_all", "grind", "simp [List.drop_eq_nil_iff]"], "usd": 0.0191650000000001}

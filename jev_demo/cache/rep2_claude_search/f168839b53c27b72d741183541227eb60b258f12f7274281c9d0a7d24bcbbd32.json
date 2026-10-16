@@ -1,0 +1,1 @@
+{"tactics": ["intro x h", "simp", "intro x h; simp_all", "intro x h hlt; exact absurd x (by omega)", "intros; simp_all", "grind", "intro x h h'; cases l₁ <;> simp_all"], "usd": 0.00874100000000011}

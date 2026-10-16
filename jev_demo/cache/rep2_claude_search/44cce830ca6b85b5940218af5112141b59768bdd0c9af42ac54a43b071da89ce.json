@@ -1,0 +1,1 @@
+{"tactics": ["rcases Nat.eq_zero_or_pos c with rfl | hc", "by_cases hc : c = 0", "grind", "obtain ⟨k, hk⟩ := h", "have ha := Nat.div_add_mod a c", "have hm : (a + b + 1) % c = 0 := Nat.mod_eq_zero_of_dvd h"], "usd": 0.024477000000000082}

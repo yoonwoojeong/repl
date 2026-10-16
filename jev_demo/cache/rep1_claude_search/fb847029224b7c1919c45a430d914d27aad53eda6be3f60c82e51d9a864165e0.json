@@ -1,0 +1,1 @@
+{"tactics": ["intro h₁ h₂", "intro h₁ h₂ <;> rcases l₁ with _ | ⟨a, _ | ⟨b, t⟩⟩ <;> simp_all", "intros", "simp only [List.mergeSort]"], "usd": 0.01361699999999999}

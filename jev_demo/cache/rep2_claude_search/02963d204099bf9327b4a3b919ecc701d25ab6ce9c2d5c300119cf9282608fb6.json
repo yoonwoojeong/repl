@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "congr", "exact rfl", "grind", "simp_all", "exact congrArg (f i) (proof_irrel _ _)"], "usd": 0.0020090000000001496}

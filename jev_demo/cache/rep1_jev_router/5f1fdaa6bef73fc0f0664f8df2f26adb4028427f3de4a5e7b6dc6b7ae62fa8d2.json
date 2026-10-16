@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "induction l₁ generalizing r", "induction r generalizing l₁", "refine ⟨fun h => ?_, fun ⟨r₁, r₂, hr, h₁, h₂⟩ => hr ▸ h₁.append h₂⟩", "grind", "simp only [List.sublist_append_iff]"], "usd": 0.008404999999999996}

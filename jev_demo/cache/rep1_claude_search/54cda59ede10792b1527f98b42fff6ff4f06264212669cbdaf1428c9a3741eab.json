@@ -1,0 +1,1 @@
+{"tactics": ["rename_i r l₁ l₂", "constructor", "grind [List.Sublist.append]", "refine ⟨fun h => ?_, fun ⟨r₁, r₂, he, h₁, h₂⟩ => he ▸ h₁.append h₂⟩", "simp only [List.sublist_append_iff]"], "usd": 0.013189000000000006}

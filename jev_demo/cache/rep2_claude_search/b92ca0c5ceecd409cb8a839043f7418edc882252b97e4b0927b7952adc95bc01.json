@@ -1,0 +1,1 @@
+{"tactics": ["intro n", "intro n <;> simp only [List.range_eq_range', List.range'_concat] <;> simp", "intro n <;> rw [Nat.succ_eq_add_one, List.range_add] <;> simp", "intro n <;> simp [List.range_eq_range', List.range'_concat]", "intro n <;> induction n <;> simp_all [List.range_eq_range', List.range'_concat]"], "usd": 0.010237000000000052}

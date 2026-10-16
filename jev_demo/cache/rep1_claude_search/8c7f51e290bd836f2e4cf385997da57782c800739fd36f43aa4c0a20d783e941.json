@@ -1,0 +1,1 @@
+{"tactics": ["induction l₁ generalizing l₂", "grind", "revert h", "induction l₁ generalizing l₂ with\n| nil => intro_unused\n| cons a l ih => skip"], "usd": 0.012032999999999738}

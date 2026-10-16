@@ -1,0 +1,1 @@
+{"tactics": ["rw [bne, BEq.comm]", "simp [bne, BEq.comm]", "simp only [bne, BEq.comm]", "simp [bne_comm]", "grind [BEq.comm]", "congr 1 <;> simp [bne, BEq.comm]"], "usd": 0.00848099999999996}

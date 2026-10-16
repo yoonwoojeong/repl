@@ -1,0 +1,1 @@
+{"tactics": ["intro m n", "intro m n <;> simp [← Array.toList_inj, Nat.toList_roc_succ_succ]", "intro m n <;> apply Array.ext_toList <;> simp [Nat.toList_roc_succ_succ]", "intro m n <;> simp [Std.Roc.toArray, Nat.toList_roc_succ_succ]", "simp", "grind"], "usd": 0.009452999999999712}

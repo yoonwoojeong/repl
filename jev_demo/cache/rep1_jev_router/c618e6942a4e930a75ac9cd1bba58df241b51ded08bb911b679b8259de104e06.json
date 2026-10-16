@@ -1,0 +1,1 @@
+{"tactics": ["apply List.ext_getElem <;> simp", "simp [List.attachWith_append, List.attachWith_cons]", "rw [List.attachWith_reverse]", "simp [List.attachWith, List.pmap_reverse]", "apply List.ext_getElem? <;> simp", "grind"], "usd": 0.010117000000000154}

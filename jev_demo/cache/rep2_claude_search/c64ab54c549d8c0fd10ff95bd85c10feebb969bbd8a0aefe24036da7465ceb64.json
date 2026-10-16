@@ -1,0 +1,1 @@
+{"tactics": ["intro acc\nsimp [List.filterMapM.loop]", "simp [List.filterMapM.loop]", "intro acc <;> simp [List.filterMapM.loop]", "intro acc <;> simp only [List.filterMapM.loop, map_pure, List.reverse_nil, List.append_nil]", "intro acc <;> rw [List.filterMapM.loop, List.filterMapM.loop] <;> simp", "intro acc"], "usd": 0.006124999999999936}

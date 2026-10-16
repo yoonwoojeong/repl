@@ -1,0 +1,1 @@
+{"tactics": ["exact List.sublist_mergeSort trans total (by simp [hab]) h", "exact List.sublist_mergeSort trans total (List.pairwise_pair.mpr hab) h", "apply List.sublist_mergeSort trans total _ h", "apply List.sublist_mergeSort trans total <;> simp_all"], "usd": 0.012288999999999994}

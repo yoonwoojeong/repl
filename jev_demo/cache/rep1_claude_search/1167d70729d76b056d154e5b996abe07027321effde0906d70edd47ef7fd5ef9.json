@@ -1,0 +1,1 @@
+{"tactics": ["simpa using h2", "simp at h2", "simp at h", "have h3 := congrArg String.toList h", "simp [String.ofList_inj] at h", "grind", "omega"], "usd": 0.009540999999999578}

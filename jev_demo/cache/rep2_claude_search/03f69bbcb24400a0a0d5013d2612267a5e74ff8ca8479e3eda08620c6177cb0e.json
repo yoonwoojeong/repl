@@ -1,0 +1,1 @@
+{"tactics": ["show Nat.fold ((n + n✝) + 1) f init = _", "erw [Nat.fold_succ]", "rw [Nat.fold_succ]", "simp only [Nat.fold_succ, a✝]", "simp [Nat.fold_succ, a✝]", "exact (Nat.fold_succ _ _ _).trans (congrArg _ (a✝ _))"], "usd": 0.015493000000000201}

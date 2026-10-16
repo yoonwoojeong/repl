@@ -1,0 +1,1 @@
+{"tactics": ["split <;> rfl", "simp", "split <;> simp_all", "rfl", "simp only [dite_eq_ite]", "grind"], "usd": 0.006880999999999915}

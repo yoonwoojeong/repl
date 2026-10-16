@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.getLast_eq_getElem]", "simp [List.getLast_eq_getElem]", "congr 1", "grind [List.getLast_eq_getElem]", "exact congrArg (f (l.length - 1)) (List.getLast_eq_getElem _).symm", "simp"], "usd": 0.005924999999999958}

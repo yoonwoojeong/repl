@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "rename_i l₁ l₂", "refine ⟨fun h a => h.count_eq a, fun h => ?_⟩", "induction l₁✝ generalizing l₂✝", "refine ⟨fun h a => List.Perm.count_eq h a, ?_⟩", "simp only [← List.isPerm_iff]"], "usd": 0.010292999999999886}

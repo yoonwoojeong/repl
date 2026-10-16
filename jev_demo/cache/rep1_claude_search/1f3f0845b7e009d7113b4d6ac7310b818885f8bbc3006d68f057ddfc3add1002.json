@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ l; induction l <;> simp_all [List.all_cons, List.contains_cons, BEq.comm, bne]", "intro _ _ l; simp only [List.all_bne, bne_comm]", "intro _ _ l; induction l <;> simp_all [BEq.comm]", "intro _ _ l", "intro _ _ l; induction l <;> grind [BEq.comm]", "intro _ _ l; rw [← List.all_bne]; congr; funext x; exact bne_comm"], "usd": 0.01219300000000001}

@@ -1,0 +1,1 @@
+{"tactics": ["nofun", "intro h <;> cases h", "simp", "exact fun h => nomatch h", "decide", "intro h", "grind", "simp [List.lt_irrefl]"], "usd": 0.00626900000000008}

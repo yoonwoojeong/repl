@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => Nat.not_lt.mp fun hlt => by simp [Nat.testBit_lt_two_pow hlt] at h", "intro i x h", "exact fun h => Nat.ge_of_not_lt fun hlt => by rw [Nat.testBit_lt_two_pow hlt] at h; exact Bool.false_ne_true h", "intro i x h <;> apply Nat.ge_of_not_lt <;> intro hlt <;> simp [Nat.testBit_lt_two_pow hlt] at h"], "usd": 0.013996999999999815}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l hl x", "grind", "simp", "constructor", "induction l✝ <;> grind"], "usd": 0.010657000000000139}

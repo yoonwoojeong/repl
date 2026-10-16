@@ -1,0 +1,1 @@
+{"tactics": ["simp at h <;> omega", "exfalso; simp at h; omega", "have h2 : i < l₁.length := by simpa using h\nomega", "exact absurd h (by simp; omega)", "simp_all", "grind"], "usd": 0.007265000000000077}

@@ -1,0 +1,1 @@
+{"tactics": ["intro l' i h <;> simp at h", "simp", "intros <;> simp_all", "intro l' i h <;> exact absurd h (by simp)", "intro l' i h"], "usd": 0.00650100000000009}

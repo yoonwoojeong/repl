@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.add_div (by omega)]", "apply Nat.add_div_eq_of_add_mod_lt", "have ha := Nat.div_add_mod a (c + 1)", "have hlt := Nat.mod_lt a (Nat.succ_pos c)", "have hm : (a + b + 1) % (c + 1) = 0 := by rw [hk]; simp", "grind"], "usd": 0.021380999999999872}

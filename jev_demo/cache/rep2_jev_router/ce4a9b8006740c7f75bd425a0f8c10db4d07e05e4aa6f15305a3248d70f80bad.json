@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l a ha", "rename_i l x hx", "cases ‹List _› with\n  | nil => simp at *\n  | cons hd tl => simp", "revert ‹_ ∈ _›", "simp", "grind"], "usd": 0.011624999999999996}

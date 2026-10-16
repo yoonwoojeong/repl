@@ -1,0 +1,1 @@
+{"tactics": ["rcases l with _ | ⟨a, _ | ⟨b, t⟩⟩ <;> simp_all", "match l, h with | a :: b :: t, _ => rfl", "cases l with | nil => simp at h | cons a t => cases t <;> simp_all", "rcases l with _ | ⟨a, _ | ⟨b, t⟩⟩ <;> simp at h ⊢", "rcases l with _ | ⟨a, _ | ⟨b, t⟩⟩", "cases l <;> simp_all"], "usd": 0.009636999999999674}

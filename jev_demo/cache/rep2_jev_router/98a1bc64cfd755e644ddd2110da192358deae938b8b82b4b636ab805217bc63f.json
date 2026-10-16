@@ -1,0 +1,1 @@
+{"tactics": ["intro α op ha l a₁ a₂", "intro α op ha l a₁ a₂ <;> induction l <;> simp_all [Std.Associative.assoc]", "intros α op ha l a₁ a₂ <;> induction l <;> simp_all [ha.assoc]", "intro α op ha l a₁ a₂ <;> induction l with | nil => rfl | cons x l ih => simp only [List.foldr, ih, ha.assoc]"], "usd": 0.010684999999999945}

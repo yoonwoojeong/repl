@@ -1,0 +1,1 @@
+{"tactics": ["rcases Nat.eq_zero_or_pos c with rfl | hc", "cases c with | zero => simp | succ n => skip", "rw [Nat.add_div (by cases c <;> simp_all)]", "by_cases hc : c = 0", "grind", "simp_all [Nat.add_div]"], "usd": 0.013505000000000322}

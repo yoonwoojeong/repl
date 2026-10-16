@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "exact absurd h (by simp)", "simp [List.zipIdx] at h", "cases h", "exact (Nat.not_lt_zero _ (by simpa using h)).elim", "grind"], "usd": 0.0024410000000001375}

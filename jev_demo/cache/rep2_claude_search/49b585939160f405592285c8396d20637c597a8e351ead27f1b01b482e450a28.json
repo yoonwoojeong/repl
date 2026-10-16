@@ -1,0 +1,1 @@
+{"tactics": ["cases l' <;> cases i <;> simp_all", "rcases l' with _ | ⟨b, l'⟩ <;> rcases i with _ | i <;> simp_all", "cases l' <;> cases i <;> simp_all <;> rfl", "cases l' with | nil => simp at h | cons b bs => cases i <;> simp_all", "cases l'", "cases i"], "usd": 0.010696999999999957}

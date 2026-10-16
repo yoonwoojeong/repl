@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ _ _ l a ha", "intros", "grind", "exact fun {l} {a} ha => (List.le_min_iff _).mp (Std.le_refl _) a ha", "simp_all [List.le_min_iff]", "intro _ _ _ _ l a ha <;> induction l <;> simp_all"], "usd": 0.010568999999999829}

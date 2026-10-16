@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "simp [List.eraseIdx] at h", "exact absurd h (by simp)", "contradiction", "cases h", "omega"], "usd": 0.0020329999999999515}

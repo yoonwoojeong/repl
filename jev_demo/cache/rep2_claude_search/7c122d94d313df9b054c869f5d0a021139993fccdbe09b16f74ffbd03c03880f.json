@@ -1,0 +1,1 @@
+{"tactics": ["rename_i p a l h", "simp_all [List.count_eq_countP, List.countP_filter]", "grind [List.count_eq_countP, List.countP_filter, List.countP_congr]", "next p a l h => induction l with | nil => rfl | cons x xs ih => by_cases hx : x = a <;> simp_all [List.filter_cons, List.count_cons] <;> split <;> simp_all"], "usd": 0.011741000000000001}

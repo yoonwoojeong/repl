@@ -1,0 +1,1 @@
+{"tactics": ["apply h2", "exact h2 _ _ _ (fun bs' => by assumption)", "simp_all", "rename_i ih", "grind", "simp only [bind] at h2 ⊢", "exact h2 head✝ tail✝ x_1 (fun bs' => tail_ih✝ (bs' :: x_1))"], "usd": 0.009797000000000056}

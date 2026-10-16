@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.dvd_gcd_mul_iff_dvd_mul, Nat.dvd_mul_gcd_iff_dvd_mul]", "rw [Nat.dvd_gcd_mul_iff_dvd_mul, Nat.mul_comm, Nat.dvd_gcd_mul_iff_dvd_mul, Nat.mul_comm]", "simp [Nat.dvd_gcd_mul_iff_dvd_mul, Nat.dvd_mul_gcd_iff_dvd_mul]", "rename_i k n m", "constructor"], "usd": 0.024097000000000257}

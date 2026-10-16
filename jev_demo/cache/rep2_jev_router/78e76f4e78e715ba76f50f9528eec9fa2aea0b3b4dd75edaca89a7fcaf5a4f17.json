@@ -1,0 +1,1 @@
+{"tactics": ["intro n i fallback", "intro n i fallback <;> simp [List.getD_eq_getElem?_getD]", "intro n i fallback <;> grind", "intro n i fallback <;> simp [List.getD_eq_getElem?_getD] <;> split <;> simp_all <;> omega", "intros <;> simp_all", "intro n i fallback <;> by_cases h : i ≤ n <;> simp_all [List.getD_eq_getElem?_getD]"], "usd": 0.009561000000000153}

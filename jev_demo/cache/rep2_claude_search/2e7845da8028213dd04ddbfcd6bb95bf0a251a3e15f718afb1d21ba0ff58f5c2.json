@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.toDigits_injective (by decide) h", "simpa using congrArg (fun l => (String.ofList l).toNat?) h", "have h2 : Nat.repr m = Nat.repr n := by simp [Nat.repr, h]", "exact (Nat.toDigits_inj (by decide)).mp h", "grind [Nat.toDigits]", "simp_all [Nat.toDigits_inj]"], "usd": 0.011060999999999765}

@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "simp [List.zipWith] at h", "exact absurd h (by simp)", "cases h", "simp_all", "omega"], "usd": 0.0038290000000000823}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i a l ih", "intro H; simp [List.pmap_append, *]", "simp_all [List.pmap_append]", "intro H; simp_all [List.reverse_cons, List.pmap_append]", "grind [List.pmap_append, List.reverse_cons, List.pmap_cons]"], "usd": 0.009361000000000175}

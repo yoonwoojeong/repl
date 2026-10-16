@@ -1,0 +1,1 @@
+{"tactics": ["subst e_l\n  rfl", "subst e_l", "cases e_l", "subst e_l <;> rfl", "cases e_l <;> rfl", "simp [e_l]", "grind"], "usd": 0.0023089999999998945}

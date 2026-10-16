@@ -1,0 +1,1 @@
+{"tactics": ["rename_i x xs", "intro h", "cases i <;> simp", "cases i", "intro h <;> cases i <;> simp_all"], "usd": 0.010593000000000075}

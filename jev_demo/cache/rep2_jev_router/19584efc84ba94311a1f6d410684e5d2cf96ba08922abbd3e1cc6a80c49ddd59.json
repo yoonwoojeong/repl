@@ -1,0 +1,1 @@
+{"tactics": ["intro α as i h", "intro α as", "intro α as i h <;> induction as generalizing i <;> cases i <;> simp_all [-List.set_getElem_self, List.set]", "intro α as i h <;> apply List.ext_getElem <;> simp [-List.set_getElem_self, List.getElem_set] <;> intro j hj <;> split <;> simp_all", "intros"], "usd": 0.009869000000000128}

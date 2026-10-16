@@ -1,0 +1,1 @@
+{"tactics": ["cases l with\n  | nil => exact absurd rfl hl\n  | cons a t => ?_", "induction l with\n  | nil => exact absurd rfl hl\n  | cons a t ih => ?_", "match l, hl with\n  | a :: t, _ => ?_", "grind [List.min, Std.le_min_iff]", "simp only [List.min]", "unfold List.min", "constructor"], "usd": 0.009692999999999952}

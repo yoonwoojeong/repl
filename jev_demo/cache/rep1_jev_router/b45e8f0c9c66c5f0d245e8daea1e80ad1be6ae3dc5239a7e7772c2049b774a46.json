@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ l _ a h <;> simp [List.Nodup.mem_erase_iff h]", "intro α _ l _ a h <;> grind [List.Nodup.mem_erase_iff]", "intro α _ l _ a h <;> exact fun hm => ((List.Nodup.mem_erase_iff h).1 hm).1 rfl", "intro α _ l _ a h", "intros", "intro α _ l _ a h <;> induction l <;> simp_all [List.erase_cons]"], "usd": 0.010984999999999995}

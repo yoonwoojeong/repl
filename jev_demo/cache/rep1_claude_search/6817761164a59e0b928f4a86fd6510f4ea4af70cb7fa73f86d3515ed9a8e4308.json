@@ -1,0 +1,1 @@
+{"tactics": ["simp at h; omega", "simp only [List.cons_append, List.length_cons, List.length_append] at h; omega", "simp [List.length_append] at h; omega", "grind", "simp_all", "have := h; simp at this; omega"], "usd": 0.0031250000000000444}

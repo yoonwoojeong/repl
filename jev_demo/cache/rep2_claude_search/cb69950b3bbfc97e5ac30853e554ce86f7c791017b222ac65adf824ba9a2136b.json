@@ -1,0 +1,1 @@
+{"tactics": ["cases ‹List α› <;> simp_all", "rename_i hd tl", "grind", "simp_all", "cases ‹List α›", "match ‹List α›, h with | _ :: _, _ => rfl"], "usd": 0.009557000000000038}

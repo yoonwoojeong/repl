@@ -1,0 +1,1 @@
+{"tactics": ["rename_i p a l h", "grind", "simp_all [List.count, List.countP_filter]", "simp only [List.count, List.countP_filter] <;> apply List.countP_congr <;> grind", "simp_all [List.count_eq_countP, List.countP_filter]"], "usd": 0.012661000000000033}

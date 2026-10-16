@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rw [Array.toList_map]", "simp [Array.toList_map]", "induction n <;> simp_all", "grind", "simp [Array.toList_map, Std.Rio.toArray, Std.Rco.toArray]", "induction n with | zero => simp | succ n ih => simp_all [Array.toList_map]"], "usd": 0.008293000000000106}

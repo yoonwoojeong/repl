@@ -1,0 +1,1 @@
+{"tactics": ["exact List.sorted_mergeSort (le := le) trans (by simpa using total) l", "exact List.sorted_mergeSort trans total l", "fun_induction List.mergeSort l le", "induction l using List.mergeSort.induct le", "grind [List.mergeSort, List.sorted_merge]", "simp [List.mergeSort]"], "usd": 0.016652999999999807}

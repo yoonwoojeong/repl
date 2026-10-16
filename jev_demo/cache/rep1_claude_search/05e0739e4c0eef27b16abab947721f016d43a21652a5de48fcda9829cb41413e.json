@@ -1,0 +1,1 @@
+{"tactics": ["cases xs with | nil => simp at h | cons y ys => rfl", "cases xs <;> simp_all", "grind", "simp", "rcases xs with _ | ⟨y, ys⟩ <;> simp_all", "match xs, h with | y :: ys, _ => rfl"], "usd": 0.008129000000000275}

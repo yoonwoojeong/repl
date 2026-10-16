@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp [Nat.lt_min, h✝]", "simp [Nat.lt_min, h✝]", "split <;> [skip; rfl] <;> simp only [Nat.lt_min, h✝, true_and]", "by_cases hj : j✝ = n <;> simp [hj, Nat.lt_min, h✝]", "simp only [Nat.lt_min, h✝, true_and]", "grind"], "usd": 0.00417299999999976}

@@ -1,0 +1,1 @@
+{"tactics": ["rcases xs with _ | ⟨a, _ | ⟨b, t⟩⟩ <;> simp_all", "cases xs with\n  | nil => simp at h\n  | cons a t => cases t with\n    | nil => simp at h\n    | cons b t => rfl", "rcases xs with _ | ⟨a, _ | ⟨b, t⟩⟩ <;> first | rfl | simp at h", "cases xs", "induction xs <;> simp_all"], "usd": 0.01283700000000021}

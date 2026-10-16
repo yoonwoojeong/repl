@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ a b _ l i h hne <;> simp [List.getElem_replace, hne]", "intro α _ a b _ l i h hne", "intros <;> simp_all [List.getElem_replace]", "intro α _ a b _ l <;> induction l <;> intro i h hne <;> cases i <;> simp_all [List.replace_cons] <;> split <;> simp_all", "intros <;> grind [List.getElem_replace]"], "usd": 0.00829700000000022}

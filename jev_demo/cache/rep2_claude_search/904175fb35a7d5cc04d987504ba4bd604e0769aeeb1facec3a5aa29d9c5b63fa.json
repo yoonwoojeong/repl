@@ -1,0 +1,1 @@
+{"tactics": ["cases i <;> simp_all", "grind", "cases tail <;> cases i <;> simp_all", "simp_all", "induction tail generalizing i <;> cases i <;> simp_all", "cases i"], "usd": 0.01065299999999958}

@@ -1,0 +1,1 @@
+{"tactics": ["intro F", "intro F\n  apply F", "intro F; apply F; induction t <;> constructor <;> simp_all", "induction t <;> intro F <;> apply F <;> constructor <;> simp_all"], "usd": 0.014181}

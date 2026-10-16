@@ -1,0 +1,1 @@
+{"tactics": ["assumption", "infer_instance", "exact inferInstance", "exact ‹Std.TransOrd α›", "exact ‹_›", "constructor <;> simp_all"], "usd": 0.004052999999999862}

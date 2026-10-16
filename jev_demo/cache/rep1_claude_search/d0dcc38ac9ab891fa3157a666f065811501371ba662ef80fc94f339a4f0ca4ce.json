@@ -1,0 +1,1 @@
+{"tactics": ["rename_i t F", "rename_i a b t F", "apply_assumption", "induction t✝ <;> simp_all", "induction ‹List.Sublist _ _› <;> constructor <;> simp_all"], "usd": 0.015456999999999999}

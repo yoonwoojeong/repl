@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "rename_i xs f h b", "grind [List.maxOn_mem]", "refine ⟨fun hlt x hx => ?_, fun hall => hall _ (List.maxOn_mem ..)⟩", "simp only [List.maxOn]", "apply Iff.intro"], "usd": 0.012877000000000027}

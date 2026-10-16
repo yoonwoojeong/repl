@@ -1,0 +1,1 @@
+{"tactics": ["subst w; rfl", "subst w", "cases w", "subst w <;> rfl", "cases w <;> rfl", "subst w <;> simp"], "usd": 0.004604999999999748}

@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "rename_i α x l k", "grind", "refine ⟨?_, ?_⟩", "simp", "omega"], "usd": 0.007461000000000162}

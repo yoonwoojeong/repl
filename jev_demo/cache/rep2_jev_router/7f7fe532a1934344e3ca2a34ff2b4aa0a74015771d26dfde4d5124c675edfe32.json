@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_mapIdx, List.length_mapIdx]", "simp", "grind", "simp [List.getElem_mapIdx]", "rename_i α β l f h <;> simp [List.getElem_mapIdx]", "simp_all [List.getElem_mapIdx]"], "usd": 0.00688500000000003}

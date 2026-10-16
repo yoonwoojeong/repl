@@ -1,0 +1,1 @@
+{"tactics": ["cases t <;> simp_all [List.min_cons, Std.le_min_iff]", "rcases t with _ | ⟨b, t⟩", "by_cases h : t = [] <;> simp_all [List.min_cons, Std.le_min_iff]", "simp_all [List.min_cons, Std.le_min_iff]", "grind [List.min_cons, Std.le_min_iff]", "unfold List.min"], "usd": 0.011252999999999957}

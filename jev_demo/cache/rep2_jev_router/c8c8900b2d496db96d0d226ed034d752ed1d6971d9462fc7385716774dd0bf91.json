@@ -1,0 +1,1 @@
+{"tactics": ["by_cases hj : j < i", "induction i generalizing a b j", "simp only [Nat.testBit_to_div_mod]", "rw [Nat.testBit_to_div_mod, Nat.testBit_to_div_mod]", "split", "grind"], "usd": 0.009584999999999955}

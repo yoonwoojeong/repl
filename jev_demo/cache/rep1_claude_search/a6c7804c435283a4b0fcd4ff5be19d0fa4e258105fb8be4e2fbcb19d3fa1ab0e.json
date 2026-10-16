@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨t, rfl⟩ := h", "exact match h with | ⟨t, e⟩ => e ▸ List.sublist_append_right t l₁", "rcases h with ⟨t, rfl⟩ <;> exact List.sublist_append_right t l₁", "rcases h with ⟨t, rfl⟩ <;> simp", "cases h with | intro t e => subst e; exact List.sublist_append_right _ _", "grind"], "usd": 0.007600999999999997}

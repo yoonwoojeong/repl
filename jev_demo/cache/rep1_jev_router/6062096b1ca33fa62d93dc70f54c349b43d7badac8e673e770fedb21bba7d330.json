@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ h x", ";intros; exact Std.LawfulRightIdentity.right_id _", "intros α _ _ h x; exact h.right_id x", "intros; simp", "intros α _ _ h x; exact Std.RightIdentity.right_id (op := fun x1 x2 => x1 + x2) x", "intros α _ _ h x; grind"], "usd": 0.0036089999999999733}

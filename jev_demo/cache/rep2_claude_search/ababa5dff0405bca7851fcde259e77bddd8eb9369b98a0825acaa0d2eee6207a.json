@@ -1,0 +1,1 @@
+{"tactics": ["intro b a hb", "intro b a hb <;> have h1 := Nat.mod_lt a hb <;> have h2 := Nat.div_add_mod a b <;> rw [Nat.mul_add, Nat.mul_one] <;> omega", "intro b a hb <;> grind [Nat.mod_lt, Nat.div_add_mod]", "intros <;> simp only [Nat.mul_add, Nat.mul_one] <;> grind [Nat.mod_lt, Nat.div_add_mod]"], "usd": 0.014573000000000391}

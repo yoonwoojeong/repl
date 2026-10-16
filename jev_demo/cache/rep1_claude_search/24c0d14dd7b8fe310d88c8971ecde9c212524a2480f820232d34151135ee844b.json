@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [Nat.toList_rco_succ_right_eq_append]", "simp_all", "grind", "simp_all [Nat.toList_rco_eq_cons]", "simp_all [Nat.toList_rco_succ_right_eq_append, List.map_append]", "grind [Nat.toList_rco_succ_right_eq_append]"], "usd": 0.010181000000000218}

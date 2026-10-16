@@ -1,0 +1,1 @@
+{"tactics": ["intro l₁ l₂", "induction r with\n  | nil => intro l₁ l₂; constructor <;> intro h <;> simp_all\n  | cons a r ih => intro l₁ l₂; constructor <;> intro h <;> simp_all", "intro l₁ l₂\nconstructor", "induction r"], "usd": 0.012664999999999982}

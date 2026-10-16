@@ -1,0 +1,1 @@
+{"tactics": ["unfold List.minIdxOn", "cases xs <;> simp [List.minIdxOn, List.minOn]", "simp only [List.minIdxOn]", "split", "by_cases h : xs = []", "rw [List.minIdxOn]", "grind [List.minIdxOn, List.minOn]", "simp [List.minIdxOn]"], "usd": 0.009084999999999788}

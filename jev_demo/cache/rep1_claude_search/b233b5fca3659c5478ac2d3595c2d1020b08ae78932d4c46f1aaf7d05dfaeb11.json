@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rfl", "simp only [List.nil_append]", "congr 1", "grind", "simp_all"], "usd": 0.0019010000000001526}

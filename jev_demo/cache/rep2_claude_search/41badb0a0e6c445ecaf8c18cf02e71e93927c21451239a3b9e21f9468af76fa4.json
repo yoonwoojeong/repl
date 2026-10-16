@@ -1,0 +1,1 @@
+{"tactics": ["induction l generalizing a", "refine ⟨(l.mergeSort le).takeWhile (fun b => !le a b), (l.mergeSort le).dropWhile (fun b => !le a b), ?_, ?_, ?_⟩", "have hs := List.sorted_mergeSort trans total l", "have hp := List.mergeSort_perm (a :: l) le", "grind [List.mergeSort_perm, List.sorted_mergeSort]", "simp only [List.mergeSort]"], "usd": 0.016360999999999848}

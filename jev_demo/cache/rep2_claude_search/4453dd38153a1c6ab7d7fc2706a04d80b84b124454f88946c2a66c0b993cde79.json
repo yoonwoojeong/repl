@@ -1,0 +1,1 @@
+{"tactics": ["exact h2 head✝ tail✝ bs (fun bs' => tail_ih✝ (bs' :: bs))", "apply h2", "simp_all", "grind", "unfold List.flatMapM.loop at *", "simp only [List.flatMapM.loop] at *"], "usd": 0.008396999999999988}

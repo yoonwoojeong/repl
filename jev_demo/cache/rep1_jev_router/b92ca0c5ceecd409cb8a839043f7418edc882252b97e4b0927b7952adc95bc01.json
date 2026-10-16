@@ -1,0 +1,1 @@
+{"tactics": ["intro n", "intro n <;> simp [List.range_eq_range', List.range'_concat]", "intro n <;> rw [Nat.succ_eq_add_one, List.range_add] <;> simp", "intro n <;> simp only [List.range_eq_range', List.range'_concat, Nat.zero_add, Nat.one_mul]", "intro n <;> grind [List.range_eq_range', List.range'_concat]"], "usd": 0.009977000000000125}

@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "induction p <;> simp_all [Nat.Internal.Linear.Poly.isNonZero, Nat.Internal.Linear.Poly.denote]", "induction p", "intro h; induction p <;> grind [Nat.Internal.Linear.Poly.isNonZero, Nat.Internal.Linear.Poly.denote]", "cases p <;> simp [Nat.Internal.Linear.Poly.isNonZero]"], "usd": 0.013033000000000072}

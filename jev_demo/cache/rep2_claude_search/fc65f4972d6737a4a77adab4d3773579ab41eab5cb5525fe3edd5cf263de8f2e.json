@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ _ _ l a ha", "intros", "intro α _ _ _ _ l a ha <;> grind", "intro α _ _ _ _ l a ha <;> exact (List.le_min_iff _).1 (Std.le_refl _) a ha", "intro α _ _ _ _ l a ha <;> induction l <;> simp_all"], "usd": 0.00849299999999964}

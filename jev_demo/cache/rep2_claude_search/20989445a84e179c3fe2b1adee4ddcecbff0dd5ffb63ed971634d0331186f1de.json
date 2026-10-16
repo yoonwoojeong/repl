@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [List.count_cons]", "simp [List.count_cons, *]", "rw [List.count_cons]", "grind [List.count_cons]", "simp only [List.count_cons] at * <;> simp_all", "rename_i ih _ _ _ <;> rw [List.count_cons, ih]"], "usd": 0.009433000000000025}
