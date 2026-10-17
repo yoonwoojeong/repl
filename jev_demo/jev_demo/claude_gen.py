@@ -118,12 +118,13 @@ def _clean(tactics: list[str], n: int) -> list[str]:
 class ClaudeGenerator:
     def __init__(self, client=None, model: str = "claude-opus-5-5", effort: str = "medium", n: int = 8,
                  cache_dir: str = "jev_demo/cache/claude", max_usd: float = 10.0, log=_log_stderr,
-                 offline: bool = False):
+                 offline: bool = False, system_prompt: str = SYSTEM_PROMPT):
         """`offline=True` never calls the API: a request missing from the disk cache returns no
         proposals (free replay of an earlier run's responses, for iterating on the ranker)."""
         if model not in PRICES:
             raise ValueError(f"no price for model {model!r}; known: {sorted(PRICES)}")
         self.offline = offline
+        self.system_prompt = system_prompt
         self.client = client if client is not None or offline else anthropic.Anthropic()
         self.model = model
         self.effort = effort
@@ -159,7 +160,7 @@ class ClaudeGenerator:
     # -- internals ---------------------------------------------------------------------------
 
     def _path(self, user: str, sample: int) -> str:
-        key = json.dumps([self.model, self.effort, self.n, SYSTEM_PROMPT, user, sample],
+        key = json.dumps([self.model, self.effort, self.n, self.system_prompt, user, sample],
                          ensure_ascii=False)
         return os.path.join(self.cache_dir, hashlib.sha256(key.encode("utf-8")).hexdigest() + ".json")
 
@@ -200,7 +201,7 @@ class ClaudeGenerator:
                 # Explicit breakpoint at the end of the frozen system prompt: every request reads
                 # it from cache. (Top-level automatic caching put the breakpoint after the
                 # per-goal user message, so each request paid a cache write that was never read.)
-                system=[{"type": "text", "text": SYSTEM_PROMPT, "cache_control": {"type": "ephemeral"}}],
+                system=[{"type": "text", "text": self.system_prompt, "cache_control": {"type": "ephemeral"}}],
                 messages=[{"role": "user", "content": user}],
                 output_config={"effort": self.effort,
                                "format": {"type": "json_schema", "schema": Proposals.model_json_schema()}},

@@ -58,9 +58,10 @@ def run_single(repl, thms) -> dict:
             "n": len(rows), "per_theorem": rows}
 
 
-def run_menu_search(repl, thms, budget: int = 64) -> dict:
+def run_menu_search(repl, thms, budget: int = 64, extra_set: bool = False) -> dict:
     from jev_demo.search import FixedOrderRanker, prove
-    set_extra_menu(MATHLIB_MENU)
+    if not extra_set:
+        set_extra_menu(MATHLIB_MENU)
     rows = []
     for t in thms:
         t0 = time.perf_counter()
@@ -74,16 +75,169 @@ def run_menu_search(repl, thms, budget: int = 64) -> dict:
             "n": len(rows), "per_theorem": rows}
 
 
-if __name__ == "__main__":
+_NAMES_CMD = """open Lean in
+#eval show CoreM Unit from do
+  let env ← getEnv
+  let mut out : Array String := #[]
+  for (n, ci) in env.constants.toList do
+    if let .thmInfo _ := ci then
+      if !n.isInternalDetail then out := out.push n.toString
+  IO.println (String.intercalate "\\n" out.toList)"""
+
+
+def theorem_names(repl) -> set[str]:
+    """Names of all theorems in the REPL's base environment (here: Mathlib)."""
+    reply = repl.command(_NAMES_CMD, timeout_s=1200)
+    names = set()
+    for m in reply.get("messages", []):
+        if m.get("severity") == "info":
+            names.update(x for x in m["data"].splitlines() if x)
+    if not names:
+        raise RuntimeError(f"theorem name dump failed: {str(reply)[:500]}")
+    return names
+
+
+class Bm25Premises:
+    """BM25 premise retrieval over the LeanDojo Benchmark 4 corpus (Mathlib, Nov 2023), restricted
+    to premise names that still exist in the benchmark's Mathlib, so retrieved names elaborate."""
+
+    def __init__(self, names: set[str]):
+        import bm25s
+
+        from jev_demo.bm25_baseline import tok
+        from jev_demo.looped import load_corpus
+        corpus = load_corpus()
+        self.premises = [p for p in corpus.all_premises if p.full_name in names]
+        self.bm25 = bm25s.BM25()
+        self.bm25.index(tok([p.serialize() for p in self.premises]), show_progress=False)
+        self._cache: dict[str, list[str]] = {}
+
+    def shortlist(self, goal: str, k: int = 4) -> list[str]:
+        import bm25s
+        import numpy as np
+
+        from jev_demo.bm25_baseline import TOKEN_PATTERN
+        if goal not in self._cache:
+            q = bm25s.tokenize(goal, stopwords=None, token_pattern=TOKEN_PATTERN, show_progress=False,
+                               return_ids=False)[0]
+            if not q:
+                self._cache[goal] = []
+            else:
+                s = self.bm25.get_scores(q)
+                top = np.argsort(-s)[:k]
+                self._cache[goal] = [self.premises[i].full_name for i in top if s[i] > 0]
+        return self._cache[goal]
+
+
+def premise_steps(premises: list[str]) -> list[str]:
+    """Jev's own lemma-naming steps from the top BM25 premises (no Claude)."""
+    if not premises:
+        return []
+    ps = ", ".join(premises[:4])
+    return [f"simp [{ps}]", f"norm_num [{ps}]"] + [f"rw [{p}]" for p in premises[:2]]
+
+
+def setup_menu(repl, names_cache: str | None = None) -> Bm25Premises:
+    """Mathlib automation plus BM25-premise steps in every menu."""
+    if names_cache and os.path.exists(names_cache):
+        import gzip
+        with gzip.open(names_cache, "rt", encoding="utf-8") as f:
+            names = set(f.read().split())
+    else:
+        names = theorem_names(repl)
+        if names_cache:
+            import gzip
+            with gzip.open(names_cache, "wt", encoding="utf-8") as f:
+                f.write("\n".join(sorted(names)))
+    bm25 = Bm25Premises(names)
+    set_extra_menu(MATHLIB_MENU, goal_steps=lambda g: premise_steps(bm25.shortlist(g)))
+    return bm25
+
+
+def closes_labels(repl, thms, depth: int = 1, max_states: int = 6, log=print) -> list:
+    """Lean-only `closes` labels (as `posttrain`): every menu tactic at each problem's root and at
+    up to `max_states` states one step below it. No audit (miniF2F bans no lemma)."""
+    from jev_demo.posttrain import label_state
+    from jev_demo.search import _key
+    out = []
+    for i, t in enumerate(thms):
+        try:
+            ps, goal = repl.start_theorem(t.statement, t.prelude)
+        except RuntimeError:
+            continue
+        frontier, seen, n = [(ps, goal, 1, [], 0)], set(), 0
+        while frontier and n < max_states:
+            ps, goal, ng, prefix, d = frontier.pop(0)
+            if _key(goal) in seen:
+                continue
+            seen.add(_key(goal))
+            n += 1
+            kids = label_state(repl, None, t, ps, goal, ng, prefix, False, out, log)
+            if d < depth:
+                frontier += [(p, g, k, pre, d + 1) for p, g, k, pre in kids]
+        log(f"[{i + 1}/{len(thms)}] {t.name}: {len(out)} labels, {sum(b.label for b in out)} closing")
+    return out
+
+
+def run_claude(repl, thms, out_dir: str, methods, labels: str, max_usd: float, cache_dir: str,
+               model: str = "claude-opus-5-5", effort: str = "medium") -> dict:
+    """Paid: the Claude methods of experiment 3 (`claude_search`, `jev_router`) on miniF2F."""
+    if os.environ.get("ANTHROPIC_RUN_LIVE") != "1":
+        raise SystemExit("set ANTHROPIC_RUN_LIVE=1 to call the Anthropic API (this spends money)")
+    from jev_demo import exp3
+    from jev_demo.claude_gen import ClaudeGenerator
+    from jev_demo.prompts import MATHLIB_SYSTEM_PROMPT
+    gen = ClaudeGenerator(model=model, effort=effort, max_usd=max_usd, cache_dir=cache_dir,
+                          system_prompt=MATHLIB_SYSTEM_PROMPT)
+    return exp3.run(repl, [], thms, out_dir, gen, list(methods), label_paths=[labels])
+
+
+def main(argv=None) -> None:
+    import argparse
+    from jev_demo.collect import save_labels
     from jev_demo.repl_client import ReplClient
 
-    root, split, method, repl_bin = sys.argv[1:5]
-    header, thms = load(root, split)
-    with ReplClient(repl_path=repl_bin, cwd=root, timeout_s=20, header=header) as repl:
-        res = (run_single if method == "single" else run_menu_search)(repl, thms)
-    res.update(split=split, header=header)
-    out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "results_free", "minif2f")
-    os.makedirs(out, exist_ok=True)
-    with open(os.path.join(out, f"{split}_{method}.json"), "w", encoding="utf-8") as f:
+    ap = argparse.ArgumentParser(prog="python -m jev_demo.minif2f")
+    ap.add_argument("mode", choices=("single", "menu_search", "jev_search", "labels", "claude"))
+    ap.add_argument("root")
+    ap.add_argument("split", choices=("valid", "test"))
+    ap.add_argument("repl_bin")
+    ap.add_argument("--out", default=None)
+    ap.add_argument("--names-cache", default=None)
+    ap.add_argument("--labels", default=None)
+    ap.add_argument("--methods", default="claude_search,jev_router")
+    ap.add_argument("--max-usd", type=float, default=1.0)
+    ap.add_argument("--cache-dir", default="jev_demo/cache/minif2f")
+    ap.add_argument("--limit", type=int, default=0)
+    a = ap.parse_args(argv)
+    header, thms = load(a.root, a.split)
+    thms = thms[:a.limit] if a.limit else thms
+    base = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "results_free", "minif2f")
+    os.makedirs(base, exist_ok=True)
+    with ReplClient(repl_path=a.repl_bin, cwd=a.root, timeout_s=20, header=header) as repl:
+        if a.mode == "single":
+            res = run_single(repl, thms)
+        elif a.mode == "menu_search":
+            res = run_menu_search(repl, thms)
+        elif a.mode == "jev_search":  # menu + BM25-premise steps, no Claude
+            setup_menu(repl, a.names_cache)
+            res = run_menu_search(repl, thms, extra_set=True)
+            res["method"] = "jev_search"
+        elif a.mode == "labels":
+            setup_menu(repl, a.names_cache)
+            labels = closes_labels(repl, thms, log=lambda m: print(m, file=sys.stderr, flush=True))
+            save_labels(a.out, [], labels)
+            print(f"wrote {len(labels)} closes labels ({sum(b.label for b in labels)} closing) to {a.out}")
+            return
+        else:
+            setup_menu(repl, a.names_cache)
+            run_claude(repl, thms, a.out, a.methods.split(","), a.labels, a.max_usd, a.cache_dir)
+            return
+    res.update(split=a.split, header=header)
+    with open(os.path.join(base, f"{a.split}_{res['method']}.json"), "w", encoding="utf-8") as f:
         json.dump(res, f, indent=1, ensure_ascii=False)
-    print(f"miniF2F {split} {method}: {res['proved']}/{res['n']}")
+    print(f"miniF2F {a.split} {res['method']}: {res['proved']}/{res['n']}")
+
+
+if __name__ == "__main__":
+    main()

@@ -14,9 +14,14 @@ MATHLIB_MENU: tuple[str, ...] = ("norm_num", "linarith", "nlinarith", "positivit
                                   "aesop", "norm_num [*] at *", "omega", "decide")
 
 
-def set_extra_menu(tactics) -> None:
-    """Add benchmark-specific tactics to every menu (call once, before searching)."""
+GOAL_STEPS: list = []  # optional goal -> extra tactics (e.g. BM25-premise steps on miniF2F)
+
+
+def set_extra_menu(tactics, goal_steps=None) -> None:
+    """Add benchmark-specific tactics to every menu (call once, before searching); `goal_steps`
+    maps a goal to further goal-dependent tactics."""
     EXTRA_MENU[:] = list(tactics)
+    GOAL_STEPS[:] = [goal_steps] if goal_steps else []
 TEMPLATES: tuple[str, ...] = ("rw [·]", "simp [·]", "grind [·]", "exact ·", "apply ·")
 
 _HOLE = "·"
@@ -92,6 +97,8 @@ def menu(goal: str, automation: bool = True) -> tuple[str, ...]:
     hyps, target = _split_goal(goal)
     taken = {n for names, _ in hyps for n in names}
     items = list(BASE_MENU) + EXTRA_MENU + (list(AUTOMATION) if automation else [])
+    for f in GOAL_STEPS:
+        items += f(goal)
     binders = _binder_names(target)
     if binders:
         items.append("intro " + " ".join(binders))
