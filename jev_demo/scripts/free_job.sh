@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-# Job 5 (re-run: BM25 no longer imports torch): miniF2F valid (Lean v4.24.0 + Mathlib), free. (1) dump Mathlib theorem names (filters the
-# LeanDojo corpus for BM25 premises); (2) re-run the Lean-only baselines after the loader fix;
-# (3) Jev alone with BM25-premise steps; (4) Lean-only `closes` labels for the router.
+# Job 6: Lean-only baselines (`single`, `menu_search`) on the miniF2F **test** split, free, as the
+# reference for the pre-registered efficiency run (README "miniF2F efficiency run"). No Claude.
 set -euo pipefail
 MF_COMMIT=5746b7d6c47855ce1294bed87329618ff7f1bc31
 W=$HOME/mf
@@ -13,18 +12,13 @@ git clone -q --depth 1 --branch v4.24.0 https://github.com/leanprover-community/
 cp $W/miniF2F/lean-toolchain $W/repl/lean-toolchain
 (cd $W/repl && lake build > /dev/null)
 export LEAN_PATH=$(cd $W/miniF2F && lake env printenv LEAN_PATH)
-pip install -q numpy networkx bm25s
+pip install -q numpy networkx
 pip install -q -e jev_demo > /dev/null
 O=jev_demo/results_free/minif2f
 mkdir -p $O/logs
 M="python3 -m jev_demo.minif2f"
-R="$W/miniF2F valid $W/repl/.lake/build/bin/repl"
-NC="--names-cache $O/mathlib_theorem_names.txt.gz"
-$M labels $R $NC --out $O/valid_closes_labels.json --limit 1 > $O/logs/names.log 2>&1  # warms the name cache
-$M single $R > $O/logs/single.log 2>&1 &
-$M menu_search $R > $O/logs/menu_search.log 2>&1 &
+R="$W/miniF2F test $W/repl/.lake/build/bin/repl"
+$M single $R > $O/logs/test_single.log 2>&1 &
+$M menu_search $R > $O/logs/test_menu_search.log 2>&1 &
 wait
-$M jev_search $R $NC > $O/logs/jev_search.log 2>&1 &
-$M labels $R $NC --out $O/valid_closes_labels.json > $O/logs/labels.log 2>&1 &
-wait
-tail -n 2 $O/logs/*.log
+tail -n 2 $O/logs/test_*.log

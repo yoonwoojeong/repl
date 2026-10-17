@@ -87,7 +87,7 @@ case "$stage" in
       else cap=$(python3 -c "print(round($total - $spent, 4))"); fi
       echo "$stage $m: cap \$$cap (spent so far \$$spent of \$$total)"
       python3 -m jev_demo.minif2f claude $W/miniF2F $split $MF_REPL $extra --methods $m \
-          --names-cache $O/mathlib_theorem_names.txt.gz --labels $O/valid_closes_labels.json \
+          --labels $O/valid_closes_labels.json \
           --cache-dir jev_demo/cache/${stage}_$m --out $R/${stage}_$m --max-usd "$cap" \
           2>&1 | tee $R/${stage}_$m.log
       spent=$(python3 -c "import json; print(round($spent + json.load(open('$R/${stage}_$m/results.json'))['total_usd'], 4))")

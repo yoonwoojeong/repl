@@ -137,6 +137,20 @@ def premise_steps(premises: list[str]) -> list[str]:
     return [f"simp [{ps}]", f"norm_num [{ps}]"] + [f"rw [{p}]" for p in premises[:2]]
 
 
+def is_premise_step(tactic: str) -> bool:
+    """True for the BM25-premise steps of `premise_steps` (not `simp [*] at *`-style menu items)."""
+    return tactic.startswith(("simp [", "norm_num [", "rw [")) and not tactic.endswith("] at *")
+
+
+def menu_only_labels(src: str, dst: str) -> int:
+    """Copy `src` labels to `dst` without the BM25-premise steps; returns how many were kept."""
+    from jev_demo.collect import load_labels, save_labels
+    choice, binary = load_labels(src)
+    kept = [b for b in binary if not is_premise_step(b.option)]
+    save_labels(dst, choice, kept)
+    return len(kept)
+
+
 def setup_menu(repl, names_cache: str | None = None) -> Bm25Premises:
     """Mathlib automation plus BM25-premise steps in every menu."""
     if names_cache and os.path.exists(names_cache):
@@ -189,7 +203,11 @@ def run_claude(repl, thms, out_dir: str, methods, labels: str, max_usd: float, c
     from jev_demo.prompts import MATHLIB_SYSTEM_PROMPT
     gen = ClaudeGenerator(model=model, effort=effort, max_usd=max_usd, cache_dir=cache_dir,
                           system_prompt=MATHLIB_SYSTEM_PROMPT)
-    return exp3.run(repl, [], thms, out_dir, gen, list(methods), label_paths=[labels])
+    # The menu is `menu_search`'s (no BM25-premise steps: on valid they proved nothing the plain
+    # menu missed), so the router trains only on labels of tactics it can choose.
+    router_labels = os.path.join(out_dir, "router_labels.json")
+    menu_only_labels(labels, router_labels)
+    return exp3.run(repl, [], thms, out_dir, gen, list(methods), label_paths=[router_labels])
 
 
 def main(argv=None) -> None:
@@ -230,7 +248,7 @@ def main(argv=None) -> None:
             print(f"wrote {len(labels)} closes labels ({sum(b.label for b in labels)} closing) to {a.out}")
             return
         else:
-            setup_menu(repl, a.names_cache)
+            set_extra_menu(MATHLIB_MENU)
             run_claude(repl, thms, a.out, a.methods.split(","), a.labels, a.max_usd, a.cache_dir)
             return
     res.update(split=a.split, header=header)

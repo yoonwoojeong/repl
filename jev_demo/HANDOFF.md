@@ -40,24 +40,22 @@ since.
    ($4 / $40) — not approved, not started.**
 
 ## In flight
-- **Free job 5** (workflow `jev-free-job.yml`, triggered by pushing a change to
-  `scripts/free_job.sh`; never gets the API key), commit 33c28d3, on miniF2F valid: re-run
-  `single` and `menu_search`, `jev_search` (menu + BM25 steps, no Claude), and router labels
-  `results_free/minif2f/valid_closes_labels.json`. Outputs are committed back to the branch by
-  the workflow ("jev_demo: free job outputs (run N)"). The first attempt failed on a torch import
-  (fixed in 33c28d3).
+- Job 5 landed (run 39014532633): valid single 94, menu_search 102, jev_search 102 (same
+  problems); BM25 steps closed no state the menu could not, so they are **dropped** from the paid
+  path (`minif2f.py` claude mode uses the plain menu; router trains on `router_labels.json`,
+  menu-tactic labels only). README "miniF2F efficiency run" holds the pre-registration.
+- **Free job 6** (`scripts/free_job.sh`): Lean-only `single` / `menu_search` on **test**, as the
+  reference for the paid run.
+- **Waiting on the user's budget approval** for `mf-pilot` and `mf-test` (caps in
+  `scripts/exp3_stage.sh` are still placeholders $4 / $40).
 
 ## Next steps
-1. When job 5 lands: report valid solve rates (single, menu_search, jev_search) and label counts.
-   If BM25 steps do not help on valid, drop them from the router design before pre-registering.
-2. Write the pre-registered "miniF2F efficiency run" README section: on the 244 **test**
-   problems, `claude_search` and `jev_router`, each with its own empty response cache; H1:
-   95% paired bootstrap CI of request saving > 0 (`replication.saving_ci`); H2: lower 95% CI of
-   success difference > -0.05 (`stats.compare`). Report pass rate vs the Lean-only baselines.
-3. Estimate cost from measured data (corebench: ~$0.0097 per Opus request) and **ask the user to
-   approve** the pilot (20 valid problems) and the test run; set the stage caps to the approved
-   amounts. Paid stages start when the user adds the label `exp3-mf-pilot` / `exp3-mf-test` to
-   the PR (workflow `jev-exp3-live.yml`, secret `ANTHROPIC_API_KEY`).
+1. Report job 6's test baselines in the README.
+2. On approval: set the stage caps to the approved amounts; the user adds the PR label
+   `exp3-mf-pilot` (workflow `jev-exp3-live.yml`). Check the pilot's measured cost per request
+   and requests per problem; if the projected test cost exceeds the approved test budget, go
+   back to the user before `exp3-mf-test`.
+3. Score the test run as pre-registered (`replication.saving_ci`, `stats.compare`).
 4. README restructure: miniF2F headline, corebench as history; update the PR description.
 
 ## Practical notes

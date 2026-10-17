@@ -600,3 +600,53 @@ benchmark family (core `Nat`/`List` lemmas).
 
 Replication spend $23.25 of the approved $26 (rep 1: $7.41 + $4.18; rep 2: $7.77 + $3.88).
 Experiment 3 total $53.59; total API spend in this project $60.67 (phase 2 $7.08 + experiment 3).
+
+## miniF2F efficiency run (standard benchmark)
+
+The core-library experiments above are history. This run repeats the router comparison on
+**miniF2F** (Lean 4 port `yangky11/miniF2F-lean4` at `5746b7d`, Lean v4.24.0 + Mathlib; 244
+validation and 244 test problems; solved = Lean accepts the proof with no `sorry`; pass@1 of one
+search per problem). Module `jev_demo/minif2f.py`, prompt `prompts.MATHLIB_SYSTEM_PROMPT`
+(examples from validation problems only).
+
+### Lean-only baselines on validation (free)
+
+GitHub Actions run `39014532633` (`results_free/minif2f/valid_*.json`, logs in `logs/`).
+
+| method | solved (valid) |
+|---|---|
+| `single` (each of 19 tactics alone) | 94/244 (38.5%) |
+| `menu_search` (best-first, fixed menu + goal-dependent `induction`/`cases`, 64 Lean calls) | 102/244 (41.8%) |
+| `jev_search` (`menu_search` + BM25-premise steps from the LeanDojo corpus) | 102/244 (41.8%) |
+
+`menu_search` solves 8 problems `single` misses and loses none. `jev_search` solves exactly the
+same 102 problems as `menu_search`. Router labels (`valid_closes_labels.json`, every menu tactic
+at the 244 roots and up to 6 states one step below each): 18,885 labels at 778 states, 1,510
+closing, 322 states closed by at least one tactic. BM25-premise steps account for 3,112 labels
+and 96 closing ones, but **no state is closed only by a BM25-premise step**.
+
+**Design decision (made on validation, before any test run).** The BM25-premise steps add
+nothing on validation, so they are dropped: the paid methods use `menu_search`'s menu, and the
+router trains on the 15,773 labels of menu tactics (1,414 closing; written to
+`router_labels.json` in each run directory).
+
+### Pre-registered test run (recorded before it is run)
+
+On the 244 **test** problems, `claude-opus-5-5`, effort `medium`, 64 Lean calls and at most 16
+Claude requests per problem (as in experiment 3). Methods, in this order, each with its **own
+empty response cache**: `claude_search`, then `jev_router` (the 3 most likely menu tactics with
+p(closes) ≥ 0.5 first, then Claude; router trained with `--train none` on the validation labels
+above only). One run per method. A 20-problem pilot on validation comes first to check the
+plumbing and measure miniF2F request costs; it is not scored and changes no setting.
+
+1. **Efficiency (primary).** `jev_router` makes fewer Claude requests than `claude_search`: the
+   95% paired bootstrap CI of the relative request saving (`replication.saving_ci`, over
+   problems) is above 0.
+2. **No meaningful loss (primary).** The lower end of the 95% paired bootstrap CI of
+   (`jev_router` − `claude_search`) solve rate (`stats.compare`) is above −0.05.
+3. **Reported, not tested.** Solve rates of both methods next to the Lean-only baselines run on
+   test (`single`, `menu_search`), discordant problems, requests and USD per solved problem.
+
+The hypotheses hold only if both primaries pass. Results are reported as computed either way.
+Each paid stage stops at its approved budget (`scripts/exp3_stage.sh`, `--max-usd`); a run that
+hits its cap is reported as capped.

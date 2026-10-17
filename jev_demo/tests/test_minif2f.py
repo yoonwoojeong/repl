@@ -2,7 +2,8 @@ import json
 
 import pytest
 
-from jev_demo.minif2f import Bm25Premises, closes_labels, load, premise_steps
+from jev_demo.minif2f import (Bm25Premises, closes_labels, is_premise_step, load, menu_only_labels,
+                              premise_steps)
 from jev_demo.theorems import Theorem
 
 
@@ -21,6 +22,18 @@ def test_premise_steps():
     assert premise_steps([]) == []
     s = premise_steps(["Nat.add_comm", "Nat.mul_comm", "a", "b", "c"])
     assert s[0] == "simp [Nat.add_comm, Nat.mul_comm, a, b]" and s[-1] == "rw [Nat.mul_comm]"
+
+
+def test_menu_only_labels_drop_premise_steps(tmp_path):
+    from jev_demo.collect import BinaryExample, load_labels, save_labels
+    steps = premise_steps(["Nat.add_comm", "Nat.mul_comm"])
+    assert all(is_premise_step(t) for t in steps)
+    menu = ["simp [*] at *", "norm_num [*] at *", "simp", "induction n <;> grind"]
+    assert not any(is_premise_step(t) for t in menu)
+    src, dst = tmp_path / "a.json", tmp_path / "b.json"
+    save_labels(str(src), [], [BinaryExample("closes", "s", t, False) for t in steps + menu])
+    assert menu_only_labels(str(src), str(dst)) == len(menu)
+    assert [b.option for b in load_labels(str(dst))[1]] == menu
 
 
 def test_bm25_premises_restricted_to_existing_names():
