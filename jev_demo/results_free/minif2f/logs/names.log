@@ -1,17 +1,2 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/repl/repl/jev_demo/jev_demo/minif2f.py", line 243, in <module>
-    main()
-  File "/home/runner/work/repl/repl/jev_demo/jev_demo/minif2f.py", line 227, in main
-    setup_menu(repl, a.names_cache)
-  File "/home/runner/work/repl/repl/jev_demo/jev_demo/minif2f.py", line 152, in setup_menu
-    bm25 = Bm25Premises(names)
-           ^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/repl/repl/jev_demo/jev_demo/minif2f.py", line 107, in __init__
-    from jev_demo.bm25_baseline import tok
-  File "/home/runner/work/repl/repl/jev_demo/jev_demo/bm25_baseline.py", line 15, in <module>
-    from jev_demo.looped import AccessIndex, load_corpus, load_split
-  File "/home/runner/work/repl/repl/jev_demo/jev_demo/looped.py", line 33, in <module>
-    import torch
-ModuleNotFoundError: No module named 'torch'
+[1/1] aimeII_2001_p3: 46 labels, 0 closing
+wrote 46 closes labels (0 closing) to jev_demo/results_free/minif2f/valid_closes_labels.json

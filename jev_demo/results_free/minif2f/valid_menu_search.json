@@ -9,28 +9,28 @@
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 28.0
+   "seconds": 19.5
   },
   {
    "name": "aimeII_2020_p6",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 9.8
+   "seconds": 7.4
   },
   {
    "name": "aimeI_2000_p7",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.6
+   "seconds": 3.3
   },
   {
    "name": "aime_1983_p9",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 7.3
+   "seconds": 5.1
   },
   {
    "name": "aime_1984_p15",
@@ -41,63 +41,63 @@
     "grind"
    ],
    "calls": 56,
-   "seconds": 17.6
+   "seconds": 11.8
   },
   {
    "name": "aime_1984_p5",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 3.4
+   "seconds": 2.3
   },
   {
    "name": "aime_1987_p8",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.5
+   "seconds": 3.3
   },
   {
    "name": "aime_1988_p3",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 2.9
+   "seconds": 2.2
   },
   {
    "name": "aime_1988_p4",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 15.4
+   "seconds": 10.3
   },
   {
    "name": "aime_1990_p2",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 6.5
+   "seconds": 4.2
   },
   {
    "name": "aime_1991_p1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 3.0
+   "seconds": 2.1
   },
   {
    "name": "aime_1991_p6",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 1.9
+   "seconds": 1.3
   },
   {
    "name": "aime_1994_p4",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 3.3
+   "seconds": 2.3
   },
   {
    "name": "aime_1996_p5",
@@ -107,21 +107,21 @@
     "grind"
    ],
    "calls": 58,
-   "seconds": 44.7
+   "seconds": 41.3
   },
   {
    "name": "aime_1997_p11",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 16.3
+   "seconds": 12.7
   },
   {
    "name": "algebra_2complexrootspoly_xsqp49eqxp7itxpn7i",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 7.0
+   "seconds": 4.7
   },
   {
    "name": "algebra_2rootsintpoly_am10tap11eqasqpam110",
@@ -130,7 +130,7 @@
     "ring_nf"
    ],
    "calls": 14,
-   "seconds": 0.6
+   "seconds": 0.5
   },
   {
    "name": "algebra_2rootspoly_apatapbeq2asqp2ab",
@@ -164,42 +164,42 @@
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 8.4
+   "seconds": 5.9
   },
   {
    "name": "algebra_amgm_prod1toneq1_sum1tongeqn",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 9.7
+   "seconds": 6.8
   },
   {
    "name": "algebra_amgm_sqrtxymulxmyeqxpy_xpygeq4",
    "proved": false,
    "tactics": [],
    "calls": 57,
-   "seconds": 20.1
+   "seconds": 13.1
   },
   {
    "name": "algebra_amgm_sumasqdivbsqgeqsumbdiva",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 8.5
+   "seconds": 5.7
   },
   {
    "name": "algebra_apb4leq8ta4pb4",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 18.2
+   "seconds": 11.8
   },
   {
    "name": "algebra_binomnegdiscrineq_10alt28asqp1",
    "proved": false,
    "tactics": [],
    "calls": 57,
-   "seconds": 16.9
+   "seconds": 10.9
   },
   {
    "name": "algebra_manipexpr_2erprsqpesqeqnrpnesq",
@@ -208,49 +208,49 @@
     "ring_nf"
    ],
    "calls": 14,
-   "seconds": 0.5
+   "seconds": 0.4
   },
   {
    "name": "algebra_manipexpr_apbeq2cceqiacpbceqm2",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.1
+   "seconds": 1.5
   },
   {
    "name": "algebra_sqineq_2at2pclta2c2p41pc",
    "proved": false,
    "tactics": [],
    "calls": 57,
-   "seconds": 17.1
+   "seconds": 11.6
   },
   {
    "name": "algebra_sqineq_2unitcircatblt1",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 6.1
+   "seconds": 4.0
   },
   {
    "name": "algebra_sqineq_36azm9asqle36zsq",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 6.9
+   "seconds": 4.4
   },
   {
    "name": "algebra_sqineq_4bap1lt4bsqpap1sq",
    "proved": false,
    "tactics": [],
    "calls": 57,
-   "seconds": 17.4
+   "seconds": 11.4
   },
   {
    "name": "algebra_xmysqpymzsqpzmxsqeqxyz_xpypzp6dvdx3y3z3",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 12.6
+   "seconds": 8.5
   },
   {
    "name": "amc12_2000_p11",
@@ -259,21 +259,21 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.3
+   "seconds": 0.9
   },
   {
    "name": "amc12_2000_p15",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.3
+   "seconds": 1.7
   },
   {
    "name": "amc12_2000_p5",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.4
+   "seconds": 2.8
   },
   {
    "name": "amc12_2001_p2",
@@ -282,63 +282,63 @@
     "nlinarith"
    ],
    "calls": 12,
-   "seconds": 2.5
+   "seconds": 1.3
   },
   {
    "name": "amc12_2001_p9",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 22.3
+   "seconds": 12.8
   },
   {
    "name": "amc12a_2002_p1",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 3.7
+   "seconds": 2.9
   },
   {
    "name": "amc12a_2002_p12",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 9.4
+   "seconds": 8.3
   },
   {
    "name": "amc12a_2002_p21",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.5
+   "seconds": 2.4
   },
   {
    "name": "amc12a_2003_p1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 98.5
+   "seconds": 97.1
   },
   {
    "name": "amc12a_2003_p24",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 16.2
+   "seconds": 12.1
   },
   {
    "name": "amc12a_2003_p25",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 33.8
+   "seconds": 23.9
   },
   {
    "name": "amc12a_2008_p15",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.8
+   "seconds": 4.9
   },
   {
    "name": "amc12a_2008_p2",
@@ -347,28 +347,28 @@
     "linarith"
    ],
    "calls": 11,
-   "seconds": 0.7
+   "seconds": 0.6
   },
   {
    "name": "amc12a_2008_p4",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 18.5
+   "seconds": 13.8
   },
   {
    "name": "amc12a_2008_p8",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 13.3
+   "seconds": 9.0
   },
   {
    "name": "amc12a_2009_p15",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 7.7
+   "seconds": 5.5
   },
   {
    "name": "amc12a_2009_p2",
@@ -384,7 +384,7 @@
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 30.4
+   "seconds": 22.9
   },
   {
    "name": "amc12a_2009_p5",
@@ -393,42 +393,42 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 0.7
+   "seconds": 0.6
   },
   {
    "name": "amc12a_2009_p9",
    "proved": false,
    "tactics": [],
    "calls": 57,
-   "seconds": 9.7
+   "seconds": 6.6
   },
   {
    "name": "amc12a_2010_p10",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 7.9
+   "seconds": 3.7
   },
   {
    "name": "amc12a_2010_p11",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.9
+   "seconds": 2.7
   },
   {
    "name": "amc12a_2010_p22",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 16.1
+   "seconds": 10.9
   },
   {
    "name": "amc12a_2011_p18",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 18.1
+   "seconds": 13.7
   },
   {
    "name": "amc12a_2013_p7",
@@ -437,7 +437,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.3
+   "seconds": 1.2
   },
   {
    "name": "amc12a_2013_p8",
@@ -446,21 +446,21 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.1
+   "seconds": 0.8
   },
   {
    "name": "amc12a_2015_p10",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 0.8
+   "seconds": 0.6
   },
   {
    "name": "amc12a_2016_p2",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 7.3
+   "seconds": 4.5
   },
   {
    "name": "amc12a_2016_p3",
@@ -469,7 +469,7 @@
     "norm_num [*] at *"
    ],
    "calls": 17,
-   "seconds": 1.3
+   "seconds": 0.9
   },
   {
    "name": "amc12a_2017_p2",
@@ -478,42 +478,42 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.0
+   "seconds": 0.7
   },
   {
    "name": "amc12a_2017_p7",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 13.7
+   "seconds": 8.3
   },
   {
    "name": "amc12a_2019_p21",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.8
+   "seconds": 3.1
   },
   {
    "name": "amc12a_2019_p9",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 5.1
+   "seconds": 3.1
   },
   {
    "name": "amc12a_2020_p13",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 9.8
+   "seconds": 5.8
   },
   {
    "name": "amc12a_2020_p21",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 3.0
+   "seconds": 1.9
   },
   {
    "name": "amc12a_2021_p7",
@@ -523,33 +523,35 @@
     "nlinarith"
    ],
    "calls": 31,
-   "seconds": 6.6
+   "seconds": 3.9
   },
   {
    "name": "amc12b_2002_p11",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.1
+   "seconds": 1.3
   },
   {
    "name": "amc12b_2002_p3",
    "proved": false,
-   "error": "could not start theorem '(S : Finset ℕ) -- note: we use (n^2 + 2 - 3 * n) over (n^2 - 3 * n + 2) because nat subtraction truncates the latter at 1 and 2 (h₀ : ∀ n : ℕ, n ∈ S ↔ 0 < n ∧ Nat.Prime (n ^ 2 + 2 - 3 * n)) : S.card = 1': {'messages': [{'severity': 'error', 'pos': {'line': 1, 'column': 224},"
+   "tactics": [],
+   "calls": 19,
+   "seconds": 1.6
   },
   {
    "name": "amc12b_2002_p6",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.0
+   "seconds": 1.2
   },
   {
    "name": "amc12b_2003_p17",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 11.7
+   "seconds": 7.1
   },
   {
    "name": "amc12b_2003_p6",
@@ -558,7 +560,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.2
+   "seconds": 0.9
   },
   {
    "name": "amc12b_2003_p9",
@@ -567,168 +569,168 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 0.9
+   "seconds": 0.8
   },
   {
    "name": "amc12b_2004_p3",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.5
+   "seconds": 3.4
   },
   {
    "name": "amc12b_2020_p5",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.6
+   "seconds": 2.6
   },
   {
    "name": "amc12b_2021_p21",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 6.4
+   "seconds": 3.5
   },
   {
    "name": "imo_1961_p1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 3.5
+   "seconds": 2.2
   },
   {
    "name": "imo_1962_p4",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 6.3
+   "seconds": 3.9
   },
   {
    "name": "imo_1964_p1_1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 3.8
+   "seconds": 2.4
   },
   {
    "name": "imo_1964_p1_2",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 1.4
+   "seconds": 1.0
   },
   {
    "name": "imo_1965_p1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 3.7
+   "seconds": 2.2
   },
   {
    "name": "imo_1966_p4",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 13.2
+   "seconds": 7.7
   },
   {
    "name": "imo_1966_p5",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.4
+   "seconds": 3.4
   },
   {
    "name": "imo_1967_p3",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 125.2
+   "seconds": 112.2
   },
   {
    "name": "imo_1973_p3",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 31.0
+   "seconds": 19.9
   },
   {
    "name": "imo_1974_p5",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.6
+   "seconds": 2.8
   },
   {
    "name": "imo_1977_p5",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.1
+   "seconds": 2.5
   },
   {
    "name": "imo_1978_p5",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 14.0
+   "seconds": 8.3
   },
   {
    "name": "imo_1979_p1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 12.2
+   "seconds": 7.6
   },
   {
    "name": "imo_1984_p2",
    "proved": false,
    "tactics": [],
    "calls": 57,
-   "seconds": 21.9
+   "seconds": 12.9
   },
   {
    "name": "imo_1987_p4",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.3
+   "seconds": 1.4
   },
   {
    "name": "imo_1987_p6",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 3.9
+   "seconds": 2.6
   },
   {
    "name": "imo_1988_p6",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 6.0
+   "seconds": 3.8
   },
   {
    "name": "imo_1990_p3",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 7.0
+   "seconds": 4.4
   },
   {
    "name": "imo_1993_p5",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.3
+   "seconds": 2.8
   },
   {
    "name": "imo_2006_p3",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 21.7
+   "seconds": 12.5
   },
   {
    "name": "induction_divisibility_3div2tooddnp1",
@@ -737,56 +739,56 @@
     "induction n <;> grind"
    ],
    "calls": 21,
-   "seconds": 1.7
+   "seconds": 1.2
   },
   {
    "name": "induction_divisibility_3divnto3m2n",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 1.8
+   "seconds": 1.3
   },
   {
    "name": "induction_divisibility_9div10tonm1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 3.0
+   "seconds": 1.9
   },
   {
    "name": "induction_ineq_nsqlefactn",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 10.7
+   "seconds": 6.6
   },
   {
    "name": "induction_seq_mul2pnp1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.6
+   "seconds": 3.5
   },
   {
    "name": "induction_sum2kp1npqsqm1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 8.0
+   "seconds": 4.4
   },
   {
    "name": "induction_sum_1oktkp1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 6.5
+   "seconds": 3.7
   },
   {
    "name": "induction_sum_odd",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.6
+   "seconds": 3.3
   },
   {
    "name": "mathd_algebra_10",
@@ -795,14 +797,14 @@
     "norm_num"
    ],
    "calls": 10,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "mathd_algebra_101",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 1.7
+   "seconds": 1.1
   },
   {
    "name": "mathd_algebra_104",
@@ -811,7 +813,7 @@
     "linarith"
    ],
    "calls": 11,
-   "seconds": 0.7
+   "seconds": 0.4
   },
   {
    "name": "mathd_algebra_109",
@@ -820,7 +822,7 @@
     "linarith"
    ],
    "calls": 11,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "mathd_algebra_11",
@@ -829,14 +831,14 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.2
+   "seconds": 0.8
   },
   {
    "name": "mathd_algebra_110",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.5
+   "seconds": 3.4
   },
   {
    "name": "mathd_algebra_116",
@@ -845,7 +847,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.5
+   "seconds": 1.0
   },
   {
    "name": "mathd_algebra_119",
@@ -854,7 +856,7 @@
     "linarith"
    ],
    "calls": 11,
-   "seconds": 0.5
+   "seconds": 0.4
   },
   {
    "name": "mathd_algebra_123",
@@ -863,7 +865,7 @@
     "omega"
    ],
    "calls": 4,
-   "seconds": 0.6
+   "seconds": 0.4
   },
   {
    "name": "mathd_algebra_126",
@@ -872,14 +874,14 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 0.9
+   "seconds": 0.6
   },
   {
    "name": "mathd_algebra_13",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.8
+   "seconds": 1.8
   },
   {
    "name": "mathd_algebra_131",
@@ -888,7 +890,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 2.2
+   "seconds": 1.5
   },
   {
    "name": "mathd_algebra_132",
@@ -897,14 +899,14 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.0
+   "seconds": 0.8
   },
   {
    "name": "mathd_algebra_140",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 9.5
+   "seconds": 5.7
   },
   {
    "name": "mathd_algebra_144",
@@ -913,14 +915,14 @@
     "omega"
    ],
    "calls": 4,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "mathd_algebra_149",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 9.0
+   "seconds": 5.6
   },
   {
    "name": "mathd_algebra_15",
@@ -929,14 +931,14 @@
     "simp_all"
    ],
    "calls": 3,
-   "seconds": 0.5
+   "seconds": 0.4
   },
   {
    "name": "mathd_algebra_151",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 1.9
+   "seconds": 1.3
   },
   {
    "name": "mathd_algebra_159",
@@ -945,7 +947,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.2
+   "seconds": 0.8
   },
   {
    "name": "mathd_algebra_181",
@@ -954,7 +956,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.0
+   "seconds": 0.6
   },
   {
    "name": "mathd_algebra_182",
@@ -970,7 +972,7 @@
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 2.8
+   "seconds": 1.9
   },
   {
    "name": "mathd_algebra_190",
@@ -986,7 +988,7 @@
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 6.6
+   "seconds": 4.0
   },
   {
    "name": "mathd_algebra_206",
@@ -995,7 +997,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.6
+   "seconds": 1.1
   },
   {
    "name": "mathd_algebra_214",
@@ -1004,21 +1006,21 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.1
+   "seconds": 0.7
   },
   {
    "name": "mathd_algebra_22",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 5.4
+   "seconds": 3.3
   },
   {
    "name": "mathd_algebra_224",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 1.5
+   "seconds": 0.9
   },
   {
    "name": "mathd_algebra_234",
@@ -1027,7 +1029,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.3
+   "seconds": 0.9
   },
   {
    "name": "mathd_algebra_245",
@@ -1036,7 +1038,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.9
+   "seconds": 1.4
   },
   {
    "name": "mathd_algebra_247",
@@ -1046,7 +1048,7 @@
     "simp_all"
    ],
    "calls": 31,
-   "seconds": 8.3
+   "seconds": 5.5
   },
   {
    "name": "mathd_algebra_251",
@@ -1055,7 +1057,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 0.8
+   "seconds": 0.6
   },
   {
    "name": "mathd_algebra_267",
@@ -1064,42 +1066,42 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 2.1
+   "seconds": 1.4
   },
   {
    "name": "mathd_algebra_28",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 7.8
+   "seconds": 4.7
   },
   {
    "name": "mathd_algebra_282",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.6
+   "seconds": 3.6
   },
   {
    "name": "mathd_algebra_31",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 14.7
+   "seconds": 9.2
   },
   {
    "name": "mathd_algebra_323",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.2
+   "seconds": 2.7
   },
   {
    "name": "mathd_algebra_327",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.6
+   "seconds": 1.9
   },
   {
    "name": "mathd_algebra_35",
@@ -1108,7 +1110,7 @@
     "norm_num [*] at *"
    ],
    "calls": 17,
-   "seconds": 0.7
+   "seconds": 0.5
   },
   {
    "name": "mathd_algebra_37",
@@ -1117,42 +1119,42 @@
     "nlinarith"
    ],
    "calls": 12,
-   "seconds": 0.9
+   "seconds": 0.8
   },
   {
    "name": "mathd_algebra_393",
    "proved": false,
    "tactics": [],
    "calls": 57,
-   "seconds": 8.9
+   "seconds": 5.1
   },
   {
    "name": "mathd_algebra_405",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 1.5
+   "seconds": 0.9
   },
   {
    "name": "mathd_algebra_410",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 16.9
+   "seconds": 10.3
   },
   {
    "name": "mathd_algebra_421",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 7.8
+   "seconds": 4.5
   },
   {
    "name": "mathd_algebra_422",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.9
+   "seconds": 3.2
   },
   {
    "name": "mathd_algebra_43",
@@ -1161,21 +1163,21 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 15.0
+   "seconds": 10.0
   },
   {
    "name": "mathd_algebra_433",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 6.3
+   "seconds": 3.6
   },
   {
    "name": "mathd_algebra_437",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 1.3
+   "seconds": 0.7
   },
   {
    "name": "mathd_algebra_451",
@@ -1185,7 +1187,7 @@
     "grind"
    ],
    "calls": 55,
-   "seconds": 34.7
+   "seconds": 22.4
   },
   {
    "name": "mathd_algebra_455",
@@ -1194,7 +1196,7 @@
     "linarith"
    ],
    "calls": 11,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "mathd_algebra_462",
@@ -1212,21 +1214,21 @@
     "norm_num [*] at *"
    ],
    "calls": 17,
-   "seconds": 0.5
+   "seconds": 0.4
   },
   {
    "name": "mathd_algebra_480",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 10.0
+   "seconds": 5.7
   },
   {
    "name": "mathd_algebra_482",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 8.1
+   "seconds": 4.9
   },
   {
    "name": "mathd_algebra_493",
@@ -1235,14 +1237,14 @@
     "norm_num [*] at *"
    ],
    "calls": 17,
-   "seconds": 0.6
+   "seconds": 0.4
   },
   {
    "name": "mathd_algebra_509",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 6.7
+   "seconds": 4.4
   },
   {
    "name": "mathd_algebra_51",
@@ -1251,14 +1253,14 @@
     "linarith"
    ],
    "calls": 11,
-   "seconds": 0.9
+   "seconds": 0.7
   },
   {
    "name": "mathd_algebra_510",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 4.4
+   "seconds": 2.9
   },
   {
    "name": "mathd_algebra_536",
@@ -1276,7 +1278,7 @@
     "norm_num [*] at *"
    ],
    "calls": 17,
-   "seconds": 0.5
+   "seconds": 0.4
   },
   {
    "name": "mathd_algebra_55",
@@ -1285,7 +1287,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.4
+   "seconds": 1.1
   },
   {
    "name": "mathd_algebra_568",
@@ -1301,7 +1303,7 @@
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 8.6
+   "seconds": 5.5
   },
   {
    "name": "mathd_algebra_616",
@@ -1319,14 +1321,14 @@
     "norm_num [*] at *"
    ],
    "calls": 17,
-   "seconds": 0.6
+   "seconds": 0.5
   },
   {
    "name": "mathd_algebra_69",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 4.0
+   "seconds": 2.6
   },
   {
    "name": "mathd_algebra_73",
@@ -1335,7 +1337,7 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 0.9
+   "seconds": 0.7
   },
   {
    "name": "mathd_algebra_77",
@@ -1344,14 +1346,14 @@
     "grind"
    ],
    "calls": 18,
-   "seconds": 1.9
+   "seconds": 1.4
   },
   {
    "name": "mathd_algebra_89",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.8
+   "seconds": 3.8
   },
   {
    "name": "mathd_algebra_96",
@@ -1387,7 +1389,7 @@
     "aesop"
    ],
    "calls": 16,
-   "seconds": 1.8
+   "seconds": 1.3
   },
   {
    "name": "mathd_numbertheory_110",
@@ -1396,21 +1398,21 @@
     "omega"
    ],
    "calls": 4,
-   "seconds": 0.5
+   "seconds": 0.4
   },
   {
    "name": "mathd_numbertheory_126",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.6
+   "seconds": 3.8
   },
   {
    "name": "mathd_numbertheory_13",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.8
+   "seconds": 1.6
   },
   {
    "name": "mathd_numbertheory_132",
@@ -1446,14 +1448,14 @@
     "rfl"
    ],
    "calls": 1,
-   "seconds": 0.9
+   "seconds": 0.6
   },
   {
    "name": "mathd_numbertheory_156",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 7.4
+   "seconds": 4.7
   },
   {
    "name": "mathd_numbertheory_169",
@@ -1480,7 +1482,7 @@
     "omega"
    ],
    "calls": 4,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "mathd_numbertheory_200",
@@ -1514,21 +1516,21 @@
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.4
+   "seconds": 1.5
   },
   {
    "name": "mathd_numbertheory_221",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 1.3
+   "seconds": 0.9
   },
   {
    "name": "mathd_numbertheory_232",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.5
+   "seconds": 3.4
   },
   {
    "name": "mathd_numbertheory_236",
@@ -1565,7 +1567,7 @@
     "omega"
    ],
    "calls": 38,
-   "seconds": 5.0
+   "seconds": 3.9
   },
   {
    "name": "mathd_numbertheory_269",
@@ -1574,7 +1576,7 @@
     "rfl"
    ],
    "calls": 1,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "mathd_numbertheory_284",
@@ -1583,7 +1585,7 @@
     "omega"
    ],
    "calls": 4,
-   "seconds": 0.5
+   "seconds": 0.3
   },
   {
    "name": "mathd_numbertheory_30",
@@ -1601,28 +1603,28 @@
     "omega"
    ],
    "calls": 4,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "mathd_numbertheory_303",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 1.5
+   "seconds": 1.0
   },
   {
    "name": "mathd_numbertheory_32",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 1.5
+   "seconds": 1.0
   },
   {
    "name": "mathd_numbertheory_326",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 2.6
+   "seconds": 1.7
   },
   {
    "name": "mathd_numbertheory_33",
@@ -1631,7 +1633,7 @@
     "omega"
    ],
    "calls": 4,
-   "seconds": 0.6
+   "seconds": 0.4
   },
   {
    "name": "mathd_numbertheory_335",
@@ -1640,14 +1642,14 @@
     "omega"
    ],
    "calls": 4,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "mathd_numbertheory_35",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 2.8
+   "seconds": 1.9
   },
   {
    "name": "mathd_numbertheory_37",
@@ -1665,7 +1667,7 @@
     "omega"
    ],
    "calls": 4,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "mathd_numbertheory_403",
@@ -1681,28 +1683,28 @@
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 9.6
+   "seconds": 5.9
   },
   {
    "name": "mathd_numbertheory_412",
    "proved": false,
    "tactics": [],
    "calls": 38,
-   "seconds": 2.9
+   "seconds": 1.7
   },
   {
    "name": "mathd_numbertheory_42",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.7
+   "seconds": 3.2
   },
   {
    "name": "mathd_numbertheory_43",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 2.4
+   "seconds": 1.4
   },
   {
    "name": "mathd_numbertheory_45",
@@ -1729,7 +1731,7 @@
     "aesop"
    ],
    "calls": 16,
-   "seconds": 0.7
+   "seconds": 0.5
   },
   {
    "name": "mathd_numbertheory_466",
@@ -1747,21 +1749,21 @@
     "nlinarith"
    ],
    "calls": 12,
-   "seconds": 1.1
+   "seconds": 0.7
   },
   {
    "name": "mathd_numbertheory_530",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 6.7
+   "seconds": 3.7
   },
   {
    "name": "mathd_numbertheory_543",
    "proved": false,
    "tactics": [],
    "calls": 57,
-   "seconds": 10.3
+   "seconds": 5.8
   },
   {
    "name": "mathd_numbertheory_629",
@@ -1770,7 +1772,7 @@
     "decide"
    ],
    "calls": 5,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "mathd_numbertheory_64",
@@ -1779,7 +1781,7 @@
     "decide"
    ],
    "calls": 5,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "mathd_numbertheory_640",
@@ -1795,21 +1797,21 @@
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 7.7
+   "seconds": 4.5
   },
   {
    "name": "mathd_numbertheory_690",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 1.9
+   "seconds": 1.2
   },
   {
    "name": "mathd_numbertheory_709",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 9.4
+   "seconds": 5.3
   },
   {
    "name": "mathd_numbertheory_739",
@@ -1825,7 +1827,7 @@
    "proved": false,
    "tactics": [],
    "calls": 57,
-   "seconds": 2.9
+   "seconds": 1.7
   },
   {
    "name": "mathd_numbertheory_81",
@@ -1843,7 +1845,7 @@
     "norm_num"
    ],
    "calls": 10,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "mathd_numbertheory_92",
@@ -1852,7 +1854,7 @@
     "omega"
    ],
    "calls": 4,
-   "seconds": 0.5
+   "seconds": 0.4
   },
   {
    "name": "mathd_numbertheory_961",
@@ -1870,56 +1872,56 @@
     "induction n <;> grind"
    ],
    "calls": 21,
-   "seconds": 1.7
+   "seconds": 1.1
   },
   {
    "name": "numbertheory_aneqprodakp4_anmsqrtanp1eq2",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.7
+   "seconds": 2.6
   },
   {
    "name": "numbertheory_nckeqnm1ckpnm1ckm1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 6.6
+   "seconds": 2.4
   },
   {
    "name": "numbertheory_prmdvsneqnsqmodpeq0",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 3.7
+   "seconds": 2.2
   },
   {
    "name": "numbertheory_sqmod3in01d",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 6.5
+   "seconds": 3.5
   },
   {
    "name": "numbertheory_sqmod4in01d",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 5.8
+   "seconds": 3.8
   },
   {
    "name": "numbertheory_sumkmulnckeqnmul2pownm1",
    "proved": false,
    "tactics": [],
    "calls": 64,
-   "seconds": 9.1
+   "seconds": 4.9
   },
   {
    "name": "numbertheory_xsqpysqintdenomeq",
    "proved": false,
    "tactics": [],
    "calls": 19,
-   "seconds": 1.6
+   "seconds": 0.9
   }
  ],
  "split": "valid",
