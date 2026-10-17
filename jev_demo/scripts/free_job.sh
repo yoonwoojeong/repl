@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Job 5: miniF2F valid (Lean v4.24.0 + Mathlib), free. (1) dump Mathlib theorem names (filters the
+# Job 5 (re-run: BM25 no longer imports torch): miniF2F valid (Lean v4.24.0 + Mathlib), free. (1) dump Mathlib theorem names (filters the
 # LeanDojo corpus for BM25 premises); (2) re-run the Lean-only baselines after the loader fix;
 # (3) Jev alone with BM25-premise steps; (4) Lean-only `closes` labels for the router.
 set -euo pipefail

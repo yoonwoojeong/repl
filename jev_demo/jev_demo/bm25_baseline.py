@@ -12,7 +12,7 @@ import sys
 import numpy as np
 import bm25s
 
-from jev_demo.looped import AccessIndex, load_corpus, load_split
+from jev_demo.ld4 import AccessIndex, load_corpus, load_split
 from jev_demo.reprover_common import Pos, evaluate, get_all_pos_premises
 from jev_demo.theorems import DATA_DIR
 

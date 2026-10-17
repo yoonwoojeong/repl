@@ -34,10 +34,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+from jev_demo.ld4 import STD, AccessIndex, load_corpus, load_split  # noqa: F401 (re-exported)
 from jev_demo.reprover_common import Corpus, evaluate, get_all_pos_premises
 from jev_demo.theorems import DATA_DIR
-
-STD = os.path.join(DATA_DIR, "standard")
 PAD, CLS, OFFSET = 0, 1, 2  # byte b -> token b + OFFSET
 
 
@@ -98,17 +97,7 @@ def n_params(m: nn.Module) -> int:
     return sum(p.numel() for p in m.parameters())
 
 
-# -- data ------------------------------------------------------------------------------------
-
-def load_corpus() -> Corpus:
-    with gzip.open(os.path.join(STD, "ld4_corpus.jsonl.gz"), "rt", encoding="utf-8") as f:
-        return Corpus.from_rows([json.loads(line) for line in f])
-
-
-def load_split(split: str, part: str) -> list[dict]:
-    with gzip.open(os.path.join(STD, f"ld4_{split}_{part}.json.gz"), "rt", encoding="utf-8") as f:
-        return json.load(f)
-
+# -- data -------------------------------------------------------------------------------------
 
 def train_examples(corpus: Corpus, data: list[dict]) -> list[tuple[str, list]]:
     """(state, positive premises) for every tactic with at least one premise (ReProver: train)."""
@@ -119,32 +108,6 @@ def train_examples(corpus: Corpus, data: list[dict]) -> list[tuple[str, list]]:
             if pos:
                 out.append((tac["state_before"], pos))
     return out
-
-
-class AccessIndex:
-    """`Corpus.get_accessible_premise_indexes` as a numpy mask: a premise is accessible at
-    (path, pos) iff it is in a (transitively) imported file, or earlier in the same file."""
-
-    def __init__(self, corpus: Corpus):
-        self.corpus = corpus
-        files = list(corpus.transitive_dep_graph.nodes)
-        self.fid = {p: i for i, p in enumerate(files)}
-        self.pfile = np.array([self.fid[p.path] for p in corpus.all_premises])
-        self.pend = [p.end for p in corpus.all_premises]
-        self._imp: dict[str, np.ndarray] = {}
-
-    def mask(self, path: str, pos) -> np.ndarray:
-        if path not in self._imp:
-            deps = np.zeros(len(self.fid), dtype=bool)
-            for q in self.corpus.transitive_dep_graph.successors(path):
-                deps[self.fid[q]] = True
-            self._imp[path] = deps[self.pfile]
-        m = self._imp[path].copy()
-        same = np.nonzero(self.pfile == self.fid[path])[0]
-        for i in same:
-            if self.pend[i] <= pos:
-                m[i] = True
-        return m
 
 
 # -- training --------------------------------------------------------------------------------

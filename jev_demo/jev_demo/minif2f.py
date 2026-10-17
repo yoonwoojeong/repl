@@ -105,7 +105,7 @@ class Bm25Premises:
         import bm25s
 
         from jev_demo.bm25_baseline import tok
-        from jev_demo.looped import load_corpus
+        from jev_demo.ld4 import load_corpus
         corpus = load_corpus()
         self.premises = [p for p in corpus.all_premises if p.full_name in names]
         self.bm25 = bm25s.BM25()
