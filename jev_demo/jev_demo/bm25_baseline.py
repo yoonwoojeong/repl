@@ -1,31 +1,32 @@
 """BM25 premise retrieval on LeanDojo Benchmark 4 (the lexical baseline of the LeanDojo paper),
-scored with ReProver's protocol and evaluation. Uses the `rank_bm25` package (BM25Okapi)."""
+scored with ReProver's protocol and evaluation. Uses the `bm25s` package (BM25, sparse scoring;
+`rank_bm25` was too slow for 152k premises x 18k queries within a CI job) with its default
+tokenizer, keeping one-character tokens (`TOKEN_PATTERN`; Lean goals are full of `x`, `n`, `0`)."""
 
 from __future__ import annotations
 
 import json
 import os
-import re
 import sys
 
 import numpy as np
-from rank_bm25 import BM25Okapi
+import bm25s
 
 from jev_demo.looped import AccessIndex, load_corpus, load_split
 from jev_demo.reprover_common import Pos, evaluate, get_all_pos_premises
 from jev_demo.theorems import DATA_DIR
 
-_TOK = re.compile(r"[^\s()\[\]{},:]+")
+TOKEN_PATTERN = r"(?u)\b\w+\b"
 
 
-def tokens(s: str) -> list[str]:
-    return _TOK.findall(s)
-
+def tok(texts):
+    return bm25s.tokenize(texts, stopwords=None, token_pattern=TOKEN_PATTERN, show_progress=False)
 
 def main(split: str = "novel_premises", parts=("val", "test"), k: int = 100) -> dict:
     corpus = load_corpus()
     access = AccessIndex(corpus)
-    bm25 = BM25Okapi([tokens(p.serialize()) for p in corpus.all_premises])
+    bm25 = bm25s.BM25()
+    bm25.index(tok([p.serialize() for p in corpus.all_premises]), show_progress=False)
     out = {"method": "bm25", "split": split}
     for part in parts:
         data = load_split(split, part)
@@ -38,7 +39,10 @@ def main(split: str = "novel_premises", parts=("val", "test"), k: int = 100) -> 
                     preds[(thm["file_path"], thm["full_name"], tuple(thm["start"]), i)] = {
                         "all_pos_premises": [], "retrieved_premises": []}
                     continue
-                s = np.where(acc, bm25.get_scores(tokens(tac["state_before"])), -np.inf)
+                q = bm25s.tokenize(tac["state_before"], stopwords=None, token_pattern=TOKEN_PATTERN,
+                                   show_progress=False, return_ids=False)[0]
+                raw = bm25.get_scores(q) if q else np.zeros(len(corpus.all_premises))
+                s = np.where(acc, raw, -np.inf)
                 top = np.argpartition(-s, k)[:k]
                 top = top[np.argsort(-s[top])]
                 preds[(thm["file_path"], thm["full_name"], tuple(thm["start"]), i)] = {
