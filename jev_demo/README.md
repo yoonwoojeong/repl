@@ -630,6 +630,12 @@ nothing on validation, so they are dropped: the paid methods use `menu_search`'s
 router trains on the 15,773 labels of menu tactics (1,414 closing; written to
 `router_labels.json` in each run directory).
 
+### Lean-only baselines on test (free)
+
+GitHub Actions run `39018378141` (`results_free/minif2f/test_*.json`), same settings as on
+validation: `single` 93/244 (38.1%), `menu_search` 101/244 (41.4%). `menu_search` solves 9
+problems `single` misses and misses 1 that `single` solves. No statement failed to elaborate.
+
 ### Pre-registered test run (recorded before it is run)
 
 On the 244 **test** problems, `claude-opus-5-5`, effort `medium`, 64 Lean calls and at most 16

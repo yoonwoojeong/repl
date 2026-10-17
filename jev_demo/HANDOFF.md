@@ -44,19 +44,17 @@ since.
   problems); BM25 steps closed no state the menu could not, so they are **dropped** from the paid
   path (`minif2f.py` claude mode uses the plain menu; router trains on `router_labels.json`,
   menu-tactic labels only). README "miniF2F efficiency run" holds the pre-registration.
-- **Free job 6** (`scripts/free_job.sh`): Lean-only `single` / `menu_search` on **test**, as the
-  reference for the paid run.
+- Job 6 landed (run 39018378141): test `single` 93/244, `menu_search` 101/244 (in README).
 - **Waiting on the user's budget approval** for `mf-pilot` and `mf-test` (caps in
   `scripts/exp3_stage.sh` are still placeholders $4 / $40).
 
 ## Next steps
-1. Report job 6's test baselines in the README.
-2. On approval: set the stage caps to the approved amounts; the user adds the PR label
+1. On approval: set the stage caps to the approved amounts; the user adds the PR label
    `exp3-mf-pilot` (workflow `jev-exp3-live.yml`). Check the pilot's measured cost per request
    and requests per problem; if the projected test cost exceeds the approved test budget, go
    back to the user before `exp3-mf-test`.
-3. Score the test run as pre-registered (`replication.saving_ci`, `stats.compare`).
-4. README restructure: miniF2F headline, corebench as history; update the PR description.
+2. Score the test run as pre-registered (`replication.saving_ci`, `stats.compare`).
+3. README restructure: miniF2F headline, corebench as history; update the PR description.
 
 ## Practical notes
 - Long runs die if the cloud container idles: run anything long in GitHub Actions (free-job
