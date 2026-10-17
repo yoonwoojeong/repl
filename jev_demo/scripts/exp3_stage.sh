@@ -2,7 +2,7 @@
 # Paid stages of experiment 3, run by .github/workflows/jev-exp3-live.yml (one label per stage).
 # Every stage has a hard USD cap (--max-usd per command); the caps are the budget approved for it.
 set -euo pipefail
-stage="${1:?usage: exp3_stage.sh pilot|stage1|dev2|final|replicate|g-haiku|g-sonnet|g-opus-low|g-tight|g-ext}"
+stage="${1:?usage: exp3_stage.sh pilot|stage1|dev2|final|replicate|g-haiku|g-sonnet|g-opus-low|g-tight|g-ext|mf-pilot|mf-test}"
 D=jev_demo/data
 R=jev_demo/results_exp3
 mkdir -p "$R"
@@ -67,6 +67,27 @@ case "$stage" in
       echo "$stage $m: cap \$$cap (spent so far \$$spent of \$$total)"
       run --test $test --train none --methods $m $extra \
           --labels $D/claude_labels_core.json,$D/jev_closes_labels.json \
+          --cache-dir jev_demo/cache/${stage}_$m --out $R/${stage}_$m --max-usd "$cap" \
+          2>&1 | tee $R/${stage}_$m.log
+      spent=$(python3 -c "import json; print(round($spent + json.load(open('$R/${stage}_$m/results.json'))['total_usd'], 4))")
+    done
+    echo "$stage spent \$$spent of \$$total" ;;
+  mf-pilot|mf-test)
+    # miniF2F efficiency run (README "miniF2F efficiency run", pre-registered). claude_search then
+    # jev_router, each with its own empty response cache; router trained only on Lean-only
+    # `closes` labels from the validation split. mf-pilot: 20 validation problems (plumbing only,
+    # not scored); mf-test: the 244 test problems, once.
+    source jev_demo/scripts/minif2f_setup.sh
+    O=jev_demo/results_free/minif2f
+    if [ "$stage" = mf-pilot ]; then split=valid; extra="--limit 20"; total=4; reserve=1.5
+    else split=test; extra=""; total=40; reserve=15; fi
+    spent=0
+    for m in claude_search jev_router; do
+      if [ "$m" = claude_search ]; then cap=$(python3 -c "print(round($total - $reserve, 4))")
+      else cap=$(python3 -c "print(round($total - $spent, 4))"); fi
+      echo "$stage $m: cap \$$cap (spent so far \$$spent of \$$total)"
+      python3 -m jev_demo.minif2f claude $W/miniF2F $split $MF_REPL $extra --methods $m \
+          --names-cache $O/mathlib_theorem_names.txt.gz --labels $O/valid_closes_labels.json \
           --cache-dir jev_demo/cache/${stage}_$m --out $R/${stage}_$m --max-usd "$cap" \
           2>&1 | tee $R/${stage}_$m.log
       spent=$(python3 -c "import json; print(round($spent + json.load(open('$R/${stage}_$m/results.json'))['total_usd'], 4))")
