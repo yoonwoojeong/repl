@@ -1,0 +1,45 @@
+152695 premises, 124886 training (state, premises) examples
+same_params step 0 loss 4.075 1s
+same_params step 100 loss 2.934 61s
+same_params step 200 loss 2.980 122s
+same_params step 300 loss 2.387 170s
+same_params step 400 loss 2.815 215s
+same_params step 500 loss 2.551 264s
+same_params step 600 loss 2.248 316s
+same_params step 700 loss 2.714 377s
+same_params step 800 loss 2.303 430s
+same_params step 900 loss 2.530 482s
+same_params step 1000 loss 2.339 543s
+same_params step 1100 loss 2.562 600s
+same_params step 1200 loss 2.226 643s
+same_params step 1300 loss 2.341 687s
+same_params step 1400 loss 2.135 730s
+same_params step 1500 loss 2.219 774s
+same_params step 1600 loss 2.154 817s
+same_params step 1700 loss 2.208 873s
+same_params step 1800 loss 2.262 931s
+same_params step 1900 loss 1.647 992s
+same_params step 2000 loss 2.189 1052s
+same_params step 2100 loss 1.780 1113s
+same_params step 2200 loss 2.157 1173s
+same_params step 2300 loss 1.749 1217s
+same_params step 2400 loss 1.820 1274s
+same_params step 2500 loss 1.718 1322s
+same_params step 2600 loss 2.136 1366s
+same_params step 2700 loss 1.904 1420s
+same_params step 2800 loss 2.146 1482s
+same_params step 2900 loss 1.974 1543s
+same_params step 3000 loss 1.957 1604s
+same_params step 3100 loss 1.862 1653s
+same_params step 3200 loss 2.084 1702s
+same_params step 3300 loss 2.226 1752s
+same_params step 3400 loss 2.088 1796s
+same_params step 3500 loss 1.620 1841s
+same_params step 3600 loss 2.031 1898s
+same_params step 3700 loss 1.502 1959s
+same_params step 3800 loss 1.658 2020s
+same_params step 3900 loss 2.596 2081s
+same_params step 3999 loss 2.144 2141s
+same_params novel_premises/val: R@1 1.58  R@10 5.32  MRR 0.0458
+same_params novel_premises/test: R@1 1.47  R@10 5.66  MRR 0.0478
+{"config": {"variant": "same_params", "d": 128, "heads": 4, "ff": 512, "loops": 4, "state_len": 256, "premise_len": 128, "batch": 32, "steps": 4000, "lr": 0.001, "warmup": 200, "temperature": 0.05, "seed": 0, "split": "novel_premises"}, "params": 264320, "val": {"R@1": 1.58, "R@10": 5.32, "MRR": 0.0458}, "test": {"R@1": 1.47, "R@10": 5.66, "MRR": 0.0478}}
