@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "cases h", "simp_all", "contradiction", "grind", "exact (List.not_lt_nil _ h)", "nomatch h"], "usd": 0.005773000000000028}

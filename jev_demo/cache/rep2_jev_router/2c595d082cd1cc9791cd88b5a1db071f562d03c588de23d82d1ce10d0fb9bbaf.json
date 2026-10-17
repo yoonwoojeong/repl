@@ -1,0 +1,1 @@
+{"tactics": ["intro inst inst_1 l", "intros", "intro _ _ l", "intros <;> simp [List.mem_cons]", "intros <;> by_cases h : y = a <;> simp_all", "intros <;> grind"], "usd": 0.0026850000000000485}

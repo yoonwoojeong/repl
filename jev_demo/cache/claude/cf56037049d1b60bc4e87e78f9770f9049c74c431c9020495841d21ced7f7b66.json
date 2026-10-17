@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.getElem_append_right (by omega)]", "exact List.getElem_append_right (Nat.le_of_not_lt h')", "simp [List.getElem_append_right, Nat.le_of_not_lt h']", "grind [List.getElem_append_right]", "exact List.getElem_append_right (by omega)"], "usd": 0.009341000000000044}

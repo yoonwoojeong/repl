@@ -1,0 +1,1 @@
+{"tactics": ["rcases k with _ | k <;> simp [Nat.mul_succ] at hk <;> omega", "cases k with\n  | zero => simp at hk; omega\n  | succ k => rw [hk, Nat.mul_succ]; omega", "subst hk; exact Nat.le_mul_of_pos_right m (Nat.pos_of_ne_zero (by rintro rfl; simp at h))", "grind", "cases k", "subst hk; cases k <;> simp_all [Nat.mul_succ]"], "usd": 0.013360999999999734}

@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rfl", "simp [List.attachWith]", "decide", "simp only [List.reverse_nil, List.attachWith_nil]", "grind"], "usd": 0.0022769999999998625}

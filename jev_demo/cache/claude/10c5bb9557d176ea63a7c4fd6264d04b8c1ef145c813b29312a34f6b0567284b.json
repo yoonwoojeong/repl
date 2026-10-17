@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨t, rfl⟩ := h", "rcases h with ⟨t, rfl⟩ <;> simp [List.getLast_append, hx]", "rcases h with ⟨t, rfl⟩ <;> rw [List.getLast_append_of_ne_nil hx]", "rcases h with ⟨t, rfl⟩ <;> simp_all [List.getLast_append_right]", "rcases h with ⟨t, rfl⟩ <;> grind", "cases h"], "usd": 0.011232999999999993}

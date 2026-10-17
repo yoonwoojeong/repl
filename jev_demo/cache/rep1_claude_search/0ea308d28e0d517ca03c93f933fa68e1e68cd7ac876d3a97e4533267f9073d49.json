@@ -1,0 +1,1 @@
+{"tactics": ["cases l₁", "rcases l₁ with _ | ⟨c, l₁⟩", "cases l₁ <;> simp_all", "induction l₁ generalizing l₂", "cases l₂"], "usd": 0.017408999999999786}

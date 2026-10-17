@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp [bne]", "simp [bne, BEq.comm]", "simp only [bne_iff_ne, BEq.comm]", "cases h : head✝ == a <;> simp_all [bne, BEq.comm]", "grind [bne, BEq.comm]"], "usd": 0.009040999999999966}

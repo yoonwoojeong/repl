@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ l a i h", "intros _ _ l a i h", "intro inst inst_1 l a i h", "intro _ _ l a i h <;> by_cases ha : a ∈ l <;> simp [ha, List.insert_of_mem, List.insert_of_not_mem] <;> cases i <;> simp_all", "intro _ _ l a i h <;> unfold List.insert <;> split <;> simp_all <;> cases i <;> simp_all"], "usd": 0.008952999999999989}

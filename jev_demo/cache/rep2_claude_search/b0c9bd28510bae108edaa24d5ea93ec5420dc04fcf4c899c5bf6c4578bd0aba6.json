@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "intro h <;> exact ⟨[], [], rfl, by simp_all [List.sublist_nil], by simp_all [List.sublist_nil]⟩", "intro h <;> simp only [List.sublist_nil, List.append_eq_nil_iff] at h <;> exact ⟨[], [], rfl, by simp [h.1], by simp [h.2]⟩", "intro h <;> refine ⟨[], [], rfl, ?_, ?_⟩ <;> simp_all", "simp", "grind"], "usd": 0.01244500000000004}

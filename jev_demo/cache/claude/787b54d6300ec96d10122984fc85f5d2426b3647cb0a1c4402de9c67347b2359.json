@@ -1,0 +1,1 @@
+{"tactics": ["intro α a y _ _ l\nsimp [List.mem_cons]", "intros", "intro α a y inst inst_1 l", "intros; by_cases h : y = a <;> simp_all", "intros; simp [List.mem_cons, Bool.decide_or]", "intros; grind"], "usd": 0.0030969999999999054}

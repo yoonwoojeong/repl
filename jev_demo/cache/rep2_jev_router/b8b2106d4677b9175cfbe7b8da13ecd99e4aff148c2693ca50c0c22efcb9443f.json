@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ f xs x h", "intro β α _ _ f xs x h <;> cases xs <;> simp_all [List.minOn?]", "intros β α _ _ f xs x h <;> cases xs <;> simp_all <;> rfl", "intro β α _ _ f xs x h <;> cases xs <;> grind [List.minOn?]", "intro β α _ _ f xs x h <;> cases xs <;> simp_all [List.isSome_minOn?_iff]"], "usd": 0.010072999999999999}

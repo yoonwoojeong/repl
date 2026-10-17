@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rfl", "simp [List.filterMap, List.foldrM]", "simp only [List.filterMap_nil, List.foldrM_nil]", "exact rfl", "grind"], "usd": 0.0027770000000000294}

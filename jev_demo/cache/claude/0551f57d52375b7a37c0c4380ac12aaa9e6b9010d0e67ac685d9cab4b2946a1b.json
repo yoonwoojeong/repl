@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ w h\n  subst h\n  rfl", "intro α l₁ l₂ w h", "intros; subst_vars; rfl", "intro α l₁ l₂ w h; subst h; simp", "rintro α l₁ l₂ w rfl; rfl", "intro α l₁ l₂ w h; cases h; rfl"], "usd": 0.0035609999999999253}

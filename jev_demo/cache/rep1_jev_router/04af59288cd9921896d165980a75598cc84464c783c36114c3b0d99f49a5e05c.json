@@ -1,0 +1,1 @@
+{"tactics": ["intro α <;> rfl", "intro α", "exact fun {α} => rfl", "intros <;> rfl", "simp [List.tail?]", "intro α <;> simp [List.tail?]", "decide"], "usd": 0.0022609999999998465}

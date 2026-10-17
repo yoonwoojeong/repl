@@ -1,0 +1,1 @@
+{"tactics": ["intro b i hb j", "intros", "intro b i hb j <;> rw [← Nat.shiftLeft_eq_mul_pow] <;> skip", "intro b i hb j <;> induction i generalizing a b j"], "usd": 0.009737000000000329}

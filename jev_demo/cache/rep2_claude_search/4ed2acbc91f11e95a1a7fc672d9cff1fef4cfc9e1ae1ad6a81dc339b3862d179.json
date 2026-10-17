@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.maxOn_singleton]", "rfl", "simp only [dite_true]; rfl", "simp [List.maxOn]", "grind [List.maxOn_singleton]"], "usd": 0.005240999999999829}

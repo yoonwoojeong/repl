@@ -1,0 +1,1 @@
+{"tactics": ["rintro a b c ⟨k, rfl⟩", "intro a b c h", "intro a b c ⟨k, hk⟩", "intros a b c h"], "usd": 0.005908999999999942}

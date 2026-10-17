@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Std.Rco.Internal.toList_iter]", "grind", "cases m <;> simp", "simp [Std.Rco.Internal.iter, Std.Iterators.Iter.toList]", "rfl", "decide"], "usd": 0.005637000000000114}

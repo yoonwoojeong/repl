@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ as b _ a", ";simp [List.replace]", "intros <;> simp [List.replace]", "intros <;> simp [List.replace_cons]", "intro α inst as b inst2 a", "intros <;> rfl", "intros <;> grind [List.replace]", "intros <;> unfold List.replace <;> simp"], "usd": 0.0032849999999999824}

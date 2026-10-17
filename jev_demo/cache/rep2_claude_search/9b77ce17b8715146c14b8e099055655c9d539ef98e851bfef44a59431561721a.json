@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rfl", "simp [List.zipIdx]", "exact rfl", "grind", "simp_all"], "usd": 0.0019090000000003826}

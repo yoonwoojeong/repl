@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ l₁ l₂ h a", "obtain ⟨t, rfl⟩ := h", "simp only [List.count_append, List.length_append]", "have h2 : List.count a t ≤ t.length := List.count_le_length", "omega"], "usd": 0.008949000000000013}

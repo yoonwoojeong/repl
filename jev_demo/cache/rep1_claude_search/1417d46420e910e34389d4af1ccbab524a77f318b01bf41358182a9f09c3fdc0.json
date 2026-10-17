@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.toList_rco_eq_range']", "simp [List.range'_eq_map_range]", "induction n <;> simp_all", "grind", "simp", "rw [Nat.toList_rco_eq_range', Nat.toList_rco_eq_range']", "simp [Nat.toList_rco_eq_range', List.map_add_range']"], "usd": 0.007516999999999996}

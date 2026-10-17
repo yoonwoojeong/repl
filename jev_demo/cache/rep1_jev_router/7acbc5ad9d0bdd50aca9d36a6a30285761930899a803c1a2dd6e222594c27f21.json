@@ -1,0 +1,1 @@
+{"tactics": ["intro h j", "intro h j <;> split <;> simp_all [Nat.testBit, Nat.shiftRight_eq_div_pow]", "induction i generalizing a b with\n  | zero => simp_all\n  | succ n ih => intro h j; cases j <;> simp_all [Nat.testBit_succ, Nat.pow_succ]", "intro h", "grind [Nat.testBit, Nat.shiftRight_eq_div_pow]"], "usd": 0.00959299999999974}

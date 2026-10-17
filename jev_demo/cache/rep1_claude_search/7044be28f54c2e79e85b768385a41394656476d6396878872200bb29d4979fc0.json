@@ -1,0 +1,1 @@
+{"tactics": ["exact List.sublist_mergeSort ‹_› ‹_› (by simp_all) ‹_›", "exact List.sublist_mergeSort (by assumption) (by assumption) (by simp [List.pairwise_pair, *]) (by assumption)", "apply List.sublist_mergeSort <;> simp_all", "apply List.sublist_mergeSort", "refine List.sublist_mergeSort ?_ ?_ ?_ ?_ <;> simp_all"], "usd": 0.016136999999999624}

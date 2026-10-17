@@ -1,0 +1,1 @@
+{"tactics": ["rw [if_pos hj]", "have h2 : (2^i*a+b) % 2^i = b := by simp [Nat.mul_add_mod, Nat.mod_eq_of_lt h]", "have h4 := Nat.testBit_mod_two_pow (2^i*a+b) i j", "simp only [hj, if_true]", "grind [Nat.testBit_mod_two_pow, Nat.mul_add_mod, Nat.mod_eq_of_lt]"], "usd": 0.023405000000000342}

@@ -1,0 +1,1 @@
+{"tactics": ["cases xs <;> rfl", "cases xs <;> simp [List.pmap]", "cases xs with\n  | nil => rfl\n  | cons x xs => rfl", "induction xs <;> simp_all [List.pmap]", "cases xs", "cases xs <;> simp"], "usd": 0.0031010000000000204}

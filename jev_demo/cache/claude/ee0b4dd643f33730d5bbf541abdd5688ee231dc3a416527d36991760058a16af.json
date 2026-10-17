@@ -1,0 +1,1 @@
+{"tactics": ["split", "split <;> simp", "have hlt := List.minIdxOn_lt_length (f := f) h", "split <;> grind", "split <;> [exact Nat.le_refl _; exact Nat.le_trans (Nat.le_of_lt (List.minIdxOn_lt_length h)) (Nat.le_add_right _ _)]", "split <;> simp_all <;> omega"], "usd": 0.010165000000000202}

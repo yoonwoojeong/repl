@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.attach]", "grind", "rfl", "simp [List.attach, List.attachWith]", "simp only [List.getElem_attachWith]", "simp [List.attach, List.getElem_pmap]"], "usd": 0.0025450000000000195}

@@ -1,0 +1,1 @@
+{"tactics": ["omega", "exact absurd h_1 h'✝", "exact (h'✝ h_1).elim", "contradiction", "simp_all", "exfalso; omega", "exact False.elim (h'✝ h_1)"], "usd": 0.0026850000000000485}

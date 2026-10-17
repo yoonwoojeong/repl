@@ -1,0 +1,1 @@
+{"tactics": ["induction x generalizing x_1", "induction x generalizing x_1 <;> simp_all [List.flatMapM.loop]", "cases x", "induction x generalizing x_1 with\n| nil => exact hnil x_1\n| cons a as ih => simp only [List.flatMapM.loop]; exact hcons a as x_1 (fun bs' => ih (bs' :: x_1))", "unfold List.flatMapM.loop", "simp only [List.flatMapM.loop]"], "usd": 0.01012499999999994}

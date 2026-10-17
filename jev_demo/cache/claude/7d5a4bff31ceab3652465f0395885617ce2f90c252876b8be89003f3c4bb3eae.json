@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => List.Perm.flatten h", "exact fun h => by simpa using List.Perm.flatten h", "intro h", "exact fun h => by have := List.Perm.flatten h; simpa [List.flatten_cons] using this", "exact fun h => (List.Perm.flatten h).trans (by simp)"], "usd": 0.008828999999999976}

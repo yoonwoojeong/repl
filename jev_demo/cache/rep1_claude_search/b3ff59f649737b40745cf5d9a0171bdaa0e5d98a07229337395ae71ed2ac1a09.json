@@ -1,0 +1,1 @@
+{"tactics": ["apply Array.ext_getElem? <;> intro i <;> simp", "rw [← Array.toList_inj]", "simp [← Array.toList_inj]", "apply Array.ext <;> simp", "induction n with | zero => simp | succ n ih => simp_all", "grind", "simp"], "usd": 0.008164999999999978}

@@ -1,0 +1,1 @@
+{"tactics": ["intro m n", "intro m n <;> rw [Nat.add_comm] <;> exact Nat.gcd_add_self_right m n", "intro m n <;> simp [Nat.add_comm m n, Nat.gcd_add_self_right]", "intro m n <;> rw [Nat.gcd_comm, Nat.gcd_comm m n, Nat.add_comm] <;> simp", "intro m n <;> rw [Nat.gcd_rec m (m + n), Nat.gcd_rec m n, Nat.add_mod_left]", "intro m n <;> grind"], "usd": 0.011121000000000159}

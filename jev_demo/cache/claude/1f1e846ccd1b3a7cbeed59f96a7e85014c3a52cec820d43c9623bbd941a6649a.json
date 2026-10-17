@@ -1,0 +1,1 @@
+{"tactics": ["intro α le trans total l", "intro α le trans total l <;> induction l using List.mergeSort.induct le <;> simp_all [List.mergeSort]", "intro α le trans total l <;> fun_induction List.mergeSort l le <;> simp_all", "intros", "intro α le trans total"], "usd": 0.019980999999999582}

@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => h.flatten", "exact List.Perm.flatten", "intro h <;> simp_all [List.nil_perm]", "intro h <;> rw [List.nil_perm.mp h]", "simp", "intro h <;> exact h.flatten", "intro h"], "usd": 0.008233000000000046}

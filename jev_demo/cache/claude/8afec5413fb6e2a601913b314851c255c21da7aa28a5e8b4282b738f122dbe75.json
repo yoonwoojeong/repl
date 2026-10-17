@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨a, b, rfl, ha, rfl⟩ := List.append_eq_map_iff.mp h", "rw [List.append_eq_map_iff] at h", "obtain ⟨a, b, h1, h2, h3⟩ := List.map_eq_append_iff.mp h.symm", "simp only [List.append_eq_map_iff] at h", "grind [List.append_eq_map_iff, List.IsInfix]"], "usd": 0.012512999999999996}

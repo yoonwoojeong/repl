@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ _ xs ys f h", "intros", "intro inst inst_1 inst_2 xs ys f h", "intros <;> simp_all", "intros <;> grind", "intros <;> exact List.minOn_le_minOn_append_left _ _", "intros <;> simp [List.minOn_append]"], "usd": 0.0032410000000000494}

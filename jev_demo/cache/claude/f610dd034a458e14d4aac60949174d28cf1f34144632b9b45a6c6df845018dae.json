@@ -1,0 +1,1 @@
+{"tactics": ["intro n k m hnk hmk", "intro n k m hnk hmk <;> apply Nat.dvd_antisymm", "intro n k m hnk hmk <;> obtain ⟨c, rfl⟩ := hmk", "intros", "grind [Nat.gcd_comm, Nat.dvd_antisymm, Nat.dvd_gcd]"], "usd": 0.02020899999999992}

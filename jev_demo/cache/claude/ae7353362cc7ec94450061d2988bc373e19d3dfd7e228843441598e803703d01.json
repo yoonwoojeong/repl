@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Nat.fold_zero]", "revert f <;> simp only [Nat.zero_add, Nat.fold_zero] <;> intro f <;> rfl", "grind", "rw [Nat.fold_zero]", "simp only [Nat.fold_zero]"], "usd": 0.012472999999999956}

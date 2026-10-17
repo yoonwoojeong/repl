@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.mergeSort_cons_cons (l₁ := a :: l₁) (l₂ := b :: l₂)]", "apply List.mergeSort_cons_cons", "rw [List.mergeSort]", "simp only [List.mergeSort]", "unfold List.mergeSort", "have hlen : (l₁ ++ b :: l₂).length = l₁.length + l₂.length + 1 := by simp; omega"], "usd": 0.01792499999999997}

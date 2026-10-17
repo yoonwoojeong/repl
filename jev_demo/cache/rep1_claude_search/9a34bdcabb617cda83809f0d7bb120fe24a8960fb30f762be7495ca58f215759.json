@@ -1,0 +1,1 @@
+{"tactics": ["split", "unfold List.maxIdxOn", "simp only [List.maxIdxOn, List.maxOn]", "grind", "induction xs with\n| nil => contradiction\n| cons x xs ih => skip", "simp [List.maxIdxOn, List.minIdxOn_append]", "by_cases h : f (List.maxOn f ys hys) ≤ f (List.maxOn f xs hxs)"], "usd": 0.009316999999999798}

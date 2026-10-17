@@ -1,0 +1,1 @@
+{"tactics": ["induction l generalizing a", "rw [List.mergeSort_eq_insertionSort trans total, List.mergeSort_eq_insertionSort trans total]", "simp only [List.mergeSort]", "cases l", "have hp := List.mergeSort_perm (a :: l) le", "have hs := List.sorted_mergeSort trans total (a :: l)", "grind [List.mergeSort_perm, List.sorted_mergeSort]"], "usd": 0.018061000000000327}

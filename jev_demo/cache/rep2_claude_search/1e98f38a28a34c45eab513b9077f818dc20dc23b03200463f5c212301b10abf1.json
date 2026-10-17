@@ -1,0 +1,1 @@
+{"tactics": ["rename_i m α β _ _ f l acc", "rename_i m α β i1 i2 f l acc", "simp [List.filterMapM.loop]", "grind"], "usd": 0.009800999999999949}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i a l b r", "rename_i a l b r <;> cases l", "simp only [List.cons_append]", "unfold List.mergeSort", "simp [List.mergeSort]", "grind"], "usd": 0.019588999999999857}

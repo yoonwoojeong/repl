@@ -1,0 +1,1 @@
+{"tactics": ["cases i <;> simp", "cases i with | zero => simp | succ n => simp", "simp [List.getElem_cons]", "split <;> rename_i hi <;> simp [hi]", "grind", "by_cases hi : i = 0 <;> simp [hi, List.getElem_cons]"], "usd": 0.009192999999999785}

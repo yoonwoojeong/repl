@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "intro h <;> induction h", "intro h <;> induction h <;> simp_all", "intro h <;> cases h", "rintro (h | h | h)"], "usd": 0.007165000000000088}

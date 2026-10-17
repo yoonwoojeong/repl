@@ -1,0 +1,1 @@
+{"tactics": ["exact absurd e_l h", "exact (h e_l).elim", "contradiction", "simp_all", "subst e_l <;> simp at h", "cases h e_l"], "usd": 0.0038529999999998843}

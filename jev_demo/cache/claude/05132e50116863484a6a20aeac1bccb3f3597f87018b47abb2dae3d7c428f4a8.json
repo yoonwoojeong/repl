@@ -1,0 +1,1 @@
+{"tactics": ["next a t ih => cases t <;> simp_all", "rename_i a t ih", "next a t ih => cases t with | nil => simp at h | cons b l => simp [List.dropLast]", "next a t ih => rcases t with _ | ⟨b, l⟩ <;> simp_all [List.dropLast]", "grind", "simp_all [List.dropLast]"], "usd": 0.012484999999999857}

@@ -1,0 +1,1 @@
+{"tactics": ["cases xs <;> simp_all [List.minOn?]", "simp [List.isSome_minOn?_iff, List.ne_nil_of_mem h]", "cases xs with\n  | nil => simp at h\n  | cons y ys => simp [List.minOn?]", "rw [List.isSome_minOn?_iff]", "cases xs", "grind [List.ne_nil_of_mem, List.minOn?]"], "usd": 0.009028999999999954}

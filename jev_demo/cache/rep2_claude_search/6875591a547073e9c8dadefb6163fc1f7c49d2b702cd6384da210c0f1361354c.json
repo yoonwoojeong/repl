@@ -1,0 +1,1 @@
+{"tactics": ["cases tl <;> simp_all", "cases tl with | nil => simp at h | cons a l => rfl", "rcases tl with _ | ⟨a, l⟩ <;> simp_all", "exact List.cons_getElem_zero_tail _", "grind", "simp [List.cons_head_tail]"], "usd": 0.006836999999999982}

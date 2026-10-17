@@ -1,0 +1,1 @@
+{"tactics": ["induction l <;> intro l' i h <;> cases l' <;> cases i <;> simp_all [-List.getElem_zipWith]", "intro l' i h", "induction l with\n  | nil => intro l' i h; simp at h\n  | cons a t ih => intro l' i h; cases l' <;> cases i <;> simp_all [-List.getElem_zipWith]", "induction l"], "usd": 0.013736999999999888}

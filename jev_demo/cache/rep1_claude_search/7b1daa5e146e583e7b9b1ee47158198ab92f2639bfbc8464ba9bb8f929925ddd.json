@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "refine { eq_swap := ?_, isLE_trans := ?_ }", "apply Std.TransCmp.mk", "refine ⟨?_⟩", "exact { eq_swap := fun {a b} => by induction a generalizing b <;> cases b <;> simp_all [compare, List.compareLex] , isLE_trans := by grind }", "grind"], "usd": 0.012316999999999911}

@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_replace, hne]", "grind [List.getElem_replace]", "rw [List.getElem_replace]", "simp_all [List.getElem_replace]", "simp [List.getElem_replace, beq_iff_eq, hne]"], "usd": 0.009316999999999798}

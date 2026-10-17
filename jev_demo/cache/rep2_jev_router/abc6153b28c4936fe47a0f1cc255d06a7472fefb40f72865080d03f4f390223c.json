@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.gcd_mul_dvd_mul_gcd k m n", "apply Nat.gcd_mul_dvd_mul_gcd", "simp [Nat.gcd_mul_dvd_mul_gcd]", "exact (Nat.dvd_gcd_mul_gcd_iff_dvd_mul).mpr (Nat.gcd_dvd_right k (m * n))", "grind [Nat.gcd_mul_dvd_mul_gcd]"], "usd": 0.010524999999999896}

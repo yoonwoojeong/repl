@@ -1,0 +1,1 @@
+{"tactics": ["intro x y z h", "exact fun x y z h => (Nat.mul_comm y z) ▸ Nat.add_mul_div_left x y h", "exact fun x y z h => by rw [Nat.mul_comm y z]; exact Nat.add_mul_div_left x y h", "intros x y z h"], "usd": 0.011345000000000383}

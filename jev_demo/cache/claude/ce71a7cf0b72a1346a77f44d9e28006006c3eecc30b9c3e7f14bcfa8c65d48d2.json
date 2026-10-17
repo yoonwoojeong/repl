@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Std.Rco.Internal.toList_iter]", "simp [Std.Rco.Internal.toList_iter, Nat.toList_rco_eq_range', List.map_add_range']", "grind", "induction n with | zero => simp | succ k ih => simp_all", "simp_all [List.range'_eq_map_range]", "rw [Std.Rco.Internal.toList_iter, Std.Rco.Internal.toList_iter]"], "usd": 0.009273000000000309}

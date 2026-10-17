@@ -1,0 +1,1 @@
+{"tactics": ["split", "rename_i α _ _ _ l hl x", "cases ‹List _›", "split <;> rename_i a as _ <;> induction as generalizing a <;> simp_all [Std.le_min_iff]", "split <;> rename_i a as _ <;> induction as generalizing a <;> simp [List.foldl, Std.le_min_iff, *] <;> grind", "grind"], "usd": 0.010489000000000193}

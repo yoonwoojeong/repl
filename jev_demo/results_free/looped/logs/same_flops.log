@@ -1,0 +1,45 @@
+152695 premises, 124886 training (state, premises) examples
+same_flops step 0 loss 3.796 2s
+same_flops step 100 loss 3.085 191s
+same_flops step 200 loss 2.897 392s
+same_flops step 300 loss 2.716 581s
+same_flops step 400 loss 2.788 810s
+same_flops step 500 loss 2.752 994s
+same_flops step 600 loss 2.605 1170s
+same_flops step 700 loss 2.501 1384s
+same_flops step 800 loss 2.161 1573s
+same_flops step 900 loss 2.445 1790s
+same_flops step 1000 loss 2.543 2024s
+same_flops step 1100 loss 1.935 2240s
+same_flops step 1200 loss 2.166 2475s
+same_flops step 1300 loss 2.091 2653s
+same_flops step 1400 loss 2.290 2884s
+same_flops step 1500 loss 1.909 3116s
+same_flops step 1600 loss 2.315 3274s
+same_flops step 1700 loss 2.663 3415s
+same_flops step 1800 loss 1.993 3556s
+same_flops step 1900 loss 1.673 3696s
+same_flops step 2000 loss 1.938 3843s
+same_flops step 2100 loss 1.824 4010s
+same_flops step 2200 loss 2.246 4177s
+same_flops step 2300 loss 2.002 4352s
+same_flops step 2400 loss 1.765 4583s
+same_flops step 2500 loss 1.403 4814s
+same_flops step 2600 loss 2.177 5045s
+same_flops step 2700 loss 1.972 5277s
+same_flops step 2800 loss 1.958 5508s
+same_flops step 2900 loss 2.082 5740s
+same_flops step 3000 loss 1.901 5972s
+same_flops step 3100 loss 1.730 6205s
+same_flops step 3200 loss 1.902 6438s
+same_flops step 3300 loss 1.847 6670s
+same_flops step 3400 loss 1.864 6901s
+same_flops step 3500 loss 1.983 7134s
+same_flops step 3600 loss 1.795 7336s
+same_flops step 3700 loss 1.569 7556s
+same_flops step 3800 loss 1.377 7790s
+same_flops step 3900 loss 2.337 8019s
+same_flops step 3999 loss 1.934 8247s
+same_flops novel_premises/val: R@1 1.31  R@10 4.87  MRR 0.0409
+same_flops novel_premises/test: R@1 1.29  R@10 5.07  MRR 0.0449
+{"config": {"variant": "same_flops", "d": 128, "heads": 4, "ff": 512, "loops": 4, "state_len": 256, "premise_len": 128, "batch": 32, "steps": 4000, "lr": 0.001, "warmup": 200, "temperature": 0.05, "seed": 0, "split": "novel_premises"}, "params": 859136, "val": {"R@1": 1.31, "R@10": 4.87, "MRR": 0.0409}, "test": {"R@1": 1.29, "R@10": 5.07, "MRR": 0.0449}}

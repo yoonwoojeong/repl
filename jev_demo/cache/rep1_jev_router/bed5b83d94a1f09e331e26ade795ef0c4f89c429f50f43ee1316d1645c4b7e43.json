@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ _ l hl x", "intros", "intro inst inst_1 inst_2 l hl x", "intro inst inst_1 inst_2 l", "intro inst inst_1 inst_2 l hl x <;> cases l", "intro inst inst_1 inst_2 l hl x <;> induction l <;> simp_all [List.min]"], "usd": 0.007249000000000061}

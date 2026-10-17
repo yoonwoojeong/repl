@@ -1,0 +1,1 @@
+{"tactics": ["intro n <;> cases n <;> simp <;> omega", "intro n", "intro n <;> omega", "intro n <;> cases n <;> simp_all [Nat.pred] <;> omega", "intro n <;> cases n <;> grind", "intro n <;> cases n with | zero => rfl | succ k => simp [Nat.mul_succ, Nat.succ_add] <;> omega"], "usd": 0.0035769999999999413}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α inst l _ a h <;> simp [List.Nodup.mem_erase_iff h]", "intro α inst l _ a h <;> rw [List.Nodup.mem_erase_iff h] <;> simp", "intro α inst l _ a h", "intro α inst l _ a h <;> grind [List.Nodup.mem_erase_iff]", "intros <;> simp_all [List.Nodup.mem_erase_iff]"], "usd": 0.008844999999999992}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ h x", "intros; exact Std.LawfulRightIdentity.right_id _", "intro α _ _ h x; exact h.right_id x", "intros; simp", "intros; exact Std.RightIdentity.right_id _ |>.symm ▸ rfl", "intros; grind"], "usd": 0.0031889999999998864}

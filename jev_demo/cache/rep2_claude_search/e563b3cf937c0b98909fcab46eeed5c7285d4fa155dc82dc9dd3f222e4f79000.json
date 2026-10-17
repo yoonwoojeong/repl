@@ -1,0 +1,1 @@
+{"tactics": ["grind", "simp_all [List.maxIdxOn]", "unfold List.maxIdxOn", "simp only [List.maxIdxOn]", "rw [List.maxIdxOn_append_of_le]", "simp_all"], "usd": 0.007981000000000016}

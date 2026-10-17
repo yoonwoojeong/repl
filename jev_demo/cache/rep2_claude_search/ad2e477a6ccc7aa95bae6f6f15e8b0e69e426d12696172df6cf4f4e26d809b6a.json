@@ -1,0 +1,1 @@
+{"tactics": ["intro m <;> rw [Nat.lcm, Nat.zero_mul, Nat.zero_div]", "intro m <;> simp only [Nat.lcm, Nat.zero_mul, Nat.zero_div]", "intro m", "intro m <;> unfold Nat.lcm <;> simp only [Nat.zero_mul, Nat.zero_div]", "exact fun m => by rw [Nat.lcm, Nat.zero_mul, Nat.zero_div]"], "usd": 0.01314100000000007}

@@ -1,0 +1,1 @@
+{"tactics": ["induction t✝ <;> constructor <;> first | assumption | (apply a✝; assumption)", "induction t✝ <;> constructor <;> (try apply a✝) <;> assumption", "induction t✝ <;> constructor <;> simp_all", "induction t✝ <;> simp_all <;> constructor <;> simp_all", "induction t✝", "induction t✝ <;> grind"], "usd": 0.013321000000000027}

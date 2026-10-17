@@ -1,0 +1,45 @@
+152695 premises, 124886 training (state, premises) examples
+looped step 0 loss 3.797 2s
+looped step 100 loss 3.116 222s
+looped step 200 loss 2.759 448s
+looped step 300 loss 2.428 663s
+looped step 400 loss 2.693 883s
+looped step 500 loss 2.579 1113s
+looped step 600 loss 2.500 1328s
+looped step 700 loss 2.286 1533s
+looped step 800 loss 2.328 1755s
+looped step 900 loss 2.144 1952s
+looped step 1000 loss 2.449 2124s
+looped step 1100 loss 2.793 2350s
+looped step 1200 loss 2.204 2573s
+looped step 1300 loss 2.419 2793s
+looped step 1400 loss 2.236 3024s
+looped step 1500 loss 2.091 3226s
+looped step 1600 loss 1.977 3392s
+looped step 1700 loss 2.195 3558s
+looped step 1800 loss 2.079 3723s
+looped step 1900 loss 1.865 3875s
+looped step 2000 loss 2.196 4013s
+looped step 2100 loss 2.218 4152s
+looped step 2200 loss 2.244 4290s
+looped step 2300 loss 1.960 4498s
+looped step 2400 loss 2.023 4726s
+looped step 2500 loss 1.517 4954s
+looped step 2600 loss 2.679 5183s
+looped step 2700 loss 1.787 5412s
+looped step 2800 loss 1.915 5641s
+looped step 2900 loss 2.329 5870s
+looped step 3000 loss 2.075 6100s
+looped step 3100 loss 1.724 6331s
+looped step 3200 loss 1.923 6561s
+looped step 3300 loss 2.141 6789s
+looped step 3400 loss 2.076 7018s
+looped step 3500 loss 1.962 7249s
+looped step 3600 loss 1.957 7412s
+looped step 3700 loss 1.456 7643s
+looped step 3800 loss 2.040 7873s
+looped step 3900 loss 2.963 8100s
+looped step 3999 loss 2.289 8318s
+looped novel_premises/val: R@1 1.42  R@10 5.24  MRR 0.0449
+looped novel_premises/test: R@1 1.36  R@10 5.60  MRR 0.0468
+{"config": {"variant": "looped", "d": 128, "heads": 4, "ff": 512, "loops": 4, "state_len": 256, "premise_len": 128, "batch": 32, "steps": 4000, "lr": 0.001, "warmup": 200, "temperature": 0.05, "seed": 0, "split": "novel_premises"}, "params": 264320, "val": {"R@1": 1.42, "R@10": 5.24, "MRR": 0.0449}, "test": {"R@1": 1.36, "R@10": 5.6, "MRR": 0.0468}}

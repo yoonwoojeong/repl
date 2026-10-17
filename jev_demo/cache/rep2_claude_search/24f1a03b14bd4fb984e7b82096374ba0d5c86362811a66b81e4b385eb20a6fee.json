@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α x l k", "simp [List.mem_eraseIdx_iff_getElem?, List.getElem?_eq_some_iff]", "grind [List.mem_iff_getElem, List.getElem_eraseIdx, List.length_eraseIdx]", "simp only [List.mem_iff_getElem, List.length_eraseIdx]", "constructor", "revert_all"], "usd": 0.013505000000000322}

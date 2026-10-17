@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp at hk", "omega", "simp [Nat.div_zero]", "rw [Nat.div_zero, Nat.div_zero, Nat.div_zero]", "exfalso; omega", "grind"], "usd": 0.0024850000000000705}

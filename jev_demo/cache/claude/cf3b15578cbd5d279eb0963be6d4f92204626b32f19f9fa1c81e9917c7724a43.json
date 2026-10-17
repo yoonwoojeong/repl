@@ -1,0 +1,1 @@
+{"tactics": ["intro _; exact ⟨[], List.nil_infix _, rfl⟩", "intro _; exact ⟨[], List.nil_infix l₁, by simp⟩", "intro h; refine ⟨[], ?_, ?_⟩ <;> simp", "intro _; exact ⟨[], by simp, by simp⟩", "simp", "intro h; exists []; simp"], "usd": 0.0037490000000000023}

@@ -1,0 +1,22 @@
+[
+  {"name": "test_add_comm", "statement": "∀ n m : Nat, n + m = m + n", "prelude": "", "gold": ["intro n m", "omega"], "difficulty": "easy"},
+  {"name": "test_append_length", "statement": "∀ l₁ l₂ : List Nat, (l₁ ++ l₂).length = l₁.length + l₂.length", "prelude": "", "gold": ["intro l₁ l₂", "simp"], "difficulty": "easy"},
+  {"name": "test_reverse_reverse", "statement": "∀ l : List Nat, l.reverse.reverse = l", "prelude": "", "gold": ["intro l", "simp"], "difficulty": "easy"},
+  {"name": "test_mod_two_cases", "statement": "∀ n : Nat, n % 2 = 0 ∨ n % 2 = 1", "prelude": "", "gold": ["intro n", "omega"], "difficulty": "easy"},
+  {"name": "test_or_comm", "statement": "∀ p q : Prop, p ∨ q → q ∨ p", "prelude": "", "gold": ["intro p q", "intro h", "cases h", "simp_all", "simp_all"], "difficulty": "easy"},
+  {"name": "test_add_eq_zero_left", "statement": "∀ a b : Nat, a + b = 0 → a = 0", "prelude": "", "gold": ["intro a b", "omega"], "difficulty": "easy"},
+  {"name": "test_double", "statement": "∀ n : Nat, double n = 2 * n", "prelude": "@[simp] def double : Nat → Nat | 0 => 0 | n+1 => double n + 2", "gold": ["intro n", "induction n <;> simp_all", "omega"], "difficulty": "easy"},
+  {"name": "test_sum_to", "statement": "∀ n : Nat, sumTo n * 2 = n * (n + 1)", "prelude": "@[simp] def sumTo : Nat → Nat | 0 => 0 | n+1 => sumTo n + (n+1)", "gold": ["intro n", "induction n <;> simp_all", "grind"], "difficulty": "easy"},
+  {"name": "test_sum_odd", "statement": "∀ n : Nat, sumOdd n = n * n", "prelude": "@[simp] def sumOdd : Nat → Nat | 0 => 0 | n+1 => sumOdd n + (2*n+1)", "gold": ["intro n", "induction n <;> simp_all", "grind"], "difficulty": "hard"},
+  {"name": "test_sum_sq", "statement": "∀ n : Nat, sumSq n * 6 = n * (n + 1) * (2 * n + 1)", "prelude": "@[simp] def sumSq : Nat → Nat | 0 => 0 | n+1 => sumSq n + (n+1)*(n+1)", "gold": ["intro n", "induction n <;> simp_all", "grind"], "difficulty": "hard"},
+  {"name": "test_succ_le_two_pow", "statement": "∀ n : Nat, n + 1 ≤ 2 ^ n", "prelude": "", "gold": ["intro n", "induction n <;> grind"], "difficulty": "hard"},
+  {"name": "test_sq_mod_four", "statement": "∀ n : Nat, n * n % 4 = 0 ∨ n * n % 4 = 1", "prelude": "", "gold": ["intro n", "rw [Nat.mul_mod]", "rcases (by omega : n % 4 = 0 ∨ n % 4 = 1 ∨ n % 4 = 2 ∨ n % 4 = 3) with h | h | h | h <;> simp [h]"], "difficulty": "hard"},
+  {"name": "test_gcd_succ", "statement": "∀ n : Nat, Nat.gcd n (n + 1) = 1", "prelude": "", "gold": ["intro n", "simp"], "difficulty": "hard"},
+  {"name": "test_dvd_mul_right", "statement": "∀ m n k : Nat, m ∣ n → m ∣ n * k", "prelude": "", "gold": ["intro m n k", "intro h", "apply Nat.dvd_mul_right_of_dvd", "assumption"], "difficulty": "hard"},
+  {"name": "test_map_double_sum", "statement": "∀ xs : List Nat, (xs.map (· * 2)).sum = 2 * xs.sum", "prelude": "", "gold": ["intro xs", "induction xs <;> grind"], "difficulty": "hard"},
+  {"name": "test_rev_eq_reverse", "statement": "∀ l : List Nat, rev l = l.reverse", "prelude": "@[simp] def revAux : List Nat → List Nat → List Nat | [], acc => acc | x :: xs, acc => revAux xs (x :: acc)\n@[simp] def rev (l : List Nat) : List Nat := revAux l []", "gold": ["have h : ∀ l acc, revAux l acc = l.reverse ++ acc := by intro l; induction l <;> simp_all [revAux]", "intro l", "simp [h]"], "difficulty": "hard"},
+  {"name": "test_two_dvd_mul_succ", "statement": "∀ n : Nat, 2 ∣ n * (n + 1)", "prelude": "", "gold": ["intro n", "induction n <;> grind"], "difficulty": "hard"},
+  {"name": "test_fib_mono", "statement": "∀ n : Nat, fib n ≤ fib (n + 1)", "prelude": "@[simp] def fib : Nat → Nat | 0 => 0 | 1 => 1 | n+2 => fib n + fib (n+1)", "gold": ["intro n", "induction n <;> simp_all"], "difficulty": "hard"},
+  {"name": "test_map_map", "statement": "∀ (l : List Nat) (f g : Nat → Nat), (l.map f).map g = l.map (g ∘ f)", "prelude": "", "gold": ["intro l f g", "simp"], "difficulty": "hard"},
+  {"name": "test_mul_self_le", "statement": "∀ a b : Nat, a ≤ b → a * a ≤ b * b", "prelude": "", "gold": ["intro a b", "intro h", "apply Nat.mul_le_mul", "assumption", "assumption"], "difficulty": "hard"}
+]

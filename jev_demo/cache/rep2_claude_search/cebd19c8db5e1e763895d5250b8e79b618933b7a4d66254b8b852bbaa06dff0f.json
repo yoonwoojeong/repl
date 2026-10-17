@@ -1,0 +1,1 @@
+{"tactics": ["intro m n k", "intro m n k <;> rw [Nat.add_comm] <;> exact Nat.gcd_add_mul_left_left n m k", "intro m n k <;> rw [Nat.add_comm, Nat.mul_comm] <;> exact Nat.gcd_add_mul_right_left n m k", "intro m n k <;> rw [Nat.mul_comm] <;> exact Nat.gcd_mul_right_add_left m n k", "intro m n k <;> rw [Nat.add_comm, Nat.gcd_add_mul_left_left]"], "usd": 0.012700999999999851}

@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp only [List.foldl]", "simp", "simp [List.foldl_cons]", "dsimp only", "simp only []", "exact rfl", "grind"], "usd": 0.0024690000000000545}

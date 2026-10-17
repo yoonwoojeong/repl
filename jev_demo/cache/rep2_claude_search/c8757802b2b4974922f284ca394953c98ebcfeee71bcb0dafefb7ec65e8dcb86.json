@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp only [List.append_nil] <;> exact Nat.le_refl _", "grind", "simp [List.append_nil]", "have e : xs ++ [] = xs := List.append_nil xs", "omega"], "usd": 0.0028169999999998474}

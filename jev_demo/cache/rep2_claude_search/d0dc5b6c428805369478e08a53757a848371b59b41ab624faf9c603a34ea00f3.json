@@ -1,0 +1,1 @@
+{"tactics": ["subst_vars <;> rfl", "subst_vars", "simp_all", "grind", "congr", "rename_i l l' e h", "cases ‹_ = _› <;> rfl"], "usd": 0.007005000000000372}

@@ -1,0 +1,1 @@
+{"tactics": ["simp", "intro i <;> simp", "intro i", "simp [List.filterMap]", "grind", "rfl", "intro i <;> rfl"], "usd": 0.002253000000000005}

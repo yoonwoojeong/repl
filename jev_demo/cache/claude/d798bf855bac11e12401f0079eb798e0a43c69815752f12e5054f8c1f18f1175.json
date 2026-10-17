@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "rintro ⟨k, hk⟩", "rcases Nat.eq_zero_or_pos c with rfl | hc", "intro h <;> grind", "rintro ⟨k, hk⟩ <;> rcases Nat.eq_zero_or_pos c with rfl | hc <;> simp_all", "intro h <;> apply Nat.add_div_eq_of_add_mod_lt"], "usd": 0.01221300000000003}

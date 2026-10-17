@@ -1,0 +1,1 @@
+{"tactics": ["intro b i h j", "intro b i h j <;> rw [← Nat.shiftLeft_eq_mul_pow, Nat.shiftLeft_add_eq_or_of_lt h, Nat.testBit_or, Nat.testBit_shiftLeft] <;> by_cases hj : j < i <;> simp_all", "intro b i h j <;> induction i generalizing a b j <;> simp_all", "intro b i h j <;> grind [Nat.testBit_shiftLeft, Nat.testBit_or, Nat.testBit_lt_two_pow]"], "usd": 0.010336999999999819}

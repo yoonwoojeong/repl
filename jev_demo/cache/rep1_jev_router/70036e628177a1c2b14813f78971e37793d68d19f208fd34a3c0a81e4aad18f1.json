@@ -1,0 +1,1 @@
+{"tactics": ["simp_all", "simp at h <;> subst h <;> simp", "obtain rfl : b = 0 := by simpa using h", "have hb : b = 0 := by simp at h; omega", "simp [Nat.pow_zero] at h ⊢ <;> simp_all"], "usd": 0.009057000000000315}

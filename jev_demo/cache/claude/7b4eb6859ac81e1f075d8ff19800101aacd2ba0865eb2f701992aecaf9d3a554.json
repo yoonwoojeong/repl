@@ -1,0 +1,1 @@
+{"tactics": ["split", "split <;> simp [minOn_assoc]", "split <;> simp_all [minOn_assoc]", "split <;> grind [minOn_assoc]", "rename_i a l ih", "split <;> grind [minOn]"], "usd": 0.009644999999999904}

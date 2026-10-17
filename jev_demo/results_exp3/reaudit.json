@@ -1,0 +1,5954 @@
+{
+ "test": {
+  "claude_search": {
+   "proved": 96,
+   "rejected_v2": [],
+   "one_lemma": [
+    "core_List_Nodup_not_mem_erase",
+    "core_List_Pairwise_imp_mem",
+    "core_List_all_bne'",
+    "core_List_count_cons",
+    "core_List_count_le_length",
+    "core_List_decide_mem_cons",
+    "core_List_dropWhile_suffix",
+    "core_List_flatMapM_wfParam",
+    "core_List_insert_of_not_mem",
+    "core_List_instTransOrd",
+    "core_List_minIdxOn?_cons",
+    "core_List_unattach_append",
+    "core_Nat_div_dvd_of_dvd",
+    "core_Nat_isSome_getElem?_toArray_ric_eq",
+    "core_Nat_map_add_toArray_rco",
+    "core_Nat_pow_lt_pow_right",
+    "core_Nat_toArray_roc_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsPrefix_le_countP",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_sublist",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Nodup_not_mem_erase",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Nodup.mem_erase_iff"
+    },
+    {
+     "name": "core_List_Pairwise_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Pairwise_imp_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Pairwise.imp_of_mem"
+    },
+    {
+     "name": "core_List_Perm_append_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_all_bne'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.all_bne"
+    },
+    {
+     "name": "core_List_all_takeWhile",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_append_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_contains_congr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_cons"
+    },
+    {
+     "name": "core_List_count_filter",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_filterMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_le_length"
+    },
+    {
+     "name": "core_List_decide_mem_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.mem_cons._simp_1"
+    },
+    {
+     "name": "core_List_dropWhile_suffix",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.takeWhile_append_dropWhile"
+    },
+    {
+     "name": "core_List_drop_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_drop_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_eraseIdx_modify_of_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_erase_replicate_ne",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_filterMapM_loop_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_finRange_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_flatMapM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_foldr_assoc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem?_insert_zero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem_cons_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_head?_range",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_idxOf_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_insert_of_not_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.contains_eq_mem"
+    },
+    {
+     "name": "core_List_instTransOrd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.instTransCmpCompareLex"
+    },
+    {
+     "name": "core_List_isPrefixOf_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_isSome_minOn?_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_map_id''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minIdxOn?_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.minIdxOn_cons"
+    },
+    {
+     "name": "core_List_minIdxOn?_nil",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minOn_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_modifyTailIdx_modifyTailIdx",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pair_sublist_mergeSort",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pairwise_append_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_toArray_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_concat",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_succ_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_removeAll_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_cons_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_getElem_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_tail_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_getLast",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_unattach_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.map_append"
+    },
+    {
+     "name": "core_List_unzip_zip",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWith_comm_of_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_gcd_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Expr_toPoly_go_induct",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Poly_of_isNonZero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_add_mul_div_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_add_mod'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_dvd_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.div_mul_cancel"
+    },
+    {
+     "name": "core_Nat_div_le_iff_le_mul_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_le_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_lt_of_lt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_gcd_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_lcm_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_right_right_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_self_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_le_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_left_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_ge_two_pow_of_testBit",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_roc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_isSome_getElem?_toArray_ric_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.size_ric"
+    },
+    {
+     "name": "core_Nat_lcm_zero_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_mul_div_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_pow_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.map_add_toList_rco"
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_add_mul_div_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_one_le_div_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_exists_add_one",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lt_pow_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.pow_lt_pow_iff_right"
+    },
+    {
+     "name": "core_Nat_pow_right_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_sub_mul_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pred_lt_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_self_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftLeft_shiftRight",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_toArray_roc_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roc_succ_succ"
+    },
+    {
+     "name": "core_Nat_zero_lt_getElem!_toList_rio_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  },
+  "menu_first": {
+   "proved": 88,
+   "rejected_v2": [],
+   "one_lemma": [
+    "core_List_Nodup_not_mem_erase",
+    "core_List_Pairwise_imp_mem",
+    "core_List_all_bne'",
+    "core_List_count_cons",
+    "core_List_count_le_length",
+    "core_List_dropWhile_suffix",
+    "core_List_flatMapM_wfParam",
+    "core_List_insert_of_not_mem",
+    "core_List_minIdxOn?_cons",
+    "core_List_unattach_append",
+    "core_Nat_div_dvd_of_dvd",
+    "core_Nat_isSome_getElem?_toArray_ric_eq",
+    "core_Nat_map_add_toArray_rco",
+    "core_Nat_pow_lt_pow_right",
+    "core_Nat_toArray_roc_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsPrefix_le_countP",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_sublist",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Nodup_not_mem_erase",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Nodup.mem_erase_iff"
+    },
+    {
+     "name": "core_List_Pairwise_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Pairwise_imp_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Pairwise.imp_of_mem"
+    },
+    {
+     "name": "core_List_Perm_append_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_all_bne'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.all_bne"
+    },
+    {
+     "name": "core_List_all_takeWhile",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_append_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_cons"
+    },
+    {
+     "name": "core_List_count_filter",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_filterMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_le_length"
+    },
+    {
+     "name": "core_List_decide_mem_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_dropWhile_suffix",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.takeWhile_append_dropWhile"
+    },
+    {
+     "name": "core_List_drop_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_drop_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_eraseIdx_modify_of_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_erase_replicate_ne",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_filterMapM_loop_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_finRange_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_flatMapM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_foldr_assoc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem?_insert_zero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem_cons_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_head?_range",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_idxOf_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_insert_of_not_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.contains_eq_mem"
+    },
+    {
+     "name": "core_List_isPrefixOf_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_isSome_minOn?_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_map_id''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minIdxOn?_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.minIdxOn_cons"
+    },
+    {
+     "name": "core_List_minIdxOn?_nil",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pair_sublist_mergeSort",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pairwise_append_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_toArray_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_concat",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_succ_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_removeAll_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_cons_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_getElem_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_tail_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_getLast",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_unattach_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.map_append"
+    },
+    {
+     "name": "core_List_unzip_zip",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWith_comm_of_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_gcd_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Expr_toPoly_go_induct",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_add_mul_div_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_add_mod'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_dvd_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.div_mul_cancel"
+    },
+    {
+     "name": "core_Nat_div_le_iff_le_mul_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_le_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_lt_of_lt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_lcm_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_right_right_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_self_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_le_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_left_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_ge_two_pow_of_testBit",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_roc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_isSome_getElem?_toArray_ric_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.size_ric"
+    },
+    {
+     "name": "core_Nat_lcm_zero_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_mul_div_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_pow_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.map_add_toList_rco"
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_one_le_div_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_exists_add_one",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lt_pow_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.pow_lt_pow_iff_right"
+    },
+    {
+     "name": "core_Nat_pow_right_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_sub_mul_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pred_lt_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_self_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftLeft_shiftRight",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_toArray_roc_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roc_succ_succ"
+    },
+    {
+     "name": "core_Nat_zero_lt_getElem!_toList_rio_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  },
+  "jev_router": {
+   "proved": 96,
+   "rejected_v2": [],
+   "one_lemma": [
+    "core_List_Nodup_not_mem_erase",
+    "core_List_Pairwise_imp_mem",
+    "core_List_all_bne'",
+    "core_List_count_cons",
+    "core_List_count_le_length",
+    "core_List_decide_mem_cons",
+    "core_List_dropWhile_suffix",
+    "core_List_flatMapM_wfParam",
+    "core_List_insert_of_not_mem",
+    "core_List_instTransOrd",
+    "core_List_minIdxOn?_cons",
+    "core_List_unattach_append",
+    "core_Nat_div_dvd_of_dvd",
+    "core_Nat_isSome_getElem?_toArray_ric_eq",
+    "core_Nat_map_add_toArray_rco",
+    "core_Nat_pow_lt_pow_right",
+    "core_Nat_toArray_roc_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsPrefix_le_countP",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_sublist",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Nodup_not_mem_erase",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Nodup.mem_erase_iff"
+    },
+    {
+     "name": "core_List_Pairwise_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Pairwise_imp_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Pairwise.imp_of_mem"
+    },
+    {
+     "name": "core_List_Perm_append_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_all_bne'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.all_bne"
+    },
+    {
+     "name": "core_List_all_takeWhile",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_append_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_contains_congr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_cons"
+    },
+    {
+     "name": "core_List_count_filter",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_filterMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_le_length"
+    },
+    {
+     "name": "core_List_decide_mem_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.mem_cons._simp_1"
+    },
+    {
+     "name": "core_List_dropWhile_suffix",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.takeWhile_append_dropWhile"
+    },
+    {
+     "name": "core_List_drop_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_drop_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_eraseIdx_modify_of_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_erase_replicate_ne",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_filterMapM_loop_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_finRange_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_flatMapM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_foldr_assoc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem?_insert_zero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem_cons_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_head?_range",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_idxOf_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_insert_of_not_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.contains_eq_mem"
+    },
+    {
+     "name": "core_List_instTransOrd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.instTransCmpCompareLex"
+    },
+    {
+     "name": "core_List_isPrefixOf_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_isSome_minOn?_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_map_id''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minIdxOn?_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.minIdxOn_cons"
+    },
+    {
+     "name": "core_List_minIdxOn?_nil",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minOn_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_modifyTailIdx_modifyTailIdx",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pair_sublist_mergeSort",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pairwise_append_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_toArray_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_concat",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_succ_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_removeAll_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_cons_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_getElem_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_tail_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_getLast",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_unattach_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.map_append"
+    },
+    {
+     "name": "core_List_unzip_zip",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWith_comm_of_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_gcd_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Expr_toPoly_go_induct",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Poly_of_isNonZero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_add_mul_div_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_add_mod'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_dvd_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.div_mul_cancel"
+    },
+    {
+     "name": "core_Nat_div_le_iff_le_mul_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_le_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_lt_of_lt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_gcd_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_lcm_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_right_right_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_self_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_le_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_left_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_ge_two_pow_of_testBit",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_roc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_isSome_getElem?_toArray_ric_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.size_ric"
+    },
+    {
+     "name": "core_Nat_lcm_zero_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_mul_div_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_pow_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.map_add_toList_rco"
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_add_mul_div_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_one_le_div_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_exists_add_one",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lt_pow_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.pow_lt_pow_iff_right"
+    },
+    {
+     "name": "core_Nat_pow_right_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_sub_mul_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pred_lt_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_self_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftLeft_shiftRight",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_toArray_roc_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roc_succ_succ"
+    },
+    {
+     "name": "core_Nat_zero_lt_getElem!_toList_rio_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  }
+ },
+ "dev_v1": {
+  "claude_whole": {
+   "proved": 57,
+   "rejected_v2": [
+    "core_Nat_getElem_toArray_rco"
+   ],
+   "one_lemma": [
+    "core_List_cons_merge_cons",
+    "core_List_foldrM_wfParam",
+    "core_Nat_compare_ne_gt",
+    "core_Nat_getElem?_toArray_rcc",
+    "core_Nat_toArray_rco_append_toArray_rco",
+    "core_Nat_toArray_roo_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsInfix_count_le",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_le_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_MergeSort_Internal_splitInTwo_fst_le_splitInTwo_snd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_append_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_flatten",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_cons_merge_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.merge.eq_3"
+    },
+    {
+     "name": "core_List_count_attachWith",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_filter_append_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_findIdx_subtype",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldlM_map",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldl_flatMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldrM_subtype",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldrM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_infix_filterMap_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_infix_map_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_isGE_compare_nil_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_le_max?_getD_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_length_modifyTailIdx",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_merge_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_nodup_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_subset_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_suffix_append_self_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipIdxLE_trans",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWithMAux_toArray_succ'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_and_div_two_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_compare_ne_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.compare_eq_gt"
+    },
+    {
+     "name": "core_Nat_coprime_div_gcd_div_gcd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_div_of_mul_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_mod_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_left_left_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_lcm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_self_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_self_add_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_sub_left_left_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_sub_self_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem!_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.getElem?_toList_rcc"
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [
+      "Nat.getElem_toList_rco"
+     ],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lcm_mul_left_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_left_le_or",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_of_le_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_of_pow_dvd_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mod_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_div_le",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_dvd_mul_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_lt_mul''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_lt_mul_of_le_of_lt'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_and_distrib_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_lt_two_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lcm_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_right_le_or",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftRight_succ_inside",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_toArray_rco_append_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_rco_append_toList_rco"
+    },
+    {
+     "name": "core_Nat_toArray_roo_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roo_succ_succ"
+    },
+    {
+     "name": "core_Nat_toList_repr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  },
+  "claude_search": {
+   "proved": 59,
+   "rejected_v2": [
+    "core_Nat_getElem_toArray_rco"
+   ],
+   "one_lemma": [
+    "core_List_cons_merge_cons",
+    "core_List_foldrM_wfParam",
+    "core_Nat_Coprime_mul_right",
+    "core_Nat_getElem?_toArray_rcc",
+    "core_Nat_size_rco",
+    "core_Nat_toArray_rco_append_toArray_rco",
+    "core_Nat_toArray_roo_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsInfix_count_le",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_le_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_MergeSort_Internal_splitInTwo_fst_le_splitInTwo_snd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_append_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_flatten",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_cons_merge_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.merge.eq_3"
+    },
+    {
+     "name": "core_List_count_attachWith",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_filter_append_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_findIdx_subtype",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldlM_map",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldl_flatMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldrM_subtype",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldrM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_isGE_compare_nil_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_le_max?_getD_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_length_modifyTailIdx",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_mergeSort_pair",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_merge_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minOn?_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_nodup_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_subset_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_suffix_append_self_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipIdxLE_trans",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWithMAux_toArray_succ'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_mul_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.coprime_mul_iff_right"
+    },
+    {
+     "name": "core_Nat_and_div_two_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_compare_ne_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_coprime_div_gcd_div_gcd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_div_of_mul_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_mod_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_left_left_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_lcm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_self_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_self_add_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_sub_self_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem!_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.getElem?_toList_rcc"
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [
+      "Nat.getElem_toList_rco"
+     ],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lcm_mul_left_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_left_le_or",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_of_le_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_of_pow_dvd_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mod_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_div_le",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_dvd_mul_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_lt_mul''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_lt_mul_of_le_of_lt'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_and_distrib_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_lt_two_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lcm_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_right_le_or",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftRight_succ_inside",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_size_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.length_toList_rco"
+    },
+    {
+     "name": "core_Nat_toArray_rco_append_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_rco_append_toList_rco"
+    },
+    {
+     "name": "core_Nat_toArray_roo_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roo_succ_succ"
+    },
+    {
+     "name": "core_Nat_toList_repr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  },
+  "hybrid": {
+   "proved": 52,
+   "rejected_v2": [
+    "core_Nat_getElem_toArray_rco"
+   ],
+   "one_lemma": [
+    "core_List_cons_merge_cons",
+    "core_List_foldrM_wfParam",
+    "core_Nat_Coprime_mul_right",
+    "core_Nat_size_rco",
+    "core_Nat_toArray_rco_append_toArray_rco",
+    "core_Nat_toArray_roo_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsInfix_count_le",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_le_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_MergeSort_Internal_splitInTwo_fst_le_splitInTwo_snd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_append_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_flatten",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_cons_merge_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.merge.eq_3"
+    },
+    {
+     "name": "core_List_count_attachWith",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_findIdx_subtype",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldlM_map",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldrM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_infix_map_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_isGE_compare_nil_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_le_max?_getD_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_length_modifyTailIdx",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_merge_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_suffix_append_self_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipIdxLE_trans",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWithMAux_toArray_succ'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_mul_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.coprime_mul_iff_right"
+    },
+    {
+     "name": "core_Nat_and_div_two_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_compare_ne_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_coprime_div_gcd_div_gcd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_div_of_mul_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_mod_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_left_left_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_lcm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_self_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_self_add_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_sub_self_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem!_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [
+      "Nat.getElem_toList_rco"
+     ],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lcm_mul_left_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_left_le_or",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_of_le_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_of_pow_dvd_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mod_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_div_le",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_dvd_mul_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_lt_mul''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_lt_mul_of_le_of_lt'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_and_distrib_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_lt_two_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lcm_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_right_le_or",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftRight_succ_inside",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_size_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.length_toList_rco"
+    },
+    {
+     "name": "core_Nat_toArray_rco_append_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_rco_append_toList_rco"
+    },
+    {
+     "name": "core_Nat_toArray_roo_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roo_succ_succ"
+    },
+    {
+     "name": "core_Nat_toList_repr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  }
+ },
+ "dev_v2": {
+  "claude_search": {
+   "proved": 59,
+   "rejected_v2": [
+    "core_Nat_getElem_toArray_rco"
+   ],
+   "one_lemma": [
+    "core_List_cons_merge_cons",
+    "core_List_foldrM_wfParam",
+    "core_Nat_Coprime_mul_right",
+    "core_Nat_getElem?_toArray_rcc",
+    "core_Nat_toArray_rco_append_toArray_rco",
+    "core_Nat_toArray_roo_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsInfix_count_le",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_le_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_MergeSort_Internal_splitInTwo_fst_le_splitInTwo_snd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_append_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_flatten",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_cons_merge_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.merge.eq_3"
+    },
+    {
+     "name": "core_List_count_attachWith",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_filter_append_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_findIdx_subtype",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldlM_map",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldl_flatMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldrM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_isGE_compare_nil_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_le_max?_getD_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_length_modifyTailIdx",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_mergeSort_pair",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_merge_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minOn?_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_nodup_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_splitOnP_append_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_suffix_append_self_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipIdxLE_trans",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWithMAux_toArray_succ'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_mul_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.coprime_mul_iff_right"
+    },
+    {
+     "name": "core_Nat_and_div_two_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_compare_ne_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_coprime_div_gcd_div_gcd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_div_of_mul_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_mod_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_left_left_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_lcm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_self_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_self_add_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_sub_left_left_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_sub_self_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem!_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.getElem?_toList_rcc"
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [
+      "Nat.getElem_toList_rco"
+     ],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lcm_mul_left_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_left_le_or",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_of_le_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_of_pow_dvd_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mod_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_div_le",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_dvd_mul_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_lt_mul''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_lt_mul_of_le_of_lt'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_and_distrib_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_lt_two_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lcm_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_right_le_or",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftRight_succ_inside",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_size_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_toArray_rco_append_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_rco_append_toList_rco"
+    },
+    {
+     "name": "core_Nat_toArray_roo_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roo_succ_succ"
+    },
+    {
+     "name": "core_Nat_toList_repr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  },
+  "hybrid_filter": {
+   "proved": 59,
+   "rejected_v2": [
+    "core_Nat_getElem_toArray_rco"
+   ],
+   "one_lemma": [
+    "core_List_cons_merge_cons",
+    "core_List_foldrM_wfParam",
+    "core_Nat_Coprime_mul_right",
+    "core_Nat_getElem?_toArray_rcc",
+    "core_Nat_toArray_rco_append_toArray_rco",
+    "core_Nat_toArray_roo_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsInfix_count_le",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_le_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_MergeSort_Internal_splitInTwo_fst_le_splitInTwo_snd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_append_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_flatten",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_cons_merge_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.merge.eq_3"
+    },
+    {
+     "name": "core_List_count_attachWith",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_filter_append_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_findIdx_subtype",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldlM_map",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldl_flatMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_foldrM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_isGE_compare_nil_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_le_max?_getD_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_length_modifyTailIdx",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_mergeSort_pair",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_merge_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minOn?_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_nodup_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_splitOnP_append_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_suffix_append_self_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipIdxLE_trans",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWithMAux_toArray_succ'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_mul_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.coprime_mul_iff_right"
+    },
+    {
+     "name": "core_Nat_and_div_two_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_compare_ne_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_coprime_div_gcd_div_gcd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_div_of_mul_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_mod_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_left_left_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_lcm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_self_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_self_add_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_sub_left_left_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_sub_self_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem!_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.getElem?_toList_rcc"
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [
+      "Nat.getElem_toList_rco"
+     ],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lcm_mul_left_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_left_le_or",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_of_le_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_of_pow_dvd_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mod_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_div_le",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_dvd_mul_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_lt_mul''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_lt_mul_of_le_of_lt'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_and_distrib_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_lt_two_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lcm_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_right_le_or",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftRight_succ_inside",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_size_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_toArray_rco_append_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_rco_append_toList_rco"
+    },
+    {
+     "name": "core_Nat_toArray_roo_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roo_succ_succ"
+    },
+    {
+     "name": "core_Nat_toList_repr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  }
+ },
+ "test_rep1": {
+  "claude_search": {
+   "proved": 95,
+   "rejected_v2": [
+    "core_Nat_getElem_toArray_rio"
+   ],
+   "one_lemma": [
+    "core_List_Nodup_not_mem_erase",
+    "core_List_Pairwise_imp_mem",
+    "core_List_append_of_mem",
+    "core_List_count_cons",
+    "core_List_count_le_length",
+    "core_List_dropWhile_suffix",
+    "core_List_flatMapM_wfParam",
+    "core_List_insert_of_not_mem",
+    "core_List_minIdxOn?_cons",
+    "core_List_pairwise_append_comm",
+    "core_List_set_getElem_succ_eraseIdx_succ",
+    "core_List_unattach_append",
+    "core_Nat_div_dvd_of_dvd",
+    "core_Nat_getElem_toArray_rio",
+    "core_Nat_isSome_getElem?_toArray_ric_eq",
+    "core_Nat_map_add_toArray_rco",
+    "core_Nat_pow_lt_pow_right",
+    "core_Nat_toArray_roc_succ_succ",
+    "core_Nat_zero_lt_getElem!_toList_rio_iff"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsPrefix_le_countP",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_sublist",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Nodup_not_mem_erase",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Nodup.mem_erase_iff"
+    },
+    {
+     "name": "core_List_Pairwise_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Pairwise_imp_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Pairwise.imp_of_mem"
+    },
+    {
+     "name": "core_List_Perm_append_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_all_bne'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_all_takeWhile",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_append_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.mem_iff_append"
+    },
+    {
+     "name": "core_List_apply_maxOn_lt_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_contains_congr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_cons"
+    },
+    {
+     "name": "core_List_count_filter",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_filterMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_le_length"
+    },
+    {
+     "name": "core_List_decide_mem_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_dropWhile_suffix",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.takeWhile_append_dropWhile"
+    },
+    {
+     "name": "core_List_drop_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_drop_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_eraseIdx_modify_of_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_erase_replicate_ne",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_filterMapM_loop_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_finRange_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_flatMapM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_foldr_assoc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem?_insert_zero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem_cons_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_head?_range",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_idxOf_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_insert_of_not_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.contains_eq_mem"
+    },
+    {
+     "name": "core_List_isPrefixOf_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_isSome_minOn?_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_map_id''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minIdxOn?_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.minIdxOn_cons"
+    },
+    {
+     "name": "core_List_minIdxOn?_nil",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minOn_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pair_sublist_mergeSort",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pairwise_append_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.pairwise_append"
+    },
+    {
+     "name": "core_List_perm_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_toArray_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_concat",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_succ_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_removeAll_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_cons_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_getElem_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_getElem_succ_eraseIdx_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.ext_getElem"
+    },
+    {
+     "name": "core_List_tail_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_unattach_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.map_append"
+    },
+    {
+     "name": "core_List_unzip_zip",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWith_comm_of_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_gcd_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Expr_toPoly_go_induct",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Poly_of_isNonZero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_add_mul_div_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_add_mod'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_dvd_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.div_mul_cancel"
+    },
+    {
+     "name": "core_Nat_div_le_iff_le_mul_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_le_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_lt_of_lt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_gcd_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_lcm_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_right_right_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_self_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_le_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_left_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_ge_two_pow_of_testBit",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_roc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [
+      "Nat.getElem_toList_rio"
+     ],
+     "one_lemma": "Nat.getElem_toList_rio"
+    },
+    {
+     "name": "core_Nat_isSome_getElem?_toArray_ric_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.size_ric"
+    },
+    {
+     "name": "core_Nat_lcm_zero_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_mul_div_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_pow_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.map_add_toList_rco"
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_add_mul_div_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_one_le_div_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_exists_add_one",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lt_pow_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.pow_lt_pow_iff_right"
+    },
+    {
+     "name": "core_Nat_pow_right_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_sub_mul_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pred_lt_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_self_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftLeft_shiftRight",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_toArray_roc_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roc_succ_succ"
+    },
+    {
+     "name": "core_Nat_zero_lt_getElem!_toList_rio_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.getElem!_toList_rio"
+    }
+   ]
+  },
+  "jev_router": {
+   "proved": 93,
+   "rejected_v2": [],
+   "one_lemma": [
+    "core_List_IsSuffix_sublist",
+    "core_List_Nodup_not_mem_erase",
+    "core_List_count_cons",
+    "core_List_count_filter",
+    "core_List_count_le_length",
+    "core_List_decide_mem_cons",
+    "core_List_dropWhile_suffix",
+    "core_List_flatMapM_wfParam",
+    "core_List_getElem_cons_drop",
+    "core_List_idxOf_le_length",
+    "core_List_instTransOrd",
+    "core_List_minIdxOn?_cons",
+    "core_List_unattach_append",
+    "core_Nat_div_dvd_of_dvd",
+    "core_Nat_getElem?_toArray_roc",
+    "core_Nat_isSome_getElem?_toArray_ric_eq",
+    "core_Nat_map_add_toArray_rco",
+    "core_Nat_pow_lt_pow_right",
+    "core_Nat_toArray_roc_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsPrefix_le_countP",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_sublist",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.sublist_append_right"
+    },
+    {
+     "name": "core_List_Nodup_not_mem_erase",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Nodup.mem_erase_iff"
+    },
+    {
+     "name": "core_List_Pairwise_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Pairwise_imp_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_append_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_all_bne'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_all_takeWhile",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_append_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_contains_congr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_cons"
+    },
+    {
+     "name": "core_List_count_filter",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_filter"
+    },
+    {
+     "name": "core_List_count_filterMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_le_length"
+    },
+    {
+     "name": "core_List_decide_mem_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.mem_cons._simp_1"
+    },
+    {
+     "name": "core_List_dropWhile_suffix",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.takeWhile_append_dropWhile"
+    },
+    {
+     "name": "core_List_drop_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_drop_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_eraseIdx_modify_of_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_erase_replicate_ne",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_filterMapM_loop_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_finRange_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_flatMapM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_foldr_assoc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem?_insert_zero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem_cons_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.drop_eq_getElem_cons"
+    },
+    {
+     "name": "core_List_head?_range",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_idxOf_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.findIdx_le_length"
+    },
+    {
+     "name": "core_List_insert_of_not_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_instTransOrd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.instTransCmpCompareLex"
+    },
+    {
+     "name": "core_List_isPrefixOf_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_isSome_minOn?_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_map_id''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minIdxOn?_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.minIdxOn_cons"
+    },
+    {
+     "name": "core_List_minIdxOn?_nil",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minOn_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_modifyTailIdx_modifyTailIdx",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pair_sublist_mergeSort",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pairwise_append_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_toArray_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_concat",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_succ_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_removeAll_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_cons_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_tail_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_unattach_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.map_append"
+    },
+    {
+     "name": "core_List_unzip_zip",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWith_comm_of_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_gcd_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Expr_toPoly_go_induct",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Poly_of_isNonZero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_add_mul_div_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_add_mod'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_dvd_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.div_mul_cancel"
+    },
+    {
+     "name": "core_Nat_div_le_iff_le_mul_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_le_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_lt_of_lt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_lcm_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_right_right_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_self_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_le_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_left_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_ge_two_pow_of_testBit",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_roc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.getElem?_toList_roc"
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_isSome_getElem?_toArray_ric_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.size_ric"
+    },
+    {
+     "name": "core_Nat_lcm_zero_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_mul_div_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_pow_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.map_add_toList_rco"
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_add_mul_div_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_one_le_div_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_exists_add_one",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lt_pow_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.pow_lt_pow_iff_right"
+    },
+    {
+     "name": "core_Nat_pow_right_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_sub_mul_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pred_lt_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_self_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftLeft_shiftRight",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_toArray_roc_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roc_succ_succ"
+    },
+    {
+     "name": "core_Nat_zero_lt_getElem!_toList_rio_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  }
+ },
+ "test_rep2": {
+  "claude_search": {
+   "proved": 94,
+   "rejected_v2": [],
+   "one_lemma": [
+    "core_List_Nodup_not_mem_erase",
+    "core_List_Pairwise_iff",
+    "core_List_count_cons",
+    "core_List_decide_mem_cons",
+    "core_List_dropWhile_suffix",
+    "core_List_flatMapM_wfParam",
+    "core_List_getElem_cons_drop",
+    "core_List_idxOf_le_length",
+    "core_List_insert_of_not_mem",
+    "core_List_minIdxOn?_cons",
+    "core_List_unattach_append",
+    "core_Nat_div_dvd_of_dvd",
+    "core_Nat_map_add_toArray_rco",
+    "core_Nat_pow_lt_pow_right",
+    "core_Nat_toArray_roc_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsPrefix_le_countP",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_sublist",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Nodup_not_mem_erase",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Nodup.mem_erase_iff"
+    },
+    {
+     "name": "core_List_Pairwise_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Pairwise.iff_of_mem"
+    },
+    {
+     "name": "core_List_Pairwise_imp_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Perm_append_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_all_bne'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_append_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_contains_congr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_cons"
+    },
+    {
+     "name": "core_List_count_filter",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_filterMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_decide_mem_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.mem_cons._simp_1"
+    },
+    {
+     "name": "core_List_dropWhile_suffix",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.takeWhile_append_dropWhile"
+    },
+    {
+     "name": "core_List_drop_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_drop_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_eraseIdx_modify_of_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_erase_replicate_ne",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_finRange_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_flatMapM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_foldr_assoc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem?_insert_zero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem_cons_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.drop_eq_getElem_cons"
+    },
+    {
+     "name": "core_List_head?_range",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_idxOf_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.findIdx_le_length"
+    },
+    {
+     "name": "core_List_insert_of_not_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.contains_eq_mem"
+    },
+    {
+     "name": "core_List_isPrefixOf_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_isSome_minOn?_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_map_id''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minIdxOn?_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.minIdxOn_cons"
+    },
+    {
+     "name": "core_List_minIdxOn?_nil",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minOn_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_modifyTailIdx_modifyTailIdx",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pair_sublist_mergeSort",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pairwise_append_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_toArray_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_concat",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_succ_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_removeAll_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_cons_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_getElem_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_tail_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_getLast",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_unattach_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.map_append"
+    },
+    {
+     "name": "core_List_unattach_filter",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_unzip_zip",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWith_comm_of_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_gcd_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Expr_toPoly_go_induct",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Poly_of_isNonZero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_add_mul_div_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_add_mod'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_dvd_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.div_mul_cancel"
+    },
+    {
+     "name": "core_Nat_div_le_iff_le_mul_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_le_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_lt_of_lt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_gcd_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_lcm_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_right_right_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_self_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_le_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_left_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_ge_two_pow_of_testBit",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_roc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_isSome_getElem?_toArray_ric_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lcm_zero_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_mul_div_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_pow_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.map_add_toList_rco"
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_add_mul_div_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_one_le_div_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_exists_add_one",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lt_pow_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.pow_lt_pow_iff_right"
+    },
+    {
+     "name": "core_Nat_pow_right_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_sub_mul_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pred_lt_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_self_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftLeft_shiftRight",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_toArray_roc_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roc_succ_succ"
+    },
+    {
+     "name": "core_Nat_zero_lt_getElem!_toList_rio_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  },
+  "jev_router": {
+   "proved": 97,
+   "rejected_v2": [],
+   "one_lemma": [
+    "core_List_Nodup_not_mem_erase",
+    "core_List_Pairwise_imp_mem",
+    "core_List_append_of_mem",
+    "core_List_count_cons",
+    "core_List_decide_mem_cons",
+    "core_List_dropWhile_suffix",
+    "core_List_flatMapM_wfParam",
+    "core_List_getElem_cons_drop",
+    "core_List_idxOf_le_length",
+    "core_List_insert_of_not_mem",
+    "core_List_instTransOrd",
+    "core_List_minIdxOn?_cons",
+    "core_List_unattach_append",
+    "core_Nat_div_dvd_of_dvd",
+    "core_Nat_getElem?_toArray_roc",
+    "core_Nat_isSome_getElem?_toArray_ric_eq",
+    "core_Nat_map_add_toArray_rco",
+    "core_Nat_pow_lt_pow_right",
+    "core_Nat_toArray_roc_succ_succ"
+   ],
+   "rows": [
+    {
+     "name": "core_List_IsPrefix_le_countP",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_IsSuffix_sublist",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Nodup_not_mem_erase",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Nodup.mem_erase_iff"
+    },
+    {
+     "name": "core_List_Pairwise_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_Pairwise_imp_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.Pairwise.imp_of_mem"
+    },
+    {
+     "name": "core_List_Perm_append_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_all_bne'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_all_takeWhile",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_append_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.mem_iff_append"
+    },
+    {
+     "name": "core_List_contains_congr",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.countP_cons"
+    },
+    {
+     "name": "core_List_count_filter",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_filterMap",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_count_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_decide_mem_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.mem_cons._simp_1"
+    },
+    {
+     "name": "core_List_dropWhile_suffix",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.takeWhile_append_dropWhile"
+    },
+    {
+     "name": "core_List_drop_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_drop_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_eraseIdx_modify_of_gt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_erase_replicate_ne",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_filterMapM_loop_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_finRange_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_flatMapM_wfParam",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.unattach_attach"
+    },
+    {
+     "name": "core_List_foldr_assoc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem?_insert_zero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_getElem_cons_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.drop_eq_getElem_cons"
+    },
+    {
+     "name": "core_List_head?_range",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_idxOf_le_length",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.findIdx_le_length"
+    },
+    {
+     "name": "core_List_insert_of_not_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.contains_eq_mem"
+    },
+    {
+     "name": "core_List_instTransOrd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.instTransCmpCompareLex"
+    },
+    {
+     "name": "core_List_isPrefixOf_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_isSome_minOn?_of_mem",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_le_min_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_map_id''",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minIdxOn?_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.minIdxOn_cons"
+    },
+    {
+     "name": "core_List_minIdxOn?_nil",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_minOn_replicate",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_modifyTailIdx_modifyTailIdx",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pair_sublist_mergeSort",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_pairwise_append_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_count",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_perm_iff_toArray_perm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_concat",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range'_succ_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_range_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_removeAll_cons",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_cons_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_replace_take",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_getElem_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_set_getElem_succ_eraseIdx_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_tail_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_drop",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_append_getLast",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_take_set",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_unattach_append",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "List.map_append"
+    },
+    {
+     "name": "core_List_unzip_zip",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_List_zipWith_comm_of_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Coprime_gcd_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Expr_toPoly_go_induct",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_Internal_Linear_Poly_of_isNonZero",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_add_mul_div_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_add_mod'",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_dvd_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.div_mul_cancel"
+    },
+    {
+     "name": "core_Nat_div_le_iff_le_mul_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_le_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_div_lt_of_lt",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_gcd_mul_iff_dvd_mul",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_dvd_lcm_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_right_right_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_add_self_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_le_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_gcd_mul_left_add_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_ge_two_pow_of_testBit",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toArray_rcc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getD_toList_ric",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_getElem?_toArray_roc",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.getElem?_toList_roc"
+    },
+    {
+     "name": "core_Nat_getElem_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_isSome_getElem?_toArray_ric_eq",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.size_ric"
+    },
+    {
+     "name": "core_Nat_lcm_zero_left",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_le_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_mul_div_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_lt_pow_self",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rco",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.map_add_toList_rco"
+    },
+    {
+     "name": "core_Nat_map_add_toArray_rio",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_mul_add_mul_div_of_dvd",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_one_le_div_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_or_exists_add_one",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_lt_pow_right",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.pow_lt_pow_iff_right"
+    },
+    {
+     "name": "core_Nat_pow_right_comm",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pow_sub_mul_pow",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_pred_lt_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_self_add_pred",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_shiftLeft_shiftRight",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    },
+    {
+     "name": "core_Nat_toArray_roc_succ_succ",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": "Nat.toList_roc_succ_succ"
+    },
+    {
+     "name": "core_Nat_zero_lt_getElem!_toList_rio_iff",
+     "banned": [],
+     "defeq_aliases": [],
+     "one_lemma": null
+    }
+   ]
+  }
+ }
+}

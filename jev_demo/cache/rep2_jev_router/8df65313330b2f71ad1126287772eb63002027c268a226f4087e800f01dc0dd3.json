@@ -1,0 +1,1 @@
+{"tactics": ["intro a b i hb j", "intro a b i hb j <;> split <;> grind [Nat.testBit, Nat.shiftRight_eq_div_pow]", "intro a b i hb j <;> by_cases hj : j < i <;> simp [hj, Nat.testBit_to_div_mod]", "intro a b i <;> induction i generalizing a b <;> grind", "intro a b i hb j <;> simp only [Nat.testBit, Nat.shiftRight_eq_div_pow] <;> split <;> grind"], "usd": 0.009945000000000093}

@@ -1,0 +1,1 @@
+{"tactics": ["refine ⟨fun h a => h.count_eq a, fun h => ?_⟩", "constructor", "rename_i l₁ l₂", "exact ⟨fun h a => h.count_eq a, fun h => List.perm_iff_count.mpr h⟩", "grind [List.Perm.count_eq]"], "usd": 0.009852999999999668}

@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ l", "intro inst h l", "intro _ _ l <;> induction l <;> simp_all [List.nodup_cons, List.count_cons]", "intros", "intro _ _ l <;> induction l with | nil => simp | cons x xs ih => simp [List.nodup_cons, ih, List.count_cons]"], "usd": 0.00804500000000008}

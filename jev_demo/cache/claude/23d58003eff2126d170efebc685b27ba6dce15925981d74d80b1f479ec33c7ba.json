@@ -1,0 +1,1 @@
+{"tactics": ["intro n i", "intro n i <;> simp only [Array.isSome_getElem?, eq_iff_iff, decide_eq_true_eq] <;> grind", "intro n i <;> rw [Array.isSome_getElem?] <;> simp <;> omega", "intro n i <;> simp [Array.getElem?_def] <;> omega", "intro n i <;> grind", "simp"], "usd": 0.010712999999999973}

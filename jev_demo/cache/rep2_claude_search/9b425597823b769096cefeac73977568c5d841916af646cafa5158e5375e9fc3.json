@@ -1,0 +1,1 @@
+{"tactics": ["simp [BEq.comm]", "simp [bne, BEq.comm]", "simp [Bool.eq_iff_iff, BEq.comm]", "grind [BEq.comm]", "apply Bool.eq_iff_iff.mpr", "simp", "congr 1"], "usd": 0.013865000000000016}

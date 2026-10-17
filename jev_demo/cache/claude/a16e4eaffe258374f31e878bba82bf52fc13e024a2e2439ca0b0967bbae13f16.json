@@ -1,0 +1,1 @@
+{"tactics": ["exact List.Perm.append_left l h", "exact h.append_left l", "simp [List.perm_append_left_iff, h]", "exact (List.perm_append_left_iff l).mpr h", "apply List.Perm.append_left _ h", "induction l <;> simp_all", "grind [List.Perm.append_left]"], "usd": 0.0029770000000000074}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.perm_nil] at h; subst h; exact List.Perm.refl _", "simp [List.perm_nil.mp h]", "exact h.flatten", "simp_all [List.perm_nil]", "obtain rfl := h.eq_nil", "have h2 : l₁ = [] := List.perm_nil.mp h"], "usd": 0.007136999999999949}

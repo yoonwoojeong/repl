@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Nat.div_zero]", "exact Nat.dvd_zero b", "rw [Nat.div_zero]", "exact (Nat.div_zero _).symm ▸ Nat.dvd_zero b", "grind"], "usd": 0.0025889999999999525}

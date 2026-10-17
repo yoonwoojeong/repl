@@ -1,0 +1,1 @@
+{"tactics": ["apply F", "exact F _ _ t (by induction t <;> constructor <;> first | assumption | exact F _ _ _ ‹_› | skip)", "induction t <;> apply F <;> constructor <;> first | assumption | exact F _ _ _ ‹_›", "refine F _ _ t ?_", "exact F _ _ t (by induction t <;> simp_all [List.Sublist.below])"], "usd": 0.021177}

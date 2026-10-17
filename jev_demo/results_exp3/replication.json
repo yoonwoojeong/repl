@@ -1,0 +1,292 @@
+{
+ "primary": {
+  "per_replicate": {
+   "rep1": {
+    "n": 148,
+    "claude_search_proved": 95,
+    "jev_router_proved": 93,
+    "claude_search_requests": 767,
+    "jev_router_requests": 409,
+    "request_saving": 0.4668,
+    "request_saving_ci95": [
+     0.4117,
+     0.5118
+    ],
+    "router_fewer_requests": 96,
+    "router_more_requests": 7,
+    "success": {
+     "a": "jev_router",
+     "b": "claude_search",
+     "n": 148,
+     "a_proved": 93,
+     "b_proved": 95,
+     "a_only": 2,
+     "b_only": 4,
+     "diff": -0.0135,
+     "ci95": [
+      -0.0473,
+      0.0203
+     ],
+     "p_mcnemar": 0.6875
+    }
+   },
+   "rep2": {
+    "n": 148,
+    "claude_search_proved": 94,
+    "jev_router_proved": 97,
+    "claude_search_requests": 798,
+    "jev_router_requests": 385,
+    "request_saving": 0.5175,
+    "request_saving_ci95": [
+     0.4757,
+     0.5525
+    ],
+    "router_fewer_requests": 101,
+    "router_more_requests": 7,
+    "success": {
+     "a": "jev_router",
+     "b": "claude_search",
+     "n": 148,
+     "a_proved": 97,
+     "b_proved": 94,
+     "a_only": 5,
+     "b_only": 2,
+     "diff": 0.0203,
+     "ci95": [
+      -0.0135,
+      0.0541
+     ],
+     "p_mcnemar": 0.45312
+    }
+   }
+  },
+  "pooled": {
+   "n": 296,
+   "claude_search_proved": 189,
+   "jev_router_proved": 190,
+   "claude_search_requests": 1565,
+   "jev_router_requests": 794,
+   "request_saving": 0.4927,
+   "request_saving_ci95": [
+    0.4599,
+    0.5214
+   ],
+   "router_fewer_requests": 197,
+   "router_more_requests": 14,
+   "success": {
+    "a": "jev_router",
+    "b": "claude_search",
+    "n": 296,
+    "a_proved": 190,
+    "b_proved": 189,
+    "a_only": 7,
+    "b_only": 6,
+    "diff": 0.0034,
+    "ci95": [
+     -0.0203,
+     0.027
+    ],
+    "p_mcnemar": 1.0
+   }
+  },
+  "flips_between_replicates": {
+   "claude_search": {
+    "only_rep1": [
+     "core_List_all_takeWhile",
+     "core_List_apply_maxOn_lt_iff",
+     "core_List_filterMapM_loop_eq",
+     "core_List_set_getElem_succ_eraseIdx_succ"
+    ],
+    "only_rep2": [
+     "core_List_modifyTailIdx_modifyTailIdx",
+     "core_List_take_append_getLast",
+     "core_List_unattach_filter"
+    ],
+    "p_mcnemar": 1.0
+   },
+   "jev_router": {
+    "only_rep1": [],
+    "only_rep2": [
+     "core_List_le_min_iff",
+     "core_List_set_getElem_self",
+     "core_List_set_getElem_succ_eraseIdx_succ",
+     "core_List_take_append_getLast"
+    ],
+    "p_mcnemar": 0.125
+   }
+  },
+  "hypotheses": {
+   "1_efficiency": true,
+   "2_no_meaningful_loss": true
+  }
+ },
+ "spend": {
+  "rep1_claude_search": {
+   "usd": 7.4128,
+   "cap": 11.4,
+   "budget_capped": false,
+   "errors": 0,
+   "refusals": 0
+  },
+  "rep1_jev_router": {
+   "usd": 4.1813,
+   "cap": 7.7872,
+   "budget_capped": false,
+   "errors": 0,
+   "refusals": 0
+  },
+  "rep2_claude_search": {
+   "usd": 7.7702,
+   "cap": 10.6059,
+   "budget_capped": false,
+   "errors": 1,
+   "refusals": 0
+  },
+  "rep2_jev_router": {
+   "usd": 3.8835,
+   "cap": 6.6357,
+   "budget_capped": false,
+   "errors": 0,
+   "refusals": 0
+  }
+ },
+ "total_usd": 23.2478,
+ "strict": {
+  "per_replicate": {
+   "rep1": {
+    "n": 148,
+    "claude_search_proved": 76,
+    "jev_router_proved": 74,
+    "claude_search_requests": 767,
+    "jev_router_requests": 409,
+    "request_saving": 0.4668,
+    "request_saving_ci95": [
+     0.4117,
+     0.5118
+    ],
+    "router_fewer_requests": 96,
+    "router_more_requests": 7,
+    "success": {
+     "a": "jev_router",
+     "b": "claude_search",
+     "n": 148,
+     "a_proved": 74,
+     "b_proved": 76,
+     "a_only": 7,
+     "b_only": 9,
+     "diff": -0.0135,
+     "ci95": [
+      -0.0676,
+      0.0405
+     ],
+     "p_mcnemar": 0.80362
+    }
+   },
+   "rep2": {
+    "n": 148,
+    "claude_search_proved": 79,
+    "jev_router_proved": 78,
+    "claude_search_requests": 798,
+    "jev_router_requests": 385,
+    "request_saving": 0.5175,
+    "request_saving_ci95": [
+     0.4757,
+     0.5525
+    ],
+    "router_fewer_requests": 101,
+    "router_more_requests": 7,
+    "success": {
+     "a": "jev_router",
+     "b": "claude_search",
+     "n": 148,
+     "a_proved": 78,
+     "b_proved": 79,
+     "a_only": 5,
+     "b_only": 6,
+     "diff": -0.0068,
+     "ci95": [
+      -0.0541,
+      0.0338
+     ],
+     "p_mcnemar": 1.0
+    }
+   }
+  },
+  "pooled": {
+   "n": 296,
+   "claude_search_proved": 155,
+   "jev_router_proved": 152,
+   "claude_search_requests": 1565,
+   "jev_router_requests": 794,
+   "request_saving": 0.4927,
+   "request_saving_ci95": [
+    0.4599,
+    0.5214
+   ],
+   "router_fewer_requests": 197,
+   "router_more_requests": 14,
+   "success": {
+    "a": "jev_router",
+    "b": "claude_search",
+    "n": 296,
+    "a_proved": 152,
+    "b_proved": 155,
+    "a_only": 12,
+    "b_only": 15,
+    "diff": -0.0101,
+    "ci95": [
+     -0.0439,
+     0.0236
+    ],
+    "p_mcnemar": 0.70111
+   }
+  },
+  "flips_between_replicates": {
+   "claude_search": {
+    "only_rep1": [
+     "core_List_Pairwise_iff",
+     "core_List_all_takeWhile",
+     "core_List_apply_maxOn_lt_iff",
+     "core_List_decide_mem_cons",
+     "core_List_filterMapM_loop_eq",
+     "core_List_getElem_cons_drop",
+     "core_List_idxOf_le_length"
+    ],
+    "only_rep2": [
+     "core_List_Pairwise_imp_mem",
+     "core_List_append_of_mem",
+     "core_List_count_le_length",
+     "core_List_modifyTailIdx_modifyTailIdx",
+     "core_List_pairwise_append_comm",
+     "core_List_take_append_getLast",
+     "core_List_unattach_filter",
+     "core_Nat_getElem_toArray_rio",
+     "core_Nat_isSome_getElem?_toArray_ric_eq",
+     "core_Nat_zero_lt_getElem!_toList_rio_iff"
+    ],
+    "p_mcnemar": 0.62906
+   },
+   "jev_router": {
+    "only_rep1": [
+     "core_List_Pairwise_imp_mem",
+     "core_List_append_of_mem",
+     "core_List_insert_of_not_mem"
+    ],
+    "only_rep2": [
+     "core_List_IsSuffix_sublist",
+     "core_List_count_filter",
+     "core_List_count_le_length",
+     "core_List_le_min_iff",
+     "core_List_set_getElem_self",
+     "core_List_set_getElem_succ_eraseIdx_succ",
+     "core_List_take_append_getLast"
+    ],
+    "p_mcnemar": 0.34375
+   }
+  },
+  "hypotheses": {
+   "1_efficiency": true,
+   "2_no_meaningful_loss": true
+  }
+ }
+}

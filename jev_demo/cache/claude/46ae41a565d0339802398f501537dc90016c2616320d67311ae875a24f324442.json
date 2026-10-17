@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ h", "exact List.Perm.flatten h"], "usd": 0.010645000000000016}

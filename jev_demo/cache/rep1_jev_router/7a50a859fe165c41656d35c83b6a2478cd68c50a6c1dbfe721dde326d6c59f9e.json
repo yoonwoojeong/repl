@@ -1,0 +1,1 @@
+{"tactics": ["exact ⟨fun h => ⟨[], r, rfl, h⟩, fun ⟨r₁, r₂, he, h⟩ => he ▸ h.trans (List.sublist_append_right _ _)⟩", "constructor", "refine ⟨fun h => ⟨[], r, rfl, h⟩, ?_⟩", "exact ⟨fun h => ⟨[], r, by simp, h⟩, by rintro ⟨r₁, r₂, rfl, h⟩; exact h.trans (List.sublist_append_right _ _)⟩", "grind"], "usd": 0.011828999999999978}

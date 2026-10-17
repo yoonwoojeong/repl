@@ -1,0 +1,1 @@
+{"tactics": ["induction l generalizing acc", "induction l generalizing acc <;> simp [List.filterMapM.loop]", "induction l generalizing acc <;> simp_all [List.filterMapM.loop]", "induction l generalizing acc <;> grind [List.filterMapM.loop]"], "usd": 0.008677000000000046}

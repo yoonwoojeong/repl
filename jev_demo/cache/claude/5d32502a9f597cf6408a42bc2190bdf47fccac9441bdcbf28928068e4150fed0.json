@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α le trans l total", "exact List.sorted_mergeSort ‹_› ‹_›", "induction l✝ using List.mergeSort.induct le✝", "simp_all [List.sorted_mergeSort]", "grind [List.sorted_merge, List.mergeSort]"], "usd": 0.017104999999999926}

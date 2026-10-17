@@ -1,0 +1,1 @@
+{"tactics": ["subst hys <;> simp", "simp [hys]", "cases hys <;> simp", "subst hys", "simp only [hys, List.append_nil] <;> exact Nat.le_refl _", "grind"], "usd": 0.006441000000000141}

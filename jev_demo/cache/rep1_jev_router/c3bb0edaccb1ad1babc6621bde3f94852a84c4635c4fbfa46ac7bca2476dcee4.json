@@ -1,0 +1,1 @@
+{"tactics": ["intro α i j l", "intro α i j l <;> induction j generalizing l with | zero => simp | succ j ih => cases l with | nil => simp only [List.drop_nil] | cons a t => rw [Nat.add_right_comm]; exact ih", "intro α i j l <;> induction j generalizing l <;> cases l <;> simp_all [Nat.add_right_comm]", "intro α i j l <;> induction j generalizing l"], "usd": 0.016449000000000047}

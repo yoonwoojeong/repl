@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α motive l₁ l₂ t F", "apply_assumption", "rename_i t F", "next α motive l₁ l₂ t F => exact F _ _ t (by induction t <;> constructor <;> first | assumption | (apply F; assumption))"], "usd": 0.017376999999999976}

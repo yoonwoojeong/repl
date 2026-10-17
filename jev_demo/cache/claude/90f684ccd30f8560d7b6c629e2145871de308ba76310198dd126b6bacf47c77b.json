@@ -1,0 +1,1 @@
+{"tactics": ["induction l generalizing i <;> simp_all", "simp", "grind", "induction l generalizing i", "simp [List.getElem?_eq_none_iff]", "rfl"], "usd": 0.007180999999999993}

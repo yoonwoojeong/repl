@@ -1,0 +1,1 @@
+{"tactics": ["split", "by_cases h : j < i", "simp only [Nat.one_and_eq_mod_two]", "rw [Nat.land_comm, Nat.and_one_is_mod, Nat.land_comm, Nat.and_one_is_mod, Nat.land_comm, Nat.and_one_is_mod]", "split <;> simp_all [Nat.one_and_eq_mod_two]", "grind"], "usd": 0.013240999999999836}

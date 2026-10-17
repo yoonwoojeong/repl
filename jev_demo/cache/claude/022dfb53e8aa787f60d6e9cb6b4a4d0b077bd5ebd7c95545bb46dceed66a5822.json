@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "simp [List.mapFinIdx_nil]", "simp [List.mapFinIdx]", "grind", "exact rfl"], "usd": 0.0021530000000000715}

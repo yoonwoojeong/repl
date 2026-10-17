@@ -1,0 +1,1 @@
+{"tactics": ["intro α p", "intros", "intro α p <;> rfl", "intros <;> simp [List.unattach]", "intros <;> rfl", "simp [List.unattach]", "intro α p <;> simp [List.unattach, List.map]"], "usd": 0.0025050000000002015}

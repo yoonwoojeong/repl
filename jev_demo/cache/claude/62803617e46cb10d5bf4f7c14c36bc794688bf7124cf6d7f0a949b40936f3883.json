@@ -1,0 +1,1 @@
+{"tactics": ["intro m α β _ _ p l f g x hf", "intros m α β _ _ p l f g x hf; induction l generalizing x <;> simp_all [List.foldrM_cons]", "intro m α β inst _ p l f g x hf"], "usd": 0.010885000000000034}

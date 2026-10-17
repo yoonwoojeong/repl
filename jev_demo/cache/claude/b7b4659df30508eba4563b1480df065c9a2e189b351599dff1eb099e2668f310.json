@@ -1,0 +1,1 @@
+{"tactics": ["rcases xs with _ | ⟨x, _ | ⟨y, rest⟩⟩ <;> simp_all", "cases xs with\n  | nil => simp at h\n  | cons x t => cases t <;> simp_all", "induction xs <;> simp_all", "rcases xs with _ | ⟨x, _ | ⟨y, rest⟩⟩ <;> simp_all [List.dropLast]", "rcases xs with _ | ⟨x, _ | ⟨y, rest⟩⟩", "cases xs"], "usd": 0.010037000000000074}

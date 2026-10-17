@@ -1,0 +1,1 @@
+{"tactics": ["simp", "intro _; simp", "intro h; rw [Nat.mul_zero]; exact Nat.dvd_zero k", "intro _; exact Nat.dvd_zero k", "simp [Nat.mul_zero]", "omega"], "usd": 0.0027010000000000645}

@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "exact rfl", "simp", "constructor", "exact Eq.refl _", "trivial"], "usd": 0.002780999999999978}

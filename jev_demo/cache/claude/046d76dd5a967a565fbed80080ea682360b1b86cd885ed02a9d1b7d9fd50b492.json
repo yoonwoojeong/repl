@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp only [Nat.zero_add]", "grind", "congr 1 <;> simp", "induction m <;> simp_all [Nat.fold_succ]", "simp [Nat.zero_add]"], "usd": 0.008276999999999646}

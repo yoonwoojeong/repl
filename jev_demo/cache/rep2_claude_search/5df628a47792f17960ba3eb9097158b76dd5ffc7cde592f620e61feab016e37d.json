@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.getElem_append_right]", "grind", "rw [List.getElem_append_right] <;> simp", "simp [List.getElem_append]", "cases l₂ <;> simp_all"], "usd": 0.0024769999999998404}

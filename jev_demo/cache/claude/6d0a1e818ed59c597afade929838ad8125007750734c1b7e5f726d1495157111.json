@@ -1,0 +1,1 @@
+{"tactics": ["induction i generalizing as bs <;> simp_all [List.zipWithMAux_toArray_succ, List.drop_succ, List.drop_one]", "induction i generalizing as bs", "rw [List.zipWithMAux_toArray_succ]", "simp [List.zipWithMAux_toArray_succ]", "induction i generalizing as bs <;> grind [List.zipWithMAux_toArray_succ]"], "usd": 0.009456999999999827}

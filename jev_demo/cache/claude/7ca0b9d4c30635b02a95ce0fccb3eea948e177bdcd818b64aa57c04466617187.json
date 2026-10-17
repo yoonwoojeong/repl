@@ -1,0 +1,1 @@
+{"tactics": ["intro m n h ⟨k, hk⟩", "intro m n h hd", "rintro m n h ⟨k, rfl⟩", "intro m n h ⟨k, hk⟩ <;> subst hk <;> cases k <;> simp_all [Nat.mul_succ]", "rintro m n h ⟨_ | k, rfl⟩ <;> simp_all [Nat.mul_succ]", "intros"], "usd": 0.01096499999999967}

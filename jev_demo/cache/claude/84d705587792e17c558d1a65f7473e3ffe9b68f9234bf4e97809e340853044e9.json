@@ -1,0 +1,1 @@
+{"tactics": ["apply Nat.dvd_antisymm", "grind", "have h : m * c - n + n = m * c := by omega", "rw [Nat.gcd_comm, Nat.gcd_comm n m]", "obtain ⟨k, hk⟩ : ∃ k, m * c = n + k := ⟨m * c - n, by omega⟩"], "usd": 0.020828999999999986}

@@ -1,0 +1,1 @@
+{"tactics": ["exact h.right_id x", "simpa [List.sum_cons, List.sum_nil] using h.right_id x", "simp only [List.sum_cons, List.sum_nil]", "rw [List.sum_cons, List.sum_nil]", "show x + 0 = x", "exact Std.LawfulRightIdentity.right_id x"], "usd": 0.009513000000000105}

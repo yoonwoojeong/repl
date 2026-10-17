@@ -1,0 +1,1 @@
+{"tactics": ["intro n <;> cases n <;> simp <;> omega", "intro n", "omega", "intro n <;> cases n <;> omega", "intro n <;> simp only [Nat.pred_eq_sub_one] <;> omega", "intro n <;> cases n <;> simp_all <;> omega", "grind"], "usd": 0.0029770000000000074}

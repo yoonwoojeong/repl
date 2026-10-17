@@ -1,0 +1,1 @@
+{"tactics": ["intro f init", "intro f init <;> rw [Nat.fold_succ, a✝]", "intro f init <;> simp only [Nat.fold_succ, a✝]", "intro f init <;> simp [Nat.fold_succ, a✝]", "intro f init <;> exact (Nat.fold_succ _ _).trans (congrArg _ (a✝ _ _))", "simp [Nat.fold_succ, *]"], "usd": 0.012945000000000206}

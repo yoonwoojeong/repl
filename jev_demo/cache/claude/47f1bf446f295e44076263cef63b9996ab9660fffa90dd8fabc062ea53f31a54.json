@@ -1,0 +1,1 @@
+{"tactics": ["rintro _ l₁ _ ⟨t, rfl⟩ a", "intro _ l₁ l₂ h a", "rintro _ l₁ _ ⟨t, rfl⟩ a <;> have := List.count_le_length (a := a) (l := t) <;> simp only [List.count_append, List.length_append] <;> omega", "intros", "rintro _ l₁ _ ⟨t, rfl⟩ a <;> simp [List.count_append] <;> have := List.count_le_length (a := a) (l := t) <;> omega"], "usd": 0.012716999999999978}

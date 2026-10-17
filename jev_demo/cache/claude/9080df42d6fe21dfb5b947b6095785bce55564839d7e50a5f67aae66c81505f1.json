@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.fold_succ, a✝]", "erw [Nat.fold_succ, a✝]", "simp only [Nat.fold_succ, a✝]", "exact (Nat.fold_succ (n := n + n✝) f init).trans (congrArg _ (a✝ _ _))", "simp [Nat.fold_succ, a✝]", "rw [Nat.fold_succ]", "erw [Nat.fold_succ]"], "usd": 0.015012999999999721}

@@ -1,0 +1,1 @@
+{"tactics": ["have h1 : s + step * n ∈ List.range' s m step := List.mem_range'.2 ⟨n, hlt, rfl⟩", "have h2 := h (List.mem_range'.2 ⟨n, hlt, rfl⟩)", "obtain ⟨i, hi, he⟩ := List.mem_range'.1 (h (List.mem_range'.2 ⟨n, hlt, rfl⟩))", "have key : s + step * n ∈ List.range' s n step := h (List.mem_range'.2 ⟨n, hlt, rfl⟩)", "grind [List.mem_range']"], "usd": 0.012704999999999966}

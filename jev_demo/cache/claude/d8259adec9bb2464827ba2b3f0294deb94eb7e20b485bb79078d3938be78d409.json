@@ -1,0 +1,1 @@
+{"tactics": ["cases l₂ <;> simp", "cases l₂ <;> simp_all [List.nil_lt_cons, List.not_lt_nil]", "cases l₂ <;> simp [List.Lex.nil, List.lt_iff_lex_lt]", "cases l₂ with\n  | nil => simp\n  | cons a l => simp [List.nil_lt_cons]", "constructor", "cases l₂ <;> grind"], "usd": 0.008916999999999842}

@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "exact rfl", "simp only [List.head_cons]", "rw [List.head_cons]"], "usd": 0.0021770000000000955}

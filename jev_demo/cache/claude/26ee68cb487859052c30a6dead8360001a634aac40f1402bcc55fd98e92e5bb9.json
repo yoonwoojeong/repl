@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.lor_comm]", "exact (Nat.lor_comm m n) ▸ Nat.left_le_or", "grind", "simp [Nat.lor_comm, Nat.left_le_or]", "exact Nat.le_of_testBit (fun i h => by simp [Nat.testBit_or, h])", "bv_omega"], "usd": 0.009917000000000176}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α a b i l", "rfl", "simp", "simp [List.zipIdx_cons]", "grind"], "usd": 0.014045000000000002}

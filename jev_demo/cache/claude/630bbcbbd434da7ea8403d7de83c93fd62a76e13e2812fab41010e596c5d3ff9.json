@@ -1,0 +1,1 @@
+{"tactics": ["rename_i n k m hnk hmk", "apply Nat.dvd_antisymm", "grind", "obtain ⟨c, rfl⟩ := ‹_ ∣ _›", "simp_all [Nat.gcd_comm]"], "usd": 0.013656999999999808}

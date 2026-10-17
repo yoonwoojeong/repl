@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨k, rfl⟩", "rintro ⟨k, rfl⟩ <;> rcases Nat.eq_zero_or_pos a with rfl | ha <;> simp_all [Nat.mul_assoc, Nat.mul_div_cancel_left]", "intro h", "rintro ⟨k, rfl⟩ <;> rcases Nat.eq_zero_or_pos a with rfl | ha <;> simp [Nat.mul_assoc, Nat.mul_div_cancel_left _ ha]", "intro ⟨k, hk⟩"], "usd": 0.013904999999999834}

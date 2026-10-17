@@ -1,0 +1,1 @@
+{"tactics": ["exact F [] [] _ trivial", "apply F <;> constructor", "exact F _ _ _ (by constructor)", "apply F", "exact F [] [] List.Sublist.slnil True.intro", "exact F _ _ _ ⟨⟩"], "usd": 0.005665000000000031}

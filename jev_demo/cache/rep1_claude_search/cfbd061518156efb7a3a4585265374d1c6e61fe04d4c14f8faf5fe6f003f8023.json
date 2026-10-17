@@ -1,0 +1,1 @@
+{"tactics": ["rename_i ih", "exact (by assumption : ∀ {i : Nat} (h : i < _ + _), _) (by simp at h; omega)", "simp_all", "grind", "apply ‹∀ {i : Nat} (h : i < _ + _), _›", "simp at h; simp_all"], "usd": 0.013857000000000008}

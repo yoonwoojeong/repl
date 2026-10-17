@@ -1,0 +1,1 @@
+{"tactics": ["intro α a b i l", "intros", "intro α a b i l <;> show List.drop ((l.length + 2 + 1) / 2) ((a, i) :: (b, i + 1) :: l.zipIdx (i + 2)) = (List.drop ((l.length + 2 + 1) / 2) (a :: b :: l)).zipIdx (i + (l.length + 3) / 2)", "intro α a b i l <;> simp [List.drop_zipIdx]", "intro α a b i l <;> grind"], "usd": 0.02019299999999999}

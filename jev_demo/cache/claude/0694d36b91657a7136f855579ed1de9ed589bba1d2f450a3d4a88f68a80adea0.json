@@ -1,0 +1,1 @@
+{"tactics": ["cases l <;> simp_all [List.takeWhile_cons]", "cases l <;> grind", "cases l with\n  | nil => simp at w\n  | cons a t =>\n    simp only [List.head_cons]\n    by_cases h : p a <;> simp_all [List.takeWhile_cons]", "cases l <;> simp_all", "cases l", "induction l <;> simp_all [List.takeWhile]", "cases l <;> grind [List.takeWhile_cons]"], "usd": 0.014224999999999932}

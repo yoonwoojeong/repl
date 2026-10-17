@@ -1,0 +1,22 @@
+{
+  "h2_sum_cubes": false,
+  "h2_sum_acc": false,
+  "h2_compile_correct": false,
+  "h2_isort_length": false,
+  "h2_isort_sorted": false,
+  "h2_fib_coprime": false,
+  "h2_fib_add": false,
+  "h2_six_dvd_consec": false,
+  "h2_sq_le_two_pow": false,
+  "h2_is_even": false,
+  "h2_ack_gt": false,
+  "h2_count_isort": false,
+  "h2_rev_append_acc": false,
+  "h2_take_drop_sum": false,
+  "h2_ack_succ": false,
+  "h2_isort_idem": false,
+  "h2_rev2_append": false,
+  "h2_fib_lt_two_pow": false,
+  "h2_prod_acc": false,
+  "h2_fast_fib": false
+}

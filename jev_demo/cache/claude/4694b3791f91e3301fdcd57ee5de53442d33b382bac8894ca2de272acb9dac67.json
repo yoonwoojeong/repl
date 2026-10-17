@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.getElem_set]; simp only [h, if_false]", "simp only [List.getElem_set, h, if_false, ite_false]", "rw [List.getElem_set, if_neg h]", "rw [List.getElem_set]", "induction l generalizing i j with\n  | nil => simp at hj\n  | cons x xs ih => cases i <;> cases j <;> simp_all [List.set]"], "usd": 0.009861000000000009}

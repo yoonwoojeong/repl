@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Option.isSome_iff_ne_none]", "grind", "simp [Nat.toArray_ric_eq_toArray_rco]", "rw [Nat.toArray_ric_eq_toArray_rco]", "simp [Array.getElem?_eq_some_iff, Option.isSome_iff_exists]", "apply propext <;> simp", "simp only [Option.isSome_getElem?, Nat.size_toArray_ric] <;> omega"], "usd": 0.004169000000000089}

@@ -1,0 +1,1 @@
+{"tactics": ["intro F", "intro F <;> induction t <;> apply F <;> constructor <;> assumption", "intro F <;> induction t <;> apply F <;> (try constructor) <;> simp_all", "intro F <;> induction t", "intro F <;> exact F a a_1 t (by induction t <;> constructor <;> assumption)"], "usd": 0.013417000000000012}

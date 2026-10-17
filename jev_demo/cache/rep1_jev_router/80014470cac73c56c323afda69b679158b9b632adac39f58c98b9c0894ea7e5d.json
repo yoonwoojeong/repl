@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨k, rfl⟩ : ∃ k, i = j + (k + 1) := ⟨i - j - 1, by omega⟩", "have h1 : 2 ^ i = 2 ^ j * 2 ^ (i - j) := by rw [← Nat.pow_add, Nat.add_sub_of_le (Nat.le_of_lt hj)]", "have h1 : 2 ^ i = 2 ^ j * (2 * 2 ^ (i - j - 1)) := by rw [← Nat.pow_succ', ← Nat.pow_add]; congr 1; omega", "have hpos : 0 < 2 ^ j := Nat.two_pow_pos j", "congr 1"], "usd": 0.018900999999999613}

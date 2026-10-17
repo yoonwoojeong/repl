@@ -1,0 +1,1 @@
+{"tactics": ["intro i h", "induction xs with\n  | nil => simp\n  | cons x xs ih => intro i hi; cases i <;> simp_all [List.findIdx_cons] <;> split at hi <;> simp_all", "induction xs", "intro i h <;> grind", "intro i h <;> induction xs generalizing i <;> simp_all [List.findIdx_cons] <;> grind", "intro i h <;> simp_all"], "usd": 0.007480999999999849}

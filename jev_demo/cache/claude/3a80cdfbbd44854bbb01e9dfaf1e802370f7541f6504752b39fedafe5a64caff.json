@@ -1,0 +1,1 @@
+{"tactics": ["intro inst inst_1 h x <;> exact h.right_id x", "intro inst inst_1 h x", "intros <;> simp [List.sum, List.foldr, Std.LawfulRightIdentity.right_id]", "intro inst inst_1 h x <;> show x + 0 = x <;> exact Std.LawfulRightIdentity.right_id x", "intro inst inst_1 h x <;> exact Std.LawfulRightIdentity.right_id (op := fun x1 x2 => x1 + x2) x"], "usd": 0.01532100000000014}

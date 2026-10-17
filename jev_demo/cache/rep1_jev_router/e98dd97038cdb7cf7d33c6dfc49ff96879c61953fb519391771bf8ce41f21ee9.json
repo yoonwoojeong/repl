@@ -1,0 +1,1 @@
+{"tactics": ["cases tail✝ with | nil => simp at h | cons b t => rfl", "exact (List.getLast_cons (by simpa using h)).symm", "simp at h ⊢ <;> simp [List.getLast_cons h]", "rw [List.getLast_cons (by simpa using h)]", "cases tail✝ <;> simp_all", "grind"], "usd": 0.012256999999999962}

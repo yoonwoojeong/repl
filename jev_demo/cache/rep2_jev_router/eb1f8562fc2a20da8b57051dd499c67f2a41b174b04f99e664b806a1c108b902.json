@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.minOn_cons]", "simp [List.minOn_cons]", "grind [List.minOn_cons]", "simp only [List.minOn, List.foldl]", "unfold List.minOn", "rfl", "simp_all [List.minOn]", "grind"], "usd": 0.008952999999999989}

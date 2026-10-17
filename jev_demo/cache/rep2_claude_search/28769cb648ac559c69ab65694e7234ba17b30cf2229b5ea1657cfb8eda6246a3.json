@@ -1,0 +1,1 @@
+{"tactics": ["induction l₁ generalizing l₂ with\n  | nil => cases l₂ <;> simp [List.nil_lt_cons]\n  | cons a l ih => cases l₂ <;> simp_all", "induction l₁ generalizing l₂ <;> cases l₂ <;> simp_all", "simp only [List.lt_iff_lex_lt, List.lex_exists]", "rw [List.lt_iff_lex_lt]", "induction l₁ generalizing l₂", "grind"], "usd": 0.011817000000000188}

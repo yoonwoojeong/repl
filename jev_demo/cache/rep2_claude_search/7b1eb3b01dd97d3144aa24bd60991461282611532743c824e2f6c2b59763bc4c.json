@@ -1,0 +1,1 @@
+{"tactics": ["rcases Nat.eq_zero_or_pos c with rfl | hc", "obtain ⟨k, hk⟩ := h", "have hb := Nat.div_add_mod b c", "have hab := Nat.div_add_mod (a + b) c", "grind", "have hmb := Nat.mod_lt b (Nat.pos_of_ne_zero (by rintro rfl; simp_all))"], "usd": 0.02122500000000027}

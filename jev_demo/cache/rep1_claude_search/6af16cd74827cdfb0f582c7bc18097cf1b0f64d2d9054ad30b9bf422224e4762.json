@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ h x", "intros _ _ h x; exact h.right_id x", "exact fun {_ _} h {x} => h.right_id x", "intro _ _ h x <;> exact Std.LawfulRightIdentity.right_id x", "intros <;> simp", "intro _ _ h x <;> simp [Std.LawfulRightIdentity.right_id]"], "usd": 0.0036410000000000053}

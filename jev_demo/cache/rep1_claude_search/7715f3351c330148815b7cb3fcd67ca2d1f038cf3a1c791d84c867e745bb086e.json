@@ -1,0 +1,1 @@
+{"tactics": ["simp", "omega", "simp at hk", "simp [Nat.div_zero]", "rw [Nat.zero_mul] at hk; omega", "exact absurd hk (by simp)"], "usd": 0.0023049999999997794}

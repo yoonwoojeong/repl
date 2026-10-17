@@ -1,0 +1,1 @@
+{"tactics": ["cases xs <;> simp_all [List.findIdx_cons]", "cases xs with\n  | nil => simp at h\n  | cons a as => simp_all [List.findIdx_cons]", "cases xs <;> simp_all [List.findIdx_cons] <;> split at h <;> simp_all", "grind [List.findIdx_cons]", "cases xs", "rcases xs with _ | ⟨a, as⟩ <;> simp [List.findIdx_cons] at h ⊢ <;> split at h <;> simp_all"], "usd": 0.01238500000000009}

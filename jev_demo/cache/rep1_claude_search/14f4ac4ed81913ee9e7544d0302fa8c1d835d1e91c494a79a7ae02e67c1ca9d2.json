@@ -1,0 +1,1 @@
+{"tactics": ["exact h", "assumption", "inferInstance", "exact inferInstance", "simpa using h", "constructor <;> intros <;> simp_all"], "usd": 0.0031370000000001674}

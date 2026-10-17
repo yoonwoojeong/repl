@@ -1,0 +1,1 @@
+{"tactics": ["apply ih", "refine ih _ _ ?_", "rename_i α a motive l t", "exact ih _ _ (by rename_i t; induction t <;> constructor <;> first | assumption | exact ih _ _ ‹_›)", "apply ih <;> rename_i t <;> induction t <;> constructor <;> (try assumption) <;> (try apply ih) <;> assumption"], "usd": 0.01582900000000001}

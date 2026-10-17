@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp_all [List.getElem_cons]", "simp [List.getElem_cons]", "grind", "split <;> simp_all", "rw [List.getElem_cons]", "split <;> rename_i h <;> (try subst h) <;> simp_all <;> grind"], "usd": 0.011880999999999808}

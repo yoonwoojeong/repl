@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l₁ l₂", "rename_i a b _ l₁ l₂", "rename_i a b inst l₁ l₂"], "usd": 0.011524999999999785}

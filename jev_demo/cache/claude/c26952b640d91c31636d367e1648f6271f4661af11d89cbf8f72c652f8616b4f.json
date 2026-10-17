@@ -1,0 +1,1 @@
+{"tactics": ["induction xs✝ generalizing ys✝ <;> simp_all [List.minOn?]", "cases xs✝ <;> cases ys✝ <;> simp [List.minOn?, List.foldl_append]", "induction xs✝ <;> simp_all [List.minOn?_cons, Option.merge]", "unfold List.minOn?", "simp [List.minOn?]", "grind [List.minOn?]", "induction xs✝"], "usd": 0.006969000000000003}

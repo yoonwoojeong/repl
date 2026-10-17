@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α x l k", "intro h", "grind [List.mem_iff_getElem, List.getElem_eraseIdx, List.length_eraseIdx]", "intro h <;> obtain ⟨i, hi, rfl⟩ := List.getElem_of_mem h", "simp [List.mem_iff_getElem, List.getElem_eraseIdx, List.length_eraseIdx]"], "usd": 0.012128999999999834}

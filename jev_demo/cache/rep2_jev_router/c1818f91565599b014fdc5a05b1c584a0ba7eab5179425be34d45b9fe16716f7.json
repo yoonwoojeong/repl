@@ -1,0 +1,1 @@
+{"tactics": ["simp", "induction n <;> simp_all [Nat.toList_rco_succ_right_eq_append]", "induction n <;> simp_all [List.range']", "simp [Nat.toList_rco_eq_range']", "grind", "simp [Std.Rco.toList]", "decide", "rfl"], "usd": 0.009192999999999785}

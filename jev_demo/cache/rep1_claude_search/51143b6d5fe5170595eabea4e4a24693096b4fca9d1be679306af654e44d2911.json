@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => ⟨[], [], rfl, (List.sublist_append_left l₁ l₂).trans h, (List.sublist_append_right l₁ l₂).trans h⟩", "intro h", "simp", "grind", "intro h <;> exact ⟨[], [], rfl, (List.sublist_append_left l₁ l₂).trans h, (List.sublist_append_right l₁ l₂).trans h⟩", "intro h <;> simp_all"], "usd": 0.014445000000000041}

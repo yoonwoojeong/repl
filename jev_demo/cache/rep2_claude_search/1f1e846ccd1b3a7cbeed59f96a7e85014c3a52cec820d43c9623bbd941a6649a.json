@@ -1,0 +1,1 @@
+{"tactics": ["intro α le trans total l", "exact fun trans total l => List.sorted_mergeSort trans total l", "intros", "exact fun h1 h2 l => List.sorted_mergeSort h1 h2 l", "intro α le trans total l <;> exact List.sorted_mergeSort trans total l", "intro α le trans total l <;> grind [List.mergeSort]"], "usd": 0.010621000000000436}

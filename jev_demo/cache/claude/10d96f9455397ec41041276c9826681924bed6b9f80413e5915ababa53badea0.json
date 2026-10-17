@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α β γ f l l' i h", "rename_i f l l' i h", "rename_i l l' i h", "grind [List.zipWith]", "simp [List.getElem?_zipWith]"], "usd": 0.009184999999999999}

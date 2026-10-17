@@ -1,0 +1,1 @@
+{"tactics": ["rename_i step s m n hstep", "intro h", "intro h <;> (apply Classical.byContradiction; intro hc)", "grind [List.mem_range', List.subset_def]", "simp only [List.subset_def, List.mem_range']"], "usd": 0.010797000000000168}

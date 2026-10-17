@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.mergeSort_nil, List.merge_right]", "simp [List.mergeSort]", "rw [List.append_nil]", "grind"], "usd": 0.005512999999999657}

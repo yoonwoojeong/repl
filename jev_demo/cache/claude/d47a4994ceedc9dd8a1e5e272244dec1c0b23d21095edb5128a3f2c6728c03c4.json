@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.insert_of_mem ha, ha]", "simp [ha]", "simp_all [List.insert_of_mem]", "rw [if_pos ha]", "grind [List.insert_of_mem]"], "usd": 0.005920999999999843}

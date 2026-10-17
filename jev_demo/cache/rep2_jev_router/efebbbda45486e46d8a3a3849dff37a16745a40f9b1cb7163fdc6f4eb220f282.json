@@ -1,0 +1,1 @@
+{"tactics": ["induction n generalizing m <;> grind [Nat.toList_rco_eq_if]", "simp [Nat.toList_rco_eq_range', List.range'_succ_left, List.map_add_range']", "rw [Nat.toList_rco_eq_range', Nat.toList_rco_eq_range']", "simp [Nat.toList_rco_eq_range']", "grind", "simp", "induction n generalizing m"], "usd": 0.010076999999999892}

@@ -1,0 +1,1 @@
+{"tactics": ["intro f init; simp", "intro f init; simp [Nat.fold_zero]", "simp", "intro f init; rw [Nat.fold_zero]", "intro f init; grind", "induction m <;> simp_all [Nat.fold_succ]", "intro f init; congr 1 <;> simp"], "usd": 0.013325000000000031}

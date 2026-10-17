@@ -1,0 +1,1 @@
+{"tactics": ["intro n a h", "intro n a h <;> induction n <;> simp_all [Nat.pow_succ] <;> grind [Nat.mul_le_mul_left]", "intro n <;> induction n <;> intro a h <;> simp_all [Nat.pow_succ]", "intros"], "usd": 0.015640999999999572}

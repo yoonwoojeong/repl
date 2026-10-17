@@ -1,0 +1,1 @@
+{"tactics": ["intro α l i j h a hj", "intro α l i j h a hj <;> simp only [List.getElem_set, h, if_false]", "intros α l i j h a hj <;> rw [List.getElem_set] <;> simp [h]", "intro α l <;> induction l <;> intro i j h a hj <;> cases i <;> cases j <;> simp_all [List.set]", "intro α l i j h a hj <;> simp only [List.getElem_set, h, ite_false]"], "usd": 0.011848999999999998}

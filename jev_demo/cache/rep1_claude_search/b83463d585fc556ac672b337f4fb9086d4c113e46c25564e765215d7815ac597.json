@@ -1,0 +1,1 @@
+{"tactics": ["simp [hne]", "simp_all", "rw [if_neg (by simpa using hne)]", "have h2 : (l[i] == a) = false := by simpa using hne", "split <;> simp_all", "grind"], "usd": 0.0026929999999998344}

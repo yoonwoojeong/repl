@@ -1,0 +1,1 @@
+{"tactics": ["induction l with\n  | nil => simp\n  | cons x xs ih => cases h : p x <;> simp_all [List.takeWhile]", "induction l <;> simp_all [List.takeWhile] <;> split <;> simp_all", "induction l", "simp only [List.all_eq_true]", "induction l with\n  | nil => rfl\n  | cons x xs ih => simp only [List.takeWhile]; split <;> simp_all", "intro"], "usd": 0.004013000000000044}

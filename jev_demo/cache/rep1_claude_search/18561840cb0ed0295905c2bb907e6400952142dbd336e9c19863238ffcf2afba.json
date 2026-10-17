@@ -1,0 +1,1 @@
+{"tactics": ["rename_i n a h", "exact Nat.lt_of_lt_of_le Nat.lt_two_pow_self (Nat.pow_le_pow_left ‹1 < _› _)", "exact Nat.lt_of_lt_of_le (Nat.lt_two_pow _) (Nat.pow_le_pow_left ‹1 < _› _)", "rename_i n a h <;> induction n with | zero => simp | succ k ih => rw [Nat.pow_succ]; have := Nat.mul_le_mul_left (a ^ k) h; omega"], "usd": 0.011664999999999814}

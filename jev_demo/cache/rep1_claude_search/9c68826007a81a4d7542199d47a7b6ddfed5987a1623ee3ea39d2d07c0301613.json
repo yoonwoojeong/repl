@@ -1,0 +1,1 @@
+{"tactics": ["grind", "refine ⟨fun ⟨i, h, e⟩ => ?_, fun ⟨i, h, hik, e⟩ => ?_⟩", "constructor", "induction l generalizing k <;> cases k <;> simp_all", "simp only [← List.mem_iff_getElem]", "grind [List.getElem_eraseIdx, List.length_eraseIdx]"], "usd": 0.012321000000000026}

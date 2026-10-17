@@ -1,0 +1,1 @@
+{"tactics": ["exact hcons _ _ _ fun _ => by apply_assumption", "apply hcons", "refine hcons _ _ _ ?_", "rename_i a as ih", "exact hcons _ _ _ (fun _ => by assumption)", "simp_all"], "usd": 0.011916999999999955}

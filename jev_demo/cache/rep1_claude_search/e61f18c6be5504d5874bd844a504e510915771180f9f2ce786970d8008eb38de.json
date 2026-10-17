@@ -1,0 +1,1 @@
+{"tactics": ["intro α r l₁ l₂", "intro α r l₁ l₂ <;> constructor", "intro α r l₁ l₂ <;> induction l₁ generalizing r", "intro α r l₁ l₂ <;> induction r generalizing l₁", "intros", "intro α r l₁ l₂ <;> grind"], "usd": 0.007013000000000047}

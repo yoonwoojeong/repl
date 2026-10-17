@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α p l f g hf", "induction ‹List _› with | nil => simp | cons a t ih => obtain ⟨x, hx⟩ := a; simp_all [List.filter_cons]; split <;> simp_all", "induction ‹List { x // _ }› <;> simp_all [List.filter_cons] <;> split <;> simp_all", "simp_all [List.unattach, List.filter_map, Function.comp_def]", "grind"], "usd": 0.011200999999999794}

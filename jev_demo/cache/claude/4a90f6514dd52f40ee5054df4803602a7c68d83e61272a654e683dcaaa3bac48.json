@@ -1,0 +1,1 @@
+{"tactics": ["rename_i m β₁ β₂ α inst f g l init <;> induction l generalizing init <;> simp_all [List.foldlM]", "rename_i m β₁ β₂ α inst f g l init", "rename_i m β₁ β₂ α inst f g l init <;> induction l generalizing init <;> simp [List.foldlM, *]", "rename_i m β₁ β₂ α inst f g l init <;> induction l generalizing init <;> grind [List.foldlM]"], "usd": 0.01382899999999998}

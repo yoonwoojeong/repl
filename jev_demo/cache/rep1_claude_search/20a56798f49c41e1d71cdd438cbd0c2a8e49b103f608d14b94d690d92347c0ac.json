@@ -1,0 +1,1 @@
+{"tactics": ["intro a m n", "intro a m n <;> rw [← Nat.pow_mul, ← Nat.pow_mul, Nat.mul_comm]", "intros <;> simp [← Nat.pow_mul, Nat.mul_comm]", "intro a m n <;> rw [← Nat.pow_mul, Nat.mul_comm, Nat.pow_mul]"], "usd": 0.0035410000000002384}

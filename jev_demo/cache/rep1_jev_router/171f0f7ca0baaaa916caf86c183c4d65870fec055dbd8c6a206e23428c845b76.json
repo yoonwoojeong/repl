@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _", "intros", "intro α inst h", "intro α inst h <;> constructor", "intro α inst h <;> exact ⟨fun h1 h2 => by grind⟩"], "usd": 0.008745000000000003}

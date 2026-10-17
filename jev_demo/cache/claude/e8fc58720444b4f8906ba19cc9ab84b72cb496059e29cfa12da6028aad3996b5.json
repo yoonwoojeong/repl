@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp [Std.Iterators.IterM.step, Std.Iterators.Iterator.step]", "simp only [Std.IterM.step]", "unfold Std.IterM.step", "simp [Std.IterM.step, Std.Iterator.step]", "simp", "exact rfl", "grind"], "usd": 0.0034010000000002094}

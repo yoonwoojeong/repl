@@ -1,0 +1,1 @@
+{"tactics": ["by_cases hys : ys = []", "grind", "cases ys with | nil => simp | cons y ys => skip", "simp [List.minIdxOn_append]", "rw [List.minIdxOn_append]", "induction ys", "have := List.minIdxOn_lt_length (f := f) h", "simp_all"], "usd": 0.010232999999999937}

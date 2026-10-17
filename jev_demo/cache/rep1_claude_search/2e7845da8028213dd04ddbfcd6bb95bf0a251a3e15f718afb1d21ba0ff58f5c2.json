@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.toDigits_injective h", "have h2 : (Nat.repr m).toNat? = (Nat.repr n).toNat? := by simp only [Nat.repr, h]", "have h2 : Nat.repr m = Nat.repr n := by simp only [Nat.repr, h]", "simpa using congrArg (fun l => String.toNat! (String.mk l)) h", "grind [Nat.toDigits]", "simp_all [Nat.toDigits]"], "usd": 0.009201000000000015}

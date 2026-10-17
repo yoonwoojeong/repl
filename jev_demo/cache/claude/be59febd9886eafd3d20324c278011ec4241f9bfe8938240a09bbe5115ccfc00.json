@@ -1,0 +1,1 @@
+{"tactics": ["rw [BEq.congr_left h]", "simp [BEq.congr_left h]", "congr 1 <;> exact BEq.congr_left h", "cases hx : x == head✝ <;> cases hy : y == head✝ <;> simp_all <;> grind [BEq.trans, BEq.symm]", "grind [BEq.trans, BEq.symm]", "have e : (x == head✝) = (y == head✝) := BEq.congr_left h"], "usd": 0.011500999999999983}

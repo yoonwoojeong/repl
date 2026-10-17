@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨s, t, hst⟩ := h", "rcases h with ⟨s, t, hst⟩", "obtain ⟨s, t, hst⟩ := h <;> simp only [List.append_eq_map_iff, List.map_eq_append_iff] at hst <;> grind [List.infix_append, List.IsInfix]", "cases h"], "usd": 0.011605000000000087}

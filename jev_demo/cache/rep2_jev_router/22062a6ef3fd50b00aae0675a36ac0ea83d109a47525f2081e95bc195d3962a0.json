@@ -1,0 +1,1 @@
+{"tactics": ["intro α inst l₁ l₂", "intros", "intro α inst l₁ l₂ <;> induction l₁ generalizing l₂ <;> cases l₂ <;> simp_all", "intro α inst l₁ l₂ <;> constructor", "intro α inst l₁ l₂ <;> simp [List.lt_iff_lex_lt]", "intro α inst l₁ l₂ <;> grind"], "usd": 0.009492999999999974}

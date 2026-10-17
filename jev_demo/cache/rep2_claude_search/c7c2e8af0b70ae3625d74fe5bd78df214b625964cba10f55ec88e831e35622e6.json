@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.minOn_cons]", "cases xs <;> simp [List.minOn]", "unfold List.minOn", "cases xs <;> simp [List.minOn, List.foldl]", "split", "grind [List.minOn]", "rw [List.minOn_cons]", "cases xs"], "usd": 0.008656999999999915}

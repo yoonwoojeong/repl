@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l₁ l₂", "constructor", "induction l₁✝ generalizing l₂✝ <;> cases l₂✝ <;> simp_all", "grind", "simp only [List.lt_iff_lex_lt]", "simp [List.lt_iff_lex_lt, List.lex_iff_exists]"], "usd": 0.011341000000000045}

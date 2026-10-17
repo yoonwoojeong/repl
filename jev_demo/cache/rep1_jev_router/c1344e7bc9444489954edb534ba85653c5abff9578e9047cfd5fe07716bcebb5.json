@@ -1,0 +1,1 @@
+{"tactics": ["induction l <;> simp_all [List.zipIdx_cons]", "induction l with\n| nil => intro i; rfl\n| cons a l ih => intro i; simp [List.zipIdx_cons, ih]", "induction l <;> intro i <;> simp_all [List.zipIdx]", "induction l", "intro i", "induction l <;> grind [List.zipIdx_cons]"], "usd": 0.009720999999999869}

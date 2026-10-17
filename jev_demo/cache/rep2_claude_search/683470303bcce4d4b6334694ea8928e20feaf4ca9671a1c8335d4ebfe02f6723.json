@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_replace, hne]", "rw [List.getElem_replace]; simp [hne]", "simp_all [List.getElem_replace]", "grind [List.getElem_replace]", "cases i <;> simp_all [List.replace] <;> split <;> simp_all [List.getElem_replace]", "grind"], "usd": 0.010756999999999906}

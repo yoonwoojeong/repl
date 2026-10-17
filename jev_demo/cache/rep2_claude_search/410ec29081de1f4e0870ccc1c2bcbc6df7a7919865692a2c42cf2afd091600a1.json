@@ -1,0 +1,1 @@
+{"tactics": ["exact F _ _ trivial", "apply F <;> constructor", "exact F _ _ (by constructor)", "exact F _ _ ⟨⟩", "apply F", "exact F _ _ (by simp)"], "usd": 0.005760999999999988}

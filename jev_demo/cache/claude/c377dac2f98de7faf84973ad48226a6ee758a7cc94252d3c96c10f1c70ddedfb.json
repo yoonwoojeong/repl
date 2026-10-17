@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.insert_of_mem, *]", "simp_all [List.insert_of_mem]", "simp_all", "grind [List.insert_of_mem]", "simp [List.insert, *]"], "usd": 0.005881000000000025}

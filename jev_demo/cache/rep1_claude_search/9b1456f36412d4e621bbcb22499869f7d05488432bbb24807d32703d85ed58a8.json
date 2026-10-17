@@ -1,0 +1,1 @@
+{"tactics": ["cases l with | nil => exact absurd rfl hl | cons a as => ?_", "induction l with | nil => exact absurd rfl hl | cons a as ih => ?_", "rcases l with _ | ⟨a, as⟩", "simp only [List.min]", "grind [List.min, Std.le_min_iff]", "constructor"], "usd": 0.010152999999999857}

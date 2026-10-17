@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_mapIdx, List.length_mapIdx]", "simp", "grind", "simp only [List.getElem_mapIdx, List.length_mapIdx]", "rw [List.getElem_mapIdx]", "simp_all [List.getElem_mapIdx]"], "usd": 0.008105000000000029}

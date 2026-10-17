@@ -1,0 +1,1 @@
+{"tactics": ["simp", "exact List.length_set", "rw [List.length_set]", "simp [List.length_set]", "grind"], "usd": 0.0017730000000000246}

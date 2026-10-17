@@ -1,0 +1,1 @@
+{"tactics": ["intro n k", "intro n k <;> grind", "intro n k <;> cases k <;> simp", "intro n k <;> exact Nat.div_le_of_le_mul (by cases k <;> simp [Nat.succ_mul] <;> omega)", "intro n k <;> induction n <;> simp_all", "intro n k <;> omega"], "usd": 0.0085090000000001}

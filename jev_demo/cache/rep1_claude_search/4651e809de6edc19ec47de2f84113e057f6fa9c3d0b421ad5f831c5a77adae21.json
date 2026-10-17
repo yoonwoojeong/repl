@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "simp_all", "intro _ <;> simp at h", "exact absurd h (Nat.not_lt_zero _)", "intro hij", "exact absurd h (by simp)"], "usd": 0.007020999999999944}

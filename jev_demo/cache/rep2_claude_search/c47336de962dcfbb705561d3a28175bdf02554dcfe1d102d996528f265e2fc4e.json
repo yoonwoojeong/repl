@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "funext i h; rfl", "simp", "exact rfl", "funext i h", "ext i h x; rfl"], "usd": 0.004228999999999594}

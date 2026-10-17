@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "simp [Function.comp]", "congr 1", "simp [Function.comp_def]", "exact rfl", "grind"], "usd": 0.0019489999999999785}

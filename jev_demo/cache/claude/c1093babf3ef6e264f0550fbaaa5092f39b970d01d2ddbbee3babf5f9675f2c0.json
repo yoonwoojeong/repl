@@ -1,0 +1,1 @@
+{"tactics": ["intro α l' l h", "intro α l' l h <;> induction l <;> simp_all [List.getLast_cons]", "intros <;> simp [List.getLast_append, *]", "intro α l' l h <;> grind", "intro α l' l h <;> induction l with | nil => rfl | cons a t ih => simp [List.getLast_cons, ih]"], "usd": 0.015168999999999988}

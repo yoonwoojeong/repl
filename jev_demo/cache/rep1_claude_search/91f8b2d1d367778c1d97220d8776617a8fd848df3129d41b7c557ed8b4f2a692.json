@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨k, rfl⟩ := hd", "rcases hd with ⟨k, rfl⟩", "cases hd with | intro k hk => cases k <;> simp_all [Nat.mul_succ] <;> omega", "obtain ⟨k, rfl⟩ := hd <;> cases k <;> simp_all [Nat.mul_succ] <;> omega", "grind"], "usd": 0.00958099999999984}

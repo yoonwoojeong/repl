@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.dvd_mul_right b k", "exact ⟨k, rfl⟩", "exact Dvd.intro k rfl", "simp", "apply Nat.dvd_mul_right", "grind"], "usd": 0.0024009999999998755}

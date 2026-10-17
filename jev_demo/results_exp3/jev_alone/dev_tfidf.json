@@ -1,0 +1,625 @@
+{
+ "variant": "tfidf",
+ "split": "core_dev.json",
+ "budget": 64,
+ "proved": 17,
+ "n": 82,
+ "per_theorem": [
+  {
+   "name": "core_List_Cursor_tail_at",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.34
+  },
+  {
+   "name": "core_List_IsInfix_count_le",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 6.63
+  },
+  {
+   "name": "core_List_IsSuffix_getLast",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.46
+  },
+  {
+   "name": "core_List_IsSuffix_le_count",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.06
+  },
+  {
+   "name": "core_List_MergeSort_Internal_splitInTwo_fst_le_splitInTwo_snd",
+   "proved": true,
+   "tactics": [
+    "simp",
+    "exact?"
+   ],
+   "calls": 50,
+   "seconds": 20.86
+  },
+  {
+   "name": "core_List_Perm_append_left",
+   "proved": false,
+   "tactics": [],
+   "calls": 65,
+   "seconds": 86.48
+  },
+  {
+   "name": "core_List_Perm_flatten",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.58
+  },
+  {
+   "name": "core_List_apply_minOn_append_le_right",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.67
+  },
+  {
+   "name": "core_List_attach_filterMap",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.25
+  },
+  {
+   "name": "core_List_cons_merge_cons",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.88
+  },
+  {
+   "name": "core_List_count_attachWith",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 8.42
+  },
+  {
+   "name": "core_List_filter_append_perm",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 10.84
+  },
+  {
+   "name": "core_List_findIdx_subtype",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 3.82
+  },
+  {
+   "name": "core_List_foldlM_map",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.49
+  },
+  {
+   "name": "core_List_foldl_flatMap",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.56
+  },
+  {
+   "name": "core_List_foldrM_subtype",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.94
+  },
+  {
+   "name": "core_List_foldrM_wfParam",
+   "proved": true,
+   "tactics": [
+    "simp",
+    "exact?"
+   ],
+   "calls": 50,
+   "seconds": 1.92
+  },
+  {
+   "name": "core_List_getElem_attach",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.75
+  },
+  {
+   "name": "core_List_getElem_maxIdxOn",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 4.18
+  },
+  {
+   "name": "core_List_getElem_set_ne",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.88
+  },
+  {
+   "name": "core_List_getLast_append_right",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.15
+  },
+  {
+   "name": "core_List_head_singleton",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.37
+  },
+  {
+   "name": "core_List_head_takeWhile",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.35
+  },
+  {
+   "name": "core_List_infix_filterMap_iff",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.79
+  },
+  {
+   "name": "core_List_infix_map_iff",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.85
+  },
+  {
+   "name": "core_List_isGE_compare_nil_right",
+   "proved": true,
+   "tactics": [
+    "exact List.isGE_compareLex_nil_right"
+   ],
+   "calls": 25,
+   "seconds": 1.23
+  },
+  {
+   "name": "core_List_le_max?_getD_of_mem",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.7
+  },
+  {
+   "name": "core_List_length_modifyTailIdx",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.57
+  },
+  {
+   "name": "core_List_mapFinIdx_congr",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.64
+  },
+  {
+   "name": "core_List_mergeSort_pair",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 6.49
+  },
+  {
+   "name": "core_List_merge_right",
+   "proved": true,
+   "tactics": [
+    "simp [List.merge_of_le, List.mem_merge, List.merge_perm_append, List.merge_stable, List.nil_merge, List.pairwise_merge, List.mergeSort_append, List.length_mergeSort]"
+   ],
+   "calls": 13,
+   "seconds": 1.72
+  },
+  {
+   "name": "core_List_minOn?_append",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 3.13
+  },
+  {
+   "name": "core_List_minOn_cons",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.56
+  },
+  {
+   "name": "core_List_nodup_iff_count",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 3.1
+  },
+  {
+   "name": "core_List_nodup_nil",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 0.62
+  },
+  {
+   "name": "core_List_not_of_lt_findIdx",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.05
+  },
+  {
+   "name": "core_List_range'_subset_right",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.67
+  },
+  {
+   "name": "core_List_replace_append",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 3.38
+  },
+  {
+   "name": "core_List_set_set",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 8.17
+  },
+  {
+   "name": "core_List_splitOnP_append_cons",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.84
+  },
+  {
+   "name": "core_List_step_iterM_cons",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.54
+  },
+  {
+   "name": "core_List_suffix_append_self_iff",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 9.36
+  },
+  {
+   "name": "core_List_utf8Decode?_utf8Encode",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 8.01
+  },
+  {
+   "name": "core_List_zipIdxLE_trans",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 3.03
+  },
+  {
+   "name": "core_List_zipWithMAux_toArray_succ'",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.25
+  },
+  {
+   "name": "core_Nat_Coprime_mul_right",
+   "proved": true,
+   "tactics": [
+    "grind [Nat.Coprime.dvd_of_dvd_mul_left, Nat.Coprime.dvd_of_dvd_mul_right, Nat.Coprime.pow, Nat.Coprime.gcd_mul_right_cancel_right]"
+   ],
+   "calls": 15,
+   "seconds": 1.19
+  },
+  {
+   "name": "core_Nat_Internal_Linear_Expr_of_cancel_eq",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.01
+  },
+  {
+   "name": "core_Nat_and_div_two_pow",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 43.75
+  },
+  {
+   "name": "core_Nat_compare_ne_gt",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.35
+  },
+  {
+   "name": "core_Nat_coprime_div_gcd_div_gcd",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.37
+  },
+  {
+   "name": "core_Nat_dvd_div_of_mul_dvd",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.52
+  },
+  {
+   "name": "core_Nat_dvd_mod_iff",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.91
+  },
+  {
+   "name": "core_Nat_fold_congr",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.14
+  },
+  {
+   "name": "core_Nat_gcd_add_left_left_of_dvd",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 5.42
+  },
+  {
+   "name": "core_Nat_gcd_mul_lcm",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 8.72
+  },
+  {
+   "name": "core_Nat_gcd_self_add_left",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 8.43
+  },
+  {
+   "name": "core_Nat_gcd_self_add_right",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 8.15
+  },
+  {
+   "name": "core_Nat_gcd_sub_left_left_of_dvd",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 3.8
+  },
+  {
+   "name": "core_Nat_gcd_sub_self_left",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 4.79
+  },
+  {
+   "name": "core_Nat_getElem!_toList_ric",
+   "proved": true,
+   "tactics": [
+    "simp",
+    "exact Nat.getD_toList_ric"
+   ],
+   "calls": 60,
+   "seconds": 3.46
+  },
+  {
+   "name": "core_Nat_getElem?_toArray_rcc",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 7.85
+  },
+  {
+   "name": "core_Nat_getElem_toArray_rco",
+   "proved": true,
+   "tactics": [
+    "exact Nat.getElem_toList_rco"
+   ],
+   "calls": 37,
+   "seconds": 5.84
+  },
+  {
+   "name": "core_Nat_lcm_mul_left_right",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 8.07
+  },
+  {
+   "name": "core_Nat_left_le_or",
+   "proved": true,
+   "tactics": [
+    "intro n m",
+    "induction n <;> simp_all [Nat.right_le_or, Nat.or_pos_iff, Nat.or_self, Nat.or_zero, Nat.zero_or, Nat.or_comm, Nat.lor_eq, Nat.or_lt_two_pow]"
+   ],
+   "calls": 54,
+   "seconds": 1.58
+  },
+  {
+   "name": "core_Nat_lt_of_le_pred",
+   "proved": true,
+   "tactics": [
+    "simp",
+    "omega"
+   ],
+   "calls": 43,
+   "seconds": 2.07
+  },
+  {
+   "name": "core_Nat_lt_of_pow_dvd_right",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.57
+  },
+  {
+   "name": "core_Nat_map_add_toArray_rco'",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 3.53
+  },
+  {
+   "name": "core_Nat_mod_mul",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 2.64
+  },
+  {
+   "name": "core_Nat_mul_div_le",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 1.55
+  },
+  {
+   "name": "core_Nat_mul_dvd_mul_right",
+   "proved": true,
+   "tactics": [
+    "simp_all [Nat.dvd_mul_left_of_dvd, Nat.dvd_mul_right_of_dvd, Nat.mul_dvd_mul, Nat.mul_dvd_mul_iff_left, Nat.mul_dvd_mul_iff_right, Nat.dvd_div_of_mul_dvd, Nat.dvd_mul_of_div_dvd, Nat.mul_dvd_of_dvd_div]"
+   ],
+   "calls": 14,
+   "seconds": 0.91
+  },
+  {
+   "name": "core_Nat_mul_lt_mul''",
+   "proved": true,
+   "tactics": [
+    "simp_all [Nat.mul_lt_mul_of_lt_of_lt, Nat.mul_lt_mul_of_le_of_lt, Nat.mul_lt_mul_of_lt_of_le, Nat.mul_dvd_mul, Nat.mul_lt_mul_of_le_of_lt', Nat.mul_lt_mul_of_lt_of_le', Nat.mul_mul_mul_comm, Nat.add_lt_add]"
+   ],
+   "calls": 14,
+   "seconds": 0.88
+  },
+  {
+   "name": "core_Nat_mul_lt_mul_of_le_of_lt'",
+   "proved": true,
+   "tactics": [
+    "intro a c b d",
+    "induction c <;> simp_all [Nat.mul_lt_mul_of_le_of_lt, Nat.mul_lt_mul_of_lt_of_le, Nat.mul_lt_mul_of_lt_of_le', Nat.div_mul_div_le, Nat.mul_lt_mul_of_lt_of_lt, Nat.add_lt_add_of_le_of_lt, Nat.add_lt_add_of_lt_of_le, Nat.div_le_div_of_mul_le_mul]"
+   ],
+   "calls": 57,
+   "seconds": 2.22
+  },
+  {
+   "name": "core_Nat_or_and_distrib_right",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 15.66
+  },
+  {
+   "name": "core_Nat_or_lt_two_pow",
+   "proved": true,
+   "tactics": [
+    "exact Nat.bitwise_lt_two_pow"
+   ],
+   "calls": 31,
+   "seconds": 21.55
+  },
+  {
+   "name": "core_Nat_pow_lcm_pow",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 4.65
+  },
+  {
+   "name": "core_Nat_right_le_or",
+   "proved": true,
+   "tactics": [
+    "intro n m",
+    "induction n <;> simp_all [Nat.left_le_or, Nat.or_pos_iff, Nat.or_self, Nat.or_zero, Nat.zero_or, Nat.or_comm, Nat.lor_eq, Nat.or_lt_two_pow]"
+   ],
+   "calls": 54,
+   "seconds": 1.61
+  },
+  {
+   "name": "core_Nat_shiftRight_succ_inside",
+   "proved": true,
+   "tactics": [
+    "intro m n",
+    "induction n <;> simp_all [Nat.shiftRight_succ, Nat.shiftRight_add, Nat.testBit_add_one, Nat.testBit_div_two, Nat.shiftRight_le, Nat.testBit_add, Nat.testBit_div_two_pow, Nat.mul_sub_div]"
+   ],
+   "calls": 56,
+   "seconds": 2.68
+  },
+  {
+   "name": "core_Nat_size_rco",
+   "proved": true,
+   "tactics": [
+    "exact Nat.size_roc"
+   ],
+   "calls": 33,
+   "seconds": 3.99
+  },
+  {
+   "name": "core_Nat_toArray_rco_append_toArray_rco",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 4.02
+  },
+  {
+   "name": "core_Nat_toArray_roo_succ_succ",
+   "proved": true,
+   "tactics": [
+    "simp [Nat.toList_roo_succ_succ, Nat.toArray_roc_succ_succ, Nat.map_add_toArray_roo', Nat.map_add_toArray_roo, Nat.map_add_toArray_roc, Nat.toArray_rco_succ_succ, Nat.map_add_toArray_rco, Nat.map_add_toArray_roc']"
+   ],
+   "calls": 13,
+   "seconds": 1.07
+  },
+  {
+   "name": "core_Nat_toList_repr",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 8.25
+  },
+  {
+   "name": "core_Nat_toNat?_repr",
+   "proved": false,
+   "tactics": [],
+   "calls": 64,
+   "seconds": 0.52
+  }
+ ]
+}

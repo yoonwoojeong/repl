@@ -1,0 +1,1 @@
+{"tactics": ["by_cases ha : a ∈ l <;> simp [ha, List.insert_of_mem, List.insert_of_not_mem]", "by_cases ha : a ∈ l <;> simp_all [List.insert]", "simp only [List.insert]; split <;> simp_all", "split <;> simp_all [List.insert]", "grind [List.insert_of_mem, List.insert_of_not_mem]", "by_cases ha : a ∈ l"], "usd": 0.009865000000000013}

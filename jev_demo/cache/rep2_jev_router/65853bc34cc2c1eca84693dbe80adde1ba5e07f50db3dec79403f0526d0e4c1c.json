@@ -1,0 +1,1 @@
+{"tactics": ["intro i h", "induction as with\n| nil => intro i h; simp at h\n| cons a t ih => intro i h; cases i with\n  | zero => rfl\n  | succ n => exact congrArg (a :: ·) (ih (Nat.lt_of_succ_lt_succ h))", "intro i h; apply List.ext_getElem (by simp)", "intro i h; apply List.ext_getElem", "induction as"], "usd": 0.00958099999999984}

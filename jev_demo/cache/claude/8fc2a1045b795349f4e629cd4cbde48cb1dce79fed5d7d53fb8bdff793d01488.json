@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨h1, h2⟩ := h", "exact h.2 i (Nat.le_refl i)", "rcases h with ⟨h1, h2⟩ <;> exact h2 i (Nat.le_refl i)", "simp_all", "grind"], "usd": 0.00658100000000017}

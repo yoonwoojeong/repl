@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "cases l <;> rfl", "congr 1", "cases l <;> simp [List.foldrRecOn]", "unfold List.foldrRecOn", "cases l", "simp only [List.foldrRecOn]"], "usd": 0.007196999999999898}

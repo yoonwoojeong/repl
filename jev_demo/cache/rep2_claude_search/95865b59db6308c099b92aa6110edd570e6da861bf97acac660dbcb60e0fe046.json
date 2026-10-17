@@ -1,0 +1,1 @@
+{"tactics": ["exact List.eq_of_mem_replicate (List.minOn_mem (f := f) h)", "exact List.eq_of_mem_replicate (List.minOn_mem h)", "have hm := List.minOn_mem (f := f) h", "apply List.eq_of_mem_replicate", "induction n <;> simp_all [List.replicate_succ, List.minOn_cons]", "grind [List.minOn_mem, List.eq_of_mem_replicate]"], "usd": 0.007800999999999725}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α x l k", "intros", "intro α x l k <;> induction l generalizing k <;> cases k <;> simp_all", "intro α x l k <;> simp only [List.mem_iff_getElem, List.getElem_eraseIdx, List.length_eraseIdx]", "intro α x l k <;> grind", "intro α x l k <;> induction l generalizing k with | nil => simp | cons a l ih => cases k <;> simp_all"], "usd": 0.004156999999999966}

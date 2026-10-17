@@ -1,0 +1,1 @@
+{"tactics": ["rintro α l₁ l₂ p ⟨t, rfl⟩", "intro α l₁ l₂ p h", "rintro α l₁ l₂ p ⟨t, rfl⟩ <;> have := List.countP_le_length (p := p) (l := t) <;> simp only [List.countP_append, List.length_append] <;> omega", "intro α l₁ l₂ p h <;> obtain ⟨t, rfl⟩ := h <;> simp [List.countP_append] <;> have := List.countP_le_length (p := p) (l := t) <;> omega"], "usd": 0.011241}

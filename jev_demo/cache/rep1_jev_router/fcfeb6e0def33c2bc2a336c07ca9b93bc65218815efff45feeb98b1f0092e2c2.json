@@ -1,0 +1,1 @@
+{"tactics": ["induction x generalizing bs", "cases x", "induction x generalizing bs <;> simp only [List.flatMapM.loop] <;> simp_all", "unfold List.flatMapM.loop", "simp only [List.flatMapM.loop]", "induction x generalizing bs <;> simp_all [List.flatMapM.loop]"], "usd": 0.009093000000000018}

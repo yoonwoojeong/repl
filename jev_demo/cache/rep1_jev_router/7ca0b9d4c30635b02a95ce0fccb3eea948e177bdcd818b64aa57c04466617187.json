@@ -1,0 +1,1 @@
+{"tactics": ["rintro m n hn ⟨k, rfl⟩ <;> cases k <;> simp_all [Nat.mul_succ] <;> omega", "rintro m n hn ⟨k, rfl⟩", "intro m n hn h", "intro m n hn h <;> rcases h with ⟨k, rfl⟩ <;> cases k <;> simp_all [Nat.mul_succ]"], "usd": 0.014145000000000074}

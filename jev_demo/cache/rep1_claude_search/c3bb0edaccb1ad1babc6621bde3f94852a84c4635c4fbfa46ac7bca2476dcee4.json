@@ -1,0 +1,1 @@
+{"tactics": ["intro α i j l", "intros α i j l", "intro α i j", "intro α i j l <;> induction j generalizing l <;> cases l <;> simp only [List.drop, Nat.zero_add, Nat.succ_add, List.drop_nil, *]"], "usd": 0.008869000000000016}

@@ -1,0 +1,1 @@
+{"tactics": ["intros", ":= by intros; simp [List.maxIdxOn]", "intros <;> rfl", "intros <;> simp [List.maxIdxOn]", "intros <;> unfold List.maxIdxOn <;> simp", "intros <;> grind [List.maxIdxOn]", "intros <;> simp [List.maxIdxOn, List.minIdxOn]", "intros <;> decide"], "usd": 0.0038209999999998523}

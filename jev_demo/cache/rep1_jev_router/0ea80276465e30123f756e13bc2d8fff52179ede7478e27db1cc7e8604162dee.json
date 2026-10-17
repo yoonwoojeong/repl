@@ -1,0 +1,1 @@
+{"tactics": ["intro α l i <;> induction l generalizing i <;> cases i <;> simp_all [-List.tail_drop]", "intro α l i", "intro α l i <;> induction l generalizing i <;> cases i <;> simp_all [-List.tail_drop, List.drop]", "intro α l i <;> rw [← List.drop_one, List.drop_drop] <;> simp [-List.tail_drop, Nat.add_comm]"], "usd": 0.012477000000000071}

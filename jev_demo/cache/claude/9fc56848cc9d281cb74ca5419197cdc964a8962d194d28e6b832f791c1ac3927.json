@@ -1,0 +1,1 @@
+{"tactics": ["subst w <;> rfl", "cases w <;> rfl", "subst w", "subst w <;> simp", "cases w", "subst w <;> simp [List.mapFinIdx]"], "usd": 0.006852999999999998}

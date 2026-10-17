@@ -1,0 +1,1 @@
+{"tactics": ["intro bs\nexact h1 bs", "intro x_1", ". intro x_1; simp only [List.flatMapM.loop]; exact h1 x_1", "intro x_1 <;> unfold List.flatMapM.loop <;> exact h1 x_1", "exact fun x_1 => h1 x_1", "simpa [List.flatMapM.loop] using h1"], "usd": 0.004409000000000107}

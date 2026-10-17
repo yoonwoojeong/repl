@@ -1,0 +1,1 @@
+{"tactics": ["have h4 : 2 ^ i = 2 ^ j * 2 ^ (i - j) := by rw [← Nat.pow_add]; congr 1; omega", "rw [show 2 ^ i = 2 ^ j * 2 ^ (i - j) by rw [← Nat.pow_add]; congr 1; omega]", "have h4 : 2 ^ i = 2 ^ j * (2 * 2 ^ (i - j - 1)) := by rw [← Nat.pow_succ', ← Nat.pow_add]; congr 1; omega", "have hp : 0 < 2 ^ j := Nat.two_pow_pos j", "simp only [beq_iff_eq]"], "usd": 0.024212999999999596}

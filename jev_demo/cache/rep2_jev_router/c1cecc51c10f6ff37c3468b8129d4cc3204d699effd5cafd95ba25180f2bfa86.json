@@ -1,0 +1,1 @@
+{"tactics": ["rename_i f motive hnil hcons as bs", "rename_i hnil hcons as bs", "induction ‹List _› generalizing ‹List (List _)›", "cases ‹List _›", "simp_all", "grind"], "usd": 0.012460999999999944}

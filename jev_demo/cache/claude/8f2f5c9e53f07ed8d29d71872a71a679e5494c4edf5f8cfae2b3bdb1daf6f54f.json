@@ -1,0 +1,1 @@
+{"tactics": ["simpa using h.flatten", "exact List.Perm.flatten h", "have h2 := List.Perm.flatten h", "simpa [List.flatten_cons] using List.Perm.flatten h", "exact h.flatMap_right id", "grind"], "usd": 0.008437000000000028}

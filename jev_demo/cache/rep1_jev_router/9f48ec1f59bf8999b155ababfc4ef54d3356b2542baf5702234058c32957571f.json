@@ -1,0 +1,1 @@
+{"tactics": ["intro inst h", "intros", "intro _ _", "intro inst h; constructor"], "usd": 0.004240999999999939}

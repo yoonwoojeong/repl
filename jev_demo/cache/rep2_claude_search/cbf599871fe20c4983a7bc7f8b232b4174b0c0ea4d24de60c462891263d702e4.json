@@ -1,0 +1,1 @@
+{"tactics": ["grind", "split <;> simp_all", "simp only [List.contains_iff_mem]", "by_cases hm : _ ∈ _ <;> simp_all", "rename_i l a i h", "simp_all <;> split <;> simp_all", "cases i✝ <;> simp_all <;> split <;> simp_all"], "usd": 0.014097000000000026}

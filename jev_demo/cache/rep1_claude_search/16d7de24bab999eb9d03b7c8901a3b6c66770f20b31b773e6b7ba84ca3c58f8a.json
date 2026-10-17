@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.minIdxOn?, List.minIdxOn_cons]", "rw [List.minIdxOn?_eq_if]", "unfold List.minIdxOn?", "simp [List.minIdxOn?]", "cases xs✝ <;> simp [List.minIdxOn?, List.minIdxOn]", "grind [List.minIdxOn?, List.minIdxOn_cons]"], "usd": 0.006109000000000364}

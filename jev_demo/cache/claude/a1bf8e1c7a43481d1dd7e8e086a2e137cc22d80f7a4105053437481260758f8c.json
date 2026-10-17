@@ -1,0 +1,1 @@
+{"tactics": ["grind [List.maxIdxOn, List.maxOn]", "simp [List.maxIdxOn, List.maxOn]", "unfold List.maxIdxOn", "rename_i β α inst1 inst2 inst3 f xs", "revert h", "simp only [List.maxIdxOn, List.maxOn]", "grind"], "usd": 0.011969000000000007}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l hl x", "grind", "cases ‹List _› with | nil => contradiction | cons a t => ?_", "constructor", "simp_all [List.min]"], "usd": 0.012116999999999933}

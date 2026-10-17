@@ -1,0 +1,1 @@
+{"tactics": ["subst w; rfl", "subst w", "cases w", "cases w <;> rfl", "subst m", "induction w <;> rfl", "simp [w]"], "usd": 0.0020929999999999005}

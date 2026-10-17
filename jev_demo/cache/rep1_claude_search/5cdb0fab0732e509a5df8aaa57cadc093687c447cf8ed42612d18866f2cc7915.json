@@ -1,0 +1,1 @@
+{"tactics": ["exact fun m h => Nat.le_of_dvd h (Nat.gcd_dvd_right m _)", "intro n m h", "intros n m h; exact Nat.le_of_dvd h (Nat.gcd_dvd_right m n)", "exact @fun n m h => Nat.le_of_dvd h (Nat.gcd_dvd_right m n)"], "usd": 0.007596999999999632}

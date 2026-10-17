@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rw [dif_neg (by simp)]", "split <;> simp_all", "exact dif_neg (Nat.not_lt_zero i)", "simp only [List.length_nil, Nat.not_lt_zero, dite_false]", "grind"], "usd": 0.0030049999999999244}

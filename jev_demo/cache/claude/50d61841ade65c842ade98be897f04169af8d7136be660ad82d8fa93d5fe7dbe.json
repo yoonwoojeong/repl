@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α p l f g hf", "induction ‹List _› <;> simp_all [List.filter_cons]", "simp only [List.unattach, List.filter_map]", "grind", "simp_all [List.unattach, List.filter_map, Function.comp_def]", "rename_i l f g hf"], "usd": 0.010220999999999592}

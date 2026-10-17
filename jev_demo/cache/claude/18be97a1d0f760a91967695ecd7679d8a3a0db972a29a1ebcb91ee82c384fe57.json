@@ -1,0 +1,1 @@
+{"tactics": ["intro α a l h", "intro α a l h <;> induction l with | nil => simp at h | cons b l ih => (rcases List.mem_cons.mp h with rfl | hm; exact ⟨[], l, rfl⟩; obtain ⟨s, t, e⟩ := ih hm; exact ⟨b :: s, t, by simp [e]⟩)", "intro α a l", "intros"], "usd": 0.010201000000000016}

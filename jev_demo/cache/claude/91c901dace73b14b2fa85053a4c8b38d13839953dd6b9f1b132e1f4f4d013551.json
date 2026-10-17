@@ -1,0 +1,1 @@
+{"tactics": ["subst hfg", "induction l <;> simp_all [List.foldrM_cons]", "simp [hfg, List.unattach, List.foldrM_map]", "induction l with | nil => simp | cons a t ih => simp [List.foldrM_cons, ih, hfg]", "rw [hfg]", "simp_all [List.unattach, List.foldrM_map]"], "usd": 0.01217299999999999}

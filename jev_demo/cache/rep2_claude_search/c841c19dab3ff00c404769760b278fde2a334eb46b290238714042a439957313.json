@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ i hi", ". intro α l₁ l₂ i hi; simp [List.getElem_append_right, Nat.add_sub_cancel]", "intros <;> simp [List.getElem_append_right]", "intro α l₁ l₂ i hi <;> rw [List.getElem_append_right (by omega)] <;> simp", "intros <;> grind", "intro α l₁ l₂ i hi <;> induction l₁ <;> simp_all [Nat.add_succ]"], "usd": 0.00456499999999993}

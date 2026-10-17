@@ -1,0 +1,1 @@
+{"tactics": ["cases l <;> simp_all", "simp [List.eraseIdx_zero]", "cases l with\n  | nil => simp at h\n  | cons a t => simp", "grind", "simp [List.getElem_eraseIdx]", "cases l <;> simp_all [List.eraseIdx_cons_zero]"], "usd": 0.00904499999999997}

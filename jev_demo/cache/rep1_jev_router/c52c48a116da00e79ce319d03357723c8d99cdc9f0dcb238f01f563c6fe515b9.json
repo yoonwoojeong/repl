@@ -1,0 +1,1 @@
+{"tactics": ["intro a", "intro a b c hab hbc", "intro a <;> induction a", "intro a <;> induction a with | nil => ?_ | cons x xs ih => ?_", "grind", "simp only [compare]"], "usd": 0.008769000000000027}

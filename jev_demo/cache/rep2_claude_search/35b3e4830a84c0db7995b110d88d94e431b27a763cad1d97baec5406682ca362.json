@@ -1,0 +1,1 @@
+{"tactics": ["rename_i ctx p h", "next ctx p h => induction p <;> simp_all [Nat.Internal.Linear.Poly.isNonZero, Nat.Internal.Linear.Poly.denote] <;> split at h <;> simp_all <;> omega", "revert a✝", "simp_all [Nat.Internal.Linear.Poly.isNonZero, Nat.Internal.Linear.Poly.denote]"], "usd": 0.015149000000000079}

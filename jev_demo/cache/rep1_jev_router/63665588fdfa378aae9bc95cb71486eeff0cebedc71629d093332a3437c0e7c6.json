@@ -1,0 +1,1 @@
+{"tactics": ["intro α l i", "intro α l", "intro α l i <;> induction l generalizing i <;> simp_all [List.zipIdx]", "intros", "simp [List.zipIdx_eq_zip_range']", "intro α l <;> induction l <;> simp_all [List.zipIdx]"], "usd": 0.007588999999999846}

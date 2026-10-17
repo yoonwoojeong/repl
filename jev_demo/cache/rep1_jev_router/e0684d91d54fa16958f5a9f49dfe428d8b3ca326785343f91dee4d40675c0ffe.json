@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "exact List.map_nil", "simp only [List.map_nil]", "rw [List.map_nil]", "decide"], "usd": 0.0019089999999999385}

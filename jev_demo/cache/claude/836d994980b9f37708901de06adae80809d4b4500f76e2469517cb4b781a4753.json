@@ -1,0 +1,1 @@
+{"tactics": ["intro a b", "simp", "grind", "intro a b <;> simp [Std.Rco.size]", "intro a b <;> rfl", "intro a b <;> simp [Std.Rco.size, Std.Rxo.HasSize.size]", "intro a b <;> unfold Std.Rco.size <;> simp", "intro a b <;> simp [Std.Rco.size_eq_length_toList]"], "usd": 0.007957000000000214}

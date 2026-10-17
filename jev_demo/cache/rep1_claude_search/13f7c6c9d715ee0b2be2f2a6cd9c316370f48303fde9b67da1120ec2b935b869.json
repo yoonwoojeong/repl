@@ -1,0 +1,1 @@
+{"tactics": ["solve_by_elim", "rename_i hcons ih", "apply_assumption", "exact ‹∀ (a : _) (as : List _) (bs : List (List _)), _ → _› _ _ _ (fun _ => ‹∀ (x_1 : List (List _)), _› _)", "grind"], "usd": 0.014324999999999921}

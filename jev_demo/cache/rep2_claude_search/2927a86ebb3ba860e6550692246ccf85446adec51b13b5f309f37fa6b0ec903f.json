@@ -1,0 +1,1 @@
+{"tactics": ["intro α xs h", "intro α xs h <;> cases xs with | nil => simp at h | cons a t => cases t <;> simp_all [List.dropLast]", "intro α xs h <;> match xs, h with | a :: b :: t, _ => rfl", "intros <;> grind"], "usd": 0.0029849999999997934}

@@ -1,0 +1,1 @@
+{"tactics": ["exact F _ _ trivial", "exact F _ _ ⟨⟩", "apply F", "exact F _ _ (by constructor)", "exact F _ _ (by simp [List.Mem.below])", "apply F <;> trivial"], "usd": 0.007061000000000012}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α inst l n a", "intro α inst l", "intro α inst l n a <;> induction l generalizing n <;> cases n <;> simp_all [List.replicate_succ, List.isPrefixOf, Bool.and_comm, Bool.and_left_comm]", "intro α inst l n a <;> induction l generalizing n <;> cases n <;> simp_all [List.replicate_succ, List.isPrefixOf] <;> grind"], "usd": 0.014949000000000101}

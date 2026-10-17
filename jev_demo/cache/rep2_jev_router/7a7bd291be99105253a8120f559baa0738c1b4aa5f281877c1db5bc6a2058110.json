@@ -1,0 +1,1 @@
+{"tactics": ["exact hcons head✝ tail✝ x_1 (fun bs' => tail_ih✝ (bs' :: x_1))", "apply hcons", "refine hcons head✝ tail✝ x_1 ?_", "exact hcons _ _ _ (fun _ => tail_ih✝ _)", "simp_all", "grind"], "usd": 0.009877000000000025}

@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [Nat.Coprime]", "simp [Nat.Coprime] at h <;> subst h <;> simp", "have hn : n = 1 := by simpa [Nat.Coprime] using h", "simp_all", "unfold Nat.Coprime at h <;> rw [Nat.gcd_zero_left] at h <;> subst h <;> simp"], "usd": 0.008384999999999643}

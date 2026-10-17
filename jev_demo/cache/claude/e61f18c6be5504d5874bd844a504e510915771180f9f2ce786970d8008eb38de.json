@@ -1,0 +1,1 @@
+{"tactics": ["intro α r l₁ l₂", "intro α r l₁ l₂ <;> constructor", "intro α r <;> induction r with | nil => simp | cons a r ih => intro l₁ l₂; constructor <;> intro h <;> simp_all", "intro α r l₁ l₂ <;> induction l₁ generalizing r", "intro α r l₁ l₂ <;> induction r generalizing l₁"], "usd": 0.008032999999999957}

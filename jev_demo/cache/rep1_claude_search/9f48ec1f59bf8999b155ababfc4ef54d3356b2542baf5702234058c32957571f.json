@@ -1,0 +1,1 @@
+{"tactics": ["intro inst h", "intro inst h <;> constructor", "intro inst h <;> exact Std.TransCmp.mk (fun h1 h2 => by grind)", "intro _ _ <;> infer_instance"], "usd": 0.007981000000000016}

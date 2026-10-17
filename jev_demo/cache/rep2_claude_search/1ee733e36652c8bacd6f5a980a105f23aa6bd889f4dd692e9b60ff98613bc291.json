@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp_all [List.insert_of_mem, List.insert_of_not_mem, List.getElem_cons]", "split <;> simp_all [List.insert]", "split", "simp only [List.insert]", "rename_i h", "unfold List.insert", "split <;> rename_i hm <;> simp [List.insert, hm] <;> split <;> simp_all"], "usd": 0.01392900000000008}

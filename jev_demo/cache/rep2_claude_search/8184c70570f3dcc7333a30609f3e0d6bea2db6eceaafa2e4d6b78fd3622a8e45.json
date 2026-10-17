@@ -1,0 +1,1 @@
+{"tactics": ["cases as with | nil => simp | cons a as => simp at h", "cases as <;> simp_all", "obtain rfl : as = [] := List.eq_nil_of_length_eq_zero (by omega)", "have ha : as = [] := List.eq_nil_of_length_eq_zero (by omega)", "simp_all", "grind"], "usd": 0.007776999999999923}

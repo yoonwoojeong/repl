@@ -1,0 +1,1 @@
+{"tactics": ["intro l' i h", "induction l <;> intro l' i h <;> cases l' <;> cases i <;> simp_all", "induction l with\n| nil => intro l' i h; simp at h\n| cons a as ih => intro l' i h; cases l' with\n  | nil => simp at h\n  | cons b bs => cases i with\n    | zero => rfl\n    | succ n => exact ih", "induction l", "grind"], "usd": 0.010097000000000023}

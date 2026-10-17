@@ -1,0 +1,1 @@
+{"tactics": ["intro h j", "intro h j <;> split", "intro h j <;> by_cases hj : j < i", "intro h", "intros"], "usd": 0.009052999999999756}

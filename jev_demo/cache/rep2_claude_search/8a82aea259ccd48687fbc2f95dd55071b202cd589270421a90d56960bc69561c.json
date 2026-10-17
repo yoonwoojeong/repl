@@ -1,0 +1,1 @@
+{"tactics": ["induction n with | zero => simp | succ k ih => (have h2 := Nat.mul_le_mul_left (a ^ k) ha; rw [Nat.pow_succ]; omega)", "induction n", "induction n <;> simp_all [Nat.pow_succ] <;> grind", "induction n <;> grind [Nat.pow_succ]"], "usd": 0.02010899999999971}

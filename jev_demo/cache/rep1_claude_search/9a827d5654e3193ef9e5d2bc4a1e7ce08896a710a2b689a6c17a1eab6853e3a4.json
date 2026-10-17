@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [List.getElem_replace]", "rw [List.getElem_replace]; simp_all", "grind [List.getElem_replace]", "rename_i α _ a b _ l i h hne", "simp [List.getElem_replace, *]", "split <;> simp_all"], "usd": 0.009692999999999952}

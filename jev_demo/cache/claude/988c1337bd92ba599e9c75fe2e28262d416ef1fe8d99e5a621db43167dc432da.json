@@ -1,0 +1,1 @@
+{"tactics": ["rename_i b d a c hb hd hba hdc", "grind", "simp_all [Nat.add_div, Nat.div_add_div]", "omega"], "usd": 0.009717000000000198}

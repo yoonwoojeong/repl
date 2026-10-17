@@ -1,0 +1,1 @@
+{"tactics": ["simp at h₂ <;> omega", "exfalso", "exact absurd (by simpa using h₂) (Nat.not_lt.mpr h₁)", "rw [List.append_nil] at h₂ <;> omega", "grind", "simp_all <;> omega"], "usd": 0.01145700000000005}

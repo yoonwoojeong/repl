@@ -1,0 +1,1 @@
+{"tactics": ["grind", "simp [List.minOn]", "unfold List.minOn", "constructor", "induction xs✝ with\n | nil => contradiction\n | cons a l ih => simp_all", "rw [List.minOn]", "simp_all [List.minOn]"], "usd": 0.010313000000000017}

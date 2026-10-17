@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.map_add_toList_rio", "simp [Nat.map_add_toList_rio]", "simp", "induction n <;> simp_all [Nat.toList_rio_succ_right_eq_append, Nat.toList_rco_succ_right_eq_append]", "grind", "induction n", "apply List.ext_getElem <;> simp", "simp [Nat.toList_rio_eq_toList_rco]"], "usd": 0.008733000000000324}

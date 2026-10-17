@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "simp_all", "simp [List.findIdx_nil] at h", "exact absurd h (Nat.not_lt_zero _)", "rw [List.findIdx_nil] at h; omega", "contradiction"], "usd": 0.007388999999999868}

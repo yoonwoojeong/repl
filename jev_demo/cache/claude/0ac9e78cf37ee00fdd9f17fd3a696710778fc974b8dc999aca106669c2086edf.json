@@ -1,0 +1,1 @@
+{"tactics": ["simp at h <;> omega", "exact absurd (by simpa using h) (Nat.not_lt.mpr h')", "have h2 : i < l₁.length := by simpa using h", "simp_all <;> omega", "exfalso", "rw [List.length_append] at h <;> simp at h <;> omega"], "usd": 0.010424999999999907}

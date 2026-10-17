@@ -1,0 +1,1 @@
+{"tactics": ["cases l <;> simp [List.mem_iff_getElem]", "cases l <;> simp_all [List.mem_iff_getElem, List.getElem_cons_succ]", "simp [List.mem_iff_getElem, List.getElem_tail]", "rw [List.mem_iff_getElem]", "cases l with | nil => simp | cons a t => simp [List.mem_iff_getElem]", "grind [List.mem_iff_getElem]"], "usd": 0.010032999999999959}

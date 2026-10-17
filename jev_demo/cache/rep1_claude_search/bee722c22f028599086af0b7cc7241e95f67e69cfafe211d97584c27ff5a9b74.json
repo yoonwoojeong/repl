@@ -1,0 +1,1 @@
+{"tactics": ["intro _ α β f motive hnil hcons x", "intro inst α β f motive hnil hcons x x_1", "intro inst α β f motive hnil hcons x x_1 <;> induction x generalizing x_1 <;> simp_all [List.flatMapM.loop]", "intros", "intro inst α β f motive hnil hcons x <;> induction x <;> intro x_1 <;> unfold List.flatMapM.loop <;> simp_all"], "usd": 0.009868999999999906}

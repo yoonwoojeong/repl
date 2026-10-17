@@ -1,0 +1,1 @@
+{"tactics": ["subst w <;> rfl", "subst w <;> simp", "cases w <;> rfl", "simp [w, Nat.fold_zero]", "subst w", "grind"], "usd": 0.007849000000000217}

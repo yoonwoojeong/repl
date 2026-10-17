@@ -1,0 +1,29 @@
+{
+ "config": {
+  "variant": "same_params",
+  "d": 128,
+  "heads": 4,
+  "ff": 512,
+  "loops": 4,
+  "state_len": 256,
+  "premise_len": 128,
+  "batch": 32,
+  "steps": 4000,
+  "lr": 0.001,
+  "warmup": 200,
+  "temperature": 0.05,
+  "seed": 0,
+  "split": "novel_premises"
+ },
+ "params": 264320,
+ "val": {
+  "R@1": 1.58,
+  "R@10": 5.32,
+  "MRR": 0.0458
+ },
+ "test": {
+  "R@1": 1.47,
+  "R@10": 5.66,
+  "MRR": 0.0478
+ }
+}

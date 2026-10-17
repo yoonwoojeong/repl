@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp [key]", "split <;> simp_all", "split <;> simp [List.unattach_cons, key]", "split"], "usd": 0.007481000000000293}

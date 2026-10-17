@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "exact absurd h (by simp)", "simp [List.zipWith] at h", "cases l' <;> simp at h", "exfalso; simp at h", "grind", "contradiction"], "usd": 0.0024890000000001855}

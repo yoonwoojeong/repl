@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rfl", "simp [List.foldrM]", "simp [List.unattach]", "simp [List.foldrM_nil, List.unattach_nil]", "grind", "simp_all"], "usd": 0.0027249999999999774}

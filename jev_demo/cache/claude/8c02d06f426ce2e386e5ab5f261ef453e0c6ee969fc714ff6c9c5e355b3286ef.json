@@ -1,0 +1,1 @@
+{"tactics": ["intro α xs i h", "intros; apply Subtype.ext; simp [List.attach]", "intros; simp [List.attach, List.attachWith, List.getElem_pmap]", "intro α xs i h; apply Subtype.ext; simp", "intros; grind", "intros; simp [List.getElem_attachWith]"], "usd": 0.0033649999999999514}

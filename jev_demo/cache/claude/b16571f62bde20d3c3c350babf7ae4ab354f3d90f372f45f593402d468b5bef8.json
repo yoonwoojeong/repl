@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_minIdxOn]", "exact List.getElem_minIdxOn ..", "grind [List.getElem_minIdxOn]", "simp [List.minIdxOn, List.minOn]", "unfold List.minIdxOn List.minOn", "grind"], "usd": 0.009608999999999979}

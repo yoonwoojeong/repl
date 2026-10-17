@@ -1,0 +1,1 @@
+{"tactics": ["subst hc; simp", "simp [hc]", "subst hc", "rw [hc]; simp [Nat.div_zero]", "simp_all"], "usd": 0.0020449999999998525}

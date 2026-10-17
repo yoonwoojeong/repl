@@ -1,0 +1,1 @@
+{"tactics": ["subst_vars <;> simp [List.maxOn_singleton]", "simp_all [List.maxOn_singleton]", "subst_vars <;> rfl", "subst_vars <;> simp [List.maxOn]", "simp_all [List.maxOn]", "grind [List.maxOn_singleton]", "subst_vars"], "usd": 0.007337000000000149}

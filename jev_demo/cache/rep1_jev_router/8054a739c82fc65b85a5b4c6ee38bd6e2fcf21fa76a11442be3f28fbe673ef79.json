@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.mul_add_lt_is_or h, Nat.testBit_or, Nat.testBit_mul_pow_two]", "by_cases hj : j < i", "rw [Nat.mul_add_lt_is_or h]", "induction i generalizing a b j with\n  | zero => simp_all\n  | succ i ih => cases j <;> simp_all [Nat.pow_succ, Nat.testBit_succ]", "simp [Nat.testBit_to_div_mod]", "split"], "usd": 0.015361000000000402}

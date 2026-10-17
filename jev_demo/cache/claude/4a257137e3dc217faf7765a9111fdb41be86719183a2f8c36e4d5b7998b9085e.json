@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "simp [List.eraseIdx] at h", "cases i <;> simp_all", "exact absurd h (by simp)", "rw [List.eraseIdx_nil] at h; simp at h", "grind"], "usd": 0.0025089999999998724}

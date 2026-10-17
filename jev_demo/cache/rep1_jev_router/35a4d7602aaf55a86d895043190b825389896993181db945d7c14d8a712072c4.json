@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "congr", "exact rfl", "funext_tac_placeholder_skip", "simp only []"], "usd": 0.00471699999999986}

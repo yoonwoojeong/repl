@@ -1,0 +1,1 @@
+{"tactics": ["intro α i j l h", "intro α i j l", "intros", "simp [-List.getElem_zipIdx, List.zipIdx_eq_zip_range']"], "usd": 0.011165000000000092}

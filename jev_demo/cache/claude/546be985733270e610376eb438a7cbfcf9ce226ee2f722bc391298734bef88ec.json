@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.add_div hc]", "have h : (a + b + 1) % c = 0 := by simp [hk]", "have h1 := Nat.div_add_mod a c", "have h3 := Nat.mod_lt a hc", "grind", "simp [Nat.add_div hc]"], "usd": 0.023797000000000068}

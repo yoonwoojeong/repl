@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α p l f g hf", "induction ‹List _› with | nil => simp | cons a l ih => rcases a with ⟨x, hx⟩ <;> simp_all [List.filter_cons] <;> split <;> simp_all", "induction ‹List _› <;> simp_all [List.filter_cons]", "simp_all [List.unattach, List.filter_map, Function.comp_def]", "grind [List.unattach, List.filter_map]"], "usd": 0.01634100000000016}

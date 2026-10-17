@@ -1,0 +1,1 @@
+{"tactics": ["rw [← Nat.pow_add, Nat.sub_add_cancel h]", "rw [← Nat.pow_add]", "simp [← Nat.pow_add, Nat.sub_add_cancel h]", "obtain ⟨k, rfl⟩ := Nat.exists_eq_add_of_le h", "rw [← Nat.pow_add, Nat.sub_add_cancel h] <;> rfl", "have h2 : n - m + m = n := by omega"], "usd": 0.004184999999999661}

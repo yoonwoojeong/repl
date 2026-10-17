@@ -1,0 +1,1 @@
+{"tactics": ["cases t <;> apply h <;> constructor", "apply h", "cases t <;> exact h _ _ _ (by constructor)", "exact h a [] t (by cases t; constructor)", "cases t", "cases t <;> exact h _ _ _ List.Sublist.below.slnil"], "usd": 0.010301000000000005}

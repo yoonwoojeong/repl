@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨s, t, h⟩", "intro h", "rintro ⟨s, t, h⟩ <;> obtain ⟨a, b, rfl, ha, hb⟩ := List.filterMap_eq_append_iff.1 h.symm", "grind [List.filterMap_eq_append_iff, List.IsInfix]"], "usd": 0.012709000000000081}

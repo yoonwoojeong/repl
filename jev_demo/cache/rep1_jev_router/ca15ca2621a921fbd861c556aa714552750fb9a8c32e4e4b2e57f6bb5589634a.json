@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rw [Nat.div_zero]; exact Nat.zero_le n", "simp [Nat.div_zero]", "omega", "exact (Nat.div_zero n).symm ▸ Nat.zero_le n", "grind"], "usd": 0.0025089999999998724}

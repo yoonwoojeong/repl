@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.not_lt_nil]", "constructor <;> intro h <;> simp_all [List.not_lt_nil]", "cases l₁ <;> simp_all [List.not_lt_nil]", "constructor", "grind"], "usd": 0.010797000000000168}

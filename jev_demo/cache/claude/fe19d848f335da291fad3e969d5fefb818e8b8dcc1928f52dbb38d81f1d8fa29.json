@@ -1,0 +1,1 @@
+{"tactics": ["simp [← Array.getElem_toList, Nat.getElem_toList_rco]", "rw [← Array.getElem_toList]", "simp", "grind", "simp [← Array.getElem_toList]", "simp [Std.Rco.toArray_toList, Nat.getElem_toList_rco]", "simp [← Array.getElem_toList, Std.Rco.toList_toArray, Nat.getElem_toList_rco]"], "usd": 0.00976100000000013}

@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_append_right, Nat.add_comm, Nat.add_left_comm]", "grind", "simp [List.getElem_cons, List.getElem_append]", "simp only [← Nat.add_assoc, List.getElem_cons_succ, List.getElem_append_right, Nat.add_sub_cancel]", "simp", "simp [List.getElem_append_right]"], "usd": 0.010653000000000024}

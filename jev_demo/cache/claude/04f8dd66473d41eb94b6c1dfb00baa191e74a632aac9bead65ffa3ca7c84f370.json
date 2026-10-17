@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp only [List.append_nil]; exact Nat.le_refl _", "grind", "simp [List.append_nil]", "rw [Nat.le_iff_lt_or_eq]; simp", "exact Nat.le_of_eq (by simp)", "omega"], "usd": 0.0031289999999999374}

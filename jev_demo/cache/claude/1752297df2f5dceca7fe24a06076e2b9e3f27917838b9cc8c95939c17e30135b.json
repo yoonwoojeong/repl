@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.unattach, List.map_map, Function.comp_def]", "simp only [List.unattach, List.map_map] <;> rfl", "simp [List.unattach]", "rename_i a l", "simp_all [List.unattach, Function.comp_def, wfParam, binderNameHint]", "grind [List.unattach]"], "usd": 0.012801000000000062}

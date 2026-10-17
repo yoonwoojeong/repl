@@ -1,0 +1,1 @@
+{"tactics": ["intro α n le l hp a b ha hb", "rw [List.MergeSort.Internal.splitInTwo_fst] at ha", "rw [List.MergeSort.Internal.splitInTwo_snd] at hb", "have h : List.Pairwise le (l.val.take ((n+1)/2) ++ l.val.drop ((n+1)/2)) := by rw [List.take_append_drop]; exact hp", "rw [List.pairwise_append] at h", "exact h.2.2 a ha b hb"], "usd": 0.01983299999999999}

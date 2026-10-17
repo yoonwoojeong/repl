@@ -1,0 +1,1 @@
+{"tactics": ["rename_i htrans htotal l", "revert a✝¹ a✝", "generalize l✝ = l", "exact List.sorted_mergeSort (by assumption) (by assumption)"], "usd": 0.01313299999999984}

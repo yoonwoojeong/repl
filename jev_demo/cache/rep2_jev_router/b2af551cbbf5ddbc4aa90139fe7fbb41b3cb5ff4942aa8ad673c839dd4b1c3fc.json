@@ -1,0 +1,1 @@
+{"tactics": ["intro a m n h", ". intro a m n h; rw [← Nat.pow_add, Nat.sub_add_cancel h]", "intro a m n h <;> rw [← Nat.pow_add, Nat.sub_add_cancel h]", "intro a m n h <;> simp [← Nat.pow_add, Nat.sub_add_cancel h]", "intro a m n h <;> grind [Nat.pow_add]"], "usd": 0.0039050000000000473}

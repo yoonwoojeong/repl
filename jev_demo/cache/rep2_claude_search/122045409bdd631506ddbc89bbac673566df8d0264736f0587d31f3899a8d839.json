@@ -1,0 +1,1 @@
+{"tactics": ["obtain rfl : f = g ∘ fun x => x.val := funext fun x => hf x.1 x.2", "have hfg : f = g ∘ fun x => x.val := funext fun x => hf x.1 x.2", "rename_i a l", "split <;> simp [List.map_filter, hf]", "simp [show f = g ∘ fun x => x.val from funext fun x => hf x.1 x.2]"], "usd": 0.013048999999999644}

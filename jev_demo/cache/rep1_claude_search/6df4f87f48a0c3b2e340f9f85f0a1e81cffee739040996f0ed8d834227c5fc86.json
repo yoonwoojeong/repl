@@ -1,0 +1,1 @@
+{"tactics": ["cases l <;> simp [List.zipIdx]", "cases l <;> simp", "intro h", "cases l <;> simp_all [List.zipIdx]", "cases l <;> grind [List.zipIdx]", "cases l"], "usd": 0.006156999999999968}

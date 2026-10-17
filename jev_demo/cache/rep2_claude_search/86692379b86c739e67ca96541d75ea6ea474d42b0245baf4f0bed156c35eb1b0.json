@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.cons_merge_cons]", "simp [List.merge]", "cases h : le a c <;> simp [List.merge, h]", "rw [List.cons_merge_cons]", "split <;> simp_all [List.merge]", "rfl", "unfold List.merge", "grind [List.cons_merge_cons, List.merge_nil, List.nil_merge]"], "usd": 0.007481000000000293}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [← List.dropLast_eq_take, List.dropLast_append_getLast]", "rw [← List.dropLast_eq_take]", "simp [← List.dropLast_eq_take, List.dropLast_append_getLast]", "exact (List.dropLast_eq_take ▸ List.dropLast_append_getLast h)", "simp [← List.dropLast_eq_take]", "grind [List.dropLast_eq_take, List.dropLast_append_getLast]"], "usd": 0.008456999999999937}

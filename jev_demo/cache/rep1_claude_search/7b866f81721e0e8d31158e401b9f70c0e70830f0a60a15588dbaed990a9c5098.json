@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.drop_zipIdx]", "rw [List.drop_zipIdx]", "simp [← List.zipIdx_cons, List.drop_zipIdx]", "grind [List.drop_zipIdx, List.zipIdx_cons]", "simp only [List.drop_zipIdx, List.zipIdx_cons] <;> simp", "congr 1", "simp"], "usd": 0.017405000000000004}

@@ -1,0 +1,1 @@
+{"tactics": ["subst h <;> rfl", "subst h <;> simp", "cases h <;> rfl", "simp [h]", "subst h", "simp_all"], "usd": 0.004488999999999965}

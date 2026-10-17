@@ -1,0 +1,1 @@
+{"tactics": ["decide", "rfl", "native_decide", "simp", "decide +kernel", "simp [Nat.toDigits, Nat.toDigitsCore]", "grind", "simp [String.Slice.toNat?]"], "usd": 0.0023689999999998435}

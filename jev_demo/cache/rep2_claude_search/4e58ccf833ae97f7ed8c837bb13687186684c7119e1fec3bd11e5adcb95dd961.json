@@ -1,0 +1,1 @@
+{"tactics": ["grind", "split <;> grind", "split <;> simp_all", "simp [List.getElem_cons]", "rename_i l a i h1 h2", "split"], "usd": 0.012700999999999851}

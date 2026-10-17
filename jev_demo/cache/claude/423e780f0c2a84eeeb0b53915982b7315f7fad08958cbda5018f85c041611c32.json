@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp [List.foldl]", "simp only [List.foldl_cons]", "rw [List.foldl_cons]", "exact rfl", "simp"], "usd": 0.0021130000000000315}

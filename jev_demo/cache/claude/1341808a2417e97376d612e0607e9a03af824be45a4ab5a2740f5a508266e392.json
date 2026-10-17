@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨t, rfl⟩ := h <;> simp [List.getLast_append, hx]", "obtain ⟨t, rfl⟩ := h <;> exact (List.getLast_append_of_ne_nil hx).symm", "obtain ⟨t, rfl⟩ := h <;> rw [List.getLast_append_of_ne_nil hx]", "obtain ⟨t, rfl⟩ := h <;> grind", "obtain ⟨t, rfl⟩ := h", "rcases h with ⟨t, rfl⟩ <;> simp [hx]"], "usd": 0.013872999999999996}

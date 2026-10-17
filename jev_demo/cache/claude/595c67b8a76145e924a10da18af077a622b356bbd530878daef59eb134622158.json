@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ _ _ _ xs f h b", "intros", "intro β α _ _ _ _ _ xs f h b <;> constructor", "intro β α _ _ _ _ _ xs f h b <;> grind [List.maxOn_mem, List.apply_le_apply_maxOn]", "intro β α _ _ _ _ _ xs f h b <;> simp [List.maxOn]"], "usd": 0.004233000000000042}

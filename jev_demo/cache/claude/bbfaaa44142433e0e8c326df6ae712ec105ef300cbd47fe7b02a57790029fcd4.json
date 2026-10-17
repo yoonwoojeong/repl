@@ -1,0 +1,1 @@
+{"tactics": ["intro l", "intro l <;> induction l <;> simp_all", "intro l <;> simp [List.utf8Encode, ByteArray.utf8Decode?]", "intro l <;> grind", "intro l <;> induction l with | nil => rfl | cons c cs ih => simp_all [List.utf8Encode]", "intro l <;> induction l"], "usd": 0.005616999999999983}

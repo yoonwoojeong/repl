@@ -1,0 +1,1 @@
+{"tactics": ["apply List.ext_getElem <;> simp", "apply List.ext_getElem <;> simp [List.getElem_reverse]", "apply List.ext_getElem <;> simp_all [List.getElem_reverse]", "apply List.ext_getElem", "induction tail✝ generalizing head✝ <;> simp_all [List.attachWith_append]", "grind"], "usd": 0.012737000000000442}

@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "refine fun h => Nat.le_of_not_lt fun hlt => ?_", "intro h <;> by_contra hc", "intro h <;> apply Nat.le_of_not_lt <;> intro hlt", "simp only [List.subset_def, List.mem_range']", "intro h <;> induction m generalizing s n <;> simp_all"], "usd": 0.010885000000000034}

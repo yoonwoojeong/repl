@@ -1,0 +1,1 @@
+{"tactics": ["exact ih (by simp at h; omega)", "exact ih (by simp only [List.length_cons, List.length_append] at h; omega)", "apply ih", "rw [ih (by simp at h; omega)]", "simp only [List.cons_append, List.length_cons, List.length_append] at h", "have h2 : n✝ < tail✝.length + l₂.length := by simp at h; omega"], "usd": 0.010772999999999922}

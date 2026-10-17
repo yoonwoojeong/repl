@@ -1,0 +1,1 @@
+{"tactics": ["simp [Nat.toList_roc_eq_toList_rco, Nat.getElem?_toList_rco]", "grind", "simp", "simp [Std.Roc.toList, Nat.getElem?_toList_rco]", "rw [Nat.toList_roc_eq_toList_rco]", "split <;> simp_all <;> omega", "simp [Nat.toList_roc_eq_toList_rco]"], "usd": 0.008477000000000068}

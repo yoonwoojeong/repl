@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.unattach, List.map_map, Function.comp_def]", "simp only [List.unattach, List.map_map] <;> rfl", "exact List.map_map", "rename_i a l", "simp [List.unattach]", "simp_all [List.unattach_cons]"], "usd": 0.01500099999999982}

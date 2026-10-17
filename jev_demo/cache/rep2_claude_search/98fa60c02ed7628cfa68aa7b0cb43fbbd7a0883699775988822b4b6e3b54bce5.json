@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ _ x xs f", "intros", "unfold List.maxOn", "simp only [List.maxOn]", "intro β α _ _ _ x xs f <;> cases xs <;> simp [List.maxOn]", "intros <;> split <;> simp_all [List.maxOn]", "grind [List.maxOn]"], "usd": 0.00789699999999982}

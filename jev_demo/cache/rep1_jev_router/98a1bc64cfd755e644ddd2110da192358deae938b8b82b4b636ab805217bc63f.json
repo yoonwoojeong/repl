@@ -1,0 +1,1 @@
+{"tactics": ["intro α op ha l a₁ a₂ <;> induction l <;> simp_all [Std.Associative.assoc]", "intro α op ha l a₁ a₂", "intro α op ha l a₁ a₂ <;> induction l <;> simp_all [List.foldr, ha.assoc]", "intro α op ha l a₁ a₂ <;> induction l <;> grind [Std.Associative.assoc]", "intros <;> rename_i l a₁ a₂ <;> induction l <;> simp_all [Std.Associative.assoc]"], "usd": 0.010804999999999954}

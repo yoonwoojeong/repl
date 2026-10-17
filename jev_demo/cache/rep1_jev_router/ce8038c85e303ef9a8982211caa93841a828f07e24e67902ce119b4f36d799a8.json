@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ _ l hl x", "intro α inst inst_1 _ l hl x", "intro α _ _ _ l", "intros", "intro α _ _ _ l hl x <;> cases l <;> simp_all"], "usd": 0.007513000000000103}

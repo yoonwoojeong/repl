@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ h hx", "exact fun h hx => List.IsSuffix.getLast h hx", "intro α l₁ l₂ ⟨l, rfl⟩ hx", "intro α l₁ l₂ h hx <;> obtain ⟨l, rfl⟩ := h <;> simp [List.getLast_append, hx]", "intro α l₁ l₂ h hx <;> obtain ⟨l, rfl⟩ := h <;> grind"], "usd": 0.008940999999999977}

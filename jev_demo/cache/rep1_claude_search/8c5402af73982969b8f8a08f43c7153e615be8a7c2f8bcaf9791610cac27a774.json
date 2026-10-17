@@ -1,0 +1,1 @@
+{"tactics": ["rw [dif_neg (by omega)]", "simp [Nat.not_lt.mpr h₁]", "split <;> first | omega | rfl", "have h : ¬ i < as.length := by omega", "split", "simp only [dif_neg (Nat.not_lt.mpr h₁)]", "grind"], "usd": 0.0033609999999999474}

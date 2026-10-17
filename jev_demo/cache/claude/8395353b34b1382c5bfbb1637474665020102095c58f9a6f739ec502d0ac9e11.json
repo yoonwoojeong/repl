@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.minOn_singleton]", "rfl", "simp [List.minOn]", "simp only [dite_true]; rfl", "grind"], "usd": 0.004084999999999894}

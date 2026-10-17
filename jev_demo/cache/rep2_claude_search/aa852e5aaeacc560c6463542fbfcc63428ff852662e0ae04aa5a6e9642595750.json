@@ -1,0 +1,1 @@
+{"tactics": ["simp only [List.mergeSort]", "unfold List.mergeSort", "rw [List.mergeSort]", "grind [List.mergeSort_perm, List.sorted_mergeSort]", "simp [List.mergeSort]", "induction l generalizing a"], "usd": 0.018208999999999698}

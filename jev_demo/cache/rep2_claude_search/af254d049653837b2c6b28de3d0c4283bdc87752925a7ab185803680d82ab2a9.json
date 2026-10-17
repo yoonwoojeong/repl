@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "decide", "exact rfl", "simp only [List.tail?]", "unfold List.tail? <;> rfl", "trivial"], "usd": 0.0018169999999999575}

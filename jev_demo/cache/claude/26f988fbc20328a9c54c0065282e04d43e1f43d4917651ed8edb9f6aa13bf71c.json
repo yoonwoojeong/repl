@@ -1,0 +1,1 @@
+{"tactics": ["intro b a n hb ha h", "exact fun hb ha h => Nat.lt_of_lt_of_le (Nat.lt_pow_self ha) (Nat.le_of_dvd (Nat.pos_of_ne_zero hb) h)", "intro b a n hb ha h <;> exact Nat.lt_of_lt_of_le (Nat.lt_pow_self (by omega)) (Nat.le_of_dvd (by omega) h)", "intros"], "usd": 0.015625}

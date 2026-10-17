@@ -1,0 +1,1 @@
+{"tactics": ["split <;> rename_i h' <;> simp [List.getElem_append_left, List.getElem_append_right, h']", "split", "by_cases h' : i < l₁.length", "split <;> simp_all [List.getElem_append_left, List.getElem_append_right]", "split <;> rename_i h' <;> [exact List.getElem_append_left h'; exact List.getElem_append_right (Nat.le_of_not_lt h')]", "grind"], "usd": 0.009865000000000013}

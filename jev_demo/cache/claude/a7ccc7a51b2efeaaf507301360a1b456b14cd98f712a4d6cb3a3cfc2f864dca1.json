@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.le_of_dvd h (Nat.gcd_dvd_right m n)", "apply Nat.le_of_dvd h", "exact Nat.le_of_dvd h (Nat.gcd_dvd_right _ _)", "have hd := Nat.gcd_dvd_right m n", "grind [Nat.le_of_dvd, Nat.gcd_dvd_right]"], "usd": 0.004800999999999611}

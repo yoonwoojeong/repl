@@ -1,0 +1,1 @@
+{"tactics": ["intro n a h", "intro n a h <;> induction n with | zero => simp | succ k ih => (rw [Nat.pow_succ]; have : a ^ k * 2 ≤ a ^ k * a := Nat.mul_le_mul_left _ h; omega)", "intro n a h <;> induction n with | zero => simp | succ k ih => (have : a ^ k * 2 ≤ a ^ k * a := Nat.mul_le_mul_left _ h; rw [Nat.pow_succ]; omega)", "intro n", "intros"], "usd": 0.013520999999999894}

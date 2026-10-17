@@ -1,0 +1,1 @@
+{"tactics": ["by_cases ha : a ∈ l <;> simp [ha, List.getElem_cons]", "by_cases ha : a ∈ l <;> simp [List.insert_of_mem, List.insert_of_not_mem, ha, List.getElem_cons]", "cases i <;> by_cases ha : a ∈ l <;> simp_all [List.insert]", "unfold List.insert", "by_cases ha : a ∈ l", "grind [List.insert, List.getElem_cons]"], "usd": 0.01354500000000014}

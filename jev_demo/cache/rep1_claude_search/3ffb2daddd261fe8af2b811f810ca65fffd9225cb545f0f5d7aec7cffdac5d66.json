@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_append_right]", "rw [List.getElem_append_right (by omega)]; simp", "grind", "simp [List.getElem_append, Nat.add_sub_cancel]", "rw [List.getElem_append_right] <;> simp", "simp"], "usd": 0.0028930000000000344}

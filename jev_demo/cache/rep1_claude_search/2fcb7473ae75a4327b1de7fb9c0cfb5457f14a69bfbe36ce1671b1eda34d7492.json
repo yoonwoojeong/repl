@@ -1,0 +1,1 @@
+{"tactics": ["induction l with\n| nil => cases h\n| cons b l ih =>\n  cases h with\n  | head => exact ⟨[], l, rfl⟩\n  | tail _ h =>\n    obtain ⟨s, t, rfl⟩ := ih h\n    exact ⟨b :: s, t, rfl⟩", "exact List.mem_iff_append.mp h", "induction l", "rw [List.mem_iff_append] at h", "grind [List.mem_iff_append]"], "usd": 0.01249699999999998}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [Nat.le_div_iff_mul_le hb, Nat.one_mul]", "simp [Nat.le_div_iff_mul_le hb]", "exact (Nat.le_div_iff_mul_le hb).trans (by rw [Nat.one_mul])", "constructor", "rw [Nat.le_div_iff_mul_le hb]", "grind [Nat.le_div_iff_mul_le]"], "usd": 0.009104999999999919}

@@ -1,0 +1,1 @@
+{"tactics": ["nofun", "simp", "intro h <;> cases h", "decide", "simp_all", "exact fun h => nomatch h", "grind"], "usd": 0.007608999999999977}

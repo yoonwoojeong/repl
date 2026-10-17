@@ -1,0 +1,1 @@
+{"tactics": ["intros <;> rfl", "intros", "intro β α _ _ f <;> rfl", "intros <;> simp [List.minIdxOn?]", "intros <;> unfold List.minIdxOn? <;> rfl", "intros <;> simp only [List.minIdxOn?]"], "usd": 0.0030090000000000394}

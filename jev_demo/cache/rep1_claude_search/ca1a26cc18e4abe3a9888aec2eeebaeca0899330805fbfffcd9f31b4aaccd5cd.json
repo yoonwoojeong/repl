@@ -1,0 +1,1 @@
+{"tactics": ["induction l <;> simp_all [BEq.comm]", "simp [List.any_eq, BEq.comm]", "cases h : l.any (fun x => a == x) <;> simp_all [List.any_eq_true, List.any_eq_false, BEq.comm]", "induction l with\n| nil => simp\n| cons y ys ih => simp_all [BEq.comm]", "grind [BEq.comm, List.any_eq_true]", "simp only [bne_iff_ne, ne_eq]"], "usd": 0.01080099999999995}

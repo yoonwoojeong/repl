@@ -1,0 +1,1 @@
+{"tactics": ["exact?", "grind", "simp_all", "constructor", "refine ⟨_, ?_, ?_, ?_⟩", "induction l"], "usd": 0.011485000000000412}

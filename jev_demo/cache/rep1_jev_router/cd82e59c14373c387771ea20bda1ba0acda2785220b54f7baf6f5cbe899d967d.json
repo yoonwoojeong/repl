@@ -1,0 +1,1 @@
+{"tactics": ["cases l <;> simp_all [List.getLast_cons]", "cases l with\n  | nil => simp at h\n  | cons a t => simp [List.getLast_cons h]", "cases l with\n  | nil => exact absurd rfl h\n  | cons a t => exact (List.getLast_cons h).symm", "cases l", "grind"], "usd": 0.006941000000000086}

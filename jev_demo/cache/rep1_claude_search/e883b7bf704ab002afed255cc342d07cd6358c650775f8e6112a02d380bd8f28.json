@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "simp only [List.cons_append, List.cons_sublist_iff]", "rw [List.cons_append, List.cons_sublist_iff]", "refine ⟨fun w => ?_, fun w => ?_⟩"], "usd": 0.017525000000000013}

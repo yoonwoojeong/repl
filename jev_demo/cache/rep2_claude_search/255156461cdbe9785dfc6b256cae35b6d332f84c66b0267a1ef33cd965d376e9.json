@@ -1,0 +1,1 @@
+{"tactics": ["exact Nat.map_add_toList_rco", "simp [Nat.map_add_toList_rco]", "rw [Nat.map_add_toList_rco]", "simp [Nat.toList_rco_eq_range']", "induction n generalizing m <;> simp_all [Nat.toList_rco_succ_right_eq_append]", "grind [Nat.toList_rco_eq_range', List.map_add_range']"], "usd": 0.006605000000000416}

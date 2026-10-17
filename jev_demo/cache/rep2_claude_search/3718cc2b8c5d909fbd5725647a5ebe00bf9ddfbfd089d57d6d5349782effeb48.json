@@ -1,0 +1,1 @@
+{"tactics": ["refine ⟨fun h a => h.count_eq a, fun h => ?_⟩", "constructor", "induction l₁ generalizing l₂", "refine ⟨fun h a => List.Perm.count_eq h a, ?_⟩", "intro h; exact?", "grind"], "usd": 0.010000999999999927}

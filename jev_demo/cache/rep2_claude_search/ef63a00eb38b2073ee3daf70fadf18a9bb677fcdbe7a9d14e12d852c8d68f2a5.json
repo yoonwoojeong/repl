@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ _ xs ys f h", "intros", "intro inst inst_1 inst_2 xs ys f h <;> induction xs <;> simp_all", "intro inst inst_1 inst_2 xs ys f h <;> grind [List.minIdxOn]", "intro inst inst_1 inst_2 xs ys f h <;> simp [List.minIdxOn_append]", "intro inst inst_1 inst_2 xs ys f h <;> unfold List.minIdxOn <;> grind"], "usd": 0.004792999999999825}

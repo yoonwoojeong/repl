@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨i, h, rfl⟩", "intro ⟨i, h, hx⟩", "rintro ⟨i, h, hx⟩", "intro h", "rintro ⟨i, h, rfl⟩ <;> rw [List.getElem_eraseIdx] <;> split <;> grind", "grind [List.getElem_eraseIdx, List.length_eraseIdx]"], "usd": 0.00898500000000002}

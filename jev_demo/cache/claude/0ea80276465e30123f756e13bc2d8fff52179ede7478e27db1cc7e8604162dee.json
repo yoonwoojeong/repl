@@ -1,0 +1,1 @@
+{"tactics": ["intro α l i", "intro α l i <;> rw [← List.drop_one, List.drop_drop]", "intro α l <;> induction l with | nil => intro i <;> simp | cons a t ih => intro i <;> cases i <;> simp [ih]", "intro α l i <;> induction l generalizing i <;> cases i <;> simp_all", "intro α l i <;> induction l generalizing i <;> cases i <;> rfl"], "usd": 0.011237000000000386}

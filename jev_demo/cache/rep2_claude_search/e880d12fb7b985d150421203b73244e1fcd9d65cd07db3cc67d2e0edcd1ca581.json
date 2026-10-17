@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α i j l h", "rename_i α i j l h <;> induction l generalizing i j <;> cases i <;> simp_all [-List.getElem_zipIdx, List.zipIdx] <;> omega", "revert h✝ <;> revert i✝ <;> revert j✝ <;> induction l✝ <;> intro j i h <;> cases i <;> simp_all [-List.getElem_zipIdx, List.zipIdx] <;> omega"], "usd": 0.010848999999999887}

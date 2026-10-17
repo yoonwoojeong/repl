@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp only [List.drop_zero, Nat.zero_add]", "grind", "rfl", "simp [List.drop_zero]", "cases xs <;> simp"], "usd": 0.0022410000000001595}

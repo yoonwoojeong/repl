@@ -1,0 +1,1 @@
+{"tactics": ["exact h.right_id x", "simp only [List.sum, List.foldr]; exact h.right_id x", "show x + 0 = x", "simp [List.sum_cons, List.sum_nil, h.right_id]", "rw [List.sum_cons, List.sum_nil]", "have := h.right_id x; simp_all [List.sum]"], "usd": 0.007673000000000041}

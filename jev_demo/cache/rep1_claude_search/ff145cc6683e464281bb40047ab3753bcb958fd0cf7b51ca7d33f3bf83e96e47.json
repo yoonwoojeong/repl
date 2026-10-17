@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Std.Roc.Internal.iter]", "grind", "simp [Std.Roc.Internal.iter, Std.Iterators.Iter.toArray]", "rw [if_neg (by omega)]", "simp_all [Std.Roc.Internal.iter]", "decide"], "usd": 0.005561000000000149}

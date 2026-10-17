@@ -1,0 +1,1 @@
+{"tactics": ["induction x <;> intro bs <;> simp only [List.flatMapM.loop] <;> first | exact hnil _ | (apply hcons; intro bs'; solve_by_elim)", "induction x <;> intro bs <;> unfold List.flatMapM.loop <;> first | exact hnil _ | exact hcons _ _ _ (fun _ => by solve_by_elim)", "induction x <;> intro bs", "induction x", "intro bs"], "usd": 0.016477000000000075}

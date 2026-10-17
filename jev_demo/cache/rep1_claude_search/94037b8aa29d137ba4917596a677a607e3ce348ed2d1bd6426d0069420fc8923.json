@@ -1,0 +1,1 @@
+{"tactics": ["induction l <;> simp_all [List.idxOf_cons] <;> split <;> omega", "exact List.findIdx_le_length", "unfold List.idxOf", "induction l", "grind [List.idxOf_cons]", "simp [List.idxOf, List.findIdx_le_length]"], "usd": 0.01423299999999994}

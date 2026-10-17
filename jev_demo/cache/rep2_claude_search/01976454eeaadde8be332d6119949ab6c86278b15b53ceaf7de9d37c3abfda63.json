@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => ⟨_, (Nat.div_mul_cancel h).symm⟩", "intro n m h", "rintro n m ⟨k, rfl⟩ <;> rcases Nat.eq_zero_or_pos n with rfl | hn <;> simp_all [Nat.mul_div_cancel_left]", "intro n m h <;> exact Dvd.intro n (Nat.div_mul_cancel h)", "rintro n m ⟨k, rfl⟩"], "usd": 0.017725000000000435}

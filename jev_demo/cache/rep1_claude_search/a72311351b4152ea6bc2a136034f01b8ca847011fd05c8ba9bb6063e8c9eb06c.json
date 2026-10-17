@@ -1,0 +1,1 @@
+{"tactics": ["subst h; simp [List.maxOn]", "simp [h]", "subst h; rfl", "subst h; simp", "simp [h, List.maxOn]", "subst h; simp [List.maxOn_singleton]", "subst h; grind", "simp only [h, dite_true]"], "usd": 0.0032090000000000174}

@@ -1,0 +1,1 @@
+{"tactics": ["simpa [← Nat.repr_eq_ofList_toDigits, Nat.toNat?_repr] using h2", "simpa [Nat.toNat?_repr] using h2", "have h3 : (Nat.repr m).toNat? = (Nat.repr n).toNat? := h2", "simp [String.ofList_inj] at h", "simp_all [Nat.repr]", "grind"], "usd": 0.010301000000000116}

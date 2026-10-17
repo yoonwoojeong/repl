@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ h", "first | exact List.Perm.flatten h | (induction h with | nil => exact .nil | cons x _ ih => simpa using ih.append_left x | swap x y l => simpa [List.append_assoc] using (List.perm_append_comm (l₁ := x) (l₂ := y)).append_right l.flatten | trans _ _ ih1 ih2 => exact ih1.trans ih2)"], "usd": 0.01954499999999998}

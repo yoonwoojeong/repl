@@ -1,0 +1,1 @@
+{"tactics": ["exact congrArg _ (funext fun b => hf _ _ b)", "congr 1", "rename_i hd tl", "rcases ‹{ x // p x }› with ⟨a, ha⟩", "simp [hf]", "congr 1 <;> funext b <;> exact hf _ _ _"], "usd": 0.01655300000000004}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α xs i j h", "intro α xs i j h <;> induction xs generalizing i j with | nil => simp at h | cons x xs ih => cases i <;> simp_all [List.drop]", "intros α xs i j h", "intro α xs", "grind"], "usd": 0.008325000000000027}

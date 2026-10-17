@@ -1,0 +1,1 @@
+{"tactics": ["have h1 := Nat.div_add_mod a c", "have h3 := Nat.mod_lt a hc", "obtain ⟨k, hk⟩ := h", "rw [Nat.add_div hc]", "apply Nat.div_eq_of_lt_le", "grind"], "usd": 0.023229000000000166}

@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "grind", "rintro", "simp only [List.length_cons]", "apply Iff.intro", "refine ⟨fun h => ?_, fun h => ?_⟩"], "usd": 0.008453000000000266}

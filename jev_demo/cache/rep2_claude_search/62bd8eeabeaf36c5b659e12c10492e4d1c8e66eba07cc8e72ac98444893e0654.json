@@ -1,0 +1,1 @@
+{"tactics": ["intro h b hb", "induction l with\n| nil => simp at hl\n| cons a as ih => ?_", "cases l with\n| nil => exact absurd rfl hl\n| cons a as => ?_", "intro h", "simp only [List.min] at *", "grind"], "usd": 0.008497000000000199}

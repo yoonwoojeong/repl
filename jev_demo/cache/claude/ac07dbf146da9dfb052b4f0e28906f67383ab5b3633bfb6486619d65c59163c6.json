@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.length_mapIdx]", "simp only [List.length_mapIdx]", "grind [List.length_mapIdx]", "congr 1 <;> simp [List.length_mapIdx]", "simp", "simp_all [List.length_mapIdx]"], "usd": 0.005249000000000059}

@@ -1,0 +1,1 @@
+{"tactics": ["simp", "intro i <;> simp", "intro i <;> rfl", "intro i", "exact fun i => rfl", "grind"], "usd": 0.0019569999999999865}

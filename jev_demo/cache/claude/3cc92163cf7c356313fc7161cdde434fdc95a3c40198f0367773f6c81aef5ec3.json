@@ -1,0 +1,1 @@
+{"tactics": ["simp", "grind", "simpa [Nat.repr, Nat.toString] using Nat.toNat?_toString n", "simp [← Nat.repr]", "induction n using Nat.strongRecOn", "simp [String.toNat?, String.isNat]", "exact (by simpa using congrArg String.toNat? (rfl : Nat.repr n = Nat.repr n))"], "usd": 0.009653000000000134}

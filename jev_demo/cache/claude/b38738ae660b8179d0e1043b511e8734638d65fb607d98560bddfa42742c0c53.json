@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp_all", "constructor <;> intro ⟨i, h, _⟩ <;> simp at h", "grind", "constructor <;> rintro ⟨i, h, _⟩ <;> simp at h <;> omega", "exact ⟨fun ⟨i, h, _⟩ => absurd h (Nat.not_lt_zero _), fun ⟨n, h, _⟩ => absurd h (Nat.not_lt_zero _)⟩"], "usd": 0.004224999999999923}

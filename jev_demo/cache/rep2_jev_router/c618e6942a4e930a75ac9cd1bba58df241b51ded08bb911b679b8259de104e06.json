@@ -1,0 +1,1 @@
+{"tactics": ["apply List.map_injective_iff.mpr Subtype.val_injective", "apply List.ext_getElem <;> simp", "simp [List.attachWith_cons, List.reverse_cons]", "exact List.map_injective_iff.mpr Subtype.val_injective (by simp)", "simp"], "usd": 0.014136999999999844}

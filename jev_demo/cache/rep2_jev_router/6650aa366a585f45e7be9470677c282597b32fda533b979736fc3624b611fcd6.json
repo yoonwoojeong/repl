@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ l a i h", "intro _ _ l a i h <;> by_cases ha : a ∈ l <;> simp only [List.insert_of_mem, List.insert_of_not_mem, ha, if_true, if_false] <;> cases i <;> simp", "intros", "intro inst inst_1 l a i h"], "usd": 0.014512999999999998}

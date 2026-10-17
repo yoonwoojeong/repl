@@ -1,0 +1,1 @@
+{"tactics": ["simp at hi", "exact absurd hi (Nat.not_lt_zero _)", "simp only [List.length_nil] at hi; omega", "cases hi", "exact (Nat.not_lt_zero _ hi).elim", "grind", "simp_all"], "usd": 0.0027690000000000214}

@@ -1,0 +1,1 @@
+{"tactics": ["exact h1 x_1", "simp only [List.flatMapM.loop] at *; exact h1 x_1", "rw [List.flatMapM.loop]; exact h1 x_1", "unfold List.flatMapM.loop; exact h1 x_1", "simpa [List.flatMapM.loop] using h1 x_1", "apply h1"], "usd": 0.010637000000000008}

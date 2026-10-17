@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp [List.iterM, Std.Iterators.IterM.step]", "simp only [List.iterM]", "unfold List.iterM", "simp [Std.IterM.step, List.iterM, Std.Iterator.step]", "constructor"], "usd": 0.0031409999999998384}

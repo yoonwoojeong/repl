@@ -1,0 +1,1 @@
+{"tactics": ["cases l₁ <;> simp_all", "rcases l₁ with _ | ⟨a, l⟩ <;> simp_all", "exact List.getElem_append_right (by omega)", "rw [List.getElem_append_right (by omega)]", "have hl : l₁ = [] := by cases l₁ <;> simp_all", "simp [List.getElem_append_right, Nat.not_lt.mp h']", "grind"], "usd": 0.012885000000000035}

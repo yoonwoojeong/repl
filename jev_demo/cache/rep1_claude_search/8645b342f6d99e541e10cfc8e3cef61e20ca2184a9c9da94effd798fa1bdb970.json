@@ -1,0 +1,1 @@
+{"tactics": ["intro α le a b l trans total hab h", "intros", "intro α le a b l trans total hab h; exact List.sublist_mergeSort trans total (by simp [hab]) h"], "usd": 0.008445000000000036}

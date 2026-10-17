@@ -1,0 +1,1 @@
+{"tactics": ["exact hnil bs", "apply hnil", "simp_all", "assumption", "exact hnil _"], "usd": 0.0025770000000000515}

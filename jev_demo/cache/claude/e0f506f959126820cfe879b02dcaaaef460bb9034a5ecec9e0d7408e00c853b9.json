@@ -1,0 +1,1 @@
+{"tactics": ["simp", "exact List.Perm.refl _", "rfl", "exact List.Perm.nil", "constructor", "grind"], "usd": 0.0016209999999999836}

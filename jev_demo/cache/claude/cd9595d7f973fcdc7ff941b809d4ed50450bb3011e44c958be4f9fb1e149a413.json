@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp only [Std.Rco.size, Std.Rxo.HasSize.size]", "unfold Std.Rco.size", "simp [Std.Rco.size]", "simp [Std.Rco.size, Std.Rxo.HasSize.size, Std.PRange.RangeSize.size]", "grind [Std.Rco.size]", "delta Std.Rco.size", "unfold Std.Rco.size Std.Rxo.HasSize.size"], "usd": 0.009492999999999974}

@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [List.utf8Encode_cons, ByteArray.utf8Decode?_utf8Encode_singleton_append]", "simp [List.utf8Encode_cons]", "simp_all [List.utf8Encode, ByteArray.utf8Decode?]", "grind", "simp_all", "rw [List.utf8Encode_cons]", "unfold List.utf8Encode", "simp only [List.utf8Encode_cons]"], "usd": 0.008532999999999902}

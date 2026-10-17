@@ -1,0 +1,1 @@
+{"tactics": ["intro c a b h", "rintro c a b ⟨k, hk⟩", "intro c a b h <;> rcases Nat.eq_zero_or_pos c with hc | hc", "grind"], "usd": 0.017437000000000147}

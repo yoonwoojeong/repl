@@ -1,0 +1,1 @@
+{"tactics": ["intro α n l h", "simp [List.Cursor.at, List.Cursor.tail, List.take_succ, List.tail_drop, List.getElem?_eq_getElem h]"], "usd": 0.013144999999999997}

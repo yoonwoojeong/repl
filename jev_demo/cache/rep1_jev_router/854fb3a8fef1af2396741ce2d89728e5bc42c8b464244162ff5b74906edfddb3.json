@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_eraseIdx, Nat.not_lt.mpr hij]", "rw [List.getElem_eraseIdx]", "grind [List.getElem_eraseIdx]", "simp only [List.getElem_eraseIdx]", "have hn : ¬ j < i := by omega", "induction l generalizing i j with\n  | nil => simp at h\n  | cons a l ih => cases i <;> cases j <;> simp_all", "simp [List.getElem_eraseIdx]"], "usd": 0.009937000000000085}

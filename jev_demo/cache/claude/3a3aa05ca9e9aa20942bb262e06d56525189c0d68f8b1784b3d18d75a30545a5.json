@@ -1,0 +1,1 @@
+{"tactics": ["omega", "cases n with | zero => exact absurd rfl h1 | succ k => cases m <;> simp_all <;> omega", "simp only [Nat.pred_eq_sub_one]; omega", "rw [Nat.pred_eq_sub_one, Nat.pred_eq_sub_one]", "cases n <;> cases m <;> simp_all <;> omega", "grind"], "usd": 0.0035650000000000404}

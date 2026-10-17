@@ -1,0 +1,1 @@
+{"tactics": ["have h3 : Nat.toDigits 10 m = Nat.toDigits 10 n := by simpa using h2", "simp [String.toList_ofList] at h2", "simp at h2", "have h3 := congrArg String.toNat? h", "grind", "simp_all"], "usd": 0.01162500000000044}

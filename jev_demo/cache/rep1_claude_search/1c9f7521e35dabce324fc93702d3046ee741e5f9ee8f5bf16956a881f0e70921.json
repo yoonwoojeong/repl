@@ -1,0 +1,1 @@
+{"tactics": ["exact ih (by simp at h <;> omega)", "apply ih", "rw [ih (by simp at h <;> omega)]", "simp at h <;> exact ih (by omega)", "have h2 : n✝ < tail✝.length + l₂.length := by simp at h <;> omega"], "usd": 0.007973000000000008}

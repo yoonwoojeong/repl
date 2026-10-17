@@ -1,0 +1,1 @@
+{"tactics": ["intro a m n <;> rw [← Nat.pow_mul, ← Nat.pow_mul, Nat.mul_comm]", "intro a m n", "intro a m n <;> simp only [← Nat.pow_mul, Nat.mul_comm]", "intro a m n <;> rw [← Nat.pow_mul, Nat.pow_mul']", "intro a m n <;> simp [← Nat.pow_mul, Nat.mul_comm]", "intro a m n <;> induction n <;> simp_all [Nat.pow_succ, Nat.mul_pow]"], "usd": 0.014361000000000068}

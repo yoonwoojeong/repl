@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp [h2]", "by_cases hg : g head✝.val = true <;> simp [hg, h2]", "split <;> simp_all", "cases g head✝.val <;> simp [h2]", "split", "simp [h2]"], "usd": 0.0033289999999999154}

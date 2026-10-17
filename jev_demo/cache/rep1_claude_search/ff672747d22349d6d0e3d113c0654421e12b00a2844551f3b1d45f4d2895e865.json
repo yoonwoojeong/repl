@@ -1,0 +1,1 @@
+{"tactics": ["cases tail✝ <;> cases l₂ <;> simp_all [List.mergeSort, List.splitInTwo] <;> omega", "rw [List.mergeSort]", "unfold List.mergeSort", "simp only [List.mergeSort, List.splitInTwo]", "cases l₂", "cases tail✝", "grind [List.mergeSort, List.splitInTwo]"], "usd": 0.0122169999999997}

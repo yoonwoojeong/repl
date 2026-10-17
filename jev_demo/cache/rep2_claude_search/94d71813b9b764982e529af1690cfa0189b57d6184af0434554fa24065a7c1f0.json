@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ _ xs ys f h", "intros", "intro β α inst inst_1 inst_2 xs ys f h <;> simp [List.minIdxOn_append]", "intro β α inst inst_1 inst_2 xs ys f h <;> grind [List.minIdxOn]", "intro β α inst inst_1 inst_2 xs ys f h <;> induction xs <;> simp_all", "intro β α inst inst_1 inst_2 xs ys f h <;> unfold List.minIdxOn <;> simp"], "usd": 0.005001000000000033}

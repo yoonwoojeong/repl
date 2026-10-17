@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.getElem_append, dif_neg (by omega)]", "simp only [List.getElem_append, dif_neg (Nat.not_lt.mpr h)]", "simp [List.getElem_append, Nat.not_lt.mpr h]", "grind", "rw [List.getElem_append]", "simp only [List.getElem_append] <;> split <;> first | omega | rfl"], "usd": 0.011049000000000087}

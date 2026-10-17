@@ -1,0 +1,1 @@
+{"tactics": ["exact List.Pairwise.nil", "simp", "constructor", "exact .nil", "apply List.Pairwise.nil", "grind"], "usd": 0.0022370000000000445}

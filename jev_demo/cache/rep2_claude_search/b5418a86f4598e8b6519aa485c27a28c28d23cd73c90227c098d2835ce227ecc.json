@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.reverse_nil, List.nil_append]", "show _ = (fun x => x) <$> _ ; simp", "rw [List.reverse_nil]; simp", "simp only [List.reverse_nil, List.nil_append, id_map']", "conv => rhs; simp", "grind"], "usd": 0.0033849999999999714}

@@ -1,0 +1,1 @@
+{"tactics": ["intro h b hb", "grind [List.min]", "rename_i l hl x", "simp_all [List.min]", "intro h", "grind"], "usd": 0.010501000000000094}

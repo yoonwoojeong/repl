@@ -1,0 +1,1 @@
+{"tactics": ["induction l generalizing i j", "intro h", "grind [List.zipIdx]", "simp only [List.zipIdx_eq_zip_range']", "intro h <;> induction l generalizing i j <;> cases i <;> simp_all [List.zipIdx_cons, Nat.add_assoc, Nat.add_comm]"], "usd": 0.012912999999999952}

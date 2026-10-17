@@ -1,0 +1,1 @@
+{"tactics": ["intro α β f l₁ l₂", "intro α β f l₁ l₂ <;> constructor", "intro α β f l₁ l₂ <;> simp only [List.IsInfix, List.map_eq_append_iff]", "intro α β f l₁ l₂ <;> grind [List.IsInfix, List.map_eq_append_iff, List.append_eq_map_iff]", "intros <;> constructor <;> grind [List.IsInfix, List.map_eq_append_iff]"], "usd": 0.009961000000000109}

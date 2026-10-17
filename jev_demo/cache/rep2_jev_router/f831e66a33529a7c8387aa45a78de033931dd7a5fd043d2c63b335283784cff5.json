@@ -1,0 +1,1 @@
+{"tactics": ["intro α as <;> induction as <;> intro i h <;> cases i <;> simp_all", "intro α as", "intro α as i h", "intro α as i h <;> rw [List.drop_eq_getElem_cons h]", "intro α as <;> induction as <;> intro i h <;> cases i <;> simp_all <;> grind", "intro α as i h <;> grind"], "usd": 0.015113000000000043}

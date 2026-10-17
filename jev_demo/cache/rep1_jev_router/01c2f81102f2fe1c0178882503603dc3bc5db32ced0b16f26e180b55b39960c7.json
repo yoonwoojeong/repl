@@ -1,0 +1,1 @@
+{"tactics": ["intro α R l", ". intro α R l; constructor <;> intro h <;> induction h with | nil => exact List.Pairwise.nil | cons ha hp ih => simp_all [List.pairwise_cons]", "intro α R l <;> induction l <;> simp_all [List.pairwise_cons]", "intro α R l <;> constructor", "intro α R l <;> grind", "intro α R l <;> simp [List.pairwise_iff_forall_sublist]"], "usd": 0.004292999999999991}

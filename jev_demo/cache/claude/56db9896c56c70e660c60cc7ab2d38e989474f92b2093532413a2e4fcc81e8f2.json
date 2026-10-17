@@ -1,0 +1,1 @@
+{"tactics": ["intro α β f hf l l'", "intro α β f hf l l' <;> induction l generalizing l' <;> cases l' <;> simp_all", "intros", "intro α β f hf l <;> induction l with | nil => intro l'; cases l' <;> rfl | cons a t ih => intro l'; cases l' <;> simp_all [List.zipWith]", "intro α β f hf l l' <;> rw [List.zipWith_comm] <;> simp [hf]"], "usd": 0.004353000000000051}

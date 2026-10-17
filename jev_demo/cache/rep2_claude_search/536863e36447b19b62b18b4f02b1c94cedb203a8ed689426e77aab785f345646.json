@@ -1,0 +1,1 @@
+{"tactics": ["intro m n k", "intro m n k <;> apply Array.toList_inj.mp <;> simp", "intro m n k <;> simp [← Array.toList_inj]", "intro m n k <;> apply Array.ext <;> simp", "intro m n k <;> simp [← Array.toList_inj, Nat.toList_rco, List.map_add_range']", "intros <;> grind"], "usd": 0.010201000000000349}

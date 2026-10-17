@@ -1,0 +1,1 @@
+{"tactics": ["rintro n k m ⟨c, rfl⟩", "intro n k m h", "rintro n k m ⟨c, rfl⟩ <;> rw [Nat.mul_comm, Nat.gcd_add_mul_right_right]", "rintro n k m ⟨c, rfl⟩ <;> simp [Nat.gcd_add_mul_left_right]", "rintro n k m ⟨c, rfl⟩ <;> simp [Nat.mul_comm, Nat.gcd_add_mul_right_right]"], "usd": 0.014001000000000374}

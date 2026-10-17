@@ -1,0 +1,1 @@
+{"tactics": ["intro m n i", "intros <;> simp", "intros <;> grind", "intro m n i <;> rw [← Array.getElem?_toList] <;> simp", "intros <;> simp [Std.Roc.toArray] <;> split <;> simp_all <;> omega", "intros <;> simp [Nat.getElem?_toList_roc]", "intros <;> rw [← Array.getElem?_toList, Std.Roc.toList_toArray]"], "usd": 0.008684999999999832}

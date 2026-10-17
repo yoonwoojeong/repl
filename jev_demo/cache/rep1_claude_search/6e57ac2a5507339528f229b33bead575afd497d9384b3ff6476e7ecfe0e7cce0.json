@@ -1,0 +1,1 @@
+{"tactics": ["suffices h : ∀ bs, motive x bs (List.flatMapM.loop f x bs) from h []", "generalize hb : ([] : List (List β)) = bs", "induction x <;> simp_all [List.flatMapM.loop]", "cases x with\n  | nil => exact hnil []\n  | cons a as => simp [List.flatMapM.loop]", "simp_all [List.flatMapM.loop]"], "usd": 0.010140999999999956}

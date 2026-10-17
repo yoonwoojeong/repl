@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ _ x xs f", "intros", "intro inst inst_1 inst_2 x xs f", "intros <;> unfold List.maxOn <;> split <;> simp_all", "intros <;> grind [List.maxOn]", "intros <;> simp [List.maxOn]"], "usd": 0.007284999999999986}

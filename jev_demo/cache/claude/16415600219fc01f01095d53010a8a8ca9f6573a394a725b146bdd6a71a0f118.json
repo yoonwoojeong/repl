@@ -1,0 +1,1 @@
+{"tactics": ["grind", "simp [List.minOn_append]", "apply List.apply_minOn_le_of_mem", "exact List.apply_minOn_le_of_mem (List.mem_append_right _ (List.minOn_mem h))", "simp_all [List.minOn_cons, List.minOn_append]", "apply List.minOn_le_of_mem", "grind [List.minOn_mem, List.apply_minOn_le_of_mem]"], "usd": 0.009728999999999988}

@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨s, t, h⟩", "intro ⟨s, t, h⟩", "intro h", "simp only [List.append_eq_map_iff, List.map_eq_append_iff]", "grind [List.append_eq_map_iff, List.map_eq_append_iff]"], "usd": 0.011397000000000101}

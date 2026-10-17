@@ -1,0 +1,1 @@
+{"tactics": ["intro n k m h", "intro n k m ⟨c, rfl⟩", "intro n k m ⟨c, rfl⟩ <;> rw [Nat.mul_comm] <;> exact Nat.gcd_add_mul_right_right n m c", "intro n k m ⟨c, rfl⟩ <;> simp [Nat.gcd_add_mul_right_right, Nat.gcd_add_mul_left_right, Nat.mul_comm]", "intro n k m ⟨c, rfl⟩ <;> grind"], "usd": 0.011460999999999721}

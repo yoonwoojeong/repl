@@ -1,0 +1,1 @@
+{"tactics": ["intro n m", "exact fun {n m} => Nat.le_of_testBit (fun i h => by simp [Nat.testBit_or, h])", "intro n m <;> apply Nat.le_of_testBit", "grind", "intros <;> simp", "intros <;> omega"], "usd": 0.011220999999999925}

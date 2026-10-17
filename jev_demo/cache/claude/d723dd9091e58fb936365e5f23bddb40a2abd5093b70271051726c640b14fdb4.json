@@ -1,0 +1,1 @@
+{"tactics": ["apply List.eq_of_mem_replicate; apply List.minOn_mem", "exact List.eq_of_mem_replicate (List.minOn_mem ..)", "exact (List.mem_replicate.mp (List.minOn_mem ..)).2", "rename_i n a f h", "have hm := List.minOn_mem (xs := List.replicate _ _) ‹_›", "grind [List.minOn_mem, List.mem_replicate]"], "usd": 0.012101000000000361}

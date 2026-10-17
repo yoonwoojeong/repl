@@ -1,0 +1,1 @@
+{"tactics": ["intro x y z hz", "exact fun x y z hz => (Nat.mul_comm z y) ▸ Nat.add_mul_div_left x y hz", "intros x y z hz", "exact fun x y z hz => by simpa [Nat.mul_comm] using Nat.add_mul_div_left x y hz"], "usd": 0.012624999999999886}

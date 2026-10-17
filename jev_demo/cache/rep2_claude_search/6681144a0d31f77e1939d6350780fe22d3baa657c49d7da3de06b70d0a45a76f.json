@@ -1,0 +1,1 @@
+{"tactics": ["simp", "intro l₁ l₂ <;> simp", "intro l₁ l₂", "intro l₁ l₂ <;> constructor <;> intro h <;> simp_all", "intro l₁ l₂ <;> simp [List.sublist_nil, List.append_eq_nil_iff]", "simp_all [List.sublist_nil]", "intro l₁ l₂ <;> grind"], "usd": 0.007869000000000015}

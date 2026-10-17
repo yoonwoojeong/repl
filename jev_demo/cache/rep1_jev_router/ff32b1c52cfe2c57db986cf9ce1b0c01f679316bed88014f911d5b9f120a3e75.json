@@ -1,0 +1,1 @@
+{"tactics": ["intro α le trans total a l", "intros", "intro α le htrans htotal a l", "intro α le trans total a l <;> induction l generalizing a", "grind"], "usd": 0.005897000000000041}

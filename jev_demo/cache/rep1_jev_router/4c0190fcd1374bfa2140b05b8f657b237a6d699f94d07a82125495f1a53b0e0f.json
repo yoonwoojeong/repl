@@ -1,0 +1,1 @@
+{"tactics": ["subst h <;> rfl", "cases h <;> rfl", "subst h", "simp only [h, List.nil_append]", "cases h"], "usd": 0.005989000000000022}

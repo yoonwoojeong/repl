@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.unattach, List.map_map, Function.comp_def, binderNameHint, wfParam]", "simp only [List.unattach, List.map_map]", "rw [List.unattach, List.map_map]", "simp [List.unattach, binderNameHint, wfParam]", "grind [List.unattach, binderNameHint, wfParam]", "simp [List.unattach]"], "usd": 0.013201000000000018}

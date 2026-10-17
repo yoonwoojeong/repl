@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.length_eraseIdx]", "simp", "simp [List.length_set, List.length_eraseIdx]; omega", "rw [List.length_set, List.length_eraseIdx, List.length_eraseIdx]; simp; omega", "grind", "simp [List.length_eraseIdx_of_lt, h, Nat.lt_of_succ_lt h]", "simp only [List.length_set, List.length_eraseIdx] <;> split <;> split <;> omega"], "usd": 0.004376999999999853}

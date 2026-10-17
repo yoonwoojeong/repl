@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "intro h; have h2 := congrArg String.toNat? h; simpa using h2", "intro h; have h2 := congrArg String.toNat! h; simpa using h2", "intro h; simpa [Nat.repr] using congrArg String.toNat? h", "intro h; grind", "simp [Nat.repr]"], "usd": 0.008009000000000377}

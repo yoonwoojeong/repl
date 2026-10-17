@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.mergeSort]", "simp", "rw [List.mergeSort_nil]", "exact List.Pairwise.nil", "unfold List.mergeSort", "decide", "grind"], "usd": 0.0025490000000001345}

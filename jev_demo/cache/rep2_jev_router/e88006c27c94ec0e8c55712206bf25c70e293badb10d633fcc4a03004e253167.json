@@ -1,0 +1,1 @@
+{"tactics": ["exact fun a ha => List.mem_takeWhile_imp ha", "intro a ha", "rename_i hd tl b hb", "grind [List.mem_takeWhile_imp]", "simp_all [List.mem_takeWhile_imp]"], "usd": 0.012116999999999989}

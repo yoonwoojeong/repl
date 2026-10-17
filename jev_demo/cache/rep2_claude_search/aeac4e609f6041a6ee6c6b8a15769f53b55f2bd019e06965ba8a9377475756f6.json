@@ -1,0 +1,1 @@
+{"tactics": ["simpa using h", "exact Nat.repr_inj.mp h", "simp [Nat.repr_inj] at h; exact h", "simpa [String.toNat?_repr] using h2", "simpa [Nat.toNat?_repr] using h2", "simp_all", "grind", "omega"], "usd": 0.006632999999999889}

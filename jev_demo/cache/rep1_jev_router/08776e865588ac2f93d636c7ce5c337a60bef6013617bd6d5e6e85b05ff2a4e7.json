@@ -1,0 +1,1 @@
+{"tactics": ["rcases ys with _ | ⟨y, ys⟩", "cases ys with | nil => simp | cons y ys => skip", "grind [List.minIdxOn_append, List.minIdxOn_lt_length]", "simp [List.minIdxOn_append]", "induction ys with | nil => simp | cons y ys ih => skip", "grind"], "usd": 0.009652999999999912}

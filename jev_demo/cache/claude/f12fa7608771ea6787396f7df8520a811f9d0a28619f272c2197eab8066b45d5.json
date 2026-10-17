@@ -1,0 +1,1 @@
+{"tactics": ["omega", "exact absurd hstep (Nat.lt_irrefl 0)", "simp at hstep", "exact (Nat.lt_irrefl 0 hstep).elim", "cases hstep", "contradiction", "simp_all"], "usd": 0.0026130000000001985}

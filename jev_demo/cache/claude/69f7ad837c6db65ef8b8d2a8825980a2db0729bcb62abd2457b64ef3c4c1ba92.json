@@ -1,0 +1,1 @@
+{"tactics": ["rename_i hd tl", "rw [List.foldl_assoc]", "simp [List.foldl_assoc]", "exact List.foldl_assoc", "grind [List.foldl_assoc, minOn_assoc]", "induction ‹List α› generalizing x <;> simp_all [List.foldl]"], "usd": 0.010933000000000082}

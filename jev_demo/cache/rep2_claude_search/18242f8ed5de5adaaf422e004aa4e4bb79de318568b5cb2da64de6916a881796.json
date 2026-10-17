@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Nat.toList_rco_eq_nil]", "rw [Nat.toList_rco_eq_nil (by omega), Nat.toList_rco_eq_nil (by omega)]; rfl", "grind", "simp [Std.Rco.toList]", "decide", "rfl"], "usd": 0.00649299999999986}

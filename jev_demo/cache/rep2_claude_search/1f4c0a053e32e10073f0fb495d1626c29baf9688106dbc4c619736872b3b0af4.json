@@ -1,0 +1,1 @@
+{"tactics": ["rename_i b bs ih", "induction l <;> simp_all [List.filterMapM.loop]", "simp only [List.filterMapM.loop]", "unfold List.filterMapM.loop", "cases l <;> simp_all [List.filterMapM.loop]"], "usd": 0.012693000000000065}

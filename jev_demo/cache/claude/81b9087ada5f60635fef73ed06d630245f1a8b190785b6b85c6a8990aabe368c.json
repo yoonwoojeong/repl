@@ -1,0 +1,1 @@
+{"tactics": ["intro β α _ _ _ _ _ xs f h b", "intros", "intro β α inst inst_1 inst_2 _ _ xs f h b <;> constructor", "intro β α _ _ _ _ _ xs f h b <;> induction xs <;> simp_all", "intros <;> grind [List.maxOn_mem, List.le_apply_maxOn_of_mem]", "intros <;> simp_all"], "usd": 0.004272999999999971}

@@ -1,0 +1,1 @@
+{"tactics": ["by_cases hys : ys = [] <;> simp_all [List.minIdxOn_append] <;> split <;> omega", "simp only [List.minIdxOn_append]", "rw [List.minIdxOn_append]", "grind [List.minIdxOn_append]", "cases ys <;> simp_all [List.minIdxOn_append] <;> split <;> omega", "simp [List.minIdxOn_append]", "grind"], "usd": 0.009233000000000047}

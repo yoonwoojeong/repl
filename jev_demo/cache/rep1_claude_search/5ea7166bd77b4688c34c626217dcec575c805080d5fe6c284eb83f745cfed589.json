@@ -1,0 +1,1 @@
+{"tactics": ["cases as", "rcases as with _ | ⟨c, cs⟩", "simp only [List.mem_cons, forall_eq_or_imp]", "grind [List.min, Std.le_min_iff]", "cases as <;> simp_all [List.min, Std.le_min_iff]", "simp_all [List.min_cons, Std.le_min_iff]"], "usd": 0.011372999999999855}

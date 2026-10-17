@@ -1,0 +1,1 @@
+{"tactics": ["induction l with\n  | nil => simp\n  | cons a t ih => rcases a with ⟨x, h⟩; by_cases hg : g x <;> simp_all [List.filter_cons]", "induction l <;> simp_all [List.filter_cons]", "induction l with\n  | nil => rfl\n  | cons a t ih => ?_", "induction l", "simp only [List.unattach, List.filter_map]", "grind"], "usd": 0.004116999999999926}

@@ -1,0 +1,1 @@
+{"tactics": ["induction l <;> simp_all [List.foldlM]", "induction l with | nil => simp | cons x xs ih => intro init; simp [List.foldlM, ih]", "induction l", "intro init", "induction l <;> intro init <;> simp_all [List.foldlM_cons]", "induction l <;> grind [List.foldlM]"], "usd": 0.0036049999999999693}

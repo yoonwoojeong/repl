@@ -1,0 +1,1 @@
+{"tactics": ["apply h", "induction a_1 with\n| nil => cases t; exact h _ _ _ trivial\n| cons x xs ih => cases t with\n  | cons _ t' => exact h _ _ _ ⟨ih t', t'⟩", "exact h [] a_1 t (by induction a_1 <;> cases t <;> simp_all [List.Sublist.below] <;> constructor <;> simp_all)", "induction a_1", "cases t", "generalize hl : ([] : List α) = l at t"], "usd": 0.012240999999999946}

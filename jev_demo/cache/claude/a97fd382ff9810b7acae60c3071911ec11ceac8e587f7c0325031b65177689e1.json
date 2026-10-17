@@ -1,0 +1,1 @@
+{"tactics": ["simp", "exact List.map_id l", "rw [List.map_id]; rfl", "induction l <;> simp_all", "simp [List.map_id]", "grind"], "usd": 0.0020050000000000345}

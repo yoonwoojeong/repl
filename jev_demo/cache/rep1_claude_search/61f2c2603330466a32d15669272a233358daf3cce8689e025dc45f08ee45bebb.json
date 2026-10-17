@@ -1,0 +1,1 @@
+{"tactics": ["have h2 := congrArg String.toList h", "simp at h", "cases n with | zero => rfl | succ m => simp_all [Nat.toDigits, Nat.toDigitsCore]", "have h2 : Nat.toDigits 10 0 = Nat.toDigits 10 n := String.ofList_injective h", "grind", "omega"], "usd": 0.010417000000000343}

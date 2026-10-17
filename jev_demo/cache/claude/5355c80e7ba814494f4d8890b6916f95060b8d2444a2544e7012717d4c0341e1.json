@@ -1,0 +1,1 @@
+{"tactics": ["exact h", "assumption", "omega", "simp [h]", "grind"], "usd": 0.0016129999999998645}

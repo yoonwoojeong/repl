@@ -1,0 +1,1 @@
+{"tactics": ["rename_i trans total a l", "rename_i trans total a l <;> induction l with | nil => exact ⟨[], [], by simp⟩ | cons x xs ih => skip", "rename_i trans total a l <;> have hperm := List.mergeSort_perm (a :: l) le✝", "grind", "simp"], "usd": 0.013885000000000147}

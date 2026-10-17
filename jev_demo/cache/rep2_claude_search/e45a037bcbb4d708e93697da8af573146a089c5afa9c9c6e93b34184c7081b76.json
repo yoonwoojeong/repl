@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => ⟨r, [], by simp, by simpa using h, List.Sublist.slnil⟩", "intro h", "simp only [List.append_nil]", "exact fun h => ⟨r, [], (List.append_nil r).symm, (List.append_nil l₁) ▸ h, List.nil_sublist _⟩", "intro h <;> exact ⟨r, [], by simp, by simpa using h, by simp⟩", "simp"], "usd": 0.004248999999999947}

@@ -1,0 +1,1 @@
+{"tactics": ["exact List.sublist_append_right t l₁", "simp", "exact (List.sublist_append_right t l₁)", "apply List.sublist_append_right", "induction t <;> simp_all", "grind", "exact List.Sublist.trans (List.Sublist.refl l₁) (List.sublist_append_right t l₁)"], "usd": 0.003137000000000001}

@@ -1,0 +1,1 @@
+{"tactics": ["rcases l₁ with _ | ⟨a, _ | ⟨b, xs⟩⟩", "rcases l₁ with _ | ⟨a, _ | ⟨b, xs⟩⟩ <;> rcases l₂ with _ | ⟨c, _ | ⟨d, ys⟩⟩ <;> simp_all", "cases l₁ <;> cases l₂ <;> simp_all", "split", "split <;> simp_all", "cases l₁"], "usd": 0.016188999999999787}

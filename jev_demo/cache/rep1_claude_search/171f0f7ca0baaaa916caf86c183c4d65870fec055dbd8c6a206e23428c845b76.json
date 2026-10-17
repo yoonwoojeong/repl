@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _", "intros", "exact fun {α} _ _ => List.transCmp_compareLex", "intro α inst h", "constructor", "exact fun {α} _ _ => inferInstanceAs (Std.TransCmp (List.compareLex compare))"], "usd": 0.00888499999999981}

@@ -1,0 +1,1 @@
+{"tactics": ["induction l generalizing i <;> simp_all [List.zipIdx]", "induction l generalizing i with\n| nil => rfl\n| cons a t ih => simp [List.zipIdx, ih]", "induction l generalizing i <;> simp_all", "induction l generalizing i", "simp [List.zipIdx_eq_zip_range']", "induction l generalizing i <;> simp_all [List.zipIdx_cons]"], "usd": 0.004072999999999993}

@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp [Std.Rxo.HasSize.size]", "simp", "show 0 - a = 0 - a", "unfold Std.Rxo.HasSize.size <;> simp", "grind", "simp [Std.Rxo.HasSize.size] <;> omega", "decide"], "usd": 0.004440999999999917}

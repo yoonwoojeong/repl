@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [List.getLast_cons]", "grind", "rw [List.getLast_cons]", "rename_i a l", "simp at h", "symm"], "usd": 0.009237000000000162}

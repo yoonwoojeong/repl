@@ -1,0 +1,1 @@
+{"tactics": ["cases xs <;> simp [List.maxOn]", "split", "unfold List.maxOn", "simp only [List.maxOn]", "split <;> simp_all [List.maxOn]", "rw [List.maxOn]", "grind [List.maxOn]"], "usd": 0.007664999999999811}

@@ -1,0 +1,1 @@
+{"tactics": ["intro n; cases n <;> simp <;> omega", "intro n", "omega", "intro n <;> cases n <;> simp_all <;> omega", "intro n <;> omega", "intro n <;> cases n <;> rfl"], "usd": 0.0024569999999997094}

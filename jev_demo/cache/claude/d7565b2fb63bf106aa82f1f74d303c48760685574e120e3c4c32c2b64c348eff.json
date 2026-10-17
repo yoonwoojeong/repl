@@ -1,0 +1,1 @@
+{"tactics": ["induction p with\n| nil => simp at h\n| cons kv p ih => ?_", "rcases p with _ | ⟨⟨k, v⟩, p⟩", "induction p", "cases p <;> simp_all", "induction p <;> simp_all [Nat.Internal.Linear.Poly.denote, Nat.Internal.Linear.Poly.isNonZero, cond]", "induction p <;> grind [Nat.Internal.Linear.Poly.denote, Nat.Internal.Linear.Poly.isNonZero]"], "usd": 0.016629000000000005}

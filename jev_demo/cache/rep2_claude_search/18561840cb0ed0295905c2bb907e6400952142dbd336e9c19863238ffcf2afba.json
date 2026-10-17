@@ -1,0 +1,1 @@
+{"tactics": ["rename_i n a h", "rename_i n a h <;> induction n <;> simp_all [Nat.pow_succ] <;> grind", "grind", "exact Nat.lt_pow_self (by assumption)"], "usd": 0.00990499999999983}

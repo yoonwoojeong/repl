@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "rename_i xs f h b", "grind [List.maxOn_mem]", "simp [List.maxOn]", "grind [List.maxOn_mem, List.apply_le_apply_maxOn_of_mem]", "grind [List.maxOn_mem, List.le_apply_maxOn_of_mem]"], "usd": 0.010997000000000035}

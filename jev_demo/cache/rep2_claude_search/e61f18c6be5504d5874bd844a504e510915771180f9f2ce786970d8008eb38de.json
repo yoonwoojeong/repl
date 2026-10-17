@@ -1,0 +1,1 @@
+{"tactics": ["intro α r l₁ l₂", "intro α r", "intro α r l₁ l₂ <;> induction r generalizing l₁ <;> simp_all", "intro α r l₁ l₂ <;> constructor", "grind"], "usd": 0.005973000000000006}

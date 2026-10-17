@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨k, rfl⟩ := hd", "rcases hd with ⟨k, rfl⟩ <;> cases k <;> simp_all [Nat.mul_succ]", "rcases hd with ⟨k, rfl⟩ <;> exact Nat.le_mul_of_pos_right m (Nat.pos_of_ne_zero (by intro hk; subst hk; simp at h))", "rcases hd with ⟨k, rfl⟩ <;> cases k <;> simp_all <;> grind", "obtain ⟨k, hk⟩ := hd"], "usd": 0.012700999999999851}

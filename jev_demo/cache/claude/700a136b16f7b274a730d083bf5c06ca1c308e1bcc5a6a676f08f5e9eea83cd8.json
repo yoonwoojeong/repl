@@ -1,0 +1,1 @@
+{"tactics": ["cases xs <;> simp [List.minOn]", "unfold List.minOn", "split", "simp only [List.minOn]", "cases xs", "grind [List.minOn]", "induction xs generalizing x"], "usd": 0.006849000000000105}

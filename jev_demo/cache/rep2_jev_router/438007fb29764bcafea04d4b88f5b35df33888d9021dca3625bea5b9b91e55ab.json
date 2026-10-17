@@ -1,0 +1,1 @@
+{"tactics": ["intro n k", "intro n k <;> rcases k with _ | k <;> simp <;> exact Nat.div_le_of_le_mul (by rw [Nat.succ_mul]; exact Nat.le_add_left n _)", "intro n k <;> rcases k with _ | k <;> simp <;> exact Nat.le_trans (Nat.le_mul_of_pos_right _ (Nat.succ_pos k)) (Nat.div_mul_le_self n (k+1))", "intro n k <;> grind", "intros <;> omega"], "usd": 0.013168999999999986}

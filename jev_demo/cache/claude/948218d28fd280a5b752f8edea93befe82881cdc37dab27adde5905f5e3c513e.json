@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "split <;> rfl", "congr 1", "simp only [List.foldrRecOn]", "unfold List.foldrRecOn", "rw [List.foldrRecOn]", "grind [List.foldrRecOn]", "split <;> simp [List.foldrRecOn]"], "usd": 0.01044899999999993}

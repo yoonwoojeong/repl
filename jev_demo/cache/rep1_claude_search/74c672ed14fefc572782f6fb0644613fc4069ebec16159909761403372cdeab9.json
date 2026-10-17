@@ -1,0 +1,1 @@
+{"tactics": ["have h : l₂ = [] := by simpa using h₁", "cases l₂ <;> simp_all [List.mergeSort, List.splitInTwo]", "cases l₂ with | nil => simp [List.mergeSort, List.splitInTwo] | cons x xs => simp at h₁", "simp at h₁", "rw [List.length_nil, Nat.le_zero, List.length_eq_zero_iff] at h₁"], "usd": 0.012128999999999834}

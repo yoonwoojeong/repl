@@ -1,0 +1,1 @@
+{"tactics": ["cases c <;> rfl", "cases c <;> simp [compare, List.compareLex, Ordering.isLE]", "cases c <;> decide", "cases c <;> simp_all", "simp [List.nil_le]", "cases c <;> simp [compare, Ordering.isLE] <;> rfl", "grind"], "usd": 0.006489000000000189}

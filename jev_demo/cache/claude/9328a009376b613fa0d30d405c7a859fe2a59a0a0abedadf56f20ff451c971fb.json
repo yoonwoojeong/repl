@@ -1,0 +1,1 @@
+{"tactics": ["split <;> rfl", "split <;> simp", "by_cases h : i✝ < n✝ + 1 - m✝ <;> simp [h]", "split", "simp only [apply_ite (fun o => Option.getD o fallback✝), Option.getD_some, Option.getD_none]", "grind", "simp [apply_ite]"], "usd": 0.0034570000000000434}

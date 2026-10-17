@@ -1,0 +1,1 @@
+{"tactics": ["simp", "rfl", "simp only [List.nil_append]", "cases l₂ <;> simp_all", "grind", "cases l₂ with\n  | nil => exact absurd rfl w\n  | cons a t => rfl"], "usd": 0.0025610000000000355}

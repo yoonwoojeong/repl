@@ -1,0 +1,1 @@
+{"tactics": ["induction l₁ generalizing l₂ <;> cases l₂ <;> simp_all", "induction l₁ generalizing l₂ with\n| nil => simp\n| cons a t ih => cases l₂ <;> simp_all", "induction l₁ generalizing l₂", "simp [List.unzip_zip_left, List.unzip_zip_right, h, Prod.ext_iff]", "ext <;> simp [List.unzip_zip_left, List.unzip_zip_right, h]"], "usd": 0.013664999999999594}

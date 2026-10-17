@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getLast_eq_getElem]", "simp [List.getElem_mapIdx, List.length_mapIdx, List.getLast_eq_getElem]", "grind [List.getLast_eq_getElem, List.getElem_mapIdx]", "rw [List.getLast_eq_getElem]", "cases l with | nil => simp at h | cons a t => simp [List.getLast_eq_getElem]", "simp_all [List.getLast_eq_getElem]"], "usd": 0.011484999999999967}

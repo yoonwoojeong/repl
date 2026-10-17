@@ -1,0 +1,1 @@
+{"tactics": ["simp", "grind", "simp [List.map_map]", "induction n <;> simp_all", "simp [Std.Rco.toList]", "rfl", "decide"], "usd": 0.007873000000000019}

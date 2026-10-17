@@ -1,0 +1,1 @@
+{"tactics": ["intro l' i h <;> simp at h", "intro l' i h <;> exact absurd h (by simp)", "intros <;> simp_all", "intro l' i h <;> simp [List.zipWith] at h", "simp", "intro l' i h"], "usd": 0.008100999999999914}

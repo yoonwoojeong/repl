@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ l₁ l₂ a h", "first | exact h.sublist.count_le a | exact h.sublist.count_le | exact List.Sublist.count_le a h.sublist | exact List.Sublist.count_le h.sublist a | exact List.IsInfix.count_le a h | exact h.count_le a"], "usd": 0.010993000000000003}

@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "induction l₁ generalizing r", "induction r generalizing l₁", "intro h <;> exact ⟨_, _, rfl, List.Sublist.refl _, List.Sublist.refl _⟩"], "usd": 0.01052900000000001}

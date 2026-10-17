@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.minOn?, Option.merge]", "rw [List.nil_append]; cases List.minOn? f ys <;> rfl", "cases h : List.minOn? f ys <;> simp_all [Option.merge]", "simp only [List.nil_append, List.minOn?_nil]; cases List.minOn? f ys <;> rfl", "grind"], "usd": 0.0038210000000000743}

@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨c, rfl⟩ <;> simp [Nat.gcd_add_mul_right_right, Nat.gcd_add_mul_left_right]", "rintro ⟨c, rfl⟩ <;> simp", "rintro ⟨c, rfl⟩ <;> exact Nat.gcd_add_mul_left_right n m c", "rintro ⟨c, rfl⟩ <;> rw [Nat.mul_comm] <;> exact Nat.gcd_add_mul_right_right n m c", "rintro ⟨c, rfl⟩ <;> grind", "rintro ⟨c, rfl⟩"], "usd": 0.012496999999999758}

@@ -1,0 +1,1 @@
+{"tactics": ["induction l <;> simp_all [List.contains_cons, BEq.comm]", "simpa only [bne_comm] using (List.all_bne (a := a) (l := l))", "induction l with\n  | nil => rfl\n  | cons x xs ih => simp [List.all_cons, List.contains_cons, ih, BEq.comm]", "induction l <;> simp_all [bne, BEq.comm]", "induction l <;> grind [BEq.comm]", "induction l"], "usd": 0.013064999999999993}

@@ -1,0 +1,1 @@
+{"tactics": ["by_cases hys : ys = []", "simp [List.minIdxOn_append]", "rw [List.minIdxOn_append]", "grind [List.minIdxOn_append, List.minIdxOn_lt_length]", "split", "grind", "induction xs generalizing ys"], "usd": 0.009412999999999894}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.getLast_append_of_ne_nil _ hx]", "simp [List.getLast_append, hx]", "exact (List.getLast_append_of_ne_nil _ hx).symm", "simp [List.getLast_append_of_ne_nil _ hx]", "grind [List.getLast_append]", "induction t <;> simp_all [List.getLast_cons, List.getLast_append]"], "usd": 0.008921000000000012}

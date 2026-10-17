@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => Nat.not_lt.mp fun hlt => by simp [Nat.testBit_eq_false_of_lt hlt] at h", "intro i x h", "exact fun h => Nat.not_lt.mp fun hlt => absurd h (by simp [Nat.testBit_lt_two_pow hlt])", "grind [Nat.testBit_eq_false_of_lt]", "intro i x h <;> exact Nat.not_lt.mp fun hlt => by rw [Nat.testBit_eq_false_of_lt hlt] at h; cases h"], "usd": 0.01601700000000017}

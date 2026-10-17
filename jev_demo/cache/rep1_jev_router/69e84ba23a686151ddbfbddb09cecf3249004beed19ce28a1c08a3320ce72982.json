@@ -1,0 +1,1 @@
+{"tactics": ["intro α β l f h", "intros; simp [List.getLast_eq_getElem, List.getElem_mapIdx]", "intros; rw [List.getLast_eq_getElem, List.getLast_eq_getElem]; simp [List.getElem_mapIdx]", "intros; simp [List.getLast_eq_getElem]", "intros; grind [List.getLast_eq_getElem, List.getElem_mapIdx, List.length_mapIdx]"], "usd": 0.007017000000000051}

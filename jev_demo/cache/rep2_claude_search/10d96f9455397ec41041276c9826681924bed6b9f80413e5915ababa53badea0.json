@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α β γ f l l' i h", "rename_i f l l' i h", "revert h✝", "grind [List.zipWith]"], "usd": 0.009224999999999817}

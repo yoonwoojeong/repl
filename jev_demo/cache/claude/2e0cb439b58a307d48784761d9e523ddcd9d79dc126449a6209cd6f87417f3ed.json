@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.countP_attachWith]", "exact List.countP_attachWith (q := fun x => x == a.val) l H", "rw [List.countP_attachWith]", "induction l with | nil => simp | cons b t ih => simp_all [List.countP_cons]", "simp [List.countP_eq_length_filter, List.filter_attachWith]", "grind [List.countP_attachWith]"], "usd": 0.011409000000000002}

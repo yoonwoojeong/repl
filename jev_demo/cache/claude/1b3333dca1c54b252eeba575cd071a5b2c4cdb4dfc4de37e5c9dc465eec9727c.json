@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "exact absurd h (Nat.lt_irrefl 0)", "cases h", "contradiction", "exact (Nat.lt_irrefl 0 h).elim", "simp_all"], "usd": 0.006997000000000031}

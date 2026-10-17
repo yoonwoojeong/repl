@@ -1,0 +1,1 @@
+{"tactics": ["intro m inst α β f motive h1 h2 x", "intro m inst α β f motive h1 h2 x x_1", "intro m inst α β f motive h1 h2 x <;> induction x <;> intro bs <;> simp_all [List.flatMapM.loop]", "intros", "intro m inst α β f motive h1 h2 x <;> induction x <;> intro bs <;> first | exact h1 bs | exact h2 _ _ _ (fun _ => by assumption)"], "usd": 0.010753000000000013}

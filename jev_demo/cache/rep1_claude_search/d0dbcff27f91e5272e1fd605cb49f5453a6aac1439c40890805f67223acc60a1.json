@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.getElem_append_right]", "grind", "simp [Nat.zero_add, List.getElem_cons_succ, List.getElem_append_right]", "simp [List.getElem_append]", "rw [Nat.zero_add, List.getElem_cons_succ]"], "usd": 0.009292999999999996}

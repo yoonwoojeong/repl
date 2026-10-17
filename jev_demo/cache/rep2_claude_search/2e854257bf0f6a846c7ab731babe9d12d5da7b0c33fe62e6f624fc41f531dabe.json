@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ l₁ l₂", "intro α inst _ l₁ l₂", "intros", "intro α _ _ l₁ l₂ <;> constructor", "intro α _ _ l₁ l₂ <;> exact ⟨fun h a => h.count_eq a, fun h => by induction l₁ generalizing l₂ <;> grind⟩"], "usd": 0.009477000000000402}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α R S H l", ";intro α R S H l; induction l <;> simp_all", "intro α R S H l; exact List.Pairwise.iff_of_mem (fun _ _ => H _ _)"], "usd": 0.002780999999999978}

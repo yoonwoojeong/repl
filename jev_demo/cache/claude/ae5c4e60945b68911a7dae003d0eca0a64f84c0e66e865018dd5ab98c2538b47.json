@@ -1,0 +1,1 @@
+{"tactics": ["simp at ha", "cases ha", "exact absurd ha (List.not_mem_nil)", "nomatch ha", "contradiction", "simp_all", "exact (List.not_mem_nil ha).elim"], "usd": 0.0026210000000004285}

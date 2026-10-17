@@ -1,0 +1,1 @@
+{"tactics": ["cases t <;> exact F _ _ _ ⟨⟩", "cases t <;> exact F _ _ _ trivial", "cases t <;> exact F _ _ _ (by simp [List.Sublist.below])", "cases t <;> apply F <;> constructor", "cases t"], "usd": 0.00800099999999998}

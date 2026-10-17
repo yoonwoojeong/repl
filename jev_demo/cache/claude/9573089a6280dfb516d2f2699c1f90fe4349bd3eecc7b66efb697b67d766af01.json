@@ -1,0 +1,1 @@
+{"tactics": ["intro α a motive a_1 t F", "intros α a motive a_1 t F", "intro α a motive a_1 t F <;> have h : motive a_1 t ∧ List.Mem.below t := by induction t <;> constructor <;> simp_all <;> apply F <;> constructor <;> simp_all", "intro α a motive a_1 t F <;> induction t <;> apply F <;> constructor <;> simp_all"], "usd": 0.018985000000000002}

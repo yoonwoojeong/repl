@@ -1,0 +1,1 @@
+{"tactics": ["exact (key a_1 t).2", "exact (key _ _).2", "simp_all", "grind", "apply And.right (key a_1 t)", "have h := key a_1 t", "cases key a_1 t with | intro _ h => exact h"], "usd": 0.0029929999999999957}

@@ -1,0 +1,1 @@
+{"tactics": ["have h2 := Nat.testBit_mod_two_pow (2 ^ i * a + b) i j", "have hm : (2 ^ i * a + b) % 2 ^ i = b := by rw [Nat.mul_add_mod]; exact Nat.mod_eq_of_lt h", "rw [← Nat.mod_eq_of_lt h]", "simp_all [Nat.testBit, Nat.shiftRight_eq_div_pow]"], "usd": 0.01979699999999962}

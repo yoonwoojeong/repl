@@ -1,0 +1,697 @@
+fitting on 0 gold-replay theorems + 142/5930 label examples
+claude: billed usd=0.0155 stop_reason=end_turn cache_read=1265
+jev_router        core_List_IsPrefix_le_countP PROVED calls=3 7.9s timeouts=0 claude=1 usd=0.015
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+jev_router        core_List_IsSuffix_sublist   PROVED calls=1 6.8s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0215 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0277 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0326 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0144 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0058 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+jev_router        core_List_Mem_brecOn         failed calls=64 82.0s timeouts=0 claude=7 usd=0.107
+claude: billed usd=0.0170 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0181 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0202 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0209 stop_reason=end_turn cache_read=1265
+jev_router        core_List_MergeSort_Internal_splitInTwo_cons_cons_zipIdx_snd failed calls=64 44.2s timeouts=0 claude=4 usd=0.076
+claude: billed usd=0.0104 stop_reason=end_turn cache_read=1265
+jev_router        core_List_Nodup_not_mem_erase PROVED calls=3 5.9s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0049 stop_reason=end_turn cache_read=1265
+jev_router        core_List_Pairwise_iff       PROVED calls=3 3.8s timeouts=0 claude=1 usd=0.005
+claude: billed usd=0.0176 stop_reason=end_turn cache_read=1265
+jev_router        core_List_Pairwise_imp_mem   PROVED calls=1 12.5s timeouts=0 claude=1 usd=0.018
+claude: billed usd=0.0050 stop_reason=end_turn cache_read=1265
+jev_router        core_List_Perm_append_right  PROVED calls=3 6.1s timeouts=0 claude=1 usd=0.005
+claude: billed usd=0.0185 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0388 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0192 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0173 stop_reason=end_turn cache_read=1265
+jev_router        core_List_Sublist_brecOn     failed calls=64 62.5s timeouts=0 claude=4 usd=0.094
+claude: billed usd=0.0050 stop_reason=end_turn cache_read=1265
+jev_router        core_List_all_bne'           PROVED calls=6 4.3s timeouts=0 claude=1 usd=0.005
+claude: billed usd=0.0057 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0121 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0044 stop_reason=end_turn cache_read=1265
+jev_router        core_List_all_takeWhile      PROVED calls=40 21.2s timeouts=0 claude=3 usd=0.022
+claude: billed usd=0.0123 stop_reason=end_turn cache_read=1265
+jev_router        core_List_append_of_mem      PROVED calls=2 7.3s timeouts=0 claude=1 usd=0.012
+claude: billed usd=0.0058 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0127 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0110 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0086 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0081 stop_reason=end_turn cache_read=1265
+jev_router        core_List_append_sublist_iff failed calls=64 48.6s timeouts=0 claude=5 usd=0.046
+claude: billed usd=0.0037 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0098 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0119 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0049 stop_reason=end_turn cache_read=1265
+jev_router        core_List_apply_maxOn_lt_iff failed calls=64 40.8s timeouts=0 claude=7 usd=0.053
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+jev_router        core_List_contains_congr     PROVED calls=3 4.6s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=1265
+jev_router        core_List_count_cons         PROVED calls=1 6.4s timeouts=0 claude=1 usd=0.009
+claude: billed usd=0.0050 stop_reason=end_turn cache_read=1265
+jev_router        core_List_count_filter       PROVED calls=5 4.4s timeouts=0 claude=1 usd=0.005
+claude: billed usd=0.0145 stop_reason=end_turn cache_read=1265
+jev_router        core_List_count_filterMap    PROVED calls=3 10.8s timeouts=0 claude=1 usd=0.014
+claude: billed usd=0.0081 stop_reason=end_turn cache_read=1265
+jev_router        core_List_count_le_length    PROVED calls=4 6.6s timeouts=0 claude=1 usd=0.008
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0033 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+jev_router        core_List_decide_mem_cons    PROVED calls=22 10.9s timeouts=0 claude=3 usd=0.009
+claude: billed usd=0.0135 stop_reason=end_turn cache_read=1265
+jev_router        core_List_dropWhile_suffix   PROVED calls=1 7.0s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+jev_router        core_List_drop_drop          PROVED calls=1 11.2s timeouts=0 claude=1 usd=0.014
+claude: billed usd=0.0246 stop_reason=end_turn cache_read=1265
+jev_router        core_List_drop_take          PROVED calls=1 12.1s timeouts=0 claude=1 usd=0.025
+claude: billed usd=0.0049 stop_reason=end_turn cache_read=1265
+jev_router        core_List_eraseIdx_modify_of_gt PROVED calls=3 6.3s timeouts=0 claude=1 usd=0.005
+claude: billed usd=0.0126 stop_reason=end_turn cache_read=1265
+jev_router        core_List_erase_replicate_ne PROVED calls=2 7.0s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0095 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0087 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0224 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0073 stop_reason=end_turn cache_read=1265
+jev_router        core_List_filterMapM_loop_eq PROVED calls=45 39.3s timeouts=0 claude=5 usd=0.059
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+jev_router        core_List_finRange_succ      PROVED calls=2 10.7s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0146 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0145 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0125 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0099 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0129 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=1265
+jev_router        core_List_flatMapM_loop_induct_unfolding failed calls=64 77.8s timeouts=0 claude=7 usd=0.083
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+jev_router        core_List_flatMapM_wfParam   PROVED calls=1 3.4s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0129 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0173 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0130 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0118 stop_reason=end_turn cache_read=1265
+jev_router        core_List_foldrM_filterMap   failed calls=64 71.2s timeouts=0 claude=5 usd=0.064
+claude: billed usd=0.0037 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0037 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+jev_router        core_List_foldrRecOn_cons    failed calls=64 22.0s timeouts=0 claude=5 usd=0.023
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+jev_router        core_List_foldr_assoc        PROVED calls=2 5.7s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem?_insert_zero PROVED calls=4 4.1s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0139 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0132 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem_append     failed calls=64 39.8s timeouts=0 claude=4 usd=0.051
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0084 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem_append_right failed calls=64 20.3s timeouts=0 claude=4 usd=0.031
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0120 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0105 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem_append_right' failed calls=64 19.9s timeouts=0 claude=4 usd=0.029
+claude: billed usd=0.0151 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem_cons_drop  PROVED calls=3 8.7s timeouts=0 claude=1 usd=0.015
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0165 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0161 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0054 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem_drop       failed calls=64 32.5s timeouts=0 claude=4 usd=0.046
+claude: billed usd=0.0118 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0075 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0110 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem_eraseIdx_of_ge failed calls=64 33.4s timeouts=0 claude=5 usd=0.045
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0078 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0204 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0072 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0083 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0028 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0145 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem_insert     failed calls=64 53.9s timeouts=0 claude=7 usd=0.069
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0095 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0048 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem_replace_of_ne failed calls=64 24.8s timeouts=0 claude=4 usd=0.027
+claude: billed usd=0.0130 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0129 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0102 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem_zipIdx     failed calls=64 29.0s timeouts=0 claude=3 usd=0.036
+claude: billed usd=0.0106 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0089 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0136 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0202 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0142 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getElem_zipWith    failed calls=64 54.0s timeouts=0 claude=5 usd=0.067
+claude: billed usd=0.0046 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0124 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0069 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getLast_mapIdx     failed calls=64 21.5s timeouts=0 claude=4 usd=0.034
+claude: billed usd=0.0050 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0079 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0037 stop_reason=end_turn cache_read=1265
+jev_router        core_List_getLast_tail       failed calls=64 17.2s timeouts=0 claude=4 usd=0.019
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+jev_router        core_List_head?_range        PROVED calls=2 3.9s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0033 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0062 stop_reason=end_turn cache_read=1265
+jev_router        core_List_head_append_right  failed calls=64 17.2s timeouts=0 claude=4 usd=0.015
+claude: billed usd=0.0133 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0047 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0114 stop_reason=end_turn cache_read=1265
+jev_router        core_List_head_dropLast      failed calls=64 24.5s timeouts=0 claude=4 usd=0.032
+claude: billed usd=0.0077 stop_reason=end_turn cache_read=1265
+jev_router        core_List_idxOf_le_length    PROVED calls=2 4.5s timeouts=0 claude=1 usd=0.008
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+jev_router        core_List_insert_of_not_mem  PROVED calls=3 3.6s timeouts=0 claude=1 usd=0.003
+claude: billed usd=0.0082 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0123 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0065 stop_reason=end_turn cache_read=1265
+jev_router        core_List_instTransOrd       PROVED calls=27 41.9s timeouts=0 claude=6 usd=0.058
+claude: billed usd=0.0133 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0137 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0121 stop_reason=end_turn cache_read=1265
+jev_router        core_List_isPrefixOf_replicate PROVED calls=22 26.8s timeouts=0 claude=3 usd=0.039
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+jev_router        core_List_isSome_minOn?_of_mem PROVED calls=2 6.6s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0075 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0111 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0121 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0073 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0079 stop_reason=end_turn cache_read=1265
+jev_router        core_List_le_min_iff         PROVED calls=43 47.5s timeouts=0 claude=7 usd=0.057
+claude: billed usd=0.0094 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0124 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0094 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+jev_router        core_List_left_le_minIdxOn_append failed calls=64 31.1s timeouts=0 claude=5 usd=0.045
+claude: billed usd=0.0164 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0125 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0113 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0063 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0086 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0095 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0031 stop_reason=end_turn cache_read=1265
+jev_router        core_List_lt_iff_exists      failed calls=64 50.1s timeouts=0 claude=7 usd=0.068
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+jev_router        core_List_map_id''           PROVED calls=3 2.8s timeouts=0 claude=1 usd=0.003
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+jev_router        core_List_map_id_fun         failed calls=64 12.8s timeouts=0 claude=4 usd=0.011
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0191 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+jev_router        core_List_map_unattach       failed calls=64 33.2s timeouts=0 claude=4 usd=0.035
+claude: billed usd=0.0044 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0098 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0110 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0068 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0046 stop_reason=end_turn cache_read=1265
+jev_router        core_List_maxIdxOn_append    failed calls=64 39.5s timeouts=0 claude=7 usd=0.057
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0032 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0026 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0037 stop_reason=end_turn cache_read=1265
+jev_router        core_List_maxIdxOn_singleton failed calls=64 12.6s timeouts=0 claude=4 usd=0.013
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0098 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0119 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0113 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+jev_router        core_List_maxOn_cons         failed calls=64 37.2s timeouts=0 claude=6 usd=0.060
+claude: billed usd=0.0037 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0020 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0040 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+jev_router        core_List_max_congr_simp     failed calls=64 10.9s timeouts=0 claude=4 usd=0.013
+claude: billed usd=0.0059 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0081 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0047 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+jev_router        core_List_max_cons_cons      failed calls=64 15.1s timeouts=0 claude=4 usd=0.021
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0109 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0034 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0080 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0097 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0104 stop_reason=end_turn cache_read=1265
+jev_router        core_List_mem_eraseIdx_iff_getElem failed calls=64 51.8s timeouts=0 claude=6 usd=0.046
+claude: billed usd=0.0127 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0138 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0145 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0150 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0123 stop_reason=end_turn cache_read=1265
+jev_router        core_List_mergeSort_append   failed calls=64 47.9s timeouts=0 claude=6 usd=0.082
+claude: billed usd=0.0047 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0155 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0147 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0199 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0085 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0056 stop_reason=end_turn cache_read=1265
+jev_router        core_List_mergeSort_cons     failed calls=64 50.6s timeouts=0 claude=7 usd=0.073
+claude: billed usd=0.0046 stop_reason=end_turn cache_read=1265
+jev_router        core_List_minIdxOn?_cons     PROVED calls=4 4.4s timeouts=0 claude=1 usd=0.005
+claude: billed usd=0.0030 stop_reason=end_turn cache_read=1265
+jev_router        core_List_minIdxOn?_nil      PROVED calls=1 3.0s timeouts=0 claude=1 usd=0.003
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+jev_router        core_List_minOn_replicate    PROVED calls=2 8.4s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0077 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0116 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+jev_router        core_List_min_le_of_mem      failed calls=64 42.6s timeouts=0 claude=6 usd=0.065
+claude: billed usd=0.0161 stop_reason=end_turn cache_read=1265
+jev_router        core_List_modifyTailIdx_modifyTailIdx PROVED calls=1 11.7s timeouts=0 claude=1 usd=0.016
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+jev_router        core_List_pair_sublist_mergeSort PROVED calls=2 6.5s timeouts=0 claude=1 usd=0.012
+claude: billed usd=0.0174 stop_reason=end_turn cache_read=1265
+jev_router        core_List_pairwise_append_comm PROVED calls=1 7.4s timeouts=0 claude=1 usd=0.017
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0212 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0131 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0179 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0085 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0089 stop_reason=end_turn cache_read=1265
+jev_router        core_List_pairwise_mergeSort failed calls=64 54.1s timeouts=0 claude=6 usd=0.080
+claude: billed usd=0.0079 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0086 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0098 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0081 stop_reason=end_turn cache_read=1265
+jev_router        core_List_perm_iff_count     PROVED calls=39 44.6s timeouts=0 claude=7 usd=0.059
+claude: billed usd=0.0150 stop_reason=end_turn cache_read=1265
+jev_router        core_List_perm_iff_toArray_perm PROVED calls=1 7.8s timeouts=0 claude=1 usd=0.015
+claude: billed usd=0.0086 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0112 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0120 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0164 stop_reason=end_turn cache_read=1265
+jev_router        core_List_pmap_reverse       failed calls=64 30.9s timeouts=0 claude=4 usd=0.048
+claude: billed usd=0.0131 stop_reason=end_turn cache_read=1265
+jev_router        core_List_range'_concat      PROVED calls=1 10.6s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0122 stop_reason=end_turn cache_read=1265
+jev_router        core_List_range'_succ_left   PROVED calls=2 9.5s timeouts=0 claude=1 usd=0.012
+claude: billed usd=0.0106 stop_reason=end_turn cache_read=1265
+jev_router        core_List_range_succ         PROVED calls=1 6.9s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0157 stop_reason=end_turn cache_read=1265
+jev_router        core_List_removeAll_cons     PROVED calls=1 8.2s timeouts=0 claude=1 usd=0.016
+claude: billed usd=0.0033 stop_reason=end_turn cache_read=1265
+jev_router        core_List_replace_cons_self  PROVED calls=2 5.1s timeouts=0 claude=1 usd=0.003
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+jev_router        core_List_replace_take       PROVED calls=2 5.2s timeouts=0 claude=1 usd=0.009
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0023 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+jev_router        core_List_reverse_attachWith failed calls=64 21.8s timeouts=0 claude=4 usd=0.036
+claude: billed usd=0.0099 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0139 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+jev_router        core_List_set_getElem_self   PROVED calls=19 29.1s timeouts=0 claude=4 usd=0.038
+claude: billed usd=0.0049 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0124 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0120 stop_reason=end_turn cache_read=1265
+jev_router        core_List_set_getElem_succ_eraseIdx_succ PROVED calls=34 35.4s timeouts=0 claude=4 usd=0.039
+claude: billed usd=0.0119 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0077 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0094 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0103 stop_reason=end_turn cache_read=1265
+jev_router        core_List_sum_singleton      failed calls=64 29.7s timeouts=0 claude=4 usd=0.039
+claude: billed usd=0.0018 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+jev_router        core_List_tail?_nil          failed calls=30 4.6s timeouts=0 claude=2 usd=0.004
+claude: billed usd=0.0186 stop_reason=end_turn cache_read=1265
+jev_router        core_List_tail_drop          PROVED calls=4 10.5s timeouts=0 claude=1 usd=0.019
+claude: billed usd=0.0040 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0030 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+jev_router        core_List_tail_pmap          failed calls=63 15.3s timeouts=0 claude=4 usd=0.011
+claude: billed usd=0.0134 stop_reason=end_turn cache_read=1265
+jev_router        core_List_take_append_drop   PROVED calls=1 7.7s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0035 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0018 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=1265
+jev_router        core_List_take_append_getLast PROVED calls=38 12.6s timeouts=0 claude=3 usd=0.014
+claude: billed usd=0.0052 stop_reason=end_turn cache_read=1265
+jev_router        core_List_take_set           PROVED calls=3 4.0s timeouts=0 claude=1 usd=0.005
+claude: billed usd=0.0039 stop_reason=end_turn cache_read=1265
+jev_router        core_List_unattach_append    PROVED calls=2 4.4s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0056 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0163 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0188 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0041 stop_reason=end_turn cache_read=1265
+jev_router        core_List_unattach_filter    failed calls=64 33.3s timeouts=0 claude=4 usd=0.045
+claude: billed usd=0.0025 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0056 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0038 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0020 stop_reason=end_turn cache_read=1265
+jev_router        core_List_unattach_nil       failed calls=63 15.0s timeouts=0 claude=4 usd=0.014
+claude: billed usd=0.0054 stop_reason=end_turn cache_read=1265
+jev_router        core_List_unzip_zip          PROVED calls=3 3.5s timeouts=0 claude=1 usd=0.005
+claude: billed usd=0.0044 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0093 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0021 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0172 stop_reason=end_turn cache_read=1265
+jev_router        core_List_zipIdx_succ        failed calls=64 26.8s timeouts=0 claude=4 usd=0.033
+claude: billed usd=0.0044 stop_reason=end_turn cache_read=1265
+jev_router        core_List_zipWith_comm_of_comm PROVED calls=2 5.6s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_Coprime_gcd_left    PROVED calls=3 6.7s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0152 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0282 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0105 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0313 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0265 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_Coprime_gcd_mul     failed calls=64 60.9s timeouts=0 claude=5 usd=0.112
+claude: billed usd=0.0149 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq PROVED calls=2 6.6s timeouts=0 claude=1 usd=0.015
+claude: billed usd=0.0361 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_Internal_Linear_Expr_toPoly_go_induct PROVED calls=1 15.1s timeouts=0 claude=1 usd=0.036
+claude: billed usd=0.0109 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0149 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0150 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0165 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0163 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_Internal_Linear_Poly_of_isNonZero PROVED calls=35 41.0s timeouts=0 claude=5 usd=0.073
+claude: billed usd=0.0250 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0137 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0232 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0157 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_add_div_of_dvd_add_add_one failed calls=64 63.7s timeouts=0 claude=5 usd=0.092
+claude: billed usd=0.0100 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_add_mul_div_right   PROVED calls=2 5.5s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0048 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0019 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0017 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0022 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_all_congr           failed calls=64 20.9s timeouts=0 claude=5 usd=0.014
+claude: billed usd=0.0109 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_div_add_mod'        PROVED calls=2 6.5s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0120 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_div_dvd_of_dvd      PROVED calls=2 6.4s timeouts=0 claude=1 usd=0.012
+claude: billed usd=0.0152 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_div_le_iff_le_mul_add_pred PROVED calls=4 14.6s timeouts=0 claude=1 usd=0.015
+claude: billed usd=0.0132 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0130 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_div_le_self         PROVED calls=19 20.0s timeouts=0 claude=2 usd=0.026
+claude: billed usd=0.0045 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_div_lt_of_lt        PROVED calls=3 4.6s timeouts=0 claude=1 usd=0.005
+claude: billed usd=0.0235 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0114 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0234 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_dvd_gcd_mul_gcd_iff_dvd_mul failed calls=64 25.5s timeouts=0 claude=3 usd=0.058
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_dvd_gcd_mul_iff_dvd_mul PROVED calls=1 9.8s timeouts=0 claude=1 usd=0.014
+claude: billed usd=0.0152 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_dvd_lcm_left        PROVED calls=1 12.0s timeouts=0 claude=1 usd=0.015
+claude: billed usd=0.0132 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0045 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0061 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0159 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_fold_add            failed calls=64 40.3s timeouts=1 claude=4 usd=0.040
+claude: billed usd=0.0107 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_gcd_add_right_right_of_dvd PROVED calls=5 6.2s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0144 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_gcd_add_self_right  PROVED calls=1 7.2s timeouts=0 claude=1 usd=0.014
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_gcd_le_right        PROVED calls=3 3.3s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0171 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_gcd_mul_left_add_left PROVED calls=2 8.3s timeouts=0 claude=1 usd=0.017
+claude: billed usd=0.0115 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_ge_two_pow_of_testBit PROVED calls=2 5.9s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0027 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_getD_toArray_rcc    PROVED calls=2 3.6s timeouts=0 claude=1 usd=0.003
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_getD_toList_ric     PROVED calls=3 7.7s timeouts=0 claude=1 usd=0.010
+claude: billed usd=0.0085 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0140 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0131 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_getElem?_toArray_roc PROVED calls=45 25.2s timeouts=0 claude=3 usd=0.036
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_getElem_toArray_rio PROVED calls=3 3.2s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0072 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_isSome_getElem?_toArray_ric_eq PROVED calls=1 5.5s timeouts=0 claude=1 usd=0.007
+claude: billed usd=0.0105 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_lcm_zero_left       PROVED calls=4 9.1s timeouts=0 claude=1 usd=0.011
+claude: billed usd=0.0133 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_le_of_dvd           PROVED calls=3 7.1s timeouts=0 claude=1 usd=0.013
+claude: billed usd=0.0108 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0158 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0123 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_le_pow              PROVED calls=21 27.6s timeouts=0 claude=3 usd=0.039
+claude: billed usd=0.0148 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_lt_mul_div_succ     PROVED calls=4 8.8s timeouts=0 claude=1 usd=0.015
+claude: billed usd=0.0183 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_lt_pow_self         PROVED calls=2 10.0s timeouts=0 claude=1 usd=0.018
+claude: billed usd=0.0094 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_map_add_toArray_rco PROVED calls=2 8.8s timeouts=0 claude=1 usd=0.009
+claude: billed usd=0.0120 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_map_add_toArray_rio PROVED calls=2 9.3s timeouts=0 claude=1 usd=0.012
+claude: billed usd=0.0130 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0254 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0141 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0166 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0191 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0277 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0128 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_mul_add_mul_div_of_dvd PROVED calls=20 76.8s timeouts=0 claude=7 usd=0.129
+claude: billed usd=0.0030 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_one_le_div_iff      PROVED calls=3 4.3s timeouts=0 claude=1 usd=0.003
+claude: billed usd=0.0045 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_or_exists_add_one   PROVED calls=5 3.5s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0143 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_pow_lt_pow_right    PROVED calls=2 10.2s timeouts=0 claude=1 usd=0.014
+claude: billed usd=0.0042 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_pow_right_comm      PROVED calls=1 2.9s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0039 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_pow_sub_mul_pow     PROVED calls=2 2.9s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0036 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_pred_lt_pred        PROVED calls=2 3.1s timeouts=0 claude=1 usd=0.004
+claude: billed usd=0.0088 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0106 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0111 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_repr_injective      failed calls=64 23.1s timeouts=0 claude=3 usd=0.031
+claude: billed usd=0.0030 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_self_add_pred       PROVED calls=2 4.2s timeouts=0 claude=1 usd=0.003
+claude: billed usd=0.0142 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_shiftLeft_shiftRight PROVED calls=1 9.3s timeouts=0 claude=1 usd=0.014
+claude: billed usd=0.0099 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0096 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0086 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_testBit_two_pow_mul_add failed calls=64 20.9s timeouts=0 claude=3 usd=0.028
+claude: billed usd=0.0085 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_toArray_roc_succ_succ PROVED calls=1 5.1s timeouts=0 claude=1 usd=0.008
+claude: billed usd=0.0091 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0101 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0090 stop_reason=end_turn cache_read=1265
+claude: billed usd=0.0092 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_toList_rco_succ_succ failed calls=64 25.5s timeouts=0 claude=4 usd=0.037
+claude: billed usd=0.0082 stop_reason=end_turn cache_read=1265
+jev_router        core_Nat_zero_lt_getElem!_toList_rio_iff PROVED calls=5 5.3s timeouts=0 claude=1 usd=0.008
+# Jev proof demo — experiment 3 (core-library benchmark)
+
+148 theorems; `claude-opus-5-5`, effort `medium`.
+
+| method | proved | rate | 95% CI | notional USD | USD per proved | Claude requests | requests per proved | Lean calls | audit-rejected proofs |
+|---|---|---|---|---|---|---|---|---|---|
+| jev_router | 97/148 | 0.66 | 0.58–0.73 | 3.8835 | 0.0400 | 385 | 3.97 | 3887 | 153 |
+
+Total Claude spend (actual): $3.8835 of $6.6357.
+
+## Per theorem
+
+| theorem | jev_router |
+|---|---|
+| core_List_IsPrefix_le_countP | yes (3) |
+| core_List_IsSuffix_sublist | yes (1) |
+| core_List_Mem_brecOn | – |
+| core_List_MergeSort_Internal_splitInTwo_cons_cons_zipIdx_snd | – |
+| core_List_Nodup_not_mem_erase | yes (3) |
+| core_List_Pairwise_iff | yes (3) |
+| core_List_Pairwise_imp_mem | yes (1) |
+| core_List_Perm_append_right | yes (3) |
+| core_List_Sublist_brecOn | – |
+| core_List_all_bne' | yes (6) |
+| core_List_all_takeWhile | yes (40) |
+| core_List_append_of_mem | yes (2) |
+| core_List_append_sublist_iff | – |
+| core_List_apply_maxOn_lt_iff | – |
+| core_List_contains_congr | yes (3) |
+| core_List_count_cons | yes (1) |
+| core_List_count_filter | yes (5) |
+| core_List_count_filterMap | yes (3) |
+| core_List_count_le_length | yes (4) |
+| core_List_decide_mem_cons | yes (22) |
+| core_List_dropWhile_suffix | yes (1) |
+| core_List_drop_drop | yes (1) |
+| core_List_drop_take | yes (1) |
+| core_List_eraseIdx_modify_of_gt | yes (3) |
+| core_List_erase_replicate_ne | yes (2) |
+| core_List_filterMapM_loop_eq | yes (45) |
+| core_List_finRange_succ | yes (2) |
+| core_List_flatMapM_loop_induct_unfolding | – |
+| core_List_flatMapM_wfParam | yes (1) |
+| core_List_foldrM_filterMap | – |
+| core_List_foldrRecOn_cons | – |
+| core_List_foldr_assoc | yes (2) |
+| core_List_getElem?_insert_zero | yes (4) |
+| core_List_getElem_append | – |
+| core_List_getElem_append_right | – |
+| core_List_getElem_append_right' | – |
+| core_List_getElem_cons_drop | yes (3) |
+| core_List_getElem_drop | – |
+| core_List_getElem_eraseIdx_of_ge | – |
+| core_List_getElem_insert | – |
+| core_List_getElem_replace_of_ne | – |
+| core_List_getElem_zipIdx | – |
+| core_List_getElem_zipWith | – |
+| core_List_getLast_mapIdx | – |
+| core_List_getLast_tail | – |
+| core_List_head?_range | yes (2) |
+| core_List_head_append_right | – |
+| core_List_head_dropLast | – |
+| core_List_idxOf_le_length | yes (2) |
+| core_List_insert_of_not_mem | yes (3) |
+| core_List_instTransOrd | yes (27) |
+| core_List_isPrefixOf_replicate | yes (22) |
+| core_List_isSome_minOn?_of_mem | yes (2) |
+| core_List_le_min_iff | yes (43) |
+| core_List_left_le_minIdxOn_append | – |
+| core_List_lt_iff_exists | – |
+| core_List_map_id'' | yes (3) |
+| core_List_map_id_fun | – |
+| core_List_map_unattach | – |
+| core_List_maxIdxOn_append | – |
+| core_List_maxIdxOn_singleton | – |
+| core_List_maxOn_cons | – |
+| core_List_max_congr_simp | – |
+| core_List_max_cons_cons | – |
+| core_List_mem_eraseIdx_iff_getElem | – |
+| core_List_mergeSort_append | – |
+| core_List_mergeSort_cons | – |
+| core_List_minIdxOn?_cons | yes (4) |
+| core_List_minIdxOn?_nil | yes (1) |
+| core_List_minOn_replicate | yes (2) |
+| core_List_min_le_of_mem | – |
+| core_List_modifyTailIdx_modifyTailIdx | yes (1) |
+| core_List_pair_sublist_mergeSort | yes (2) |
+| core_List_pairwise_append_comm | yes (1) |
+| core_List_pairwise_mergeSort | – |
+| core_List_perm_iff_count | yes (39) |
+| core_List_perm_iff_toArray_perm | yes (1) |
+| core_List_pmap_reverse | – |
+| core_List_range'_concat | yes (1) |
+| core_List_range'_succ_left | yes (2) |
+| core_List_range_succ | yes (1) |
+| core_List_removeAll_cons | yes (1) |
+| core_List_replace_cons_self | yes (2) |
+| core_List_replace_take | yes (2) |
+| core_List_reverse_attachWith | – |
+| core_List_set_getElem_self | yes (19) |
+| core_List_set_getElem_succ_eraseIdx_succ | yes (34) |
+| core_List_sum_singleton | – |
+| core_List_tail?_nil | – |
+| core_List_tail_drop | yes (4) |
+| core_List_tail_pmap | – |
+| core_List_take_append_drop | yes (1) |
+| core_List_take_append_getLast | yes (38) |
+| core_List_take_set | yes (3) |
+| core_List_unattach_append | yes (2) |
+| core_List_unattach_filter | – |
+| core_List_unattach_nil | – |
+| core_List_unzip_zip | yes (3) |
+| core_List_zipIdx_succ | – |
+| core_List_zipWith_comm_of_comm | yes (2) |
+| core_Nat_Coprime_gcd_left | yes (3) |
+| core_Nat_Coprime_gcd_mul | – |
+| core_Nat_Internal_Linear_ExprCnstr_toPoly_norm_eq | yes (2) |
+| core_Nat_Internal_Linear_Expr_toPoly_go_induct | yes (1) |
+| core_Nat_Internal_Linear_Poly_of_isNonZero | yes (35) |
+| core_Nat_add_div_of_dvd_add_add_one | – |
+| core_Nat_add_mul_div_right | yes (2) |
+| core_Nat_all_congr | – |
+| core_Nat_div_add_mod' | yes (2) |
+| core_Nat_div_dvd_of_dvd | yes (2) |
+| core_Nat_div_le_iff_le_mul_add_pred | yes (4) |
+| core_Nat_div_le_self | yes (19) |
+| core_Nat_div_lt_of_lt | yes (3) |
+| core_Nat_dvd_gcd_mul_gcd_iff_dvd_mul | – |
+| core_Nat_dvd_gcd_mul_iff_dvd_mul | yes (1) |
+| core_Nat_dvd_lcm_left | yes (1) |
+| core_Nat_fold_add | – |
+| core_Nat_gcd_add_right_right_of_dvd | yes (5) |
+| core_Nat_gcd_add_self_right | yes (1) |
+| core_Nat_gcd_le_right | yes (3) |
+| core_Nat_gcd_mul_left_add_left | yes (2) |
+| core_Nat_ge_two_pow_of_testBit | yes (2) |
+| core_Nat_getD_toArray_rcc | yes (2) |
+| core_Nat_getD_toList_ric | yes (3) |
+| core_Nat_getElem?_toArray_roc | yes (45) |
+| core_Nat_getElem_toArray_rio | yes (3) |
+| core_Nat_isSome_getElem?_toArray_ric_eq | yes (1) |
+| core_Nat_lcm_zero_left | yes (4) |
+| core_Nat_le_of_dvd | yes (3) |
+| core_Nat_le_pow | yes (21) |
+| core_Nat_lt_mul_div_succ | yes (4) |
+| core_Nat_lt_pow_self | yes (2) |
+| core_Nat_map_add_toArray_rco | yes (2) |
+| core_Nat_map_add_toArray_rio | yes (2) |
+| core_Nat_mul_add_mul_div_of_dvd | yes (20) |
+| core_Nat_one_le_div_iff | yes (3) |
+| core_Nat_or_exists_add_one | yes (5) |
+| core_Nat_pow_lt_pow_right | yes (2) |
+| core_Nat_pow_right_comm | yes (1) |
+| core_Nat_pow_sub_mul_pow | yes (2) |
+| core_Nat_pred_lt_pred | yes (2) |
+| core_Nat_repr_injective | – |
+| core_Nat_self_add_pred | yes (2) |
+| core_Nat_shiftLeft_shiftRight | yes (1) |
+| core_Nat_testBit_two_pow_mul_add | – |
+| core_Nat_toArray_roc_succ_succ | yes (1) |
+| core_Nat_toList_rco_succ_succ | – |
+| core_Nat_zero_lt_getElem!_toList_rio_iff | yes (5) |
+

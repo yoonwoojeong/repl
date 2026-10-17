@@ -1,0 +1,1 @@
+{"tactics": ["have h : a / b < c + 1 ↔ a < b * c + b := by rw [Nat.div_lt_iff_lt_mul hb, Nat.add_mul, Nat.one_mul, Nat.mul_comm c b]", "have h : a / b < c + 1 ↔ a < (c + 1) * b := Nat.div_lt_iff_lt_mul hb", "rw [Nat.le_iff_lt_add_one, Nat.div_lt_iff_lt_mul hb, Nat.add_mul, Nat.one_mul, Nat.mul_comm c b]", "grind", "constructor"], "usd": 0.022069000000000116}

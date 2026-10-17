@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "simp only [List.cons_append, List.cons_sublist_iff, tail_ih✝]", "grind [List.cons_sublist_iff, List.Sublist.append]", "refine ⟨fun h => ?_, fun ⟨r₁, r₂, hr, h₁, h₂⟩ => hr ▸ List.Sublist.append h₁ h₂⟩", "simp_all [List.cons_sublist_iff]"], "usd": 0.012164999999999981}

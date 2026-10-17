@@ -1,0 +1,1 @@
+{"tactics": ["intro a", "intro a b c hab hbc", "intro a b c hab hbc; induction a generalizing b c", "intro a <;> induction a with | nil => simp_all | cons x xs ih => intro b c hab hbc; cases b <;> cases c <;> simp_all", "grind"], "usd": 0.009345000000000159}

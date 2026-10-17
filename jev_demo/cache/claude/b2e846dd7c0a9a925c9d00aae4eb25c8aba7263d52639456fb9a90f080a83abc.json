@@ -1,0 +1,1 @@
+{"tactics": ["cases l", "split", "simp", "grind", "simp [ByteArray.utf8Decode?.go]", "split <;> simp_all", "rcases l with _ | ⟨c, l⟩ <;> simp"], "usd": 0.005736999999999881}

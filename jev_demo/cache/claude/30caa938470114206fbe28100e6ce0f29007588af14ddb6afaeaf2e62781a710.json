@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "simp_all", "exact absurd h (by simp)", "have h' : i < 0 := by simpa using h\nexact absurd h' (Nat.not_lt_zero i)", "exact (Nat.not_lt_zero i (by simpa using h)).elim", "grind"], "usd": 0.005800999999999945}

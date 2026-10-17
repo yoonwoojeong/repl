@@ -1,0 +1,1 @@
+{"tactics": ["intro n i fallback", "simp [Nat.getElem?_toList_ric]", "intros <;> simp <;> split <;> omega", "grind", "intros <;> simp [Std.Ric.toList] <;> split <;> simp_all", "simp"], "usd": 0.005552999999999919}

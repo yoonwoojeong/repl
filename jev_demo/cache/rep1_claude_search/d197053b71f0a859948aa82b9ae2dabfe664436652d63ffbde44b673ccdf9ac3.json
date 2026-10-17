@@ -1,0 +1,1 @@
+{"tactics": ["simp at h", "simp_all", "exact absurd h (by simp)", "rw [List.zipWith_nil_right] at h; simp at h", "grind", "exfalso; simp at h"], "usd": 0.005272999999999861}

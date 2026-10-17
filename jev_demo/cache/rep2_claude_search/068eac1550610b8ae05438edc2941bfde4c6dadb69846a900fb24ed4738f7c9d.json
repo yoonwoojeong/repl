@@ -1,0 +1,1 @@
+{"tactics": ["have hp := List.mergeSort_perm (a :: l) le", "have hs := List.sorted_mergeSort (le := le) (fun a b c h1 h2 => trans a b c h1 h2) (fun a b => by cases total a b <;> simp_all) (a :: l)", "have hp' := List.mergeSort_perm l le", "induction l generalizing a", "rw [List.mergeSort]", "grind"], "usd": 0.015621000000000329}

@@ -1,0 +1,1 @@
+{"tactics": ["simp_all [List.cons_lt_cons_iff]", "rename_i ih", "simp [List.cons_lt_cons_iff, *]", "constructor", "grind [List.cons_lt_cons_iff]", "simp only [List.cons_lt_cons_iff]"], "usd": 0.012856999999999896}

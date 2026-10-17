@@ -1,0 +1,1 @@
+{"tactics": ["generalize hl : l₁ ++ l₂ = l at h", "induction r generalizing l₁ l₂", "induction h generalizing l₁ l₂", "revert h", "cases l₁"], "usd": 0.010480999999999963}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α <;> rfl", "intro α", "exact fun {α} => rfl", "rfl", "intros <;> rfl", "decide"], "usd": 0.0018210000000000726}

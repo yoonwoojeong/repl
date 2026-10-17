@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.sublist_nil, eq_comm]", "constructor <;> intro h <;> simp_all", "grind", "simp_all [List.nil_eq_append_iff]", "constructor"], "usd": 0.007064999999999988}

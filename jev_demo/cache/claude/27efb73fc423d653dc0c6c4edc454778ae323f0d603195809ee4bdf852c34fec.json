@@ -1,0 +1,1 @@
+{"tactics": ["unfold List.minIdxOn", "simp only [List.minIdxOn]", "split", "grind [List.minIdxOn, List.minOn]", "simp [List.minIdxOn, List.minOn]", "rfl", "rename_i f x xs", "delta List.minIdxOn"], "usd": 0.009233000000000047}

@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ _ f xs h", "intros", "intro inst inst_1 inst_2 f xs h", "intro _ _ _ f xs h <;> induction xs <;> simp_all", "intro _ _ _ f xs h <;> simp [List.maxIdxOn, List.maxOn]", "intro _ _ _ f xs h <;> grind"], "usd": 0.0036969999999999503}

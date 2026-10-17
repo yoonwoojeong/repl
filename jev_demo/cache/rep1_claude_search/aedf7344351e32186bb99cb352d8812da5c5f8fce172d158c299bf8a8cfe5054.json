@@ -1,0 +1,1 @@
+{"tactics": ["simp only [List.splitAt_eq]", "simp [List.splitAt_eq]", "simp only [List.splitAt_eq, List.zipIdx_cons]", "ext1 j", "apply List.ext_getElem?", "simp [List.splitAt_eq, List.getElem?_drop, List.getElem?_zipIdx]", "simp_all [List.splitAt_eq] <;> grind"], "usd": 0.01577299999999998}

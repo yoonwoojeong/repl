@@ -1,0 +1,1 @@
+{"tactics": ["refine ⟨fun h a => h.count_eq a, fun h => ?_⟩", "constructor", "induction l₁ generalizing l₂", "grind"], "usd": 0.006580999999999726}

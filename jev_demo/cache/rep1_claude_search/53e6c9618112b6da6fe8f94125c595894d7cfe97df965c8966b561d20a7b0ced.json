@@ -1,0 +1,1 @@
+{"tactics": ["induction l <;> simp_all", "simp [h]", "induction l with\n  | nil => rfl\n  | cons a t ih => simp [h, ih]", "rw [show f = id from funext h, List.map_id]", "have hf : f = id := funext h", "induction l", "exact List.map_id' l |>.symm.trans (by simp [h])", "grind"], "usd": 0.0033850000000001934}

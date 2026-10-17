@@ -1,0 +1,1 @@
+{"tactics": ["intro i _ <;> omega", "intro i _ <;> exact Nat.add_comm i k", "omega", "intro i hi", "simp [Nat.add_comm]", "intros <;> rw [Nat.add_comm]"], "usd": 0.0025050000000002015}

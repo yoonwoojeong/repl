@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [List.eraseIdx]", "constructor <;> intro h <;> simp_all", "simp_all", "grind"], "usd": 0.0020169999999999355}

@@ -1,0 +1,1 @@
+{"tactics": ["induction l", "induction l <;> simp_all [List.nodup_cons, List.count_cons]", "constructor", "grind [List.nodup_cons, List.count_cons, List.count_eq_zero]", "simp [List.Nodup]"], "usd": 0.012216999999999922}

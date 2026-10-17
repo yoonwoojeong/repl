@@ -1,0 +1,1 @@
+{"tactics": ["simp only [List.IsInfix, List.append_assoc, List.filterMap_eq_append_iff]", "constructor", "simp only [List.IsInfix]", "unfold List.IsInfix", "grind"], "usd": 0.012169000000000096}

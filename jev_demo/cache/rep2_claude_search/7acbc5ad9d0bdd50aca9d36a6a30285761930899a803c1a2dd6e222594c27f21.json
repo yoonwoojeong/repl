@@ -1,0 +1,1 @@
+{"tactics": ["intro h j", "intro h j <;> grind", "intro h j <;> rw [show 2 ^ i * a + b = a <<< i ||| b by rw [← Nat.shiftLeft_add_eq_or_of_lt h, Nat.shiftLeft_eq, Nat.mul_comm]]", "intro h j <;> simp [Nat.testBit, Nat.shiftRight_eq_div_pow]", "intro h j <;> by_cases hj : j < i <;> simp_all"], "usd": 0.017872999999999806}

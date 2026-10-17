@@ -1,0 +1,1 @@
+{"tactics": ["split <;> simp_all [List.insert_of_mem, List.insert_of_not_mem, List.getElem_cons]", "by_cases h : a✝ ∈ l✝ <;> simp_all [List.insert_of_mem, List.insert_of_not_mem, List.getElem_cons]", "split", "grind [List.insert_of_mem, List.insert_of_not_mem, List.getElem_cons]", "simp only [List.insert]", "rename_i α _ _ l a i h"], "usd": 0.010949000000000098}

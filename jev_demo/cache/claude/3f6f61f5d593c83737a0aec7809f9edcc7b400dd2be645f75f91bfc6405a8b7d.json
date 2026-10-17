@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getLast_append_of_ne_nil, hx]", "rw [← List.cons_append, List.getLast_append_of_ne_nil]", "simp [List.getLast_cons, List.getLast_append, hx]", "simp [List.getLast_append, hx]", "grind [List.getLast_append_of_ne_nil, List.getLast_cons]", "simp_all"], "usd": 0.010149000000000005}

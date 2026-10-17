@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getElem_replace, hne]", "rw [List.getElem_replace]; simp [hne]", "grind [List.getElem_replace]", "induction l generalizing i <;> cases i <;> simp_all [List.replace] <;> split <;> simp_all", "simp_all [List.getElem_replace]", "induction l generalizing i"], "usd": 0.009500999999999982}

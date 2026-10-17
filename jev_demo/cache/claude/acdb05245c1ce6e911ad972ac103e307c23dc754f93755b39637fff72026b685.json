@@ -1,0 +1,1 @@
+{"tactics": ["rename_i a l", "intro i h", "grind", "intro i h <;> cases i <;> simp_all", "simp", "intro i h <;> induction tail✝ generalizing i <;> simp_all"], "usd": 0.011772999999999811}

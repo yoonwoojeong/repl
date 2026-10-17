@@ -1,0 +1,1 @@
+{"tactics": ["simp only [List.splitAt_eq, List.drop_zipIdx]", "simp [List.splitAt_eq, List.drop_zipIdx]", "dsimp only", "simp only [List.splitAt_eq]", "simp [List.splitAt_eq, List.drop_zipIdx] <;> omega", "simp [List.splitAt_eq]"], "usd": 0.015652999999999972}

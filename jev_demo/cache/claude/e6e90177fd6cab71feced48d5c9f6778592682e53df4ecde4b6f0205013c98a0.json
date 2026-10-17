@@ -1,0 +1,1 @@
+{"tactics": ["induction l <;> intro i j a <;> cases i <;> cases j <;> simp_all", "induction l <;> intro i j a <;> cases i <;> cases j <;> simp only [List.set_nil, List.take_nil, List.take_zero, List.set_cons_zero, List.set_cons_succ, List.take_succ_cons, List.set_nil, *]", "intro i j a", "induction l"], "usd": 0.013065000000000104}

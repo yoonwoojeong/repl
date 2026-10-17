@@ -1,0 +1,1 @@
+{"tactics": ["rename_i tl ih", "grind", "clear tail_ih✝", "induction ‹List α› generalizing a <;> grind", "simp [List.foldl_min]", "exact List.foldl_min_le"], "usd": 0.014685000000000059}

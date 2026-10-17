@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "induction l₁ generalizing l₂", "revert l₂", "intro h; induction l₁ generalizing l₂", "grind"], "usd": 0.010280999999999985}

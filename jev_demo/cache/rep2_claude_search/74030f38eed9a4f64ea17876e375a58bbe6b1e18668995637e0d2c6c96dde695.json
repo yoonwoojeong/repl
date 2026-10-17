@@ -1,0 +1,1 @@
+{"tactics": ["have hb0 : b = 0 := by simp at hb; omega", "simp_all", "simp at hb ⊢; subst hb; simp", "obtain rfl : b = 0 := by simp at hb; omega", "simp [show b = 0 by simp at hb; omega]", "rw [Nat.pow_zero] at hb ⊢; have : b = 0 := by omega; subst this; simp"], "usd": 0.005500999999999756}

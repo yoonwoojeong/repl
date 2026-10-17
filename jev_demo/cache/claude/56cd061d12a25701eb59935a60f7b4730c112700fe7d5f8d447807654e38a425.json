@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "refine ⟨fun ⟨s, t, h⟩ => ?_, fun ⟨l, ⟨s, t, h⟩, h'⟩ => ⟨List.map f s, List.map f t, by subst h h'; simp⟩⟩", "simp only [← List.infix_def] at *", "grind [List.map_eq_append_iff]"], "usd": 0.011412999999999895}

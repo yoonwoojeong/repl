@@ -1,0 +1,1 @@
+{"tactics": ["induction r generalizing l₁", "induction r generalizing l₁ l₂", "cases l₁", "revert h l₁", "induction r generalizing l₁ <;> simp_all", "grind"], "usd": 0.009877000000000025}

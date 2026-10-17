@@ -1,0 +1,1 @@
+{"tactics": ["induction l generalizing init with | nil => rfl | cons x xs ih => simp only [List.map, List.foldlM, ih]", "induction l generalizing init <;> simp only [List.map, List.foldlM, *]", "induction l generalizing init with | nil => rfl | cons x xs ih => simp only [List.map_cons, List.foldlM_cons, ih]", "induction l generalizing init"], "usd": 0.012260999999999966}

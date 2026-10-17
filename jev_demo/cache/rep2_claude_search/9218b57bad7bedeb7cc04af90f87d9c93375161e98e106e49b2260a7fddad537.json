@@ -1,0 +1,1 @@
+{"tactics": ["intro f init <;> rfl", "intros <;> rfl", "intro f init", "intro f init <;> simp [Nat.fold_zero]", "intros <;> simp", "intros <;> simp_all"], "usd": 0.00866100000000003}

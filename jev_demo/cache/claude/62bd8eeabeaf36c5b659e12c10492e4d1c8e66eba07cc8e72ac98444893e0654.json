@@ -1,0 +1,1 @@
+{"tactics": ["intro h b hb", "cases l with\n  | nil => exact absurd rfl hl\n  | cons a as => intro h b hb; simp_all [List.min]", "induction l generalizing x", "match l, hl with\n  | a :: as, _ => intro h b hb; simp_all [List.min_cons]", "simp [List.min]", "grind [Std.le_min_iff]"], "usd": 0.008877000000000024}

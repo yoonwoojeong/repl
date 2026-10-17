@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α p f g hf hd tl hh", "simp only [List.unattach_cons]", "simp [List.unattach, List.filter_map, Function.comp_def]", "grind [List.unattach, List.filter_map, List.filter_congr]", "simp_all [List.unattach, List.filter_map, Function.comp_def]", "congr 1"], "usd": 0.017668999999999713}

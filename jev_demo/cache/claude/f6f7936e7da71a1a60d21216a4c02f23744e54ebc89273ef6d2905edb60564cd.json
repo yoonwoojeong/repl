@@ -1,0 +1,1 @@
+{"tactics": ["exact fun {α} => List.Pairwise.nil", "intro α", "intro α <;> exact List.Pairwise.nil", "intro α <;> unfold List.Nodup <;> constructor", "intro α <;> exact List.pairwise_nil.mpr trivial"], "usd": 0.006604999999999972}

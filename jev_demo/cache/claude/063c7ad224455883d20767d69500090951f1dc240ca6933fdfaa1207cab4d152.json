@@ -1,0 +1,1 @@
+{"tactics": ["exact ⟨k, by rw [hk, Nat.mul_right_comm]⟩", "subst hk; exact ⟨k, by rw [Nat.mul_right_comm]⟩", "exact ⟨k, by subst hk; rw [Nat.mul_assoc, Nat.mul_assoc, Nat.mul_comm k c]⟩", "refine ⟨k, ?_⟩", "subst hk", "exact ⟨k, by simp [hk, Nat.mul_comm, Nat.mul_left_comm, Nat.mul_assoc]⟩", "exact Nat.mul_dvd_mul (⟨k, hk⟩) (Nat.dvd_refl c)"], "usd": 0.005704999999999849}

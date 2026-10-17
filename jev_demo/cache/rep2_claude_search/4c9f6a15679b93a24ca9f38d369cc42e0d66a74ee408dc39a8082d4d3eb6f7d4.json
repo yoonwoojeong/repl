@@ -1,0 +1,1 @@
+{"tactics": ["intro i hi h₂", "intro i hi h₂ <;> cases i with | zero => omega | succ j => simp [List.getElem_append, Nat.succ_sub_succ]", "intro i hi h₂ <;> grind", "simp [List.getElem_cons, List.getElem_append]", "intro i hi h₂ <;> rw [List.getElem_append]"], "usd": 0.01182900000000009}

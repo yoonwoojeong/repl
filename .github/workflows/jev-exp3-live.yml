@@ -1,0 +1,86 @@
+name: jev_demo experiment 3 (live, spends money)
+
+# Paid stages of experiment 3 (jev_demo/scripts/exp3_stage.sh), each with hard USD caps.
+# Never runs on push. Start a stage by adding its label to a pull request: `exp3-pilot`,
+# `exp3-stage1` or `exp3-final`. Uses the `ANTHROPIC_API_KEY` repository secret. Results, logs,
+# new label files and the Claude response cache (so later runs can replay offline) are
+# committed back to the PR branch.
+on:
+  pull_request:
+    types: [labeled]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: jev-exp3-live
+  cancel-in-progress: false
+
+jobs:
+  stage:
+    if: startsWith(github.event.label.name, 'exp3-') && github.event.label.name != 'exp3-fetch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      ANTHROPIC_RUN_LIVE: "1"
+      BRANCH: ${{ github.head_ref }}
+      STAGE: ${{ github.event.label.name }}
+
+    steps:
+    - name: Check the API key secret is set
+      run: |
+        if [ -z "$ANTHROPIC_API_KEY" ]; then
+          echo "::error::Repository secret ANTHROPIC_API_KEY is not set."; exit 1
+        fi
+
+    - name: Checkout code
+      uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
+      with:
+        ref: ${{ env.BRANCH }}
+
+    - name: install elan
+      run: |
+        set -o pipefail
+        curl -sSfL https://github.com/leanprover/elan/releases/download/v3.0.0/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+        ./elan-init -y --default-toolchain none
+        echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+    - name: build
+      run: lake build
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: install jev_demo and run the offline tests
+      run: |
+        pip install -e 'jev_demo[dev]'
+        python -m pytest jev_demo -q
+
+    - name: run the stage
+      run: jev_demo/scripts/exp3_stage.sh "${STAGE#exp3-}"
+
+    - name: upload results and logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: jev-exp3-${{ github.run_id }}
+        path: |
+          jev_demo/results_exp3/
+          jev_demo/data/claude_labels_core.json
+          jev_demo/cache/
+        if-no-files-found: warn
+
+    - name: commit results to the branch
+      if: always()
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+        git add -f jev_demo/results_exp3 jev_demo/cache 2>/dev/null || true
+        git add -f jev_demo/data/claude_labels_core.json 2>/dev/null || true
+        if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+        git commit -m "jev_demo: experiment 3 ${STAGE} results (run ${{ github.run_id }})"
+        # the branch may have moved while the stage ran: replay this commit on top of it
+        git pull --rebase origin "$BRANCH"
+        git push origin "HEAD:$BRANCH"

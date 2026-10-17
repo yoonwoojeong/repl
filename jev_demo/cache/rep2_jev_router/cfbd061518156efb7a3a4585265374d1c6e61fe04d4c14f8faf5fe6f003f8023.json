@@ -1,0 +1,1 @@
+{"tactics": ["rename_i ih", "simp_all", "apply_assumption", "grind", "simp at h ⊢ <;> simp_all", "split <;> simp_all"], "usd": 0.013916999999999957}

@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.attachWith_reverse]", "rw [List.attachWith_reverse]", "induction xs with | nil => rfl | cons x xs ih => simp_all [List.attachWith_append]", "apply List.ext_getElem <;> simp", "simp", "grind", "apply List.ext_getElem"], "usd": 0.007532999999999568}

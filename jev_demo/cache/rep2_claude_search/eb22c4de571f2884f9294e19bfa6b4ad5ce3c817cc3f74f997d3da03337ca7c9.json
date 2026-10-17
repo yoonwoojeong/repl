@@ -1,0 +1,1 @@
+{"tactics": ["intro F", "intro F; have key : ∀ (x y : List α) (s : x.Sublist y), List.Sublist.below (motive := motive) s ∧ motive x y s := by (intro x y s; induction s <;> (constructor <;> first | (apply F; constructor <;> simp_all) | (constructor <;> simp_all))); exact (key a a_1 t).2", "intro h"], "usd": 0.017417000000000016}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α p l", "intro α p l <;> induction l <;> simp_all", "intro α p l <;> induction l <;> grind [List.perm_middle, List.Perm.cons]", "intro α p l <;> exact List.perm_append_comm.trans (List.filter_append_perm p l |>.symm.trans (List.Perm.refl l))"], "usd": 0.01137699999999997}

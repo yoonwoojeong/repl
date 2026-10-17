@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.getElem_eraseIdx, dif_neg (by omega)]", "simp [List.getElem_eraseIdx, Nat.not_lt.mpr h1]", "rw [List.getElem_eraseIdx]", "simp only [List.getElem_eraseIdx]", "grind [List.getElem_eraseIdx]", "induction l generalizing i j"], "usd": 0.010701000000000072}

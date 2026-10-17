@@ -1,0 +1,1 @@
+{"tactics": ["intro m α β γ inst _ f g l init", "intros", "intro m α β γ inst _ f g l init <;> induction l <;> simp_all [List.filterMap_cons, List.foldrM_cons] <;> split <;> simp_all", "intro m α β γ inst _ f g l init <;> induction l <;> grind [List.filterMap_cons, List.foldrM_cons]"], "usd": 0.01056900000000005}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i β α inst b f l", "simp only [List.count, List.countP_filterMap]", "simp [List.count, List.countP_filterMap]", "unfold List.count", "induction ‹List _› with | nil => rfl | cons x xs ih => simp only [List.filterMap_cons, List.countP_cons]; cases h : f✝ x <;> simp_all [List.count_cons] <;> rfl"], "usd": 0.0173890000000001}

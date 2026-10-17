@@ -1,0 +1,2324 @@
+{
+ "model": {
+  "proved": 1,
+  "proved_easy": 0,
+  "proved_hard": 1,
+  "mean_calls": 39.0,
+  "mean_seconds": 2.506,
+  "per_theorem": [
+   {
+    "name": "h2_sum_cubes",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 39,
+    "escalations": 1,
+    "seconds": 2.506,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sum_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.487,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_compile_correct",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 34,
+    "escalations": 1,
+    "seconds": 0.825,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_length",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 40,
+    "escalations": 1,
+    "seconds": 0.473,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_sorted",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 1.808,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_coprime",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 0.985,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_add",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 52,
+    "escalations": 1,
+    "seconds": 1.249,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_six_dvd_consec",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.206,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sq_le_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 1.056,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_is_even",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.234,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_gt",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 1.173,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_count_isort",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.202,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev_append_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 0.679,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_take_drop_sum",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 2.852,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_succ",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 1.026,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_idem",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 0.851,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev2_append",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 0.753,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_lt_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 2,
+    "seconds": 1.14,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_prod_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.212,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fast_fib",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.253,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   }
+  ]
+ },
+ "model_no_premise": {
+  "proved": 1,
+  "proved_easy": 0,
+  "proved_hard": 1,
+  "mean_calls": 19.0,
+  "mean_seconds": 0.986,
+  "per_theorem": [
+   {
+    "name": "h2_sum_cubes",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 19,
+    "escalations": 1,
+    "seconds": 0.986,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sum_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.245,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_compile_correct",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 14,
+    "escalations": 1,
+    "seconds": 0.587,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_length",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 20,
+    "escalations": 1,
+    "seconds": 0.205,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_sorted",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 31,
+    "escalations": 2,
+    "seconds": 1.32,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_coprime",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 23,
+    "escalations": 1,
+    "seconds": 0.422,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_add",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 32,
+    "escalations": 1,
+    "seconds": 0.824,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_six_dvd_consec",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.223,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sq_le_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 29,
+    "escalations": 1,
+    "seconds": 0.5,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_is_even",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.178,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_gt",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 59,
+    "escalations": 4,
+    "seconds": 1.181,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_count_isort",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.238,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev_append_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.18,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_take_drop_sum",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 4,
+    "seconds": 1.455,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_succ",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 51,
+    "escalations": 3,
+    "seconds": 1.3,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_idem",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.217,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev2_append",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.111,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_lt_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.161,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_prod_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.211,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fast_fib",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 6,
+    "escalations": 0,
+    "seconds": 0.164,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   }
+  ]
+ },
+ "fixed": {
+  "proved": 0,
+  "proved_easy": 0,
+  "proved_hard": 0,
+  "mean_calls": null,
+  "mean_seconds": null,
+  "per_theorem": [
+   {
+    "name": "h2_sum_cubes",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.167,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sum_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.174,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_compile_correct",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.29,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_length",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.287,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_sorted",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.201,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_coprime",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.173,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_add",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.216,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_six_dvd_consec",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.117,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sq_le_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.102,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_is_even",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.214,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_gt",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.299,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_count_isort",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.261,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev_append_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.191,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_take_drop_sum",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.25,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_succ",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.332,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_idem",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.182,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev2_append",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.155,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_lt_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.149,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_prod_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.15,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fast_fib",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.18,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   }
+  ]
+ },
+ "random": {
+  "proved": 0,
+  "proved_easy": 0,
+  "proved_hard": 0,
+  "mean_calls": null,
+  "mean_seconds": null,
+  "per_theorem": [
+   {
+    "name": "h2_sum_cubes",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.209,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sum_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.168,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_compile_correct",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.296,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_length",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.174,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_sorted",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.163,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_coprime",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.173,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_add",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.208,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_six_dvd_consec",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.104,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sq_le_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.099,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_is_even",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.18,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_gt",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.292,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_count_isort",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.175,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev_append_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.149,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_take_drop_sum",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.155,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_succ",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.421,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_idem",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.206,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev2_append",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.17,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_lt_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.169,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_prod_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.175,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fast_fib",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 3,
+    "escalations": 0,
+    "seconds": 0.196,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   }
+  ]
+ },
+ "grind_only": {
+  "proved": 0,
+  "proved_easy": 0,
+  "proved_hard": 0,
+  "mean_calls": null,
+  "mean_seconds": null,
+  "per_theorem": [
+   {
+    "name": "h2_sum_cubes",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.181,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nn : Nat\nh : ¬4 * sumCube n = n * (n + 1) * (n * (n + 1))\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬4 * sumCube n = n * (n + 1) * (n * (n + 1))\n  [eqc] False propositions\n    [prop] 4 * sumCube n = n * (n + 1) * (n * (n + 1))\n  [ematch] E-matching patterns\n    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]\n    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]\n  [cutsat] Assignment satisfying linear constraints\n    [assign] n := 0\n    [assign] sumCube n := 0\n    [assign] 「↑n ^ 2」 := 1\n    [assign] 「↑n ^ 3」 := 0\n    [assign] 「↑n ^ 4」 := 0\n  [ring] Ring `Lean.Grind.Ring.OfSemiring.Q Nat`\n    [diseqs] Disequalities\n      [_] ¬-1 * ↑n ^ 4 + -2 * ↑n ^ 3 + -1 * ↑n ^ 2 + 4 * ↑(sumCube n) = 0",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_sum_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.174,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nl : List Nat\nh : ¬sumAcc l 0 = l.sum\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬sumAcc l 0 = l.sum\n  [eqc] False propositions\n    [prop] sumAcc l 0 = l.sum\n  [cutsat] Assignment satisfying linear constraints\n    [assign] sumAcc l 0 := 1\n    [assign] l.sum := 2",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_compile_correct",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.389,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\ne : Expr\nh : ¬exec (compile e) [] = [eval e]\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬exec (compile e) [] = [eval e]\n  [eqc] False propositions\n    [prop] exec (compile e) [] = [eval e]",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_isort_length",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.18,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nl : List Nat\nh : ¬(isort l).length = l.length\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬(isort l).length = l.length\n  [eqc] False propositions\n    [prop] (isort l).length = l.length\n  [ematch] E-matching patterns\n    [thm] List.eq_nil_of_length_eq_zero: [@List.length #2 #1]\n  [cutsat] Assignment satisfying linear constraints\n    [assign] l.length := 2\n    [assign] (isort l).length := 1",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_isort_sorted",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.166,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nl : List Nat\nh : ¬Sorted (isort l)\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬Sorted (isort l)\n  [eqc] False propositions\n    [prop] Sorted (isort l)",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_fib_coprime",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.176,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nn : Nat\nh : ¬(fib n).gcd (fib (n + 1)) = 1\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬(fib n).gcd (fib (n + 1)) = 1\n  [eqc] False propositions\n    [prop] (fib n).gcd (fib (n + 1)) = 1\n  [cutsat] Assignment satisfying linear constraints\n    [assign] n := 0\n    [assign] fib n := 3\n    [assign] fib (n + 1) := 4\n    [assign] (fib n).gcd (fib (n + 1)) := 2",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_fib_add",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.229,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind.1.1.1\nm n : Nat\nh : ¬fib (m + n + 1) = fib m * fib n + fib (m + 1) * fib (n + 1)\nh_1 : n + 1 = m + n + 1\nh_2 : m + 1 = m + n + 1\nh_3 : fib n = fib (n + 1)\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬fib (m + n + 1) = fib m * fib n + fib (m + 1) * fib (n + 1)\n    [prop] n + 1 = m + n + 1\n    [prop] m + 1 = m + n + 1\n    [prop] fib n = fib (n + 1)\n  [eqc] True propositions\n    [prop] ↑(fib m) = ↑(fib (m + 1))\n    [prop] ↑(fib n) = ↑(fib (n + 1))\n    [prop] m = n\n    [prop] fib m = fib (m + 1)\n    [prop] fib n = fib (n + 1)\n    [prop] m + 1 = n + 1\n    [prop] m + 1 = m + n + 1\n    [prop] n + 1 = m + n + 1\n  [eqc] False propositions\n    [prop] fib (m + n + 1) = fib m * fib n + fib (m + 1) * fib (n + 1)\n  [eqc] Equivalence classes\n    [eqc] {m, n, m + n}\n    [eqc] {fib m, fib n, fib (m + 1), fib (n + 1), fib (m + n + 1)}\n    [eqc] {m + 1, n + 1, m + n + 1}\n    [eqc] {fib m * fib n, fib (m + 1) * fib (n + 1)}\n    [eqc] others\n      [eqc] {↑m, ↑n}\n      [eqc] {↑(fib m), ↑(fib n), ↑(fib (m + 1)), ↑(fib (n + 1))}\n      [eqc] {↑m, ↑n}\n      [eqc] {↑(fib m), ↑(fib n), ↑(fib (m + 1)), ↑(fib (n + 1))}\n      [eqc] {↑(m + 1), ↑(n + 1), ↑(m + n + 1)}\n      [eqc] {↑(fib m) * ↑(fib n), ↑(fib (m + 1)) * ↑(fib (n + 1))}\n      [eqc] {-1 * (↑(fib m) * ↑(fib n)), -1 * (↑(fib (m + 1)) * ↑(fib (n + 1)))}\n  [cases] Case analyses\n    [cases] [1/2]: n + 1 = m + n + 1\n      [cases] source: Model-based theory combination at argument #0 of\n            fib (n + 1)\n          and\n            fib (m + n + 1)\n    [cases] [1/2]: m + 1 = m + n + 1\n      [cases] source: Model-based theory combination at argument #0 of\n            fib (m + 1)\n          and\n            fib (m + n + 1)\n    [cases] [1/2]: fib n = fib (n + 1)\n      [cases] source: Model-based theory combination at argument #5 of\n            fib (m + 1) * fib (n + 1)\n          and\n            fib m * fib n\n  [cutsat] Assignment satisfying linear constraints\n    [assign] m := 0\n    [assign] n := 0\n    [assign] fib m := 0\n    [assign] fib n := 0\n    [assign] fib (m + 1) := 0\n    [assign] fib (n + 1) := 0\n    [assign] fib (m + n + 1) := 0\n  [ring] Rings\n    [ring] Ring `Lean.Grind.Ring.OfSemiring.Q Nat`\n      [basis] Basis\n        [_] ↑n = 0\n        [_] ↑m = 0\n        [_] ↑(fib (n + 1)) + -1 * ↑(fib (m + 1)) = 0\n        [_] ↑(fib m) + -1 * ↑(fib n) = 0\n        [_] ↑(fib n) + -1 * ↑(fib (m + 1)) = 0\n      [diseqs] Disequalities\n        [_] ¬-2 * ↑(fib (m + 1)) ^ 2 + ↑(fib (m + 1)) = 0\n    [ring] Ring `Int`\n      [basis] Basis\n        [_] ↑m + -1 * ↑n = 0\n        [_] ↑(fib m) + -1 * ↑(fib n) = 0\n        [_] ↑(fib n) + -1 * ↑(fib (n + 1)) = 0\n        [_] ↑(fib (m + 1)) + -1 * ↑(fib (n + 1)) = 0",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_six_dvd_consec",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.127,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nn : Nat\nh : ¬6 ∣ n * (n + 1) * (n + 2)\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬6 ∣ n * (n + 1) * (n + 2)\n    [prop] 1 ≤ n * (n + 1) * (n + 2) % 6\n    [prop] ↑n * (↑n + 1) * (↑n + 2) % 6 + -5 ≤ 0\n    [prop] -1 * (↑n * (↑n + 1) * (↑n + 2) % 6) ≤ 0\n    [prop] 6 * (↑n * (↑n + 1) * (↑n + 2) / 6) + ↑n * (↑n + 1) * (↑n + 2) % 6 + -1 * (↑n * (↑n + 1) * (↑n + 2)) = 0\n  [eqc] True propositions\n    [prop] ↑n * (↑n + 1) * (↑n + 2) % 6 + -5 ≤ 0\n    [prop] -1 * (↑n * (↑n + 1) * (↑n + 2) % 6) ≤ 0\n    [prop] 1 ≤ n * (n + 1) * (n + 2) % 6\n  [eqc] False propositions\n    [prop] 6 ∣ n * (n + 1) * (n + 2)\n  [eqc] Equivalence classes\n    [eqc] others\n      [eqc] {0,\n          -1 * ↑n ^ 3 + -3 * ↑n ^ 2 + -2 * ↑n + ↑n * (↑n + 1) * (↑n + 2) % 6 + 6 * (↑n * (↑n + 1) * (↑n + 2) / 6),\n          6 * (↑n * (↑n + 1) * (↑n + 2) / 6) + ↑n * (↑n + 1) * (↑n + 2) % 6 + -1 * (↑n * (↑n + 1) * (↑n + 2))}\n  [ematch] E-matching patterns\n    [thm] Nat.dvd_mul_left_of_dvd: [@Dvd.dvd `[Nat] `[Nat.instDvd] #3 #2,\n         @HMul.hMul `[Nat] `[Nat] `[Nat] `[instHMul] #0 #2]\n    [thm] Nat.dvd_mul_right_of_dvd: [@Dvd.dvd `[Nat] `[Nat.instDvd] #3 #2,\n         @HMul.hMul `[Nat] `[Nat] `[Nat] `[instHMul] #2 #0]\n    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]\n    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]\n  [cutsat] Assignment satisfying linear constraints\n    [assign] n := 0\n    [assign] 「↑n ^ 2」 := 0\n    [assign] 「↑n ^ 3」 := 1\n  [ring] Ring `Int`\n    [basis] Basis\n      [_] ↑n ^ 3 + 3 * ↑n ^ 2 + 2 * ↑n + -1 * (↑n * (↑n + 1) * (↑n + 2) % 6) + -6 * (↑n * (↑n + 1) * (↑n + 2) / 6) = 0",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_sq_le_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.095,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nn : Nat\nh : 4 ≤ n\nh_1 : 2 ^ n + 1 ≤ n * n\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] 4 ≤ n\n    [prop] 2 ^ n + 1 ≤ n * n\n    [prop] 1 ≤ 2 ^ n\n    [prop] 1 ≤ n → 2 ∣ 2 ^ n\n  [eqc] True propositions\n    [prop] 4 ≤ n\n    [prop] 2 ^ n + 1 ≤ n * n\n    [prop] 2 ∣ 2 ^ n\n    [prop] 1 ≤ n\n    [prop] 1 ≤ 2 ^ n\n    [prop] 1 ≤ n → 2 ∣ 2 ^ n\n  [ematch] E-matching patterns\n    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]\n    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]\n    [thm] Nat.dvd_mul_right_of_dvd: [@Dvd.dvd `[Nat] `[Nat.instDvd] #3 #2,\n         @HMul.hMul `[Nat] `[Nat] `[Nat] `[instHMul] #2 #0]\n    [thm] Nat.dvd_mul_left_of_dvd: [@Dvd.dvd `[Nat] `[Nat.instDvd] #3 #2,\n         @HMul.hMul `[Nat] `[Nat] `[Nat] `[instHMul] #0 #2]\n  [cutsat] Assignment satisfying linear constraints\n    [assign] n := 4\n    [assign] 「↑n ^ 2」 := 3\n    [assign] 「2 ^ n」 := 2\n    [assign] 「2 ^ n」 := 2\n[grind] Issues\n  [issue] ring term with unexpected instance\n        2 ^ n\n  [issue] ring term with unexpected instance\n        2 ^ n\n  [issue] ring term with unexpected instance\n        2 ^ n\n  [issue] ring term with unexpected instance\n        2 ^ n\n[grind] Diagnostics\n  [ematch] E-matching Diagnostics\n    [thm] Theorem Instance Count\n      [thm] Nat.div_pow_of_pos ↦ 1\n      [thm] Nat.pow_pos ↦ 1",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_is_even",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.169,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind.1\nn : Nat\nh : (isEven n = true) = ¬n % 2 = 0\nleft : isEven n = true\nright : ¬n % 2 = 0\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] (isEven n = true) = ¬n % 2 = 0\n    [prop] ↑n % 2 + -1 ≤ 0\n    [prop] -1 * (↑n % 2) ≤ 0\n    [prop] -1 * ↑n + 2 * (↑n / 2) + ↑n % 2 = 0\n    [prop] isEven n = true\n    [prop] ¬n % 2 = 0\n  [eqc] True propositions\n    [prop] ¬n % 2 = 0\n    [prop] (isEven n = true) = ¬n % 2 = 0\n    [prop] isEven n = true\n    [prop] ↑n % 2 + -1 ≤ 0\n    [prop] -1 * (↑n % 2) ≤ 0\n  [eqc] False propositions\n    [prop] n % 2 = 0\n  [eqc] Equivalence classes\n    [eqc] {true, isEven n}\n    [eqc] others\n      [eqc] {↑0, 0, -1 * ↑n + 2 * (↑n / 2) + ↑n % 2}\n  [cases] Case analyses\n    [cases] [1/2]: (isEven n = true) = ¬n % 2 = 0\n      [cases] source: Initial goal\n  [cutsat] Assignment satisfying linear constraints\n    [assign] n := 1\n  [ring] Ring `Int`\n    [basis] Basis\n      [_] ↑n % 2 + -1 * ↑n + 2 * (↑n / 2) = 0",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_ack_gt",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.327,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nm n : Nat\nh : ack m n ≤ n\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ack m n ≤ n\n  [eqc] True propositions\n    [prop] ack m n ≤ n\n  [cutsat] Assignment satisfying linear constraints\n    [assign] m := 1\n    [assign] n := 0\n    [assign] ack m n := 0",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_count_isort",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.185,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nx : Nat\nl : List Nat\nh : ¬count x (isort l) = count x l\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬count x (isort l) = count x l\n  [eqc] False propositions\n    [prop] count x (isort l) = count x l",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_rev_append_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.192,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nl : List Nat\nh : ¬rev2 (rev2 l) = l\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬rev2 (rev2 l) = l\n  [eqc] False propositions\n    [prop] rev2 (rev2 l) = l",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_take_drop_sum",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.223,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nn : Nat\nl : List Nat\nh : ¬sumL (List.drop n l) + sumL (List.take n l) = sumL l\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬sumL (List.drop n l) + sumL (List.take n l) = sumL l\n  [eqc] False propositions\n    [prop] sumL (List.drop n l) + sumL (List.take n l) = sumL l\n  [ematch] E-matching patterns\n    [thm] List.drop_zero: [@List.drop #1 `[0] #0]\n    [thm] List.drop_take_self: [@List.drop #1 #2 (@List.take _ #2 #0)]\n    [thm] List.take_add: [@List.take #3 (@HAdd.hAdd `[Nat] `[Nat] `[Nat] `[instHAdd] #1 #0) #2]\n    [thm] List.take_take: [@List.take #3 #2 (@List.take _ #1 #0)]\n    [thm] List.take_zero: [@List.take #1 `[0] #0]\n  [cutsat] Assignment satisfying linear constraints\n    [assign] n := 1\n    [assign] sumL l := 2\n    [assign] sumL (List.drop n l) := 0\n    [assign] sumL (List.take n l) := 0",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_ack_succ",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.409,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nm n : Nat\nh : ack m (n + 1) ≤ ack m n\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ack m (n + 1) ≤ ack m n\n  [eqc] True propositions\n    [prop] ack m (n + 1) ≤ ack m n\n  [cutsat] Assignment satisfying linear constraints\n    [assign] m := 2\n    [assign] n := 0\n    [assign] ack m n := 0\n    [assign] ack m (n + 1) := 0",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_isort_idem",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.17,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nl : List Nat\nh : ¬isort (isort l) = isort l\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬isort (isort l) = isort l\n  [eqc] False propositions\n    [prop] isort (isort l) = isort l",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_rev2_append",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.183,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nl₁ l₂ : List Nat\nh : ¬rev2 (l₁ ++ l₂) = rev2 l₂ ++ rev2 l₁\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬rev2 (l₁ ++ l₂) = rev2 l₂ ++ rev2 l₁\n  [eqc] False propositions\n    [prop] rev2 (l₁ ++ l₂) = rev2 l₂ ++ rev2 l₁\n  [ematch] E-matching patterns\n    [thm] List.append_assoc: [@HAppend.hAppend (List #3) (List _) (List _) _ #2 (@HAppend.hAppend (List _) (List _) (List _) _ #1 #0)]\n    [thm] List.append_assoc: [@HAppend.hAppend (List #3) (List _) (List _) _ (@HAppend.hAppend (List _) (List _) (List _) _ #2 #1) #0]\n    [thm] List.nil_append: [@HAppend.hAppend (List #1) (List _) (List _) _ (@List.nil _) #0]\n    [thm] List.append_nil: [@HAppend.hAppend (List #1) (List _) (List _) _ #0 (@List.nil _)]",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_fib_lt_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.228,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nn : Nat\nh : 2 ^ n ≤ fib n\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] 2 ^ n ≤ fib n\n    [prop] 1 ≤ 2 ^ n\n  [eqc] True propositions\n    [prop] 2 ^ n ≤ fib n\n    [prop] 1 ≤ 2 ^ n\n  [ematch] E-matching patterns\n    [thm] Nat.pow_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]\n    [thm] Nat.div_pow_of_pos: [@HPow.hPow `[Nat] `[Nat] `[Nat] `[instHPow] #2 #1]\n  [cutsat] Assignment satisfying linear constraints\n    [assign] n := 0\n    [assign] fib n := 1\n    [assign] 「2 ^ n」 := 1\n    [assign] 「2 ^ n」 := 1\n[grind] Issues\n  [issue] ring term with unexpected instance\n        2 ^ n\n  [issue] ring term with unexpected instance\n        2 ^ n\n  [issue] ring term with unexpected instance\n        2 ^ n\n  [issue] ring term with unexpected instance\n        2 ^ n\n[grind] Diagnostics\n  [ematch] E-matching Diagnostics\n    [thm] Theorem Instance Count\n      [thm] Nat.pow_pos ↦ 1",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_prod_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.163,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nl : List Nat\nh : ¬prodAcc l 1 = prodL l\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬prodAcc l 1 = prodL l\n  [eqc] False propositions\n    [prop] prodAcc l 1 = prodL l\n  [cutsat] Assignment satisfying linear constraints\n    [assign] prodL l := 3\n    [assign] prodAcc l 1 := 2",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_fast_fib",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 0.163,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "grind",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\n`grind` failed\ncase grind\nn : Nat\nh : ¬fibAux n 0 1 = fib n\n⊢ False\n[grind] Goal diagnostics\n  [facts] Asserted facts\n    [prop] ¬fibAux n 0 1 = fib n\n  [eqc] False propositions\n    [prop] fibAux n 0 1 = fib n\n  [cutsat] Assignment satisfying linear constraints\n    [assign] n := 2\n    [assign] fib n := 4\n    [assign] fibAux n 0 1 := 3",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   }
+  ]
+ },
+ "try_only": {
+  "proved": 5,
+  "proved_easy": 0,
+  "proved_hard": 5,
+  "mean_calls": 1.0,
+  "mean_seconds": 1.81,
+  "per_theorem": [
+   {
+    "name": "h2_sum_cubes",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 1.175,
+    "tactics": [
+     "intros",
+     "try?"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": true,
+      "completed": true,
+      "error": null,
+      "infos": [
+       "Try these:\n  [apply] (fun_induction sumCube) <;> grind\n  [apply] (fun_induction sumCube) <;> grind only"
+      ],
+      "proved": true
+     }
+    ]
+   },
+   {
+    "name": "h2_sum_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 1.939,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nl✝ : List Nat\n⊢ sumAcc l✝ 0 = l✝.sum",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_compile_correct",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 5.566,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\ne✝ : Expr\n⊢ exec (compile e✝) [] = [eval e✝]",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_isort_length",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 2.234,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nl✝ : List Nat\n⊢ (isort l✝).length = l✝.length",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_isort_sorted",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 1.516,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nl✝ : List Nat\n⊢ Sorted (isort l✝)",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_fib_coprime",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 2.346,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nn✝ : Nat\n⊢ (fib n✝).gcd (fib (n✝ + 1)) = 1",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_fib_add",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 2.603,
+    "tactics": [
+     "intros",
+     "try?"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": true,
+      "completed": true,
+      "error": null,
+      "infos": [
+       "Try these:\n  [apply] · expose_names; fun_induction fib m <;> grind [= fib]\n  [apply] · expose_names; fun_induction fib m <;> grind only [fib]\n  [apply] · expose_names;\n    · fun_induction fib m\n      · grind => instantiate only [fib]\n      · grind => instantiate only [fib]\n      ·\n        grind =>\n          instantiate only [fib]\n          ring"
+      ],
+      "proved": true
+     }
+    ]
+   },
+   {
+    "name": "h2_six_dvd_consec",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 1.703,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nn✝ : Nat\n⊢ 6 ∣ n✝ * (n✝ + 1) * (n✝ + 2)",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_sq_le_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 1.703,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nn✝ : Nat\na✝ : 4 ≤ n✝\n⊢ n✝ * n✝ ≤ 2 ^ n✝",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_is_even",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 1.794,
+    "tactics": [
+     "intros",
+     "try?"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": true,
+      "completed": true,
+      "error": null,
+      "infos": [
+       "Try these:\n  [apply] (fun_induction isEven) <;> grind\n  [apply] (fun_induction isEven) <;> grind only\n  [apply] ·\n    fun_induction isEven\n    · simp\n    · simp\n    · simp +arith [*]\n  [apply] ·\n    fun_induction isEven\n    · simp only [Nat.zero_mod, BEq.rfl]\n    · simp only [Nat.mod_succ, Nat.reduceBEq]\n    · simp +arith only [Nat.succ_eq_add_one, Nat.add_mod_right, *]\n  [apply] ·\n    fun_induction isEven\n    · rfl\n    · rfl\n    · grind only [#8a1b]\n  [apply] ·\n    fun_induction isEven\n    · rfl\n    · rfl\n    · grind => cases #8a1b\n  [apply] ·\n    fun_induction isEven\n    · rfl\n    · simp_all\n    · grind only [#8a1b]"
+      ],
+      "proved": true
+     }
+    ]
+   },
+   {
+    "name": "h2_ack_gt",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 1.379,
+    "tactics": [
+     "intros",
+     "try?"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": true,
+      "completed": true,
+      "error": null,
+      "infos": [
+       "Try these:\n  [apply] (fun_induction ack) <;> grind\n  [apply] (fun_induction ack) <;> grind only"
+      ],
+      "proved": true
+     }
+    ]
+   },
+   {
+    "name": "h2_count_isort",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 2.702,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nx✝ : Nat\nl✝ : List Nat\n⊢ count x✝ (isort l✝) = count x✝ l✝",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_rev_append_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 1.428,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nl✝ : List Nat\n⊢ rev2 (rev2 l✝) = l✝",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_take_drop_sum",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 2.291,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nn✝ : Nat\nl✝ : List Nat\n⊢ sumL (List.take n✝ l✝) + sumL (List.drop n✝ l✝) = sumL l✝",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_ack_succ",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 2.468,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nm✝ n✝ : Nat\n⊢ ack m✝ n✝ < ack m✝ (n✝ + 1)",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_isort_idem",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 2.113,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nl✝ : List Nat\n⊢ isort (isort l✝) = isort l✝",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_rev2_append",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 2.213,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nl₁✝ l₂✝ : List Nat\n⊢ rev2 (l₁✝ ++ l₂✝) = rev2 l₂✝ ++ rev2 l₁✝",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_fib_lt_two_pow",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 2.097,
+    "tactics": [
+     "intros",
+     "try?"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": true,
+      "completed": true,
+      "error": null,
+      "infos": [
+       "Try these:\n  [apply] (fun_induction fib) <;> grind\n  [apply] (fun_induction fib) <;> grind only\n  [apply] ·\n    fun_induction fib\n    · solve_by_elim\n    · solve_by_elim\n    · grind => lia\n  [apply] ·\n    fun_induction fib\n    · solve_by_elim\n    · simp\n    · grind => lia\n  [apply] ·\n    fun_induction fib\n    · solve_by_elim\n    · simp only [Nat.pow_one, Nat.lt_add_one]\n    · grind => lia\n  [apply] ·\n    fun_induction fib\n    · solve_by_elim\n    · simp_all\n    · grind => lia\n  [apply] ·\n    fun_induction fib\n    · simp\n    · solve_by_elim\n    · grind => lia\n  [apply] ·\n    fun_induction fib\n    · simp\n    · simp\n    · grind => lia"
+      ],
+      "proved": true
+     }
+    ]
+   },
+   {
+    "name": "h2_prod_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 1.942,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nl✝ : List Nat\n⊢ prodAcc l✝ 1 = prodL l✝",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   },
+   {
+    "name": "h2_fast_fib",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 1,
+    "escalations": 0,
+    "seconds": 2.857,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0,
+    "trace": [
+     {
+      "chosen": "try?",
+      "ok": false,
+      "completed": false,
+      "error": "Lean error:\nTactic `try?` failed: consider using `grind` manually, or `try? +missing` for partial proofs containing `sorry`\n\nn✝ : Nat\n⊢ fibAux n✝ 0 1 = fib n✝",
+      "infos": [],
+      "proved": false
+     }
+    ]
+   }
+  ]
+ },
+ "fixed_expand_all": {
+  "proved": 1,
+  "proved_easy": 0,
+  "proved_hard": 1,
+  "mean_calls": 36.0,
+  "mean_seconds": 1.909,
+  "per_theorem": [
+   {
+    "name": "h2_sum_cubes",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 36,
+    "escalations": 3,
+    "seconds": 1.909,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sum_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 6,
+    "seconds": 1.842,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_compile_correct",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 23,
+    "escalations": 2,
+    "seconds": 0.95,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_length",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 6,
+    "seconds": 1.91,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_sorted",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 48,
+    "escalations": 4,
+    "seconds": 4.78,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_coprime",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 59,
+    "escalations": 5,
+    "seconds": 1.528,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_add",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 3.034,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_six_dvd_consec",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 6,
+    "seconds": 3.033,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sq_le_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.816,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_is_even",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 59,
+    "escalations": 5,
+    "seconds": 1.328,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_gt",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.456,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_count_isort",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.348,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev_append_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 48,
+    "escalations": 4,
+    "seconds": 0.945,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_take_drop_sum",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.683,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_succ",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.367,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_idem",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 48,
+    "escalations": 4,
+    "seconds": 1.402,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev2_append",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 0.923,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_lt_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 59,
+    "escalations": 5,
+    "seconds": 1.46,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_prod_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 48,
+    "escalations": 4,
+    "seconds": 1.101,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fast_fib",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 48,
+    "escalations": 4,
+    "seconds": 1.086,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   }
+  ]
+ },
+ "random_expand_all": {
+  "proved": 1,
+  "proved_easy": 0,
+  "proved_hard": 1,
+  "mean_calls": 44.0,
+  "mean_seconds": 4.581,
+  "per_theorem": [
+   {
+    "name": "h2_sum_cubes",
+    "difficulty": "hard",
+    "proved": true,
+    "calls": 44,
+    "escalations": 4,
+    "seconds": 4.581,
+    "tactics": [
+     "intro n",
+     "induction n <;> simp_all",
+     "grind"
+    ],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sum_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 6,
+    "seconds": 1.7,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_compile_correct",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 23,
+    "escalations": 2,
+    "seconds": 0.789,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_length",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 6,
+    "seconds": 2.091,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_sorted",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 48,
+    "escalations": 4,
+    "seconds": 3.977,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_coprime",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 59,
+    "escalations": 5,
+    "seconds": 1.519,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_add",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 2.553,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_six_dvd_consec",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 6,
+    "seconds": 2.108,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_sq_le_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.729,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_is_even",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 59,
+    "escalations": 5,
+    "seconds": 1.23,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_gt",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.566,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_count_isort",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.818,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev_append_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 48,
+    "escalations": 4,
+    "seconds": 1.047,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_take_drop_sum",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.678,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_ack_succ",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.534,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_isort_idem",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 48,
+    "escalations": 4,
+    "seconds": 1.334,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_rev2_append",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 64,
+    "escalations": 5,
+    "seconds": 1.191,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fib_lt_two_pow",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 59,
+    "escalations": 5,
+    "seconds": 1.44,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_prod_acc",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 48,
+    "escalations": 4,
+    "seconds": 1.355,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   },
+   {
+    "name": "h2_fast_fib",
+    "difficulty": "hard",
+    "proved": false,
+    "calls": 48,
+    "escalations": 4,
+    "seconds": 1.121,
+    "tactics": [],
+    "timeouts": 0,
+    "dead_state_calls": 0
+   }
+  ]
+ },
+ "ece": 0.1535,
+ "ece_examples": 25,
+ "temperatures": {
+  "kind": 2.3,
+  "premise": 4.0
+ },
+ "shortlist_recall": 0.0,
+ "shortlist_recall_train": 0.25,
+ "train_stats": {
+  "steps": 105,
+  "kind_skipped": 0,
+  "premise_steps": 8,
+  "premise_hits": 2,
+  "n_choice": 107,
+  "n_binary": 105,
+  "n_holdout_choice": 21
+ },
+ "test_stats": {
+  "steps": 62,
+  "kind_skipped": 37,
+  "premise_steps": 7,
+  "premise_hits": 0
+ },
+ "n_easy": 0,
+ "n_hard": 20,
+ "criterion_met": false,
+ "beats_exhaustive_search": false,
+ "reachability": {
+  "h2_sum_cubes": false,
+  "h2_sum_acc": false,
+  "h2_compile_correct": false,
+  "h2_isort_length": false,
+  "h2_isort_sorted": false,
+  "h2_fib_coprime": false,
+  "h2_fib_add": false,
+  "h2_six_dvd_consec": false,
+  "h2_sq_le_two_pow": false,
+  "h2_is_even": false,
+  "h2_ack_gt": false,
+  "h2_count_isort": false,
+  "h2_rev_append_acc": false,
+  "h2_take_drop_sum": false,
+  "h2_ack_succ": false,
+  "h2_isort_idem": false,
+  "h2_rev2_append": false,
+  "h2_fib_lt_two_pow": false,
+  "h2_prod_acc": false,
+  "h2_fast_fib": false
+ }
+}

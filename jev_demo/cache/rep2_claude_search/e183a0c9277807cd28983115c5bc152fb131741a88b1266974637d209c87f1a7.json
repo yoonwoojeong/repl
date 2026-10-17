@@ -1,0 +1,1 @@
+{"tactics": ["intro α as bs", "intro α as bs <;> simp [Array.perm_iff_toList_perm]", "intro α as bs <;> exact ⟨fun h => ⟨h⟩, fun h => h.toList⟩", "intro α as bs <;> exact Iff.rfl", "intro α as bs <;> constructor <;> intro h <;> simpa [Array.perm_iff_toList_perm] using h", "intro α as bs <;> grind [Array.perm_iff_toList_perm]"], "usd": 0.010201000000000349}

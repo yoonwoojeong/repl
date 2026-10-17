@@ -1,0 +1,1 @@
+{"tactics": ["intro n i; omega", "intros; omega", "intro n i; exact Nat.lt_succ_iff", "intro n i; constructor <;> intro h <;> omega", "intro n i", "simp [Nat.lt_succ_iff]", "intro n i; simp only [Nat.lt_succ_iff]"], "usd": 0.0030609999999997584}

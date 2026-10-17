@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.maxIdxOn, List.maxOn, List.minIdxOn_append]", "unfold List.maxIdxOn", "grind", "simp only [List.maxIdxOn]", "rw [List.maxIdxOn_eq_minIdxOn]", "split"], "usd": 0.00811699999999993}

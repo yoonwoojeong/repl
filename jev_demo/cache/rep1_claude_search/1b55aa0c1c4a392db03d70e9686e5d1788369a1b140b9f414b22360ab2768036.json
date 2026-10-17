@@ -1,0 +1,1 @@
+{"tactics": ["rename_i trans total a l", "grind [List.mergeSort_perm, List.sorted_mergeSort]", "simp only [List.mergeSort]", "exact ⟨_, _, rfl, rfl, fun _ _ => rfl⟩", "constructor"], "usd": 0.00974499999999967}

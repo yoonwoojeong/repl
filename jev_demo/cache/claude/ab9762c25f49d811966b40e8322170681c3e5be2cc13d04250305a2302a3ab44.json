@@ -1,0 +1,1 @@
+{"tactics": ["simp [Std.Rxo.HasSize.size]", "rfl", "simp", "decide", "grind", "unfold Std.Rxo.HasSize.size <;> simp", "simp [Std.Rxo.HasSize.size] <;> omega", "cases b <;> rfl"], "usd": 0.0028169999999998474}

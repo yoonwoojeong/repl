@@ -1,0 +1,1 @@
+{"tactics": ["exact List.Pairwise.nil", "constructor", "exact .nil", "apply List.Pairwise.nil", "unfold List.Nodup", "exact List.pairwise_nil.mpr trivial"], "usd": 0.005060999999999982}

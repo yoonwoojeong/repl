@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.map_map]", "induction xs <;> simp_all", "rw [List.map_map]", "simp [List.map_map, Function.comp_def, binderNameHint, wfParam]", "induction xs with | nil => rfl | cons x xs ih => simp_all [binderNameHint, wfParam]", "apply List.ext_get <;> simp", "grind", "simp only [List.map_map]"], "usd": 0.003988999999999798}

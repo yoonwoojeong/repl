@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.splitOnP, List.splitOnP.go, h]", "simp [List.splitOnP_cons, h]", "simp [List.splitOnP_cons, List.splitOnP_nil, h]", "simp only [List.nil_append, List.splitOnP, List.splitOnP.go, h, if_true, List.reverse_nil]; rfl", "unfold List.splitOnP; simp [List.splitOnP.go, h]", "grind [List.splitOnP, List.splitOnP.go]"], "usd": 0.012424999999999908}

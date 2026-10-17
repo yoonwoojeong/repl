@@ -1,0 +1,658 @@
+# Jev proof demo (phase 1)
+
+Can a Jev-style "System One" model help write mathematical proofs? This demo rebuilds
+the architecture as a small local NumPy model, uses it as the policy and value function
+of a best-first proof search over the Lean 4 REPL in this repository, and compares it
+with fixed-order, random and core-Lean automation baselines.
+
+Design: `docs/superpowers/specs/2026-10-15-jev-proof-demo-design.md`.
+
+## What Jev is
+
+TypeSafe AI's Jev is a "System One" model: the caller passes a state and a set of typed
+questions (choice / score / yes-no), and Jev answers all of them in one parallel pass,
+returning probabilities and a confidence. Its outputs are restricted to the schema and
+calibrated, so callers act above a confidence threshold and escalate below it; it does
+not generate free text. We rebuild the architecture only, not TypeSafe's product.
+
+## Why Lean 4 (not Isabelle/HOL)
+
+1. **Step-level JSON interface already exists.** This repo is the Lean REPL: `proofState`
+   ids, a `goals` list and `proofStatus`. Isabelle would need the Isabelle server/PIDE plus
+   a custom bridge to get per-step goal states.
+2. **Strong automation in core Lean** (`grind`, `exact?`, `try?`) without Mathlib, so setup
+   stays at `elan` plus `lake build`.
+3. **Phase 2 (Claude as the tactic generator)** depends on the LLM-prover ecosystem, which is
+   mostly Lean. Isabelle's Sledgehammer already has its own learned premise selector, so a
+   Jev-style ranker would add less there and be harder to measure.
+
+## Setup
+
+From the repository root:
+
+```sh
+curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+~/.elan/bin/lake build                 # builds .lake/build/bin/repl (toolchain from lean-toolchain)
+pip install -e 'jev_demo[dev]'         # numpy, pytest
+python -m pytest jev_demo -v           # Lean-marked tests skip if the REPL is not built
+```
+
+Requires Python >= 3.10.
+
+Toolchain fallback: in the dev container elan's release download returned 403, so `lake build`
+could not fetch the toolchain. If that happens, download `lean-4.35.0-linux.tar.zst` from the
+`leanprover/lean4` GitHub release (v4.35.0), unpack it into `~/.elan/toolchains/` (for example
+`~/.elan/toolchains/lean-4.35.0-linux`), and register it with
+`~/.elan/bin/elan toolchain link leanprover/lean4:v4.35.0 ~/.elan/toolchains/lean-4.35.0-linux`
+(adjust the name to match `lean-toolchain`); then re-run `lake build`. The demo's own
+toolchain was installed manually this way.
+
+## Deviations from the design
+
+- Test preludes carry `@[simp]` (ruling R4).
+- Test gold proofs were rewritten to menu-only steps where one exists (R7, Task 4 I1); gold
+  proofs are never seen by any method.
+- "Hard" is qualified: 10 of the 12 hard theorems have a menu proof of at most 3 steps, and
+  some close in a single `simp`.
+- The calibration hold-out is 20% of the train *examples*, so states from one proof can sit on
+  both sides of the split.
+- The plan-mandated `eq_` substring filter in `dump_library.lean` also drops legitimate
+  lemmas (e.g. `Nat.mul_eq_zero`) while auto-generated `.inj` / `.injEq` / `sizeOf_spec`
+  names survive; this is part of the premise-recall limitation.
+- The Lean toolchain was installed manually (see Setup).
+
+## How to run
+
+```sh
+python -m jev_demo run --out jev_demo/results
+```
+
+This replays the 40 training gold proofs to build examples, fits the model (calibrating
+temperatures on a 20% hold-out, seed 0), runs the six methods on the 20 test theorems,
+measures `kind` ECE and premise-shortlist recall on the test gold proofs (measurement only),
+and writes `results.json` and `report.md` to the output directory. The premise library is
+read from the committed cache `jev_demo/data/library.json`.
+
+## Results
+
+Run: `python -m jev_demo run --out jev_demo/results` (full output in
+[`results/report.md`](results/report.md) and [`results/results.json`](results/results.json)).
+Test set: 8 easy and 12 hard theorems. Budget 64 REPL calls, depth 8, top-k 3, τ = 0.5,
+10 s per call (60 s for `try?`).
+
+| method | proved | easy | hard | mean calls (proved) | mean seconds (proved) |
+|---|---|---|---|---|---|
+| model | 16/20 | 8/8 | 8/12 | 14.25 | 0.49 |
+| model_no_premise | 15/20 | 8/8 | 7/12 | 8.67 | 0.37 |
+| fixed | 5/20 | 3/8 | 2/12 | 2.00 | 0.15 |
+| random | 9/20 | 6/8 | 3/12 | 1.44 | 0.15 |
+| grind_only | 8/20 | 6/8 | 2/12 | 1.00 | 0.18 |
+| try_only | 15/20 | 8/8 | 7/12 | 1.00 | 0.90 |
+
+- **Menu reachability** (`data/test_reachability.json`): 10 of the 12 hard theorems (and
+  8/8 easy) have a gold proof inside the phase-1 action space; `test_sq_mod_four` and
+  `test_rev_eq_reverse` do not. No method proved either of them.
+- **ECE** (10 bins) of `kind` on the 52 test gold steps whose kind is in the options: 0.06.
+- **Calibrated temperatures** (20% train hold-out): `kind` = 2.3, `premise` = 4.0 (the top
+  of the grid; only 2 train premise examples exist, so this value is barely informed).
+- **Premise shortlist recall@16**: 0.25 on train (2/8 gold premise steps) and 0.25 on test
+  (1/4). Retrieval was frozen before this run (known limitation). No proof found by `model`
+  uses a premise template.
+
+Success criterion: met nominally (8 vs 7). On the 12 hard theorems `model` proves 8, and the
+best of `fixed` (2), `grind_only` (2) and `try_only` (7) proves 7.
+
+**Caveat.** The planned `fixed` and `random` rankers report confidence
+1.0, so the shared best-first search only ever tries their first three actions per state
+(`rfl`, `simp`, `simp_all` for `fixed`) and stops after 2-6 calls with most of the budget
+unused. After seeing that, we added two supplementary methods (post hoc, not part of the
+criterion) whose confidence is their top score (1/n), so the search escalates and expands
+the whole menu in fixed or random order:
+
+| method | proved | easy | hard | mean calls (proved) | mean seconds (proved) |
+|---|---|---|---|---|---|
+| fixed_expand_all | 18/20 | 8/8 | 10/12 | 15.72 | 0.54 |
+| random_expand_all | 18/20 | 8/8 | 10/12 | 15.56 | 0.93 |
+
+Both prove 10/12 hard theorems — every menu-reachable one — against the model's 8/12. The
+model loses `test_succ_le_two_pow` and `test_two_dvd_mul_succ` (gold: `intro n; induction n <;>
+grind`) because it is confident (≥ τ, no escalation) in its top three actions at both states it
+expands, none of which leads to a proof, so the search exhausts its frontier after 6 calls with 58 calls of budget unused. On this
+test set and budget, a learned ordering of the menu therefore does not beat exhaustive search
+over the same menu; its margin over the planned `fixed`/`random` comes largely from
+escalating past three actions per state (its uniform-confidence rivals never do), not from
+better ranking. The model needs fewer calls than
+exhaustive search on some theorems (e.g. `test_map_double_sum` 6 vs 25) and more on others.
+
+**Bottom line:** the criterion was met only nominally. The model does not beat exhaustive
+fixed-order search over the same menu (8 vs 10 hard), so this experiment does not show that
+the model helps.
+
+Other observations: `try?` in Lean v4.35.0 either closes the goal itself (reporting
+`Try these:` suggestions as info) or fails with an error; it never left a goal open with a
+suggestion, so the "follow `Try this` once" path of `single_shot` was not exercised in the
+run. No REPL call timed out. `model` and `model_no_premise` differ on `test_mul_self_le`
+even though the `model` proof (`exact?`) uses no premise: adding the template options
+changes the `kind` softmax and hence the ranking and escalation.
+
+## Phase 2: Claude as a tactic generator
+
+**Status: run once live (2026-10-15).** See [Phase 2 results](#phase-2-results) below.
+
+### Design
+
+Phase 1 found that a learned ordering of a fixed tactic menu does not beat exhaustive search over
+that menu, and that two hard theorems (`menu_reachable = false` in `data/test_reachability.json`)
+lie outside the menu. Phase 2 asks whether an LLM that proposes open-ended tactics changes that,
+and whether Jev adds anything on top of it. Each method is run on the 20 test theorems:
+
+| method | what it is | question it answers |
+|---|---|---|
+| `claude_whole` | Claude writes 4 complete tactic scripts per theorem; proved if any passes `check_proof` | How far does Claude get with no search at all? |
+| `claude_search` | the phase-1 best-first search, with `HybridRanker(order="llm")`: Claude's proposals first, then the fixed menu; confidence 0 so every action is expanded | What does the search add to Claude, and does Claude reach `menu_reachable = false` theorems? |
+| `hybrid` | the same search with `HybridRanker(order="jev")`: Claude's proposals ranked together with the menu by the model, refit on the phase-1 gold replays plus `data/claude_labels.json` | Does Jev's ranking add value on top of Claude (more hard theorems than `claude_search`, at equal or lower USD)? |
+| `hybrid_expand_all` | supplementary (ruling P11, not pre-registered): `hybrid` with confidence fixed at 0.0, so every ranked action is expanded (phase-1's expand-all wrapper); its Claude requests are mostly cache hits | Is a `hybrid` result due to Jev's ranking or to confidence gating (which hurt in phase 1)? |
+| `phase1_best` | copied from the phase-1 `results/results.json` (best pre-registered method on hard) | Phase-1 reference |
+| `phase1_fixed_expand_all` | copied from phase 1; post-hoc, the strongest phase-1 method (10/12 hard) | Phase-1 reference |
+
+`report.md` computes the three pre-registered questions from the results: (1) `hybrid` vs
+`claude_search` on hard theorems, (2) their USD, (3) how many `menu_reachable = false` hard
+theorems any Claude method proved. Rows carry `claude_requests`, `claude_calls`, `usd`, `notional_usd`, `refusals`, `errors`,
+`budget_capped` and `call_capped`.
+
+Cost controls: `--max-usd` (default 10) is a hard cap, after which the generator returns no
+proposals and the affected rows are flagged `budget_capped`; responses are cached on disk
+(`jev_demo/cache/claude/`, git-ignored), so reruns are free; proposals are generated once per
+goal and memoised per theorem; `run-phase2` and `collect` refuse to run unless
+`ANTHROPIC_RUN_LIVE=1`. At most 16 Claude requests (cached or not) are made per theorem and method; rows that hit
+this are flagged `call_capped`. Since the cache is shared, a later method can reuse proposals
+for free, so the report shows both actual USD (billed) and notional USD (every request at its
+original price, cached or not); the `hybrid` vs `claude_search` cost question uses notional USD.
+An HTTP 400/401/403/404 from the API (bad request, key, permission or model) stops the run at the
+first request; 429, 5xx and connection errors are counted as `errors` and yield no proposals.
+Every Claude request logs one line to stderr (`cached` or `billed`, USD, `stop_reason`, and the
+refusal category from `stop_details` when present). `collect` saves labels after every theorem,
+and a proposal that times out is labelled not useful and the gold state re-derived.
+
+### How to run
+
+Run `collect` first (otherwise `hybrid` has no Claude labels), and give `run-phase2` a
+`--max-usd 20` budget so the cap is not hit before every method has run:
+
+```sh
+export ANTHROPIC_API_KEY=...
+export ANTHROPIC_RUN_LIVE=1
+# 1. label Claude's proposals on the training gold states -> jev_demo/data/claude_labels.json
+python -m jev_demo collect
+# 2. run the Claude methods on the test set -> jev_demo/results_phase2/{results.json,report.md}
+python -m jev_demo run-phase2 --out jev_demo/results_phase2 --max-usd 20
+```
+
+The same two steps can run on GitHub Actions instead (`.github/workflows/jev-phase2-live.yml`),
+reading the key from the `ANTHROPIC_API_KEY` repository secret (Settings → Secrets and
+variables → Actions). It never runs on push: add the `run-phase2-live` label to a pull request to
+run it on that PR's branch, or start it from the Actions tab once the workflow is on the default
+branch. It runs the offline tests first, uploads the logs, labels and results as an artifact, and
+commits `data/claude_labels.json` and `results_phase2/` back to the branch.
+
+Notes on cost accounting:
+
+- Requests are sent with `fallbacks="default"`; a request served by the fallback model is still
+  priced at `claude-opus-5-5` rates, because `usage.iterations` is not read yet (TODO in
+  `claude_gen.py`), so USD may be slightly off for those requests.
+- The system prompt is close to the 512-token minimum for prompt caching. Check the second
+  billed request's log line / `cache_read_tokens` in `claude_usage`: non-zero cache-read tokens
+  confirm caching is active.
+
+Both accept `--claude-model` (default `claude-opus-5-5`), `--effort` (`medium`) and `--max-usd`
+(`10`). Without `claude_labels.json`, `hybrid` is trained on the phase-1 replays alone.
+
+### Phase 2 results
+
+Run once, live, on GitHub Actions (run `38741999437`, workflow `jev-phase2-live.yml`) with
+`claude-opus-5-5` at effort `medium` and a `--max-usd 20` cap, after the prompt's worked examples
+were relabelled as good next steps. Outputs: `data/claude_labels.json`,
+`results_phase2/{results.json,report.md}`, and the raw stderr logs `results_phase2/collect.log`
+and `results_phase2/run-phase2.log`. No refusals; no budget or per-theorem request cap was hit.
+
+| method | proved | easy | hard | mean calls (proved) | Claude requests | billed calls | USD (actual) | USD (notional) | refusals | errors |
+|---|---|---|---|---|---|---|---|---|---|---|
+| claude_whole | 20/20 | 8/8 | 12/12 | 1.00 | 80 | 80 | 0.6792 | 0.6792 | 0 | 0 |
+| claude_search | 20/20 | 8/8 | 12/12 | 2.05 | 27 | 27 | 0.3118 | 0.3118 | 0 | 0 |
+| hybrid | 20/20 | 8/8 | 12/12 | 4.05 | 43 | 19 | 0.2448 | 0.5300 | 0 | 0 |
+| phase1_best (`model`, phase-1 reference) | 16/20 | 8/8 | 8/12 | 14.25 | – | – | – | – | – | – |
+| phase1_fixed_expand_all (phase-1 post-hoc reference) | 18/20 | 8/8 | 10/12 | 15.72 | – | – | – | – | – | – |
+| *supplementary:* hybrid_expand_all (not pre-registered) | 19/20 | 8/8 | 11/12 | 1.90 | 44 | 0 | 0.0000 | 0.5388 | 0 | 0 |
+
+`hybrid_expand_all` is supplementary (ruling P11): `hybrid` with confidence fixed at 0.0, so it
+expands every ranked action. All of its Claude requests were response-cache hits from the earlier
+methods, so its actual USD is 0 and only its notional USD is meaningful. It missed
+`test_rev_eq_reverse`, which `hybrid` proved only after 45 calls.
+
+**Cost.** `run-phase2`: $1.2358 actual, $2.0597 notional (126 billed of 194 requests).
+`collect`: $1.2296 actual (= notional; 105 billed requests, one of which hit `max_tokens`, cost
+$0.3268 and is counted as an error). Total actual spend: **$2.4654**.
+
+**Prompt caching.** Active, but only for byte-identical requests. In `run-phase2`, the second
+billed request read 1352 cached tokens. 60 of 126 billed requests read the cache (1352–1433
+tokens each), all in groups of three, which matches `claude_whole`'s 4 samples of the same
+prompt. The other 66, and every one of `collect`'s 105 requests (cache_write 142,284 tokens,
+cache_read 0), read nothing. So the shared system prompt is not being reused across different
+goals. The likely cause is that the top-level `cache_control` places the breakpoint after the
+user message, so a cache entry is only ever written for the whole prefix. Putting the breakpoint
+on the system block instead would probably fix it; this run did not test that.
+
+**Pre-registered questions**
+
+1. *Does `hybrid` prove more hard theorems than `claude_search`?* **No.** Both prove 12/12. Every
+   Claude method proved every test theorem, so this test set cannot separate them (ceiling effect).
+2. *At equal or lower notional USD?* **No.** `hybrid` cost $0.5300 notional vs $0.3118 for
+   `claude_search`, and used more search calls on average (4.05 vs 2.05). Its lower actual USD
+   ($0.2448) comes from response-cache hits on proposals that `claude_search` had already paid for,
+   not from the method itself.
+3. *Did a Claude method prove the two hard theorems whose gold proof lies outside the phase-1 menu?*
+   **Yes, 2/2.** `test_sq_mod_four` and `test_rev_eq_reverse` were each proved by `claude_whole`,
+   `claude_search` and `hybrid`. No phase-1 method proved either.
+
+**Conclusion.** This experiment does not show that the Jev-style ranking model adds value on top of
+Claude. `hybrid` proved no more theorems than `claude_search` and cost more (notional). Claude on
+its own closes every test theorem, including the two the phase-1 menu cannot reach, mostly in one
+or two calls. A harder test set would be needed to measure any benefit from the ranking.
+
+### Phase 2b: harder test set (written before the live run)
+
+Every Claude method proved all 20 theorems in `data/test.json`, so the first run could not tell
+the methods apart. Phase 2b reruns `run-phase2` on a new, harder test set,
+`data/test_hard.json`. This section was committed before any Claude request was made on that
+set.
+
+**How the set was built.**
+- 20 theorems, all `hard`, written for this round.
+- Statements and names are disjoint from `train.json` and `test.json`.
+- Each has a gold proof checked in Lean (`test_hard_gold_proofs_check_and_flags_current`).
+- Topics:
+  - accumulator recursions that need a generalised lemma (`sumAcc`, `prodAcc`, `revAcc`, fast
+    `fibAux`);
+  - insertion sort (length, sortedness, idempotence, element counts);
+  - correctness of a stack-machine compiler;
+  - Fibonacci identities (coprimality, the addition formula, `fib n < 2^n`);
+  - Ackermann inequalities;
+  - nonlinear arithmetic (sum of cubes, `6 ∣ n(n+1)(n+2)`, `n² ≤ 2ⁿ` for `n ≥ 4`);
+  - strong induction (`isEven`).
+
+**Screen.** 32 candidates were written. Any candidate closed on its own by a generic one-liner
+was dropped, which removed 12 and left exactly 20. The one-liners tried were `grind`,
+`simp_all`, `omega`, `decide`, `intros; simp_all`, `intros; grind`, and
+`intro …; induction x <;> simp_all [defs] <;> omega` or `… <;> grind [defs]` for every bound
+variable `x`, where `defs` are the definitions in the prelude. No Claude API call was used to
+choose or screen theorems.
+
+The theorems were written by a Claude model in a Claude Code session, and several are textbook
+exercises. Claude may therefore find them easier than unseen problems would be.
+
+**Menu reachability.** All 20 are `menu_reachable = false`. Every gold proof uses structured
+`induction … with` blocks or `have` lemmas, which are not phase-1 menu actions. So question 3
+below covers the whole set. The flag says only that the written gold proof is outside the menu,
+not that no menu path exists.
+
+**Phase-1 reference on this set** (run locally, free; `results_hard/`):
+
+| method | hard proved |
+|---|---|
+| try_only | 5/20 |
+| model | 1/20 |
+| model_no_premise | 1/20 |
+| fixed_expand_all (post hoc) | 1/20 |
+| random_expand_all (post hoc) | 1/20 |
+| fixed, random, grind_only | 0/20 |
+
+`try_only` is the best pre-registered phase-1 method here, so it is the `phase1_best` reference
+row.
+
+**Settings, unchanged from the first run.**
+- `claude-opus-5-5`, effort `medium`, `--max-usd 20`, at most 16 Claude requests per theorem
+  and method.
+- The same prompt, and the same `hybrid` refit on the phase-1 replays plus the
+  `data/claude_labels.json` from run 38741999437. `collect` is not rerun.
+- The run starts on GitHub Actions with
+  `run-phase2 --test jev_demo/data/test_hard.json --phase1 jev_demo/results_hard/results.json
+  --out jev_demo/results_phase2_hard`.
+
+**Questions** (the same three, computed by `phase2_questions`):
+1. Does `hybrid` prove more hard theorems than `claude_search`?
+2. Does it do so at equal or lower notional USD?
+3. How many of the 20 `menu_reachable = false` hard theorems does any Claude method prove?
+
+The answers will be reported as computed, including when `hybrid` does not beat
+`claude_search`.
+
+### Phase 2b results
+
+From GitHub Actions run `38747209836` on `data/test_hard.json` (`results_phase2_hard/`, raw log
+`results_phase2_hard/run-phase2.log`). `collect` was skipped and the existing labels were reused.
+There were no errors or refusals, and neither the budget nor the per-theorem request cap was
+hit.
+
+| method | hard proved | mean calls (proved) | Claude requests | billed calls | USD (actual) | USD (notional) |
+|---|---|---|---|---|---|---|
+| claude_whole | 17/20 | 1.41 | 80 | 80 | 2.3547 | 2.3547 |
+| claude_search | 16/20 | 10.62 | 79 | 79 | 1.5316 | 1.5316 |
+| hybrid | 11/20 | 7.64 | 81 | 27 | 0.5314 | 1.6740 |
+| phase1_best (`try_only`, phase-1 reference) | 5/20 | 1.00 | – | – | – | – |
+| phase1_fixed_expand_all (phase-1 post-hoc reference) | 1/20 | 36.00 | – | – | – | – |
+| *supplementary:* hybrid_expand_all (not pre-registered) | 10/20 | 11.20 | 90 | 19 | 0.1968 | 1.5646 |
+
+**Cost.** $4.6144 actual and $7.1249 notional (205 billed of 330 requests). Including the first
+run ($2.4654), total actual spend on Phase 2 is $7.0798. In this run the second billed request
+read 1429 cached tokens. Caching shows the same pattern as before: reads come only from repeated
+identical prompts (86,904 cache-read tokens, 211,987 cache-write tokens).
+
+**Pre-registered questions**
+
+1. *Does `hybrid` prove more hard theorems than `claude_search`?* **No.** `hybrid` proved 11/20 and
+   `claude_search` 16/20. This time the set is hard enough to separate the methods, and `hybrid`
+   is clearly worse. It lost `h2_sum_acc`, `h2_isort_length`, `h2_rev2_append`, `h2_prod_acc` and
+   `h2_fast_fib`, which `claude_search` proved, and it proved nothing that `claude_search` missed.
+   The supplementary `hybrid_expand_all` (10/20) does no better, so the gap is not explained by
+   confidence gating alone. The Jev ranking itself puts Claude's useful proposals too low on this
+   set.
+2. *At equal or lower notional USD?* **No.** `hybrid` cost $1.6740 notional against $1.5316 for
+   `claude_search`. Its lower actual USD ($0.5314) again comes from response-cache hits on
+   proposals that the earlier methods had already paid for.
+3. *How many of the 20 menu-unreachable hard theorems did any Claude method prove?* **19/20.** Only
+   `h2_sq_le_two_pow` (`n² ≤ 2ⁿ` for `n ≥ 4`) was proved by no method. Phase-1 methods proved at
+   most 5 of the 20 (`try_only`).
+
+Not pre-registered, but visible in the table: `claude_whole` was the strongest method (17/20,
+about 1.4 whole-script attempts per proved theorem). It was the only method to prove
+`h2_isort_sorted`, `h2_ack_succ` and `h2_isort_idem`.
+
+**Conclusion.** On a test set hard enough to separate the methods, adding the Jev-style ranking
+model on top of Claude made the step-by-step search worse (11/20 vs 16/20) and did not make it
+cheaper. This experiment does not show that the Jev-style model adds value on top of Claude.
+Claude's own proposals, and especially its complete proof scripts, do most of the work. Caveats:
+there is one run per method (no repeated samples), the set has only 20 theorems, and the
+theorems were written by a Claude model.
+
+## Experiment 3: core-library benchmark, then efficiency
+
+### Why
+
+Phase 2's test sets were too small (20 theorems), were written by a Claude model, and saturated
+(every Claude method proved almost everything). Experiment 3 replaces them and, after the first
+results, changes the goal from *best success* to *efficiency*.
+
+### What changed (all free, before any paid run)
+
+- **Search fix (`prove(revisit=True)`).** A confident node expanded its top 3 actions and was
+  never revisited, so the search could stop with most of its 64-call budget unused. With the fix,
+  phase 1 on `test.json` goes from `fixed` 5/20, `random` 9/20 and `model` 16/20 to 18/20 each:
+  the earlier phase-1 numbers mostly measured this bug.
+- **Benchmark (`corebench.py`).** 900 `Nat`/`List` lemmas sampled from Lean's core library
+  (written by the Lean developers), each to be proved without the lemma itself. An auditor REPL
+  (`import Lean`) rejects any proof whose term uses the lemma or an alias with the identical
+  statement. 482 lemmas that a generic one-liner proves cleanly and 27 that do not re-elaborate
+  were dropped, leaving 391: 161 train, 82 dev and 148 test (`data/core_{train,dev,test}.json`,
+  split by a hash of the name). Claude is told which lemma is banned, and proposals that cite it
+  are dropped.
+- **Stats (`stats.py`).** Wilson intervals, exact McNemar tests, paired bootstrap intervals.
+- **Prompt caching.** An explicit breakpoint on the system prompt replaces the automatic one,
+  which sat after the per-goal message (every request paid a cache write and none read it).
+- **Offline replay.** `exp3 --offline` replays a run from Claude's committed response cache
+  without API calls. On dev, an offline replay of `claude_search` reproduces the live run exactly
+  (59/82, zero cache misses).
+
+### Results on dev (82 lemmas)
+
+Live runs (`results_exp3/dev_v1`, `dev_v2`). Phase 1 without Claude proves at most 7/82.
+
+| method | proved | Claude requests | notional USD |
+|---|---|---|---|
+| claude_search (run 1 / run 2) | 59 / 59 | – / 410 | 4.33 / 3.87 |
+| claude_whole | 57 | – | 5.23 |
+| hybrid (Jev ranks Claude's proposals) | 52 | – | 3.57 |
+| hybrid_filter (Jev defers likely-rejected proposals) | 59 | 416 | 3.91 |
+
+`hybrid` proves significantly fewer than `claude_search` (1 vs 8 discordant, McNemar p = 0.039);
+`hybrid_filter` proves exactly the same lemmas. Offline, on 142 held-out proof steps of the
+training lemmas, Claude's own order puts the step taken in its top 3 85% of the time and the
+Jev model 64% (`rank_eval.py`). **As a ranker, Jev does not add value on top of Claude.**
+
+### Efficiency: Jev as a router
+
+The Jev model was under-trained (its held-out AUC for "Lean accepts this proposal" rises
+0.67 → 0.74 from 25% to 100% of the core labels, still climbing) and the easy phase-1 replays
+slightly hurt it. Two changes:
+
+- **Post-training (`posttrain.py`, Lean only).** Replay Claude's 115 proofs of training lemmas
+  and try every menu tactic at every state on and near those proofs: 4,698 `closes` labels at 330
+  states (`data/jev_closes_labels.json`). The router is trained on core labels only
+  (`--train none`).
+- **Lazy Claude calls (`ASK_CLAUDE`).** A ranker can try cheap menu tactics at a state and ask
+  Claude only if they do not finish it. Replaying Claude's training proofs showed a menu tactic
+  would close 24 of the 27 states after the first step, while `claude_search` asks Claude at
+  every new state.
+
+Methods: `menu_first` (no learning: menu first at every state after the theorem itself) and
+`jev_router` (the 3 most likely menu tactics with p(closes) ≥ 0.5 first, then Claude; else Claude
+first). Both settings were fixed before running on dev.
+
+Offline replay on dev (`results_exp3/dev_offline_eff`, zero cache misses):
+
+| method | proved | Claude requests | requests per proved | notional USD | USD per proved |
+|---|---|---|---|---|---|
+| claude_search | 59/82 | 407 | 6.90 | 3.84 | 0.065 |
+| menu_first | 55/82 | 169 | 3.07 | 1.69 | 0.031 |
+| **jev_router** | **59/82** | **221** | **3.75** | **2.19** | **0.037** |
+
+`jev_router` proves exactly the lemmas `claude_search` proves, with **46% fewer Claude requests
+(95% bootstrap CI 40–50%) and 43% lower cost (37–48%)**. It used fewer requests on 50 lemmas and
+never more. `menu_first` saves more but loses 4 lemmas the router keeps (4 vs 0, p = 0.125).
+Caveat: this is dev, the set the methods were developed on.
+
+### Pre-registered test run (recorded before it is run)
+
+One run on the 148 held-out test lemmas (`core_test.json`), `claude-opus-5-5`, effort `medium`,
+methods in this order: `claude_search` (fills the response cache), `menu_first`, `jev_router`
+(the later two reuse Claude's responses at shared states, so the comparison is paired). Router
+trained exactly as on dev (`--train none`, labels `claude_labels_core.json` +
+`jev_closes_labels.json`, p(closes) ≥ 0.5, top 3).
+
+1. **Efficiency (primary).** `jev_router` uses fewer Claude requests than `claude_search`: the
+   95% paired bootstrap CI of the relative saving is above 0.
+2. **No meaningful loss (primary).** The lower end of the 95% paired bootstrap CI of
+   (`jev_router` − `claude_search`) success rate is above −0.05.
+3. **Jev vs the fixed rule (secondary).** `jev_router` proves at least as many lemmas as
+   `menu_first`, and costs more per proved lemma than it by at most 50%.
+
+The hypotheses hold only if both primaries pass. Results are reported as computed either way.
+
+### Test results (pre-registered run, 148 held-out lemmas)
+
+GitHub Actions run `38843870153` (`results_exp3/test`, log `results_exp3/test.log`). No errors,
+refusals or cache misses, and the budget cap was not hit. Actual spend $7.5365.
+
+| method | proved | Claude requests | requests per proved | notional USD | USD per proved |
+|---|---|---|---|---|---|
+| claude_search | 96/148 (65%) | 779 | 8.12 | 7.53 | 0.078 |
+| menu_first (no learning) | 88/148 (59%) | 312 | 3.54 | 3.24 | 0.037 |
+| **jev_router** | **96/148 (65%)** | **411** | **4.28** | **4.07** | **0.042** |
+
+Hypotheses, scored as written above:
+
+1. **Efficiency: passed.** `jev_router` made 47.2% fewer Claude requests than `claude_search`
+   (95% paired bootstrap CI 43.2–50.8%), and its notional cost was 45.9% lower (41.0–50.1%). It
+   used fewer requests on 93 lemmas and more on none.
+2. **No meaningful loss: passed.** It proved exactly the same 96 lemmas as `claude_search`
+   (0 vs 0 discordant; difference 0.000, CI 0.000–0.000, above −0.05).
+3. **Jev vs the fixed rule: passed.** `jev_router` proved 8 lemmas that `menu_first` missed and
+   lost none (McNemar p = 0.0078). Its cost per proved lemma was 1.15× `menu_first`'s, within
+   the 1.5× allowed.
+
+**Conclusion.** As a ranker, the Jev-style model does not add value on top of Claude. As a
+**router** that decides when Claude is needed, post-trained on free Lean-generated labels, it
+halves Claude usage on held-out lemmas with no loss of proofs. It also keeps proofs that the
+equivalent fixed rule loses.
+
+Caveats:
+- The router reused `claude_search`'s cached Claude responses wherever it asked at the same
+  state; that is what makes the comparison paired. Its notional USD prices those responses as
+  if billed, so it is the router's standalone cost, but a standalone run would draw fresh
+  samples. Between two dev runs, `claude_search` itself flipped 4 of 82 lemmas.
+- There was one run per method, with one model (`claude-opus-5-5`, effort `medium`) and one
+  budget (64 Lean calls, 16 Claude requests per lemma).
+- The benchmark is core `Nat`/`List` lemmas re-proved without the lemma itself. The audit
+  catches the lemma and exact aliases, not every equivalent restatement.
+
+Total API spend for experiment 3: $30.34 (pilot $0.82, train $7.70, dev 1 $10.26, dev 2 $4.01,
+test $7.54).
+
+### Overcoming the limits, 1: a stronger audit (free)
+
+Audit v2 (`corebench.analyse`, `reaudit.py`, `results_exp3/reaudit.json`) re-checks every
+counted proof in an `import Lean` REPL:
+- it **rejects** any used constant whose statement is *definitionally* equal to the target, not
+  only the exact type, which catches aliases that differ in binder kinds or universe names;
+- it **flags single-lemma proofs**: the proof uses exactly one `Nat.`/`List.` theorem and no
+  induction or case recursor (possible near-restatements, e.g. `List.count_cons` from
+  `List.countP_cons`).
+
+| run | method | proved | rejected by v2 | single-lemma |
+|---|---|---|---|---|
+| test | claude_search | 96 | 0 | 17 |
+| test | menu_first | 88 | 0 | 15 |
+| test | jev_router | 96 | 0 | 17 |
+| dev 1 | claude_whole / claude_search / hybrid | 57 / 59 / 52 | 1 each | 6 / 7 / 6 |
+| dev 2 | claude_search / hybrid_filter | 59 / 59 | 1 each | 6 / 6 |
+
+**Strict scoring** counts v2 rejections and single-lemma proofs as unproved. On test it gives
+`claude_search` 79, `jev_router` 79 (the same lemmas) and `menu_first` 73 (the router keeps 7
+lemmas it loses and loses 1 it keeps). On the 131 lemmas with no single-lemma proof the router's
+request saving is 48.2% (95% CI 44.1–51.8%). The efficiency result does not depend on
+near-restatements.
+
+### Overcoming the limits, 2: independent replication (pre-registered, before it is run)
+
+In the test run the router reused `claude_search`'s Claude responses at shared states, and each
+method ran once. The `replicate` stage removes both limits: on the same 148 test lemmas, settings
+unchanged, `claude_search` and `jev_router` each run with their **own empty response cache**
+(fresh, independent samples from Claude). The pair is run **twice** (replicates 1 and 2), giving
+4 independent runs (`results_exp3/test_rep{1,2}_{claude_search,jev_router}`).
+
+Hypotheses, on the two replicates pooled (296 lemma pairs, paired by lemma within each replicate):
+1. **Efficiency.** The 95% paired bootstrap CI of the router's relative Claude-request saving is
+   above 0 (and each replicate's saving is reported separately).
+2. **No meaningful loss.** The lower end of the 95% paired bootstrap CI of (`jev_router` −
+   `claude_search`) success rate is above −0.05, the same margin as before. Independent samples
+   add run-to-run noise (on dev, 4 of 82 lemmas flipped between two `claude_search` runs), which is
+   why two replicates are pooled.
+3. **Stability (reported, not a pass/fail test).** The router's success and request counts in
+   replicates 1 and 2, and how many lemmas flip between replicates for each method.
+
+Strict scoring (audit v2) is reported alongside the primary scoring. Approved budget: $26 in
+total, enforced by the stage (each run's cap is what is left minus a reserve for later runs).
+
+### Replication results (scored as pre-registered above)
+
+GitHub Actions run `38852224783` (`results_exp3/test_rep{1,2}_{claude_search,jev_router}`).
+Scored by `python -m jev_demo.replication` (writes `results_exp3/replication.json`); the request
+saving CI is a percentile bootstrap over lemma pairs (the same method gives the test run's
+43.2–50.8%). No refusals and the budget cap was not hit. One request failed with an API error
+(`core_List_max_congr_simp`, replicate 2 `claude_search`); that lemma counts as unproved there.
+
+| replicate | method | proved | Claude requests | actual USD |
+|---|---|---|---|---|
+| 1 | claude_search | 95/148 | 767 | 7.41 |
+| 1 | jev_router | 93/148 | 409 | 4.18 |
+| 2 | claude_search | 94/148 | 798 | 7.77 |
+| 2 | jev_router | 97/148 | 385 | 3.88 |
+
+| | request saving (95% CI) | router more / fewer requests | success diff router − search (95% CI) | discordant (router only / search only) |
+|---|---|---|---|---|
+| replicate 1 | 46.7% (41.2–51.2%) | 7 / 96 lemmas | −0.014 (−0.047 to +0.020) | 2 / 4 |
+| replicate 2 | 51.7% (47.6–55.3%) | 7 / 101 | +0.020 (−0.014 to +0.054) | 5 / 2 |
+| **pooled (296 pairs)** | **49.3% (46.0–52.1%)** | 14 / 197 | **+0.003 (−0.020 to +0.027)** | 7 / 6 (McNemar p = 1.0) |
+
+1. **Efficiency: passed.** Pooled request saving 49.3%, CI 46.0–52.1%, above 0. Each replicate
+   on its own also has a CI above 0.
+2. **No meaningful loss: passed.** Pooled success difference +0.003, CI lower end −0.020, above
+   −0.05.
+3. **Stability (reported).** Router: 93 then 97 proved, 409 then 385 requests. Between
+   replicates, `claude_search` flips 7 lemmas (4 proved only in replicate 1, 3 only in 2) and
+   `jev_router` flips 4 (all proved only in replicate 2). The router-vs-search difference
+   within a replicate (−2, +3 lemmas) is the same size as this run-to-run noise.
+
+**Strict scoring** (audit v2: definitional aliases rejected, single-lemma proofs counted as
+unproved). Audit v2 rejects one proof (replicate 1 `claude_search`, `core_Nat_getElem_toArray_rio`
+via the definitional alias `Nat.getElem_toList_rio`). Strict counts are 76 / 74 (replicate 1) and
+79 / 78 (replicate 2) for `claude_search` / `jev_router`. Pooled: success difference −0.010
+(CI −0.044 to +0.024, still above −0.05), and the request saving is the same 49.3%.
+
+**Conclusion.** With independent Claude samples and no shared cache, the router's result
+replicates. It makes about half the Claude requests (49%, CI 46–52%) at no measurable cost in
+proofs (the success difference CI −2.0 to +2.7 points sits inside the pre-registered −5 point
+margin). The original run's "exactly the same 96 lemmas" came from shared cached responses. With
+fresh samples both methods fluctuate by a few lemmas per run, and the router no longer wins on
+every lemma: it used more requests than `claude_search` on 14 of 296 pairs.
+
+Remaining limits: still one model and effort setting, one Lean/Claude budget per lemma, and one
+benchmark family (core `Nat`/`List` lemmas).
+
+Replication spend $23.25 of the approved $26 (rep 1: $7.41 + $4.18; rep 2: $7.77 + $3.88).
+Experiment 3 total $53.59; total API spend in this project $60.67 (phase 2 $7.08 + experiment 3).
+
+## miniF2F efficiency run (standard benchmark)
+
+The core-library experiments above are history. This run repeats the router comparison on
+**miniF2F** (Lean 4 port `yangky11/miniF2F-lean4` at `5746b7d`, Lean v4.24.0 + Mathlib; 244
+validation and 244 test problems; solved = Lean accepts the proof with no `sorry`; pass@1 of one
+search per problem). Module `jev_demo/minif2f.py`, prompt `prompts.MATHLIB_SYSTEM_PROMPT`
+(examples from validation problems only).
+
+### Lean-only baselines on validation (free)
+
+GitHub Actions run `39014532633` (`results_free/minif2f/valid_*.json`, logs in `logs/`).
+
+| method | solved (valid) |
+|---|---|
+| `single` (each of 19 tactics alone) | 94/244 (38.5%) |
+| `menu_search` (best-first, fixed menu + goal-dependent `induction`/`cases`, 64 Lean calls) | 102/244 (41.8%) |
+| `jev_search` (`menu_search` + BM25-premise steps from the LeanDojo corpus) | 102/244 (41.8%) |
+
+`menu_search` solves 8 problems `single` misses and loses none. `jev_search` solves exactly the
+same 102 problems as `menu_search`. Router labels (`valid_closes_labels.json`, every menu tactic
+at the 244 roots and up to 6 states one step below each): 18,885 labels at 778 states, 1,510
+closing, 322 states closed by at least one tactic. BM25-premise steps account for 3,112 labels
+and 96 closing ones, but **no state is closed only by a BM25-premise step**.
+
+**Design decision (made on validation, before any test run).** The BM25-premise steps add
+nothing on validation, so they are dropped: the paid methods use `menu_search`'s menu, and the
+router trains on the 15,773 labels of menu tactics (1,414 closing; written to
+`router_labels.json` in each run directory).
+
+### Lean-only baselines on test (free)
+
+GitHub Actions run `39018378141` (`results_free/minif2f/test_*.json`), same settings as on
+validation: `single` 93/244 (38.1%), `menu_search` 101/244 (41.4%). `menu_search` solves 9
+problems `single` misses and misses 1 that `single` solves. No statement failed to elaborate.
+
+### Pre-registered test run (recorded before it is run)
+
+On the 244 **test** problems, `claude-opus-5-5`, effort `medium`, 64 Lean calls and at most 16
+Claude requests per problem (as in experiment 3). Methods, in this order, each with its **own
+empty response cache**: `claude_search`, then `jev_router` (the 3 most likely menu tactics with
+p(closes) ≥ 0.5 first, then Claude; router trained with `--train none` on the validation labels
+above only). One run per method. A 20-problem pilot on validation comes first to check the
+plumbing and measure miniF2F request costs; it is not scored and changes no setting.
+
+1. **Efficiency (primary).** `jev_router` makes fewer Claude requests than `claude_search`: the
+   95% paired bootstrap CI of the relative request saving (`replication.saving_ci`, over
+   problems) is above 0.
+2. **No meaningful loss (primary).** The lower end of the 95% paired bootstrap CI of
+   (`jev_router` − `claude_search`) solve rate (`stats.compare`) is above −0.05.
+3. **Reported, not tested.** Solve rates of both methods next to the Lean-only baselines run on
+   test (`single`, `menu_search`), discordant problems, requests and USD per solved problem.
+
+The hypotheses hold only if both primaries pass. Results are reported as computed either way.
+Each paid stage stops at its approved budget (`scripts/exp3_stage.sh`, `--max-usd`); a run that
+hits its cap is reported as capped.

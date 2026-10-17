@@ -1,0 +1,1 @@
+{"tactics": ["intro i j h <;> simp at h", "simp", "intro i j h", "intros <;> simp_all", "intro i j h <;> exfalso <;> simp at h", "intro i j h <;> rw [List.drop_nil] at h <;> exact absurd h (Nat.not_lt_zero j)"], "usd": 0.006517000000000106}

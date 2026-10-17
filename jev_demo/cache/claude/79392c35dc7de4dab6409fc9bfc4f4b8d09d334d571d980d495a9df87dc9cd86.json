@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ l₁ l₂ a h; exact h.sublist.count_le a", "intro α inst l₁ l₂ a h", "intro α _ l₁ l₂ a h; exact List.Sublist.count_le _ h.sublist", "intro α _ l₁ l₂ a h; exact List.Sublist.count_le h.sublist _", "intro α _ l₁ l₂ a h; obtain ⟨s, t, rfl⟩ := h; simp [List.count_append]; omega", "intro α _ l₁ l₂ a h; exact List.Sublist.countP_le _ h.sublist"], "usd": 0.012725}

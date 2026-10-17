@@ -1,0 +1,1 @@
+{"tactics": ["intro α f i j l h", "intro α f i j l h <;> induction l generalizing i j <;> cases i <;> cases j <;> simp_all [List.modify, List.eraseIdx]", "intro α f i j l h <;> apply List.ext_getElem? <;> intro k <;> simp [List.getElem?_eraseIdx, List.getElem?_modify] <;> split <;> split <;> omega", "intro α f i j l h <;> grind"], "usd": 0.004213000000000022}

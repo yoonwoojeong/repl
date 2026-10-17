@@ -1,0 +1,1 @@
+{"tactics": ["simp at hj", "simp_all", "exact absurd hj (by simp)", "cases hj", "contradiction"], "usd": 0.003916999999999948}

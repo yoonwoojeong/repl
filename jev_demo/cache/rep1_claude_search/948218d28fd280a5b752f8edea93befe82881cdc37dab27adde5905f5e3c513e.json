@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "split <;> rfl", "cases ‹List _› <;> rfl", "rename_i β α b x l motive op hb hl", "congr 1", "unfold List.foldrRecOn", "simp only [List.foldrRecOn]", "grind"], "usd": 0.01278899999999994}

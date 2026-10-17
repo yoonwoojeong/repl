@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp", "congr", "exact rfl", "congr 1", "grind"], "usd": 0.0038569999999999993}

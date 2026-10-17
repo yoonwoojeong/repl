@@ -1,0 +1,1 @@
+{"tactics": ["intro α inst l l_1 e_l h", "intros α _ l l_1 e_l h; subst e_l; rfl", "intro α inst l l_1 e_l h <;> subst e_l <;> rfl", "intro α inst l l_1 e_l h <;> cases e_l <;> rfl", "grind", "simp"], "usd": 0.0032450000000001644}

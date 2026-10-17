@@ -1,0 +1,1 @@
+{"tactics": ["intro n k", "simp", "grind", "intro n k <;> induction n <;> simp_all", "intro n k <;> apply Array.ext <;> simp", "intro n k <;> simp [← Array.toList_inj]", "intros <;> simp [Std.Rio.toArray, Std.Rco.toArray]"], "usd": 0.008168999999999649}

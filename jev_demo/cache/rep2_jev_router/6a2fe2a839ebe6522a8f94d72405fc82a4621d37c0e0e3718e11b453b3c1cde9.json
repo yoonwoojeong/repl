@@ -1,0 +1,1 @@
+{"tactics": ["grind", "apply List.ext_getElem <;> grind", "rw [List.set_append_left _ _ (by simp; omega)]", "simp [List.take_add_one, List.getElem?_eq_getElem (by omega : i < l.length), List.drop_eq_getElem_cons (by omega : i + 1 < l.length)]", "apply List.ext_getElem", "simp [List.set_append_left, List.take_add_one]"], "usd": 0.012433000000000138}

@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "cases xs✝ <;> rfl", "unfold List.minOn", "simp [List.minOn]", "cases xs✝ <;> simp [List.minOn]", "grind [List.minOn]", "simp only [List.minOn, List.foldl]", "cases xs✝ <;> simp_all [List.minOn, List.foldl]"], "usd": 0.008100999999999914}

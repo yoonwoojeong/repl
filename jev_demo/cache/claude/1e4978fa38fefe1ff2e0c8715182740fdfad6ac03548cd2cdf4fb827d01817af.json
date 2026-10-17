@@ -1,0 +1,1 @@
+{"tactics": ["intro α l₁ l₂ h", ",intro α l₁ l₂ h; exact h.flatten", "exact fun h => h.flatten", "intro α l₁ l₂ h <;> exact List.Perm.flatten h", "intro α l₁ l₂ h <;> induction h <;> simp_all [List.perm_append_comm, List.Perm.append_left]", "intro α l₁ l₂ h <;> grind [List.Perm.flatten]"], "usd": 0.003977000000000008}

@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ l₁ l₂", "intro inst _ l₁ l₂", "intros", "intro _ _ l₁ l₂ <;> constructor", "intro _ _ l₁ l₂ <;> exact ⟨fun h a => h.count_eq a, fun h => List.perm_iff_count.mpr h⟩"], "usd": 0.008229000000000042}

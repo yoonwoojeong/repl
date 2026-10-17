@@ -1,0 +1,1 @@
+{"tactics": ["exact ⟨fun h => h.imp fun h _ _ => h, fun h => h.imp_of_mem fun ha hb hr => hr ha hb⟩", "constructor", "exact ⟨fun h => h.imp (fun h _ _ => h), List.Pairwise.imp_of_mem (fun ha hb hr => hr ha hb)⟩", "simp only [List.pairwise_iff_forall_sublist]", "grind [List.Pairwise.imp_of_mem, List.Pairwise.imp]"], "usd": 0.01927699999999999}

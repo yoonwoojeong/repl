@@ -1,0 +1,1 @@
+{"tactics": ["apply Array.toList_inj.mp", "rw [← Array.toList_inj]", "simp [← Array.toList_inj, Nat.toList_rco_append_toList_rco h1 h2]", "simp [Array.ext_iff_toList, Nat.toList_rco_append_toList_rco h1 h2]", "grind [Nat.toList_rco_append_toList_rco]", "simp [← Std.Rco.toArray_toList]"], "usd": 0.00844099999999992}

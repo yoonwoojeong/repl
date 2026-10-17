@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.filterMapM.loop]", "simp only [List.filterMapM.loop, map_pure, List.reverse_nil, List.append_nil]", "rw [List.filterMapM.loop, List.filterMapM.loop]; simp", "unfold List.filterMapM.loop; simp", "simp [List.filterMapM.loop, map_pure]", "grind [List.filterMapM.loop]"], "usd": 0.006261000000000072}

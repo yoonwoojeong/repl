@@ -1,0 +1,1 @@
+{"tactics": ["apply List.sublist_mergeSort <;> first | assumption | simp_all", "exact List.sublist_mergeSort ‹_› ‹_› (by simp [*]) ‹_›", "apply List.sublist_mergeSort", "refine List.sublist_mergeSort ?_ ?_ ?_ ?_ <;> first | assumption | simp_all", "apply List.sublist_mergeSort <;> simp_all"], "usd": 0.016296999999999784}

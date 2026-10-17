@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α p l f g hf", "congr 1 <;> apply List.filter_congr <;> intro x _ <;> cases x <;> simp_all", "congr 1", "simp_all [List.filter_congr]", "grind"], "usd": 0.011008999999999602}

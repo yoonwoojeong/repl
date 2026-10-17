@@ -1,0 +1,1 @@
+{"tactics": ["cases xs✝", "rcases xs✝ with _ | ⟨y, ys⟩", "cases xs✝ with | nil => exact absurd rfl h✝ | cons y ys => simp only [List.foldl_cons]", "split", "induction xs✝ generalizing x✝", "cases xs✝ <;> simp_all"], "usd": 0.010280999999999985}

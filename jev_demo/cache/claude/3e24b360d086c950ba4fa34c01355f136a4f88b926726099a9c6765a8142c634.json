@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getLast_append, h]", "rw [← List.getLast_cons_cons_append] <;> simp_all", "simp_all [List.getLast_cons, List.getLast_append]", "grind [List.getLast_append]", "rw [List.getLast_cons (by simp [h]), List.getLast_append]", "simp [← List.cons_append, List.getLast_append, h]"], "usd": 0.011585000000000178}

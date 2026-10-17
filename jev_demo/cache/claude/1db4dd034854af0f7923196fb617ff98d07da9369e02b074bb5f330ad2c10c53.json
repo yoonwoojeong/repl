@@ -1,0 +1,1 @@
+{"tactics": ["by_cases h : n < 10", "unfold Nat.repr", "simp [Nat.repr, String.toNat?]", "rw [Nat.repr]", "grind [Nat.repr, Nat.toDigits]", "cases n with | zero => decide | succ k => skip", "simp only [Nat.repr, Nat.toDigits]"], "usd": 0.006508999999999876}

@@ -1,0 +1,1 @@
+{"tactics": ["intro a m n ha hmn", "exact fun ha hmn => (Nat.pow_lt_pow_iff_right ha).2 hmn", "intro a m n ha hmn <;> induction hmn <;> simp_all [Nat.pow_succ] <;> grind", "intro a m n ha hmn <;> exact (Nat.pow_lt_pow_iff_right ha).mpr hmn", "intros <;> simp_all [Nat.pow_lt_pow_iff_right]", "intro a m n ha hmn <;> grind [Nat.pow_lt_pow_iff_right]"], "usd": 0.014329000000000036}

@@ -1,0 +1,1 @@
+{"tactics": ["exact ⟨[], [], by simp, by simp, by simp⟩", "refine ⟨[], [], ?_, ?_, ?_⟩ <;> simp", "refine ⟨[], [], ?_, ?_, ?_⟩ <;> simp [List.mergeSort_singleton, List.mergeSort_nil]", "exists [], []", "simp [List.mergeSort]", "exact ⟨[], [], by rw [List.mergeSort_singleton]; rfl, by rw [List.mergeSort_nil]; rfl, fun b hb => by cases hb⟩"], "usd": 0.011244999999999727}

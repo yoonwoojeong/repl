@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getLast_cons, List.tail] at h ⊢", "rename_i a t; cases t <;> simp_all", "(simp only [List.tail] at h; rw [List.getLast_cons h])", "rename_i a t", "grind [List.getLast_cons]", "simp_all [List.getLast_cons]"], "usd": 0.007937000000000083}

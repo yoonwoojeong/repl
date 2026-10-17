@@ -1,0 +1,1 @@
+{"tactics": ["exact List.mem_takeWhile_imp hx", "simpa using List.mem_takeWhile_imp hx", "rename_i α p l", "induction ‹List _› with | nil => simp at hx | cons a t ih => (simp only [List.takeWhile] at hx; split at hx <;> simp_all)", "grind [List.mem_takeWhile_imp]"], "usd": 0.012073}

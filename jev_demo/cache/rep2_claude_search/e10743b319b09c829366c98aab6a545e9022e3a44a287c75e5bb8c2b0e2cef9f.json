@@ -1,0 +1,1 @@
+{"tactics": ["cases xs with\n  | nil => contradiction\n  | cons x xs => simp", "rcases xs with _ | ⟨x, xs⟩", "cases xs", "simp", "grind", "split <;> split <;> simp_all"], "usd": 0.007948999999999984}

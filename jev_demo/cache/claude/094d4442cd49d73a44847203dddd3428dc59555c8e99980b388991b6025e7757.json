@@ -1,0 +1,1 @@
+{"tactics": ["simp_all", "simp [a✝]", "rw [if_neg (by simpa using a✝)]", "split <;> simp_all", "grind", "simp only [beq_iff_eq, a✝, if_false]"], "usd": 0.0030049999999999244}

@@ -1,0 +1,1 @@
+{"tactics": ["intro x y n hx hy", "intro x y n hx hy <;> apply Nat.lt_pow_two_of_testBit <;> intro i hi <;> simp [Nat.testBit_or, Nat.testBit_lt_two_pow (Nat.lt_of_lt_of_le hx (Nat.pow_le_pow_right (by omega) hi)), Nat.testBit_lt_two_pow (Nat.lt_of_lt_of_le hy (Nat.pow_le_pow_right (by omega) hi))]", "intros", "grind"], "usd": 0.011452999999999935}

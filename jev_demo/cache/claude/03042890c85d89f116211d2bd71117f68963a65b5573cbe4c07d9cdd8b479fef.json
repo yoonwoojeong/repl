@@ -1,0 +1,1 @@
+{"tactics": ["cases i <;> simp_all [Nat.testBit_zero, Nat.pow_succ, Nat.add_mod, Nat.mul_mod, Nat.mul_assoc]", "rcases i with _ | k <;> simp_all [Nat.testBit_zero, Nat.pow_succ, Nat.mul_comm, Nat.mul_assoc, Nat.mul_add_mod]", "cases i <;> simp_all [Nat.testBit_zero] <;> grind", "cases i", "simp only [Nat.testBit_zero]", "grind [Nat.testBit_zero]"], "usd": 0.01716099999999976}

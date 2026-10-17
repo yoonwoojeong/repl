@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α β P f xs H", "apply List.ext_getElem <;> simp [List.getElem_pmap, List.getElem_reverse]", "simp [List.pmap_eq_map_attach, List.attach_reverse]", "grind", "simp [List.reverse_pmap]", "apply List.ext_getElem", "simp"], "usd": 0.01197299999999979}

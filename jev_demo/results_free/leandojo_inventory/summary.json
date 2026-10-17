@@ -1,0 +1,394 @@
+{
+ "leandojo_benchmark_4/metadata.json": {
+  "n": 4,
+  "tactics": null,
+  "sample": null
+ },
+ "leandojo_benchmark_4/novel_premises/test.json": {
+  "n": 2000,
+  "tactics": 8547,
+  "sample": {
+   "url": "https://github.com/leanprover-community/mathlib4",
+   "commit": "3ce43c18f614b76e161f911b75a3e1ef641620ff",
+   "file_path": "Mathlib/Data/Prod/Basic.lean",
+   "full_name": "Prod.swap_bijective",
+   "start": [
+    209,
+    1
+   ],
+   "end": [
+    210,
+    36
+   ],
+   "traced_tactics": []
+  }
+ },
+ "leandojo_benchmark_4/novel_premises/train.json": {
+  "n": 98514,
+  "tactics": 194815,
+  "sample": {
+   "url": "https://github.com/leanprover/std4",
+   "commit": "869c615eb10130c0637a7bc038e2b80253559913",
+   "file_path": "lake-packages/std/Std/Logic.lean",
+   "full_name": "Not.intro",
+   "start": [
+    14,
+    1
+   ],
+   "end": [
+    14,
+    55
+   ],
+   "traced_tactics": []
+  }
+ },
+ "leandojo_benchmark_4/novel_premises/val.json": {
+  "n": 2000,
+  "tactics": 9705,
+  "sample": {
+   "url": "https://github.com/leanprover-community/mathlib4",
+   "commit": "3ce43c18f614b76e161f911b75a3e1ef641620ff",
+   "file_path": "Mathlib/Data/Set/Finite.lean",
+   "full_name": "Set.Finite.biUnion",
+   "start": [
+    798,
+    1
+   ],
+   "end": [
+    803,
+    19
+   ],
+   "traced_tactics": [
+    {
+     "tactic": "classical\n  cases hs\n  haveI := fintypeBiUnion s t fun i hi => (ht i hi).fintype\n  apply toFinite",
+     "annotated_tactic": [
+      "classical\n    cases hs\n    haveI := <a>fintypeBiUnion</a> s t fun i hi => (ht i hi).<a>fintype</a>\n    apply <a>toFinite</a>",
+      [
+       {
+        "full_name": "Set.fintypeBiUnion",
+        "def_path": "Mathlib/Data/Set/Finite.lean",
+        "def_pos": [
+         392,
+         5
+        ],
+        "def_end_pos": [
+         392,
+         19
+        ]
+       },
+       {
+        "full_name": "Set.Finite.fintype",
+        "def_path": "Mathlib/Data/Set/Finite.lean",
+        "def_pos": [
+         103,
+         29
+        ],
+        "def_end_pos": [
+         103,
+         43
+        ]
+       },
+       {
+        "full_name": "Set.toFinite",
+        "def_path": "Mathlib/Data/Set/Finite.lean",
+        "def_pos": [
+         82,
+         9
+        ],
+        "def_end_pos": [
+         82,
+         17
+        ]
+       }
+      ]
+     ],
+     "state_before": "α : Type u\nβ : Type v\nι✝ : Sort w\nγ : Type x\nι : Type u_1\ns : Set ι\nhs : Set.Finite s\nt : ι → Set α\nht : ∀ (i : ι), i ∈ s → Set.Finite (t i)\n⊢ Set.Finite (⋃ i ∈ s, t i)",
+     "state_after": "no goals"
+    },
+    {
+     "tactic": "cases hs",
+     "annotated_tactic": [
+      "cases hs",
+      []
+     ],
+     "state_before": "α : Type u\nβ : Type v\nι✝ : Sort w\nγ : Type x\nι : Type u_1\ns : Set ι\nhs : Set.Finite s\nt : ι → Set α\nht : ∀ (i : ι), i ∈ s → Set.Finite (t i)\n⊢ Set.Finite (⋃ i ∈ s, t i)",
+     "state_after": "case intro\nα : Type u\nβ : Type v\nι✝ : Sort w\nγ : Type x\nι : Type u_1\ns : Set ι\nt : ι → Set α\nht : ∀ (i : ι), i ∈ s → Set.Finite (t i)\na✝ : Fintype ↑s\n⊢ Set.Finite (⋃ i ∈ s, t i)"
+    },
+    {
+     "tactic": "haveI := fintypeBiUnion s t fun i hi => (ht i hi).fintype",
+     "annotated_tactic": [
+      "haveI := <a>fintypeBiUnion</a> s t fun i hi => (ht i hi).<a>fintype</a>",
+      [
+       {
+        "full_name": "Set.fintypeBiUnion",
+        "def_path": "Mathlib/Data/Set/Finite.lean",
+        "def_pos": [
+         392,
+         5
+        ],
+        "def_end_pos": [
+         392,
+         19
+        ]
+       },
+       {
+        "full_name": "Set.Finite.fintype",
+        "def_path": "Mathlib/Data/Set/Finite.lean",
+        "def_pos": [
+         103,
+         29
+        ],
+        "def_end_pos": [
+         103,
+         43
+        ]
+       }
+      ]
+     ],
+     "state_before": "case intro\nα : Type u\nβ : Type v\nι✝ : Sort w\nγ : Type x\nι : Type u_1\ns : Set ι\nt : ι → Set α\nht : ∀ (i : ι), i ∈ s → Set.Finite (t i)\na✝ : Fintype ↑s\n⊢ Set.Finite (⋃ i ∈ s, t i)",
+     "state_after": "case intro\nα : Type u\nβ : Type v\nι✝ : Sort w\nγ : Type x\nι : Type u_1\ns : Set ι\nt : ι → Set α\nht : ∀ (i : ι), i ∈ s → Set.Finite (t i)\na✝ : Fintype ↑s\nthis : Fintype ↑(⋃ x ∈ s, t x)\n⊢ Set.Finite (⋃ i ∈ s, t i)"
+    },
+    "..."
+   ]
+  }
+ },
+ "leandojo_benchmark_4/random/test.json": {
+  "n": 2000,
+  "tactics": 4221,
+  "sample": {
+   "url": "https://github.com/leanprover-community/mathlib4",
+   "commit": "3ce43c18f614b76e161f911b75a3e1ef641620ff",
+   "file_path": "Mathlib/Topology/Algebra/Monoid.lean",
+   "full_name": "exists_open_nhds_one_split",
+   "start": [
+    475,
+    1
+   ],
+   "end": [
+    479,
+    61
+   ],
+   "traced_tactics": [
+    {
+     "tactic": "have : (fun a : M × M => a.1 * a.2) ⁻¹' s ∈ 𝓝 ((1, 1) : M × M) :=\n  tendsto_mul (by simpa only [one_mul] using hs)",
+     "annotated_tactic": [
+      "have : (fun a : M × M => a.1 * a.2) ⁻¹' s ∈ 𝓝 ((1, 1) : M × M) :=\n    <a>tendsto_mul</a> (by simpa only [<a>one_mul</a>] using hs)",
+      [
+       {
+        "full_name": "tendsto_mul",
+        "def_path": "Mathlib/Topology/Algebra/Monoid.lean",
+        "def_pos": [
+         113,
+         9
+        ],
+        "def_end_pos": [
+         113,
+         20
+        ]
+       },
+       {
+        "full_name": "one_mul",
+        "def_path": "Mathlib/Algebra/Group/Defs.lean",
+        "def_pos": [
+         464,
+         9
+        ],
+        "def_end_pos": [
+         464,
+         16
+        ]
+       }
+      ]
+     ],
+     "state_before": "ι : Type u_1\nα : Type u_2\nX : Type u_3\nM : Type u_4\nN : Type u_5\ninst✝³ : TopologicalSpace X\ninst✝² : TopologicalSpace M\ninst✝¹ : Monoid M\ninst✝ : ContinuousMul M\ns : Set M\nhs : s ∈ 𝓝 1\n⊢ ∃ V, IsOpen V ∧ 1 ∈ V ∧ ∀ (v : M), v ∈ V → ∀ (w : M), w ∈ V → v * w ∈ s",
+     "state_after": "ι : Type u_1\nα : Type u_2\nX : Type u_3\nM : Type u_4\nN : Type u_5\ninst✝³ : TopologicalSpace X\ninst✝² : TopologicalSpace M\ninst✝¹ : Monoid M\ninst✝ : ContinuousMul M\ns : Set M\nhs : s ∈ 𝓝 1\nthis : (fun a => a.1 * a.2) ⁻¹' s ∈ 𝓝 (1, 1)\n⊢ ∃ V, IsOpen V ∧ 1 ∈ V ∧ ∀ (v : M), v ∈ V → ∀ (w : M), w ∈ V → v * w ∈ s"
+    },
+    {
+     "tactic": "simpa only [prod_subset_iff] using exists_nhds_square this",
+     "annotated_tactic": [
+      "simpa only [<a>prod_subset_iff</a>] using <a>exists_nhds_square</a> this",
+      [
+       {
+        "full_name": "Set.prod_subset_iff",
+        "def_path": "Mathlib/Data/Set/Prod.lean",
+        "def_pos": [
+         100,
+         9
+        ],
+        "def_end_pos": [
+         100,
+         24
+        ]
+       },
+       {
+        "full_name": "exists_nhds_square",
+        "def_path": "Mathlib/Topology/Constructions.lean",
+        "def_pos": [
+         674,
+         9
+        ],
+        "def_end_pos": [
+         674,
+         27
+        ]
+       }
+      ]
+     ],
+     "state_before": "ι : Type u_1\nα : Type u_2\nX : Type u_3\nM : Type u_4\nN : Type u_5\ninst✝³ : TopologicalSpace X\ninst✝² : TopologicalSpace M\ninst✝¹ : Monoid M\ninst✝ : ContinuousMul M\ns : Set M\nhs : s ∈ 𝓝 1\nthis : (fun a => a.1 * a.2) ⁻¹' s ∈ 𝓝 (1, 1)\n⊢ ∃ V, IsOpen V ∧ 1 ∈ V ∧ ∀ (v : M), v ∈ V → ∀ (w : M), w ∈ V → v * w ∈ s",
+     "state_after": "no goals"
+    },
+    {
+     "tactic": "simpa only [one_mul] using hs",
+     "annotated_tactic": [
+      "simpa only [<a>one_mul</a>] using hs",
+      [
+       {
+        "full_name": "one_mul",
+        "def_path": "Mathlib/Algebra/Group/Defs.lean",
+        "def_pos": [
+         464,
+         9
+        ],
+        "def_end_pos": [
+         464,
+         16
+        ]
+       }
+      ]
+     ],
+     "state_before": "ι : Type u_1\nα : Type u_2\nX : Type u_3\nM : Type u_4\nN : Type u_5\ninst✝³ : TopologicalSpace X\ninst✝² : TopologicalSpace M\ninst✝¹ : Monoid M\ninst✝ : ContinuousMul M\ns : Set M\nhs : s ∈ 𝓝 1\n⊢ s ∈ 𝓝 (1 * 1)",
+     "state_after": "no goals"
+    }
+   ]
+  }
+ },
+ "leandojo_benchmark_4/random/train.json": {
+  "n": 98514,
+  "tactics": 204205,
+  "sample": {
+   "url": "https://github.com/leanprover-community/mathlib4",
+   "commit": "3ce43c18f614b76e161f911b75a3e1ef641620ff",
+   "file_path": "Mathlib/Analysis/Normed/Group/Basic.lean",
+   "full_name": "nndist_nnnorm_nnnorm_le'",
+   "start": [
+    970,
+    1
+   ],
+   "end": [
+    971,
+    48
+   ],
+   "traced_tactics": []
+  }
+ },
+ "leandojo_benchmark_4/random/val.json": {
+  "n": 2000,
+  "tactics": 4641,
+  "sample": {
+   "url": "https://github.com/leanprover-community/mathlib4",
+   "commit": "3ce43c18f614b76e161f911b75a3e1ef641620ff",
+   "file_path": "Mathlib/CategoryTheory/Pi/Basic.lean",
+   "full_name": "CategoryTheory.Functor.pi'_eval",
+   "start": [
+    233,
+    1
+   ],
+   "end": [
+    238,
+    8
+   ],
+   "traced_tactics": [
+    {
+     "tactic": "apply Functor.ext",
+     "annotated_tactic": [
+      "apply <a>Functor.ext</a>",
+      [
+       {
+        "full_name": "CategoryTheory.Functor.ext",
+        "def_path": "Mathlib/CategoryTheory/EqToHom.lean",
+        "def_pos": [
+         201,
+         9
+        ],
+        "def_end_pos": [
+         201,
+         12
+        ]
+       }
+      ]
+     ],
+     "state_before": "I : Type w₀\nJ : Type w₁\nC : I → Type u₁\ninst✝² : (i : I) → Category.{v₁, u₁} (C i)\nD : I → Type u₁\ninst✝¹ : (i : I) → Category.{v₁, u₁} (D i)\nA : Type u₁\ninst✝ : Category.{u₁, u₁} A\nf : (i : I) → A ⥤ C i\ni : I\n⊢ pi' f ⋙ Pi.eval C i = f i",
+     "state_after": "case h_map\nI : Type w₀\nJ : Type w₁\nC : I → Type u₁\ninst✝² : (i : I) → Category.{v₁, u₁} (C i)\nD : I → Type u₁\ninst✝¹ : (i : I) → Category.{v₁, u₁} (D i)\nA : Type u₁\ninst✝ : Category.{u₁, u₁} A\nf : (i : I) → A ⥤ C i\ni : I\n⊢ autoParam\n    (∀ (X Y : A) (f_1 : X ⟶ Y),\n      (pi' f ⋙ Pi.eval C i).map f_1 =\n        eqToHom (_ : ?F.obj X = ?G.obj X) ≫ (f i).map f_1 ≫ eqToHom (_ : (f i).obj Y = (pi' f ⋙ P"
+    },
+    {
+     "tactic": "intro _ _ _",
+     "annotated_tactic": [
+      "intro _ _ _",
+      []
+     ],
+     "state_before": "case h_map\nI : Type w₀\nJ : Type w₁\nC : I → Type u₁\ninst✝² : (i : I) → Category.{v₁, u₁} (C i)\nD : I → Type u₁\ninst✝¹ : (i : I) → Category.{v₁, u₁} (D i)\nA : Type u₁\ninst✝ : Category.{u₁, u₁} A\nf : (i : I) → A ⥤ C i\ni : I\n⊢ autoParam\n    (∀ (X Y : A) (f_1 : X ⟶ Y),\n      (pi' f ⋙ Pi.eval C i).map f_1 =\n        eqToHom (_ : ?F.obj X = ?G.obj X) ≫ (f i).map f_1 ≫ eqToHom (_ : (f i).obj Y = (pi' f ⋙ P",
+     "state_after": "case h_map\nI : Type w₀\nJ : Type w₁\nC : I → Type u₁\ninst✝² : (i : I) → Category.{v₁, u₁} (C i)\nD : I → Type u₁\ninst✝¹ : (i : I) → Category.{v₁, u₁} (D i)\nA : Type u₁\ninst✝ : Category.{u₁, u₁} A\nf : (i : I) → A ⥤ C i\ni : I\nX✝ Y✝ : A\nf✝ : X✝ ⟶ Y✝\n⊢ (pi' f ⋙ Pi.eval C i).map f✝ =\n    eqToHom (_ : ?F.obj X✝ = ?G.obj X✝) ≫ (f i).map f✝ ≫ eqToHom (_ : (f i).obj Y✝ = (pi' f ⋙ Pi.eval C i).obj Y✝)\n\ncase h_"
+    },
+    {
+     "tactic": "simp",
+     "annotated_tactic": [
+      "simp",
+      []
+     ],
+     "state_before": "case h_map\nI : Type w₀\nJ : Type w₁\nC : I → Type u₁\ninst✝² : (i : I) → Category.{v₁, u₁} (C i)\nD : I → Type u₁\ninst✝¹ : (i : I) → Category.{v₁, u₁} (D i)\nA : Type u₁\ninst✝ : Category.{u₁, u₁} A\nf : (i : I) → A ⥤ C i\ni : I\nX✝ Y✝ : A\nf✝ : X✝ ⟶ Y✝\n⊢ (pi' f ⋙ Pi.eval C i).map f✝ =\n    eqToHom (_ : ?F.obj X✝ = ?G.obj X✝) ≫ (f i).map f✝ ≫ eqToHom (_ : (f i).obj Y✝ = (pi' f ⋙ Pi.eval C i).obj Y✝)",
+     "state_after": "no goals"
+    },
+    "..."
+   ]
+  }
+ },
+ "leandojo_benchmark_4/corpus.jsonl": {
+  "n": 4462,
+  "sample": {
+   "path": "lake-packages/lean4/src/lean/Init/Prelude.lean",
+   "imports": [],
+   "premises": [
+    {
+     "full_name": "id",
+     "code": "@[inline] def id {α : Sort u} (a : α) : α := a",
+     "start": [
+      21,
+      1
+     ],
+     "end": [
+      33,
+      47
+     ],
+     "kind": "commanddeclaration"
+    },
+    {
+     "full_name": "Function.comp",
+     "code": "@[inline] def Function.comp {α : Sort u} {β : Sort v} {δ : Sort w} (f : β → δ) (g : α → β) : α → δ :=\n  fun x => f (g x)",
+     "start": [
+      35,
+      1
+     ],
+     "end": [
+      53,
+      19
+     ],
+     "kind": "commanddeclaration"
+    },
+    {
+     "full_name": "Function.const",
+     "code": "@[inline] def Function.const {α : Sort u} (β : Sort v) (a : α) : β → α :=\n  fun _ => a",
+     "start": [
+      55,
+      1
+     ],
+     "end": [
+      67,
+      13
+     ],
+     "kind": "commanddeclaration"
+    },
+    "..."
+   ]
+  }
+ }
+}

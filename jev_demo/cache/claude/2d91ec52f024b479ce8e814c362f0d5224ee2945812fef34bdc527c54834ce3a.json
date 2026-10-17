@@ -1,0 +1,1 @@
+{"tactics": ["constructor", "refine ⟨fun ⟨s, t, h⟩ => ?_, fun ⟨l, ⟨s, t, h₁⟩, h₂⟩ => ?_⟩", "simp only [List.infix_iff_prefix_suffix, List.prefix_filterMap_iff, List.suffix_filterMap_iff]", "grind [List.IsInfix, List.filterMap_append, List.filterMap_eq_append_iff]", "simp [List.IsInfix, List.filterMap_eq_append_iff]", "apply Iff.intro"], "usd": 0.012501000000000095}

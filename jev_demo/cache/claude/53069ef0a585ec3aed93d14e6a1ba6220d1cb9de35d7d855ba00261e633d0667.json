@@ -1,0 +1,1 @@
+{"tactics": ["intro h2 <;> exfalso <;> simp at h <;> omega", "intro h2", "grind", "simp_all", "intro h2 <;> simp at h <;> omega"], "usd": 0.008928999999999965}

@@ -1,0 +1,1 @@
+{"tactics": ["split at h", "grind", "by_cases hp : p head✝ = true <;> simp_all", "simp_all", "revert h hx", "grind [List.findIdx_eq]"], "usd": 0.012973000000000123}

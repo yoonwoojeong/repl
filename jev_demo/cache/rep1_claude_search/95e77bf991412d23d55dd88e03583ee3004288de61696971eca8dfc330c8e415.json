@@ -1,0 +1,1 @@
+{"tactics": ["have h2 : Nat.toDigits 10 m = ['0'] := by simpa using congrArg String.toList h", "simp_all", "grind", "have h2 := congrArg String.toList h", "simp [String.ext_iff] at h", "revert h; induction m using Nat.strongRecOn <;> simp_all"], "usd": 0.011008999999999602}

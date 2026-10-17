@@ -1,0 +1,1 @@
+{"tactics": ["intro α motive a a_1 t F", "intro α motive a a_1 t F; exact F _ _ t (by induction t <;> constructor <;> first | assumption | (apply F <;> assumption) | skip)", "intro α motive a a_1 t h", "intros"], "usd": 0.012077000000000004}

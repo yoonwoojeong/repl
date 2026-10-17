@@ -1,0 +1,1 @@
+{"tactics": ["funext l", "funext l <;> simp", "funext l <;> induction l <;> simp_all", "funext l <;> exact List.map_id l", "ext l : 1", "exact funext List.map_id"], "usd": 0.0023330000000001405}

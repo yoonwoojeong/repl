@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "rename_i ih", "simp_all [List.minOn]", "simp [List.minOn, List.foldl]", "grind [List.minOn]", "unfold List.minOn", "split <;> simp_all"], "usd": 0.011328999999999922}

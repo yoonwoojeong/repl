@@ -1,0 +1,1 @@
+{"tactics": ["omega", "exact Nat.lt_succ_iff", "exact Nat.lt_add_one_iff", "simp [Nat.lt_succ_iff]", "constructor <;> intro h <;> omega", "grind"], "usd": 0.0024369999999995784}

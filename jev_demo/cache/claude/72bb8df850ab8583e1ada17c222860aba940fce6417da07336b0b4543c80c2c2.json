@@ -1,0 +1,1 @@
+{"tactics": ["intro h", "intro h; have h2 := congrArg String.toList h; simp at h2", "simp [String.ofList_inj]", "intro h; simpa using congrArg String.toNat! h", "grind", "simp"], "usd": 0.008168999999999649}

@@ -1,0 +1,1 @@
+{"tactics": ["by_cases h : p head✝ <;> simp_all", "split <;> simp_all", "cases h : p head✝ <;> simp_all", "simp only [List.takeWhile_cons] at w ⊢; split <;> simp_all", "grind", "split"], "usd": 0.006772999999999918}

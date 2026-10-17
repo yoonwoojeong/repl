@@ -1,0 +1,1 @@
+{"tactics": ["exact List.transCmp_compareLex", "exact Std.TransCmp.compareLex", "apply Std.TransCmp.mk", "constructor", "refine { isLE_trans := ?_ }", "unfold Std.TransOrd", "infer_instance"], "usd": 0.0102850000000001}

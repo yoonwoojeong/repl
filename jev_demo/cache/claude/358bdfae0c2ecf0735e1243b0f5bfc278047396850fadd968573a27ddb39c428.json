@@ -1,0 +1,1 @@
+{"tactics": ["have h : String.ofList (Nat.toDigitsCore 10 (n + 1) n []) = Nat.repr n := rfl", "simp", "grind", "simp [Nat.repr, Nat.toDigits]", "show (Nat.repr n).toSlice.toNat? = some n", "induction n using Nat.strongRecOn", "simp [String.Slice.toNat?]", "decide"], "usd": 0.008293000000000106}

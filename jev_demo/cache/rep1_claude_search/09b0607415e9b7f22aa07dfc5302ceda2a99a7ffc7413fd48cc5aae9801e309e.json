@@ -1,0 +1,1 @@
+{"tactics": ["obtain ⟨h1, h2⟩ := heq✝\nsubst h2\nrfl", "rcases heq✝ with ⟨rfl, rfl⟩", "cases heq✝.2", "obtain ⟨_, h2⟩ := heq✝", "rw [← heq✝.2]", "simp_all"], "usd": 0.0038450000000000983}

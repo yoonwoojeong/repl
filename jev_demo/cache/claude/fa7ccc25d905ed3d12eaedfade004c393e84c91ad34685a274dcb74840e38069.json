@@ -1,0 +1,1 @@
+{"tactics": ["simp", "grind", "simp [String.Slice.toNat?]", "rw [← Nat.repr]", "induction n using Nat.strongRecOn", "simp [Nat.toDigits]", "decide"], "usd": 0.007092999999999794}

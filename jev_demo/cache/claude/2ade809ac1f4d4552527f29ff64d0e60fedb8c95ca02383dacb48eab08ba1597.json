@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨l, h, rfl⟩ <;> exact h.filterMap f", "rintro ⟨l, h, rfl⟩ <;> exact List.IsInfix.filterMap f h", "rintro ⟨l, ⟨s, t, rfl⟩, rfl⟩ <;> exact ⟨List.filterMap f s, List.filterMap f t, by simp [List.filterMap_append]⟩", "rintro ⟨l, h, rfl⟩", "rintro ⟨l, h, rfl⟩ <;> grind [List.IsInfix.filterMap]", "intro ⟨l, h, e⟩"], "usd": 0.015368999999999966}

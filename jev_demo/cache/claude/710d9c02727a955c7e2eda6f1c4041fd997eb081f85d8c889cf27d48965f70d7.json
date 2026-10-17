@@ -1,0 +1,1 @@
+{"tactics": ["simp at w", "exact absurd rfl w", "simp [List.takeWhile] at w", "exfalso; exact w rfl", "cases w rfl", "simp_all", "contradiction", "exact (w (by simp)).elim"], "usd": 0.0025650000000001505}

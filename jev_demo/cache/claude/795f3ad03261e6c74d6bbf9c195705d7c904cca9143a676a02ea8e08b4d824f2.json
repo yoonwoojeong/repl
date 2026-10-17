@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ h x", "intro α inst inst_1 h x", "intros", "intro α _ _ h x <;> exact Std.LawfulRightIdentity.right_id (op := fun x1 x2 : α => x1 + x2) x", "intro α _ _ h x <;> rw [List.sum_cons, List.sum_nil] <;> exact Std.LawfulRightIdentity.right_id (op := fun x1 x2 : α => x1 + x2) x", "intro α _ _ h x <;> exact h.right_id x"], "usd": 0.010608999999999646}

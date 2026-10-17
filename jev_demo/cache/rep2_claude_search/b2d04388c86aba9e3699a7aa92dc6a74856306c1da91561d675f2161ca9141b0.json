@@ -1,0 +1,1 @@
+{"tactics": ["rename_i α xs i j h", "rename_i xs i j h", "grind", "simp only [List.getElem_drop']"], "usd": 0.011264999999999858}

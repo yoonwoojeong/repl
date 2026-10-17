@@ -1,0 +1,1 @@
+{"tactics": ["simp [Std.le_refl]", "simp only [List.nil_append] <;> exact Std.le_refl _", "simp", "grind", "exact Std.le_refl _", "simp only [List.nil_append]"], "usd": 0.00728899999999999}

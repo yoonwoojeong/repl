@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.mem_cons]", "by_cases h : y = a <;> simp_all", "cases h : (y == a) <;> simp_all", "rw [List.mem_cons]", "simp only [List.mem_cons, Bool.decide_or, beq_iff_eq, decide_eq_true_eq]", "grind", "by_cases h : y = a <;> simp [h]"], "usd": 0.0036130000000000884}

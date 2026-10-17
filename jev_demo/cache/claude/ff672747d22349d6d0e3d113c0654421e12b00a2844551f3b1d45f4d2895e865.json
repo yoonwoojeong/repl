@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.mergeSort.eq_def]", "unfold List.mergeSort", "cases l₂ with\n  | nil => simp_all\n  | cons b l => simp_all", "cases tail✝ <;> cases l₂ <;> simp_all", "simp only [List.mergeSort]", "grind [List.mergeSort]"], "usd": 0.009497000000000089}

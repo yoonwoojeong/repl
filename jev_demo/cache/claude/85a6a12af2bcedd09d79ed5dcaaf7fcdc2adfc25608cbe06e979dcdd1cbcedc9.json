@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "congr", "simp only [BEq.beq]", "congr 1", "apply congrArg", "simp", "grind"], "usd": 0.005657000000000023}

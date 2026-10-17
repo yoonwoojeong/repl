@@ -1,0 +1,1 @@
+{"tactics": ["have h : List.countP p t ≤ t.length := List.countP_le_length", "rw [List.countP_append, List.length_append]", "simp only [List.countP_append, List.length_append]", "have h := List.countP_le_length (p := p) (l := t)", "simp [List.countP_append]", "grind [List.countP_append, List.countP_le_length]"], "usd": 0.010409000000000002}

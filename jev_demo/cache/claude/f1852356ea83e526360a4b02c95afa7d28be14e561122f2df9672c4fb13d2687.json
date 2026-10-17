@@ -1,0 +1,1 @@
+{"tactics": ["congr 1; funext b; exact hf _ _ b", "exact congrArg _ (funext fun b => hf _ _ b)", "rename_i hd tl; cases hd; simp [hf]", "congr; funext b; apply hf", "simp [Subtype.forall] at hf ⊢; congr 1; funext b; exact hf _ _ b"], "usd": 0.011333000000000037}

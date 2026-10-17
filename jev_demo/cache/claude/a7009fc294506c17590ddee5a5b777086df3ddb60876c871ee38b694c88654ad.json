@@ -1,0 +1,1 @@
+{"tactics": ["simp only [List.maxIdxOn, List.maxOn] at *", "unfold List.maxIdxOn", "grind [List.maxIdxOn, List.maxOn]", "simp [List.maxIdxOn, List.minIdxOn_append, List.maxOn]", "split", "induction xs✝ generalizing ys✝", "cases xs✝ with | nil => contradiction | cons x xs => simp"], "usd": 0.009069000000000216}

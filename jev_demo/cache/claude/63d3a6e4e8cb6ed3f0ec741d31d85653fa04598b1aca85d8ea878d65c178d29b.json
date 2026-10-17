@@ -1,0 +1,1 @@
+{"tactics": ["simp", "grind", "induction l", "unfold ByteArray.utf8Decode?.go", "simp [ByteArray.utf8Decode?.go]", "rw [ByteArray.utf8Decode?.go]", "cases l"], "usd": 0.007624999999999993}

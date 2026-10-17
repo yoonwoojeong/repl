@@ -1,0 +1,1 @@
+{"tactics": ["simp [List.getLast_append, h]", "rw [List.getLast_append]", "induction l <;> simp_all [List.getLast_cons]", "grind [List.getLast_append]", "simp [List.getLast_append, List.isEmpty_iff, h]", "induction l with\n| nil => rfl\n| cons a t ih => simp [List.getLast_cons, ih]"], "usd": 0.012461000000000055}

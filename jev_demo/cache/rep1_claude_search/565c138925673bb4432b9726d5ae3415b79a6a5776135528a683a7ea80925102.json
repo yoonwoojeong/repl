@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "exact Subsingleton.elim _ _", "apply proof_irrel", "simp", "congr", "grind"], "usd": 0.00471699999999986}

@@ -1,0 +1,1 @@
+{"tactics": ["intro hfg", "intro hfg <;> induction l with | nil => simp | cons a t ih => simp [List.findIdx_cons, hfg, ih]", "intro hfg <;> induction l <;> simp_all [List.findIdx_cons]", "intro hfg <;> grind"], "usd": 0.0031930000000000014}

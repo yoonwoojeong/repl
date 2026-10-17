@@ -1,0 +1,1 @@
+{"tactics": ["intro α a motive a_1 t F", "exact fun t F => F _ t (by induction t with | head => constructor | tail b h ih => constructor <;> first | exact ih | exact F _ _ ih)", "intros α a motive a_1 t F", "exact fun t F => F _ t (by induction t <;> constructor <;> first | assumption | apply F <;> assumption)"], "usd": 0.021505}

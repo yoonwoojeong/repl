@@ -1,0 +1,1 @@
+{"tactics": ["simpa using congrArg String.toNat? h", "simpa using congrArg String.toNat! h", "have h2 := congrArg String.toNat? h", "simp [Nat.repr] at h", "simp_all [Nat.repr, Nat.toDigits]", "grind"], "usd": 0.009477000000000402}

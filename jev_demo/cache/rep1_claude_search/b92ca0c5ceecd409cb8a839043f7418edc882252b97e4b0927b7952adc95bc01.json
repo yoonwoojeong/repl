@@ -1,0 +1,1 @@
+{"tactics": ["intro n <;> simp [List.range_eq_range', List.range'_concat]", "intro n <;> rw [List.range_eq_range', List.range_eq_range', List.range'_concat] <;> simp", "intro n <;> simp [List.range_add]", "intro n <;> apply List.ext_getElem <;> simp", "intro n", "grind"], "usd": 0.012636999999999787}

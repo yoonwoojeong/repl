@@ -1,0 +1,1 @@
+{"tactics": ["exact ‹∀ {i : Nat}, (List.drop i _).tail = List.drop (i + 1) _›", "rename_i ih n", "apply ‹∀ {i : Nat}, (List.drop i _).tail = List.drop (i + 1) _›", "simp_all [List.drop_add_one]", "grind", "simp [← List.drop_drop]"], "usd": 0.014433000000000362}

@@ -1,0 +1,1 @@
+{"tactics": ["rw [if_pos h]", "simp only [h, ite_true]", "simp [h]", "grind", "simp [List.maxIdxOn] at *", "unfold List.maxIdxOn"], "usd": 0.006057000000000201}

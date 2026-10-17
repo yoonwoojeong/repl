@@ -1,0 +1,1 @@
+{"tactics": ["have h3 : i + j < xs.length := by simp at h; omega", "rw [List.getElem?_eq_getElem h] at h2", "rw [List.getElem?_eq_getElem h, List.getElem?_eq_getElem (by simp at h; omega)] at h2", "simp only [List.getElem?_eq_getElem h] at h2", "grind"], "usd": 0.012877000000000027}

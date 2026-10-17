@@ -1,0 +1,1 @@
+{"tactics": ["intro p", "intro p <;> constructor", "intro p <;> exact ⟨fun h => h.elim (fun h0 => ⟨0, h0⟩) (fun ⟨n, hn⟩ => ⟨n+1, hn⟩), fun ⟨n, hn⟩ => match n, hn with | 0, h => Or.inl h | k+1, h => Or.inr ⟨k, h⟩⟩", "intro p <;> constructor <;> intro h <;> grind"], "usd": 0.004368999999999623}

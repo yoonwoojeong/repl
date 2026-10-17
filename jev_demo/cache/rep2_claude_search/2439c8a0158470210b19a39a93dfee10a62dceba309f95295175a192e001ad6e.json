@@ -1,0 +1,1 @@
+{"tactics": ["split <;> (have := List.minIdxOn_lt_length (f := f) h; omega)", "split", "split <;> simp", "split <;> grind [List.minIdxOn_lt_length]", "by_cases hc : f (List.minOn f xs h) ≤ f (List.minOn f ys hys) <;> simp [hc]"], "usd": 0.008720999999999979}

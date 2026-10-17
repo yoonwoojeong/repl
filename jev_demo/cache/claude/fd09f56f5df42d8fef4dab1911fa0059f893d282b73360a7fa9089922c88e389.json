@@ -1,0 +1,1 @@
+{"tactics": ["exact Prod.ext (List.unzip_zip_left (by omega)) (List.unzip_zip_right (by omega))", "induction l₁ generalizing l₂ <;> cases l₂ <;> simp_all", "induction l₁ generalizing l₂ <;> cases l₂ <;> simp_all [List.unzip_cons]", "induction l₁ generalizing l₂", "rw [Prod.ext_iff]"], "usd": 0.015405000000000335}

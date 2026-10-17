@@ -1,0 +1,1 @@
+{"tactics": ["intro α R S H l", "intro α R S H l <;> induction l <;> simp_all", "intro α R S H l <;> have : R = S := by funext a b; exact propext (H a b)", "intro α R S H l <;> constructor <;> intro h <;> exact h.imp (fun hab => by simp_all)", "intros", "intro α R S H l <;> simp [H]"], "usd": 0.0036610000000000253}

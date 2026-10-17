@@ -1,0 +1,1 @@
+{"tactics": ["exact (List.le_min_iff _).mp (Std.le_refl _) a ha", "exact List.le_min_iff.mp (Std.le_refl _) a ha", "have h := (List.le_min_iff (l := l) (by intro h; simp_all)).mp (Std.le_refl _)", "grind [List.le_min_iff, Std.le_refl]", "simp [List.le_min_iff] at *", "induction l with\n  | nil => simp at ha\n  | cons b t ih => grind"], "usd": 0.013424999999999798}

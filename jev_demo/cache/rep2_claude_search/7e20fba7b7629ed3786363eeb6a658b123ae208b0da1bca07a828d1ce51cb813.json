@@ -1,0 +1,1 @@
+{"tactics": ["rintro ⟨i, h, hx⟩", "intro ⟨i, h, hx⟩", "grind", "rintro ⟨i, h, hx⟩ <;> split at hx", "intro h", "simp only [forall_exists_index]"], "usd": 0.005696999999999619}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ l x y h", ". intro α _ _ l x y h; induction l <;> simp_all [List.contains_cons]", "intro α _ _ l x y h <;> induction l with | nil => rfl | cons a t ih => simp [List.contains_cons, ih, BEq.congr_left h]", "intros", "intro α _ _ l x y h <;> induction l <;> simp_all", "intro α _ _ l x y h <;> induction l <;> grind"], "usd": 0.004249000000000003}

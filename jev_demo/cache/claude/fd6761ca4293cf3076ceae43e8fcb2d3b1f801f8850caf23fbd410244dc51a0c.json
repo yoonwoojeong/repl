@@ -1,0 +1,1 @@
+{"tactics": ["rcases l₁ with _ | ⟨a, _ | ⟨b, l⟩⟩", "cases l₁ with\n  | nil => simp at h₁\n  | cons a l => cases l <;> simp_all", "rw [List.mergeSort]", "simp only [List.mergeSort, List.splitInTwo]", "unfold List.mergeSort", "simp_all [List.mergeSort, List.splitInTwo]"], "usd": 0.015420999999999907}

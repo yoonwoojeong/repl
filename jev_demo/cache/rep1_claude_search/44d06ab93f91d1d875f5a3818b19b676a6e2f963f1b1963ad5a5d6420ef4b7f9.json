@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp [List.modifyTailIdx.go]", "simp only [List.modifyTailIdx.go]", "unfold List.modifyTailIdx.go <;> rfl", "rw [List.modifyTailIdx.go, List.modifyTailIdx.go]", "grind [List.modifyTailIdx.go]"], "usd": 0.007532999999999568}

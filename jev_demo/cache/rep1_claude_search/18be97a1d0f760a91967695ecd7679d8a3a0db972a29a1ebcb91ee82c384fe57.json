@@ -1,0 +1,1 @@
+{"tactics": ["intro α a l h", "exact fun h => List.mem_iff_append.mp h", "intro α a l h; induction h with | head as => exact ⟨[], as, rfl⟩ | tail b _ ih => obtain ⟨s, t, rfl⟩ := ih; exact ⟨b :: s, t, rfl⟩", "intro α a l h <;> exact List.mem_iff_append.mp h", "intro α a l <;> induction l <;> simp_all", "intro α a l h <;> grind [List.mem_iff_append]"], "usd": 0.010341000000000045}

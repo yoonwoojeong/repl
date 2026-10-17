@@ -1,0 +1,1 @@
+{"tactics": ["intro α p xs i x h", "intro α p xs i x h <;> exact h i (Nat.le_refl i)", "intros α p xs i hi h <;> simpa using h i (Nat.le_refl i)", "intro _ _ _ i _ h <;> exact h i (Nat.le_refl _)", "intros <;> simp_all", "intro α p xs i x h <;> grind"], "usd": 0.0037769999999999193}

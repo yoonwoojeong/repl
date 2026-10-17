@@ -1,0 +1,1 @@
+{"tactics": ["rfl", "simp only [List.foldrRecOn]", "unfold List.foldrRecOn", "rw [List.foldrRecOn]", "exact rfl", "simp [List.foldrRecOn]", "delta List.foldrRecOn", "dsimp only [List.foldrRecOn]"], "usd": 0.010537000000000019}

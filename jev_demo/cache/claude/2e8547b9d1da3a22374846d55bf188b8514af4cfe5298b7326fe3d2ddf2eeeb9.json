@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ a b _ l₁ l₂", "intros", "intro α inst a b inst_1 l₁ l₂ <;> induction l₁ <;> simp_all [List.replace_cons]", "intro α inst a b inst_1 l₁ l₂", "intro α _ a b _ l₁ l₂ <;> induction l₁ with | nil => simp | cons x xs ih => (by_cases h : x == a <;> simp_all [List.replace_cons])"], "usd": 0.004468999999999834}

@@ -1,0 +1,1 @@
+{"tactics": ["intro _ _ l", "intros", "intro inst inst_1 l <;> simp [List.mem_cons]", "intro inst inst_1 l <;> by_cases h : y = a <;> simp_all", "intro inst inst_1 l <;> grind", "intro inst inst_1 l <;> simp [List.mem_cons, Bool.decide_or]", "intro inst inst_1 l <;> cases h : (y == a) <;> simp_all"], "usd": 0.004145000000000065}

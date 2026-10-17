@@ -1,0 +1,1 @@
+{"tactics": ["omega", "exact absurd h✝ (Nat.not_lt.mpr h)", "exfalso; omega", "exact False.elim (Nat.lt_irrefl _ (Nat.lt_of_lt_of_le h✝ h))", "simp_all", "grind"], "usd": 0.0029689999999999994}

@@ -1,0 +1,1 @@
+{"tactics": ["intro α as bs i h h₂", "intros", "intro α as bs i h h₂ <;> simp [List.getElem_append, Nat.not_lt.mpr h]", "intro α as bs i h h₂ <;> induction as generalizing i <;> simp_all", "intro α as bs i h h₂ <;> grind", "simp_all [List.getElem_append]"], "usd": 0.0036169999999999813}

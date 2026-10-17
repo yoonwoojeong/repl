@@ -1,0 +1,1 @@
+{"tactics": ["simp [← Array.toList_inj, Nat.toList_roo_succ_succ]", "apply Array.ext_iff.mpr ?_ |>.symm.symm", "rw [← Array.toList_inj]", "simp [Nat.toList_roo_succ_succ, ← Array.toArray_toList]", "grind [Nat.toList_roo_succ_succ]", "simp", "apply Array.toList_inj.mp"], "usd": 0.008480999999999739}

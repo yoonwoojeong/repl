@@ -1,0 +1,1 @@
+{"tactics": ["exact List.Perm.flatten", "intro h; exact h.flatten", "intro h", "intro h <;> induction h <;> simp_all [List.perm_append_comm_assoc]", "exact fun h => List.Perm.flatten h", "intro h <;> exact List.Perm.flatten h"], "usd": 0.0028489999999999904}

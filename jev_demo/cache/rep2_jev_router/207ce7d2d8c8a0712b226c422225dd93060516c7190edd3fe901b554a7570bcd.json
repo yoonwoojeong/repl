@@ -1,0 +1,1 @@
+{"tactics": ["intro n m w f\n  subst w\n  rfl", "intro n m w f", "rintro n m rfl f", "intros n m w f; subst w; rfl", "intro n m w; subst w; intro f; rfl", "rintro n m rfl f <;> rfl", "intro n m w f <;> subst w <;> rfl", "intro n m w f <;> subst w <;> simp"], "usd": 0.0035729999999998263}

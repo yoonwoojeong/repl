@@ -1,0 +1,1 @@
+{"tactics": ["simp [h] at w", "simp_all", "subst h <;> simp at w", "exact absurd (by simp [h]) w", "exact (w (by simp [h])).elim", "cases h <;> simp at w"], "usd": 0.005904999999999827}

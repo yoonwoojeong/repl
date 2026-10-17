@@ -1,0 +1,1 @@
+{"tactics": ["exact fun h => h.imp fun hr _ _ => hr", "exact List.Pairwise.imp (fun hr _ _ => hr)", "intro h", "exact fun h => List.Pairwise.imp (fun {a b} hr _ _ => hr) h", "intro h <;> induction h <;> simp_all"], "usd": 0.006861000000000006}

@@ -1,0 +1,1 @@
+{"tactics": ["rename_i l i <;> induction l generalizing i <;> simp_all [List.zipIdx]", "rename_i l i", "rename_i α l i <;> induction l generalizing i <;> simp_all [List.zipIdx_cons]", "rename_i l i <;> induction l generalizing i <;> simp_all", "rename_i l i <;> induction l generalizing i <;> grind [List.zipIdx]"], "usd": 0.013856999999999786}

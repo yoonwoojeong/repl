@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ l₁ l₂ a h", "exact h.sublist.count_le a"], "usd": 0.008193000000000006}

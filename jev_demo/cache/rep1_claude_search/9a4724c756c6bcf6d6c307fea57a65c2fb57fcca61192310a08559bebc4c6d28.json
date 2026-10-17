@@ -1,0 +1,1 @@
+{"tactics": ["intro x y z hz", "exact fun x y z hz => (Nat.mul_comm z y) ▸ Nat.add_mul_div_left x y hz", "exact fun x y z hz => by rw [Nat.mul_comm y z, Nat.add_mul_div_left x y hz]", "intros"], "usd": 0.0122049999999998}

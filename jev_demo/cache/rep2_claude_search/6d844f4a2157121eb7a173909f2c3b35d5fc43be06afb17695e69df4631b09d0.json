@@ -1,0 +1,1 @@
+{"tactics": ["induction x with\n| nil => intro bs; unfold List.flatMapM.loop; exact h1 bs\n| cons a as ih => intro bs; unfold List.flatMapM.loop; exact h2 a as bs ih", "induction x <;> intro bs <;> unfold List.flatMapM.loop <;> simp_all", "induction x", "intro x_1", "induction x <;> intro bs <;> simp only [List.flatMapM.loop] <;> grind"], "usd": 0.011805000000000065}

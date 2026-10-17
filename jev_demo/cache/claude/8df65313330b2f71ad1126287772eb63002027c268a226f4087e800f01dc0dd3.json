@@ -1,0 +1,1 @@
+{"tactics": ["intro a b i h j", "intro a b i h j <;> split <;> simp_all [Nat.testBit, Nat.shiftRight_eq_div_pow]", "intro a b i h j <;> by_cases hj : j < i", "intro a b i h j <;> grind [Nat.testBit_to_div_mod]", "intro a b i h j <;> simp [Nat.testBit_to_div_mod]", "intro a b i h j <;> rw [Nat.testBit_to_div_mod]"], "usd": 0.009604999999999642}

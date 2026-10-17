@@ -1,0 +1,1 @@
+{"tactics": ["simp", "simp [Nat.zero_div]", "rw [Nat.zero_add, Nat.zero_div, Nat.zero_add]", "omega", "simp only [Nat.zero_add, Nat.zero_div]"], "usd": 0.0025890000000003965}

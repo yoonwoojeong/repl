@@ -1,0 +1,1 @@
+{"tactics": ["intro α _ _ a l h\nsimp [List.insert, h]", "intro α _ _ a l h", "intros\nsimp_all [List.insert]", "intro α inst _ a l h\nunfold List.insert\nsimp [List.elem_eq_mem, h]", "grind [List.insert]"], "usd": 0.0031570000000000764}

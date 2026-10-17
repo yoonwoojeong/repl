@@ -1,0 +1,1 @@
+{"tactics": ["intro inst _ f l acc", "intros", "intro inst hlaw f l", "intro _ _ f l <;> induction l <;> intro acc <;> simp [List.filterMapM.loop]"], "usd": 0.007256999999999958}

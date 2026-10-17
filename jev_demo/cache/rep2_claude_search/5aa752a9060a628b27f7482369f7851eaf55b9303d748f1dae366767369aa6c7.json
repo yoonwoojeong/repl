@@ -1,0 +1,1 @@
+{"tactics": ["omega", "rw [Nat.add_sub_add_right]", "exact (Nat.add_sub_add_right n k m).symm", "simp [Nat.add_sub_add_right]", "grind"], "usd": 0.0023730000000004026}

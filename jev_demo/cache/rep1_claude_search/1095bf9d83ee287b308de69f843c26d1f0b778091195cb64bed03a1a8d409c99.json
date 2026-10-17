@@ -1,0 +1,1 @@
+{"tactics": ["rw [List.lt_iff_lex_lt, List.Lex_iff_exists]", "simp only [List.lt_iff_lex_lt, List.lex_eq_true_iff_exists]", "exact List.Lex_iff_exists", "rw [← List.lex_lt, List.Lex_iff_exists]", "constructor", "grind [List.Lex_iff_exists]", "simp [List.Lex_iff_exists]"], "usd": 0.017044999999999977}

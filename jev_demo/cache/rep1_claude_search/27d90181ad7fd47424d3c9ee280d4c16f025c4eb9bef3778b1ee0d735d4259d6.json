@@ -1,0 +1,1 @@
+{"tactics": ["rename_i xs f h b", "constructor", "grind [List.maxOn_mem, List.le_apply_maxOn_of_mem]", "refine ⟨fun hlt x hx => Std.lt_of_le_of_lt (List.le_apply_maxOn_of_mem hx) hlt, fun hall => hall _ (List.maxOn_mem _)⟩", "simp_all [List.maxOn_mem]", "grind [List.maxOn_mem]"], "usd": 0.012457000000000051}

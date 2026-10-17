@@ -1,0 +1,1 @@
+{"tactics": ["intro α le xs; cases xs <;> simp [List.merge]", "intro α le xs; cases xs <;> rfl", "intro α le xs; cases xs <;> unfold List.merge <;> rfl", "intro α le xs", "intro α le xs; induction xs <;> simp_all [List.merge]", "intro α le xs; cases xs <;> simp"], "usd": 0.00792499999999996}

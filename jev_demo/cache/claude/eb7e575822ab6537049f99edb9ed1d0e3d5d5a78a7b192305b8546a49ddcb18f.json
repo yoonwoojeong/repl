@@ -1,0 +1,1 @@
+{"tactics": ["rw [show f hd = g hd.val from funext (hf hd.val hd.property)]", "cases hd <;> simp [hf]", "congr 1 <;> funext b <;> exact hf hd.val hd.property b", "simp [show f hd = g hd.val from funext fun b => hf hd.val hd.property b]", "obtain ⟨v, h⟩ := hd", "congr 1"], "usd": 0.011665000000000036}

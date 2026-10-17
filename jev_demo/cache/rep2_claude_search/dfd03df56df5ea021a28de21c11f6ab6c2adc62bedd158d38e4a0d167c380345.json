@@ -1,0 +1,1 @@
+{"tactics": ["split", "by_cases h' : i < l₁.length", "split <;> rename_i h' <;> simp [List.getElem_append_left h']", "split <;> simp_all [List.getElem_append_left, List.getElem_append_right]", "induction l₁ generalizing i <;> cases i <;> simp_all", "split <;> grind"], "usd": 0.010796999999999946}

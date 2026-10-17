@@ -1,0 +1,1 @@
+{"tactics": ["induction m <;> simp_all [Nat.fold_succ, Nat.fold_zero]", "induction m with\n  | zero => simp\n  | succ m ih => simp [Nat.fold_succ, ← Nat.add_assoc, ih]", "induction m", "induction m <;> simp_all [Nat.fold_succ, ← Nat.add_assoc] <;> rfl", "induction m <;> grind [Nat.fold_succ, Nat.fold_zero]"], "usd": 0.012764999999999915}

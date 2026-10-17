@@ -1,0 +1,1 @@
+{"tactics": ["intro m α β _ _ f l acc", "intro m α β inst _ f l", "intro m α β inst _ f l acc", "intros", "intro m α β inst _ f l acc <;> induction l generalizing acc <;> simp [List.filterMapM.loop]"], "usd": 0.008537000000000017}

@@ -1,0 +1,1 @@
+{"tactics": ["induction l₁ generalizing l₂", "constructor", "cases l₂", "exact List.Lex.iff_exists", "simp only [List.lt_iff_lex_lt]", "grind"], "usd": 0.011624999999999996}

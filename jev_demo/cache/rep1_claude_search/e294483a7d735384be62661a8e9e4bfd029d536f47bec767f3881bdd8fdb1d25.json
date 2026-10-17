@@ -1,0 +1,1 @@
+{"tactics": ["exact h ▸ List.sublist_append_right t l₁", "subst h", "rw [← h]", "simp [← h]", "exact h ▸ List.sublist_append_right _ _", "grind [List.sublist_append_right]"], "usd": 0.007349000000000001}

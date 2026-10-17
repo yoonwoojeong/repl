@@ -1,0 +1,1 @@
+{"tactics": ["exact List.Perm.flatten h", "simpa using h.flatten", "exact h.flatten", "have h2 := List.Perm.flatten h", "simpa using List.Perm.flatten h", "grind [List.Perm.flatten]"], "usd": 0.009409}

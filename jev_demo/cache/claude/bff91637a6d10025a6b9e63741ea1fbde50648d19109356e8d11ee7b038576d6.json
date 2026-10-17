@@ -1,0 +1,1 @@
+{"tactics": ["cases l <;> simp_all [List.zipIdx]", "cases l <;> simp_all", "cases l with\n  | nil => simp at h\n  | cons a as => simp [List.zipIdx_cons]", "cases l <;> simp [List.zipIdx_cons] at h ⊢", "rcases l with _ | ⟨a, as⟩", "cases l"], "usd": 0.007716999999999974}
